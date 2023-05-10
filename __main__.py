@@ -1,6 +1,6 @@
-from crawler import RepoCrawler
+from crawler import RepoCrawler, BugCollectorStrategy
 
 if __name__ == '__main__':
     query = input()
     crawler = RepoCrawler(query, pagination_freq='D')
-    print(len(crawler.get_repos()))
+    crawler.get_repos(BugCollectorStrategy("out.jsonl"))
