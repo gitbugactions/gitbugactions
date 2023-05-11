@@ -9,11 +9,45 @@ import tempfile
 import logging
 import pandas as pd
 from abc import ABC, abstractmethod
-from github import Github, Repository
+from github import Github, Repository, UnknownObjectException, RateLimitExceededException
 from datetime import datetime, timedelta
 
 # FIXME change to custom logger
 logging.basicConfig(level=logging.INFO)
+
+
+class RateLimiter:
+    __GITHUB_REQUESTS_LIMIT = 29 # The real limit is 30, but we try to avoid it
+    __GITHUB_RESET_SECONDS = 60
+    
+    def __init__(self):
+        self.requests = 0
+        self.first_request = datetime.now()
+
+    def request(self, fn, *args, **kwargs):
+        retries = 3
+        if self.requests == 0:
+            self.first_request = datetime.now()
+        elif (datetime.now() - self.first_request).total_seconds() > RateLimiter.__GITHUB_RESET_SECONDS:
+            self.requests = 0
+            self.first_request = datetime.now()
+        if self.requests == RateLimiter.__GITHUB_REQUESTS_LIMIT:
+            time.sleep(RateLimiter.__GITHUB_RESET_SECONDS)
+            self.requests = 0
+        self.requests += 1
+        print(self.requests)
+        try:
+            return fn(*args, **kwargs)
+        except RateLimitExceededException as exc:
+            logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
+            reset_time = datetime.fromtimestamp(int(exc.headers["x-ratelimit-reset"]))
+            retry_after = (reset_time - datetime.now()).total_seconds() + 1
+            retry_after = max(retry_after, 0)  # In case we hit a negative total_seconds
+            time.sleep(retry_after)
+            retries -= 1
+            if retries == 0:
+                raise exc
+
 
 class RepoStrategy(ABC):
     def __init__(self, data_path: str):
@@ -27,8 +61,9 @@ class RepoStrategy(ABC):
 class BugCollectorStrategy(RepoStrategy):
     __FIX_ISSUE_REGEX = "(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #([0-9]*)"
 
-    def __init__(self, data_path: str):
+    def __init__(self, data_path: str, rate_limiter: RateLimiter):
         super().__init__(data_path)
+        self.rate_lim = rate_limiter
 
     def handle_repo(self, repo: Repository):
         logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
@@ -52,23 +87,28 @@ class BugCollectorStrategy(RepoStrategy):
                         }
 
                         for issue in issues:
-                            gh_issue = repo.get_issue(number=int(issue[1]))
-                            data['message'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
-                            data['message'] += gh_issue.body
-                            time.sleep(1)
+                            if not issue[1].isdigit():
+                                continue
+                            
+                            try:
+                                gh_issue = self.rate_lim.request(repo.get_issue, number=int(issue[1]))
+                                data['message'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
+                                if gh_issue.body:
+                                    data['message'] += str(gh_issue.body)
+                            except UnknownObjectException:
+                                # The number of the issue mentioned does not exist
+                                pass
 
                         data['patch'] = repo_clone.diff(commit.hex, commit.hex + '~1').patch
                         fp.write((json.dumps(data) + "\n").encode('utf-8'))
         
         shutil.rmtree(repo_path)
-        time.sleep(2) # FIXME we can remove when the process takes more time
-
 
 class RepoCrawler:
     __GITHUB_CREATION_DATE = "2008-02-08"
     __PAGE_SIZE = 100
 
-    def __init__(self, query: str, pagination_freq: str=None):
+    def __init__(self, query: str, rate_limiter: RateLimiter, pagination_freq: str=None, ):
         '''
         Args:
             query (str): String with the Github searching format
@@ -79,9 +119,14 @@ class RepoCrawler:
                 The possible values are listed here:
                 https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases
         '''
-        self.github: Github = Github(login_or_token=os.environ["GITHUB_ACCESS_TOKEN"], per_page=RepoCrawler.__PAGE_SIZE)
+        self.github: Github = Github(
+            login_or_token=os.environ["GITHUB_ACCESS_TOKEN"], 
+            per_page=RepoCrawler.__PAGE_SIZE, 
+        )
         self.query: str = query
         self.pagination_freq: str = pagination_freq
+        self.requests: int = 0
+        self.rate_lim = rate_limiter
 
     def __get_creation_range(self):
         created = list(filter(lambda x: x.startswith('created:'), self.query.split(' ')))
@@ -124,15 +169,14 @@ class RepoCrawler:
         return (start_date.isoformat(), end_date.isoformat())
 
     def __search_repos(self, query: str, repo_strategy: RepoStrategy):
-        page_list = self.github.search_repositories(query)
+        page_list = self.rate_lim.request(self.github.search_repositories, query)
         if (page_list.totalCount == 1000):
             logging.warning(f'1000 results limit of the GitHub API was reached.\nQuery: {query}')
         n_pages = math.ceil(page_list.totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
-            repos = page_list.get_page(p)
+            repos = self.rate_lim.request(page_list.get_page, p)
             for repo in repos:
                 repo_strategy.handle_repo(repo)
-            time.sleep(1.5)
 
     def get_repos(self, repo_strategy: RepoStrategy):
         if self.pagination_freq is not None:
@@ -152,7 +196,6 @@ class RepoCrawler:
                 created_filter = f" created:{start_date}..{end_date.strftime('%Y-%m-%dT%H:%M:%S')}"
                 self.__search_repos(query + created_filter, repo_strategy)
                 start_date = date_ranges[i].strftime('%Y-%m-%dT%H:%M:%S')
-                time.sleep(1)
             
             end_date = creation_range[1]
             created_filter = f" created:{start_date}..{end_date}"
