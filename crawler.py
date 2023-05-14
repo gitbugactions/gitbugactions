@@ -35,7 +35,7 @@ class RateLimiter:
             time.sleep(RateLimiter.__GITHUB_RESET_SECONDS)
             self.requests = 0
         self.requests += 1
-        print(self.requests)
+
         try:
             return fn(*args, **kwargs)
         except RateLimitExceededException as exc:
@@ -77,14 +77,30 @@ class BugCollectorStrategy(RepoStrategy):
             with open(self.data_path, "ab") as fp:
                 for commit in repo_clone.walk(repo_clone.head.target):
                     issues = re.findall(BugCollectorStrategy.__FIX_ISSUE_REGEX, commit.message)
+
+                    # Use only commits with issues
+                    # https://liuhuigmail.github.io/publishedPappers/TSE2022BugBuilder.pdf
                     if len(issues) > 0:
                         data = { 
                             'repository': repo.full_name,
                             'clone_url': repo.clone_url,
                             'timestamp': datetime.utcnow().isoformat() + "Z",
                             'commit_hash': commit.hex,
-                            'message': commit.message 
+                            'commit_message': commit.message,
+                            'related_issues': '' 
                         }
+
+                        diff = repo_clone.diff(commit.hex, commit.hex + '~1')
+                        
+                        # FIXME
+                        # Each Patch corresponds to the changes in a single file
+                        # for p in diff:
+                        #     print(p.text)
+
+                        data['patch'] = diff.patch
+
+                        # Avoids some mentions to PRs
+                        issue_found = False
 
                         for issue in issues:
                             if not issue[1].isdigit():
@@ -92,15 +108,16 @@ class BugCollectorStrategy(RepoStrategy):
                             
                             try:
                                 gh_issue = self.rate_lim.request(repo.get_issue, number=int(issue[1]))
-                                data['message'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
+                                data['related_issues'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
                                 if gh_issue.body:
-                                    data['message'] += str(gh_issue.body)
+                                    data['related_issues'] += str(gh_issue.body)
+                                issue_found = True
                             except UnknownObjectException:
                                 # The number of the issue mentioned does not exist
                                 pass
 
-                        data['patch'] = repo_clone.diff(commit.hex, commit.hex + '~1').patch
-                        fp.write((json.dumps(data) + "\n").encode('utf-8'))
+                        if issue_found:
+                            fp.write((json.dumps(data) + "\n").encode('utf-8'))
         
         shutil.rmtree(repo_path)
 
