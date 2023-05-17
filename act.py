@@ -22,6 +22,11 @@ class GithubWorkflow:
         with open(path, "r") as stream:
             self.doc = yaml.safe_load(stream)
 
+            # Solves problem where pyyaml parses 'on' (used in Github actions) as True
+            if True in self.doc:
+                self.doc['on'] = self.doc[True]
+                self.doc.pop(True)
+
     def __is_test(self, name):
         return any(map(lambda word: word in GithubWorkflow.__TESTS_KEYWORDS, name.split(' ')))
     
@@ -35,10 +40,10 @@ class GithubWorkflow:
                     return True
                 
                 for step in job['steps']:
-                    if self.__is_test(step['name']):
+                    if 'name' in step and self.__is_test(step['name']):
                         return True
                     
-            return False                  
+            return False
         except yaml.YAMLError:
             return False
             
@@ -98,31 +103,51 @@ class JUnitXML:
 
 class Act:
     __ACT_PATH="act"
-    __FLAGS="--bind --rm"
+    # The flag -u allows files to be created with the current user
+    __FLAGS=f"--bind --rm --container-options '-u {os.getuid()}'"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=catthehacker/ubuntu:full-latest" + \
         " -P ubuntu-22.04=catthehacker/ubuntu:act-22.04" + \
         " -P ubuntu-20.04=catthehacker/ubuntu:full-20.04" + \
         " -P ubuntu-18.04=catthehacker/ubuntu:full-18.04"
 
-    def run_act(self, repo_path, workflows):
-        command = f"cd {repo_path} &&"
+    def run_act(self, repo_path, workflows, test_parser):
+        command = f"cd {repo_path} && "
         command += f"{Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS}"
 
         for workflow in workflows:
             p = subprocess.Popen(command + f" -W {workflow}", shell=True)
             code = p.wait()
-            JUnitXML(os.path.join(repo_path, "target", "surefire-reports")).parse()
-            #JUnitXML(os.path.join(repo_path, "target" , "surefire-reports")).parse()
+
+        return test_parser.get_failed_tests()
 
 
-act = Act()
+def get_failed_tests(repo_path):
+    act = Act()
+    workflows_path = os.path.join(repo_path, ".github", "workflows")
+    tests_workflows = []
 
-workflow = GithubWorkflow("/home/nfsaavedra/Downloads/flacoco/.github/workflows/tests.yml")
-print(workflow.has_tests())
-workflow.remove_unsupported_os()
-workflow.save_yaml("/home/nfsaavedra/Downloads/flacoco/.github/workflows/tests-crawler.yml")
+    for (dirpath, dirnames, filenames) in os.walk(workflows_path):
+        yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
+        for file in yaml_files:
+            workflow = GithubWorkflow(os.path.join(dirpath, file))
+            if not workflow.has_tests():
+                continue
 
-# Needs to filter the workflows with tests
-# Needs to filter OS because act only runs in ubuntu
-# act.run_act("/home/nfsaavedra/Downloads/flacoco", [".github/workflows/tests.yml"])
+            workflow.remove_unsupported_os()
+            new_filename = file.split('.')[0] + "-crawler." + file.split('.')[1]
+            new_path = os.path.join(dirpath, new_filename)
+            workflow.save_yaml(new_path)
+            tests_workflows.append(os.path.relpath(new_path, repo_path))
+
+    parser = JUnitXML(os.path.join(repo_path, "target", "surefire-reports"))
+    failed_tests = act.run_act(repo_path, tests_workflows, parser)
+
+    for test_workflow in tests_workflows:
+       os.remove(os.path.join(repo_path, test_workflow))
+
+    return failed_tests
+
+
+#repo_path = "/home/nfsaavedra/Downloads/flacoco"
+#print(get_failed_tests(repo_path))
 #https://github.com/marketplace/actions/publish-test-results#generating-test-result-files

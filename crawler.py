@@ -9,6 +9,7 @@ import tempfile
 import logging
 import pandas as pd
 from abc import ABC, abstractmethod
+from act import get_failed_tests
 from github import Github, Repository, UnknownObjectException, RateLimitExceededException
 from datetime import datetime, timedelta
 
@@ -76,48 +77,64 @@ class BugCollectorStrategy(RepoStrategy):
         if len(list(repo_clone.references.iterator())) > 0:
             with open(self.data_path, "ab") as fp:
                 for commit in repo_clone.walk(repo_clone.head.target):
-                    issues = re.findall(BugCollectorStrategy.__FIX_ISSUE_REGEX, commit.message)
-
                     # Use only commits with issues
                     # https://liuhuigmail.github.io/publishedPappers/TSE2022BugBuilder.pdf
-                    if len(issues) > 0:
-                        data = { 
-                            'repository': repo.full_name,
-                            'clone_url': repo.clone_url,
-                            'timestamp': datetime.utcnow().isoformat() + "Z",
-                            'commit_hash': commit.hex,
-                            'commit_message': commit.message,
-                            'related_issues': '' 
-                        }
+                    issues = re.findall(BugCollectorStrategy.__FIX_ISSUE_REGEX, commit.message)
+                    if len(issues) == 0:
+                        continue
 
-                        diff = repo_clone.diff(commit.hex, commit.hex + '~1')
+                    commit_hex = commit.hex
+                    previous_commit_hex = commit.hex + '~1'
+                    previous_commit = repo_clone.revparse_single(previous_commit_hex)
+
+                    repo_clone.checkout_tree(previous_commit)
+                    repo_clone.set_head(previous_commit.oid)
+                    previous_failed_tests = get_failed_tests(repo_path)
+                    repo_clone.checkout_tree(commit)
+                    repo_clone.set_head(commit.oid)
+                    current_failed_tests = get_failed_tests(repo_path)
+                    failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
+                    # No tests were fixed
+                    if len(failed_diff) == 0:
+                        continue
+
+                    data = { 
+                        'repository': repo.full_name,
+                        'clone_url': repo.clone_url,
+                        'timestamp': datetime.utcnow().isoformat() + "Z",
+                        'commit_hash': commit.hex,
+                        'commit_message': commit.message,
+                        'related_issues': '',
+                        'failed_tests': failed_diff
+                    }
+                    
+                    # FIXME
+                    # Each Patch corresponds to the changes in a single file
+                    # for p in diff:
+                    #     print(p.text)
+
+                    diff = repo_clone.diff(commit_hex, previous_commit_hex)
+                    data['patch'] = diff.patch
+
+                    # Avoids some mentions to PRs
+                    issue_found = False
+
+                    for issue in issues:
+                        if not issue[1].isdigit():
+                            continue
                         
-                        # FIXME
-                        # Each Patch corresponds to the changes in a single file
-                        # for p in diff:
-                        #     print(p.text)
+                        try:
+                            gh_issue = self.rate_lim.request(repo.get_issue, number=int(issue[1]))
+                            data['related_issues'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
+                            if gh_issue.body:
+                                data['related_issues'] += str(gh_issue.body)
+                            issue_found = True
+                        except UnknownObjectException:
+                            # The number of the issue mentioned does not exist
+                            pass
 
-                        data['patch'] = diff.patch
-
-                        # Avoids some mentions to PRs
-                        issue_found = False
-
-                        for issue in issues:
-                            if not issue[1].isdigit():
-                                continue
-                            
-                            try:
-                                gh_issue = self.rate_lim.request(repo.get_issue, number=int(issue[1]))
-                                data['related_issues'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
-                                if gh_issue.body:
-                                    data['related_issues'] += str(gh_issue.body)
-                                issue_found = True
-                            except UnknownObjectException:
-                                # The number of the issue mentioned does not exist
-                                pass
-
-                        if issue_found:
-                            fp.write((json.dumps(data) + "\n").encode('utf-8'))
+                    if issue_found:
+                        fp.write((json.dumps(data) + "\n").encode('utf-8'))
         
         shutil.rmtree(repo_path)
 
@@ -187,9 +204,11 @@ class RepoCrawler:
 
     def __search_repos(self, query: str, repo_strategy: RepoStrategy):
         page_list = self.rate_lim.request(self.github.search_repositories, query)
-        if (page_list.totalCount == 1000):
+        totalCount = self.rate_lim.request(getattr, page_list, 'totalCount')
+
+        if (totalCount == 1000):
             logging.warning(f'1000 results limit of the GitHub API was reached.\nQuery: {query}')
-        n_pages = math.ceil(page_list.totalCount / RepoCrawler.__PAGE_SIZE)
+        n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
             repos = self.rate_lim.request(page_list.get_page, p)
             for repo in repos:
