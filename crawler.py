@@ -8,6 +8,7 @@ import pygit2
 import tempfile
 import logging
 import pandas as pd
+from unidiff import PatchSet
 from abc import ABC, abstractmethod
 from act import get_failed_tests
 from github import Github, Repository, UnknownObjectException, RateLimitExceededException
@@ -73,7 +74,7 @@ class BugCollectorStrategy(RepoStrategy):
             repo.clone_url, 
             repo_path
         )
-                  
+
         if len(list(repo_clone.references.iterator())) > 0:
             with open(self.data_path, "ab") as fp:
                 for commit in repo_clone.walk(repo_clone.head.target):
@@ -107,14 +108,21 @@ class BugCollectorStrategy(RepoStrategy):
                         'related_issues': '',
                         # 'failed_tests': failed_diff
                     }
-                    
-                    # FIXME
-                    # Each Patch corresponds to the changes in a single file
-                    # for p in diff:
-                    #     print(p.text)
 
+                    # Bug Patch and Tests
                     diff = repo_clone.diff(commit_hex, previous_commit_hex)
-                    data['patch'] = diff.patch
+                    patch = PatchSet(diff.patch)
+                    bug_patch = PatchSet('')
+                    test_patch = PatchSet('')
+
+                    for p in patch:
+                        if any([keyword in p.source_file.split(os.sep) for keyword in ['test', 'tests']]):
+                            test_patch.append(p)
+                        else:
+                            bug_patch.append(p)
+
+                    data['bug_patch'] = str(bug_patch)
+                    data['test_patch'] = str(test_patch)
 
                     # Avoids some mentions to PRs
                     issue_found = False
