@@ -73,7 +73,7 @@ class BugCollectorStrategy(RepoStrategy):
             repo.clone_url, 
             repo_path
         )
-
+                  
         if len(list(repo_clone.references.iterator())) > 0:
             with open(self.data_path, "ab") as fp:
                 for commit in repo_clone.walk(repo_clone.head.target):
@@ -87,16 +87,16 @@ class BugCollectorStrategy(RepoStrategy):
                     previous_commit_hex = commit.hex + '~1'
                     previous_commit = repo_clone.revparse_single(previous_commit_hex)
 
-                    repo_clone.checkout_tree(previous_commit)
-                    repo_clone.set_head(previous_commit.oid)
-                    previous_failed_tests = get_failed_tests(repo_path)
-                    repo_clone.checkout_tree(commit)
-                    repo_clone.set_head(commit.oid)
-                    current_failed_tests = get_failed_tests(repo_path)
-                    failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
-                    # No tests were fixed
-                    if len(failed_diff) == 0:
-                        continue
+                    # repo_clone.checkout_tree(previous_commit)
+                    # repo_clone.set_head(previous_commit.oid)
+                    # previous_failed_tests = get_failed_tests(repo_path)
+                    # repo_clone.checkout_tree(commit)
+                    # repo_clone.set_head(commit.oid)
+                    # current_failed_tests = get_failed_tests(repo_path)
+                    # failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
+                    # # No tests were fixed
+                    # if len(failed_diff) == 0:
+                    #     continue
 
                     data = { 
                         'repository': repo.full_name,
@@ -105,7 +105,7 @@ class BugCollectorStrategy(RepoStrategy):
                         'commit_hash': commit.hex,
                         'commit_message': commit.message,
                         'related_issues': '',
-                        'failed_tests': failed_diff
+                        # 'failed_tests': failed_diff
                     }
                     
                     # FIXME
@@ -128,7 +128,11 @@ class BugCollectorStrategy(RepoStrategy):
                             data['related_issues'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
                             if gh_issue.body:
                                 data['related_issues'] += str(gh_issue.body)
-                            issue_found = True
+                            # Filter only bug issues
+                            for label in gh_issue.labels:
+                                if label.name == 'bug':
+                                    issue_found = True
+                                    break
                         except UnknownObjectException:
                             # The number of the issue mentioned does not exist
                             pass
