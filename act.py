@@ -28,7 +28,7 @@ class GithubWorkflow:
                 self.doc.pop(True)
 
     def __is_test(self, name):
-        return any(map(lambda word: word in GithubWorkflow.__TESTS_KEYWORDS, name.split(' ')))
+        return any(map(lambda word: word.lower() in GithubWorkflow.__TESTS_KEYWORDS, name.split(' ')))
     
     def has_tests(self):
         try:
@@ -65,6 +65,16 @@ class GithubWorkflow:
                 job['runs-on'] = 'ubuntu-latest'
             if 'strategy' in job:
                 walk_doc(job['strategy'])
+
+    def simplify_strategies(self):
+        '''
+        Keep only first elements from lists
+        '''
+        for job_name, job in self.doc['jobs'].items():
+            if 'strategy' in job and 'matrix' in job['strategy']:
+                for key, value in job['strategy']['matrix'].items():
+                    if isinstance(value, list):
+                        job['strategy']['matrix'][key] = [value[0]] 
 
     def save_yaml(self, new_path):
         with open(new_path, 'w') as file:
@@ -134,6 +144,7 @@ def get_failed_tests(repo_path):
                 continue
 
             workflow.remove_unsupported_os()
+            workflow.simplify_strategies()
             new_filename = file.split('.')[0] + "-crawler." + file.split('.')[1]
             new_path = os.path.join(dirpath, new_filename)
             workflow.save_yaml(new_path)
