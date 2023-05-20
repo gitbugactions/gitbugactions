@@ -88,17 +88,6 @@ class BugCollectorStrategy(RepoStrategy):
                     previous_commit_hex = commit.hex + '~1'
                     previous_commit = repo_clone.revparse_single(previous_commit_hex)
 
-                    # repo_clone.checkout_tree(previous_commit)
-                    # repo_clone.set_head(previous_commit.oid)
-                    # previous_failed_tests = get_failed_tests(repo_path)
-                    # repo_clone.checkout_tree(commit)
-                    # repo_clone.set_head(commit.oid)
-                    # current_failed_tests = get_failed_tests(repo_path)
-                    # failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
-                    # # No tests were fixed
-                    # if len(failed_diff) == 0:
-                    #     continue
-
                     data = { 
                         'repository': repo.full_name,
                         'clone_url': repo.clone_url,
@@ -110,7 +99,7 @@ class BugCollectorStrategy(RepoStrategy):
                     }
 
                     # Bug Patch and Tests
-                    diff = repo_clone.diff(commit_hex, previous_commit_hex)
+                    diff = repo_clone.diff(previous_commit_hex, commit_hex)
                     patch = PatchSet(diff.patch)
                     bug_patch = PatchSet('')
                     test_patch = PatchSet('')
@@ -120,6 +109,10 @@ class BugCollectorStrategy(RepoStrategy):
                             test_patch.append(p)
                         else:
                             bug_patch.append(p)
+
+                    # Ignore commits without tests
+                    if len(test_patch) == 0:
+                        continue
 
                     data['bug_patch'] = str(bug_patch)
                     data['test_patch'] = str(test_patch)
@@ -145,8 +138,23 @@ class BugCollectorStrategy(RepoStrategy):
                             # The number of the issue mentioned does not exist
                             pass
 
-                    if issue_found:
-                        fp.write((json.dumps(data) + "\n").encode('utf-8'))
+                    if not issue_found:
+                        continue
+
+                    # Apply diff and run tests
+                    # repo_clone.checkout_tree(previous_commit)
+                    # repo_clone.set_head(previous_commit.oid)
+                    # repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
+                    # previous_failed_tests = get_failed_tests(repo_path)
+                    # repo_clone.checkout_tree(commit)
+                    # repo_clone.set_head(commit.oid)
+                    # current_failed_tests = get_failed_tests(repo_path)
+                    # # failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
+                    # # # No tests were fixed
+                    # if len(previous_failed_tests) == 0: #FIXME check if added tests failed
+                    #     continue
+
+                    fp.write((json.dumps(data) + "\n").encode('utf-8'))
         
         shutil.rmtree(repo_path)
 
