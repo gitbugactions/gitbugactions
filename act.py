@@ -1,5 +1,6 @@
 import os
 import yaml
+import psutil
 import subprocess
 import xml.etree.ElementTree as ET
 
@@ -30,6 +31,7 @@ class GithubWorkflow:
     def __is_test(self, name):
         return any(map(lambda word: word.lower() in GithubWorkflow.__TESTS_KEYWORDS, name.split(' ')))
     
+    # FIXME remove integration tests
     def has_tests(self):
         try:
             if self.__is_test(self.doc["name"]):
@@ -105,7 +107,7 @@ class JUnitXML:
                             failure = testcase[0]
                             if failure.tag == "failure":
                                 failed_tests.append(
-                                    (testcase.attrib['classname'], failure.attrib['type'], failure.attrib['message'])
+                                    (testcase.attrib['classname'], testcase.attrib['name'], failure.attrib['type'], failure.attrib['message'])
                                 )
 
         return failed_tests
@@ -119,14 +121,32 @@ class Act:
         " -P ubuntu-22.04=catthehacker/ubuntu:act-22.04" + \
         " -P ubuntu-20.04=catthehacker/ubuntu:full-20.04" + \
         " -P ubuntu-18.04=catthehacker/ubuntu:full-18.04"
+    
+    
+    def __init__(self, timeout=5):
+        '''
+        Args:
+            timeout (int): Timeout in minutes
+        '''
+        self.timeout = timeout
 
     def run_act(self, repo_path, workflows, test_parser):
+        def kill(proc_pid):
+            process = psutil.Process(proc_pid)
+            for proc in process.children(recursive=True):
+                proc.kill()
+            process.kill()
+
         command = f"cd {repo_path} && "
         command += f"{Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS}"
 
         for workflow in workflows:
             p = subprocess.Popen(command + f" -W {workflow}", shell=True)
-            code = p.wait()
+            try:
+                code = p.wait(timeout=self.timeout * 60)
+            except subprocess.TimeoutExpired:
+                kill(p.pid)
+                return None
 
         return test_parser.get_failed_tests()
 

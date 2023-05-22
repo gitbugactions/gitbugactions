@@ -11,7 +11,7 @@ import pandas as pd
 from unidiff import PatchSet
 from abc import ABC, abstractmethod
 from act import get_failed_tests
-from github import Github, Repository, UnknownObjectException, RateLimitExceededException
+from github import Github, Repository, UnknownObjectException, RateLimitExceededException, GithubException
 from datetime import datetime, timedelta
 
 # FIXME change to custom logger
@@ -77,7 +77,12 @@ class BugCollectorStrategy(RepoStrategy):
 
         if len(list(repo_clone.references.iterator())) > 0:
             with open(self.data_path, "ab") as fp:
+                first_commit = None
+
                 for commit in repo_clone.walk(repo_clone.head.target):
+                    if first_commit is None:
+                        first_commit = commit
+
                     # Use only commits with issues
                     # https://liuhuigmail.github.io/publishedPappers/TSE2022BugBuilder.pdf
                     issues = re.findall(BugCollectorStrategy.__FIX_ISSUE_REGEX, commit.message)
@@ -137,21 +142,36 @@ class BugCollectorStrategy(RepoStrategy):
                         except UnknownObjectException:
                             # The number of the issue mentioned does not exist
                             pass
+                        except GithubException:
+                            # Issues are disabled for this repo
+                            break
 
                     if not issue_found:
                         continue
 
-                    # Apply diff and run tests
+                    # # Apply diff and run tests
                     # repo_clone.checkout_tree(previous_commit)
                     # repo_clone.set_head(previous_commit.oid)
                     # repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
                     # previous_failed_tests = get_failed_tests(repo_path)
+                    # if previous_failed_tests is None:
+                    #     # Timeout: The other commits will take similar amount of time
+                    #     break
+
                     # repo_clone.checkout_tree(commit)
                     # repo_clone.set_head(commit.oid)
                     # current_failed_tests = get_failed_tests(repo_path)
-                    # # failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
-                    # # # No tests were fixed
-                    # if len(previous_failed_tests) == 0: #FIXME check if added tests failed
+                    # if current_failed_tests is None:
+                    #     # Timeout: The other commits will take similar amount of time
+                    #     break
+                
+                    # # Back to default branch (avoids conflitcts)
+                    # repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+
+                    # failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
+
+                    # # No tests were fixed
+                    # if len(failed_diff) == 0:
                     #     continue
 
                     fp.write((json.dumps(data) + "\n").encode('utf-8'))
