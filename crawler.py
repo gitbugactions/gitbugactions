@@ -1,5 +1,6 @@
 import os
 import re
+import uuid
 import json
 import time
 import math
@@ -83,11 +84,14 @@ class BugCollectorStrategy(RepoStrategy):
                     if first_commit is None:
                         first_commit = commit
 
+                    if 'fix' not in commit.message.lower():
+                        continue
+
                     # Use only commits with issues
                     # https://liuhuigmail.github.io/publishedPappers/TSE2022BugBuilder.pdf
-                    issues = re.findall(BugCollectorStrategy.__FIX_ISSUE_REGEX, commit.message)
-                    if len(issues) == 0:
-                        continue
+                    # issues = re.findall(BugCollectorStrategy.__FIX_ISSUE_REGEX, commit.message)
+                    # if len(issues) == 0:
+                    #     continue
 
                     commit_hex = commit.hex
                     previous_commit_hex = commit.hex + '~1'
@@ -123,56 +127,66 @@ class BugCollectorStrategy(RepoStrategy):
                     data['test_patch'] = str(test_patch)
 
                     # Avoids some mentions to PRs
-                    issue_found = False
+                    # issue_found = False
 
-                    for issue in issues:
-                        if not issue[1].isdigit():
-                            continue
+                    # for issue in issues:
+                    #     if not issue[1].isdigit():
+                    #         continue
                         
-                        try:
-                            gh_issue = self.rate_lim.request(repo.get_issue, number=int(issue[1]))
-                            data['related_issues'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
-                            if gh_issue.body:
-                                data['related_issues'] += str(gh_issue.body)
-                            # Filter only bug issues
-                            for label in gh_issue.labels:
-                                if label.name == 'bug':
-                                    issue_found = True
-                                    break
-                        except UnknownObjectException:
-                            # The number of the issue mentioned does not exist
-                            pass
-                        except GithubException:
-                            # Issues are disabled for this repo
-                            break
+                    #     try:
+                    #         gh_issue = self.rate_lim.request(repo.get_issue, number=int(issue[1]))
+                    #         data['related_issues'] += f"\n Issue #{issue[1]} - {gh_issue.title}\n"
+                    #         if gh_issue.body:
+                    #             data['related_issues'] += str(gh_issue.body)
+                    #         # Filter only bug issues
+                    #         for label in gh_issue.labels:
+                    #             if label.name == 'bug':
+                    #                 issue_found = True
+                    #                 break
+                    #     except UnknownObjectException:
+                    #         # The number of the issue mentioned does not exist
+                    #         pass
+                    #     except GithubException:
+                    #         # Issues are disabled for this repo
+                    #         break
 
-                    if not issue_found:
-                        continue
-
-                    # # Apply diff and run tests
-                    # repo_clone.checkout_tree(previous_commit)
-                    # repo_clone.set_head(previous_commit.oid)
-                    # repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
-                    # previous_failed_tests = get_failed_tests(repo_path)
-                    # if previous_failed_tests is None:
-                    #     # Timeout: The other commits will take similar amount of time
-                    #     break
-
-                    # repo_clone.checkout_tree(commit)
-                    # repo_clone.set_head(commit.oid)
-                    # current_failed_tests = get_failed_tests(repo_path)
-                    # if current_failed_tests is None:
-                    #     # Timeout: The other commits will take similar amount of time
-                    #     break
-                
-                    # # Back to default branch (avoids conflitcts)
-                    # repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
-
-                    # failed_diff = list(set(previous_failed_tests).symmetric_difference(set(current_failed_tests)))
-
-                    # # No tests were fixed
-                    # if len(failed_diff) == 0:
+                    # if not issue_found:
                     #     continue
+
+                    # Apply diff and run tests
+                    repo_clone.checkout_tree(previous_commit)
+                    # Creates ref to avoid "failed to identify reference"
+                    repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
+                    repo_clone.set_head(previous_commit.oid)
+                    try:
+                        repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
+                    except pygit2.GitError:
+                        # Invalid patches
+                        continue
+                    previous_failed_tests = get_failed_tests(repo_path, reuse=True)
+                    if previous_failed_tests is None:
+                        # Timeout: The other commits will take similar amount of time
+                        # Job failed without tests failing
+                        break
+
+                    repo_clone.checkout_tree(commit)
+                    # Creates ref to avoid "failed to identify reference"
+                    repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, commit.author, commit.message)
+                    repo_clone.set_head(commit.oid)
+                    current_failed_tests = get_failed_tests(repo_path)
+                    if current_failed_tests is None:
+                        # Timeout: The other commits will take similar amount of time
+                        # Job failed without tests failing
+                        break
+                
+                    # Back to default branch (avoids conflitcts)
+                    repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+
+                    failed_diff = list(set(previous_failed_tests).difference(set(current_failed_tests)))
+
+                    # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
+                    if len(failed_diff) == 0:
+                        continue
 
                     fp.write((json.dumps(data) + "\n").encode('utf-8'))
         

@@ -2,7 +2,7 @@ import os
 import yaml
 import psutil
 import subprocess
-import xml.etree.ElementTree as ET
+from test_parser import JUnitXML
 
 class GithubWorkflow:
     __TESTS_KEYWORDS = ["test", "tests", "testing"]
@@ -34,16 +34,17 @@ class GithubWorkflow:
     # FIXME remove integration tests
     def has_tests(self):
         try:
-            if self.__is_test(self.doc["name"]):
+            if "name" in self.doc and self.__is_test(self.doc["name"]):
                 return True
             
             for job_name, job in self.doc['jobs'].items():
                 if self.__is_test(job_name):
                     return True
                 
-                for step in job['steps']:
-                    if 'name' in step and self.__is_test(step['name']):
-                        return True
+                if 'steps' in job:
+                    for step in job['steps']:
+                        if 'name' in step and self.__is_test(step['name']):
+                            return True
                     
             return False
         except yaml.YAMLError:
@@ -61,6 +62,8 @@ class GithubWorkflow:
                 doc[:] = filter(lambda x: x not in GithubWorkflow.__UNSUPPORTED_OS, doc)
                 for value in doc:
                     walk_doc(value)
+                if len(doc) == 0:
+                    doc.append('ubuntu-latest')
 
         for job_name, job in self.doc['jobs'].items():
             if 'runs-on' in job and job['runs-on'] in GithubWorkflow.__UNSUPPORTED_OS:
@@ -83,51 +86,25 @@ class GithubWorkflow:
             yaml.dump(self.doc, file)
 
 
-class JUnitXML:
-    def __init__(self, folder):
-        self.folder = folder
-
-    def get_failed_tests(self):
-        failed_tests = []
-
-        for (dirpath, dirnames, filenames) in os.walk(self.folder):
-            for filename in filenames:
-                if filename.endswith('.xml'):
-                    root = ET.parse((os.path.join(dirpath, filename))).getroot()
-                    if root.tag == "testsuites":
-                        testsuites = root.findall("testsuite")
-                    else:
-                        testsuites = [root]
-
-                    for testsuite in testsuites:
-                        for testcase in testsuite.findall("testcase"):
-                            if len(testcase) == 0:
-                                continue
-
-                            failure = testcase[0]
-                            if failure.tag == "failure":
-                                failed_tests.append(
-                                    (testcase.attrib['classname'], testcase.attrib['name'], failure.attrib['type'], failure.attrib['message'])
-                                )
-
-        return failed_tests
-
-
 class Act:
     __ACT_PATH="act"
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --rm --container-options '-u {os.getuid()}'"
+    __FLAGS=f"--bind --container-options '-u {os.getuid()}'"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=catthehacker/ubuntu:full-latest" + \
         " -P ubuntu-22.04=catthehacker/ubuntu:act-22.04" + \
         " -P ubuntu-20.04=catthehacker/ubuntu:full-20.04" + \
         " -P ubuntu-18.04=catthehacker/ubuntu:full-18.04"
     
     
-    def __init__(self, timeout=5):
+    def __init__(self, reuse, timeout=5):
         '''
         Args:
             timeout (int): Timeout in minutes
         '''
+        if reuse:
+            self.flags = "--rm"
+        else:
+            self.flags = "--reuse"
         self.timeout = timeout
 
     def run_act(self, repo_path, workflows, test_parser):
@@ -138,21 +115,26 @@ class Act:
             process.kill()
 
         command = f"cd {repo_path} && "
-        command += f"{Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS}"
+        command += f"{Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
 
         for workflow in workflows:
             p = subprocess.Popen(command + f" -W {workflow}", shell=True)
             try:
                 code = p.wait(timeout=self.timeout * 60)
+                tests_failed = test_parser.get_failed_tests()
+
+                # If no tests failed but the job failed, then something went wrong
+                if len(tests_failed) == 0 and code != 0:
+                    return None
+                
+                return tests_failed
             except subprocess.TimeoutExpired:
                 kill(p.pid)
                 return None
 
-        return test_parser.get_failed_tests()
 
-
-def get_failed_tests(repo_path):
-    act = Act()
+def get_failed_tests(repo_path, reuse=False):
+    act = Act(reuse, timeout=10)
     workflows_path = os.path.join(repo_path, ".github", "workflows")
     tests_workflows = []
 
@@ -174,7 +156,8 @@ def get_failed_tests(repo_path):
     failed_tests = act.run_act(repo_path, tests_workflows, parser)
 
     for test_workflow in tests_workflows:
-       os.remove(os.path.join(repo_path, test_workflow))
+        if os.path.exists(test_workflow):
+            os.remove(os.path.join(repo_path, test_workflow))
 
     return failed_tests
 
