@@ -1,4 +1,5 @@
 import os
+import docker
 import yaml
 import psutil
 import subprocess
@@ -16,12 +17,16 @@ class GithubWorkflow:
         "macos-12",
         "macos-latest-xl",
         "macos-12-xl",
-        "macos-11"
+        "macos-11",
+        "ubuntu-22.04",
+        "ubuntu-20.04",
+        "ubuntu-18.04"
     ]
 
     def __init__(self, path):
         with open(path, "r") as stream:
             self.doc = yaml.safe_load(stream)
+            self.path = path
 
             # Solves problem where pyyaml parses 'on' (used in Github actions) as True
             if True in self.doc:
@@ -90,11 +95,7 @@ class Act:
     __ACT_PATH="act"
     # The flag -u allows files to be created with the current user
     __FLAGS=f"--bind --container-options '-u {os.getuid()}'"
-    __DEFAULT_RUNNERS = "-P ubuntu-latest=catthehacker/ubuntu:full-latest" + \
-        " -P ubuntu-22.04=catthehacker/ubuntu:act-22.04" + \
-        " -P ubuntu-20.04=catthehacker/ubuntu:full-20.04" + \
-        " -P ubuntu-18.04=catthehacker/ubuntu:full-18.04"
-    
+    __DEFAULT_RUNNERS = "-P ubuntu-latest=catthehacker/ubuntu:full-latest"
     
     def __init__(self, reuse, timeout=5):
         '''
@@ -107,7 +108,7 @@ class Act:
             self.flags = "--reuse"
         self.timeout = timeout
 
-    def run_act(self, repo_path, workflows, test_parser):
+    def run_act(self, repo_path, workflow, test_parser):
         def kill(proc_pid):
             process = psutil.Process(proc_pid)
             for proc in process.children(recursive=True):
@@ -117,50 +118,83 @@ class Act:
         command = f"cd {repo_path} && "
         command += f"{Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
 
-        for workflow in workflows:
-            p = subprocess.Popen(command + f" -W {workflow}", shell=True)
-            try:
-                code = p.wait(timeout=self.timeout * 60)
-                tests_failed = test_parser.get_failed_tests()
+        p = subprocess.Popen(command + f" -W {workflow}", shell=True)
+        try:
+            code = p.wait(timeout=self.timeout * 60)
+            tests_failed = test_parser.get_failed_tests()
 
-                # If no tests failed but the job failed, then something went wrong
-                if len(tests_failed) == 0 and code != 0:
-                    return None
-                
-                return tests_failed
-            except subprocess.TimeoutExpired:
-                kill(p.pid)
+            # If no tests failed but the job failed, then something went wrong
+            if len(tests_failed) == 0 and code != 0:
                 return None
+            
+            return tests_failed
+        except subprocess.TimeoutExpired:
+            kill(p.pid)
+            return None
 
 
-def get_failed_tests(repo_path, reuse=False):
-    act = Act(reuse, timeout=10)
-    workflows_path = os.path.join(repo_path, ".github", "workflows")
-    tests_workflows = []
+class GitHubTestActions:
+    def __init__(self, repo_path):
+        self.repo_path = repo_path
+        self.workflows = []
 
-    for (dirpath, dirnames, filenames) in os.walk(workflows_path):
-        yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
-        for file in yaml_files:
-            workflow = GithubWorkflow(os.path.join(dirpath, file))
-            if not workflow.has_tests():
-                continue
+        workflows_path = os.path.join(repo_path, ".github", "workflows")
+        for (dirpath, dirnames, filenames) in os.walk(workflows_path):
+            yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
+            for file in yaml_files:
+                workflow = GithubWorkflow(os.path.join(dirpath, file))
+                if not workflow.has_tests():
+                    continue
 
-            workflow.remove_unsupported_os()
-            workflow.simplify_strategies()
-            new_filename = file.split('.')[0] + "-crawler." + file.split('.')[1]
-            new_path = os.path.join(dirpath, new_filename)
-            workflow.save_yaml(new_path)
-            tests_workflows.append(os.path.relpath(new_path, repo_path))
+                workflow.remove_unsupported_os()
+                workflow.simplify_strategies()
 
-    parser = JUnitXML(os.path.join(repo_path, "target", "surefire-reports"))
-    failed_tests = act.run_act(repo_path, tests_workflows, parser)
+                filename = os.path.basename(workflow.path)
+                dirpath = os.path.dirname(workflow.path)
+                new_filename = filename.split('.')[0] + "-crawler." + filename.split('.')[1]
+                new_path = os.path.join(dirpath, new_filename)
+                workflow.path = new_path
 
-    for test_workflow in tests_workflows:
-        if os.path.exists(test_workflow):
-            os.remove(os.path.join(repo_path, test_workflow))
+                self.workflows.append(workflow)
 
-    return failed_tests
+    def save_workflows(self):
+        for workflow in self.workflows:
+            workflow.save_yaml(workflow.path)
 
+    def delete_workflow(self, workflow):
+        if os.path.exists(workflow.path):
+            os.remove(workflow.path)
+
+    def remove_workflow(self, rem_workflow):
+        for i, workflow in enumerate(self.workflows):
+            if rem_workflow.path == workflow.path:
+                self.workflows.pop(i)
+                self.delete_workflow(workflow)
+                break
+
+    def delete_workflows(self):
+        for workflow in self.workflows:
+            self.delete_workflow(workflow)
+
+    def get_failed_tests(self, workflow):
+        act = Act(False, timeout=3)
+        parser = JUnitXML(os.path.join(self.repo_path, "target", "surefire-reports"))
+        workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
+        failed_tests = act.run_act(self.repo_path, workflow_rel_path, parser)
+        # Remove workflows that fail or timeout
+        if failed_tests is None:
+            self.remove_workflow(workflow)
+        return failed_tests
+    
+    def remove_containers(self):
+        client = docker.from_env()
+        ancestors = [
+            "catthehacker/ubuntu:act-latest", 
+        ]
+
+        for container in client.containers.list(filters={"ancestor": ancestors}):
+            container.stop()
+            container.remove()
 
 #repo_path = "/home/nfsaavedra/Downloads/flacoco"
 #print(get_failed_tests(repo_path))
