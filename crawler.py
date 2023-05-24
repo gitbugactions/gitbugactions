@@ -8,12 +8,14 @@ import shutil
 import pygit2
 import tempfile
 import logging
+import tqdm
 import pandas as pd
 from unidiff import PatchSet
 from abc import ABC, abstractmethod
 from act import GitHubTestActions
 from github import Github, Repository, RateLimitExceededException
 from datetime import datetime, timedelta
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # FIXME change to custom logger
 logging.basicConfig(level=logging.INFO)
@@ -207,11 +209,12 @@ class BugCollectorStrategy(RepoStrategy):
         # test_actions.remove_containers()
         shutil.rmtree(repo_path)
 
+
 class RepoCrawler:
     __GITHUB_CREATION_DATE = "2008-02-08"
     __PAGE_SIZE = 100
 
-    def __init__(self, query: str, rate_limiter: RateLimiter, pagination_freq: str=None, ):
+    def __init__(self, query: str, rate_limiter: RateLimiter, pagination_freq: str=None, n_workers: int = 1):
         '''
         Args:
             query (str): String with the Github searching format
@@ -230,6 +233,9 @@ class RepoCrawler:
         self.pagination_freq: str = pagination_freq
         self.requests: int = 0
         self.rate_lim = rate_limiter
+        self.n_workers = n_workers
+        self.executor = ThreadPoolExecutor(max_workers=self.n_workers)
+        self.futures = []
 
     def __get_creation_range(self):
         created = list(filter(lambda x: x.startswith('created:'), self.query.split(' ')))
@@ -271,7 +277,9 @@ class RepoCrawler:
         
         return (start_date.isoformat(), end_date.isoformat())
 
+
     def __search_repos(self, query: str, repo_strategy: RepoStrategy):
+        logging.info(f'Searching repos with query: {query}')
         page_list = self.rate_lim.request(self.github.search_repositories, query)
         totalCount = self.rate_lim.request(getattr, page_list, 'totalCount')
 
@@ -280,8 +288,11 @@ class RepoCrawler:
         n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
             repos = self.rate_lim.request(page_list.get_page, p)
+            results = []
             for repo in repos:
-                repo_strategy.handle_repo(repo)
+                args = (repo, )
+                self.futures.append(self.executor.submit(repo_strategy.handle_repo, *args))
+
 
     def get_repos(self, repo_strategy: RepoStrategy):
         if self.pagination_freq is not None:
@@ -301,9 +312,12 @@ class RepoCrawler:
                 created_filter = f" created:{start_date}..{end_date.strftime('%Y-%m-%dT%H:%M:%S')}"
                 self.__search_repos(query + created_filter, repo_strategy)
                 start_date = date_ranges[i].strftime('%Y-%m-%dT%H:%M:%S')
-            
+                           
             end_date = creation_range[1]
             created_filter = f" created:{start_date}..{end_date}"
             self.__search_repos(query + created_filter, repo_strategy)
+            
+            for future in tqdm.tqdm(as_completed(self.futures)):
+                future.result()
         else:
             return self.__search_repos(query, repo_strategy)
