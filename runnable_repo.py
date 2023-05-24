@@ -20,7 +20,7 @@ class RunnableRepoStrategy(RepoStrategy):
         """
         Saves the data json to a file with the name of the repository
         """
-        repo_name = repo.name.replace("/", "-")
+        repo_name = repo.full_name.replace("/", "-")
         data_path = os.path.join(self.data_path, repo_name + ".json")
         with open(data_path, "w") as f:
             json.dump(data, f, indent=4)
@@ -28,7 +28,7 @@ class RunnableRepoStrategy(RepoStrategy):
 
     def handle_repo(self, repo: Repository):
         logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
-        repo_path = os.path.join(tempfile.gettempdir(), self.uuid, repo.name)
+        repo_path = os.path.join(tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-"))
 
         data = {
             'repository': repo.full_name,
