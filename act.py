@@ -6,7 +6,7 @@ import subprocess
 from test_parser import JUnitXML
 
 class GithubWorkflow:
-    __TESTS_KEYWORDS = ["test", "tests", "testing"]
+    __TESTS_KEYWORDS = ["test", "tests", "testing", "verify"]
     __UNSUPPORTED_OS = [
         "windows-latest",
         "windows-2022",
@@ -38,10 +38,18 @@ class GithubWorkflow:
     
     # FIXME remove integration tests
     def has_tests(self):
+        '''
+        Check if the workflow has any tests.
+
+        Returns:
+            bool: True if the workflow has tests, False otherwise.
+        '''
         try:
+            # Check if the workflow name contains any test keywords
             if "name" in self.doc and self.__is_test(self.doc["name"]):
                 return True
             
+            # Check if any job name or step name/run command contains any test keywords
             for job_name, job in self.doc['jobs'].items():
                 if self.__is_test(job_name):
                     return True
@@ -49,6 +57,9 @@ class GithubWorkflow:
                 if 'steps' in job:
                     for step in job['steps']:
                         if 'name' in step and self.__is_test(step['name']):
+                            return True
+                        
+                        if 'run' in step and self.__is_test(step['run']):
                             return True
                     
             return False
@@ -103,34 +114,26 @@ class Act:
             timeout (int): Timeout in minutes
         '''
         if reuse:
-            self.flags = "--rm"
-        else:
             self.flags = "--reuse"
+        else:
+            self.flags = "--rm"
         self.timeout = timeout
 
     def run_act(self, repo_path, workflow, test_parser):
-        def kill(proc_pid):
-            process = psutil.Process(proc_pid)
-            for proc in process.children(recursive=True):
-                proc.kill()
-            process.kill()
+        command = f"cd {repo_path}; "
+        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f" -W {workflow}"
+        
+        print(command)
 
-        command = f"cd {repo_path} && "
-        command += f"{Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
-
-        p = subprocess.Popen(command + f" -W {workflow}", shell=True)
-        try:
-            code = p.wait(timeout=self.timeout * 60)
-            tests_failed = test_parser.get_failed_tests()
-
-            # If no tests failed but the job failed, then something went wrong
-            if len(tests_failed) == 0 and code != 0:
-                return None
-            
-            return tests_failed
-        except subprocess.TimeoutExpired:
-            kill(p.pid)
-            return None
+        run = subprocess.run(command, shell=True, capture_output=True)
+        stdout = run.stdout.decode('utf-8')
+        stderr = run.stderr.decode('utf-8')
+        tests_failed = test_parser.get_failed_tests()
+        if len(tests_failed) == 0 and run.returncode != 0:
+            return None, stdout, stderr
+        
+        return tests_failed, stdout, stderr
 
 
 class GitHubTestActions:
@@ -177,19 +180,19 @@ class GitHubTestActions:
             self.delete_workflow(workflow)
 
     def get_failed_tests(self, workflow):
-        act = Act(False, timeout=3)
+        act = Act(False, timeout=10)
         parser = JUnitXML(os.path.join(self.repo_path, "target", "surefire-reports"))
         workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
-        failed_tests = act.run_act(self.repo_path, workflow_rel_path, parser)
+        failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow_rel_path, parser)
         # Remove workflows that fail or timeout
         if failed_tests is None:
             self.remove_workflow(workflow)
-        return failed_tests
+        return failed_tests, stdout, stderr
     
     def remove_containers(self):
         client = docker.from_env()
         ancestors = [
-            "catthehacker/ubuntu:act-latest", 
+            "catthehacker/ubuntu:full-latest", 
         ]
 
         for container in client.containers.list(filters={"ancestor": ancestors}):
