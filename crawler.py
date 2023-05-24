@@ -72,7 +72,7 @@ class BugCollectorStrategy(RepoStrategy):
 
     def handle_repo(self, repo: Repository):
         logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
-        repo_path = os.path.join(tempfile.gettempdir(), repo.name)
+        repo_path = os.path.join(tempfile.gettempdir(), repo.full_name.replace('/', '-'))
         repo_clone = pygit2.clone_repository(
             repo.clone_url, 
             repo_path
