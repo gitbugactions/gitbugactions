@@ -105,8 +105,8 @@ class GithubWorkflow:
 class Act:
     __ACT_PATH="act"
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --container-options '-u {os.getuid()}'"
-    __DEFAULT_RUNNERS = "-P ubuntu-latest=catthehacker/ubuntu:full-latest"
+    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
+    __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
     
     def __init__(self, reuse, timeout=5):
         '''
@@ -192,12 +192,25 @@ class GitHubTestActions:
     def remove_containers(self):
         client = docker.from_env()
         ancestors = [
-            "catthehacker/ubuntu:full-latest", 
+            "crawlergpt:latest", 
         ]
 
         for container in client.containers.list(filters={"ancestor": ancestors}):
             container.stop()
             container.remove()
+
+client = docker.from_env()
+if len(client.images.list(name="crawlergpt")) > 0:
+    client.images.remove(image="crawlergpt")
+
+with open("Dockerfile", "w") as f:
+    client = docker.from_env()
+    dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
+    dockerfile += f"RUN usermod -u {os.getuid()} runneradmin"
+    f.write(dockerfile)
+
+client.images.build(path="./", tag="crawlergpt", forcerm=True)
+os.remove("Dockerfile")
 
 #repo_path = "/home/nfsaavedra/Downloads/flacoco"
 #print(get_failed_tests(repo_path))
