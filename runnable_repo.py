@@ -67,5 +67,5 @@ class RunnableRepoStrategy(RepoStrategy):
 if __name__ == '__main__':
     query = input()
     rate_limiter = RateLimiter()
-    crawler = RepoCrawler(query, rate_limiter, pagination_freq='Y', n_workers=int(input()))
+    crawler = RepoCrawler(query, rate_limiter, pagination_freq='M', n_workers=int(input()))
     crawler.get_repos(RunnableRepoStrategy("./out/", rate_limiter))
