@@ -11,6 +11,7 @@ class GithubWorkflow:
         "windows-latest",
         "windows-2022",
         "windows-2019",
+        "windows-2016",
         "macos-13",
         "macos-13-xl",
         "macos-latest",
@@ -70,20 +71,22 @@ class GithubWorkflow:
         def walk_doc(doc):
             if isinstance(doc, dict):
                 for key, value in doc.items():
-                    if value in GithubWorkflow.__UNSUPPORTED_OS:
+                    if str(value).lower() in GithubWorkflow.__UNSUPPORTED_OS:
                         doc[key] = "ubuntu-latest"
                     else:
                         walk_doc(value)
             elif isinstance(doc, list):
-                doc[:] = filter(lambda x: x not in GithubWorkflow.__UNSUPPORTED_OS, doc)
+                doc[:] = filter(lambda x: str(x).lower() not in GithubWorkflow.__UNSUPPORTED_OS, doc)
                 for value in doc:
                     walk_doc(value)
                 if len(doc) == 0:
                     doc.append('ubuntu-latest')
 
         for job_name, job in self.doc['jobs'].items():
-            if 'runs-on' in job and job['runs-on'] in GithubWorkflow.__UNSUPPORTED_OS:
+            if 'runs-on' in job and str(job['runs-on']).lower() in GithubWorkflow.__UNSUPPORTED_OS:
                 job['runs-on'] = 'ubuntu-latest'
+            if 'strategy' in job and 'os' in job['strategy'] and isinstance(job['strategy']['os'], list):
+                job['strategy']['os'] = ['ubuntu-latest']
             if 'strategy' in job:
                 walk_doc(job['strategy'])
 
@@ -212,6 +215,8 @@ with open("Dockerfile", "w") as f:
 client.images.build(path="./", tag="crawlergpt", forcerm=True)
 os.remove("Dockerfile")
 
-#repo_path = "/home/nfsaavedra/Downloads/flacoco"
-#print(get_failed_tests(repo_path))
+# repo_path = "/home/nfsaavedra/Downloads/mina"
+# actions = GitHubTestActions(repo_path)
+# actions.save_workflows()
+# actions.get_failed_tests(actions.workflows[0])
 #https://github.com/marketplace/actions/publish-test-results#generating-test-result-files
