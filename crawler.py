@@ -159,7 +159,7 @@ class BugCollectorStrategy(RepoStrategy):
                     previous_failed_tests = []
                     current_failed_tests = []
 
-                    for workflow in test_actions.workflows:
+                    for workflow in test_actions.test_workflows:
                         # Apply diff and run tests
                         repo_clone.checkout_tree(previous_commit)
                         # Creates ref to avoid "failed to identify reference"

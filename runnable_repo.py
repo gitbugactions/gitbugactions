@@ -35,6 +35,7 @@ class RunnableRepoStrategy(RepoStrategy):
             'clone_url': repo.clone_url,
             'timestamp': datetime.utcnow().isoformat() + "Z",
             'clone_success': False,
+            'number of actions': 0,
             'number_of_test_actions': 0,
             'actions_successful': False
         }
@@ -47,12 +48,13 @@ class RunnableRepoStrategy(RepoStrategy):
             data['clone_success'] = True
 
             test_actions = GitHubTestActions(repo_path)
-            data['number_of_test_actions'] = len(test_actions.workflows)
+            data['number of actions'] = len(test_actions.workflows)
+            data['number_of_test_actions'] = len(test_actions.test_workflows)
             test_actions.save_workflows()
             
-            if len(test_actions.workflows) == 1:
+            if len(test_actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
-                data['actions_successful'], data['actions_stdout'], data['actions_stderr'] = test_actions.get_failed_tests(test_actions.workflows[0])
+                data['actions_successful'], data['actions_stdout'], data['actions_stderr'] = test_actions.get_failed_tests(test_actions.test_workflows[0])
                 data['actions_successful'] = data['actions_successful'] is not None
             
             if os.path.exists(repo_path):

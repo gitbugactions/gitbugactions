@@ -143,12 +143,15 @@ class GitHubTestActions:
     def __init__(self, repo_path):
         self.repo_path = repo_path
         self.workflows = []
+        self.test_workflows = []
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
             yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
             for file in yaml_files:
                 workflow = GithubWorkflow(os.path.join(dirpath, file))
+                self.workflows.append(workflow)
+                
                 if not workflow.has_tests():
                     continue
 
@@ -161,10 +164,10 @@ class GitHubTestActions:
                 new_path = os.path.join(dirpath, new_filename)
                 workflow.path = new_path
 
-                self.workflows.append(workflow)
+                self.test_workflows.append(workflow)
 
     def save_workflows(self):
-        for workflow in self.workflows:
+        for workflow in self.test_workflows:
             workflow.save_yaml(workflow.path)
 
     def delete_workflow(self, workflow):
@@ -172,14 +175,14 @@ class GitHubTestActions:
             os.remove(workflow.path)
 
     def remove_workflow(self, rem_workflow):
-        for i, workflow in enumerate(self.workflows):
+        for i, workflow in enumerate(self.test_workflows):
             if rem_workflow.path == workflow.path:
-                self.workflows.pop(i)
+                self.test_workflows.pop(i)
                 self.delete_workflow(workflow)
                 break
 
     def delete_workflows(self):
-        for workflow in self.workflows:
+        for workflow in self.test_workflows:
             self.delete_workflow(workflow)
 
     def get_failed_tests(self, workflow):
