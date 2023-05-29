@@ -1,0 +1,11 @@
+{
+    "repository": "mycelium-com/wallet-android",
+    "clone_url": "https://github.com/mycelium-com/wallet-android.git",
+    "timestamp": "2023-05-28T17:50:27.053720Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/bc275e72-fd77-11ed-a890-af2cc187fc11/mycelium-com-wallet-android] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/maxim-lobanov/setup-android-tools' # ref=v1\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[CI/build] \u2b50 Run Main maxim-lobanov/setup-android-tools@v1\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/maxim-lobanov-setup-android-tools@v1/ dst=/var/run/act/actions/maxim-lobanov-setup-android-tools@v1/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/maxim-lobanov-setup-android-tools@v1/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/maxim-lobanov-setup-android-tools@v1/dist/index.js] user= workdir=\n[CI/build]   \u2757  ::error::ANDROID_HOME env variable is not defined\n[CI/build]   \u274c  Failure - Main maxim-lobanov/setup-android-tools@v1\n[CI/build] exitcode '1': failure\n[CI/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

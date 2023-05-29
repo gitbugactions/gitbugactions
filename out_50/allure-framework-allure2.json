@@ -1,0 +1,11 @@
+{
+    "repository": "allure-framework/allure2",
+    "clone_url": "https://github.com/allure-framework/allure2.git",
+    "timestamp": "2023-05-28T19:16:31.706708Z",
+    "clone_success": true,
+    "number of actions": 7,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Verify type labels/triage] \ud83d\ude80  Start image=crawlergpt:latest\n[Verify type labels/triage]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Verify type labels/triage]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Verify type labels/triage]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Verify type labels/triage]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/bc275e72-fd77-11ed-a890-af2cc187fc11/allure-framework-allure2] user=0 workdir=\n[Verify type labels/triage]   \u2601  git clone 'https://github.com/baev/action-label-verify' # ref=main\n[Verify type labels/triage] \u2b50 Run Main baev/action-label-verify@main\n[Verify type labels/triage]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/baev-action-label-verify@main/ dst=/var/run/act/actions/baev-action-label-verify@main/\n[Verify type labels/triage]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/baev-action-label-verify@main/] user=0 workdir=\n[Verify type labels/triage]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/baev-action-label-verify@main/dist/index.js] user= workdir=\n[Verify type labels/triage]   \u2757  ::error::Input required and not supplied: repo-token\n[Verify type labels/triage]   \u274c  Failure - Main baev/action-label-verify@main\n[Verify type labels/triage] exitcode '1': failure\n[Verify type labels/triage] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'triage' failed\n"
+}

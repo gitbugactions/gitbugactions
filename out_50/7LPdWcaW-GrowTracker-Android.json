@@ -1,0 +1,11 @@
+{
+    "repository": "7LPdWcaW/GrowTracker-Android",
+    "clone_url": "https://github.com/7LPdWcaW/GrowTracker-Android.git",
+    "timestamp": "2023-05-28T18:54:51.723110Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/bc275e72-fd77-11ed-a890-af2cc187fc11/7LPdWcaW-GrowTracker-Android] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build] \u2b50 Run Main Clone Repo\n[CI/build]   \u2705  Success - Main Clone Repo\n[CI/build] \u2b50 Run Main Set up JDK 1.8\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[CI/build]   \u2757  ::error::Input required and not supplied: distribution\n[CI/build]   \u274c  Failure - Main Set up JDK 1.8\n[CI/build] exitcode '1': failure\n[CI/build] \u2b50 Run Post Set up JDK 1.8\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[CI/build]   \u2705  Success - Post Set up JDK 1.8\n[CI/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

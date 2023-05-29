@@ -1,0 +1,11 @@
+{
+    "repository": "validator/validator",
+    "clone_url": "https://github.com/validator/validator.git",
+    "timestamp": "2023-05-28T17:00:33.669217Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Build/Prepare the build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/Prepare the build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/Prepare the build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Prepare the build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Prepare the build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/bc275e72-fd77-11ed-a890-af2cc187fc11/validator-validator] user=0 workdir=\n[Build/Prepare the build] \u2b50 Run Main actions/checkout@v3\n[Build/Prepare the build]   \u2705  Success - Main actions/checkout@v3\n[Build/Prepare the build] \u2b50 Run Main Update the 'latest' tag\n[Build/Prepare the build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Build/Prepare the build]   | fatal: could not read Username for 'https://github.com': No such device or address\n[Build/Prepare the build]   | Updated tag 'latest' (was 73f8158d)\n[Build/Prepare the build]   | fatal: could not read Username for 'https://github.com': No such device or address\n[Build/Prepare the build]   \u274c  Failure - Main Update the 'latest' tag\n[Build/Prepare the build] exitcode '128': failure\n[Build/Prepare the build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'Prepare the build' failed\n"
+}

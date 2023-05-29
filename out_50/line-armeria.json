@@ -1,0 +1,11 @@
+{
+    "repository": "line/armeria",
+    "clone_url": "https://github.com/line/armeria.git",
+    "timestamp": "2023-05-28T19:02:13.474444Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "",
+    "actions_stderr": "panic: interface conversion: interface {} is map[interface {}]interface {}, not map[string]interface {}\n\ngoroutine 1 [running]:\ngithub.com/nektos/act/pkg/model.(*Job).GetMatrixes(0xc000255200)\n\t/home/runner/work/act/act/pkg/model/workflow.go:364 +0x105a\ngithub.com/nektos/act/pkg/runner.(*runnerImpl).NewPlanExecutor.func1({0xd3dd88, 0xc000370fc0})\n\t/home/runner/work/act/act/pkg/runner/runner.go:121 +0x2dc\ngithub.com/nektos/act/pkg/common.Executor.Then.func1({0xd3dd88, 0xc000370fc0})\n\t/home/runner/work/act/act/pkg/common/executor.go:129 +0x34\ngithub.com/nektos/act/pkg/common.Executor.Finally.func1({0xd3dd88, 0xc000370fc0})\n\t/home/runner/work/act/act/pkg/common/executor.go:175 +0x34\ngithub.com/nektos/act/cmd.newRunCommand.func1(0xc00078e000, {0xc0007a2090, 0x0, 0x9?})\n\t/home/runner/work/act/act/cmd/root.go:556 +0x1804\ngithub.com/spf13/cobra.(*Command).execute(0xc00078e000, {0xc0007a2000, 0x9, 0x9})\n\t/home/runner/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:916 +0x862\ngithub.com/spf13/cobra.(*Command).ExecuteC(0xc00078e000)\n\t/home/runner/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044 +0x3bc\ngithub.com/spf13/cobra.(*Command).Execute(...)\n\t/home/runner/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968\ngithub.com/nektos/act/cmd.Execute({0xd3dce0, 0xc000488840}, {0xd345a8, 0x6})\n\t/home/runner/work/act/act/cmd/root.go:91 +0xf65\nmain.main()\n\t/home/runner/work/act/act/main.go:36 +0x1a7\n"
+}

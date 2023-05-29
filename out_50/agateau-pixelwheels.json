@@ -1,0 +1,11 @@
+{
+    "repository": "agateau/pixelwheels",
+    "clone_url": "https://github.com/agateau/pixelwheels.git",
+    "timestamp": "2023-05-28T18:45:41.280254Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[main/build] \ud83d\ude80  Start image=crawlergpt:latest\n[main/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[main/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[main/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[main/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/bc275e72-fd77-11ed-a890-af2cc187fc11/agateau-pixelwheels] user=0 workdir=\n[main/build]   \u2601  git clone 'https://github.com/GabrielBB/xvfb-action' # ref=v1\n[main/build] \u2b50 Run Main actions/checkout@v3\n[main/build]   \u2705  Success - Main actions/checkout@v3\n[main/build] \u2b50 Run Main Build Docker image\n[main/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1.sh] user= workdir=\n[main/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=pixelwheels&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[main/build]   \u274c  Failure - Main Build Docker image\n[main/build] exitcode '1': failure\n[main/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

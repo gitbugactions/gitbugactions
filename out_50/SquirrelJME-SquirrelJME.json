@@ -1,0 +1,11 @@
+{
+    "repository": "SquirrelJME/SquirrelJME",
+    "clone_url": "https://github.com/SquirrelJME/SquirrelJME.git",
+    "timestamp": "2023-05-28T19:25:26.514136Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Windows Testing/Gradle Build and Test] \ud83d\ude80  Start image=crawlergpt:latest\n[Windows Testing/Gradle Build and Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Windows Testing/Gradle Build and Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Windows Testing/Gradle Build and Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Windows Testing/Gradle Build and Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/bc275e72-fd77-11ed-a890-af2cc187fc11/SquirrelJME-SquirrelJME] user=0 workdir=\n[Windows Testing/Gradle Build and Test] \u2b50 Run Main actions/checkout@v2\n[Windows Testing/Gradle Build and Test]   \u2705  Success - Main actions/checkout@v2\n[Windows Testing/Gradle Build and Test] \u2b50 Run Main Build with Gradle\n[Windows Testing/Gradle Build and Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Windows Testing/Gradle Build and Test]   | /var/run/act/workflow/1: line 2: cmd: command not found\n[Windows Testing/Gradle Build and Test]   \u274c  Failure - Main Build with Gradle\n[Windows Testing/Gradle Build and Test] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Windows Testing/Gradle Build and Test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'Gradle Build and Test' failed\n"
+}
