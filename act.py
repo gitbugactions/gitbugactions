@@ -168,6 +168,8 @@ class GitHubTestActions:
 
     def save_workflows(self):
         for workflow in self.test_workflows:
+            if not os.path.exists(os.path.dirname(workflow.path)):
+                os.makedirs(os.path.dirname(workflow.path))
             workflow.save_yaml(workflow.path)
 
     def delete_workflow(self, workflow):
