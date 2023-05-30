@@ -192,9 +192,6 @@ class GitHubTestActions:
         parser = JUnitXML(os.path.join(self.repo_path, "target", "surefire-reports"))
         workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
         failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow_rel_path, parser)
-        # Remove workflows that fail or timeout
-        if failed_tests is None:
-            self.remove_workflow(workflow)
         return failed_tests, stdout, stderr
     
     def remove_containers(self):
@@ -220,8 +217,9 @@ with open("Dockerfile", "w") as f:
 client.images.build(path="./", tag="crawlergpt", forcerm=True)
 os.remove("Dockerfile")
 
-# repo_path = "/home/nfsaavedra/Downloads/mina"
+# repo_path = "/home/nfsaavedra/Downloads/fess"
 # actions = GitHubTestActions(repo_path)
 # actions.save_workflows()
-# actions.get_failed_tests(actions.workflows[0])
+# for w in actions.workflows:
+#     print(actions.get_failed_tests(w)[0])
 #https://github.com/marketplace/actions/publish-test-results#generating-test-result-files
