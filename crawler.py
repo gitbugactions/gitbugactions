@@ -192,7 +192,7 @@ class BugCollectorStrategy(RepoStrategy):
                             # Invalid patches
                             continue
                         test_actions.save_workflows()
-                        pre_failed_tests = test_actions.get_failed_tests(workflow)
+                        pre_failed_tests, _, _ = test_actions.get_failed_tests(workflow)
                         if pre_failed_tests is None:
                             # Timeout: The other commits will take similar amount of time FIXME
                             # Job failed without tests failing
@@ -207,7 +207,7 @@ class BugCollectorStrategy(RepoStrategy):
                         repo_clone.set_head(commit.oid)
                         test_actions.save_workflows()
 
-                        cur_failed_tests = test_actions.get_failed_tests(workflow)
+                        cur_failed_tests, _, _ = test_actions.get_failed_tests(workflow)
                         if cur_failed_tests is None:
                             # Timeout: The other commits will take similar amount of time FIXME
                             # Job failed without tests failing
