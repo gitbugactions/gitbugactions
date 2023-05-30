@@ -66,13 +66,15 @@ class RepoStrategy(ABC):
 class BugCollectorStrategy(RepoStrategy):
     __FIX_ISSUE_REGEX = "(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #([0-9]*)"
 
-    def __init__(self, data_path: str, rate_limiter: RateLimiter):
+    def __init__(self, data_path: str, rate_limiter: RateLimiter, n_workers=1):
         super().__init__(data_path)
         self.rate_lim = rate_limiter
 
     def handle_repo(self, repo: Repository):
         logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
         repo_path = os.path.join(tempfile.gettempdir(), repo.full_name.replace('/', '-'))
+        if os.path.exists(repo_path):
+            shutil.rmtree(repo_path)
         repo_clone = pygit2.clone_repository(
             repo.clone_url, 
             repo_path
@@ -80,7 +82,7 @@ class BugCollectorStrategy(RepoStrategy):
         test_actions = GitHubTestActions(repo_path)
 
         if len(list(repo_clone.references.iterator())) > 0:
-            with open(self.data_path, "ab") as fp:
+            with open(self.data_path, "w") as fp:
                 first_commit = None
 
                 for commit in repo_clone.walk(repo_clone.head.target):
@@ -162,6 +164,7 @@ class BugCollectorStrategy(RepoStrategy):
 
                     previous_failed_tests = []
                     current_failed_tests = []
+                    workflow_succeeded = False
 
                     for workflow in test_actions.test_workflows:
                         # Apply diff and run tests
@@ -199,13 +202,14 @@ class BugCollectorStrategy(RepoStrategy):
                         
                         previous_failed_tests.extend(pre_failed_tests)
                         current_failed_tests.extend(cur_failed_tests)
+                        workflow_succeeded = True
 
                     # Back to default branch (avoids conflitcts)
                     repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
                     failed_diff = list(set(previous_failed_tests).difference(set(current_failed_tests)))
 
                     # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
-                    if len(failed_diff) == 0:
+                    if len(failed_diff) == 0 or not workflow_succeeded:
                         continue
 
                     fp.write((json.dumps(data) + "\n").encode('utf-8'))
