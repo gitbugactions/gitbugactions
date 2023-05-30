@@ -3,7 +3,7 @@ import docker
 import yaml
 import psutil
 import subprocess
-from test_parser import JUnitXML
+from test_parser import TestParser
 
 class GithubWorkflow:
     __TESTS_KEYWORDS = ["test", "tests", "testing", "verify"]
@@ -189,7 +189,7 @@ class GitHubTestActions:
 
     def get_failed_tests(self, workflow):
         act = Act(False, timeout=10)
-        parser = JUnitXML(os.path.join(self.repo_path, "target", "surefire-reports"))
+        parser = TestParser(os.path.join(self.repo_path, "target", "surefire-reports"))
         workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
         failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow_rel_path, parser)
         return failed_tests, stdout, stderr

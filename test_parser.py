@@ -1,31 +1,31 @@
 import os
-import xml.etree.ElementTree as ET
+from junitparser import JUnitXml, TestCase
 
-class JUnitXML:
+class TestParser:
     def __init__(self, folder):
         self.folder = folder
+
+
+    def _get_failed_tests(self, xml):
+        failed_tests = []
+
+        if not isinstance(xml, TestCase):
+            for element in xml:
+                failed_tests.extend(self._get_failed_tests(element))
+        else:
+            if not xml.is_passed and not xml.is_skipped:
+                failed_tests.append(xml)
+
+        return failed_tests
+
 
     def get_failed_tests(self):
         failed_tests = []
 
-        for (dirpath, dirnames, filenames) in os.walk(self.folder):
+        for (dirpath, _, filenames) in os.walk(self.folder):
             for filename in filenames:
                 if filename.endswith('.xml'):
-                    root = ET.parse((os.path.join(dirpath, filename))).getroot()
-                    if root.tag == "testsuites":
-                        testsuites = root.findall("testsuite")
-                    else:
-                        testsuites = [root]
-
-                    for testsuite in testsuites:
-                        for testcase in testsuite.findall("testcase"):
-                            if len(testcase) == 0:
-                                continue
-
-                            failure = testcase[0]
-                            if failure.tag == "failure":
-                                failed_tests.append(
-                                    (testcase.attrib['classname'], testcase.attrib['name'], failure.attrib['type'], failure.attrib['message'])
-                                )
+                    xml = JUnitXml.fromfile(os.path.join(dirpath, filename))
+                    failed_tests.extend(self._get_failed_tests(xml))
 
         return failed_tests
