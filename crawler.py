@@ -98,7 +98,11 @@ class BugCollectorStrategy(RepoStrategy):
 
                     commit_hex = commit.hex
                     previous_commit_hex = commit.hex + '~1'
-                    previous_commit = repo_clone.revparse_single(previous_commit_hex)
+                    try:
+                        previous_commit = repo_clone.revparse_single(previous_commit_hex)
+                    except KeyError:
+                        # The current commit is the first one
+                        continue
 
                     data = { 
                         'repository': repo.full_name,
