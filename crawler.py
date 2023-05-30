@@ -79,6 +79,19 @@ class BugCollectorStrategy(RepoStrategy):
             repo.clone_url, 
             repo_path
         )
+
+        #FIXME
+        has_junit = False
+        for root, dirs, files in os.walk(repo_path):
+            if "pom.xml" in files:
+                with open(os.path.join(root, "pom.xml"), "r") as f:
+                    if "junit" in f.read():
+                        has_junit = True
+                        break
+        if not has_junit:
+            return
+        #
+
         test_actions = GitHubTestActions(repo_path)
 
         if len(list(repo_clone.references.iterator())) > 0:
@@ -130,6 +143,7 @@ class BugCollectorStrategy(RepoStrategy):
 
                     # Ignore commits without tests
                     if len(test_patch) == 0:
+                        logging.info(f"Skipping commit {commit.hex}: no test patch")
                         continue
 
                     data['bug_patch'] = str(bug_patch)
@@ -183,6 +197,7 @@ class BugCollectorStrategy(RepoStrategy):
                             # Timeout: The other commits will take similar amount of time FIXME
                             # Job failed without tests failing
                             test_actions.delete_workflows()
+                            logging.info(f"Skipping commit {commit.hex}: failed previous tests")
                             continue
                         test_actions.delete_workflows()
 
@@ -197,6 +212,7 @@ class BugCollectorStrategy(RepoStrategy):
                             # Timeout: The other commits will take similar amount of time FIXME
                             # Job failed without tests failing
                             test_actions.delete_workflows()
+                            logging.info(f"Skipping commit {commit.hex}: failed current tests")
                             continue
                         test_actions.delete_workflows()
                         
@@ -210,9 +226,10 @@ class BugCollectorStrategy(RepoStrategy):
 
                     # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
                     if len(failed_diff) == 0 or not workflow_succeeded:
+                        logging.info(f"Skipping commit {commit.hex}: no failed diff")
                         continue
 
-                    fp.write((json.dumps(data) + "\n").encode('utf-8'))
+                    fp.write((json.dumps(data) + "\n"))
         
         # test_actions.remove_containers()
         shutil.rmtree(repo_path)
