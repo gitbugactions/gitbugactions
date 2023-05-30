@@ -1,0 +1,11 @@
+{
+    "repository": "joowani/colorpedia",
+    "clone_url": "https://github.com/joowani/colorpedia.git",
+    "timestamp": "2023-05-29T16:02:14.222009Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Upload to PyPI/upload] \ud83d\ude80  Start image=crawlergpt:latest\n[Upload to PyPI/upload]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Upload to PyPI/upload]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Upload to PyPI/upload]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Upload to PyPI/upload]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/joowani-colorpedia] user=0 workdir=\n[Upload to PyPI/upload]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[Upload to PyPI/upload] \u2b50 Run Main actions/checkout@v2\n[Upload to PyPI/upload]   \u2705  Success - Main actions/checkout@v2\n[Upload to PyPI/upload] \u2b50 Run Main Fetch complete history for all tags and branches\n[Upload to PyPI/upload]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Upload to PyPI/upload]   | fatal: --unshallow on a complete repository does not make sense\n[Upload to PyPI/upload]   \u274c  Failure - Main Fetch complete history for all tags and branches\n[Upload to PyPI/upload] exitcode '128': failure\n[Upload to PyPI/upload] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/519e39f58e3dcfd48e4cfbe0a428802f884c138093162e48bc1a6dd7528630b9?force=1&v=1\": context deadline exceeded\n[Upload to PyPI/upload] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

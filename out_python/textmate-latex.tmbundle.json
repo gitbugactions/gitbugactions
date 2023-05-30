@@ -1,0 +1,11 @@
+{
+    "repository": "textmate/latex.tmbundle",
+    "clone_url": "https://github.com/textmate/latex.tmbundle.git",
+    "timestamp": "2023-05-29T13:59:51.654192Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Run Tests/Install Dependencies] \ud83d\ude80  Start image=crawlergpt:latest\n[Run Tests/Install Dependencies]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Run Tests/Install Dependencies]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Run Tests/Install Dependencies]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Run Tests/Install Dependencies]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/textmate-latex.tmbundle] user=0 workdir=\n[Run Tests/Install Dependencies] \u2b50 Run Main TeX Setup\n[Run Tests/Install Dependencies]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[Run Tests/Install Dependencies]   | /var/run/act/workflow/0: line 2: brew: command not found\n[Run Tests/Install Dependencies]   \u274c  Failure - Main TeX Setup\n[Run Tests/Install Dependencies] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Run Tests/Install Dependencies] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'Install Dependencies' failed\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "wolph/django-statsd",
+    "clone_url": "https://github.com/wolph/django-statsd.git",
+    "timestamp": "2023-05-29T14:12:09.964661Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Test/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/wolph-django-statsd] user=0 workdir=\n[Test/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[Test/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[Test/build] \u2b50 Run Main actions/checkout@v1\n[Test/build]   \u2705  Success - Main actions/checkout@v1\n[Test/build] \u2b50 Run Main Set up Python 3.6\n[Test/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[Test/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[Test/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[Test/build]   \u274c  Failure - Main Set up Python 3.6\n[Test/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 7c068b0af320827e650f7037e147e4ed9e5c566e833280e8bba331bf79bbd91f\n[Test/build] failed to remove container: Error response from daemon: No such container: 7c068b0af320827e650f7037e147e4ed9e5c566e833280e8bba331bf79bbd91f\n[Test/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Test-build-2b095da82ec47b1f3d6897ca9a9e6cc952ed5ec11c9fc9d9db98786637909f85-env: volume is in use - [9064a4c78671871a78fbf6c51cfad6ac372a96533d7dad7a51440f8b7ceec180] (original error: <nil>) (original error: <nil>)\n"
+}

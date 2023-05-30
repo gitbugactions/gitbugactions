@@ -1,0 +1,11 @@
+{
+    "repository": "markstory/lint-review",
+    "clone_url": "https://github.com/markstory/lint-review.git",
+    "timestamp": "2023-05-29T14:41:24.215429Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/testsuite-linux] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/testsuite-linux]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/testsuite-linux]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/testsuite-linux]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/testsuite-linux]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/markstory-lint-review] user=0 workdir=\n[CI/testsuite-linux]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[CI/testsuite-linux]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[CI/testsuite-linux] \ud83e\uddea  Matrix: map[python-version:3.6]\n[CI/testsuite-linux] \u2b50 Run Main actions/checkout@v1\n[CI/testsuite-linux]   \u2705  Success - Main actions/checkout@v1\n[CI/testsuite-linux] \u2b50 Run Main Build tool images\n[CI/testsuite-linux]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[CI/testsuite-linux]   | cd docker && docker build -t php -f php.Dockerfile .\n[CI/testsuite-linux]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=php.Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=php&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[CI/testsuite-linux]   | make: *** [Makefile:4: images] Error 1\n[CI/testsuite-linux]   \u274c  Failure - Main Build tool images\n[CI/testsuite-linux] exitcode '2': failure\n[CI/testsuite-linux] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'testsuite-linux' failed\n"
+}

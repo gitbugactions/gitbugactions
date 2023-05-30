@@ -1,0 +1,11 @@
+{
+    "repository": "CZ-NIC/pz",
+    "clone_url": "https://github.com/CZ-NIC/pz.git",
+    "timestamp": "2023-05-29T15:53:29.094450Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Python package/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Python package/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Python package/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Python package/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Python package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/CZ-NIC-pz] user=0 workdir=\n[Python package/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[Python package/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[Python package/build] \u2b50 Run Main actions/checkout@v2\n[Python package/build]   \u2705  Success - Main actions/checkout@v2\n[Python package/build] \u2b50 Run Main Set up Python 3.6\n[Python package/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[Python package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[Python package/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Python package/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[Python package/build]   \u274c  Failure - Main Set up Python 3.6\n[Python package/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 00907c220c56a453232fc9ba7bab978a362ac8b0d1230d1cf8aeac0b98620ad4\n[Python package/build] failed to remove container: Error response from daemon: No such container: 00907c220c56a453232fc9ba7bab978a362ac8b0d1230d1cf8aeac0b98620ad4\n[Python package/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

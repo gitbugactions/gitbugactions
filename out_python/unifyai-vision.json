@@ -1,0 +1,11 @@
+{
+    "repository": "unifyai/vision",
+    "clone_url": "https://github.com/unifyai/vision.git",
+    "timestamp": "2023-05-29T16:14:14.067070Z",
+    "clone_success": true,
+    "number of actions": 7,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[nightly-tests/run-nightly-tests] \ud83d\ude80  Start image=crawlergpt:latest\n[nightly-tests/run-nightly-tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[nightly-tests/run-nightly-tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[nightly-tests/run-nightly-tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[nightly-tests/run-nightly-tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/unifyai-vision] user=0 workdir=\n[nightly-tests/run-nightly-tests] \u2b50 Run Main Checkout \ud83d\udece\ufe0fIvy Vision\n[nightly-tests/run-nightly-tests]   \u2705  Success - Main Checkout \ud83d\udece\ufe0fIvy Vision\n[nightly-tests/run-nightly-tests] \u2b50 Run Main Run Tests\n[nightly-tests/run-nightly-tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[nightly-tests/run-nightly-tests]   | /var/run/act/workflow/1: line 2: cd: vision: No such file or directory\n[nightly-tests/run-nightly-tests]   \u274c  Failure - Main Run Tests\n[nightly-tests/run-nightly-tests] exitcode '1': failure\n[nightly-tests/run-nightly-tests] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/a0c0b3f5612b4386e7d97d23e15f58d6edb9695616bfb4055287acb2d3660418?force=1&v=1\": context deadline exceeded\n[nightly-tests/run-nightly-tests] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

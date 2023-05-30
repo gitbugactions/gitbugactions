@@ -1,0 +1,11 @@
+{
+    "repository": "Hipo/university-domains-list",
+    "clone_url": "https://github.com/Hipo/university-domains-list.git",
+    "timestamp": "2023-05-29T15:41:43.497155Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/Hipo-university-domains-list] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/github/super-linter' # ref=v3.15.3\n[CI/build] \u2b50 Run Main actions/checkout@v3\n[CI/build]   \u2705  Success - Main actions/checkout@v3\n[CI/build] \u2b50 Run Main Super-Linter\n[CI/build]   \ud83d\udc33  docker pull image=ghcr.io/github/super-linter:v3.15.3 platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=ghcr.io/github/super-linter:v3.15.3 platform= entrypoint=[] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=ghcr.io/github/super-linter:v3.15.3 platform= entrypoint=[] cmd=[]\n[CI/build]   | \u001b[0m2023-05-29 15:47:47 \u001b[41m\u001b[0;37m[FATAL]\u001b[0m   Failed to find [rustfmt] in system!\u001b[0m\n[CI/build]   \u274c  Failure - Main Super-Linter\n[CI/build] Error response from daemon: No such container: 809f3d5ceaebfb5a3b95ad29a98d960d35f0fffe2a9997e745e1430f4ec337b2\n[CI/build] failed to remove container: Error response from daemon: No such container: 809f3d5ceaebfb5a3b95ad29a98d960d35f0fffe2a9997e745e1430f4ec337b2\n[CI/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

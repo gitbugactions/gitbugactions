@@ -1,0 +1,11 @@
+{
+    "repository": "spectralpython/spectral",
+    "clone_url": "https://github.com/spectralpython/spectral.git",
+    "timestamp": "2023-05-29T15:17:23.059867Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Unit Tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Unit Tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Unit Tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Unit Tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Unit Tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/spectralpython-spectral] user=0 workdir=\n[Unit Tests/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[Unit Tests/build] \ud83e\uddea  Matrix: map[python-version:2.7]\n[Unit Tests/build] \u2b50 Run Main actions/checkout@v2\n[Unit Tests/build]   \u2705  Success - Main actions/checkout@v2\n[Unit Tests/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container fb7ed8fbab05ce5f55611570f07d7029386276a2c2e1aaf7090ace4f0b3f8f7c\n[Unit Tests/build] \u2b50 Run Main Set up Python 2.7\n[Unit Tests/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[Unit Tests/build]   \u274c  Failure - Main Set up Python 2.7\n[Unit Tests/build] Error response from daemon: No such container: fb7ed8fbab05ce5f55611570f07d7029386276a2c2e1aaf7090ace4f0b3f8f7c\n[Unit Tests/build] failed to remove container: Error response from daemon: No such container: fb7ed8fbab05ce5f55611570f07d7029386276a2c2e1aaf7090ace4f0b3f8f7c\n[Unit Tests/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

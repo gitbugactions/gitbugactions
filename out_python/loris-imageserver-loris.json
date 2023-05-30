@@ -1,0 +1,11 @@
+{
+    "repository": "loris-imageserver/loris",
+    "clone_url": "https://github.com/loris-imageserver/loris.git",
+    "timestamp": "2023-05-29T14:35:52.102982Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[CI/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[CI/build] \u2b50 Run Main actions/checkout@v2\n[CI/build]   \u2705  Success - Main actions/checkout@v2\n[CI/build] Error response from daemon: No such container: a7c4f29e5bcb6f4cda2c9eec43659ed6ede986879c728dfa4b3cca905345e81b\n[CI/build] \u2b50 Run Main Set up Python 3.6\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v1/ dst=/var/run/act/actions/actions-setup-python@v1/\n[CI/build]   \u274c  Failure - Main Set up Python 3.6\n[CI/build] Error response from daemon: No such container: a7c4f29e5bcb6f4cda2c9eec43659ed6ede986879c728dfa4b3cca905345e81b\n[CI/build] failed to remove container: Error response from daemon: No such container: a7c4f29e5bcb6f4cda2c9eec43659ed6ede986879c728dfa4b3cca905345e81b\n[CI/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-CI-build-03727a8f260608c14dbfbecd23630d3cd3cc939c3150870ab3631218246ce38f-env: volume is in use - [5cbf335cb1848ce30a025e1ecd4eba43e9012bd847cb2de20d74342bb991a088] (original error: <nil>) (original error: <nil>)\n"
+}

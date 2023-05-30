@@ -1,0 +1,11 @@
+{
+    "repository": "ubernostrum/django-registration",
+    "clone_url": "https://github.com/ubernostrum/django-registration.git",
+    "timestamp": "2023-05-29T14:59:46.007503Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/tox on 3.7] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/tox on 3.7]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/tox on 3.7]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/tox on 3.7]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/tox on 3.7]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/ubernostrum-django-registration] user=0 workdir=\n[CI/tox on 3.7]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[CI/tox on 3.7] \ud83e\uddea  Matrix: map[python-version:3.7]\n[CI/tox on 3.7] \u2b50 Run Main actions/checkout@v3\n[CI/tox on 3.7]   \u2705  Success - Main actions/checkout@v3\n[CI/tox on 3.7] \u2b50 Run Main actions/setup-python@v3\n[CI/tox on 3.7]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[CI/tox on 3.7]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[CI/tox on 3.7]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CI/tox on 3.7]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[CI/tox on 3.7]   \u274c  Failure - Main actions/setup-python@v3\n[CI/tox on 3.7] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 6dabb160a2a0b608266967e01a9a56b4fea58cf499183c70214c6cff233cc0e1\n[CI/tox on 3.7] failed to remove container: Error response from daemon: No such container: 6dabb160a2a0b608266967e01a9a56b4fea58cf499183c70214c6cff233cc0e1\n[CI/tox on 3.7] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'tox on ${{ matrix.python-version }}' failed\n"
+}

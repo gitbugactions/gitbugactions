@@ -1,0 +1,11 @@
+{
+    "repository": "apoclyps/reviews",
+    "clone_url": "https://github.com/apoclyps/reviews.git",
+    "timestamp": "2023-05-29T16:20:37.437854Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/apoclyps-reviews] user=0 workdir=\n[Tests/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Tests/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[Tests/build] Unable to checkout bd6b4b6205c4dbad673328db7b31b7fab9e241c0: invalid checksum\n[Tests/build] failed to remove container: Error response from daemon: No such container: e3860c8d3eb4296bcba1fe3c5e5c6e33b7611d8ac42ed6058ea51e7023ca4992\n[Tests/build] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: invalid checksum\n"
+}

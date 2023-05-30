@@ -1,0 +1,11 @@
+{
+    "repository": "chrisdev/django-pandas",
+    "clone_url": "https://github.com/chrisdev/django-pandas.git",
+    "timestamp": "2023-05-29T14:33:51.328690Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/chrisdev-django-pandas] user=0 workdir=\n[Test/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[Test/test] \ud83e\uddea  Matrix: map[django-version:18 python-version:2.7]\n[Test/test] \u2b50 Run Main actions/checkout@v2\n[Test/test]   \u2705  Success - Main actions/checkout@v2\n[Test/test] \u2b50 Run Main Set up Python 2.7\n[Test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[Test/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Test/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[Test/test]   \u274c  Failure - Main Set up Python 2.7\n[Test/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 41c299208889b9b05f831ee4c66a9c72040d1a5bc286adf194a3cf1706c5f293\n[Test/test] failed to remove container: Error response from daemon: No such container: 41c299208889b9b05f831ee4c66a9c72040d1a5bc286adf194a3cf1706c5f293\n[Test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "fracdiff/fracdiff",
+    "clone_url": "https://github.com/fracdiff/fracdiff.git",
+    "timestamp": "2023-05-29T16:30:27.185936Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Type] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Lint] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Type]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Lint]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Type]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Lint]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test] failed to remove container: Error response from daemon: removal of container 87504ce6764b90aaf00d8c097209a67b850005b37a40450038e01d8338feefb4 is already in progress\n[CI/Type]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Lint]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Lint]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/fracdiff-fracdiff] user=0 workdir=\n[CI/Type]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/fracdiff-fracdiff] user=0 workdir=\n[CI/Lint]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[CI/Type]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[CI/Lint] Unable to checkout 75f3110429a8c05be0e1bf360334e4cced2b63fa: invalid checksum\n[CI/Type] Unable to checkout 75f3110429a8c05be0e1bf360334e4cced2b63fa: invalid checksum\n[CI/Lint] \ud83c\udfc1  Job succeeded\n[CI/Type] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-CI-Test-c8004701d7767271afe3e380ff368b034cbabac39f7de7db0bdf86634220d0e0-env: volume is in use - [87504ce6764b90aaf00d8c097209a67b850005b37a40450038e01d8338feefb4]\n"
+}

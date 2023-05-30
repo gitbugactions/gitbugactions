@@ -1,0 +1,11 @@
+{
+    "repository": "icarus-sim/icarus",
+    "clone_url": "https://github.com/icarus-sim/icarus.git",
+    "timestamp": "2023-05-29T15:22:37.947124Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/icarus-sim-icarus] user=0 workdir=\n[Test/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Test/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[Test/test] \ud83e\uddea  Matrix: map[python-version:3.7]\n[Test/test] \u2b50 Run Main Checkout code\n[Test/test]   \u2705  Success - Main Checkout code\n[Test/test] Error response from daemon: No such container: 5e6a5a285450351d7fdf3fde7e1240c43d4e937d20e34b29b8a106a1b7d3ab36\n[Test/test] \u2b50 Run Main Install native dependencies\n[Test/test]   \u274c  Failure - Main Install native dependencies\n[Test/test] Error response from daemon: No such container: 5e6a5a285450351d7fdf3fde7e1240c43d4e937d20e34b29b8a106a1b7d3ab36\n[Test/test] failed to remove container: Error response from daemon: No such container: 5e6a5a285450351d7fdf3fde7e1240c43d4e937d20e34b29b8a106a1b7d3ab36\n[Test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Test-test-1a89228c479b352e9beafd139ce1652ef6d39e9a57114fb000a3c158cff408d6-env: volume is in use - [a9401dc4d98343c2d747ba756f6f297468f80e8784f04b6012a3998651058923] (original error: <nil>) (original error: <nil>)\n"
+}

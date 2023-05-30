@@ -1,0 +1,11 @@
+{
+    "repository": "adamcharnock/django-su",
+    "clone_url": "https://github.com/adamcharnock/django-su.git",
+    "timestamp": "2023-05-29T14:14:59.372225Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/lint ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/lint ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/lint ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/tests] failed to remove container: Error response from daemon: No such container: a605ee4a64edee484cf0d5ab54fc36b61788869299790c5cefe9557de8e37c8c\n[CI/lint ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/lint ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:0 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/adamcharnock-django-su] user=0 workdir=\n[CI/lint ]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[CI/lint ]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[CI/lint ] \u2b50 Run Main actions/checkout@v2\n[CI/lint ]   \u2705  Success - Main actions/checkout@v2\n[CI/lint ] Error response from daemon: No such container: c2bbf9a784c1f3eafa912d979cbda5dc31a45661c7f22cc4c01c1eb930c89ae6\n[CI/lint ] \u2b50 Run Main Set up Python\n[CI/lint ]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[CI/lint ]   \u274c  Failure - Main Set up Python\n[CI/lint ] Error response from daemon: No such container: c2bbf9a784c1f3eafa912d979cbda5dc31a45661c7f22cc4c01c1eb930c89ae6\n[CI/lint ] failed to remove container: Error response from daemon: No such container: c2bbf9a784c1f3eafa912d979cbda5dc31a45661c7f22cc4c01c1eb930c89ae6\n[CI/lint ] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: get act-CI-tests-e66f42f2b3c455e715c813b0a99435964384a305629f9c4289e1cfd1be75dab4-env: no such volume\n"
+}

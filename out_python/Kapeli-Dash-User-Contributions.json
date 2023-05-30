@@ -1,0 +1,11 @@
+{
+    "repository": "Kapeli/Dash-User-Contributions",
+    "clone_url": "https://github.com/Kapeli/Dash-User-Contributions.git",
+    "timestamp": "2023-05-29T15:23:00.799770Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Dash User Contributions/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Dash User Contributions/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Dash User Contributions/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Dash User Contributions/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Dash User Contributions/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/Kapeli-Dash-User-Contributions] user=0 workdir=\n[Dash User Contributions/test]   \u2601  git clone 'https://github.com/maxim-lobanov/setup-xcode' # ref=v1\n[Dash User Contributions/test]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v2\n[Dash User Contributions/test]   \u2601  git clone 'https://github.com/wow-actions/auto-comment' # ref=v1\n[Dash User Contributions/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[Dash User Contributions/test] \u2b50 Run Main maxim-lobanov/setup-xcode@v1\n[Dash User Contributions/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/maxim-lobanov-setup-xcode@v1/ dst=/var/run/act/actions/maxim-lobanov-setup-xcode@v1/\n[Dash User Contributions/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/maxim-lobanov-setup-xcode@v1/] user=0 workdir=\n[Dash User Contributions/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/maxim-lobanov-setup-xcode@v1/dist/index.js] user= workdir=\n[Dash User Contributions/test]   \u2757  ::error::This task is intended only for macOS platform. It can't be run on 'linux' platform\n[Dash User Contributions/test]   \u274c  Failure - Main maxim-lobanov/setup-xcode@v1\n[Dash User Contributions/test] exitcode '1': failure\n[Dash User Contributions/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

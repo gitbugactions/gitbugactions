@@ -1,0 +1,11 @@
+{
+    "repository": "xflr6/graphviz",
+    "clone_url": "https://github.com/xflr6/graphviz.git",
+    "timestamp": "2023-05-29T15:13:56.217926Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/xflr6-graphviz] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[Build/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Build/build] \ud83e\uddea  Matrix: map[name:linux-3.11 os:ubuntu-latest python-version:3.11]\n[Build/build] \u2b50 Run Main Checkout source repo\n[Build/build]   \u2705  Success - Main Checkout source repo\n[Build/build] \u2b50 Run Main Apt install system dependencies (linux unless -skip-exe)\n[Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1.sh] user= workdir=\n[Build/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Build/build]   \u274c  Failure - Main Apt install system dependencies (linux unless -skip-exe)\n[Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 0a16b2ccce2649f0f6724c2842de2c429c8a71473711027928f228cada17104f\n[Build/build] failed to remove container: Error response from daemon: No such container: 0a16b2ccce2649f0f6724c2842de2c429c8a71473711027928f228cada17104f\n[Build/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

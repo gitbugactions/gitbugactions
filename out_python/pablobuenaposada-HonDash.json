@@ -1,0 +1,11 @@
+{
+    "repository": "pablobuenaposada/HonDash",
+    "clone_url": "https://github.com/pablobuenaposada/HonDash.git",
+    "timestamp": "2023-05-29T15:22:42.169139Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/pablobuenaposada-HonDash] user=0 workdir=\n[Build/build] \u2b50 Run Main actions/checkout@v2\n[Build/build]   \u2705  Success - Main actions/checkout@v2\n[Build/build] \u2b50 Run Main Build docker image\n[Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Build/build]   | docker build --no-cache --tag=hondash .\n[Build/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&nocache=1&rm=1&shmsize=0&t=hondash&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[Build/build]   | make: *** [Makefile:114: docker/build] Error 1\n[Build/build]   \u274c  Failure - Main Build docker image\n[Build/build] exitcode '2': failure\n[Build/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

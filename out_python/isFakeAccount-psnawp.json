@@ -1,0 +1,11 @@
+{
+    "repository": "isFakeAccount/psnawp",
+    "clone_url": "https://github.com/isFakeAccount/psnawp.git",
+    "timestamp": "2023-05-29T16:23:25.902643Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[pytest/pytest] \ud83d\ude80  Start image=crawlergpt:latest\n[pytest/pytest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[pytest/pytest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[pytest/pytest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[pytest/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/isFakeAccount-psnawp] user=0 workdir=\n[pytest/pytest]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[pytest/pytest] \ud83e\uddea  Matrix: map[os:ubuntu python-version:3.8]\n[pytest/pytest] \u2b50 Run Main actions/checkout@v3\n[pytest/pytest]   \u2705  Success - Main actions/checkout@v3\n[pytest/pytest] \u2b50 Run Main Set up Environment 3.8 ubuntu\n[pytest/pytest]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[pytest/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[pytest/pytest]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[pytest/pytest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[pytest/pytest]   \u274c  Failure - Main Set up Environment 3.8 ubuntu\n[pytest/pytest] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 927a8d3ab1b7fa247271e2aab06b01ae88d0524e57a079b6713b1acc4876daea\n[pytest/pytest] failed to remove container: Error response from daemon: No such container: 927a8d3ab1b7fa247271e2aab06b01ae88d0524e57a079b6713b1acc4876daea\n[pytest/pytest] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'pytest' failed\n"
+}

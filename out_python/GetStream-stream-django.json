@@ -1,0 +1,11 @@
+{
+    "repository": "GetStream/stream-django",
+    "clone_url": "https://github.com/GetStream/stream-django.git",
+    "timestamp": "2023-05-29T15:42:31.851753Z",
+    "clone_success": true,
+    "number of actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/de65f406-fe28-11ed-a890-af2cc187fc11/GetStream-stream-django] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[build/build] \u2b50 Run Main actions/checkout@v3\n[build/build]   \u2705  Success - Main actions/checkout@v3\n[build/build] \u2b50 Run Main actions/setup-python@v3\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Main actions/setup-python@v3\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container b546344b3bee959c05eab7b16286dd63085c1be22f86bd9d546c01e99fb9e65e\n[build/build] failed to remove container: Error response from daemon: No such container: b546344b3bee959c05eab7b16286dd63085c1be22f86bd9d546c01e99fb9e65e\n[build/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

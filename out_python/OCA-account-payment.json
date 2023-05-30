@@ -1,0 +1,11 @@
+{
+    "repository": "OCA/account-payment",
+    "clone_url": "https://github.com/OCA/account-payment.git",
+    "timestamp": "2023-05-29T15:33:05.118580Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[tests/Detect unreleased dependencies] \ud83d\ude80  Start image=crawlergpt:latest\n[tests/test with Odoo                ] \ud83d\ude80  Start image=ghcr.io/oca/oca-ci/py3.6-odoo14.0:latest\n[tests/test with Odoo                ]   \ud83d\udc33  docker pull image=ghcr.io/oca/oca-ci/py3.6-odoo14.0:latest platform= username= forcePull=false\n[tests/Detect unreleased dependencies]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[tests/Detect unreleased dependencies]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/test with Odoo                ] failed to remove container: Error response from daemon: removal of container 98468fd699c226f72f835b40c9dcbd00371c4da2a650f98b24f2da86a20feb90 is already in progress\n",
+    "actions_stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-tests-Detect-unreleased-dependencies-652e826f16091e896485df63ff9f6027ae554a6f8a3265789db95a324a39a98a\" is already in use by container \"97e3294367f871db40868555629d44f6dcace0762161131529f693e2269bb6d9\". You have to remove (or rename) that container to be able to reuse that name.'\n"
+}
