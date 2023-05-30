@@ -1,0 +1,11 @@
+{
+    "repository": "dtolnay/dtoa",
+    "clone_url": "https://github.com/dtolnay/dtoa.git",
+    "timestamp": "2023-05-30T09:06:55.754347Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Clippy] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Clippy]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[pre_ci/pre_ci/pre_ci] \ud83d\ude80  Start image=crawlergpt:latest\n[pre_ci/pre_ci/pre_ci]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[pre_ci/pre_ci/pre_ci] failed to remove container: Error response from daemon: removal of container 56ec79a5939a73e597f2e07c8a7e62016aca8a2895e09b1f5f468e40a4918fe5 is already in progress\n[CI/Clippy]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Clippy]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Clippy]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/dtolnay-dtoa] user=0 workdir=\n[CI/Clippy]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CI/Clippy]   \u2601  git clone 'https://github.com/dtolnay/rust-toolchain' # ref=clippy\n[CI/Clippy] \u2b50 Run Pre dtolnay/rust-toolchain@clippy\n[CI/Clippy]   \u2705  Success - Pre dtolnay/rust-toolchain@clippy\n[CI/Clippy] failed to remove container: Error response from daemon: No such container: 82f38a396a78e92c6a86b8730004f051e94791a9f70a782eccd847a08517c267\n[CI/Clippy] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-pre-ci-pre-ci-pre-ci-64dd5f35622f126c575845945699578ef9fc14c5bc1425f310bc21e81c55511c-env: volume is in use - [56ec79a5939a73e597f2e07c8a7e62016aca8a2895e09b1f5f468e40a4918fe5]\n"
+}

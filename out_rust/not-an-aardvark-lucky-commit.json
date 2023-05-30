@@ -1,0 +1,11 @@
+{
+    "repository": "not-an-aardvark/lucky-commit",
+    "clone_url": "https://github.com/not-an-aardvark/lucky-commit.git",
+    "timestamp": "2023-05-30T08:58:45.210544Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/not-an-aardvark-lucky-commit] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[CI/build] \u2b50 Run Main actions/checkout@v2\n[CI/build]   \u2705  Success - Main actions/checkout@v2\n[CI/build] \u2b50 Run Main Install Rust\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-rs-toolchain@v1/ dst=/var/run/act/actions/actions-rs-toolchain@v1/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-rs-toolchain@v1/] user=0 workdir=\n[CI/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-rs-toolchain@v1/dist/index.js] user= workdir=\n[CI/build]   \u274c  Failure - Main Install Rust\n[CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container c5f3889a72df83c201c0934533ad6d5bcf8a656f7564ed0d80b4657c15dea004\n[CI/build] failed to remove container: Error response from daemon: No such container: c5f3889a72df83c201c0934533ad6d5bcf8a656f7564ed0d80b4657c15dea004\n[CI/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "rust-lang/mdBook",
+    "clone_url": "https://github.com/rust-lang/mdBook.git",
+    "timestamp": "2023-05-30T08:47:40.571065Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Rustfmt] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Test   ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Rustfmt]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test   ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test   ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Rustfmt]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test   ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Rustfmt]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Rustfmt]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/rust-lang-mdBook] user=0 workdir=\n[CI/Rustfmt] \u2b50 Run Main actions/checkout@v3\n[CI/Rustfmt]   \u2705  Success - Main actions/checkout@v3\n[CI/Rustfmt] \u2b50 Run Main Install Rust\n[CI/Rustfmt]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[CI/Rustfmt]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CI/Rustfmt]   \u274c  Failure - Main Install Rust\n[CI/Rustfmt] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 5f5a9870bc2ec3a97743dd9ccf238f421293186f46095fb622edbee398fc4771\n[CI/Rustfmt] failed to remove container: Error response from daemon: No such container: 5f5a9870bc2ec3a97743dd9ccf238f421293186f46095fb622edbee398fc4771\n[CI/Rustfmt] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: failed to copy content to container: Error response from daemon: Could not find the file /var/run/act/ in container fa74c1d522c17c8505aa6074be0548f8504d0fecd8cf9da1cde1de0abfaf1a0c\n"
+}

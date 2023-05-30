@@ -1,0 +1,11 @@
+{
+    "repository": "daynin/fundoc",
+    "clone_url": "https://github.com/daynin/fundoc.git",
+    "timestamp": "2023-05-30T09:35:06.848770Z",
+    "clone_success": true,
+    "number of actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/daynin-fundoc] user=0 workdir=\n[tests/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[tests/build] \u2b50 Run Main actions/checkout@v2\n[tests/build]   \u2705  Success - Main actions/checkout@v2\n[tests/build] \u2b50 Run Main Run tests\n[tests/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[tests/build]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[tests/build]   \u274c  Failure - Main Run tests\n[tests/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[tests/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

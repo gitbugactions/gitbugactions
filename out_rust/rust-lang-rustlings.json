@@ -1,0 +1,11 @@
+{
+    "repository": "rust-lang/rustlings",
+    "clone_url": "https://github.com/rust-lang/rustlings.git",
+    "timestamp": "2023-05-30T08:51:34.128997Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rustlings Tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Rustlings Tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rustlings Tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rustlings Tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rustlings Tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/rust-lang-rustlings] user=0 workdir=\n[Rustlings Tests/build] \u2b50 Run Main actions/checkout@v3\n[Rustlings Tests/build]   \u2705  Success - Main actions/checkout@v3\n[Rustlings Tests/build] \u2b50 Run Main Build\n[Rustlings Tests/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rustlings Tests/build]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[Rustlings Tests/build]   \u274c  Failure - Main Build\n[Rustlings Tests/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Rustlings Tests/build] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/5e2789dd6b5f50c700983af84fea0ae2099f9b0792fbb3ed75a64a0f3e82af04?force=1&v=1\": context deadline exceeded\n[Rustlings Tests/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

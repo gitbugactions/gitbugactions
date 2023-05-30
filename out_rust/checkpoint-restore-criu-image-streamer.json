@@ -1,0 +1,11 @@
+{
+    "repository": "checkpoint-restore/criu-image-streamer",
+    "clone_url": "https://github.com/checkpoint-restore/criu-image-streamer.git",
+    "timestamp": "2023-05-30T09:44:15.222647Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Tests/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Tests/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Tests/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/checkpoint-restore-criu-image-streamer] user=0 workdir=\n[Tests/test] \u2b50 Run Main actions/checkout@v2\n[Tests/test]   \u2705  Success - Main actions/checkout@v2\n[Tests/test] \u2b50 Run Main make test\n[Tests/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Tests/test]   | cargo test  --release -- --test-threads=1 --nocapture\n[Tests/test]   | make: cargo: Command not found\n[Tests/test]   | make: *** [Makefile:49: test] Error 127\n[Tests/test]   \u274c  Failure - Main make test\n[Tests/test] exitcode '2': failure\n[Tests/test] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/cf67d5485ff8886dc9d8425baf08e6699ba5f8f2de73c80f11ebf95744372022?force=1&v=1\": context deadline exceeded\n[Tests/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

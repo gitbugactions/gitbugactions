@@ -1,0 +1,11 @@
+{
+    "repository": "a8m/pb",
+    "clone_url": "https://github.com/a8m/pb.git",
+    "timestamp": "2023-05-30T08:52:35.645038Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/rustfmt] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Test   ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Test   ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/rustfmt]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test   ] failed to remove container: Error response from daemon: No such container: 5413c02d7776ddbc7f61f167b845fda998f47aba7b2a06e21df1e8d0813ce229\n[CI/rustfmt]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/rustfmt]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/rustfmt]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/a8m-pb] user=0 workdir=\n[CI/rustfmt]   \u2601  git clone 'https://github.com/dtolnay/rust-toolchain' # ref=stable\n[CI/rustfmt] \u2b50 Run Pre Install Rust\n[CI/rustfmt]   \u2705  Success - Pre Install Rust\n[CI/rustfmt] failed to remove container: Error response from daemon: No such container: aa10d4246f3d5d638fa147ab2391c73829dd73cfbfda8e3d1a4891011fd04bb4\n[CI/rustfmt] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-CI-Test-c8004701d7767271afe3e380ff368b034cbabac39f7de7db0bdf86634220d0e0-env: volume is in use - [5413c02d7776ddbc7f61f167b845fda998f47aba7b2a06e21df1e8d0813ce229]\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "willglynn/pdb",
+    "clone_url": "https://github.com/willglynn/pdb.git",
+    "timestamp": "2023-05-30T09:18:15.679494Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Lint] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Lint]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Lint]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test] failed to remove container: Error response from daemon: removal of container 39df277d3d773141b9a53c0e09e9ed7ddec389d3318d061bf2e475e1cfdc881b is already in progress\n[CI/Lint]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Lint]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/willglynn-pdb] user=0 workdir=\n[CI/Lint]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[CI/Lint]   \u2601  git clone 'https://github.com/swatinem/rust-cache' # ref=v1\n[CI/Lint]   \u2601  git clone 'https://github.com/actions-rs/cargo' # ref=v1\n[CI/Lint]   \u2601  git clone 'https://github.com/actions-rs/cargo' # ref=v1\n[CI/Lint] Unable to checkout 844f36862e911db73fe0815f00a4a2602c279505: EOF\n[CI/Lint] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/923d493eda99499021c6074933dde6d324390124570cfe804f0a377e48a13918?force=1&v=1\": context deadline exceeded\n[CI/Lint] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-CI-Test-c8004701d7767271afe3e380ff368b034cbabac39f7de7db0bdf86634220d0e0-env: volume is in use - [39df277d3d773141b9a53c0e09e9ed7ddec389d3318d061bf2e475e1cfdc881b]\n"
+}

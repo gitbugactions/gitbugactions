@@ -1,0 +1,11 @@
+{
+    "repository": "unicode-rs/unicode-segmentation",
+    "clone_url": "https://github.com/unicode-rs/unicode-segmentation.git",
+    "timestamp": "2023-05-30T08:41:15.399509Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/fmt  ] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/fmt  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/fmt  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build] failed to remove container: Error response from daemon: removal of container 82f939b3cc7eef57e527c362f4db99a4140f798b53fe51ab6c28a5a836fab2cf is already in progress\n[Rust/fmt  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/fmt  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/unicode-rs-unicode-segmentation] user=0 workdir=\n[Rust/fmt  ] \u2b50 Run Main actions/checkout@v2\n[Rust/fmt  ]   \u2705  Success - Main actions/checkout@v2\n[Rust/fmt  ] \u2b50 Run Main Rustfmt\n[Rust/fmt  ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rust/fmt  ]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[Rust/fmt  ]   \u274c  Failure - Main Rustfmt\n[Rust/fmt  ] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Rust/fmt  ] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-Rust-build-31a856b6e66ec7c451eee8385fa3199d265cb1ae342761d738ea35254f298e0d-env: volume is in use - [82f939b3cc7eef57e527c362f4db99a4140f798b53fe51ab6c28a5a836fab2cf]\n"
+}

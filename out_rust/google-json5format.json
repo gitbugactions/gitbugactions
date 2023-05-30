@@ -1,0 +1,11 @@
+{
+    "repository": "google/json5format",
+    "clone_url": "https://github.com/google/json5format.git",
+    "timestamp": "2023-05-30T09:36:40.077535Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[json5format/build] \ud83d\ude80  Start image=crawlergpt:latest\n[json5format/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[json5format/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[json5format/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[json5format/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/google-json5format] user=0 workdir=\n[json5format/build]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.8.0\n[json5format/build] \u2b50 Run Main Cancel previous\n[json5format/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/styfle-cancel-workflow-action@0.8.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.8.0/\n[json5format/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/styfle-cancel-workflow-action@0.8.0/] user=0 workdir=\n[json5format/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.8.0/dist/index.js] user= workdir=\n[json5format/build]   | {\n[json5format/build]   |   eventName: 'push',\n[json5format/build]   |   sha: 'c0b2fb0956b6fb099374a83d7ecd9a052ca6b47a',\n[json5format/build]   |   headSha: 'c0b2fb0956b6fb099374a83d7ecd9a052ca6b47a',\n[json5format/build]   |   branch: 'master',\n[json5format/build]   |   owner: 'google',\n[json5format/build]   |   repo: 'json5format',\n[json5format/build]   |   GITHUB_RUN_ID: '1'\n[json5format/build]   | }\n[json5format/build]   \u2757  ::error::Input required and not supplied: access_token\n[json5format/build]   \u274c  Failure - Main Cancel previous\n[json5format/build] exitcode '1': failure\n[json5format/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

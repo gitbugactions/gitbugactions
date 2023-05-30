@@ -1,0 +1,11 @@
+{
+    "repository": "woodruffw/kbs2",
+    "clone_url": "https://github.com/woodruffw/kbs2.git",
+    "timestamp": "2023-05-30T09:43:48.096660Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/lint] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/lint]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/lint]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/lint]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/lint]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/woodruffw-kbs2] user=0 workdir=\n[CI/lint] \u2b50 Run Main actions/checkout@v3\n[CI/lint]   \u2705  Success - Main actions/checkout@v3\n[CI/lint] \u2b50 Run Main Format\n[CI/lint]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[CI/lint]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[CI/lint]   \u274c  Failure - Main Format\n[CI/lint] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[CI/lint] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/d49889bdd341c6258fe341181fbc4a4dbc8126f95866c71eb9ea64d435b88dc4?force=1&v=1\": context deadline exceeded\n[CI/lint] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-CI-test-7587b47f572787ca4bc647c2581a917f05f439a38e66ca9abce9eb5337031daf\" is already in use by container \"dfd9af1c045d3b20c940c6e6d90c1138f92bd526b855d0be2896f948d1e1b1d4\". You have to remove (or rename) that container to be able to reuse that name.'\n"
+}

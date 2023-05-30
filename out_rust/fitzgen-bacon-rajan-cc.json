@@ -1,0 +1,11 @@
+{
+    "repository": "fitzgen/bacon-rajan-cc",
+    "clone_url": "https://github.com/fitzgen/bacon-rajan-cc.git",
+    "timestamp": "2023-05-30T08:43:27.260593Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/Miri ] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/Miri ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build] failed to remove container: Error response from daemon: removal of container 82e01d07047d2c6b4736d6cc42a46bb1bfd1eb7ecd364c66641680f602aeac3b is already in progress\n[Rust/Miri ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/Miri ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/Miri ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/fitzgen-bacon-rajan-cc] user=0 workdir=\n[Rust/Miri ] \u2b50 Run Main Checkout sources\n[Rust/Miri ]   \u2705  Success - Main Checkout sources\n[Rust/Miri ] \u2b50 Run Main Install Rust\n[Rust/Miri ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rust/Miri ]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Rust/Miri ]   \u274c  Failure - Main Install Rust\n[Rust/Miri ] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 8cddd5dbb6743818f6d53a7a1fb0d38bc92f0a58b7024e043cfa4fb460ad4736\n[Rust/Miri ] failed to remove container: Error response from daemon: No such container: 8cddd5dbb6743818f6d53a7a1fb0d38bc92f0a58b7024e043cfa4fb460ad4736\n[Rust/Miri ] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-Rust-build-31a856b6e66ec7c451eee8385fa3199d265cb1ae342761d738ea35254f298e0d-env: volume is in use - [82e01d07047d2c6b4736d6cc42a46bb1bfd1eb7ecd364c66641680f602aeac3b]\n"
+}

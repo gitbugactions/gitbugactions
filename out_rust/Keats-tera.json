@@ -1,0 +1,11 @@
+{
+    "repository": "Keats/tera",
+    "clone_url": "https://github.com/Keats/tera.git",
+    "timestamp": "2023-05-30T08:47:41.536156Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[ci/test] \ud83d\ude80  Start image=crawlergpt:latest\n[ci/wasm] \ud83d\ude80  Start image=crawlergpt:latest\n[ci/wasm]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ci/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ci/wasm]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ci/wasm]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ci/wasm]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/Keats-tera] user=0 workdir=\n[ci/wasm] \u2b50 Run Main actions/checkout@v3\n[ci/wasm]   \u2705  Success - Main actions/checkout@v3\n[ci/wasm] \u2b50 Run Main Install\n[ci/wasm]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[ci/wasm]   | sh: 139: [: x86_64: unexpected operator\n[ci/wasm]   | wasm-pack-init: failed to find Rust installation, is rustup installed?\n[ci/wasm]   \u274c  Failure - Main Install\n[ci/wasm] exitcode '1': failure\n[ci/wasm] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-ci-test-4dd2818dd777dbd387fd209fcdd4bf6b72aaca91b75aed5a0f49c9d6b0515b62-env: volume is in use - [0fc20203de92587395c1023f9c323dd8c4620957a32e71a2df870bfac293db32]\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "BurntSushi/suffix",
+    "clone_url": "https://github.com/BurntSushi/suffix.git",
+    "timestamp": "2023-05-30T08:35:53.306502Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[ci/rustfmt] \ud83d\ude80  Start image=crawlergpt:latest\n[ci/test   ] \ud83d\ude80  Start image=crawlergpt:latest\n[ci/rustfmt]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ci/test   ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ci/rustfmt] failed to remove container: Error response from daemon: removal of container b79495cb8ee739165b8b6644f430cae26b8334ed1298d56d020077d2c0d15482 is already in progress\n[ci/test   ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ci/test   ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ci/test   ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/BurntSushi-suffix] user=0 workdir=\n[ci/test   ]   | OCI runtime exec failed: exec failed: cannot exec in a stopped container: unknown\r\n[ci/test   ]   \u2601  git clone 'https://github.com/dtolnay/rust-toolchain' # ref=v1\n[ci/test   ] \u2b50 Run Pre Install Rust\n[ci/test   ]   \u2705  Success - Pre Install Rust\n[ci/test   ] failed to remove container: Error response from daemon: No such container: 6e9cabd8c7e9f2e7094f381565aa270ad54345bfb6d66e5e2c154353f26d77a3\n[ci/test   ] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-ci-rustfmt-8dab1cd36d37b5c9e80d851c04d27838b19d2ee5a48e871b65ebc8a9f067434e-env: volume is in use - [b79495cb8ee739165b8b6644f430cae26b8334ed1298d56d020077d2c0d15482]\n"
+}

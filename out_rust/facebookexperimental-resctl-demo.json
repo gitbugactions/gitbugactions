@@ -1,0 +1,11 @@
+{
+    "repository": "facebookexperimental/resctl-demo",
+    "clone_url": "https://github.com/facebookexperimental/resctl-demo.git",
+    "timestamp": "2023-05-30T09:27:36.440347Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/CI] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/CI]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/CI]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/CI]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/CI]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/facebookexperimental-resctl-demo] user=0 workdir=\n[CI/CI] \u2b50 Run Main Checkout repository\n[CI/CI]   \u2705  Success - Main Checkout repository\n[CI/CI] \u2b50 Run Main Cargo build\n[CI/CI]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[CI/CI]   | /var/run/act/workflow/2: line 2: cargo: command not found\n[CI/CI]   \u274c  Failure - Main Cargo build\n[CI/CI] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[CI/CI] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'CI' failed\n"
+}

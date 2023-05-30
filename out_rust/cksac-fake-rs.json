@@ -1,0 +1,11 @@
+{
+    "repository": "cksac/fake-rs",
+    "clone_url": "https://github.com/cksac/fake-rs.git",
+    "timestamp": "2023-05-30T09:05:39.811920Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/cksac-fake-rs] user=0 workdir=\n[Rust/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Rust/build] \u2b50 Run Main actions/checkout@v2\n[Rust/build]   \u2705  Success - Main actions/checkout@v2\n[Rust/build] Error response from daemon: No such container: 6cf9bf664be146a4c417ff361695999c085e2c62c796d7ac068a12197a918839\n[Rust/build] \u2b50 Run Main Build\n[Rust/build]   \u274c  Failure - Main Build\n[Rust/build] Error response from daemon: No such container: 6cf9bf664be146a4c417ff361695999c085e2c62c796d7ac068a12197a918839\n[Rust/build] failed to remove container: Error response from daemon: No such container: 6cf9bf664be146a4c417ff361695999c085e2c62c796d7ac068a12197a918839\n[Rust/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Rust-build-31a856b6e66ec7c451eee8385fa3199d265cb1ae342761d738ea35254f298e0d-env: volume is in use - [a7b4600af95120e2225a90697ece6e56bf4884fedb7af9d57ba48d5e82ad6477] (original error: <nil>) (original error: <nil>)\n"
+}

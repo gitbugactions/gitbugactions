@@ -1,0 +1,11 @@
+{
+    "repository": "sourcefrog/conserve",
+    "clone_url": "https://github.com/sourcefrog/conserve.git",
+    "timestamp": "2023-05-30T08:24:18.117337Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/sourcefrog-conserve] user=0 workdir=\n[Rust/build]   \u2601  git clone 'https://github.com/Swatinem/rust-cache' # ref=v2\n[Rust/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[Rust/build] \u2b50 Run Main actions/checkout@v3\n[Rust/build]   \u2705  Success - Main actions/checkout@v3\n[Rust/build] Error response from daemon: No such container: d50a6f34d8a31cdae5326c4d0d2f094a40d4d9d81303fef679921765670d14a7\n[Rust/build] \u2b50 Run Main Swatinem/rust-cache@v2\n[Rust/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/Swatinem-rust-cache@v2/ dst=/var/run/act/actions/Swatinem-rust-cache@v2/\n[Rust/build]   \u274c  Failure - Main Swatinem/rust-cache@v2\n[Rust/build] Error response from daemon: No such container: d50a6f34d8a31cdae5326c4d0d2f094a40d4d9d81303fef679921765670d14a7\n[Rust/build] failed to remove container: Error response from daemon: No such container: d50a6f34d8a31cdae5326c4d0d2f094a40d4d9d81303fef679921765670d14a7\n[Rust/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Rust-build-31a856b6e66ec7c451eee8385fa3199d265cb1ae342761d738ea35254f298e0d-env: volume is in use - [14477e8b04247e5d686f6795d5a23c1eda631ba43974c68bfaa5076589e09f65] (original error: <nil>) (original error: <nil>)\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "zesterer/pollster",
+    "clone_url": "https://github.com/zesterer/pollster.git",
+    "timestamp": "2023-05-30T09:32:20.491331Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build-with-macro] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build           ] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build-with-macro]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build           ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build-with-macro]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build-with-macro]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build           ] failed to remove container: Error response from daemon: removal of container 4992e555069549f9bf4b4f1abec7bd72f54571fee1b2ba1636233dc90d89b0b5 is already in progress\n[Rust/build-with-macro]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/zesterer-pollster] user=0 workdir=\n[Rust/build-with-macro] \u2b50 Run Main actions/checkout@v3\n[Rust/build-with-macro]   \u2705  Success - Main actions/checkout@v3\n[Rust/build-with-macro] \u2b50 Run Main Build\n[Rust/build-with-macro]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rust/build-with-macro]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[Rust/build-with-macro]   \u274c  Failure - Main Build\n[Rust/build-with-macro] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Rust/build-with-macro] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-Rust-build-31a856b6e66ec7c451eee8385fa3199d265cb1ae342761d738ea35254f298e0d-env: volume is in use - [4992e555069549f9bf4b4f1abec7bd72f54571fee1b2ba1636233dc90d89b0b5]\n"
+}

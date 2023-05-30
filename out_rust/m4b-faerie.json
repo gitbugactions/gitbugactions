@@ -1,0 +1,11 @@
+{
+    "repository": "m4b/faerie",
+    "clone_url": "https://github.com/m4b/faerie.git",
+    "timestamp": "2023-05-30T09:14:16.988149Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Rustfmt] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Test   ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Rustfmt]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test   ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Rustfmt] failed to remove container: Error response from daemon: removal of container bc9e5a78ae97a761396b6677073c315a203135bdb07bd3bf748e9b9df7e952e2 is already in progress\n[CI/Test   ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test   ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test   ] \ud83e\uddea  Matrix: map[os:ubuntu rust:stable]\n[CI/Test   ] \u2b50 Run Main actions/checkout@v1\n[CI/Test   ]   \u2705  Success - Main actions/checkout@v1\n[CI/Test   ] Error response from daemon: No such container: 880e8ab260ba4041e702b27b039613731360ce1ea3a2d94a31201ed6bafa6298\n[CI/Test   ] \u2b50 Run Main Install Rust\n[CI/Test   ]   \u274c  Failure - Main Install Rust\n[CI/Test   ] Error response from daemon: No such container: 880e8ab260ba4041e702b27b039613731360ce1ea3a2d94a31201ed6bafa6298\n[CI/Test   ] failed to remove container: Error response from daemon: No such container: 880e8ab260ba4041e702b27b039613731360ce1ea3a2d94a31201ed6bafa6298\n[CI/Test   ] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-CI-Rustfmt-90dc29b53a10627f03571abcbad0553397b4af59d3e6230c83d74993589754c1-env: volume is in use - [bc9e5a78ae97a761396b6677073c315a203135bdb07bd3bf748e9b9df7e952e2]\n"
+}

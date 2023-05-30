@@ -1,0 +1,11 @@
+{
+    "repository": "bluejekyll/trust-dns",
+    "clone_url": "https://github.com/bluejekyll/trust-dns.git",
+    "timestamp": "2023-05-30T08:50:18.384457Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[test/cleanliness] \ud83d\ude80  Start image=crawlergpt:latest\n[test/platform   ] \ud83d\ude80  Start image=crawlergpt:latest\n[test/cleanliness]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[test/platform   ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[test/cleanliness]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/platform   ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/platform   ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/cleanliness]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/cleanliness]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/bluejekyll-trust-dns] user=0 workdir=\n[test/platform   ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/bluejekyll-trust-dns] user=0 workdir=\n[test/cleanliness]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[test/cleanliness] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[test/platform   ]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[test/platform   ] Unable to checkout 16499b5e05bf2e26879000db0c1d13f7e13fa3af: EOF\n[test/cleanliness] \ud83c\udfc1  Job succeeded\n[test/platform   ] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: invalid checksum\n"
+}

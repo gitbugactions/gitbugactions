@@ -1,0 +1,11 @@
+{
+    "repository": "egg-mode-rs/egg-mode",
+    "clone_url": "https://github.com/egg-mode-rs/egg-mode.git",
+    "timestamp": "2023-05-30T09:08:22.102752Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Tests] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/egg-mode-rs-egg-mode] user=0 workdir=\n[CI/Tests]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[CI/Tests]   \u2601  git clone 'https://github.com/actions-rs/cargo' # ref=v1\n[CI/Tests] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[CI/Tests] \u2b50 Run Main Checkout\n[CI/Tests]   \u2705  Success - Main Checkout\n[CI/Tests] \u2b50 Run Main Install toolchain\n[CI/Tests]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-rs-toolchain@v1/ dst=/var/run/act/actions/actions-rs-toolchain@v1/\n[CI/Tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-rs-toolchain@v1/] user=0 workdir=\n[CI/Tests]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CI/Tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-rs-toolchain@v1/dist/index.js] user= workdir=\n[CI/Tests]   \u274c  Failure - Main Install toolchain\n[CI/Tests] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 9c2c2cc349cfbb533e7af925742b902d8c21b1830045bf4fa91e8465f42fb65a\n[CI/Tests] failed to remove container: Error response from daemon: No such container: 9c2c2cc349cfbb533e7af925742b902d8c21b1830045bf4fa91e8465f42fb65a\n[CI/Tests] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'Tests' failed\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "AltF02/x11-rs",
+    "clone_url": "https://github.com/AltF02/x11-rs.git",
+    "timestamp": "2023-05-30T08:38:58.043337Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/AltF02-x11-rs] user=0 workdir=\n[Tests/build] \u2b50 Run Main actions/checkout@v2\n[Tests/build]   \u2705  Success - Main actions/checkout@v2\n[Tests/build] \u2b50 Run Main Build\n[Tests/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Tests/build]   | cd x11 && cargo build --features \"xlib\"\n[Tests/build]   | /bin/sh: 1: cargo: not found\n[Tests/build]   | make: *** [Makefile:8: build-x11] Error 127\n[Tests/build]   \u274c  Failure - Main Build\n[Tests/build] exitcode '2': failure\n[Tests/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

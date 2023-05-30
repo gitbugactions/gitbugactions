@@ -1,0 +1,11 @@
+{
+    "repository": "leftwm/leftwm-theme",
+    "clone_url": "https://github.com/leftwm/leftwm-theme.git",
+    "timestamp": "2023-05-30T09:27:41.278951Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/fmt  ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/fmt  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/fmt  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/fmt  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/fmt  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/leftwm-leftwm-theme] user=0 workdir=\n[CI/fmt  ] \u2b50 Run Main actions/checkout@v2\n[CI/fmt  ]   \u2705  Success - Main actions/checkout@v2\n[CI/fmt  ] \u2b50 Run Main Fmt\n[CI/fmt  ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[CI/fmt  ]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[CI/fmt  ]   \u274c  Failure - Main Fmt\n[CI/fmt  ] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[CI/fmt  ] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/8f87df42cac2be5d2518b94ac8766b3701a1c7b9243c99284b154cd1c806ad32?force=1&v=1\": context deadline exceeded\n[CI/fmt  ] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-CI-build-03727a8f260608c14dbfbecd23630d3cd3cc939c3150870ab3631218246ce38f\" is already in use by container \"cb20a21602c60c97f617251d445acb4c237efedae1c49be36d6857cb6be5c099\". You have to remove (or rename) that container to be able to reuse that name.'\n"
+}

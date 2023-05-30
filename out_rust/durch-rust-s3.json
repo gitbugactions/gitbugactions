@@ -1,0 +1,11 @@
+{
+    "repository": "durch/rust-s3",
+    "clone_url": "https://github.com/durch/rust-s3.git",
+    "timestamp": "2023-05-30T09:08:22.068257Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/durch-rust-s3] user=0 workdir=\n[build/build] \u2b50 Run Main actions/checkout@v2\n[build/build]   \u2705  Success - Main actions/checkout@v2\n[build/build] \u2b50 Run Main test\n[build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[build/build]   | cd s3; make ci\n[build/build]   | make[1]: Entering directory '/tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/durch-rust-s3/s3'\n[build/build]   | cargo clippy -- -D warnings\n[build/build]   | make[1]: cargo: Command not found\n[build/build]   | make[1]: *** [Makefile:16: tokio-nativetls-clippy] Error 127\n[build/build]   | make[1]: Leaving directory '/tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/durch-rust-s3/s3'\n[build/build]   | make: *** [Makefile:15: s3-ci] Error 2\n[build/build]   \u274c  Failure - Main test\n[build/build] exitcode '2': failure\n[build/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

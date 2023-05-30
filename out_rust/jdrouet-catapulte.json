@@ -1,0 +1,11 @@
+{
+    "repository": "jdrouet/catapulte",
+    "clone_url": "https://github.com/jdrouet/catapulte.git",
+    "timestamp": "2023-05-30T09:43:13.139594Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[main-crawler.yml/code-checking] \ud83d\ude80  Start image=crawlergpt:latest\n[main-crawler.yml/testing      ] \ud83d\ude80  Start image=rust:1-bullseye\n[main-crawler.yml/testing      ]   \ud83d\udc33  docker pull image=rust:1-bullseye platform= username= forcePull=false\n[main-crawler.yml/code-checking]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[main-crawler.yml/testing      ]   \ud83d\udc33  docker create image=rust:1-bullseye platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[main-crawler.yml/code-checking]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[main-crawler.yml/testing      ]   \ud83d\udc33  docker run image=rust:1-bullseye platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[main-crawler.yml/code-checking]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[main-crawler.yml/code-checking]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/jdrouet-catapulte] user=0 workdir=\n[main-crawler.yml/testing      ]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[main-crawler.yml/testing      ]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[main-crawler.yml/code-checking]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[main-crawler.yml/testing      ] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[main-crawler.yml/code-checking]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[main-crawler.yml/testing      ] \ud83c\udfc1  Job succeeded\n[main-crawler.yml/code-checking] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[main-crawler.yml/code-checking] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: invalid checksum\n"
+}

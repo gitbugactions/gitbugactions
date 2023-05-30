@@ -1,0 +1,11 @@
+{
+    "repository": "mcginty/snow",
+    "clone_url": "https://github.com/mcginty/snow.git",
+    "timestamp": "2023-05-30T09:11:53.947017Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/mcginty-snow] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/KyleMayes/install-llvm-action' # ref=v1\n[Build/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[Build/build] \u2b50 Run Main actions/checkout@v2\n[Build/build]   \u2705  Success - Main actions/checkout@v2\n[Build/build] \u2b50 Run Main Run tests\n[Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[Build/build]   | + cargo check --benches\n[Build/build]   | ./ci-tests.sh: line 8: cargo: command not found\n[Build/build]   \u274c  Failure - Main Run tests\n[Build/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Build/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

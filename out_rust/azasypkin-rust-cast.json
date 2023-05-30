@@ -1,0 +1,11 @@
+{
+    "repository": "azasypkin/rust-cast",
+    "clone_url": "https://github.com/azasypkin/rust-cast.git",
+    "timestamp": "2023-05-30T09:02:17.460127Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust Cast CI/Build (Linux)] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust Cast CI/Build (Linux)]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust Cast CI/Build (Linux)]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust Cast CI/Build (Linux)]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust Cast CI/Build (Linux)]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/azasypkin-rust-cast] user=0 workdir=\n[Rust Cast CI/Build (Linux)]   \u2601  git clone 'https://github.com/Swatinem/rust-cache' # ref=v2\n[Rust Cast CI/Build (Linux)] \ud83e\uddea  Matrix: map[os:ubuntu-latest rust:stable]\n[Rust Cast CI/Build (Linux)] \u2b50 Run Main Checkout\n[Rust Cast CI/Build (Linux)]   \u2705  Success - Main Checkout\n[Rust Cast CI/Build (Linux)] \u2b50 Run Main Install toolchain stable\n[Rust Cast CI/Build (Linux)]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rust Cast CI/Build (Linux)]   | /var/run/act/workflow/1: line 2: rustup: command not found\n[Rust Cast CI/Build (Linux)]   \u274c  Failure - Main Install toolchain stable\n[Rust Cast CI/Build (Linux)] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Rust Cast CI/Build (Linux)] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/5f8fbac8ca7d7a2711c446974bf27b924ae99f16a86a63488b75a41791c3c5ea?force=1&v=1\": context deadline exceeded\n[Rust Cast CI/Build (Linux)] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

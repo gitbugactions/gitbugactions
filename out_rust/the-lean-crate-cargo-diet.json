@@ -1,0 +1,11 @@
+{
+    "repository": "the-lean-crate/cargo-diet",
+    "clone_url": "https://github.com/the-lean-crate/cargo-diet.git",
+    "timestamp": "2023-05-30T09:27:24.484907Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build-and-test] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/build-and-test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build-and-test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build-and-test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build-and-test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/the-lean-crate-cargo-diet] user=0 workdir=\n[Rust/build-and-test]   \u2601  git clone 'https://github.com/actions-rs/install' # ref=v0.1\n[Rust/build-and-test] \u2b50 Run Main actions/checkout@v2\n[Rust/build-and-test]   \u2705  Success - Main actions/checkout@v2\n[Rust/build-and-test] \u2b50 Run Main Run tests\n[Rust/build-and-test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rust/build-and-test]   | cargo build --features dev-support\n[Rust/build-and-test]   | make: cargo: Command not found\n[Rust/build-and-test]   | make: *** [Makefile:18: target/debug/cargo-diet] Error 127\n[Rust/build-and-test]   \u274c  Failure - Main Run tests\n[Rust/build-and-test] exitcode '2': failure\n[Rust/build-and-test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build-and-test' failed\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "jamesmcm/vopono",
+    "clone_url": "https://github.com/jamesmcm/vopono.git",
+    "timestamp": "2023-05-30T09:38:58.323637Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Rust/build     ] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/quickcheck] \ud83d\ude80  Start image=crawlergpt:latest\n[Rust/quickcheck]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/build     ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Rust/quickcheck]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/build     ] failed to remove container: Error response from daemon: removal of container 6d348f35f84106452151d3405333eaa1df61406638537e5c13b82f61fd4224e5 is already in progress\n[Rust/quickcheck]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Rust/quickcheck]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/jamesmcm-vopono] user=0 workdir=\n[Rust/quickcheck] \u2b50 Run Main actions/checkout@v2\n[Rust/quickcheck]   \u2705  Success - Main actions/checkout@v2\n[Rust/quickcheck] \u2b50 Run Main cargo check\n[Rust/quickcheck]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Rust/quickcheck]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[Rust/quickcheck]   \u274c  Failure - Main cargo check\n[Rust/quickcheck] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Rust/quickcheck] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error response from daemon: remove act-Rust-build-31a856b6e66ec7c451eee8385fa3199d265cb1ae342761d738ea35254f298e0d-env: volume is in use - [6d348f35f84106452151d3405333eaa1df61406638537e5c13b82f61fd4224e5]\n"
+}

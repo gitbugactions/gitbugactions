@@ -1,0 +1,11 @@
+{
+    "repository": "kvark/vange-rs",
+    "clone_url": "https://github.com/kvark/vange-rs.git",
+    "timestamp": "2023-05-30T09:05:50.725970Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Check/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Check/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Check/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Check/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Check/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c1e8dd3a-fec2-11ed-a890-af2cc187fc11/kvark-vange-rs] user=0 workdir=\n[Check/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[Check/build] \u2b50 Run Main actions/checkout@v2\n[Check/build]   \u2705  Success - Main actions/checkout@v2\n[Check/build] \u2b50 Run Main cargo check\n[Check/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Check/build]   | /var/run/act/workflow/1: line 2: cargo: command not found\n[Check/build]   \u274c  Failure - Main cargo check\n[Check/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[Check/build] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/515b39fcc8b969566430bc1589e32c6130842d75e02ea21d67372e8dc0a9cc0c?force=1&v=1\": context deadline exceeded\n[Check/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}
