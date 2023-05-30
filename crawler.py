@@ -192,7 +192,7 @@ class BugCollectorStrategy(RepoStrategy):
                             # Invalid patches
                             continue
                         test_actions.save_workflows()
-                        pre_failed_tests, _, _ = test_actions.get_failed_tests(workflow)
+                        pre_failed_tests = test_actions.get_failed_tests(workflow)
                         if pre_failed_tests is None:
                             # Timeout: The other commits will take similar amount of time FIXME
                             # Job failed without tests failing
@@ -207,7 +207,7 @@ class BugCollectorStrategy(RepoStrategy):
                         repo_clone.set_head(commit.oid)
                         test_actions.save_workflows()
 
-                        cur_failed_tests, _, _ = test_actions.get_failed_tests(workflow)
+                        cur_failed_tests = test_actions.get_failed_tests(workflow)
                         if cur_failed_tests is None:
                             # Timeout: The other commits will take similar amount of time FIXME
                             # Job failed without tests failing
@@ -222,7 +222,8 @@ class BugCollectorStrategy(RepoStrategy):
 
                     # Back to default branch (avoids conflitcts)
                     repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
-                    failed_diff = list(set(previous_failed_tests).difference(set(current_failed_tests)))
+                    failed_diff = list(set(x.classname + "#" + x.name for x in previous_failed_tests)
+                                       .difference(set(x.classname + "#" + x.name for x in current_failed_tests)))
 
                     # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
                     if len(failed_diff) == 0 or not workflow_succeeded:
