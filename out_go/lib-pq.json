@@ -1,0 +1,11 @@
+{
+    "repository": "lib/pq",
+    "clone_url": "https://github.com/lib/pq.git",
+    "timestamp": "2023-05-30T10:26:12.440670Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/lib-pq] user=0 workdir=\n[Test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[Test/test] \ud83e\uddea  Matrix: map[go:1.20 postgres:15]\n[Test/test] \u2b50 Run Main setup postgres pre-reqs\n[Test/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[Test/test]   \u2705  Success - Main setup postgres pre-reqs\n[Test/test] \u2b50 Run Main start postgres\n[Test/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Test/test]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=pg\": dial unix /var/run/docker.sock: connect: permission denied.\n[Test/test]   | See 'docker run --help'.\n[Test/test]   \u274c  Failure - Main start postgres\n[Test/test] exitcode '126': failure\n[Test/test] failed to remove container: Error response from daemon: No such container: 98a66dead2614626aa975a6673cfcffe06257f996e320afc59b98fb690c1c6d5\n[Test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Test-test-1a89228c479b352e9beafd139ce1652ef6d39e9a57114fb000a3c158cff408d6-env: volume is in use - [86c1be29156cef8740a1ec4cf34fc371a5226239dbaee2b0b57ce8a3489031c3] (original error: <nil>) (original error: <nil>)\n"
+}

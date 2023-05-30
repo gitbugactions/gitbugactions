@@ -1,0 +1,11 @@
+{
+    "repository": "go-hep/hep",
+    "clone_url": "https://github.com/go-hep/hep.git",
+    "timestamp": "2023-05-30T12:11:33.351235Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/go-hep-hep] user=0 workdir=\n[CI/Build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[CI/Build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[CI/Build] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[CI/Build] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/dcfeb18bfd8d6d154552bad22fe5980562e9095370dd0c53d1718824e3522f8d?force=1&v=1\": context deadline exceeded\n[CI/Build] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: invalid checksum)\n"
+}

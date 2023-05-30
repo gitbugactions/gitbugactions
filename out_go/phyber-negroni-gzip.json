@@ -1,0 +1,11 @@
+{
+    "repository": "phyber/negroni-gzip",
+    "clone_url": "https://github.com/phyber/negroni-gzip.git",
+    "timestamp": "2023-05-30T10:42:15.840968Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Continuous Integration/Go Test] \ud83d\ude80  Start image=crawlergpt:latest\n[Continuous Integration/Go Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Continuous Integration/Go Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Continuous Integration/Go Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Continuous Integration/Go Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/phyber-negroni-gzip] user=0 workdir=\n[Continuous Integration/Go Test]   \u2601  git clone 'https://github.com/cedrickring/golang-action' # ref=1.6.0\n[Continuous Integration/Go Test] \u2b50 Run Main actions/checkout@v2\n[Continuous Integration/Go Test]   \u2705  Success - Main actions/checkout@v2\n[Continuous Integration/Go Test] \u2b50 Run Main cedrickring/golang-action@1.6.0\n[Continuous Integration/Go Test]   \ud83d\udc33  docker build -t act-cedrickring-golang-action-1-6-0-dockeraction:latest /home/andre-silva/.cache/act/cedrickring-golang-action@1.6.0/\n[Continuous Integration/Go Test]   \u274c  Failure - Main cedrickring/golang-action@1.6.0\n[Continuous Integration/Go Test] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/342ef6c3a58a890f0842ae7eba692a7e70006b279908e17d4c8fb59fa6c31fdb/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[Continuous Integration/Go Test] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: context canceled\n"
+}

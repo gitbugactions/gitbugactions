@@ -1,0 +1,11 @@
+{
+    "repository": "theojulienne/go-wireless",
+    "clone_url": "https://github.com/theojulienne/go-wireless.git",
+    "timestamp": "2023-05-30T10:53:22.063925Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/theojulienne-go-wireless] user=0 workdir=\n[Go/Test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v1\n[Go/Test] \u2b50 Run Main Set up Go 1.13\n[Go/Test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v1/ dst=/var/run/act/actions/actions-setup-go@v1/\n[Go/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v1/] user=0 workdir=\n[Go/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v1/lib/setup-go.js] user= workdir=\n[Go/Test]   \u274c  Failure - Main Set up Go 1.13\n[Go/Test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 590666fda57cc0ca74a24b462b918788604356e36d3cb21051dd823a1d02896c\n[Go/Test] failed to remove container: Error response from daemon: No such container: 590666fda57cc0ca74a24b462b918788604356e36d3cb21051dd823a1d02896c\n[Go/Test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'Test' failed\n"
+}

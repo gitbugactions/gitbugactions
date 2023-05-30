@@ -1,0 +1,11 @@
+{
+    "repository": "snapcore/snapd",
+    "clone_url": "https://github.com/snapcore/snapd.git",
+    "timestamp": "2023-05-30T11:19:05.174609Z",
+    "clone_success": true,
+    "number of actions": 6,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Tests/cache-build-deps] \ud83d\ude80  Start image=crawlergpt:latest\n[Tests/cache-build-deps]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Tests/cache-build-deps]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/cache-build-deps]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/cache-build-deps]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/snapcore-snapd] user=0 workdir=\n[Tests/cache-build-deps]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Tests/cache-build-deps] \u2b50 Run Main Checkout code\n[Tests/cache-build-deps]   \u2705  Success - Main Checkout code\n[Tests/cache-build-deps] \u2b50 Run Main Fetching base ref \n[Tests/cache-build-deps]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Tests/cache-build-deps]   | /var/run/act/workflow/1: line 2: cd: /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/snapcore-snapd/src/github.com/snapcore/snapd: No such file or directory\n[Tests/cache-build-deps]   \u274c  Failure - Main Fetching base ref \n[Tests/cache-build-deps] exitcode '1': failure\n[Tests/cache-build-deps] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/cc7100a8cd05b4244301f3a2c862f728a29e82eb0287cfc2524152b33c1ff5ad?force=1&v=1\": context deadline exceeded\n[Tests/cache-build-deps] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

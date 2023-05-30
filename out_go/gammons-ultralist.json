@@ -1,0 +1,11 @@
+{
+    "repository": "gammons/ultralist",
+    "clone_url": "https://github.com/gammons/ultralist.git",
+    "timestamp": "2023-05-30T11:38:18.933692Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/gammons-ultralist] user=0 workdir=\n[Go/Build]   | OCI runtime exec failed: exec failed: unable to start container process: error writing config to pipe: write init-p: broken pipe: unknown\r\n[Go/Build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Go/Build] \u2b50 Run Main Set up Go 1.x\n[Go/Build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[Go/Build]   \u274c  Failure - Main Set up Go 1.x\n[Go/Build] Error response from daemon: No such container: 89e2011b40c946c49d8d38df8a8ff483183bb447e1885bea2f6fc3ae81aa69c9\n[Go/Build] failed to remove container: Error response from daemon: No such container: 89e2011b40c946c49d8d38df8a8ff483183bb447e1885bea2f6fc3ae81aa69c9\n[Go/Build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Go-Build-f2f289ce9e30b74727bc2be0d8d10769e44bbd13b195a572d0e76414508224f4-env: volume is in use - [48f67c6fcac9ee06669b36dfd0e0cab7999af156ada0999d6f9a7da0fc4874c6] (original error: <nil>) (original error: <nil>)\n"
+}

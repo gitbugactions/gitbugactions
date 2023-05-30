@@ -1,0 +1,11 @@
+{
+    "repository": "netlify/gotrue",
+    "clone_url": "https://github.com/netlify/gotrue.git",
+    "timestamp": "2023-05-30T11:42:38.033615Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/netlify-gotrue] user=0 workdir=\n[Test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Test/test] \ud83e\uddea  Matrix: map[go-version:1.15.x]\n[Test/test] \u2b50 Run Main Install Go\n[Test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=\n[Test/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Test/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/setup/index.js] user= workdir=\n[Test/test]   \u274c  Failure - Main Install Go\n[Test/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 916366068a6e6ca3b4f05c536ca07c1773a58c65d31e85aca29f73b28e561f3b\n[Test/test] failed to remove container: Error response from daemon: No such container: 916366068a6e6ca3b4f05c536ca07c1773a58c65d31e85aca29f73b28e561f3b\n[Test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Test-test-1a89228c479b352e9beafd139ce1652ef6d39e9a57114fb000a3c158cff408d6-env: volume is in use - [6c572194ef1fc83bab08713852c4283657724563987dd04af36f2c8621e4ac6f] (original error: <nil>) (original error: <nil>)\n"
+}

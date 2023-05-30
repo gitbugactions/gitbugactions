@@ -1,0 +1,11 @@
+{
+    "repository": "huandu/facebook",
+    "clone_url": "https://github.com/huandu/facebook.git",
+    "timestamp": "2023-05-30T10:26:17.658333Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/build] failed to remove container: Error response from daemon: removal of container 5fee8e8513ddb5168ab92f87f109031bed3b4852f18bbaef10b5d1977b3df253 is already in progress\n[Go/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:0 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/huandu-facebook] user=0 workdir=\n[Go/build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Go/build] \u2b50 Run Main actions/checkout@v2\n[Go/build]   \u2705  Success - Main actions/checkout@v2\n[Go/build] Error response from daemon: No such container: e41c6d4b8a263cd3db7be2adbed2e855f0dd4eaaaf768d178e363bfab2caae6a\n[Go/build] \u2b50 Run Main Set up Go\n[Go/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[Go/build]   \u274c  Failure - Main Set up Go\n[Go/build] Error response from daemon: No such container: e41c6d4b8a263cd3db7be2adbed2e855f0dd4eaaaf768d178e363bfab2caae6a\n[Go/build] failed to remove container: Error response from daemon: No such container: e41c6d4b8a263cd3db7be2adbed2e855f0dd4eaaaf768d178e363bfab2caae6a\n[Go/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Go-build-071539628d24dcadcd374902e705ab0d223ffb4bca4cd4816d296fb408d6c7fe-env: volume is in use - [9266f313ed6e0c172afd299bf2d8be3f4924d5aa8aca915363ea934520014337] (original error: <nil>) (original error: <nil>)\n"
+}

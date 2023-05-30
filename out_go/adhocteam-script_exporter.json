@@ -1,0 +1,11 @@
+{
+    "repository": "adhocteam/script_exporter",
+    "clone_url": "https://github.com/adhocteam/script_exporter.git",
+    "timestamp": "2023-05-30T12:04:08.572997Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/adhocteam-script_exporter] user=0 workdir=\n[CI/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v3\n[CI/test] \ud83e\uddea  Matrix: map[go-version:1.19 os:ubuntu-latest]\n[CI/test] \u2b50 Run Main actions/setup-go@v3\n[CI/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/\n[CI/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=\n[CI/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=\n[CI/test]   \u274c  Failure - Main actions/setup-go@v3\n[CI/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container f6547fbca486bdc4436bc85b29a2ec1ba8b2d385c1c3a4502886bc2e3524a7db\n[CI/test] failed to remove container: Error response from daemon: No such container: f6547fbca486bdc4436bc85b29a2ec1ba8b2d385c1c3a4502886bc2e3524a7db\n[CI/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-CI-test-7587b47f572787ca4bc647c2581a917f05f439a38e66ca9abce9eb5337031daf-env: volume is in use - [c898e06747222375229005585fad3da4d27a6756b2c541a57cbb08c3c8ee9aa6] (original error: <nil>) (original error: <nil>)\n"
+}

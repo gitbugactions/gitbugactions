@@ -1,0 +1,11 @@
+{
+    "repository": "vbauerster/mpb",
+    "clone_url": "https://github.com/vbauerster/mpb.git",
+    "timestamp": "2023-05-30T12:05:44.576333Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/vbauerster-mpb] user=0 workdir=\n[test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[test/test] \ud83e\uddea  Matrix: map[go-version:stable os:ubuntu-latest]\n[test/test] \u2b50 Run Main actions/checkout@v3\n[test/test]   \u2705  Success - Main actions/checkout@v3\n[test/test] \u2b50 Run Main actions/setup-go@v4\n[test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v4/] user=0 workdir=\n[test/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[test/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v4/dist/setup/index.js] user= workdir=\n[test/test]   \u274c  Failure - Main actions/setup-go@v4\n[test/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 10a4addc425aee3d3997add98b133a44b94f9f7ffb07ba73df1764d16a7378ad\n[test/test] failed to remove container: Error response from daemon: No such container: 10a4addc425aee3d3997add98b133a44b94f9f7ffb07ba73df1764d16a7378ad\n[test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

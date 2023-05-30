@@ -1,0 +1,11 @@
+{
+    "repository": "jmhodges/levigo",
+    "clone_url": "https://github.com/jmhodges/levigo.git",
+    "timestamp": "2023-05-30T10:26:10.235425Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/jmhodges-levigo] user=0 workdir=\n[Go/Build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v1\n[Go/Build] \u2b50 Run Main Check out code into the Go module directory\n[Go/Build]   \u2705  Success - Main Check out code into the Go module directory\n[Go/Build] Error response from daemon: No such container: bf0c82ed8bc7204dc2998ed25d8dfc2316a607dc13d71f274b516970a5817a7f\n[Go/Build] \u2b50 Run Main Read Go versions\n[Go/Build]   \u274c  Failure - Main Read Go versions\n[Go/Build] Error response from daemon: No such container: bf0c82ed8bc7204dc2998ed25d8dfc2316a607dc13d71f274b516970a5817a7f\n[Go/Build] failed to remove container: Error response from daemon: No such container: bf0c82ed8bc7204dc2998ed25d8dfc2316a607dc13d71f274b516970a5817a7f\n[Go/Build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Go-Build-f2f289ce9e30b74727bc2be0d8d10769e44bbd13b195a572d0e76414508224f4-env: volume is in use - [ad2e798ef5c26856997e2645c10c8a109f8d7edd59f5bb671a232b6fb0709b92] (original error: <nil>) (original error: <nil>)\n"
+}

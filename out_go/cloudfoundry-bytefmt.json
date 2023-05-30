@@ -1,0 +1,11 @@
+{
+    "repository": "cloudfoundry/bytefmt",
+    "clone_url": "https://github.com/cloudfoundry/bytefmt.git",
+    "timestamp": "2023-05-30T10:40:16.053644Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:0 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/cloudfoundry-bytefmt] user=0 workdir=\n[Go/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Go/test] \u2b50 Run Main actions/checkout@v2\n[Go/test]   \u2705  Success - Main actions/checkout@v2\n[Go/test] Error response from daemon: No such container: dd083df21a51767d62baab35c050fd3ac32d408f4395b768c3ab7e685b846294\n[Go/test] \u2b50 Run Main Get Go version from go.mod\n[Go/test]   \u274c  Failure - Main Get Go version from go.mod\n[Go/test] Error response from daemon: No such container: dd083df21a51767d62baab35c050fd3ac32d408f4395b768c3ab7e685b846294\n[Go/test] failed to remove container: Error response from daemon: No such container: dd083df21a51767d62baab35c050fd3ac32d408f4395b768c3ab7e685b846294\n[Go/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Go-test-6d9d006bdcbe3f9b44a588c95bb3fbe82e78203af7700c48f5072e28b41bab72-env: volume is in use - [e2faf1d6d9909342634a43eb1f30f2b142cc71882cbea728e81076cbe25dcc02] (original error: <nil>) (original error: <nil>)\n"
+}

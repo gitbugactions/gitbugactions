@@ -1,0 +1,11 @@
+{
+    "repository": "tinylib/msgp",
+    "clone_url": "https://github.com/tinylib/msgp.git",
+    "timestamp": "2023-05-30T10:50:16.203480Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/tinylib-msgp] user=0 workdir=\n[test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v3\n[test/test] \ud83e\uddea  Matrix: map[go-version:1.14.x os:ubuntu-latest]\n[test/test] \u2b50 Run Main actions/setup-go@v3\n[test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/\n[test/test]   \u274c  Failure - Main actions/setup-go@v3\n[test/test] Error response from daemon: RWLayer of container 0b08e10d3a1f3dd7040a7b6732682675d63cf3cad0bbe051f411b4f7a1d97785 is unexpectedly nil\n[test/test] failed to remove container: Error response from daemon: No such container: 0b08e10d3a1f3dd7040a7b6732682675d63cf3cad0bbe051f411b4f7a1d97785\n[test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-test-test-24f46b2e65c2fc9b49cf0e305f210649cb0a45d5b5dc0a1380eb443748b7420b-env: volume is in use - [b7e008d7a0fc16945bb087404afc9c99b70195d30e75edbeccb90d5e39eceb6f] (original error: <nil>) (original error: <nil>)\n"
+}

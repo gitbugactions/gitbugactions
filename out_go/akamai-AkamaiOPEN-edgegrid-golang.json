@@ -1,0 +1,11 @@
+{
+    "repository": "akamai/AkamaiOPEN-edgegrid-golang",
+    "clone_url": "https://github.com/akamai/AkamaiOPEN-edgegrid-golang.git",
+    "timestamp": "2023-05-30T11:42:24.257786Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[build/test] \ud83d\ude80  Start image=crawlergpt:latest\n[build/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/akamai-AkamaiOPEN-edgegrid-golang] user=0 workdir=\n[build/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v3\n[build/test] \u2b50 Run Main Checkout\n[build/test]   \u2705  Success - Main Checkout\n[build/test] \u2b50 Run Main Set up Go\n[build/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/\n[build/test]   \u274c  Failure - Main Set up Go\n[build/test] Error response from daemon: No such container: fb24aebc4d800523d800b77ee2ea6da3e7d0921c21ee6868648913fede4df6b4\n[build/test] failed to remove container: Error response from daemon: No such container: fb24aebc4d800523d800b77ee2ea6da3e7d0921c21ee6868648913fede4df6b4\n[build/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-build-test-a473cc1757f1b2b9c51d46fa709e34b12d5f3606cb355f1d526b028d45d93f7d-env: volume is in use - [1d5f8964934ce8bc1250a4783f087d1ccacdc7b713333abd31cc704c9d67c3ff] (original error: <nil>) (original error: <nil>)\n"
+}

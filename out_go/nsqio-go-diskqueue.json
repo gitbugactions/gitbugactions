@@ -1,0 +1,11 @@
+{
+    "repository": "nsqio/go-diskqueue",
+    "clone_url": "https://github.com/nsqio/go-diskqueue.git",
+    "timestamp": "2023-05-30T12:08:19.077876Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_stdout": "[tests/test] \ud83d\ude80  Start image=golang:1.13\n[tests/test]   \ud83d\udc33  docker pull image=golang:1.13 platform= username= forcePull=false\n[tests/test]   \ud83d\udc33  docker create image=golang:1.13 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/test]   \ud83d\udc33  docker run image=golang:1.13 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/test] \ud83e\uddea  Matrix: map[goarch:amd64 gover:1.13]\n[tests/test] \u2b50 Run Main actions/checkout@v2\n[tests/test]   \u2705  Success - Main actions/checkout@v2\n[tests/test] \u2b50 Run Main test\n[tests/test]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/1.sh] user= workdir=\n[tests/test]   | TestDiskQueue\n[tests/test]   | TestDiskQueueRoll\n[tests/test]   | TestDiskQueuePeek\n[tests/test]   | TestDiskQueueEmpty\n[tests/test]   | TestDiskQueueCorruption\n[tests/test]   | TestDiskQueueSyncAfterRead\n[tests/test]   | TestDiskQueueTorture\n[tests/test]   | TestDiskQueueResize\n[tests/test]   | ok  \tgithub.com/nsqio/go-diskqueue\t0.036s\n[tests/test]   | PASS\n[tests/test]   | ok  \tgithub.com/nsqio/go-diskqueue\t4.291s\n[tests/test]   | With -race:\n[tests/test]   | PASS\n[tests/test]   | ok  \tgithub.com/nsqio/go-diskqueue\t6.067s\n[tests/test]   \u2705  Success - Main test\n[tests/test] \u2b50 Run Main lint\n[tests/test]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/2.sh] user= workdir=\n[tests/test]   \u2705  Success - Main lint\n[tests/test] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": ""
+}

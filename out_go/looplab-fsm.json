@@ -1,0 +1,11 @@
+{
+    "repository": "looplab/fsm",
+    "clone_url": "https://github.com/looplab/fsm.git",
+    "timestamp": "2023-05-30T10:29:18.423693Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Main/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Main/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Main/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/looplab-fsm] user=0 workdir=\n[Main/build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Main/build]   \u2601  git clone 'https://github.com/jandelgado/gcov2lcov-action' # ref=v1.0.5\n[Main/build] \u2b50 Run Pre Convert coverage\n[Main/build]   \u2705  Success - Pre Convert coverage\n[Main/build] failed to remove container: Error response from daemon: No such container: 6410c33571e53955382fa6b33087b56a7f683d97628c9eb5d46306de7b7e8fe2\n[Main/build] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Main-build-1fd6fa812e722a789a37ca22e1d5c2d12c93d9569fd2addfe1880267a2f65852-env: volume is in use - [43fabbebc25e4c06c273054d3ee148a80a9cde80f8979d7e6d8ebb569e6d631c] (original error: <nil>) (original error: Error response from daemon: No such container: 6410c33571e53955382fa6b33087b56a7f683d97628c9eb5d46306de7b7e8fe2)\n"
+}

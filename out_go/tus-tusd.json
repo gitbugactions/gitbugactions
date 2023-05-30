@@ -1,0 +1,11 @@
+{
+    "repository": "tus/tusd",
+    "clone_url": "https://github.com/tus/tusd.git",
+    "timestamp": "2023-05-30T10:27:39.634319Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[continuous-integration/test] \ud83d\ude80  Start image=crawlergpt:latest\n[continuous-integration/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[continuous-integration/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[continuous-integration/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[continuous-integration/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/tus-tusd] user=0 workdir=\n[continuous-integration/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[continuous-integration/test] \ud83e\uddea  Matrix: map[go-version:stable platform:ubuntu-latest]\n[continuous-integration/test] \u2b50 Run Main Checkout code\n[continuous-integration/test]   \u2705  Success - Main Checkout code\n[continuous-integration/test] \u2b50 Run Main Install Go\n[continuous-integration/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[continuous-integration/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v4/] user=0 workdir=\n[continuous-integration/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v4/dist/setup/index.js] user= workdir=\n[continuous-integration/test]   | Setup go version spec stable\n[continuous-integration/test]   \u2757  ::error::API rate limit exceeded for 130.242.72.40. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\n[continuous-integration/test]   \u274c  Failure - Main Install Go\n[continuous-integration/test] exitcode '1': failure\n[continuous-integration/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

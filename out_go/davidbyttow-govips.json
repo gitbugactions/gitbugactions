@@ -1,0 +1,11 @@
+{
+    "repository": "davidbyttow/govips",
+    "clone_url": "https://github.com/davidbyttow/govips.git",
+    "timestamp": "2023-05-30T12:05:48.435450Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[build/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/davidbyttow-govips] user=0 workdir=\n[build/Build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[build/Build]   \u2601  git clone 'https://github.com/shogo82148/actions-goveralls' # ref=v1\n[build/Build] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[build/Build] \u2b50 Run Main Set up Go 1.x\n[build/Build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[build/Build] <nil>\n[build/Build]   \u274c  Failure - Main Set up Go 1.x\n[build/Build] lstat /home/andre-silva/.cache/act/actions-setup-go@v2/.eslintrc.js: no such file or directory\n[build/Build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'Build' failed\n"
+}

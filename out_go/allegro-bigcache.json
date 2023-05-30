@@ -1,0 +1,11 @@
+{
+    "repository": "allegro/bigcache",
+    "clone_url": "https://github.com/allegro/bigcache.git",
+    "timestamp": "2023-05-30T11:34:34.954597Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[build/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/allegro-bigcache] user=0 workdir=\n[build/Build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[build/Build]   \u2601  git clone 'https://github.com/golangci/golangci-lint-action' # ref=v3\n[build/Build] \ud83e\uddea  Matrix: map[go:stable]\n[build/Build] \u2b50 Run Main Set up Go\n[build/Build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[build/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v4/] user=0 workdir=\n[build/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v4/dist/setup/index.js] user= workdir=\n[build/Build]   | Setup go version spec stable\n[build/Build]   \u2757  ::error::API rate limit exceeded for 130.242.72.40. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\n[build/Build]   \u274c  Failure - Main Set up Go\n[build/Build] exitcode '1': failure\n[build/Build] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/9084be66c716441016731db5c61fc84845796a11e299a7fb2bf18dcdb86ff644?force=1&v=1\": context deadline exceeded\n[build/Build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n"
+}

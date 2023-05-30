@@ -1,0 +1,11 @@
+{
+    "repository": "square/sharkey",
+    "clone_url": "https://github.com/square/sharkey.git",
+    "timestamp": "2023-05-30T11:47:41.207275Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/square-sharkey] user=0 workdir=\n[Tests/build]   \u2601  git clone 'https://github.com/mirromutth/mysql-action' # ref=v1.1\n[Tests/build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Tests/build] \u2b50 Run Main actions/checkout@v2\n[Tests/build]   \u2705  Success - Main actions/checkout@v2\n[Tests/build] \u2b50 Run Main Set up MySQL\n[Tests/build]   \ud83d\udc33  docker build -t act-mirromutth-mysql-action-v1-1-dockeraction:latest /home/andre-silva/.cache/act/mirromutth-mysql-action@v1.1/\n[Tests/build]   \ud83d\udc33  docker pull image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= username= forcePull=false\n[Tests/build]   \ud83d\udc33  docker create image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[Tests/build]   \u274c  Failure - Main Set up MySQL\n[Tests/build] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/451ce1e7d50b7a544757d0d6d19d84e97e9e8b72ca0fa5d25cef943c3b3cd902/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[Tests/build] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: context canceled\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "leighmacdonald/mika",
+    "clone_url": "https://github.com/leighmacdonald/mika.git",
+    "timestamp": "2023-05-30T11:28:56.722573Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Tests/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Tests/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Tests/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Tests/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/leighmacdonald-mika] user=0 workdir=\n[Tests/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Tests/test] \ud83e\uddea  Matrix: map[go-version:1.15.x platform:ubuntu-latest]\n[Tests/test] \u2b50 Run Main Install Go\n[Tests/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[Tests/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=\n[Tests/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Tests/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/index.js] user= workdir=\n[Tests/test]   \u274c  Failure - Main Install Go\n[Tests/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 929013b79524a7b063b1588be2315c342633f3eecfbb1c4eb92d088b69d723a4\n[Tests/test] failed to remove container: Error response from daemon: No such container: 929013b79524a7b063b1588be2315c342633f3eecfbb1c4eb92d088b69d723a4\n[Tests/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

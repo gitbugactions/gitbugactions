@@ -1,0 +1,11 @@
+{
+    "repository": "satyrius/gonx",
+    "clone_url": "https://github.com/satyrius/gonx.git",
+    "timestamp": "2023-05-30T10:34:49.408006Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/satyrius-gonx] user=0 workdir=\n[test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[test/test] \ud83e\uddea  Matrix: map[go-version:1.17.x os:ubuntu-latest]\n[test/test] \u2b50 Run Main actions/checkout@v2\n[test/test]   \u2705  Success - Main actions/checkout@v2\n[test/test] \u2b50 Run Main Set up Go\n[test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=\n[test/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[test/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/index.js] user= workdir=\n[test/test]   \u274c  Failure - Main Set up Go\n[test/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 3598fed3446b7e3b7c9670fe230caace9f0219e64822296a572249bf7cf14df7\n[test/test] failed to remove container: Error response from daemon: No such container: 3598fed3446b7e3b7c9670fe230caace9f0219e64822296a572249bf7cf14df7\n[test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "mozillazg/go-pinyin",
+    "clone_url": "https://github.com/mozillazg/go-pinyin.git",
+    "timestamp": "2023-05-30T10:57:08.302263Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/mozillazg-go-pinyin] user=0 workdir=\n[CI/Build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v3\n[CI/Build] \ud83e\uddea  Matrix: map[go-version:1.17]\n[CI/Build] \u2b50 Run Main Set up Go\n[CI/Build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/\n[CI/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=\n[CI/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=\n[CI/Build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CI/Build]   \u274c  Failure - Main Set up Go\n[CI/Build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 5906f97813433d80af053655729beebeb8a9baef8625e2607a5b9c29ac51dae8\n[CI/Build] failed to remove container: Error response from daemon: No such container: 5906f97813433d80af053655729beebeb8a9baef8625e2607a5b9c29ac51dae8\n[CI/Build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-CI-Build-5a4c244a0a724a80a2a485dec0590f5681590b1a6cfbddbcfe81c7b4f40b7ffd-env: volume is in use - [d4c30e1b9500c3a5b770966d1ef1d569162103de21ed18cf0d52e163a5e5be63] (original error: <nil>) (original error: <nil>)\n"
+}

@@ -1,0 +1,11 @@
+{
+    "repository": "dtan4/k8stail",
+    "clone_url": "https://github.com/dtan4/k8stail.git",
+    "timestamp": "2023-05-30T12:04:26.021081Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[Test/test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[Test/test]   \u2601  git clone 'https://github.com/aquasecurity/trivy-action' # ref=0.10.0\n[Test/test] \u2b50 Run Main Checkout\n[Test/test]   \u2705  Success - Main Checkout\n[Test/test] Error response from daemon: No such container: 27787b07359ab522b18a800f71a1b3096c8e5eb9dc67d3f5b35b23abd29f2a3e\n[Test/test] \u2b50 Run Main Setup Go\n[Test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[Test/test]   \u274c  Failure - Main Setup Go\n[Test/test] Error response from daemon: No such container: 27787b07359ab522b18a800f71a1b3096c8e5eb9dc67d3f5b35b23abd29f2a3e\n[Test/test] failed to remove container: Error response from daemon: No such container: 27787b07359ab522b18a800f71a1b3096c8e5eb9dc67d3f5b35b23abd29f2a3e\n[Test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Test-test-1a89228c479b352e9beafd139ce1652ef6d39e9a57114fb000a3c158cff408d6-env: volume is in use - [897a42d40104f083d00088aab9173432ada31f089ac61d1e2c332072df96acf3] (original error: <nil>) (original error: <nil>)\n"
+}

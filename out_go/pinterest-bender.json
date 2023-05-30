@@ -1,0 +1,11 @@
+{
+    "repository": "pinterest/bender",
+    "clone_url": "https://github.com/pinterest/bender.git",
+    "timestamp": "2023-05-30T10:46:58.219991Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/pinterest-bender] user=0 workdir=\n[CI/Test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v1\n[CI/Test] \ud83e\uddea  Matrix: map[go:1.17]\n[CI/Test] \u2b50 Run Main actions/checkout@v1.0.0\n[CI/Test]   \u2705  Success - Main actions/checkout@v1.0.0\n[CI/Test] \u2b50 Run Main actions/setup-go@v1\n[CI/Test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v1/ dst=/var/run/act/actions/actions-setup-go@v1/\n[CI/Test]   \u274c  Failure - Main actions/setup-go@v1\n[CI/Test] Error response from daemon: No such container: 75cd76be83c1816174fa5d248be5a4cc385e998b1d371b6bcc6993021fec137f\n[CI/Test] failed to remove container: Error response from daemon: No such container: 75cd76be83c1816174fa5d248be5a4cc385e998b1d371b6bcc6993021fec137f\n[CI/Test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-CI-Test-c8004701d7767271afe3e380ff368b034cbabac39f7de7db0bdf86634220d0e0-env: volume is in use - [0d5e1b035e04de4919de88b07a5f95280b4f4b9f227614dfbaf9965ca05a0653] (original error: <nil>) (original error: <nil>)\n"
+}

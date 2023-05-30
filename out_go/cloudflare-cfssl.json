@@ -1,0 +1,11 @@
+{
+    "repository": "cloudflare/cfssl",
+    "clone_url": "https://github.com/cloudflare/cfssl.git",
+    "timestamp": "2023-05-30T10:44:37.161486Z",
+    "clone_success": true,
+    "number of actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/lint ] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/lint ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/lint ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/lint ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/cloudflare-cfssl] user=0 workdir=\n[Go/build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[Go/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[Go/build] \ud83e\uddea  Matrix: map[go:stable]\n[Go/build] \u2b50 Run Main psql -c 'create database certdb_development;' -U postgres;\n[Go/build]   \u274c  Failure - Main psql -c 'create database certdb_development;' -U postgres;\n[Go/build] Error response from daemon: No such container: d2dfd92da7c6e0058d1f9e8558c0f2feaa9f014847c7de22beeef16ac8a3ac2d\n[Go/build] failed to remove container: Error response from daemon: No such container: d2dfd92da7c6e0058d1f9e8558c0f2feaa9f014847c7de22beeef16ac8a3ac2d\n[Go/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: failed to copy content to container: Error response from daemon: Could not find the file /var/run/act/ in container f23aba744994ff23bd9bd146c24e2265208ee9f18e2fb3cc92743f17abed847a\n"
+}

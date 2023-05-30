@@ -1,0 +1,11 @@
+{
+    "repository": "tmc/keyring",
+    "clone_url": "https://github.com/tmc/keyring.git",
+    "timestamp": "2023-05-30T10:30:36.184828Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go Test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Go Test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go Test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go Test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/tmc-keyring] user=0 workdir=\n[Go Test/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[Go Test/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[Go Test/test] \u2b50 Run Main Set up Go\n[Go Test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[Go Test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v4/] user=0 workdir=\n[Go Test/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Go Test/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v4/dist/setup/index.js] user= workdir=\n[Go Test/test]   \u274c  Failure - Main Set up Go\n[Go Test/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 31651aaa404dd17fc7abb188c8a750a7333ac1eb9f0fb8517090b201eaa0642a\n[Go Test/test] failed to remove container: Error response from daemon: No such container: 31651aaa404dd17fc7abb188c8a750a7333ac1eb9f0fb8517090b201eaa0642a\n[Go Test/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

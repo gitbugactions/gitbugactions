@@ -1,0 +1,11 @@
+{
+    "repository": "gobwas/ws",
+    "clone_url": "https://github.com/gobwas/ws.git",
+    "timestamp": "2023-05-30T12:07:45.272830Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:0 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/gobwas-ws] user=0 workdir=\n[CI/test]   | cannot exec in a deleted state: unknown\r\n[CI/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[CI/test]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[CI/test] \ud83e\uddea  Matrix: map[go:stable os:ubuntu-latest]\n[CI/test] \u2b50 Run Main Checkout\n[CI/test]   \u2705  Success - Main Checkout\n[CI/test] Error response from daemon: No such container: c898e06747222375229005585fad3da4d27a6756b2c541a57cbb08c3c8ee9aa6\n[CI/test] \u2b50 Run Main Setup Go\n[CI/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[CI/test]   \u274c  Failure - Main Setup Go\n[CI/test] Error response from daemon: No such container: c898e06747222375229005585fad3da4d27a6756b2c541a57cbb08c3c8ee9aa6\n[CI/test] failed to remove container: Error response from daemon: No such container: c898e06747222375229005585fad3da4d27a6756b2c541a57cbb08c3c8ee9aa6\n[CI/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'test' failed\n"
+}

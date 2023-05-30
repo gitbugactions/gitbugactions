@@ -1,0 +1,11 @@
+{
+    "repository": "edsrzf/mmap-go",
+    "clone_url": "https://github.com/edsrzf/mmap-go.git",
+    "timestamp": "2023-05-30T10:25:02.440935Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Build and Test/run] \ud83d\ude80  Start image=crawlergpt:latest\n[Build and Test/run]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build and Test/run]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build and Test/run]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build and Test/run]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/edsrzf-mmap-go] user=0 workdir=\n[Build and Test/run]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Build and Test/run] \ud83e\uddea  Matrix: map[operating-system:ubuntu-latest]\n[Build and Test/run] \u2b50 Run Main Checkout\n[Build and Test/run]   \u2705  Success - Main Checkout\n[Build and Test/run] \u2b50 Run Main Setup Go\n[Build and Test/run]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[Build and Test/run] <nil>\n[Build and Test/run]   \u274c  Failure - Main Setup Go\n[Build and Test/run] lstat /home/andre-silva/.cache/act/actions-setup-go@v2/.prettierrc.json: no such file or directory\n[Build and Test/run] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'run' failed\n"
+}

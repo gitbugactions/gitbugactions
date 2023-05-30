@@ -1,0 +1,11 @@
+{
+    "repository": "maxbrunsfeld/counterfeiter",
+    "clone_url": "https://github.com/maxbrunsfeld/counterfeiter.git",
+    "timestamp": "2023-05-30T10:40:52.882309Z",
+    "clone_success": true,
+    "number of actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/maxbrunsfeld-counterfeiter] user=0 workdir=\n[Go/build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Go/build] \u2b50 Run Main actions/checkout@v2\n[Go/build]   \u2705  Success - Main actions/checkout@v2\n[Go/build] \u2b50 Run Main Set up Go\n[Go/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[Go/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=\n[Go/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Go/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/index.js] user= workdir=\n[Go/build]   \u274c  Failure - Main Set up Go\n[Go/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container f45830bc748abb34d223890ec2596e718411c3db8233bcc6f9c0f19ab6f2cb5b\n[Go/build] failed to remove container: Error response from daemon: No such container: f45830bc748abb34d223890ec2596e718411c3db8233bcc6f9c0f19ab6f2cb5b\n[Go/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}

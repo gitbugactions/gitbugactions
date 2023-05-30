@@ -1,0 +1,11 @@
+{
+    "repository": "digitalocean/godo",
+    "clone_url": "https://github.com/digitalocean/godo.git",
+    "timestamp": "2023-05-30T10:50:17.408210Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[CI/test] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/digitalocean-godo] user=0 workdir=\n[CI/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[CI/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[CI/test] \ud83e\uddea  Matrix: map[go-version:1.19.x os:ubuntu-latest]\n[CI/test] \u2b50 Run Main Install Go\n[CI/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/\n[CI/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=\n[CI/test]   | OCI runtime exec failed: exec failed: cannot exec in a stopped container: unknown\r\n[CI/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/index.js] user= workdir=\n[CI/test]   \u274c  Failure - Main Install Go\n[CI/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 2a90fba90656942a3998ffd403072d88891dfc01f8908a3279b9828f1057d66b\n[CI/test] failed to remove container: Error response from daemon: No such container: 2a90fba90656942a3998ffd403072d88891dfc01f8908a3279b9828f1057d66b\n[CI/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-CI-test-7587b47f572787ca4bc647c2581a917f05f439a38e66ca9abce9eb5337031daf-env: volume is in use - [f6e916a1c66330d6c221f8762a879e53e7cd0cbdadd68254699f6d4f82f452da] (original error: <nil>) (original error: <nil>)\n"
+}

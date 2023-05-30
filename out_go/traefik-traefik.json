@@ -1,0 +1,11 @@
+{
+    "repository": "traefik/traefik",
+    "clone_url": "https://github.com/traefik/traefik.git",
+    "timestamp": "2023-05-30T11:16:19.366045Z",
+    "clone_success": true,
+    "number of actions": 6,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Test Unit/test-unit] \ud83d\ude80  Start image=crawlergpt:latest\n[Test Unit/test-unit]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test Unit/test-unit]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Unit/test-unit]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Unit/test-unit]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/traefik-traefik] user=0 workdir=\n[Test Unit/test-unit]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v2\n[Test Unit/test-unit]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Test Unit/test-unit] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Test Unit/test-unit] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/8ece77c9f142c88f777f78d14003b7af987d0101a980c8981a2ce7eeb3361236?force=1&v=1\": context deadline exceeded\n[Test Unit/test-unit] \ud83c\udfc1  Job succeeded\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: invalid checksum)\n"
+}

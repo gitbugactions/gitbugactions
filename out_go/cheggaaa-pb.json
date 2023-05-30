@@ -1,0 +1,11 @@
+{
+    "repository": "cheggaaa/pb",
+    "clone_url": "https://github.com/cheggaaa/pb.git",
+    "timestamp": "2023-05-30T10:27:25.419742Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[Go/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Go/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Go/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Go/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/cheggaaa-pb] user=0 workdir=\n[Go/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v3\n[Go/test] \u2b50 Run Main actions/checkout@v3\n[Go/test]   \u2705  Success - Main actions/checkout@v3\n[Go/test] \u2b50 Run Main Set up Go\n[Go/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/\n[Go/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=\n[Go/test]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Go/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=\n[Go/test]   \u274c  Failure - Main Set up Go\n[Go/test] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 1bbffcd42eeff7898aaea9dc90b2c209c802206063858bf49e1eddeadfa1be88\n[Go/test] failed to remove container: Error response from daemon: No such container: 1bbffcd42eeff7898aaea9dc90b2c209c802206063858bf49e1eddeadfa1be88\n[Go/test] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Go-test-6d9d006bdcbe3f9b44a588c95bb3fbe82e78203af7700c48f5072e28b41bab72-env: volume is in use - [d0f5811b947fb2a334559c2dccd9d196b032c9a79ab931546fa138a40a92d43d] (original error: <nil>) (original error: <nil>)\n"
+}

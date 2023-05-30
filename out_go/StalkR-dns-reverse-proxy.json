@@ -1,0 +1,11 @@
+{
+    "repository": "StalkR/dns-reverse-proxy",
+    "clone_url": "https://github.com/StalkR/dns-reverse-proxy.git",
+    "timestamp": "2023-05-30T11:03:24.022605Z",
+    "clone_success": true,
+    "number of actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/c66e4e10-fed3-11ed-a890-af2cc187fc11/StalkR-dns-reverse-proxy] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v3\n[build/build] \u2b50 Run Main actions/checkout@v3\n[build/build]   \u2705  Success - Main actions/checkout@v3\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container a9d4755f129bf6f6d590ed9e20cc4b03a54e4bff44c69ffde0dd8a3707187a6d\n[build/build] \u2b50 Run Main actions/setup-go@v3\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/\n[build/build]   \u274c  Failure - Main actions/setup-go@v3\n[build/build] Error response from daemon: No such container: a9d4755f129bf6f6d590ed9e20cc4b03a54e4bff44c69ffde0dd8a3707187a6d\n[build/build] failed to remove container: Error response from daemon: No such container: a9d4755f129bf6f6d590ed9e20cc4b03a54e4bff44c69ffde0dd8a3707187a6d\n[build/build] \ud83c\udfc1  Job failed\n",
+    "actions_stderr": "Error: Job 'build' failed\n"
+}
