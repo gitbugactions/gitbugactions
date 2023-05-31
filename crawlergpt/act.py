@@ -3,7 +3,7 @@ import docker
 import yaml
 import psutil
 import subprocess
-from test_parser import TestParser
+from crawlergpt.test_parser import TestParser
 
 class GithubWorkflow:
     __TESTS_KEYWORDS = ["test", "tests", "testing", "verify"]

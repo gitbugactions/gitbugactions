@@ -9,10 +9,11 @@ import pygit2
 import tempfile
 import logging
 import tqdm
+import threading
 import pandas as pd
 from unidiff import PatchSet
 from abc import ABC, abstractmethod
-from act import GitHubTestActions
+from crawlergpt.act import GitHubTestActions
 from github import Github, Repository, RateLimitExceededException
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -28,8 +29,10 @@ class RateLimiter:
     def __init__(self):
         self.requests = 0
         self.first_request = datetime.now()
+        self.lock = threading.Lock()
 
     def request(self, fn, *args, **kwargs):
+        self.lock.acquire()
         retries = 3
         if self.requests == 0:
             self.first_request = datetime.now()
@@ -40,16 +43,19 @@ class RateLimiter:
             time.sleep(RateLimiter.__GITHUB_RESET_SECONDS)
             self.requests = 0
         self.requests += 1
+        self.lock.release()
 
         try:
             return fn(*args, **kwargs)
         except RateLimitExceededException as exc:
+            self.lock.acquire()
             logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
             reset_time = datetime.fromtimestamp(int(exc.headers["x-ratelimit-reset"]))
             retry_after = (reset_time - datetime.now()).total_seconds() + 1
             retry_after = max(retry_after, 0)  # In case we hit a negative total_seconds
             time.sleep(retry_after)
             retries -= 1
+            self.lock.release()
             if retries == 0:
                 raise exc
 

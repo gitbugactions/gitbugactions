@@ -3,7 +3,7 @@ import sys
 import tqdm
 import json
 from github import Github
-from crawler import BugCollectorStrategy, RateLimiter
+from crawlergpt.crawler import BugCollectorStrategy, RateLimiter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 rate_limiter = RateLimiter()
