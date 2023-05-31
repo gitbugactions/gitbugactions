@@ -24,9 +24,6 @@ executor = ThreadPoolExecutor(max_workers=n_workers)
 futures = []
 
 for file in dir_list:
-    if "pedrovgs-Algorithms.json" != file:
-        continue
-
     with open(os.path.join(path, file), "r") as f:
         run = json.loads(f.read())
         name = run["repository"].replace("/", "-")
