@@ -126,8 +126,6 @@ class Act:
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         command += f" -W {workflow}"
-        
-        print(command)
 
         run = subprocess.run(command, shell=True, capture_output=True)
         stdout = run.stdout.decode('utf-8')
@@ -216,10 +214,3 @@ with open("Dockerfile", "w") as f:
 
 client.images.build(path="./", tag="crawlergpt", forcerm=True)
 os.remove("Dockerfile")
-
-# repo_path = "/home/nfsaavedra/Downloads/fess"
-# actions = GitHubTestActions(repo_path)
-# actions.save_workflows()
-# for w in actions.workflows:
-#     print(actions.get_failed_tests(w)[0])
-#https://github.com/marketplace/actions/publish-test-results#generating-test-result-files
