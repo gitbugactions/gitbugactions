@@ -99,7 +99,21 @@ class GithubWorkflow:
             if 'strategy' in job and 'matrix' in job['strategy']:
                 for key, value in job['strategy']['matrix'].items():
                     if isinstance(value, list):
-                        job['strategy']['matrix'][key] = [value[0]] 
+                        job['strategy']['matrix'][key] = [value[0]]
+
+
+    def instrument_test_actions(self):
+        '''
+        Instrument the workflow to generate xml reports during test execution
+        '''
+        for job_name, job in self.doc['jobs'].items():
+            if 'steps' in job:
+                for step in job['steps']:
+                    if 'run' in step and self.__is_test(step['run']):
+                        # TODO: only supports python for now
+                        if "pytest" in step['run']:
+                            step['run'] = f"{step['run']} --junitxml=report.xml"
+
 
     def save_yaml(self, new_path):
         with open(new_path, 'w') as file:
