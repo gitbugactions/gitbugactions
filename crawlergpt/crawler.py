@@ -70,152 +70,171 @@ class RepoStrategy(ABC):
 
 
 class BugCollectorStrategy(RepoStrategy):
-    __FIX_ISSUE_REGEX = "(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #([0-9]*)"
-
-    def __init__(self, data_path: str, rate_limiter: RateLimiter, n_workers=1):
+    def __init__(self, data_path: str, rate_limiter: RateLimiter):
         super().__init__(data_path)
         self.rate_lim = rate_limiter
 
-    def __is_bug_fix(self, commit):
-        return 'fix' in commit.message.lower()
-    
-    def __get_patches(self, repo_clone, commit, previous_commit):
-        diff = repo_clone.diff(previous_commit.hex, commit.hex)
-        patch = PatchSet(diff.patch)
-        bug_patch = PatchSet('')
-        test_patch = PatchSet('')
-
-        for p in patch:
-            if any([keyword in p.source_file.split(os.sep) for keyword in ['test', 'tests']]):
-                test_patch.append(p)
-            else:
-                bug_patch.append(p)
-
-        return bug_patch, test_patch
-    
-    def __run_tests(self, repo, repo_clone, commit, previous_commit, test_patch):
-        test_actions = GitHubTestActions(repo_clone.workdir)
-        previous_failed_tests = []
-        current_failed_tests = []
-        workflow_succeeded = False
-
-        for workflow in test_actions.test_workflows:
-            # Apply diff and run tests
-            repo_clone.checkout_tree(previous_commit)
-            # Creates ref to avoid "failed to identify reference"
-            repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
-            repo_clone.set_head(previous_commit.oid)
-            try:
-                repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
-            except pygit2.GitError:
-                # Invalid patches
-                continue
-            test_actions.save_workflows()
-            pre_failed_tests, _, _ = test_actions.get_failed_tests(workflow)
-            if pre_failed_tests is None:
-                # Timeout: The other commits will take similar amount of time FIXME
-                # Job failed without tests failing
-                test_actions.delete_workflows()
-                logging.info(f"{repo.full_name} {commit.hex}: failed previous tests")
-                continue
-            test_actions.delete_workflows()
-
-            repo_clone.checkout_tree(commit)
-            # Creates ref to avoid "failed to identify reference"
-            repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, commit.author, commit.message)
-            repo_clone.set_head(commit.oid)
-            test_actions.save_workflows()
-
-            cur_failed_tests, _, _ = test_actions.get_failed_tests(workflow)
-            if cur_failed_tests is None:
-                # Timeout: The other commits will take similar amount of time FIXME
-                # Job failed without tests failing
-                test_actions.delete_workflows()
-                logging.info(f"{repo.full_name} {commit.hex}: failed current tests")
-                continue
-            test_actions.delete_workflows()
-            
-            previous_failed_tests.extend(pre_failed_tests)
-            current_failed_tests.extend(cur_failed_tests)
-            workflow_succeeded = True
-
-        return current_failed_tests, previous_failed_tests, workflow_succeeded
-
     def handle_repo(self, repo: Repository):
-        logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
-        repo_path = os.path.join(tempfile.gettempdir(), repo.full_name.replace('/', '-'))
-        if os.path.exists(repo_path):
-            shutil.rmtree(repo_path)
-        repo_clone = pygit2.clone_repository(
-            repo.clone_url, 
-            repo_path
-        )
+        self.__HandleRepo(repo, self.data_path).handle_repo()
 
-        #FIXME
-        has_junit = False
-        for root, dirs, files in os.walk(repo_path):
-            if "pom.xml" in files:
-                with open(os.path.join(root, "pom.xml"), "r") as f:
-                    if "junit" in f.read():
-                        has_junit = True
-                        break
-        if not has_junit:
-            return
-        #
+    # The helper class is required because: 
+    # 1. The strategy must be passed instantiated to the Crawler
+    # 2. The handle_repo method should be parallelizable
+    class __HandleRepo:
+        __FIX_ISSUE_REGEX = "(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #([0-9]*)"
 
-        if len(list(repo_clone.references.iterator())) == 0:
-            return
+        def __init__(self, repo: Repository, data_path: str):
+            self.repo = repo
+            self.data_path = data_path
+            self.repo_path = os.path.join(tempfile.gettempdir(), self.repo.full_name.replace('/', '-'))
+            if os.path.exists(self.repo_path):
+                shutil.rmtree(self.repo_path)
+            logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
+            self.repo_clone = pygit2.clone_repository(
+                self.repo.clone_url, 
+                self.repo_path
+            )
+            self.default_actions = GitHubTestActions(self.repo_path)
+            self.__get_default_actions()
 
-        with open(self.data_path, "w") as fp:
+        def __get_default_actions(self):
+            if len(list(self.repo_clone.references.iterator())) == 0:
+                return
             first_commit = None
 
-            for commit in repo_clone.walk(repo_clone.head.target):
+            for commit in self.repo_clone.walk(self.repo_clone.head.target):
                 if first_commit is None:
                     first_commit = commit
+                self.repo_clone.checkout_tree(commit)
+                self.repo_clone.set_head(commit.oid)
+                actions = GitHubTestActions(self.repo_path)
+                if len(actions.test_workflows) > 0:
+                    self.default_actions = actions
 
-                if not self.__is_bug_fix(commit):
-                    continue
-
-                try:
-                    previous_commit = repo_clone.revparse_single(commit.hex + '~1')
-                except KeyError:
-                    # The current commit is the first one
-                    continue
-
-                data = { 
-                    'repository': repo.full_name,
-                    'clone_url': repo.clone_url,
-                    'timestamp': datetime.utcnow().isoformat() + "Z",
-                    'commit_hash': commit.hex,
-                    'commit_message': commit.message,
-                    'related_issues': '',
-                }
-
-                bug_patch, test_patch = self.__get_patches(repo_clone, commit, previous_commit)
-                # Ignore commits without tests
-                if len(test_patch) == 0 or len(bug_patch) == 0:
-                    logging.info(f"Skipping commit {repo.full_name} {commit.hex}: no test/bug patch")
-                    continue
-
-                data['bug_patch'] = str(bug_patch)
-                data['test_patch'] = str(test_patch)
-
-                current_failed_tests, previous_failed_tests, workflow_succeeded = \
-                        self.__run_tests(repo, repo_clone, commit, previous_commit, test_patch)
-
-                # Back to default branch (avoids conflitcts)
-                repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
-                failed_diff = list(set(x.classname + "#" + x.name for x in previous_failed_tests)
-                                    .difference(set(x.classname + "#" + x.name for x in current_failed_tests)))
-
-                # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
-                if len(failed_diff) == 0 or not workflow_succeeded:
-                    logging.info(f"Skipping commit {repo.full_name} {commit.hex}: no failed diff")
-                    continue
-
-                fp.write((json.dumps(data) + "\n"))
+            self.repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+            
+        def __is_bug_fix(self, commit):
+            return 'fix' in commit.message.lower()
         
-        shutil.rmtree(repo_path)
+        def __get_patches(self, repo_clone, commit, previous_commit):
+            diff = repo_clone.diff(previous_commit.hex, commit.hex)
+            patch = PatchSet(diff.patch)
+            bug_patch = PatchSet('')
+            test_patch = PatchSet('')
+
+            for p in patch:
+                if any([keyword in p.source_file.split(os.sep) for keyword in ['test', 'tests']]):
+                    test_patch.append(p)
+                else:
+                    bug_patch.append(p)
+
+            return bug_patch, test_patch
+        
+        def __run_tests(self):
+            res = []
+            workflow_succeeded = False
+
+            test_actions = GitHubTestActions(self.repo_clone.workdir)
+            if len(test_actions.test_workflows) == 0:
+                test_actions = self.default_actions
+            test_actions.save_workflows()
+
+            for workflow in test_actions.test_workflows:
+                failed_tests, _, _ = test_actions.get_failed_tests(workflow)
+                if failed_tests is None:
+                    # Timeout: The other commits will take similar amount of time FIXME
+                    # Job failed without tests failing
+                    logging.info(f"{self.repo.full_name}: failed current tests")
+                    continue
+                
+                res.extend(failed_tests)
+                workflow_succeeded = True
+            test_actions.delete_workflows()
+
+            return res, workflow_succeeded
+
+        def __get_diff_tests(self, commit, previous_commit, test_patch):
+            previous_failed_tests = []
+            current_failed_tests = []
+            pre_workflow_succeeded = False
+            cur_workflow_succeeded = False
+
+            # Apply diff and run tests
+            self.repo_clone.checkout_tree(previous_commit)
+            # Creates ref to avoid "failed to identify reference"
+            self.repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
+            self.repo_clone.set_head(previous_commit.oid)
+            try:
+                self.repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
+            except pygit2.GitError:
+                # Invalid patches
+                return current_failed_tests, previous_failed_tests, False
+            previous_failed_tests, pre_workflow_succeeded = self.__run_tests()
+
+            self.repo_clone.checkout_tree(commit)
+            # Creates ref to avoid "failed to identify reference"
+            self.repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
+                                  commit.author, commit.message)
+            self.repo_clone.set_head(commit.oid)
+            current_failed_tests, cur_workflow_succeeded = self.__run_tests()
+
+            workflow_succeeded = pre_workflow_succeeded and cur_workflow_succeeded
+            return current_failed_tests, previous_failed_tests, workflow_succeeded
+        
+        def handle_repo(self):
+            if len(list(self.repo_clone.references.iterator())) == 0:
+                return
+
+            with open(self.data_path, "w") as fp:
+                first_commit = None
+
+                for commit in self.repo_clone.walk(self.repo_clone.head.target):
+                    if first_commit is None:
+                        first_commit = commit
+
+                    if not self.__is_bug_fix(commit):
+                        continue
+
+                    try:
+                        previous_commit = self.repo_clone.revparse_single(commit.hex + '~1')
+                    except KeyError:
+                        # The current commit is the first one
+                        continue
+
+                    data = { 
+                        'repository': self.repo.full_name,
+                        'clone_url': self.repo.clone_url,
+                        'timestamp': datetime.utcnow().isoformat() + "Z",
+                        'commit_hash': commit.hex,
+                        'commit_message': commit.message,
+                        'related_issues': '',
+                    }
+
+                    bug_patch, test_patch = self.__get_patches(self.repo_clone, commit, previous_commit)
+                    # Ignore commits without tests
+                    if len(test_patch) == 0 or len(bug_patch) == 0:
+                        logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no test/bug patch")
+                        continue
+
+                    data['bug_patch'] = str(bug_patch)
+                    data['test_patch'] = str(test_patch)
+
+                    current_failed_tests, previous_failed_tests, workflow_succeeded = \
+                            self.__get_diff_tests(commit, previous_commit, test_patch)
+
+                    # Back to default branch (avoids conflitcts)
+                    self.repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+                    failed_diff = list(set(x.classname + "#" + x.name for x in previous_failed_tests)
+                                        .difference(set(x.classname + "#" + x.name for x in current_failed_tests)))
+
+                    # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
+                    if len(failed_diff) == 0 or not workflow_succeeded:
+                        logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no failed diff")
+                        continue
+
+                    fp.write((json.dumps(data) + "\n"))
+            
+            shutil.rmtree(self.repo_path)
 
 
 class RepoCrawler:
