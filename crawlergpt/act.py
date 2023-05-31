@@ -1,9 +1,9 @@
 import os
 import docker
 import yaml
-import psutil
+import logging
 import subprocess
-from test_parser import TestParser
+from crawlergpt.test_parser import TestParser
 
 class GithubWorkflow:
     __TESTS_KEYWORDS = ["test", "tests", "testing", "verify"]
@@ -106,7 +106,7 @@ class GithubWorkflow:
 
 
 class Act:
-    __ACT_PATH="act"
+    ACT_PATH="act"
     # The flag -u allows files to be created with the current user
     __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
@@ -124,10 +124,8 @@ class Act:
 
     def run_act(self, repo_path, workflow, test_parser):
         command = f"cd {repo_path}; "
-        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"timeout {self.timeout * 60} {Act.ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         command += f" -W {workflow}"
-        
-        print(command)
 
         run = subprocess.run(command, shell=True, capture_output=True)
         stdout = run.stdout.decode('utf-8')
@@ -204,6 +202,13 @@ class GitHubTestActions:
             container.stop()
             container.remove()
 
+# Checks act installation
+run = subprocess.run(f"{Act.ACT_PATH} --help", shell=True, capture_output=True)
+if run.returncode != 0:
+    logging.error("Act is not correctly installed")
+    exit(-1)
+
+# Creates crawler image
 client = docker.from_env()
 if len(client.images.list(name="crawlergpt")) > 0:
     client.images.remove(image="crawlergpt")
@@ -216,10 +221,3 @@ with open("Dockerfile", "w") as f:
 
 client.images.build(path="./", tag="crawlergpt", forcerm=True)
 os.remove("Dockerfile")
-
-# repo_path = "/home/nfsaavedra/Downloads/fess"
-# actions = GitHubTestActions(repo_path)
-# actions.save_workflows()
-# for w in actions.workflows:
-#     print(actions.get_failed_tests(w)[0])
-#https://github.com/marketplace/actions/publish-test-results#generating-test-result-files
