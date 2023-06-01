@@ -21,7 +21,7 @@ class TestParser(ABC):
             for file in dir.iterdir():
                 # If it is a directory, call the function recursively
                 if file.is_dir():
-                    failed_tests.extend(self.get_failed_tests(file))
+                    failed_tests.extend(self.get_failed_tests(str(file)))
                 # If it is a file, call the __get_failed_tests function
                 elif os.path.isfile(file):
                     failed_tests.extend(self.__get_failed_tests(file))
