@@ -293,7 +293,7 @@ class RepoCrawler:
         elif created.startswith('<='):
             end_date = datetime.fromisoformat(created[2:])
             # End of day when hour is not specified
-            if len(ed) == 10:
+            if len(created[2:]) == 10:
                 end_date = end_date.replace(hour=23, minute=59, second=59)
         elif created.startswith('<'):
             end_date = datetime.fromisoformat(created[1:]) - timedelta(seconds=1)
