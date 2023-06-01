@@ -3,7 +3,7 @@ import docker
 import yaml
 import logging
 import subprocess
-from crawlergpt.test_parser import TestParser
+from crawlergpt.act.parser.junitxmlparser import TestParser
 
 class GithubWorkflow:
     # FIXME change keywords specific to languages
@@ -112,7 +112,7 @@ class GithubWorkflow:
                     if 'run' in step and self.__is_test(step['run']):
                         # TODO: only supports python for now
                         if "pytest" in step['run']:
-                            step['run'] = f"{step['run']} --junitxml=report.xml"
+                            step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
 
 
     def save_yaml(self, new_path):
@@ -170,6 +170,7 @@ class GitHubTestActions:
 
                 workflow.remove_unsupported_os()
                 workflow.simplify_strategies()
+                workflow.instrument_test_actions()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
@@ -202,6 +203,7 @@ class GitHubTestActions:
 
     def get_failed_tests(self, workflow):
         act = Act(False, timeout=10)
+        # TODO look into the correct xml folder
         parser = TestParser(os.path.join(self.repo_path, "target", "surefire-reports"))
         workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
         failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow_rel_path, parser)

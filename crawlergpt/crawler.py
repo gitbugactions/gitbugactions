@@ -13,7 +13,7 @@ import threading
 import pandas as pd
 from unidiff import PatchSet
 from abc import ABC, abstractmethod
-from crawlergpt.act import GitHubTestActions
+from crawlergpt.act.act import GitHubTestActions
 from github import Github, Repository, RateLimitExceededException
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed

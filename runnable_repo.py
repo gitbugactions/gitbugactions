@@ -7,7 +7,7 @@ import uuid
 from datetime import datetime
 from github import Repository
 from crawlergpt.crawler import RepoStrategy, RateLimiter, RepoCrawler
-from crawlergpt.act import GitHubTestActions
+from crawlergpt.act.act import GitHubTestActions
 
 class RunnableRepoStrategy(RepoStrategy):
     def __init__(self, data_path: str, rate_limiter: RateLimiter):
