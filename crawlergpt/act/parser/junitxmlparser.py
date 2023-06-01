@@ -1,6 +1,5 @@
 from testparser import TestParser
 from junitparser import JUnitXml, TestCase, TestSuite
-from pathlib import Path
 from typing import List, Union
 
 
@@ -23,14 +22,14 @@ class JUnitXMLParser(TestParser):
 
         return failed_tests
 
-    def get_failed_tests(self, file: Path) -> List[TestCase]:
+    def get_failed_tests(self, file: str) -> List[TestCase]:
         """Returns a list of failed tests from a JUnit XML file"""
         failed_tests: List[TestCase] = []
         
         # Check if it is an xml file
-        if file.suffix == '.xml':
+        if file.endswith('.xml'):
             # Load the XML file with the JUnit XML parser
-            xml = JUnitXml.fromfile(str(file))
+            xml = JUnitXml.fromfile(file)
             if xml != None:
                 # Start the recursive function on the root element
                 failed_tests.extend(self.__get_failed_tests(xml))
