@@ -1,5 +1,7 @@
 from crawlergpt.act.parser.junitxmlparser import JUnitXMLParser
 
+import pytest
+
 def parse_junitxml(file):
     """Parse a test report file with the JUnitXMLParser."""
     parser = JUnitXMLParser()
@@ -7,12 +9,22 @@ def parse_junitxml(file):
     return failing_tests
 
 
-def test_flacoco_passing():
-    """Test the JUnitXMLParser with a passing test report."""
-    failing_tests = parse_junitxml("test/act/parser/testdata/flacoco_passing.xml")
-    assert len(failing_tests) == 0
+@pytest.mark.parametrize("xml_file, nr_of_failing_tests", [
+    ("test/resources/test_reports/java/flacoco_passing.xml", 0),
+    ("test/resources/test_reports/java/flacoco_failing.xml", 3),
+    ("test/resources/test_reports/java/", 3),
+])
+def test_maven(xml_file, nr_of_failing_tests):
+    """Test the JUnitXMLParser on Maven test reports."""
+    failing_tests = parse_junitxml(xml_file)
+    assert len(failing_tests) == nr_of_failing_tests
     
-def test_flacoco_failing():
-    """Test the JUnitXMLParser with a failing test report."""
-    failing_tests = parse_junitxml("test/act/parser/testdata/flacoco_failing.xml")
-    assert len(failing_tests) == 1
+@pytest.mark.parametrize("xml_file, nr_of_failing_tests", [
+    ("test/resources/test_reports/python/crawlergpt_passing.xml", 0),
+    ("test/resources/test_reports/python/crawlergpt_failing.xml", 1),
+    ("test/resources/test_reports/python/", 1),
+])
+def test_pytest(xml_file, nr_of_failing_tests):
+    """Test the JUnitXMLParser on pytest test reports."""
+    failing_tests = parse_junitxml(xml_file)
+    assert len(failing_tests) == nr_of_failing_tests

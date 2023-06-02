@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.037" timestamp="2023-06-02T13:45:59.086717" hostname="liskov"><testcase classname="test.act.parser.test_junitxmlparser" name="test_junitxmlparser[test/resources/test_reports/java/flacoco_passing.xml-0]" time="0.001" /><testcase classname="test.act.parser.test_junitxmlparser" name="test_junitxmlparser[test/resources/test_reports/java/flacoco_failing.xml-3]" time="0.001"><failure message="assert 0 == 3&#10; +  where 0 = len([])">xml_file = 'test/resources/test_reports/java/flacoco_failing.xml', nr_of_failing_tests = 3
+
+    @pytest.mark.parametrize("xml_file, nr_of_failing_tests", [
+        ("test/resources/test_reports/java/flacoco_passing.xml", 0),
+        ("test/resources/test_reports/java/flacoco_failing.xml", 3),
+    ])
+    def test_junitxmlparser(xml_file, nr_of_failing_tests):
+        """Test the JUnitXMLParser with a test report."""
+        failing_tests = parse_junitxml(xml_file)
+&gt;       assert len(failing_tests) == nr_of_failing_tests
+E       assert 0 == 3
+E        +  where 0 = len([])
+
+test/act/parser/test_junitxmlparser.py:18: AssertionError</failure></testcase></testsuite></testsuites>
