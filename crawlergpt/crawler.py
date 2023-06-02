@@ -142,7 +142,7 @@ class BugCollectorStrategy(RepoStrategy):
             test_actions.save_workflows()
 
             for workflow in test_actions.test_workflows:
-                failed_tests, _, _ = test_actions.get_failed_tests(workflow)
+                failed_tests, _, _ = test_actions.run_workflow(workflow)
                 if failed_tests is None:
                     # Timeout: The other commits will take similar amount of time FIXME
                     # Job failed without tests failing

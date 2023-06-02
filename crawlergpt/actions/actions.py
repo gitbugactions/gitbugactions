@@ -8,6 +8,7 @@ from typing import List
 from crawlergpt.actions.multi.testparser import TestParser
 from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
+from crawlergpt.actions.workflow import GitHubWorkflow
 
 class Act:
     __ACT_PATH="act"
@@ -55,7 +56,7 @@ class Act:
         os.remove("Dockerfile")
     
 
-    def run_act(self, repo_path, workflow, test_parser: TestParser):
+    def run_act(self, repo_path, workflow: GitHubWorkflow):
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         command += f" -W {workflow}"
@@ -63,7 +64,7 @@ class Act:
         run = subprocess.run(command, shell=True, capture_output=True)
         stdout = run.stdout.decode('utf-8')
         stderr = run.stderr.decode('utf-8')
-        tests_failed = test_parser.get_failed_tests(os.path.join(repo_path, "target", "surefire-reports"))
+        tests_failed = workflow.get_failed_tests(repo_path)
         if len(tests_failed) == 0 and run.returncode != 0:
             return None, stdout, stderr
         
@@ -123,12 +124,9 @@ class GitHubActions:
         for workflow in self.test_workflows:
             self.delete_workflow(workflow)
 
-    def get_failed_tests(self, workflow):
+    def run_workflow(self, workflow):
         act = Act(False, timeout=10)
-        # TODO look into the correct xml folder
-        parser = JUnitXMLParser()
-        workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
-        failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow_rel_path, parser)
+        failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow)
         return failed_tests, stdout, stderr
     
     def remove_containers(self):

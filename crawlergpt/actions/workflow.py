@@ -1,6 +1,8 @@
 import yaml
 
 from abc import ABC, abstractmethod
+from junitparser import TestCase
+from typing import List
 
 class GitHubWorkflow(ABC):
     __UNSUPPORTED_OS = [
@@ -25,7 +27,6 @@ class GitHubWorkflow(ABC):
         with open(path, "r") as stream:
             self.doc = yaml.safe_load(stream)
             self.path = path
-
             # Solves problem where pyyaml parses 'on' (used in Github actions) as True
             if True in self.doc:
                 self.doc['on'] = self.doc[True]
@@ -115,6 +116,16 @@ class GitHubWorkflow(ABC):
         Instruments the test steps to generate reports.
         """
         pass
+
+
+    # FIXME This method should return all test results, not just the failing
+    @abstractmethod
+    def get_failed_tests(self, repo_path) -> List[TestCase]:
+        """
+        Gets the test results from the workflow.
+        """
+        pass
+
 
     def save_yaml(self, new_path):
         with open(new_path, 'w') as file:
