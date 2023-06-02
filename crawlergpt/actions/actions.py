@@ -5,8 +5,8 @@ import subprocess
 
 from typing import List
 
-from crawlergpt.actions.parser.testparser import TestParser
-from crawlergpt.actions.parser.junitxmlparser import JUnitXMLParser
+from crawlergpt.actions.multi.testparser import TestParser
+from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
 
 class Act:
