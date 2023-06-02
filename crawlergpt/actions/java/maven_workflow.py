@@ -1,6 +1,6 @@
-from crawlergpt.actions.workflow import GithubWorkflow
+from crawlergpt.actions.workflow import GitHubWorkflow
 
-class MavenWorkflow(GithubWorkflow):
+class MavenWorkflow(GitHubWorkflow):
     # Correspond to the maven lifecycle phases that run tests
     # https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
     __TESTS_KEYWORDS = ["test", "package", "integration-test", "verify", "install"]

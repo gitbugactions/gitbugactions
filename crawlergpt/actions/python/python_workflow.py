@@ -1,6 +1,6 @@
-from crawlergpt.actions.workflow import GithubWorkflow
+from crawlergpt.actions.workflow import GitHubWorkflow
 
-class PytestWorkflow(GithubWorkflow): 
+class PytestWorkflow(GitHubWorkflow): 
     __TESTS_KEYWORDS = ["pytest"]
     
     def _is_test_keyword(self, name):

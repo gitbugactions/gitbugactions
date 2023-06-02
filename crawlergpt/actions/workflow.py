@@ -2,7 +2,7 @@ import yaml
 
 from abc import ABC, abstractmethod
 
-class GithubWorkflow(ABC):
+class GitHubWorkflow(ABC):
     __UNSUPPORTED_OS = [
         "windows-latest",
         "windows-2022",
@@ -67,7 +67,7 @@ class GithubWorkflow(ABC):
             return False
 
 
-    def instrument_runs_on(self):
+    def instrument_os(self):
         """
         Instruments the workflow to run only on ubuntu-latest (due to act compatibility).
         """
@@ -77,12 +77,12 @@ class GithubWorkflow(ABC):
             """
             if isinstance(doc, dict):
                 for key, value in doc.items():
-                    if str(value).lower() in GithubWorkflow.__UNSUPPORTED_OS:
+                    if str(value).lower() in GitHubWorkflow.__UNSUPPORTED_OS:
                         doc[key] = "ubuntu-latest"
                     else:
                         walk_doc(value)
             elif isinstance(doc, list):
-                doc[:] = filter(lambda x: str(x).lower() not in GithubWorkflow.__UNSUPPORTED_OS, doc)
+                doc[:] = filter(lambda x: str(x).lower() not in GitHubWorkflow.__UNSUPPORTED_OS, doc)
                 for value in doc:
                     walk_doc(value)
                 if len(doc) == 0:
@@ -90,7 +90,7 @@ class GithubWorkflow(ABC):
 
         # Replace any unsupported OS with Ubuntu
         for job_name, job in self.doc['jobs'].items():
-            if 'runs-on' in job and str(job['runs-on']).lower() in GithubWorkflow.__UNSUPPORTED_OS:
+            if 'runs-on' in job and str(job['runs-on']).lower() in GitHubWorkflow.__UNSUPPORTED_OS:
                 job['runs-on'] = 'ubuntu-latest'
             if 'strategy' in job and 'os' in job['strategy'] and isinstance(job['strategy']['os'], list):
                 job['strategy']['os'] = ['ubuntu-latest']

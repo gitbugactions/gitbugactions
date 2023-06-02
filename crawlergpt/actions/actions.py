@@ -3,6 +3,8 @@ import docker
 import logging
 import subprocess
 
+from typing import List
+
 from crawlergpt.actions.parser.testparser import TestParser
 from crawlergpt.actions.parser.junitxmlparser import JUnitXMLParser
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
@@ -88,7 +90,7 @@ class GitHubActions:
                 if not workflow.has_tests():
                     continue
 
-                workflow.instrument_runs_on()
+                workflow.instrument_os()
                 workflow.instrument_strategy()
                 workflow.instrument_test_steps()
 
