@@ -1,6 +1,7 @@
 import yaml
 
 class GithubWorkflow:
+    # FIXME change keywords specific to languages
     __TESTS_KEYWORDS = ["test", "tests", "testing", "verify"]
     __UNSUPPORTED_OS = [
         "windows-latest",
