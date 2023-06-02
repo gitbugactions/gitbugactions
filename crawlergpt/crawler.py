@@ -13,7 +13,7 @@ import threading
 import pandas as pd
 from unidiff import PatchSet
 from abc import ABC, abstractmethod
-from crawlergpt.act.act import GitHubTestActions
+from crawlergpt.actions.actions import GitHubActions
 from github import Github, Repository, RateLimitExceededException
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -95,7 +95,7 @@ class BugCollectorStrategy(RepoStrategy):
                 self.repo.clone_url, 
                 self.repo_path
             )
-            self.default_actions = GitHubTestActions(self.repo_path)
+            self.default_actions = GitHubActions(self.repo_path)
             self.__get_default_actions()
 
         def __get_default_actions(self):
@@ -108,7 +108,7 @@ class BugCollectorStrategy(RepoStrategy):
                     first_commit = commit
                 self.repo_clone.checkout_tree(commit)
                 self.repo_clone.set_head(commit.oid)
-                actions = GitHubTestActions(self.repo_path)
+                actions = GitHubActions(self.repo_path)
                 if len(actions.test_workflows) > 0:
                     self.default_actions = actions
 
@@ -136,7 +136,7 @@ class BugCollectorStrategy(RepoStrategy):
             res = []
             workflow_succeeded = False
 
-            test_actions = GitHubTestActions(self.repo_clone.workdir)
+            test_actions = GitHubActions(self.repo_clone.workdir)
             if len(test_actions.test_workflows) == 0:
                 test_actions = self.default_actions
             test_actions.save_workflows()

@@ -3,29 +3,58 @@ import docker
 import logging
 import subprocess
 
-from crawlergpt.act.parser.junitxmlparser import TestParser
-from crawlergpt.act.workflow import GithubWorkflow
+from crawlergpt.actions.parser.junitxml_parser import TestParser
+from crawlergpt.actions.workflow.maven_workflow import MavenWorkflow
 
 class Act:
-    ACT_PATH="act"
+    __ACT_PATH="act"
+    __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
     __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
+    
     
     def __init__(self, reuse, timeout=5):
         '''
         Args:
             timeout (int): Timeout in minutes
         '''
+        if not Act.__ACT_SETUP:
+            Act.__setup_act()
+
         if reuse:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
         self.timeout = timeout
+        
+
+    @staticmethod
+    def __setup_act():
+        # Checks act installation
+        run = subprocess.run(f"{Act.__ACT_PATH} --help", shell=True, capture_output=True)
+        if run.returncode != 0:
+            logging.error("Act is not correctly installed")
+            exit(-1)
+
+        # Creates crawler image
+        client = docker.from_env()
+        if len(client.images.list(name="crawlergpt")) > 0:
+            client.images.remove(image="crawlergpt")
+
+        with open("Dockerfile", "w") as f:
+            client = docker.from_env()
+            dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
+            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin"
+            f.write(dockerfile)
+
+        client.images.build(path="./", tag="crawlergpt", forcerm=True)
+        os.remove("Dockerfile")
+    
 
     def run_act(self, repo_path, workflow, test_parser):
         command = f"cd {repo_path}; "
-        command += f"timeout {self.timeout * 60} {Act.ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         command += f" -W {workflow}"
 
         run = subprocess.run(command, shell=True, capture_output=True)
@@ -38,7 +67,11 @@ class Act:
         return tests_failed, stdout, stderr
 
 
-class GitHubTestActions:
+class GitHubActions:
+    """
+    Class to handle GitHub Actions
+    """
+    
     def __init__(self, repo_path):
         self.repo_path = repo_path
         self.workflows = []
@@ -48,15 +81,15 @@ class GitHubTestActions:
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
             yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
             for file in yaml_files:
-                workflow = GithubWorkflow(os.path.join(dirpath, file))
+                workflow = MavenWorkflow(os.path.join(dirpath, file))
                 self.workflows.append(workflow)
                 
                 if not workflow.has_tests():
                     continue
 
-                workflow.remove_unsupported_os()
-                workflow.simplify_strategies()
-                workflow.instrument_test_actions()
+                workflow.instrument_runs_on()
+                workflow.instrument_strategy()
+                workflow.instrument_test_steps()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
@@ -104,23 +137,3 @@ class GitHubTestActions:
         for container in client.containers.list(filters={"ancestor": ancestors}):
             container.stop()
             container.remove()
-
-# Checks act installation
-run = subprocess.run(f"{Act.ACT_PATH} --help", shell=True, capture_output=True)
-if run.returncode != 0:
-    logging.error("Act is not correctly installed")
-    exit(-1)
-
-# Creates crawler image
-client = docker.from_env()
-if len(client.images.list(name="crawlergpt")) > 0:
-    client.images.remove(image="crawlergpt")
-
-with open("Dockerfile", "w") as f:
-    client = docker.from_env()
-    dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-    dockerfile += f"RUN usermod -u {os.getuid()} runneradmin"
-    f.write(dockerfile)
-
-client.images.build(path="./", tag="crawlergpt", forcerm=True)
-os.remove("Dockerfile")

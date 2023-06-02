@@ -1,4 +1,4 @@
-from .testparser import TestParser
+from .test_parser import TestParser
 from junitparser import JUnitXml, TestCase, TestSuite
 from typing import List, Union
 from pathlib import Path

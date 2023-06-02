@@ -1,8 +1,8 @@
 import yaml
 
-class GithubWorkflow:
-    # FIXME change keywords specific to languages
-    __TESTS_KEYWORDS = ["test", "tests", "testing", "verify"]
+from abc import ABC, abstractmethod
+
+class GithubWorkflow(ABC):
     __UNSUPPORTED_OS = [
         "windows-latest",
         "windows-2022",
@@ -20,6 +20,7 @@ class GithubWorkflow:
         "ubuntu-18.04"
     ]
 
+
     def __init__(self, path):
         with open(path, "r") as stream:
             self.doc = yaml.safe_load(stream)
@@ -30,41 +31,50 @@ class GithubWorkflow:
                 self.doc['on'] = self.doc[True]
                 self.doc.pop(True)
 
-    def __is_test(self, name):
-        return any(map(lambda word: word.lower() in GithubWorkflow.__TESTS_KEYWORDS, name.split(' ')))
-    
-    # FIXME remove integration tests
+
+    @abstractmethod
+    def _is_test_keyword(self, name):
+        pass
+
+
     def has_tests(self):
-        '''
+        """
         Check if the workflow has any tests.
 
         Returns:
             bool: True if the workflow has tests, False otherwise.
-        '''
+        """
         try:
             # Check if the workflow name contains any test keywords
-            if "name" in self.doc and self.__is_test(self.doc["name"]):
+            if "name" in self.doc and self._is_test_keyword(self.doc["name"]):
                 return True
             
             # Check if any job name or step name/run command contains any test keywords
             for job_name, job in self.doc['jobs'].items():
-                if self.__is_test(job_name):
+                if self._is_test_keyword(job_name):
                     return True
                 
                 if 'steps' in job:
                     for step in job['steps']:
-                        if 'name' in step and self.__is_test(step['name']):
+                        if 'name' in step and self._is_test_keyword(step['name']):
                             return True
                         
-                        if 'run' in step and self.__is_test(step['run']):
+                        if 'run' in step and self._is_test_keyword(step['run']):
                             return True
                     
             return False
         except yaml.YAMLError:
             return False
-            
-    def remove_unsupported_os(self):
+
+
+    def instrument_runs_on(self):
+        """
+        Instruments the workflow to run only on ubuntu-latest (due to act compatibility).
+        """
         def walk_doc(doc):
+            """
+            Walks the document recursively and replaces any unsupported OS with Ubuntu.
+            """
             if isinstance(doc, dict):
                 for key, value in doc.items():
                     if str(value).lower() in GithubWorkflow.__UNSUPPORTED_OS:
@@ -78,6 +88,7 @@ class GithubWorkflow:
                 if len(doc) == 0:
                     doc.append('ubuntu-latest')
 
+        # Replace any unsupported OS with Ubuntu
         for job_name, job in self.doc['jobs'].items():
             if 'runs-on' in job and str(job['runs-on']).lower() in GithubWorkflow.__UNSUPPORTED_OS:
                 job['runs-on'] = 'ubuntu-latest'
@@ -86,10 +97,11 @@ class GithubWorkflow:
             if 'strategy' in job:
                 walk_doc(job['strategy'])
 
-    def simplify_strategies(self):
-        '''
-        Keep only first elements from lists
-        '''
+
+    def instrument_strategy(self):
+        """
+        Instruments the workflow to run only one configuration (the fisrt one) per job.
+        """
         for job_name, job in self.doc['jobs'].items():
             if 'strategy' in job and 'matrix' in job['strategy']:
                 for key, value in job['strategy']['matrix'].items():
@@ -97,18 +109,12 @@ class GithubWorkflow:
                         job['strategy']['matrix'][key] = [value[0]]
 
 
-    def instrument_test_actions(self):
-        '''
-        Instrument the workflow to generate xml reports during test execution
-        '''
-        for job_name, job in self.doc['jobs'].items():
-            if 'steps' in job:
-                for step in job['steps']:
-                    if 'run' in step and self.__is_test(step['run']):
-                        # TODO: only supports python for now
-                        if "pytest" in step['run']:
-                            step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
-
+    @abstractmethod
+    def instrument_test_steps(self):
+        """
+        Instruments the test steps to generate reports.
+        """
+        pass
 
     def save_yaml(self, new_path):
         with open(new_path, 'w') as file:
