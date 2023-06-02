@@ -1,8 +1,6 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
 
-import os
-
 class TestParser(ABC):
 
     @abstractmethod

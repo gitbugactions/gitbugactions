@@ -1,4 +1,4 @@
-from crawlergpt.actions.parser.junitxml_parser import JUnitXMLParser
+from crawlergpt.actions.parser.junitxmlparser import JUnitXMLParser
 
 import pytest
 

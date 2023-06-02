@@ -3,8 +3,9 @@ import docker
 import logging
 import subprocess
 
-from crawlergpt.actions.parser.junitxml_parser import TestParser
-from crawlergpt.actions.workflow.maven_workflow import MavenWorkflow
+from crawlergpt.actions.parser.testparser import TestParser
+from crawlergpt.actions.parser.junitxmlparser import JUnitXMLParser
+from crawlergpt.actions.java.maven_workflow import MavenWorkflow
 
 class Act:
     __ACT_PATH="act"
@@ -52,7 +53,7 @@ class Act:
         os.remove("Dockerfile")
     
 
-    def run_act(self, repo_path, workflow, test_parser):
+    def run_act(self, repo_path, workflow, test_parser: TestParser):
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         command += f" -W {workflow}"
@@ -60,7 +61,7 @@ class Act:
         run = subprocess.run(command, shell=True, capture_output=True)
         stdout = run.stdout.decode('utf-8')
         stderr = run.stderr.decode('utf-8')
-        tests_failed = test_parser.get_failed_tests()
+        tests_failed = test_parser.get_failed_tests(os.path.join(repo_path, "target", "surefire-reports"))
         if len(tests_failed) == 0 and run.returncode != 0:
             return None, stdout, stderr
         
@@ -123,7 +124,7 @@ class GitHubActions:
     def get_failed_tests(self, workflow):
         act = Act(False, timeout=10)
         # TODO look into the correct xml folder
-        parser = TestParser(os.path.join(self.repo_path, "target", "surefire-reports"))
+        parser = JUnitXMLParser()
         workflow_rel_path = os.path.relpath(workflow.path, self.repo_path)
         failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow_rel_path, parser)
         return failed_tests, stdout, stderr
