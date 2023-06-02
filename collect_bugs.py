@@ -23,6 +23,9 @@ else:
 executor = ThreadPoolExecutor(max_workers=n_workers)
 futures = []
 
+# FIXME save times of each action
+# Save total time
+# Save RAM used?
 for file in dir_list:
     with open(os.path.join(path, file), "r") as f:
         run = json.loads(f.read())

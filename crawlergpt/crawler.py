@@ -69,6 +69,7 @@ class RepoStrategy(ABC):
         pass
 
 
+# FIXME identify build tool
 class BugCollectorStrategy(RepoStrategy):
     def __init__(self, data_path: str, rate_limiter: RateLimiter):
         super().__init__(data_path)
@@ -123,6 +124,7 @@ class BugCollectorStrategy(RepoStrategy):
             test_patch = PatchSet('')
 
             for p in patch:
+                # FIXME change keywords according to build tool
                 if any([keyword in p.source_file.split(os.sep) for keyword in ['test', 'tests']]):
                     test_patch.append(p)
                 else:
@@ -212,6 +214,7 @@ class BugCollectorStrategy(RepoStrategy):
 
                     bug_patch, test_patch = self.__get_patches(self.repo_clone, commit, previous_commit)
                     # Ignore commits without tests
+                    # FIXME check if test_patch only has deletes
                     if len(test_patch) == 0 or len(bug_patch) == 0:
                         logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no test/bug patch")
                         continue
@@ -227,7 +230,9 @@ class BugCollectorStrategy(RepoStrategy):
                     failed_diff = list(set(x.classname + "#" + x.name for x in previous_failed_tests)
                                         .difference(set(x.classname + "#" + x.name for x in current_failed_tests)))
 
-                    # No tests were fixed FIXME: check the if the tests in the commit were the ones with diff
+                    # FIXME check only if the current commit passed
+                    # Check the tests that failed in the previous commit
+                    # Save the tests that failed
                     if len(failed_diff) == 0 or not workflow_succeeded:
                         logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no failed diff")
                         continue

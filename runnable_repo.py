@@ -55,6 +55,7 @@ class RunnableRepoStrategy(RepoStrategy):
             if len(test_actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
                 data['actions_successful'], data['actions_stdout'], data['actions_stderr'] = test_actions.get_failed_tests(test_actions.test_workflows[0])
+                # FIXME check if we are able to get test reports
                 data['actions_successful'] = data['actions_successful'] is not None
             
             if os.path.exists(repo_path):
