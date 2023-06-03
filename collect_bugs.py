@@ -7,6 +7,8 @@ import shutil
 import pygit2
 import tempfile
 import logging
+import copy
+import threading
 from datetime import datetime
 from github import Github, Repository
 from unidiff import PatchSet
@@ -18,6 +20,7 @@ class BugPatch:
     def __init__(self, repo, commit, previous_commit, bug_patch, test_patch):
         self.repo = repo
         self.commit = commit.hex
+        self.commit_message = commit.message
         self.previous_commit = previous_commit.hex
         self.bug_patch = bug_patch
         self.test_patch = test_patch
@@ -27,8 +30,8 @@ class BugPatch:
             'repository': self.repo.full_name,
             'clone_url': self.repo.clone_url,
             'timestamp': datetime.utcnow().isoformat() + "Z",
-            'commit_hash': self.commit.hex,
-            'commit_message': self.commit.message,
+            'commit_hash': self.commit,
+            'commit_message': self.commit_message,
             'bug_patch': str(self.bug_patch),
             'test_patch': str(self.test_patch)
         }
@@ -39,8 +42,12 @@ class PatchCollector:
     def __init__(self, repo: Repository):
         self.repo = repo
         self.cloned = False
+        self.clone_lock = threading.Lock()
 
     def __clone_repo(self):
+        self.clone_lock.acquire()
+        if self.cloned:
+            return
         self.delete_repo()
         self.repo_path = os.path.join(tempfile.gettempdir(), self.repo.full_name.replace('/', '-'))
         self.repo_path = os.path.join(self.repo_path, str(uuid.uuid4()))
@@ -51,6 +58,7 @@ class PatchCollector:
         )
         self.cloned = True
         self.__get_default_actions()
+        self.clone_lock.release()
 
     def __get_default_actions(self):
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -92,7 +100,15 @@ class PatchCollector:
 
         test_actions = GitHubTestActions(repo_clone.workdir)
         if len(test_actions.test_workflows) == 0:
-            test_actions = self.default_actions
+            for workflow in self.default_actions.test_workflows:
+                new_workflow = copy.deepcopy(workflow)
+                new_workflow.path = os.path.join(repo_clone.workdir, 
+                    '.github/workflows', os.path.basename(workflow.path))
+                test_actions.test_workflows.append(new_workflow)
+        # Act creates name for the containers by hashing the content of the workflows
+        # To avoid conflicts between threads, we randomize the name
+        for workflow in test_actions.test_workflows:
+            workflow.doc["name"] = str(uuid.uuid4())
         test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
@@ -100,7 +116,7 @@ class PatchCollector:
             if failed_tests is None:
                 # Timeout: The other commits will take similar amount of time FIXME
                 # Job failed without tests failing
-                logging.info(f"{self.repo.full_name}: failed current tests")
+                logging.info(f"{self.repo.full_name}: failed tests")
                 continue
             
             res.extend(failed_tests)
@@ -202,7 +218,7 @@ class PatchCollector:
         return True
     
     def delete_repo(self):
-        if self.cloned and os.path.exists(self.repo_path):
+        if hasattr(self, "repo_path") and os.path.exists(self.repo_path):
             shutil.rmtree(self.repo_path)
         self.cloned = False
 
@@ -261,5 +277,5 @@ if __name__ == '__main__':
     for bug_patch, future in patches_futures:
         if future.result():
             data_path = os.path.join("data/out_bugs", bug_patch.repo.full_name.replace('/', '-'))
-            with open(data_path, "w") as fp:
+            with open(data_path, "a") as fp:
                 fp.write((json.dumps(bug_patch.get_data()) + "\n"))
