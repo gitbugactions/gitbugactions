@@ -7,7 +7,7 @@ import uuid
 from datetime import datetime
 from github import Repository
 from crawlergpt.crawler import RepoStrategy, RateLimiter, RepoCrawler
-from crawlergpt.act import GitHubTestActions
+from crawlergpt.actions.actions import GitHubActions
 
 class RunnableRepoStrategy(RepoStrategy):
     def __init__(self, data_path: str, rate_limiter: RateLimiter):
@@ -47,14 +47,14 @@ class RunnableRepoStrategy(RepoStrategy):
             )
             data['clone_success'] = True
 
-            test_actions = GitHubTestActions(repo_path)
+            test_actions = GitHubActions(repo_path)
             data['number of actions'] = len(test_actions.workflows)
             data['number_of_test_actions'] = len(test_actions.test_workflows)
             test_actions.save_workflows()
             
             if len(test_actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
-                data['actions_successful'], data['actions_stdout'], data['actions_stderr'] = test_actions.get_failed_tests(test_actions.test_workflows[0])
+                data['actions_successful'], data['actions_stdout'], data['actions_stderr'] = test_actions.run_workflow(test_actions.test_workflows[0])
                 # FIXME check if we are able to get test reports
                 data['actions_successful'] = data['actions_successful'] is not None
             

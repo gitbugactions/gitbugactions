@@ -12,7 +12,7 @@ import threading
 from datetime import datetime
 from github import Github, Repository
 from unidiff import PatchSet
-from crawlergpt.act import GitHubTestActions
+from crawlergpt.actions.actions import GitHubActions
 from crawlergpt.crawler import RateLimiter
 from concurrent.futures import ThreadPoolExecutor
 
@@ -47,6 +47,7 @@ class PatchCollector:
     def __clone_repo(self):
         self.clone_lock.acquire()
         if self.cloned:
+            self.clone_lock.release()
             return
         self.delete_repo()
         self.repo_path = os.path.join(tempfile.gettempdir(), self.repo.full_name.replace('/', '-'))
@@ -63,18 +64,18 @@ class PatchCollector:
     def __get_default_actions(self):
         if len(list(self.repo_clone.references.iterator())) == 0:
             return
-        first_commit = None
+        self.first_commit = None
 
         for commit in self.repo_clone.walk(self.repo_clone.head.target):
-            if first_commit is None:
-                first_commit = commit
+            if self.first_commit is None:
+                self.first_commit = commit
             self.repo_clone.checkout_tree(commit)
             self.repo_clone.set_head(commit.oid)
-            actions = GitHubTestActions(self.repo_path)
+            actions = GitHubActions(self.repo_path)
             if len(actions.test_workflows) > 0:
                 self.default_actions = actions
 
-        self.repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+        self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
         
     def __is_bug_fix(self, commit):
         return 'fix' in commit.message.lower()
@@ -98,21 +99,21 @@ class PatchCollector:
         res = []
         workflow_succeeded = False
 
-        test_actions = GitHubTestActions(repo_clone.workdir)
+        test_actions = GitHubActions(repo_clone.workdir)
         if len(test_actions.test_workflows) == 0:
             for workflow in self.default_actions.test_workflows:
                 new_workflow = copy.deepcopy(workflow)
                 new_workflow.path = os.path.join(repo_clone.workdir, 
                     '.github/workflows', os.path.basename(workflow.path))
                 test_actions.test_workflows.append(new_workflow)
-        # Act creates name for the containers by hashing the content of the workflows
+        # Act creates names for the containers by hashing the content of the workflows
         # To avoid conflicts between threads, we randomize the name
         for workflow in test_actions.test_workflows:
             workflow.doc["name"] = str(uuid.uuid4())
         test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
-            failed_tests, _, _ = test_actions.get_failed_tests(workflow)
+            failed_tests, _, _ = test_actions.run_workflow(workflow)
             if failed_tests is None:
                 # Timeout: The other commits will take similar amount of time FIXME
                 # Job failed without tests failing
@@ -139,6 +140,8 @@ class PatchCollector:
 
         try:
             repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
+            first_commit = repo_clone.revparse_single(self.first_commit.hex)
+            repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
 
