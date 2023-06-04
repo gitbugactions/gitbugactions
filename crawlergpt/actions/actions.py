@@ -70,7 +70,6 @@ class Act:
         run = subprocess.run(command, shell=True, capture_output=True)
         stdout = run.stdout.decode('utf-8')
         stderr = run.stderr.decode('utf-8')
-        print(stdout, stderr)
         tests_failed = workflow.get_failed_tests(repo_path)
         if len(tests_failed) == 0 and run.returncode != 0:
             return None, stdout, stderr
