@@ -2,6 +2,7 @@ import os
 import docker
 import logging
 import subprocess
+import threading
 
 from typing import List
 
@@ -16,6 +17,7 @@ class Act:
     # The flag -u allows files to be created with the current user
     __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
+    __SETUP_LOCK = threading.Lock()
     
     
     def __init__(self, reuse, timeout=5):
@@ -23,9 +25,7 @@ class Act:
         Args:
             timeout (int): Timeout in minutes
         '''
-        if not Act.__ACT_SETUP:
-            Act.__setup_act()
-
+        Act.__setup_act()
         if reuse:
             self.flags = "--reuse"
         else:
@@ -35,6 +35,10 @@ class Act:
 
     @staticmethod
     def __setup_act():
+        Act.__SETUP_LOCK.acquire()
+        if Act.__ACT_SETUP:
+            Act.__SETUP_LOCK.release()
+            return
         # Checks act installation
         run = subprocess.run(f"{Act.__ACT_PATH} --help", shell=True, capture_output=True)
         if run.returncode != 0:
@@ -54,12 +58,14 @@ class Act:
 
         client.images.build(path="./", tag="crawlergpt", forcerm=True)
         os.remove("Dockerfile")
+        Act.__ACT_SETUP = True
+        Act.__SETUP_LOCK.release()
     
 
     def run_act(self, repo_path, workflow: GitHubWorkflow):
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
-        command += f" -W {workflow}"
+        command += f" -W {workflow.path}"
 
         run = subprocess.run(command, shell=True, capture_output=True)
         stdout = run.stdout.decode('utf-8')
