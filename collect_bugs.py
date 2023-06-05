@@ -13,7 +13,6 @@ from datetime import datetime
 from github import Github, Repository
 from unidiff import PatchSet
 from crawlergpt.actions.actions import GitHubActions
-from crawlergpt.crawler import RateLimiter
 from concurrent.futures import ThreadPoolExecutor
 
 class BugPatch:
@@ -225,21 +224,17 @@ class PatchCollector:
             shutil.rmtree(self.repo_path)
         self.cloned = False
 
-
-if __name__ == '__main__':
-    rate_limiter = RateLimiter()
+def collect_bugs(data_path, results_path, n_workers):
+    if "GITHUB_ACCESS_TOKEN" in os.environ:
+        token = os.environ["GITHUB_ACCESS_TOKEN"]
+    else:
+        logging.warning("No GITHUB_ACCESS_TOKEN provided.")
+        token = None
+    
     github: Github = Github(
-        login_or_token=os.environ["GITHUB_ACCESS_TOKEN"], 
+        login_or_token=token, 
         per_page=100, 
     )
-    path = sys.argv[1]
-
-    dir_list = os.listdir(path)
-
-    if len(sys.argv) == 3:
-        n_workers = int(sys.argv[2])
-    else:
-        n_workers = 1
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
     collectors_futures = []
@@ -248,12 +243,12 @@ if __name__ == '__main__':
     # FIXME save times of each action
     # Save total time
     # Save RAM used?
+    dir_list = os.listdir(data_path)
     for file in dir_list:
-        with open(os.path.join(path, file), "r") as f:
+        with open(os.path.join(data_path, file), "r") as f:
             run = json.loads(f.read())
-            name = run["repository"].replace("/", "-")
-            if not os.path.exists("data/out_bugs"):
-                os.mkdir("data/out_bugs")
+            if not os.path.exists(results_path):
+                os.mkdir(results_path)
 
             if run["actions_successful"] and run["number_of_test_actions"] == 1:
                 repo = github.get_repo(run["repository"])
@@ -279,6 +274,21 @@ if __name__ == '__main__':
 
     for bug_patch, future in patches_futures:
         if future.result():
-            data_path = os.path.join("data/out_bugs", bug_patch.repo.full_name.replace('/', '-'))
+            data_path = os.path.join(results_path, bug_patch.repo.full_name.replace('/', '-') + '.json')
             with open(data_path, "a") as fp:
                 fp.write((json.dumps(bug_patch.get_data()) + "\n"))
+
+if __name__ == '__main__':
+    data_path = sys.argv[1]
+
+    if len(sys.argv) == 3:
+        n_workers = int(sys.argv[2])
+    else:
+        n_workers = 1
+
+    if len(sys.argv) == 4:
+        results_path = sys.argv[3]
+    else:
+        results_path = "data/out_bugs"
+    
+    collect_bugs(data_path, results_path, n_workers)
