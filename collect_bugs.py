@@ -192,9 +192,7 @@ class PatchCollector:
                 continue
 
             bug_patch, test_patch = self.__get_patches(self.repo_clone, commit, previous_commit)
-            # Ignore commits without tests
-            # FIXME check if test_patch only has deletes
-            if len(test_patch) == 0 or len(bug_patch) == 0:
+            if test_patch.added == 0 or len(bug_patch) == 0:
                 logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no test/bug patch")
                 continue
 
