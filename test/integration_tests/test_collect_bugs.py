@@ -15,3 +15,4 @@ def test_collect_bugs(teardown_out_bugs):
         assert len(lines) == 1
         data = json.loads(lines[0])
         assert data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938"
+        assert data["failed_tests"] == [{'classname': 'com.testrepo.AppTest', 'name': 'testAppMath'}]

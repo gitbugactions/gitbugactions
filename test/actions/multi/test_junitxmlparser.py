@@ -12,6 +12,7 @@ def parse_junitxml(file):
 @pytest.mark.parametrize("xml_file, nr_of_failing_tests", [
     ("test/resources/test_reports/java/maven_flacoco_passing.xml", 0),
     ("test/resources/test_reports/java/maven_flacoco_failing.xml", 3),
+    ("test/resources/test_reports/java/maven_flacoco_error.xml", 0),
     ("test/resources/test_reports/java/", 3),
 ])
 def test_maven(xml_file, nr_of_failing_tests):
