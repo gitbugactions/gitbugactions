@@ -4,12 +4,7 @@ import logging
 import subprocess
 import threading
 
-from typing import List
-
-from crawlergpt.actions.multi.testparser import TestParser
-from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
-from crawlergpt.actions.java.maven_workflow import MavenWorkflow
-from crawlergpt.actions.workflow import GitHubWorkflow
+from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 
 class Act:
     __ACT_PATH="act"
@@ -82,8 +77,9 @@ class GitHubActions:
     Class to handle GitHub Actions
     """
     
-    def __init__(self, repo_path):
+    def __init__(self, repo_path, language: str):
         self.repo_path = repo_path
+        self.language = language.strip().lower()
         self.workflows = []
         self.test_workflows = []
 
@@ -91,9 +87,10 @@ class GitHubActions:
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
             yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
             for file in yaml_files:
-                workflow = MavenWorkflow(os.path.join(dirpath, file))
+                # Create workflow object according to the language and build system
+                workflow = GitHubWorkflowFactory.create_workflow(os.path.join(dirpath, file), self.language)
+
                 self.workflows.append(workflow)
-                
                 if not workflow.has_tests():
                     continue
 
@@ -108,7 +105,7 @@ class GitHubActions:
                 workflow.path = new_path
 
                 self.test_workflows.append(workflow)
-
+                
     def save_workflows(self):
         for workflow in self.test_workflows:
             if not os.path.exists(os.path.dirname(workflow.path)):

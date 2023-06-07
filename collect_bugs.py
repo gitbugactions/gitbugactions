@@ -9,6 +9,7 @@ import tempfile
 import logging
 import copy
 import threading
+import fire
 from datetime import datetime
 from github import Github, Repository
 from unidiff import PatchSet
@@ -36,10 +37,10 @@ class BugPatch:
         }
 
 
-# FIXME identify build tool
 class PatchCollector:
     def __init__(self, repo: Repository):
         self.repo = repo
+        self.language = repo.language
         self.cloned = False
         self.clone_lock = threading.Lock()
 
@@ -70,7 +71,7 @@ class PatchCollector:
                 self.first_commit = commit
             self.repo_clone.checkout_tree(commit)
             self.repo_clone.set_head(commit.oid)
-            actions = GitHubActions(self.repo_path)
+            actions = GitHubActions(self.repo_path, self.language)
             if len(actions.test_workflows) > 0:
                 self.default_actions = actions
 
@@ -98,7 +99,7 @@ class PatchCollector:
         res = []
         workflow_succeeded = False
 
-        test_actions = GitHubActions(repo_clone.workdir)
+        test_actions = GitHubActions(repo_clone.workdir, self.language)
         if len(test_actions.test_workflows) == 0:
             for workflow in self.default_actions.test_workflows:
                 new_workflow = copy.deepcopy(workflow)
@@ -224,7 +225,8 @@ class PatchCollector:
             shutil.rmtree(self.repo_path)
         self.cloned = False
 
-def collect_bugs(data_path, results_path, n_workers):
+
+def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
     if "GITHUB_ACCESS_TOKEN" in os.environ:
         token = os.environ["GITHUB_ACCESS_TOKEN"]
     else:
@@ -278,17 +280,10 @@ def collect_bugs(data_path, results_path, n_workers):
             with open(data_path, "a") as fp:
                 fp.write((json.dumps(bug_patch.get_data()) + "\n"))
 
+
+def main():
+    fire.Fire(collect_bugs)
+
+
 if __name__ == '__main__':
-    data_path = sys.argv[1]
-
-    if len(sys.argv) == 3:
-        n_workers = int(sys.argv[2])
-    else:
-        n_workers = 1
-
-    if len(sys.argv) == 4:
-        results_path = sys.argv[3]
-    else:
-        results_path = "data/out_bugs"
-    
-    collect_bugs(data_path, results_path, n_workers)
+    sys.exit(main())

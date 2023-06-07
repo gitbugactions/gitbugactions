@@ -48,7 +48,7 @@ class RunnableRepoStrategy(RepoStrategy):
             data['clone_success'] = True
 
             test_actions = GitHubActions(repo_path)
-            data['number of actions'] = len(test_actions.workflows)
+            data['number_of_actions'] = len(test_actions.workflows)
             data['number_of_test_actions'] = len(test_actions.test_workflows)
             test_actions.save_workflows()
             

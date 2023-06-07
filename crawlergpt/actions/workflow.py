@@ -23,7 +23,7 @@ class GitHubWorkflow(ABC):
     ]
 
 
-    def __init__(self, path):
+    def __init__(self, path: str):
         with open(path, "r") as stream:
             self.doc = yaml.safe_load(stream)
             self.path = path
@@ -130,3 +130,78 @@ class GitHubWorkflow(ABC):
     def save_yaml(self, new_path):
         with open(new_path, 'w') as file:
             yaml.dump(self.doc, file)
+
+
+from crawlergpt.actions.multi.unknown_workflow import UnknownWorkflow
+from crawlergpt.actions.java.maven_workflow import MavenWorkflow
+from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
+
+class GitHubWorkflowFactory:
+    """
+    Factory class for creating workflow objects.
+    """
+
+
+    @staticmethod
+    def _identify_build_tool(path: str):
+        """
+        Identifies the build tool used by the workflow.
+        """
+        # Build tool keywords
+        build_tool_keywords = {
+            'maven': ['maven', 'mvn', 'mavenw', 'mvnw'],
+            'gradle': ['gradle'],
+            'pytest': ['pytest'],
+        }
+        aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
+        keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
+        
+        def _update_keyword_counts(keyword_counts, phrase):
+            for name in phrase.strip().lower().split(' '):
+                for keyword in aggregate_keywords:
+                    if keyword in name:
+                        keyword_counts[keyword] += 1
+        
+        # Load the workflow
+        with open(path, "r") as stream:
+            doc = yaml.safe_load(stream)
+            if True in doc:
+                doc['on'] = doc[True]
+                doc.pop(True)
+                
+        # Iterate over the workflow to find build tool names
+        for job_name, job in doc['jobs'].items():
+            _update_keyword_counts(keyword_counts, job_name)
+            if 'steps' in job:
+                for step in job['steps']:
+                    if 'name' in step:
+                        _update_keyword_counts(keyword_counts, step['name'])
+                    if 'uses' in step:
+                        _update_keyword_counts(keyword_counts, step['uses'])
+                    if 'run' in step:
+                        _update_keyword_counts(keyword_counts, step['run'])
+                        
+        # Return the build tool with the highest count
+        max_keyword = max(keyword_counts, key=keyword_counts.get)
+        if keyword_counts[max_keyword] > 0:
+            for build_tool, keywords in build_tool_keywords.items():
+                if max_keyword in keywords:
+                    return build_tool
+        else:
+            return None
+        
+        
+    @staticmethod
+    def create_workflow(path: str, language: str):
+        """
+        Creates a workflow object according to the language and build system.
+        """
+        build_tool = GitHubWorkflowFactory._identify_build_tool(path)
+
+        match (language, build_tool):
+            case ("java", "maven"):
+                return MavenWorkflow(path)
+            case ("python", "pytest"):
+                return PytestWorkflow(path)
+            case (_, _):
+                return UnknownWorkflow(path)
