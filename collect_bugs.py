@@ -21,18 +21,20 @@ class BugPatch:
         self.repo = repo
         self.commit = commit.hex
         self.commit_message = commit.message
+        unix_timestamp = int(commit.commit_time)
+        self.commit_timestamp = datetime.utcfromtimestamp(unix_timestamp).isoformat() + "Z"
         self.previous_commit = previous_commit.hex
         self.bug_patch = bug_patch
         self.test_patch = test_patch
 
     def get_data(self):
-        # FIXME change timestamp name and add timestamp of commit
         return { 
             'repository': self.repo.full_name,
             'clone_url': self.repo.clone_url,
-            'timestamp': datetime.utcnow().isoformat() + "Z",
+            'collection_timestamp': datetime.utcnow().isoformat() + "Z",
             'commit_hash': self.commit,
             'commit_message': self.commit_message,
+            'commit_timestamp': self.commit_timestamp,
             'bug_patch': str(self.bug_patch),
             'test_patch': str(self.test_patch)
         }
