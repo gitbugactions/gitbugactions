@@ -54,9 +54,11 @@ class RunnableRepoStrategy(RepoStrategy):
             
             if len(test_actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
-                data['actions_successful'], data['actions_stdout'], data['actions_stderr'] = test_actions.run_workflow(test_actions.test_workflows[0])
+                act_run = test_actions.run_workflow(test_actions.test_workflows[0])
                 # FIXME check if we are able to get test reports
-                data['actions_successful'] = data['actions_successful'] is not None
+                data['actions_successful'] = not act_run.failed
+                data['actions_stdout'] = act_run.stdout
+                data['actions_stderr'] = act_run.stderr
             
             if os.path.exists(repo_path):
                 shutil.rmtree(repo_path)

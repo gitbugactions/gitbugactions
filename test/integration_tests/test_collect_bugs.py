@@ -15,3 +15,6 @@ def test_collect_bugs(teardown_out_bugs):
         assert len(lines) == 1
         data = json.loads(lines[0])
         assert data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938"
+        assert len(data["actions_runs"]) == 3
+        assert data["actions_runs"][1][0]["failed_tests"] == [{'classname': 'com.testrepo.AppTest', 'name': 'testAppMath'}]
+        assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
