@@ -1,10 +1,22 @@
 import os
+import time
 import docker
 import logging
 import subprocess
 import threading
-
+from typing import List
+from junitparser import TestCase
+from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
+
+@dataclass
+class ActTestsRun:
+    failed: bool
+    failed_tests: List[TestCase]
+    stdout: str
+    stderr: str
+    workflow: str
+    elapsed_time: int
 
 class Act:
     __ACT_PATH="act"
@@ -57,19 +69,23 @@ class Act:
         Act.__SETUP_LOCK.release()
     
 
-    def run_act(self, repo_path, workflow: GitHubWorkflow):
+    def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         command += f" -W {workflow.path}"
 
+        start_time = time.time()
         run = subprocess.run(command, shell=True, capture_output=True)
+        end_time = time.time()
         stdout = run.stdout.decode('utf-8')
         stderr = run.stderr.decode('utf-8')
-        tests_failed = workflow.get_failed_tests(repo_path)
-        if len(tests_failed) == 0 and run.returncode != 0:
-            return None, stdout, stderr
+        failed_tests = workflow.get_failed_tests(repo_path)
+        if len(failed_tests) == 0 and run.returncode != 0:
+            return ActTestsRun(failed=True, failed_tests=[], stdout=stdout, 
+                               stderr=stderr, workflow=workflow.path, elapsed_time=end_time - start_time)
         
-        return tests_failed, stdout, stderr
+        return ActTestsRun(failed=False, failed_tests=failed_tests, stdout=stdout, 
+                           stderr=stderr, workflow=workflow.path, elapsed_time=end_time - start_time)
 
 
 class GitHubActions:
@@ -127,10 +143,9 @@ class GitHubActions:
         for workflow in self.test_workflows:
             self.delete_workflow(workflow)
 
-    def run_workflow(self, workflow):
+    def run_workflow(self, workflow) -> ActTestsRun:
         act = Act(False, timeout=10)
-        failed_tests, stdout, stderr = act.run_act(self.repo_path, workflow)
-        return failed_tests, stdout, stderr
+        return act.run_act(self.repo_path, workflow)
     
     def remove_containers(self):
         client = docker.from_env()

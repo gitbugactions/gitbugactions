@@ -1,8 +1,5 @@
-import os
-import sys
-import uuid
-import json
-import json
+import os, sys
+import uuid, json
 import shutil
 import pygit2
 import tempfile
@@ -10,30 +7,60 @@ import logging
 import copy
 import threading
 import fire
+from typing import List
+from enum import Enum
 from datetime import datetime
 from github import Github, Repository
 from unidiff import PatchSet
-from crawlergpt.actions.actions import GitHubActions
+from dataclasses import asdict
+from crawlergpt.actions.actions import GitHubActions, ActTestsRun
 from concurrent.futures import ThreadPoolExecutor
+
+class CollectionStrategy(Enum):
+    PASS_PASS = 1
+    UNKNOWN = 2
 
 class BugPatch:
     def __init__(self, repo, commit, previous_commit, bug_patch, test_patch):
-        self.repo = repo
-        self.commit = commit.hex
-        self.commit_message = commit.message
-        self.previous_commit = previous_commit.hex
-        self.bug_patch = bug_patch
-        self.test_patch = test_patch
+        self.repo: Repository = repo
+        self.commit: str = commit.hex
+        self.commit_message: str = commit.message
+        unix_timestamp = int(commit.commit_time)
+        self.commit_timestamp: str = datetime.utcfromtimestamp(unix_timestamp).isoformat() + "Z"
+        self.previous_commit: str = previous_commit.hex
+        self.bug_patch: PatchSet = bug_patch
+        self.test_patch: PatchSet = test_patch
+        self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
+        # The actions are grouped by each phase of the strategy used
+        self.actions_runs: List[List[ActTestsRun]] = []
 
     def get_data(self):
+        actions_runs = []
+        
+        for runs in self.actions_runs:
+            runs_data = []
+            for run in runs:
+                run_data = asdict(run)
+                run_data['failed_tests'] = []
+                for failed_test in run.failed_tests:
+                    run_data['failed_tests'].append({
+                        'classname': failed_test.classname,
+                        'name': failed_test.name
+                    })
+                runs_data.append(run_data)
+            actions_runs.append(runs_data)
+
         return { 
             'repository': self.repo.full_name,
             'clone_url': self.repo.clone_url,
-            'timestamp': datetime.utcnow().isoformat() + "Z",
+            'collection_timestamp': datetime.utcnow().isoformat() + "Z",
             'commit_hash': self.commit,
             'commit_message': self.commit_message,
+            'commit_timestamp': self.commit_timestamp,
             'bug_patch': str(self.bug_patch),
-            'test_patch': str(self.test_patch)
+            'test_patch': str(self.test_patch),
+            'actions_runs': actions_runs,
+            'strategy': self.strategy_used.name
         }
 
 
@@ -95,9 +122,8 @@ class PatchCollector:
 
         return bug_patch, test_patch
     
-    def __run_tests(self, repo_clone):
-        res = []
-        workflow_succeeded = False
+    def __run_tests(self, repo_clone) -> List[ActTestsRun]:
+        act_runs = []
 
         test_actions = GitHubActions(repo_clone.workdir, self.language)
         if len(test_actions.test_workflows) == 0:
@@ -113,25 +139,14 @@ class PatchCollector:
         test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
-            failed_tests, _, _ = test_actions.run_workflow(workflow)
-            if failed_tests is None:
-                # Timeout: The other commits will take similar amount of time FIXME
-                # Job failed without tests failing
-                logging.info(f"{self.repo.full_name}: failed tests")
-                continue
-            
-            res.extend(failed_tests)
-            workflow_succeeded = True
+            act_runs.append(test_actions.run_workflow(workflow))
+
         test_actions.delete_workflows()
 
-        return res, workflow_succeeded
+        return act_runs
     
-    def __get_diff_tests(self, commit_hex, previous_commit_hex, test_patch):
-        previous_failed_tests = []
-        current_failed_tests = []
-        pre_workflow_succeeded = False
-        cur_workflow_succeeded = False
-
+    def __test_patch_passing_commits(self, commit_hex, previous_commit_hex, test_patch):
+        test_patch_runs = []
         if not self.cloned:
             self.__clone_repo()
 
@@ -145,29 +160,48 @@ class PatchCollector:
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
 
-            # Apply diff and run tests
+            # Previous commit
             repo_clone.checkout_tree(previous_commit)
             # Creates ref to avoid "failed to identify reference"
             repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
             repo_clone.set_head(previous_commit.oid)
+            
+            act_runs = self.__run_tests(repo_clone)
+            all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
+            flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, act_runs), [])
+            if all_runs_failed or len(flat_failed_tests) > 0:
+                return False, []
+            test_patch_runs.append(act_runs)
+
+            # Apply diff and run tests
             try:
                 repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
             except pygit2.GitError:
                 # Invalid patches
-                return current_failed_tests, previous_failed_tests, False
-            previous_failed_tests, pre_workflow_succeeded = self.__run_tests(repo_clone)
+                return False, []
+            act_runs = self.__run_tests(repo_clone)
+            all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
+            flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, act_runs), [])
+            if all_runs_failed or len(flat_failed_tests) == 0:
+                return False, []
+            test_patch_runs.append(act_runs)
 
+            # Current commit
             repo_clone.checkout_tree(commit)
             # Creates ref to avoid "failed to identify reference"
             repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
                                     commit.author, commit.message)
             repo_clone.set_head(commit.oid)
-            current_failed_tests, cur_workflow_succeeded = self.__run_tests(repo_clone)
-            workflow_succeeded = pre_workflow_succeeded and cur_workflow_succeeded
+            act_runs = self.__run_tests(repo_clone)
+            all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
+            flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, act_runs), [])
+            if all_runs_failed or len(flat_failed_tests) > 0:
+                return False, []
+            test_patch_runs.append(act_runs)
         finally:
             shutil.rmtree(new_repo_path)
 
-        return current_failed_tests, previous_failed_tests, workflow_succeeded
+        return True, test_patch_runs
     
     def get_possible_patches(self):
         if not self.cloned:
@@ -192,9 +226,7 @@ class PatchCollector:
                 continue
 
             bug_patch, test_patch = self.__get_patches(self.repo_clone, commit, previous_commit)
-            # Ignore commits without tests
-            # FIXME check if test_patch only has deletes
-            if len(test_patch) == 0 or len(bug_patch) == 0:
+            if test_patch.added == 0 or len(bug_patch) == 0:
                 logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no test/bug patch")
                 continue
 
@@ -203,22 +235,15 @@ class PatchCollector:
         return patches
 
     def test_patch(self, bug_patch: BugPatch, delete_repo = False):
-        current_failed_tests, previous_failed_tests, workflow_succeeded = \
-            self.__get_diff_tests(bug_patch.commit, bug_patch.previous_commit, bug_patch.test_patch)
-        failed_diff = list(set(x.classname + "#" + x.name for x in previous_failed_tests)
-                            .difference(set(x.classname + "#" + x.name for x in current_failed_tests)))
+        is_patch, test_patch_runs = self.__test_patch_passing_commits(bug_patch.commit, 
+                                                                bug_patch.previous_commit, 
+                                                                bug_patch.test_patch)
+        bug_patch.actions_runs = test_patch_runs
 
         if delete_repo:
             self.delete_repo()
 
-        # FIXME check only if the current commit passed
-        # Check the tests that failed in the previous commit
-        # Save the tests that failed
-        if len(failed_diff) == 0 or not workflow_succeeded:
-            logging.info(f"Skipping commit {self.repo.full_name} {bug_patch.commit}: no failed diff")
-            return False
-
-        return True
+        return is_patch
     
     def delete_repo(self):
         if hasattr(self, "repo_path") and os.path.exists(self.repo_path):
@@ -242,9 +267,6 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
     collectors_futures = []
     patch_collectors = []
 
-    # FIXME save times of each action
-    # Save total time
-    # Save RAM used?
     dir_list = os.listdir(data_path)
     for file in dir_list:
         with open(os.path.join(data_path, file), "r") as f:
@@ -275,10 +297,12 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
             patches_futures.append((bug_patch, future))
 
     for bug_patch, future in patches_futures:
-        if future.result():
+        is_patch = future.result()
+        if is_patch:
             data_path = os.path.join(results_path, bug_patch.repo.full_name.replace('/', '-') + '.json')
             with open(data_path, "a") as fp:
-                fp.write((json.dumps(bug_patch.get_data()) + "\n"))
+                data = bug_patch.get_data()
+                fp.write((json.dumps(data) + "\n"))
 
 
 def main():

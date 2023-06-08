@@ -1,5 +1,5 @@
 from .testparser import TestParser
-from junitparser import JUnitXml, TestCase, TestSuite
+from junitparser import JUnitXml, TestCase, TestSuite, Error
 from typing import List, Union
 from pathlib import Path
 
@@ -17,8 +17,10 @@ class JUnitXMLParser(TestParser):
                 if element is not None:
                     failed_tests.extend(self.__get_failed_tests_xml(element))
         else:
-            # If it is a TestCase, check if it is failed (not passed and not skipped)
-            if not xml.is_passed and not xml.is_skipped:
+            # If it is a TestCase, check if it is failed (not passed, not skipped and
+            # without Errors)
+            if (not xml.is_passed and not xml.is_skipped and
+                        not any(map(lambda r: isinstance(r, Error), xml.result))):
                 failed_tests.append(xml)
 
         return failed_tests
