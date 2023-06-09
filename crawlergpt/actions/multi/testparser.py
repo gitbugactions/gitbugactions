@@ -4,20 +4,20 @@ from pathlib import Path
 class TestParser(ABC):
 
     @abstractmethod
-    def _get_failed_tests(self, file: Path) -> list:
+    def _get_test_results(self, file: Path) -> list:
         """Returns a list of failed tests from a test results file"""
         pass
     
-    def get_failed_tests(self, filename: str) -> list:
+    def get_test_results(self, filename: str) -> list:
         """Iterates over all files in a directory recursively and returns the aggregated list of test files"""
-        failed_tests = []
+        tests = []
         file = Path(filename)
         
         if file.is_dir():
             # Iterate over all files in the directory
             for child in file.iterdir():
-                failed_tests.extend(self.get_failed_tests(str(child)))
+                tests.extend(self.get_test_results(str(child)))
         elif file.exists():
-            failed_tests.extend(self._get_failed_tests(file))
+            tests.extend(self._get_test_results(file))
                     
-        return failed_tests
+        return tests
