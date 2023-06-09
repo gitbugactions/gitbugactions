@@ -18,6 +18,6 @@ class PytestWorkflow(GitHubWorkflow):
                     if 'run' in step and self._is_test_keyword(step['run']):
                         step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
                             
-    def get_failed_tests(self, repo_path) -> List[TestCase]:
+    def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
-        return parser.get_failed_tests(str(Path(repo_path, "report.xml")))
+        return parser.get_test_results(str(Path(repo_path, "report.xml")))

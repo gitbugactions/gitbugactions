@@ -118,9 +118,8 @@ class GitHubWorkflow(ABC):
         pass
 
 
-    # FIXME This method should return all test results, not just the failing
     @abstractmethod
-    def get_failed_tests(self, repo_path) -> List[TestCase]:
+    def get_test_results(self, repo_path) -> List[TestCase]:
         """
         Gets the test results from the workflow.
         """

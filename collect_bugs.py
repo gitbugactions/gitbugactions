@@ -41,11 +41,25 @@ class BugPatch:
             runs_data = []
             for run in runs:
                 run_data = asdict(run)
-                run_data['failed_tests'] = []
-                for failed_test in run.failed_tests:
-                    run_data['failed_tests'].append({
-                        'classname': failed_test.classname,
-                        'name': failed_test.name
+                run_data['tests'] = []
+                for test in run.tests:
+                    results = []
+                    for result in test.result:
+                        results.append({
+                            'result': result.__class__.__name__,
+                            'message': result.message,
+                            'type': result.type
+                        })
+                    if len(results) == 0:
+                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
+
+                    run_data['tests'].append({
+                        'classname': test.classname,
+                        'name': test.name,
+                        'time': test.time,
+                        'results': results,
+                        'stdout': test.system_out,
+                        'stderr': test.system_err
                     })
                 runs_data.append(run_data)
             actions_runs.append(runs_data)

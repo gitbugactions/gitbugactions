@@ -16,6 +16,6 @@ class MavenWorkflow(GitHubWorkflow):
     def instrument_test_steps(self):
         pass
     
-    def get_failed_tests(self, repo_path) -> List[TestCase]:
+    def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
-        return parser.get_failed_tests(str(Path(repo_path, "target", "surefire-reports")))
+        return parser.get_test_results(str(Path(repo_path, "target", "surefire-reports")))
