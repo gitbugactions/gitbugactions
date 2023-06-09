@@ -5,18 +5,28 @@ import logging
 import subprocess
 import threading
 from typing import List
-from junitparser import TestCase
+from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 
 @dataclass
 class ActTestsRun:
     failed: bool
-    failed_tests: List[TestCase]
+    tests: List[TestCase]
     stdout: str
     stderr: str
     workflow: str
     elapsed_time: int
+
+    @property
+    def failed_tests(self):
+        failed_tests = []
+        for test in self.tests:
+            # Check if it is failed (not passed, not skipped and without errors)
+            if (not test.is_passed and not test.is_skipped and
+                        not any(map(lambda r: isinstance(r, Error), test.result))):
+                failed_tests.append(test)
+        return failed_tests
 
 class Act:
     __ACT_PATH="act"
@@ -79,13 +89,14 @@ class Act:
         end_time = time.time()
         stdout = run.stdout.decode('utf-8')
         stderr = run.stderr.decode('utf-8')
-        failed_tests = workflow.get_failed_tests(repo_path)
-        if len(failed_tests) == 0 and run.returncode != 0:
-            return ActTestsRun(failed=True, failed_tests=[], stdout=stdout, 
-                               stderr=stderr, workflow=workflow.path, elapsed_time=end_time - start_time)
+        tests = workflow.get_test_results(repo_path)
+        tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
+                stderr=stderr, workflow=workflow.path, elapsed_time=end_time - start_time)
+
+        if len(tests_run.failed_tests) == 0 and run.returncode != 0:
+            tests_run.failed = True
         
-        return ActTestsRun(failed=False, failed_tests=failed_tests, stdout=stdout, 
-                           stderr=stderr, workflow=workflow.path, elapsed_time=end_time - start_time)
+        return tests_run
 
 
 class GitHubActions:
