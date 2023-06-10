@@ -8,13 +8,37 @@ def teardown_out_bugs():
     yield
     shutil.rmtree("test/resources/test_collect_bugs_out")
 
+def get_test_results(tests):
+    passed, failure = 0, 0
+
+    for test in tests:
+        if test["results"][0]['result'] == 'Passed':
+            passed += 1
+        elif test["results"][0]['result'] == 'Failure':
+            failure += 1
+
+    return passed, failure
+
 def test_collect_bugs(teardown_out_bugs):
     collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 2)
     with open("test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json", "r") as f:
         lines = f.readlines()
-        assert len(lines) == 1
+        assert len(lines) == 2
         data = json.loads(lines[0])
+        assert data["commit_hash"] == "248d0b1f31e0c9b82eda0e9a9c15cb6bbeaec0b0"
+        assert data["strategy"] == "FAIL_PASS"
+        assert len(data["actions_runs"]) == 3
+        assert len(data["actions_runs"][0][0]["tests"]) == 2
+        assert data["actions_runs"][1] is None
+        assert len(data["actions_runs"][2][0]["tests"]) == 2
+        assert data["commit_timestamp"] == "2023-06-10T15:23:09Z"
+        passed, failure = get_test_results(data["actions_runs"][0][0]["tests"])
+        assert passed == 1
+        assert failure == 1
+
+        data = json.loads(lines[1])
         assert data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938"
+        assert data["strategy"] == "PASS_PASS"
         assert len(data["actions_runs"]) == 3
         assert len(data["actions_runs"][1][0]["tests"]) == 1
         assert len(data["actions_runs"][1][0]["tests"][0]["results"]) == 1
@@ -26,6 +50,7 @@ def test_collect_bugs(teardown_out_bugs):
         assert len(lines) == 1
         data = json.loads(lines[0])
         assert data["commit_hash"] == "0e1907f75fcd3936b6d64292bc278250f2ee9ca3"
+        assert data["strategy"] == "PASS_PASS"
         assert len(data["actions_runs"]) == 3
         # assert that number of total tests before == 6 and all pass
         assert len(data["actions_runs"][0][0]["tests"]) == 6

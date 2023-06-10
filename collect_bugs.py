@@ -17,8 +17,9 @@ from crawlergpt.actions.actions import GitHubActions, ActTestsRun
 from concurrent.futures import ThreadPoolExecutor
 
 class CollectionStrategy(Enum):
+    UNKNOWN = 0
     PASS_PASS = 1
-    UNKNOWN = 2
+    FAIL_PASS = 2
 
 class BugPatch:
     def __init__(self, repo, commit, previous_commit, bug_patch, test_patch):
@@ -38,7 +39,11 @@ class BugPatch:
         actions_runs = []
         
         for runs in self.actions_runs:
+            if runs is None:
+                actions_runs.append(None)
+                continue
             runs_data = []
+            
             for run in runs:
                 run_data = asdict(run)
                 run_data['tests'] = []
@@ -159,8 +164,8 @@ class PatchCollector:
 
         return act_runs
     
-    def __test_patch_passing_commits(self, commit_hex, previous_commit_hex, test_patch):
-        test_patch_runs = []
+    def __test_patch(self, commit_hex, previous_commit_hex, test_patch):
+        test_patch_runs = [None, None, None]
         if not self.cloned:
             self.__clone_repo()
 
@@ -182,23 +187,21 @@ class PatchCollector:
             
             act_runs = self.__run_tests(repo_clone)
             all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
-            flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, act_runs), [])
-            if all_runs_failed or len(flat_failed_tests) > 0:
-                return False, []
-            test_patch_runs.append(act_runs)
+            if all_runs_failed:
+                return test_patch_runs
+            test_patch_runs[0] = act_runs
 
-            # Apply diff and run tests
-            try:
-                repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
-            except pygit2.GitError:
-                # Invalid patches
-                return False, []
-            act_runs = self.__run_tests(repo_clone)
-            all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
-            flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, act_runs), [])
-            if all_runs_failed or len(flat_failed_tests) == 0:
-                return False, []
-            test_patch_runs.append(act_runs)
+            if len(test_patch) > 0:
+                # Apply diff and run tests
+                try:
+                    repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
+                except pygit2.GitError:
+                    # Invalid patches
+                    return test_patch_runs
+                act_runs = self.__run_tests(repo_clone)
+                if all_runs_failed:
+                    return test_patch_runs
+                test_patch_runs[1] = act_runs
 
             # Current commit
             repo_clone.checkout_tree(commit)
@@ -208,14 +211,13 @@ class PatchCollector:
             repo_clone.set_head(commit.oid)
             act_runs = self.__run_tests(repo_clone)
             all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
-            flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, act_runs), [])
-            if all_runs_failed or len(flat_failed_tests) > 0:
-                return False, []
-            test_patch_runs.append(act_runs)
+            if all_runs_failed:
+                return test_patch_runs
+            test_patch_runs[2] = act_runs
         finally:
             shutil.rmtree(new_repo_path)
 
-        return True, test_patch_runs
+        return test_patch_runs
     
     def get_possible_patches(self):
         if not self.cloned:
@@ -240,8 +242,8 @@ class PatchCollector:
                 continue
 
             bug_patch, test_patch = self.__get_patches(self.repo_clone, commit, previous_commit)
-            if test_patch.added == 0 or len(bug_patch) == 0:
-                logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no test/bug patch")
+            if len(bug_patch) == 0:
+                logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch")
                 continue
 
             patches.append(BugPatch(self.repo, commit, previous_commit, bug_patch, test_patch))
@@ -249,15 +251,37 @@ class PatchCollector:
         return patches
 
     def test_patch(self, bug_patch: BugPatch, delete_repo = False):
-        is_patch, test_patch_runs = self.__test_patch_passing_commits(bug_patch.commit, 
-                                                                bug_patch.previous_commit, 
-                                                                bug_patch.test_patch)
+        def flat_failed_tests(runs):
+            return sum(map(lambda act_run: act_run.failed_tests, runs), [])
+        
+        test_patch_runs = self.__test_patch(bug_patch.commit, 
+                                            bug_patch.previous_commit, 
+                                            bug_patch.test_patch)
         bug_patch.actions_runs = test_patch_runs
-
         if delete_repo:
             self.delete_repo()
+        
+        prev_commit_passed = (bug_patch.actions_runs[0] is not None and 
+                                 len(flat_failed_tests(bug_patch.actions_runs[0])) == 0)
+        prev_with_diff_failed = (bug_patch.actions_runs[1] is not None and 
+                                 len(flat_failed_tests(bug_patch.actions_runs[1])) > 0)
+        curr_commit_passed = (bug_patch.actions_runs[2] is not None and 
+                                 len(flat_failed_tests(bug_patch.actions_runs[2])) == 0)
+        
+        # PASS_PASS strategy
+        if prev_commit_passed and prev_with_diff_failed and curr_commit_passed:
+            bug_patch.strategy_used = CollectionStrategy.PASS_PASS
+            return True
 
-        return is_patch
+        prev_commit_failed = (bug_patch.actions_runs[0] is not None and 
+                                 len(flat_failed_tests(bug_patch.actions_runs[0])) > 0)
+        
+        # FAIL_PASS strategy
+        if prev_commit_failed and curr_commit_passed:
+            bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
+            return True
+
+        return False
     
     def delete_repo(self):
         if hasattr(self, "repo_path") and os.path.exists(self.repo_path):
