@@ -9,7 +9,7 @@ def teardown_out_bugs():
     shutil.rmtree("test/resources/test_collect_bugs_out")
 
 def test_collect_bugs(teardown_out_bugs):
-    collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 1)
+    collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 2)
     with open("test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json", "r") as f:
         lines = f.readlines()
         assert len(lines) == 1
