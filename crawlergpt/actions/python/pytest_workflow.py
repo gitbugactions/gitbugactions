@@ -6,7 +6,7 @@ from crawlergpt.actions.workflow import GitHubWorkflow
 from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 
 class PytestWorkflow(GitHubWorkflow): 
-    __TESTS_KEYWORDS = ["pytest"]
+    __TESTS_KEYWORDS = ["pytest", "py.test"]
     
     def _is_test_keyword(self, name):
         return any(map(lambda word: word.lower() in PytestWorkflow.__TESTS_KEYWORDS, name.split(' ')))
@@ -17,6 +17,7 @@ class PytestWorkflow(GitHubWorkflow):
                 for step in job['steps']:
                     if 'run' in step and self._is_test_keyword(step['run']):
                         step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
+                        step['run'] = step['run'].replace("py.test", "py.test --junitxml=report.xml")
                             
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
