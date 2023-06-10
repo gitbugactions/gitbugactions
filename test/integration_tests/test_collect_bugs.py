@@ -32,9 +32,27 @@ def test_collect_bugs(teardown_out_bugs):
         assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][0][0]["tests"]] for r in _]])
         # assert that number of tests failing before w/ new tests == 12, 6 pass and 6 fail
         assert len(data["actions_runs"][1][0]["tests"]) == 12
-        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"])
-        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"])
+        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"]) == 6
+        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"]) == 6
         # assert that number of total tests after == 12 and all pass
         assert len(data["actions_runs"][2][0]["tests"]) == 12
         assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
         assert data["commit_timestamp"] == "2023-06-09T20:06:31Z"
+
+    with open("test/resources/test_collect_bugs_out/andre15silva-crawlergpt-gradle-test-repo.json", "r") as f:
+        lines = f.readlines()
+        assert len(lines) == 1
+        data = json.loads(lines[0])
+        assert data["commit_hash"] == "2289b33a322f01b95405905c53770a63fa21b8bf"
+        assert len(data["actions_runs"]) == 3
+        # assert that number of total tests before == 1 and it passes
+        assert len(data["actions_runs"][0][0]["tests"]) == 1
+        assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][0][0]["tests"]] for r in _]])
+        # assert that number of tests failing before w/ new tests == 1 and it fails
+        assert len(data["actions_runs"][1][0]["tests"]) == 1
+        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"]) == 0
+        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"]) == 1
+        # assert that number of total tests after == 1 and it passes
+        assert len(data["actions_runs"][2][0]["tests"]) == 1
+        assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
+        assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"

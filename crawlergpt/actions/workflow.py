@@ -133,6 +133,7 @@ class GitHubWorkflow(ABC):
 
 from crawlergpt.actions.multi.unknown_workflow import UnknownWorkflow
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
+from crawlergpt.actions.java.gradle_workflow import GradleWorkflow
 from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
 
 class GitHubWorkflowFactory:
@@ -149,8 +150,8 @@ class GitHubWorkflowFactory:
         # Build tool keywords
         build_tool_keywords = {
             'maven': ['maven', 'mvn', 'mavenw', 'mvnw'],
-            'gradle': ['gradle'],
-            'pytest': ['pytest'],
+            'gradle': ['gradle', 'gradlew'],
+            'pytest': ['pytest', 'py.test'],
         }
         aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
         keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
@@ -200,6 +201,8 @@ class GitHubWorkflowFactory:
         match (language, build_tool):
             case ("java", "maven"):
                 return MavenWorkflow(path)
+            case ("java", "gradle"):
+                return GradleWorkflow(path)
             case ("python", "pytest"):
                 return PytestWorkflow(path)
             case (_, _):
