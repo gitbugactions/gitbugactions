@@ -82,6 +82,9 @@ class Act:
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        if "GITHUB_ACCESS_TOKEN" in os.environ:
+            token = os.environ["GITHUB_ACCESS_TOKEN"]
+            command += f" -s GITHUB_TOKEN={token}"
         command += f" -W {workflow.path}"
 
         start_time = time.time()
@@ -123,6 +126,7 @@ class GitHubActions:
 
                 workflow.instrument_os()
                 workflow.instrument_strategy()
+                workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()
 
                 filename = os.path.basename(workflow.path)
