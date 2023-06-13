@@ -6,13 +6,12 @@ import shutil
 import uuid
 from datetime import datetime
 from github import Repository
-from crawlergpt.crawler import RepoStrategy, RateLimiter, RepoCrawler
+from crawlergpt.crawler import RepoStrategy, RepoCrawler
 from crawlergpt.actions.actions import GitHubActions
 
 class RunnableRepoStrategy(RepoStrategy):
-    def __init__(self, data_path: str, rate_limiter: RateLimiter):
+    def __init__(self, data_path: str):
         self.data_path = data_path
-        self.rate_lim = rate_limiter
         self.uuid = str(uuid.uuid1())
 
 
@@ -71,6 +70,5 @@ class RunnableRepoStrategy(RepoStrategy):
 
 if __name__ == '__main__':
     query = input()
-    rate_limiter = RateLimiter()
-    crawler = RepoCrawler(query, rate_limiter, pagination_freq='M', n_workers=int(input()))
-    crawler.get_repos(RunnableRepoStrategy("./out/", rate_limiter))
+    crawler = RepoCrawler(query, pagination_freq='M', n_workers=int(input()))
+    crawler.get_repos(RunnableRepoStrategy("./out/"))

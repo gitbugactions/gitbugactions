@@ -1,8 +1,9 @@
 import yaml
-
+import os
 from abc import ABC, abstractmethod
 from junitparser import TestCase
 from typing import List
+from crawlergpt.github_token import GithubToken
 
 class GitHubWorkflow(ABC):
     __UNSUPPORTED_OS = [
@@ -31,6 +32,7 @@ class GitHubWorkflow(ABC):
             if True in self.doc:
                 self.doc['on'] = self.doc[True]
                 self.doc.pop(True)
+        self.tokens: List[GithubToken] = []
 
 
     @abstractmethod
@@ -90,7 +92,7 @@ class GitHubWorkflow(ABC):
                     doc.append('ubuntu-latest')
 
         # Replace any unsupported OS with Ubuntu
-        for job_name, job in self.doc['jobs'].items():
+        for _, job in self.doc['jobs'].items():
             if 'runs-on' in job and str(job['runs-on']).lower() in GitHubWorkflow.__UNSUPPORTED_OS:
                 job['runs-on'] = 'ubuntu-latest'
             if 'strategy' in job and 'os' in job['strategy'] and isinstance(job['strategy']['os'], list):
@@ -103,11 +105,34 @@ class GitHubWorkflow(ABC):
         """
         Instruments the workflow to run only one configuration (the fisrt one) per job.
         """
-        for job_name, job in self.doc['jobs'].items():
+        for _, job in self.doc['jobs'].items():
             if 'strategy' in job and 'matrix' in job['strategy']:
                 for key, value in job['strategy']['matrix'].items():
                     if isinstance(value, list):
                         job['strategy']['matrix'][key] = [value[0]]
+
+    
+    def instrument_setup_steps(self):
+        if not GithubToken.has_tokens():
+            return
+        self.tokens = []
+
+        for _, job in self.doc['jobs'].items():
+            if 'steps' not in job:
+                continue
+
+            for step in job['steps']:
+                if 'uses' not in step or 'setup' not in step['uses']:
+                    continue
+
+                if 'with' in step and 'token' not in step['with']:
+                    token = GithubToken.get_token()
+                    step['with']['token'] = token.token
+                    self.tokens.append(token)
+                elif 'with' not in step:
+                    token = GithubToken.get_token()
+                    step['with'] = {'token': token.token}
+                    self.tokens.append(token)
 
 
     @abstractmethod

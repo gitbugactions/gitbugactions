@@ -14,6 +14,7 @@ from github import Github, Repository
 from unidiff import PatchSet
 from dataclasses import asdict
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
+from crawlergpt.github_token import GithubToken
 from concurrent.futures import ThreadPoolExecutor
 
 class CollectionStrategy(Enum):
@@ -290,14 +291,9 @@ class PatchCollector:
 
 
 def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
-    if "GITHUB_ACCESS_TOKEN" in os.environ:
-        token = os.environ["GITHUB_ACCESS_TOKEN"]
-    else:
-        logging.warning("No GITHUB_ACCESS_TOKEN provided.")
-        token = None
-    
+    token = GithubToken.get_token()
     github: Github = Github(
-        login_or_token=token, 
+        login_or_token=token if token is None else token.token, 
         per_page=100, 
     )
 
