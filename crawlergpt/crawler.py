@@ -9,12 +9,17 @@ from abc import ABC, abstractmethod
 from github import Github, Repository, RateLimitExceededException
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from crawlergpt.github_token import GithubToken
 
 # FIXME change to custom logger
 logging.basicConfig(level=logging.INFO)
 
 
-class RateLimiter:
+class SearchRateLimiter:
+    """
+    Rate Limiter for the Github search API. The search API has different rate limits
+    than the core API.
+    """
     __GITHUB_REQUESTS_LIMIT = 29 # The real limit is 30, but we try to avoid it
     __GITHUB_RESET_SECONDS = 60
     
@@ -25,14 +30,15 @@ class RateLimiter:
 
     def request(self, fn, *args, **kwargs):
         self.lock.acquire()
+        time_after_reset = (datetime.now() - self.first_request).total_seconds()
         retries = 3
         if self.requests == 0:
             self.first_request = datetime.now()
-        elif (datetime.now() - self.first_request).total_seconds() > RateLimiter.__GITHUB_RESET_SECONDS:
+        elif time_after_reset > SearchRateLimiter.__GITHUB_RESET_SECONDS:
             self.requests = 0
             self.first_request = datetime.now()
-        if self.requests == RateLimiter.__GITHUB_REQUESTS_LIMIT:
-            time.sleep(RateLimiter.__GITHUB_RESET_SECONDS)
+        if self.requests == SearchRateLimiter.__GITHUB_REQUESTS_LIMIT:
+            time.sleep(SearchRateLimiter.__GITHUB_RESET_SECONDS - time_after_reset)
             self.requests = 0
         self.requests += 1
         self.lock.release()
@@ -65,7 +71,7 @@ class RepoCrawler:
     __GITHUB_CREATION_DATE = "2008-02-08"
     __PAGE_SIZE = 100
 
-    def __init__(self, query: str, rate_limiter: RateLimiter, pagination_freq: str=None, n_workers: int = 1):
+    def __init__(self, query: str, pagination_freq: str=None, n_workers: int = 1):
         '''
         Args:
             query (str): String with the Github searching format
@@ -76,14 +82,15 @@ class RepoCrawler:
                 The possible values are listed here:
                 https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases
         '''
+        token = GithubToken.get_token()
         self.github: Github = Github(
-            login_or_token=os.environ["GITHUB_ACCESS_TOKEN"], 
+            login_or_token=token if token is None else token.token, 
             per_page=RepoCrawler.__PAGE_SIZE, 
         )
         self.query: str = query
         self.pagination_freq: str = pagination_freq
         self.requests: int = 0
-        self.rate_lim = rate_limiter
+        self.rate_lim = SearchRateLimiter()
         self.n_workers = n_workers
         self.executor = ThreadPoolExecutor(max_workers=self.n_workers)
         self.futures = []
