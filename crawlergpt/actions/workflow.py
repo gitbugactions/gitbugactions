@@ -3,6 +3,7 @@ import os
 from abc import ABC, abstractmethod
 from junitparser import TestCase
 from typing import List
+from crawlergpt.github_token import GithubToken
 
 class GitHubWorkflow(ABC):
     __UNSUPPORTED_OS = [
@@ -31,6 +32,7 @@ class GitHubWorkflow(ABC):
             if True in self.doc:
                 self.doc['on'] = self.doc[True]
                 self.doc.pop(True)
+        self.tokens: List[GithubToken] = []
 
 
     @abstractmethod
@@ -111,8 +113,9 @@ class GitHubWorkflow(ABC):
 
     
     def instrument_setup_steps(self):
-        if "GITHUB_ACCESS_TOKEN" not in os.environ:
+        if not GithubToken.has_tokens():
             return
+        self.tokens = []
 
         for _, job in self.doc['jobs'].items():
             if 'steps' not in job:
@@ -123,9 +126,13 @@ class GitHubWorkflow(ABC):
                     continue
 
                 if 'with' in step and 'token' not in step['with']:
-                    step['with']['token'] = os.environ["GITHUB_ACCESS_TOKEN"]
+                    token = GithubToken.get_token()
+                    step['with']['token'] = token.token
+                    self.tokens.append(token)
                 elif 'with' not in step:
-                    step['with'] = {'token': os.environ["GITHUB_ACCESS_TOKEN"]}
+                    token = GithubToken.get_token()
+                    step['with'] = {'token': token.token}
+                    self.tokens.append(token)
 
 
     @abstractmethod

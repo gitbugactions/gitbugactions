@@ -1,6 +1,7 @@
 from crawlergpt.actions.workflow import GitHubWorkflowFactory
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
 from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
+from crawlergpt.github_token import GithubToken
 
 import os
 import pytest
@@ -29,15 +30,22 @@ def test_pytest(yml_file):
     workflow = create_workflow(yml_file, "python")
     assert isinstance(workflow, PytestWorkflow)
 
+@pytest.fixture
+def teardown_instrument_steps():
+    yield
+    if os.environ['GITHUB_ACCESS_TOKEN'] == "test":
+        os.environ.pop('GITHUB_ACCESS_TOKEN')
+        GithubToken.init_tokens()
 
-def test_instrument_steps():
+def test_instrument_steps(teardown_instrument_steps):
     workflow = create_workflow("test/resources/test_workflows/java/maven_test_repo.yml", "java")
-    os.environ['GITHUB_ACCESS_TOKEN'] = 'test'
+    if 'GITHUB_ACCESS_TOKEN' not in os.environ:
+        os.environ['GITHUB_ACCESS_TOKEN'] = 'test'
     workflow.instrument_setup_steps()
     assert 'token' in workflow.doc['jobs']['test']['steps'][1]['with']
-    assert 'test' == workflow.doc['jobs']['test']['steps'][1]['with']['token']
+    assert workflow.tokens[0].token == workflow.doc['jobs']['test']['steps'][1]['with']['token']
 
     workflow.doc['jobs']['test']['steps'][1].pop('with')
     assert 'with' not in workflow.doc['jobs']['test']['steps'][1]
     workflow.instrument_setup_steps()
-    assert 'test' == workflow.doc['jobs']['test']['steps'][1]['with']['token']
+    assert workflow.tokens[0].token == workflow.doc['jobs']['test']['steps'][1]['with']['token']

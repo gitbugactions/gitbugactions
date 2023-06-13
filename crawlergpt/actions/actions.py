@@ -8,6 +8,7 @@ from typing import List
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
+from crawlergpt.github_token import GithubToken
 
 @dataclass
 class ActTestsRun:
@@ -28,6 +29,7 @@ class ActTestsRun:
                 failed_tests.append(test)
         return failed_tests
 
+
 class Act:
     __ACT_PATH="act"
     __ACT_SETUP=False
@@ -47,8 +49,7 @@ class Act:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
-        self.timeout = timeout
-        
+        self.timeout = timeout 
 
     @staticmethod
     def __setup_act():
@@ -77,14 +78,14 @@ class Act:
         os.remove("Dockerfile")
         Act.__ACT_SETUP = True
         Act.__SETUP_LOCK.release()
-    
+
 
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
-        if "GITHUB_ACCESS_TOKEN" in os.environ:
-            token = os.environ["GITHUB_ACCESS_TOKEN"]
-            command += f" -s GITHUB_TOKEN={token}"
+        if GithubToken.has_tokens():
+            token: GithubToken = GithubToken.get_token()
+            command += f" -s GITHUB_TOKEN={token.token}"
         command += f" -W {workflow.path}"
 
         start_time = time.time()
@@ -98,6 +99,11 @@ class Act:
 
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
+
+        if GithubToken.has_tokens():
+            token.update_rate_limit()
+            for token in workflow.tokens:
+                token.update_rate_limit()
         
         return tests_run
 

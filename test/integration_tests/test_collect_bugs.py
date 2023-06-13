@@ -2,6 +2,15 @@ import json
 import shutil
 import pytest
 from collect_bugs import collect_bugs
+from crawlergpt.github_token import GithubToken
+
+def get_token_usage():
+    token_usage = 0
+    if GithubToken.has_tokens():
+        for token in GithubToken._GithubToken__TOKENS:
+            token_usage += 5000 - token.remaining
+        return token_usage
+    return token_usage
 
 @pytest.fixture
 def teardown_out_bugs():
@@ -9,7 +18,11 @@ def teardown_out_bugs():
     shutil.rmtree("test/resources/test_collect_bugs_out")
 
 def test_collect_bugs(teardown_out_bugs):
+    token_usage = get_token_usage()
     collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 2)
+    if GithubToken.has_tokens():
+        assert token_usage + 9 == get_token_usage()
+    
     with open("test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json", "r") as f:
         lines = f.readlines()
         assert len(lines) == 1
