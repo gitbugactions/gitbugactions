@@ -6,6 +6,7 @@ import shutil
 import uuid
 from datetime import datetime
 from github import Repository
+from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
 from crawlergpt.actions.actions import GitHubActions
 
@@ -39,11 +40,12 @@ class RunnableRepoStrategy(RepoStrategy):
             'actions_successful': False
         }
 
+        repo_clone = pygit2.clone_repository(
+            repo.clone_url, 
+            repo_path
+        )
+
         try:
-            repo_clone = pygit2.clone_repository(
-                repo.clone_url, 
-                repo_path
-            )
             data['clone_success'] = True
 
             test_actions = GitHubActions(repo_path)
@@ -59,12 +61,10 @@ class RunnableRepoStrategy(RepoStrategy):
                 data['actions_stdout'] = act_run.stdout
                 data['actions_stderr'] = act_run.stderr
             
-            if os.path.exists(repo_path):
-                shutil.rmtree(repo_path)
+            delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
-            if os.path.exists(repo_path):
-                shutil.rmtree(repo_path)
+            delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         
 
