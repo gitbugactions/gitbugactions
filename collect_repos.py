@@ -1,16 +1,17 @@
 import tempfile
 import pygit2
-import os, logging
+import os, logging, sys
 import json
-import shutil
 import uuid
+import fire
 from datetime import datetime
+from dataclasses import asdict
 from github import Repository
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
 from crawlergpt.actions.actions import GitHubActions
 
-class RunnableRepoStrategy(RepoStrategy):
+class CollectReposStrategy(RepoStrategy):
     def __init__(self, data_path: str):
         self.data_path = data_path
         self.uuid = str(uuid.uuid1())
@@ -32,6 +33,9 @@ class RunnableRepoStrategy(RepoStrategy):
 
         data = {
             'repository': repo.full_name,
+            'stars': repo.stargazers_count,
+            'language': repo.language.strip().lower(),
+            'size': repo.size,
             'clone_url': repo.clone_url,
             'timestamp': datetime.utcnow().isoformat() + "Z",
             'clone_success': False,
@@ -48,27 +52,35 @@ class RunnableRepoStrategy(RepoStrategy):
         try:
             data['clone_success'] = True
 
-            test_actions = GitHubActions(repo_path)
-            data['number_of_actions'] = len(test_actions.workflows)
-            data['number_of_test_actions'] = len(test_actions.test_workflows)
-            test_actions.save_workflows()
+            actions = GitHubActions(repo_path, repo.language)
+            data['number_of_actions'] = len(actions.workflows)
+            data['actions_build_tools'] = [x.get_build_tool() for x in actions.workflows]
+            data['number_of_test_actions'] = len(actions.test_workflows)
+            data['actions_test_build_tools'] = [x.get_build_tool() for x in actions.test_workflows]
+            actions.save_workflows()
             
-            if len(test_actions.test_workflows) == 1:
+            if len(actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
-                act_run = test_actions.run_workflow(test_actions.test_workflows[0])
-                # FIXME check if we are able to get test reports
+                act_run = actions.run_workflow(actions.test_workflows[0])
                 data['actions_successful'] = not act_run.failed
-                data['actions_stdout'] = act_run.stdout
-                data['actions_stderr'] = act_run.stderr
+                run_data = asdict(act_run)
+                data['actions_data'] = run_data
             
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
+            logging.error(f"Error while processing {repo.full_name}: {e}")
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         
 
+def collect_repos(query: str, pagination_freq: str = 'M', n_workers: int = 1, out_path: str = "./out/"):
+    crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
+    crawler.get_repos(CollectReposStrategy(out_path))
+
+
+def main():
+    fire.Fire(collect_repos)
+
 if __name__ == '__main__':
-    query = input()
-    crawler = RepoCrawler(query, pagination_freq='M', n_workers=int(input()))
-    crawler.get_repos(RunnableRepoStrategy("./out/"))
+    sys.exit(main())

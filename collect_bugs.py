@@ -73,6 +73,9 @@ class BugPatch:
 
         return { 
             'repository': self.repo.full_name,
+            'stars': self.repo.stargazers_count,
+            'language': self.repo.language.strip().lower(),
+            'size': self.repo.size,
             'clone_url': self.repo.clone_url,
             'collection_timestamp': datetime.utcnow().isoformat() + "Z",
             'commit_hash': self.commit,
@@ -88,7 +91,7 @@ class BugPatch:
 class PatchCollector:
     def __init__(self, repo: Repository):
         self.repo = repo
-        self.language = repo.language
+        self.language = repo.language.strip().lower()
         self.cloned = False
         self.clone_lock = threading.Lock()
 
