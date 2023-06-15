@@ -52,14 +52,16 @@ class CollectReposStrategy(RepoStrategy):
         try:
             data['clone_success'] = True
 
-            test_actions = GitHubActions(repo_path, repo.language)
-            data['number_of_actions'] = len(test_actions.workflows)
-            data['number_of_test_actions'] = len(test_actions.test_workflows)
-            test_actions.save_workflows()
+            actions = GitHubActions(repo_path, repo.language)
+            data['number_of_actions'] = len(actions.workflows)
+            data['actions_build_tools'] = [x.get_build_tool() for x in actions.workflows]
+            data['number_of_test_actions'] = len(actions.test_workflows)
+            data['actions_test_build_tools'] = [x.get_build_tool() for x in actions.test_workflows]
+            actions.save_workflows()
             
-            if len(test_actions.test_workflows) == 1:
+            if len(actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
-                act_run = test_actions.run_workflow(test_actions.test_workflows[0])
+                act_run = actions.run_workflow(actions.test_workflows[0])
                 data['actions_successful'] = not act_run.failed
                 run_data = asdict(act_run)
                 data['actions_data'] = run_data
