@@ -13,6 +13,7 @@ from datetime import datetime
 from github import Github, Repository
 from unidiff import PatchSet
 from dataclasses import asdict
+from crawlergpt.util import delete_repo_clone
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
 from crawlergpt.github_token import GithubToken
 from concurrent.futures import ThreadPoolExecutor
@@ -173,8 +174,8 @@ class PatchCollector:
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
         shutil.copytree(self.repo_path, new_repo_path)
 
+        repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
         try:
-            repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
             first_commit = repo_clone.revparse_single(self.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
@@ -216,7 +217,7 @@ class PatchCollector:
                 return test_patch_runs
             test_patch_runs[2] = act_runs
         finally:
-            shutil.rmtree(new_repo_path)
+            delete_repo_clone(repo_clone)
 
         return test_patch_runs
     
@@ -285,8 +286,8 @@ class PatchCollector:
         return False
     
     def delete_repo(self):
-        if hasattr(self, "repo_path") and os.path.exists(self.repo_path):
-            shutil.rmtree(self.repo_path)
+        if hasattr(self, "repo_path"):
+            delete_repo_clone(self.repo_clone)
         self.cloned = False
 
 
