@@ -1,16 +1,16 @@
 import tempfile
 import pygit2
-import os, logging
+import os, logging, sys
 import json
-import shutil
 import uuid
+import fire
 from datetime import datetime
 from github import Repository
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
 from crawlergpt.actions.actions import GitHubActions
 
-class RunnableRepoStrategy(RepoStrategy):
+class CollectReposStrategy(RepoStrategy):
     def __init__(self, data_path: str):
         self.data_path = data_path
         self.uuid = str(uuid.uuid1())
@@ -32,6 +32,7 @@ class RunnableRepoStrategy(RepoStrategy):
 
         data = {
             'repository': repo.full_name,
+            'language': repo.language,
             'clone_url': repo.clone_url,
             'timestamp': datetime.utcnow().isoformat() + "Z",
             'clone_success': False,
@@ -48,7 +49,7 @@ class RunnableRepoStrategy(RepoStrategy):
         try:
             data['clone_success'] = True
 
-            test_actions = GitHubActions(repo_path)
+            test_actions = GitHubActions(repo_path, repo.language)
             data['number_of_actions'] = len(test_actions.workflows)
             data['number_of_test_actions'] = len(test_actions.test_workflows)
             test_actions.save_workflows()
@@ -56,8 +57,8 @@ class RunnableRepoStrategy(RepoStrategy):
             if len(test_actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
                 act_run = test_actions.run_workflow(test_actions.test_workflows[0])
-                # FIXME check if we are able to get test reports
                 data['actions_successful'] = not act_run.failed
+                data['actions_test_results'] = test_actions.test_workflows[0].get_test_results()
                 data['actions_stdout'] = act_run.stdout
                 data['actions_stderr'] = act_run.stderr
             
@@ -68,7 +69,13 @@ class RunnableRepoStrategy(RepoStrategy):
             self.save_data(data, repo)
         
 
+def collect_repos(query: str, pagination_freq: str = 'M', n_workers: int = 1, out_path: str = "./out/"):
+    crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
+    crawler.get_repos(CollectReposStrategy(out_path))
+
+
+def main():
+    fire.Fire(collect_repos)
+
 if __name__ == '__main__':
-    query = input()
-    crawler = RepoCrawler(query, pagination_freq='M', n_workers=int(input()))
-    crawler.get_repos(RunnableRepoStrategy("./out/"))
+    sys.exit(main())

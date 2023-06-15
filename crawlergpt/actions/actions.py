@@ -115,9 +115,9 @@ class GitHubActions:
     
     def __init__(self, repo_path, language: str):
         self.repo_path = repo_path
-        self.language = language.strip().lower()
-        self.workflows = []
-        self.test_workflows = []
+        self.language: str = language.strip().lower()
+        self.workflows: List[GitHubWorkflow] = []
+        self.test_workflows: List[GitHubWorkflow] = []
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
