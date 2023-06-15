@@ -149,6 +149,14 @@ class GitHubWorkflow(ABC):
         Gets the test results from the workflow.
         """
         pass
+    
+    
+    @abstractmethod
+    def get_build_tool(self) -> str:
+        """
+        Gets the name of the build tool used by the workflow.
+        """
+        pass
 
 
     def save_yaml(self, new_path):

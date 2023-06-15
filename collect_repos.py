@@ -5,6 +5,7 @@ import json
 import uuid
 import fire
 from datetime import datetime
+from dataclasses import asdict
 from github import Repository
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
@@ -32,7 +33,9 @@ class CollectReposStrategy(RepoStrategy):
 
         data = {
             'repository': repo.full_name,
-            'language': repo.language,
+            'stars': repo.stargazers_count,
+            'language': repo.language.strip().lower(),
+            'size': repo.size,
             'clone_url': repo.clone_url,
             'timestamp': datetime.utcnow().isoformat() + "Z",
             'clone_success': False,
@@ -58,13 +61,13 @@ class CollectReposStrategy(RepoStrategy):
                 logging.info(f"Running actions for {repo.full_name}")
                 act_run = test_actions.run_workflow(test_actions.test_workflows[0])
                 data['actions_successful'] = not act_run.failed
-                data['actions_test_results'] = test_actions.test_workflows[0].get_test_results()
-                data['actions_stdout'] = act_run.stdout
-                data['actions_stderr'] = act_run.stderr
+                run_data = asdict(act_run)
+                data['actions_data'] = run_data
             
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
+            logging.error(f"Error while processing {repo.full_name}: {e}")
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         

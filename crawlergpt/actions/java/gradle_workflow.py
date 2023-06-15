@@ -18,3 +18,6 @@ class GradleWorkflow(GitHubWorkflow):
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
         return parser.get_test_results(str(Path(repo_path, "build", "test-results", "test")))
+    
+    def get_build_tool(self) -> str:
+        return "gradle"

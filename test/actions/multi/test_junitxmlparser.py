@@ -46,6 +46,6 @@ def test_pytest(xml_file, nr_tests, nr_of_failing_tests):
 ])
 def test_act_tests_run(xml_file, nr_tests, nr_of_failing_tests):
     tests, _ = parse_junitxml(xml_file)
-    tests_run = ActTestsRun(True, tests, '', '', '', 0)
+    tests_run = ActTestsRun(True, tests, '', '', '', '', 0)
     assert len(tests_run.failed_tests) == nr_of_failing_tests
     assert len(tests_run.tests) == nr_tests

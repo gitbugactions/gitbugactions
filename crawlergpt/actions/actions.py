@@ -17,6 +17,7 @@ class ActTestsRun:
     stdout: str
     stderr: str
     workflow: str
+    build_tool: str
     elapsed_time: int
 
     @property
@@ -95,7 +96,7 @@ class Act:
         stderr = run.stderr.decode('utf-8')
         tests = workflow.get_test_results(repo_path)
         tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
-                stderr=stderr, workflow=workflow.path, elapsed_time=end_time - start_time)
+                stderr=stderr, workflow=workflow.path, build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
 
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
