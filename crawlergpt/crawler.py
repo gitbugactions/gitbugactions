@@ -43,19 +43,20 @@ class SearchRateLimiter:
         self.requests += 1
         self.lock.release()
 
-        try:
-            return fn(*args, **kwargs)
-        except RateLimitExceededException as exc:
-            self.lock.acquire()
-            logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
-            reset_time = datetime.fromtimestamp(int(exc.headers["x-ratelimit-reset"]))
-            retry_after = (reset_time - datetime.now()).total_seconds() + 1
-            retry_after = max(retry_after, 0)  # In case we hit a negative total_seconds
-            time.sleep(retry_after)
-            retries -= 1
-            self.lock.release()
-            if retries == 0:
-                raise exc
+        while retries > 0:
+            try:
+                return fn(*args, **kwargs)
+            except RateLimitExceededException as exc:
+                self.lock.acquire()
+                logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
+                reset_time = datetime.fromtimestamp(int(exc.headers["x-ratelimit-reset"]))
+                retry_after = (reset_time - datetime.now()).total_seconds() + 1
+                retry_after = max(retry_after, 0)  # In case we hit a negative total_seconds
+                time.sleep(retry_after)
+                retries -= 1
+                self.lock.release()
+                if retries == 0:
+                    raise exc
 
 
 class RepoStrategy(ABC):
@@ -140,8 +141,10 @@ class RepoCrawler:
         logging.info(f'Searching repos with query: {query}')
         page_list = self.rate_lim.request(self.github.search_repositories, query)
         totalCount = self.rate_lim.request(getattr, page_list, 'totalCount')
-
-        if (totalCount == 1000):
+        if (totalCount is None):
+            logging.error(f'Search "{query}" failed')
+            return
+        elif (totalCount == 1000):
             logging.warning(f'1000 results limit of the GitHub API was reached.\nQuery: {query}')
         n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
