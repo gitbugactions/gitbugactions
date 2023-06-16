@@ -1,5 +1,7 @@
 import os
+import time
 import logging
+from datetime import datetime
 from github import Github
 from typing import List
 
@@ -32,6 +34,18 @@ class GithubToken:
             logging.warning("No GITHUB_ACCESS_TOKEN provided.")
 
     @staticmethod
+    def __wait_for_tokens():
+        if len(GithubToken.__TOKENS) == 0:
+            return
+
+        soonest_reset = GithubToken.__TOKENS[0].github.get_rate_limit().core.reset
+        for token in GithubToken.__TOKENS[1:]:
+            reset = token.github.get_rate_limit().core.reset
+            if reset < soonest_reset:
+                soonest_reset = reset
+        time.sleep((datetime.now() - soonest_reset).total_seconds())
+
+    @staticmethod
     def get_token() -> "GithubToken":
         if GithubToken.__TOKENS is None:
             GithubToken.init_tokens()
@@ -46,5 +60,5 @@ class GithubToken:
             GithubToken.__CURRENT_TOKEN = (GithubToken.__CURRENT_TOKEN + 1) % len_tokens
             if token.remaining >= GithubToken.__OFFSET:
                 return token
-            
-        raise RuntimeError("No tokens available.")
+        
+        GithubToken.__wait_for_tokens()

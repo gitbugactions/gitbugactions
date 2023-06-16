@@ -1,7 +1,7 @@
 import json
 import shutil
 import pytest
-from collect_bugs import collect_bugs
+from collect_bugs import collect_bugs, PatchCollector
 from crawlergpt.github_token import GithubToken
 
 def get_token_usage():
@@ -29,22 +29,28 @@ def get_test_results(tests):
     return passed, failure
 
 def test_collect_bugs(teardown_out_bugs):
+    GithubToken.init_tokens()
     token_usage = get_token_usage()
     collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 2)
     if GithubToken.has_tokens():
-        assert token_usage + 9 == get_token_usage()
+        assert token_usage + 13 == get_token_usage()
     
     with open("test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json", "r") as f:
         lines = f.readlines()
         assert len(lines) == 2
         data = json.loads(lines[0])
-        assert data["commit_hash"] == "248d0b1f31e0c9b82eda0e9a9c15cb6bbeaec0b0"
+        assert data["commit_hash"] == "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80"
         assert data["strategy"] == "FAIL_PASS"
         assert len(data["actions_runs"]) == 3
         assert len(data["actions_runs"][0][0]["tests"]) == 2
         assert data["actions_runs"][1] is None
         assert len(data["actions_runs"][2][0]["tests"]) == 2
-        assert data["commit_timestamp"] == "2023-06-10T15:23:09Z"
+        assert len(data["issues"]) == 1
+        assert data["issues"][0]["title"] == "Subtract is not working"
+        assert data["issues"][0]["body"] == "Test"
+        assert len(data["issues"][0]["comments"]) == 1
+        assert data["issues"][0]["comments"][0] == "Test"
+        assert data["commit_timestamp"] == "2023-06-16T14:16:27Z"
         passed, failure = get_test_results(data["actions_runs"][0][0]["tests"])
         assert passed == 1
         assert failure == 1
@@ -94,3 +100,25 @@ def test_collect_bugs(teardown_out_bugs):
         assert len(data["actions_runs"][2][0]["tests"]) == 1
         assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
         assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"
+
+def test_get_related_commit_info():
+    collector = PatchCollector(GithubToken.get_token().github.get_repo('ASSERT-KTH/flacoco'))
+    issues = collector._PatchCollector__get_related_commit_info("7bc38df")
+    assert len(issues) == 1
+    assert issues[0]['id'] == 100
+    assert issues[0]['title'] == 'Include java 1 to 4 instruction sets in CI'
+    assert issues[0]['body'] == "This PR fixes the gap in CI, where the 4 first major versions of the Java instruction set weren't covered.\r\n\r\nJacoco supports 1 to 16 right now, so we can also claim that we do so."
+    assert len(issues[0]['comments']) == 0
+    assert len(issues[0]['labels']) == 0
+    assert issues[0]['is_pull_request'] == True
+    assert len(issues[0]['review_comments']) == 2
+    shutil.rmtree(collector.repo_path)
+
+    collector = PatchCollector(GithubToken.get_token().github.get_repo('sr-lab/GLITCH'))
+    issues = collector._PatchCollector__get_related_commit_info("98dd01d")
+    assert len(issues) == 1
+    assert issues[0]['id'] == 15
+    assert issues[0]['title'] == 'Fix vscode extension for Ansible'
+    assert issues[0]['body'] == 'Since autodetect was removed, the extension has to be updated.'
+    assert issues[0]['is_pull_request'] == False
+    shutil.rmtree(collector.repo_path)
