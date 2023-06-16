@@ -1,0 +1,31 @@
+{
+    "repository": "AlanBinu007/ReactJs-SpringBoot-Full-Stack-Development",
+    "stars": 65,
+    "language": "java",
+    "size": 1120,
+    "clone_url": "https://github.com/AlanBinu007/ReactJs-SpringBoot-Full-Stack-Development.git",
+    "timestamp": "2023-06-15T18:13:11.238934Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 4,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Maven Package/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Maven Package/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Maven Package/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Maven Package/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Maven Package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development] user=0 workdir=\n[Maven Package/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Maven Package/build] Non-terminating error while running 'git clone': some refs were not updated\n[Maven Package/build] \u2b50 Run Main actions/checkout@v2\n[Maven Package/build]   \u2705  Success - Main actions/checkout@v2\n[Maven Package/build] \u2b50 Run Main Set up JDK 11\n[Maven Package/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Maven Package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Maven Package/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Maven Package/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[Maven Package/build]   \ud83d\udcac  ::debug::explicit? true\n[Maven Package/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[Maven Package/build]   \ud83d\udcac  ::debug::explicit? true\n[Maven Package/build]   | Resolved Java 11.0.11+9 from tool-cache\n[Maven Package/build]   | Setting Java 11.0.11+9 as the default\n[Maven Package/build]   | \n[Maven Package/build]   | Java configuration:\n[Maven Package/build]   |   Distribution: adopt\n[Maven Package/build]   |   Version: 11.0.11+9\n[Maven Package/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Maven Package/build]   | \n[Maven Package/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json\n[Maven Package/build]   | Creating settings.xml with server-id: github\n[Maven Package/build]   | Writing to /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/settings.xml\n[Maven Package/build]   \u2705  Success - Main Set up JDK 11\n[Maven Package/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Maven Package/build]   \u2699  ::set-output:: distribution=Adopt-Hotspot\n[Maven Package/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Maven Package/build]   \u2699  ::set-output:: version=11.0.11+9\n[Maven Package/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64/bin\n[Maven Package/build] \u2b50 Run Main Build with Maven\n[Maven Package/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[Maven Package/build]   | POM file pom.xml specified with the -f/--file command line argument does not exist\n[Maven Package/build]   | [INFO] Scanning for projects...\n[Maven Package/build]   | [ERROR] [ERROR] Some problems were encountered while processing the POMs:\n[Maven Package/build]   | [FATAL] Non-readable POM /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/pom.xml: /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/pom.xml (No such file or directory) @ \n[Maven Package/build]   |  @ \n[Maven Package/build]   | [ERROR] The build could not read 1 project -> [Help 1]\n[Maven Package/build]   | [ERROR]   \n[Maven Package/build]   | [ERROR]   The project  (/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/pom.xml) has 1 error\n[Maven Package/build]   | [ERROR]     Non-readable POM /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/pom.xml: /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/pom.xml (No such file or directory)\n[Maven Package/build]   | [ERROR] \n[Maven Package/build]   | [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[Maven Package/build]   | [ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[Maven Package/build]   | [ERROR] \n[Maven Package/build]   | [ERROR] For more information about the errors and possible solutions, please read the following articles:\n[Maven Package/build]   | [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException\n[Maven Package/build]   \u274c  Failure - Main Build with Maven\n[Maven Package/build] exitcode '1': failure\n[Maven Package/build] \u2b50 Run Post Set up JDK 11\n[Maven Package/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Maven Package/build]   \u2705  Success - Post Set up JDK 11\n[Maven Package/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AlanBinu007-ReactJs-SpringBoot-Full-Stack-Development/.github/workflows/maven-publish-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 130.74559211730957
+    }
+}

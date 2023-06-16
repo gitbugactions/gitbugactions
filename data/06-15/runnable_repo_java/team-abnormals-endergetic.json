@@ -1,0 +1,28 @@
+{
+    "repository": "team-abnormals/endergetic",
+    "stars": 140,
+    "language": "java",
+    "size": 18718,
+    "clone_url": "https://github.com/team-abnormals/endergetic.git",
+    "timestamp": "2023-06-15T17:27:59.739966Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[PullRequest/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[PullRequest/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[PullRequest/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[PullRequest/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[PullRequest/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/team-abnormals-endergetic] user=0 workdir=\n[PullRequest/Build] \u2b50 Run Main Checkout\n[PullRequest/Build]   \u2705  Success - Main Checkout\n[PullRequest/Build] \u2b50 Run Main Build project\n[PullRequest/Build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[PullRequest/Build]   | Downloading https://services.gradle.org/distributions/gradle-7.4-bin.zip\n[PullRequest/Build]   | ..............................................................................................................\n[PullRequest/Build]   | Unzipping /home/runneradmin/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4-bin.zip to /home/runneradmin/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt\n[PullRequest/Build]   | Set executable permissions for: /home/runneradmin/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4/bin/gradle\n[PullRequest/Build]   | \n[PullRequest/Build]   | Welcome to Gradle 7.4!\n[PullRequest/Build]   | \n[PullRequest/Build]   | Here are the highlights of this release:\n[PullRequest/Build]   |  - Aggregated test and JaCoCo reports\n[PullRequest/Build]   |  - Marking additional test source directories as tests in IntelliJ\n[PullRequest/Build]   |  - Support for Adoptium JDKs in Java toolchains\n[PullRequest/Build]   | \n[PullRequest/Build]   | For more details see https://docs.gradle.org/7.4/release-notes.html\n[PullRequest/Build]   | \n[PullRequest/Build]   | To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.4/userguide/gradle_daemon.html#sec:disabling_the_daemon.\n[PullRequest/Build]   | Daemon will be stopped at the end of the build \n[PullRequest/Build]   | \n[PullRequest/Build]   | > Configure project :\n[PullRequest/Build]   | WARNING: This project is configured to use the official obfuscation mappings provided by Mojang. These mapping fall under their associated license, you should be fully aware of this license. For the latest license text, refer below, or the reference copy here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md, You can hide this warning by running the `hideOfficialWarningUntilChanged` task\n[PullRequest/Build]   | WARNING: (c) 2020 Microsoft Corporation. These mappings are provided \"as-is\" and you bear the risk of using them. You may copy and use the mappings for development purposes, but you may not redistribute the mappings complete and unmodified. Microsoft makes no warranties, express or implied, with respect to the mappings provided here.  Use and modification of this document or the source code (in any form) of Minecraft: Java Edition is governed by the Minecraft End User License Agreement available at https://account.mojang.com/documents/minecraft_eula.\n[PullRequest/Build]   \u274c  Failure - Main Build project\n[PullRequest/Build] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/5dd6b349176883bbb55e4ba48850ee120057766a0fee8b0afa9827f121a4214f/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[PullRequest/Build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: context canceled\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/team-abnormals-endergetic/.github/workflows/build-CI-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 601.5385122299194
+    }
+}

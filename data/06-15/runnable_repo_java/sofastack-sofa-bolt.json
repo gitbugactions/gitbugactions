@@ -1,0 +1,28 @@
+{
+    "repository": "sofastack/sofa-bolt",
+    "stars": 2309,
+    "language": "java",
+    "size": 1109,
+    "clone_url": "https://github.com/sofastack/sofa-bolt.git",
+    "timestamp": "2023-06-15T16:55:55.856985Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/sofastack-sofa-bolt] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[build/build] \ud83e\uddea  Matrix: map[java-version:8]\n[build/build] \u2b50 Run Main actions/checkout@v2\n[build/build]   \u2705  Success - Main actions/checkout@v2\n[build/build] \u2b50 Run Main Set up JDK 8\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[build/build]   \ud83d\udcac  ::debug::isExplicit: \n[build/build]   \ud83d\udcac  ::debug::explicit? false\n[build/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[build/build]   \ud83d\udcac  ::debug::match not found\n[build/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[build/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[build/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[build/build]   \ud83d\udcac  ::debug::Downloading /tmp/61b49983-52a7-400f-9aa9-8b5aff4310ab\n[build/build]   \ud83d\udcac  ::debug::download complete\n[build/build]   | [command]/usr/bin/tar --version\n[build/build]   | tar (GNU tar) 1.30\n[build/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[build/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[build/build]   | This is free software: you are free to change and redistribute it.\n[build/build]   | There is NO WARRANTY, to the extent permitted by law.\n[build/build]   | \n[build/build]   | Written by John Gilmore and Jay Fenlason.\n[build/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1424677349 -f /tmp/61b49983-52a7-400f-9aa9-8b5aff4310ab\n[build/build]   \u274c  Failure - Main Set up JDK 8\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 306a2d8b3da048d82e3888efe045329a7bbb6a923f4047686e3a51b2ad6d63dd\n[build/build] \u2b50 Run Post Set up JDK 8\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Post Set up JDK 8\n[build/build] failed to remove container: Error response from daemon: No such container: 306a2d8b3da048d82e3888efe045329a7bbb6a923f4047686e3a51b2ad6d63dd\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-build-build-ffe70f9357c2d7c14ebfde912d047956fb5874e05393411fc4db9342708ced2f-env: volume is in use - [7a21ee7828eff64938e88ab3f4a5627327142f5c9279ddff33ca5784c7d2c37b] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 306a2d8b3da048d82e3888efe045329a7bbb6a923f4047686e3a51b2ad6d63dd (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/sofastack-sofa-bolt/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 27.067719221115112
+    }
+}

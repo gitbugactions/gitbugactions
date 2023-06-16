@@ -1,0 +1,28 @@
+{
+    "repository": "NeoApplications/Neo-Launcher",
+    "stars": 1146,
+    "language": "java",
+    "size": 141171,
+    "clone_url": "https://github.com/NeoApplications/Neo-Launcher.git",
+    "timestamp": "2023-06-15T17:51:41.142799Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Neo Launcher CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Neo Launcher CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Neo Launcher CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Neo Launcher CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Neo Launcher CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/NeoApplications-Neo-Launcher] user=0 workdir=\n[Neo Launcher CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Neo Launcher CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Neo Launcher CI/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Neo Launcher CI/build] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Neo Launcher CI/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/NeoApplications-Neo-Launcher/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 33.351144790649414
+    }
+}

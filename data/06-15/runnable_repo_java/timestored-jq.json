@@ -1,0 +1,28 @@
+{
+    "repository": "timestored/jq",
+    "stars": 63,
+    "language": "java",
+    "size": 476,
+    "clone_url": "https://github.com/timestored/jq.git",
+    "timestamp": "2023-06-15T17:50:02.897755Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/timestored-jq] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::match not found\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading /tmp/3afa0f36-83fa-4ce3-be6f-93cf79e667cd\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI with Gradle/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 409cb3acf78ee148c9699898e7e943d62341e92ba19c932dff35cc59dc18bca5\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: 409cb3acf78ee148c9699898e7e943d62341e92ba19c932dff35cc59dc18bca5\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 409cb3acf78ee148c9699898e7e943d62341e92ba19c932dff35cc59dc18bca5 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/timestored-jq/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 24.548861980438232
+    }
+}

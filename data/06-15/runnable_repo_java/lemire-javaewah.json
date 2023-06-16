@@ -1,0 +1,28 @@
+{
+    "repository": "lemire/javaewah",
+    "stars": 535,
+    "language": "java",
+    "size": 2395,
+    "clone_url": "https://github.com/lemire/javaewah.git",
+    "timestamp": "2023-06-15T13:35:15.955782Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lemire-javaewah] user=0 workdir=\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI/build] \u2b50 Run Main actions/checkout@v2\n[Java CI/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI/build] \u2b50 Run Main Set up JDK 16\n[Java CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Java CI/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[Java CI/build]   \ud83d\udcac  ::debug::explicit? true\n[Java CI/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[Java CI/build]   \ud83d\udcac  ::debug::explicit? true\n[Java CI/build]   | Trying to resolve the latest version from remote\n[Java CI/build]   | Resolved latest version as 16.0.2+7\n[Java CI/build]   | Trying to download...\n[Java CI/build]   | Downloading Java 16.0.2+7 (Adopt-Hotspot) from https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz ...\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%252B7/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz\n[Java CI/build]   \ud83d\udcac  ::debug::Destination /tmp/2848525e-0558-4cf5-a4cd-b989407736d2\n[Java CI/build]   \ud83d\udcac  ::debug::download complete\n[Java CI/build]   | Extracting Java archive...\n[Java CI/build]   \ud83d\udcac  ::debug::Checking tar --version\n[Java CI/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[Java CI/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/0e268669-e6ea-44b0-a1ed-442cce5e3d01 -f /tmp/2848525e-0558-4cf5-a4cd-b989407736d2\n[Java CI/build]   \ud83d\udcac  ::debug::Caching tool Java_Adopt_jdk 16.0.2-7 x64\n[Java CI/build]   \ud83d\udcac  ::debug::source dir: /tmp/0e268669-e6ea-44b0-a1ed-442cce5e3d01/jdk-16.0.2+7\n[Java CI/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Adopt_jdk/16.0.2-7/x64\n[Java CI/build]   \u274c  Failure - Main Set up JDK 16\n[Java CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container dddd0f6b2d99722a06536aa0d5f457c38049b5163e5409d8afb1ec3aea99f5a5\n[Java CI/build] \u2b50 Run Post Set up JDK 16\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI/build]   \u274c  Failure - Post Set up JDK 16\n[Java CI/build] failed to remove container: Error response from daemon: No such container: dddd0f6b2d99722a06536aa0d5f457c38049b5163e5409d8afb1ec3aea99f5a5\n[Java CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: dddd0f6b2d99722a06536aa0d5f457c38049b5163e5409d8afb1ec3aea99f5a5 (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lemire-javaewah/.github/workflows/basic-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 34.041255712509155
+    }
+}

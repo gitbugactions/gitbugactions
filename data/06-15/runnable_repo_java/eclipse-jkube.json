@@ -1,0 +1,29 @@
+{
+    "repository": "eclipse/jkube",
+    "stars": 514,
+    "language": "java",
+    "size": 23393,
+    "clone_url": "https://github.com/eclipse/jkube.git",
+    "timestamp": "2023-06-15T17:35:52.194384Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Quickstarts/Quickstart Verifications] \ud83d\ude80  Start image=crawlergpt:latest\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-jkube] user=0 workdir=\n[Quickstarts/Quickstart Verifications]   \u2601  git clone 'https://github.com/step-security/harden-runner' # ref=128a63446a954579617e875aaab7d2978154e969\n[Quickstarts/Quickstart Verifications] \u2b50 Run Pre Harden Runner\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/ dst=/var/run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/] user=0 workdir=\n[Quickstarts/Quickstart Verifications]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/dist/pre/index.js] user= workdir=\n[Quickstarts/Quickstart Verifications]   | Error: Cannot find module 'node:fs'\n[Quickstarts/Quickstart Verifications]   | Require stack:\n[Quickstarts/Quickstart Verifications]   | - /run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/dist/pre/index.js\n[Quickstarts/Quickstart Verifications]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[Quickstarts/Quickstart Verifications]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[Quickstarts/Quickstart Verifications]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[Quickstarts/Quickstart Verifications]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[Quickstarts/Quickstart Verifications]   |     at /run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/dist/webpack:/step-security-harden-runner/external \"node:fs\":1:1\n[Quickstarts/Quickstart Verifications]   |     at /run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/dist/pre/index.js:69345:3\n[Quickstarts/Quickstart Verifications]   |     at Object.<anonymous> (/run/act/actions/step-security-harden-runner@128a63446a954579617e875aaab7d2978154e969/dist/pre/index.js:69348:12)\n[Quickstarts/Quickstart Verifications]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[Quickstarts/Quickstart Verifications]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[Quickstarts/Quickstart Verifications]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[Quickstarts/Quickstart Verifications]   \u274c  Failure - Pre Harden Runner\n[Quickstarts/Quickstart Verifications] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: exitcode '1': failure\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-jkube/.github/workflows/quickstarts-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 29.53128433227539
+    }
+}

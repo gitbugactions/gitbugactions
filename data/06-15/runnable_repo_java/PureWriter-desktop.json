@@ -1,0 +1,28 @@
+{
+    "repository": "PureWriter/desktop",
+    "stars": 1091,
+    "language": "java",
+    "size": 7234,
+    "clone_url": "https://github.com/PureWriter/desktop.git",
+    "timestamp": "2023-06-15T17:33:52.426197Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/PureWriter-desktop] user=0 workdir=\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI/build] \u2b50 Run Main actions/checkout@v1\n[Java CI/build]   \u2705  Success - Main actions/checkout@v1\n[Java CI/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI/build]   \ud83d\udcac  ::debug::match not found\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-fx-jdk8.0.372-linux_x64.tar.gz\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading /tmp/7736cceb-01d0-4010-bd5b-5c4f50cbfce8\n[Java CI/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 7e2d0768ce5c79199c4397c6ea206948a929e1b4b2618a01318646222b746a92\n[Java CI/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI/build] failed to remove container: Error response from daemon: No such container: 7e2d0768ce5c79199c4397c6ea206948a929e1b4b2618a01318646222b746a92\n[Java CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 7e2d0768ce5c79199c4397c6ea206948a929e1b4b2618a01318646222b746a92 (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/PureWriter-desktop/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 37.842567682266235
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "stryker-project/app",
+    "stars": 163,
+    "language": "java",
+    "size": 3866,
+    "clone_url": "https://github.com/stryker-project/app.git",
+    "timestamp": "2023-06-15T18:13:37.626988Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/stryker-project-app] user=0 workdir=\n[Android CI/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build] \u2b50 Run Main actions/checkout@v2\n[Android CI/build]   \u2705  Success - Main actions/checkout@v2\n[Android CI/build] Error response from daemon: No such container: 8ae60eac92ad6a807fbd99330c3cc364fbea5595c0028d699698e0bce9e87936\n[Android CI/build] \u2b50 Run Main set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Android CI/build]   \u274c  Failure - Main set up JDK 11\n[Android CI/build] Error response from daemon: No such container: 8ae60eac92ad6a807fbd99330c3cc364fbea5595c0028d699698e0bce9e87936\n[Android CI/build] \u2b50 Run Post set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 11\n[Android CI/build] failed to remove container: Error response from daemon: No such container: 8ae60eac92ad6a807fbd99330c3cc364fbea5595c0028d699698e0bce9e87936\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [2473166397b45ce9a1922c5555b16abc91141f481d8980fb40763f4990ff1ee0] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 8ae60eac92ad6a807fbd99330c3cc364fbea5595c0028d699698e0bce9e87936 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/stryker-project-app/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 75.25983381271362
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "repository": "microg/IchnaeaNlpBackend",
+    "stars": 102,
+    "language": "java",
+    "size": 211,
+    "clone_url": "https://github.com/microg/IchnaeaNlpBackend.git",
+    "timestamp": "2023-06-15T15:21:22.738526Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/microg-IchnaeaNlpBackend] user=0 workdir=\n[Build/build] \u2b50 Run Main actions/checkout@v2\n[Build/build]   \u2705  Success - Main actions/checkout@v2\n[Build/build] \u2b50 Run Main ./gradlew --no-daemon build\n[Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Build/build]   | Downloading https://services.gradle.org/distributions/gradle-7.3.3-bin.zip\n[Build/build]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%\n[Build/build]   | \n[Build/build]   | Welcome to Gradle 7.3.3!\n[Build/build]   | \n[Build/build]   | Here are the highlights of this release:\n[Build/build]   |  - Easily declare new test suites in Java projects\n[Build/build]   |  - Support for Java 17\n[Build/build]   |  - Support for Scala 3\n[Build/build]   | \n[Build/build]   | For more details see https://docs.gradle.org/7.3.3/release-notes.html\n[Build/build]   | \n[Build/build]   | \n[Build/build]   | FAILURE: Build failed with an exception.\n[Build/build]   | \n[Build/build]   | * What went wrong:\n[Build/build]   | Could not determine the dependencies of task ':lintVitalRelease'.\n[Build/build]   | > SDK location not found. Define location with an ANDROID_SDK_ROOT environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/microg-IchnaeaNlpBackend/local.properties'.\n[Build/build]   | \n[Build/build]   | * Try:\n[Build/build]   | > Run with --stacktrace option to get the stack trace.\n[Build/build]   | > Run with --info or --debug option to get more log output.\n[Build/build]   | > Run with --scan to get full insights.\n[Build/build]   | \n[Build/build]   | * Get more help at https://help.gradle.org\n[Build/build]   | \n[Build/build]   | BUILD FAILED in 22s\n[Build/build]   \u274c  Failure - Main ./gradlew --no-daemon build\n[Build/build] exitcode '1': failure\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/microg-IchnaeaNlpBackend/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 34.26453161239624
+    }
+}

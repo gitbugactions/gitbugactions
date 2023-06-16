@@ -1,0 +1,28 @@
+{
+    "repository": "LSPosed/CorePatch",
+    "stars": 1179,
+    "language": "java",
+    "size": 415,
+    "clone_url": "https://github.com/LSPosed/CorePatch.git",
+    "timestamp": "2023-06-15T16:46:37.893657Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/LSPosed-CorePatch] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Android CI/build] \u2b50 Run Main Checkout\n[Android CI/build]   \u2705  Success - Main Checkout\n[Android CI/build] \u2b50 Run Main Set up JDK 17\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Android CI/build]   \u2753  ::group::Installed distributions\n[Android CI/build]   | Trying to resolve the latest version from remote\n[Android CI/build]   | Resolved latest version as 17.0.7+7\n[Android CI/build]   | Trying to download...\n[Android CI/build]   | Downloading Java 17.0.7+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz ...\n[Android CI/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%252B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz\n[Android CI/build]   \ud83d\udcac  ::debug::Destination /tmp/02d71cca-22ce-4028-aacf-9a10ecf996b8\n[Android CI/build]   \u274c  Failure - Main Set up JDK 17\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container dacb27f81710c6f52ef0009d37a646c585f21e17308193ae150c0aa14aca4812\n[Android CI/build] \u2b50 Run Post Set up JDK 17\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post Set up JDK 17\n[Android CI/build] failed to remove container: Error response from daemon: No such container: dacb27f81710c6f52ef0009d37a646c585f21e17308193ae150c0aa14aca4812\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [728921b34896a3ff621e0839c442f78db07e6fbfc6a0b73c9d874d3ba864f888] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: dacb27f81710c6f52ef0009d37a646c585f21e17308193ae150c0aa14aca4812 (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/LSPosed-CorePatch/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 22.015631914138794
+    }
+}

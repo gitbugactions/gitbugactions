@@ -1,0 +1,28 @@
+{
+    "repository": "tiann/epic",
+    "stars": 4153,
+    "language": "java",
+    "size": 558,
+    "clone_url": "https://github.com/tiann/epic.git",
+    "timestamp": "2023-06-15T16:34:11.850023Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tiann-epic] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build] \u2b50 Run Main actions/checkout@v1\n[Android CI/build]   \u2705  Success - Main actions/checkout@v1\n[Android CI/build] \u2b50 Run Main set up JDK 1.8\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Android CI/build]   \ud83d\udcac  ::debug::isExplicit: \n[Android CI/build]   \ud83d\udcac  ::debug::explicit? false\n[Android CI/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Android CI/build]   \ud83d\udcac  ::debug::match not found\n[Android CI/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Android CI/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Android CI/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[Android CI/build]   \ud83d\udcac  ::debug::Downloading /tmp/7547cc9b-72b9-46bb-826d-87aff8a5e7cd\n[Android CI/build]   \u274c  Failure - Main set up JDK 1.8\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 3beba102b67ef07ac66de41e93bfab811e6673c1f71a6ffa70798eb532ef7bea\n[Android CI/build] \u2b50 Run Post set up JDK 1.8\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 1.8\n[Android CI/build] failed to remove container: Error response from daemon: No such container: 3beba102b67ef07ac66de41e93bfab811e6673c1f71a6ffa70798eb532ef7bea\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 3beba102b67ef07ac66de41e93bfab811e6673c1f71a6ffa70798eb532ef7bea (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tiann-epic/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 15.245862007141113
+    }
+}

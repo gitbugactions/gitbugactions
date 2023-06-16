@@ -1,0 +1,29 @@
+{
+    "repository": "billthefarmer/diary",
+    "stars": 234,
+    "language": "java",
+    "size": 9221,
+    "clone_url": "https://github.com/billthefarmer/diary.git",
+    "timestamp": "2023-06-15T16:32:39.719256Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build-crawler.yml/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build-crawler.yml/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build-crawler.yml/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build-crawler.yml/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build-crawler.yml/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/billthefarmer-diary] user=0 workdir=\n[build-crawler.yml/build] \u2b50 Run Main Checkout\n[build-crawler.yml/build]   \u2705  Success - Main Checkout\n[build-crawler.yml/build] \u2b50 Run Main Build with Gradle\n[build-crawler.yml/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[build-crawler.yml/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5-bin.zip\n[build-crawler.yml/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | Welcome to Gradle 7.5!\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | Here are the highlights of this release:\n[build-crawler.yml/build]   |  - Support for Java 18\n[build-crawler.yml/build]   |  - Support for building with Groovy 4\n[build-crawler.yml/build]   |  - Much more responsive continuous builds\n[build-crawler.yml/build]   |  - Improved diagnostics for dependency resolution\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | For more details see https://docs.gradle.org/7.5/release-notes.html\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | FAILURE: Build failed with an exception.\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | * What went wrong:\n[build-crawler.yml/build]   | Could not determine the dependencies of task ':compileDebugJavaWithJavac'.\n[build-crawler.yml/build]   | > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/billthefarmer-diary/local.properties'.\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | * Try:\n[build-crawler.yml/build]   | > Run with --stacktrace option to get the stack trace.\n[build-crawler.yml/build]   | > Run with --info or --debug option to get more log output.\n[build-crawler.yml/build]   | > Run with --scan to get full insights.\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | * Get more help at https://help.gradle.org\n[build-crawler.yml/build]   | \n[build-crawler.yml/build]   | BUILD FAILED in 24s\n[build-crawler.yml/build]   \u274c  Failure - Main Build with Gradle\n[build-crawler.yml/build] exitcode '1': failure\n[build-crawler.yml/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/billthefarmer-diary/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 42.30359387397766
+    }
+}

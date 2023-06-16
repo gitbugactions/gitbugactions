@@ -1,0 +1,28 @@
+{
+    "repository": "HanSolo/SpaceFX",
+    "stars": 152,
+    "language": "java",
+    "size": 171996,
+    "clone_url": "https://github.com/HanSolo/SpaceFX.git",
+    "timestamp": "2023-06-15T17:39:27.431199Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ci/build-mac    ] \ud83d\udea7  Skipping unsupported platform -- Try running with `-P macos-latest=...`\n[ci/build-linux  ] \ud83d\ude80  Start image=crawlergpt:latest\n[ci/build-windows] \ud83d\udea7  Skipping unsupported platform -- Try running with `-P windows-latest=...`\n[ci/build-linux  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ci/build-linux  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ci/build-linux  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ci/build-linux  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/HanSolo-SpaceFX] user=0 workdir=\n[ci/build-linux  ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[ci/build-linux  ] Non-terminating error while running 'git clone': some refs were not updated\n[ci/build-linux  ]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[ci/build-linux  ] Unable to checkout 0b7f8abb1508181956e8e162db84b466c27e18ce: invalid checksum\n[ci/build-linux  ] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/HanSolo-SpaceFX/.github/workflows/ci-crawler.yaml",
+        "build_tool": "gradle",
+        "elapsed_time": 36.738319635391235
+    }
+}

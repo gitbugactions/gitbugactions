@@ -1,0 +1,28 @@
+{
+    "repository": "wildfirechat/app-server",
+    "stars": 230,
+    "language": "java",
+    "size": 14568,
+    "clone_url": "https://github.com/wildfirechat/app-server.git",
+    "timestamp": "2023-06-15T17:15:02.302874Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/wildfirechat-app-server] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI with Maven/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::match not found\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading /tmp/9124aca7-7745-497b-a774-e0300583499f\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::download complete\n[Java CI with Maven/build]   | [command]/usr/bin/tar --version\n[Java CI with Maven/build]   | tar (GNU tar) 1.30\n[Java CI with Maven/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[Java CI with Maven/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[Java CI with Maven/build]   | This is free software: you are free to change and redistribute it.\n[Java CI with Maven/build]   | There is NO WARRANTY, to the extent permitted by law.\n[Java CI with Maven/build]   | \n[Java CI with Maven/build]   | Written by John Gilmore and Jay Fenlason.\n[Java CI with Maven/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1022354965 -f /tmp/9124aca7-7745-497b-a774-e0300583499f\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_1022354965/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Caching tool jdk 8.0.372 x64\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::source dir: /tmp/temp_1022354965/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container c3e1f46e517520cf8f239381d04496164e6e420556864282a77c8eabed37f836\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: c3e1f46e517520cf8f239381d04496164e6e420556864282a77c8eabed37f836\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: c3e1f46e517520cf8f239381d04496164e6e420556864282a77c8eabed37f836 (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/wildfirechat-app-server/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 26.255627155303955
+    }
+}

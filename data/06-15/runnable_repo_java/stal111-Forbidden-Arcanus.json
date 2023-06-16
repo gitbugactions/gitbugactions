@@ -1,0 +1,29 @@
+{
+    "repository": "stal111/Forbidden-Arcanus",
+    "stars": 72,
+    "language": "java",
+    "size": 10259,
+    "clone_url": "https://github.com/stal111/Forbidden-Arcanus.git",
+    "timestamp": "2023-06-15T17:26:46.961882Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "gradle",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Gradle Package/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Gradle Package/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Gradle Package/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Gradle Package/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Gradle Package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/stal111-Forbidden-Arcanus] user=0 workdir=\n[Gradle Package/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Gradle Package/build] Non-terminating error while running 'git clone': some refs were not updated\n[Gradle Package/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=67421db6bd0bf253fb4bd25b31ebb98943c375e1\n[Gradle Package/build] Non-terminating error while running 'git clone': some refs were not updated\n[Gradle Package/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=67421db6bd0bf253fb4bd25b31ebb98943c375e1\n[Gradle Package/build] Non-terminating error while running 'git clone': some refs were not updated\n[Gradle Package/build] \u2b50 Run Main actions/checkout@v3\n[Gradle Package/build]   \u2705  Success - Main actions/checkout@v3\n[Gradle Package/build] \u2b50 Run Main Set up JDK 17\n[Gradle Package/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Gradle Package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Gradle Package/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Gradle Package/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Gradle Package/build]   \u274c  Failure - Main Set up JDK 17\n[Gradle Package/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 16c52903c42415a58d6798a7769780164eedcd09f5acc7ee24dd1c133b4cfc3c\n[Gradle Package/build] \u2b50 Run Post Set up JDK 17\n[Gradle Package/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Gradle Package/build]   \u274c  Failure - Post Set up JDK 17\n[Gradle Package/build] failed to remove container: Error response from daemon: No such container: 16c52903c42415a58d6798a7769780164eedcd09f5acc7ee24dd1c133b4cfc3c\n[Gradle Package/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Gradle-Package-build-597dcae1a81e2c6140b3df41aaa7687a54910d1ecfc7bcc8a3354fe8f6115c61-env: volume is in use - [c2447a399299082bc2ffc6a971111aa5e8c8d3b94c2ee17f0bff3c6abf3d75b5] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 16c52903c42415a58d6798a7769780164eedcd09f5acc7ee24dd1c133b4cfc3c (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/stal111-Forbidden-Arcanus/.github/workflows/gradle-publish-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 207.8041331768036
+    }
+}

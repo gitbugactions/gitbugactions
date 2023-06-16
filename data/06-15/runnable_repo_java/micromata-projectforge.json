@@ -1,0 +1,29 @@
+{
+    "repository": "micromata/projectforge",
+    "stars": 98,
+    "language": "java",
+    "size": 49195,
+    "clone_url": "https://github.com/micromata/projectforge.git",
+    "timestamp": "2023-06-15T16:09:04.522795Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/micromata-projectforge] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 11\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 506d0fbcfc5acbb23b4004fdeefb95872b7663bd04ca0fe2e64ad3abc87cb659\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 506d0fbcfc5acbb23b4004fdeefb95872b7663bd04ca0fe2e64ad3abc87cb659\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 506d0fbcfc5acbb23b4004fdeefb95872b7663bd04ca0fe2e64ad3abc87cb659 (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/micromata-projectforge/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 17.879067420959473
+    }
+}

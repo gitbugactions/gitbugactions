@@ -1,0 +1,28 @@
+{
+    "repository": "arhohuttunen/spring-boot-test-examples",
+    "stars": 77,
+    "language": "java",
+    "size": 229,
+    "clone_url": "https://github.com/arhohuttunen/spring-boot-test-examples.git",
+    "timestamp": "2023-06-15T18:06:42.727825Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Gradle Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Gradle Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Gradle Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Gradle Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Gradle Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/arhohuttunen-spring-boot-test-examples] user=0 workdir=\n[Gradle Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Gradle Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Gradle Build/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[Gradle Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Gradle Build/build] \u2b50 Run Main actions/checkout@v3\n[Gradle Build/build]   \u2705  Success - Main actions/checkout@v3\n[Gradle Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container e9f6015989314bb097d5aafdbf53d828fab0e462b82d1f09be52b968aea29300\n[Gradle Build/build] \u2b50 Run Main Set up JDK 17\n[Gradle Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Gradle Build/build]   \u274c  Failure - Main Set up JDK 17\n[Gradle Build/build] Error response from daemon: No such container: e9f6015989314bb097d5aafdbf53d828fab0e462b82d1f09be52b968aea29300\n[Gradle Build/build] \u2b50 Run Post Set up JDK 17\n[Gradle Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Gradle Build/build]   \u274c  Failure - Post Set up JDK 17\n[Gradle Build/build] failed to remove container: Error response from daemon: No such container: e9f6015989314bb097d5aafdbf53d828fab0e462b82d1f09be52b968aea29300\n[Gradle Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Gradle-Build-build-936885ecbd48f91e78393683be45b11d033d7c6bfe58866c8a6d6a5594c6283f-env: volume is in use - [1b35dd996a6f0d4934b8b1ea52cc054145601491bfb5dc8b3e9233ccbf48ec53] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: e9f6015989314bb097d5aafdbf53d828fab0e462b82d1f09be52b968aea29300 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/arhohuttunen-spring-boot-test-examples/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 35.375598669052124
+    }
+}

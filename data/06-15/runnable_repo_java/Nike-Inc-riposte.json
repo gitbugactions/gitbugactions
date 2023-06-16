@@ -1,0 +1,28 @@
+{
+    "repository": "Nike-Inc/riposte",
+    "stars": 118,
+    "language": "java",
+    "size": 1865,
+    "clone_url": "https://github.com/Nike-Inc/riposte.git",
+    "timestamp": "2023-06-15T16:15:23.984657Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Nike-Inc-riposte] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=e6e38bacfdf1a337459f332974bb2327a31aaf4b\n[Build/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Build/build] \u2b50 Run Main actions/checkout@v2\n[Build/build]   \u2705  Success - Main actions/checkout@v2\n[Build/build] Error response from daemon: No such container: 4ccd2bf76810a62c137259cf33addc140b83d54108a24dcff80e14059f88622f\n[Build/build] \u2b50 Run Main Set up JDK 11\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Build/build]   \u274c  Failure - Main Set up JDK 11\n[Build/build] Error response from daemon: No such container: 4ccd2bf76810a62c137259cf33addc140b83d54108a24dcff80e14059f88622f\n[Build/build] \u2b50 Run Post Set up JDK 11\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Build/build]   \u274c  Failure - Post Set up JDK 11\n[Build/build] failed to remove container: Error response from daemon: No such container: 4ccd2bf76810a62c137259cf33addc140b83d54108a24dcff80e14059f88622f\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Build-build-75c1633f7e6841be275e2c4040eaa0dd33d71ab392b6b6b2483256e051756329-env: volume is in use - [a82cfe3df75d724961ab4067c9ce5bc0c96c0517e15d75b5ad76e34e3ff04520] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 4ccd2bf76810a62c137259cf33addc140b83d54108a24dcff80e14059f88622f (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Nike-Inc-riposte/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 19.41744613647461
+    }
+}

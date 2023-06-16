@@ -1,0 +1,28 @@
+{
+    "repository": "GoSimpleLLC/nbvcxz",
+    "stars": 261,
+    "language": "java",
+    "size": 993,
+    "clone_url": "https://github.com/GoSimpleLLC/nbvcxz.git",
+    "timestamp": "2023-06-15T16:21:32.351159Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/GoSimpleLLC-nbvcxz] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build] \ud83e\uddea  Matrix: map[java-version:8]\n[build/build] \u2b50 Run Main actions/checkout@v3\n[build/build]   \u2705  Success - Main actions/checkout@v3\n[build/build] \u2b50 Run Main actions/setup-java@v3\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Main actions/setup-java@v3\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 757b8e003fefd55c4aac447e197968ee52ee4514c76c1a7207f7064c19eeaecd\n[build/build] \u2b50 Run Post actions/setup-java@v3\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Post actions/setup-java@v3\n[build/build] failed to remove container: Error response from daemon: No such container: 757b8e003fefd55c4aac447e197968ee52ee4514c76c1a7207f7064c19eeaecd\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-build-build-ffe70f9357c2d7c14ebfde912d047956fb5874e05393411fc4db9342708ced2f-env: volume is in use - [ce03d38ec13bc2307def517161e0c00eb31ac781a96a2a6d82682582d50913bf] (original error: Error occurred running finally: Error response from daemon: No such container: 757b8e003fefd55c4aac447e197968ee52ee4514c76c1a7207f7064c19eeaecd (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/GoSimpleLLC-nbvcxz/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 6.673103332519531
+    }
+}

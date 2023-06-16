@@ -1,0 +1,28 @@
+{
+    "repository": "praxis-live/praxis-live",
+    "stars": 283,
+    "language": "java",
+    "size": 4295,
+    "clone_url": "https://github.com/praxis-live/praxis-live.git",
+    "timestamp": "2023-06-15T14:44:42.698058Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Test Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Test Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/praxis-live-praxis-live] user=0 workdir=\n[Test Build/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v3\n[Test Build/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v3\n[Test Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Test Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Test Build/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Test Build/build] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Test Build/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/praxis-live-praxis-live/.github/workflows/test_build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 5.652708292007446
+    }
+}

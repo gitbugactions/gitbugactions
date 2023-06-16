@@ -1,0 +1,28 @@
+{
+    "repository": "BumbleSoftware/Fastload",
+    "stars": 66,
+    "language": "java",
+    "size": 42644,
+    "clone_url": "https://github.com/BumbleSoftware/Fastload.git",
+    "timestamp": "2023-06-15T18:19:23.009672Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/BumbleSoftware-Fastload] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[build/build] \ud83e\uddea  Matrix: map[java:17 os:ubuntu-latest]\n[build/build] \u2b50 Run Main checkout repository\n[build/build]   \u2705  Success - Main checkout repository\n[build/build] \u2b50 Run Main validate gradle wrapper\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[build/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[build/build]   \u274c  Failure - Main validate gradle wrapper\n[build/build] Error response from daemon: RWLayer of container bd92885542279bcb5c9d6c6e51c2eaef9c604382515535957b4212aab62a5dcb is unexpectedly nil\n[build/build] failed to remove container: Error response from daemon: No such container: bd92885542279bcb5c9d6c6e51c2eaef9c604382515535957b4212aab62a5dcb\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/BumbleSoftware-Fastload/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 54.562567710876465
+    }
+}

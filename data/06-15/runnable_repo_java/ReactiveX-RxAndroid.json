@@ -1,0 +1,30 @@
+{
+    "repository": "ReactiveX/RxAndroid",
+    "stars": 19785,
+    "language": "java",
+    "size": 1034,
+    "clone_url": "https://github.com/ReactiveX/RxAndroid.git",
+    "timestamp": "2023-06-15T15:05:19.782236Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "gradle",
+        "gradle",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ReactiveX-RxAndroid] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1.0.6\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build] \u2b50 Run Main actions/checkout@v3\n[build/build]   \u2705  Success - Main actions/checkout@v3\n[build/build] \u2b50 Run Main gradle/wrapper-validation-action@v1.0.6\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1.0.6/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1.0.6/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-wrapper-validation-action@v1.0.6/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1.0.6/dist/index.js] user= workdir=\n[build/build]   \u274c  Failure - Main gradle/wrapper-validation-action@v1.0.6\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container a1ac18473b836d444055cfe770d92a094284cc21d8174a3fc5fb13d367074dae\n[build/build] failed to remove container: Error response from daemon: No such container: a1ac18473b836d444055cfe770d92a094284cc21d8174a3fc5fb13d367074dae\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-build-build-ffe70f9357c2d7c14ebfde912d047956fb5874e05393411fc4db9342708ced2f-env: volume is in use - [00e0ec8e82b83f40728ddb20675d7fcc744d9d5b1bbcafb3157ad8e29e2bd0d4] (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ReactiveX-RxAndroid/.github/workflows/build-crawler.yaml",
+        "build_tool": "gradle",
+        "elapsed_time": 19.354363679885864
+    }
+}

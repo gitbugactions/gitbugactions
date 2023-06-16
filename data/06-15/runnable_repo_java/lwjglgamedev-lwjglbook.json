@@ -1,0 +1,28 @@
+{
+    "repository": "lwjglgamedev/lwjglbook",
+    "stars": 60,
+    "language": "java",
+    "size": 6065,
+    "clone_url": "https://github.com/lwjglgamedev/lwjglbook.git",
+    "timestamp": "2023-06-15T18:20:42.959710Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lwjglgamedev-lwjglbook] user=0 workdir=\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI/build] \u2b50 Run Main actions/checkout@v2\n[Java CI/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI/build] \u2b50 Run Main Set up JDK 18 for x64\n[Java CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI/build]   \ud83d\udcac  ::debug::match not found\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu18.32.11-ca-jdk18.0.2-linux_x64.tar.gz\n[Java CI/build]   \ud83d\udcac  ::debug::Downloading /tmp/d6e93f63-545d-4d6a-9e16-90877d67ccdd\n[Java CI/build]   \ud83d\udcac  ::debug::download complete\n[Java CI/build]   | [command]/usr/bin/tar --version\n[Java CI/build]   | tar (GNU tar) 1.30\n[Java CI/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[Java CI/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[Java CI/build]   | This is free software: you are free to change and redistribute it.\n[Java CI/build]   | There is NO WARRANTY, to the extent permitted by law.\n[Java CI/build]   | \n[Java CI/build]   | Written by John Gilmore and Jay Fenlason.\n[Java CI/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_207932051 -f /tmp/d6e93f63-545d-4d6a-9e16-90877d67ccdd\n[Java CI/build]   \u274c  Failure - Main Set up JDK 18 for x64\n[Java CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container bb9c57acd9ec43f561a80c56faf204dab12a32364379e4edb5081d4962962b7c\n[Java CI/build] \u2b50 Run Post Set up JDK 18 for x64\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI/build]   \u274c  Failure - Post Set up JDK 18 for x64\n[Java CI/build] failed to remove container: Error response from daemon: No such container: bb9c57acd9ec43f561a80c56faf204dab12a32364379e4edb5081d4962962b7c\n[Java CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: bb9c57acd9ec43f561a80c56faf204dab12a32364379e4edb5081d4962962b7c (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lwjglgamedev-lwjglbook/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 77.00008964538574
+    }
+}

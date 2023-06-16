@@ -1,0 +1,28 @@
+{
+    "repository": "apache/flink-benchmarks",
+    "stars": 115,
+    "language": "java",
+    "size": 333,
+    "clone_url": "https://github.com/apache/flink-benchmarks.git",
+    "timestamp": "2023-06-15T17:47:26.400085Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-flink-benchmarks] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/stCarolas/setup-maven' # ref=v4.5\n[CI/build] Unable to checkout 07fbbe97d97ef44336b7382563d66743297e442f: invalid checksum\n[CI/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-flink-benchmarks/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 10.030683755874634
+    }
+}

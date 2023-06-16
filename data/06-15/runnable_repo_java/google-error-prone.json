@@ -1,0 +1,29 @@
+{
+    "repository": "google/error-prone",
+    "stars": 6478,
+    "language": "java",
+    "size": 120649,
+    "clone_url": "https://github.com/google/error-prone.git",
+    "timestamp": "2023-06-15T15:05:20.706034Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/JDK 20 on ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/google-error-prone] user=0 workdir=\n[CI/JDK 20 on ubuntu-latest]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.8.0\n[CI/JDK 20 on ubuntu-latest]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[CI/JDK 20 on ubuntu-latest] Non-terminating error while running 'git clone': some refs were not updated\n[CI/JDK 20 on ubuntu-latest] \ud83e\uddea  Matrix: map[experimental:false java:20 os:ubuntu-latest]\n[CI/JDK 20 on ubuntu-latest] \u2b50 Run Main Cancel previous\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/styfle-cancel-workflow-action@0.8.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.8.0/\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/styfle-cancel-workflow-action@0.8.0/] user=0 workdir=\n[CI/JDK 20 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.8.0/dist/index.js] user= workdir=\n[CI/JDK 20 on ubuntu-latest]   | {\n[CI/JDK 20 on ubuntu-latest]   |   eventName: 'push',\n[CI/JDK 20 on ubuntu-latest]   |   sha: 'a86e28bd53d3b95f799a286ec6cacfaf6542de91',\n[CI/JDK 20 on ubuntu-latest]   |   headSha: 'a86e28bd53d3b95f799a286ec6cacfaf6542de91',\n[CI/JDK 20 on ubuntu-latest]   |   branch: 'master',\n[CI/JDK 20 on ubuntu-latest]   |   owner: 'google',\n[CI/JDK 20 on ubuntu-latest]   |   repo: 'error-prone',\n[CI/JDK 20 on ubuntu-latest]   |   GITHUB_RUN_ID: '1'\n[CI/JDK 20 on ubuntu-latest]   | }\n[CI/JDK 20 on ubuntu-latest]   | Found token: yes\n[CI/JDK 20 on ubuntu-latest]   \u2757  ::error::Not Found\n[CI/JDK 20 on ubuntu-latest]   \u274c  Failure - Main Cancel previous\n[CI/JDK 20 on ubuntu-latest] exitcode '1': failure\n[CI/JDK 20 on ubuntu-latest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'JDK ${{ matrix.java }} on ${{ matrix.os }}' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/google-error-prone/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 6.265990734100342
+    }
+}

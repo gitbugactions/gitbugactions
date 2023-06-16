@@ -1,0 +1,28 @@
+{
+    "repository": "tbsalling/aismessages",
+    "stars": 146,
+    "language": "java",
+    "size": 814,
+    "clone_url": "https://github.com/tbsalling/aismessages.git",
+    "timestamp": "2023-06-15T13:43:07.654902Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1.4.3\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2.1.4\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2.3.4\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2.3.4\n[Java CI with Maven/build] Error response from daemon: No such container: ca5a36a1ef12b1330e2b007dca1bc53f6c4bea7800f20b854d6a4667f852bf4d\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1.4.3/ dst=/var/run/act/actions/actions-setup-java@v1.4.3/\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 11\n[Java CI with Maven/build] Error response from daemon: No such container: ca5a36a1ef12b1330e2b007dca1bc53f6c4bea7800f20b854d6a4667f852bf4d\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1.4.3/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: ca5a36a1ef12b1330e2b007dca1bc53f6c4bea7800f20b854d6a4667f852bf4d\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [e8ac20fc948533cb0abda766f647763e648698eea0f1956e48b291366a956502] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: ca5a36a1ef12b1330e2b007dca1bc53f6c4bea7800f20b854d6a4667f852bf4d (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tbsalling-aismessages/.github/workflows/build_and_test-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 10.157912969589233
+    }
+}

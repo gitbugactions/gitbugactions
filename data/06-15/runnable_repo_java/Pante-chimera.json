@@ -1,0 +1,30 @@
+{
+    "repository": "Pante/chimera",
+    "stars": 57,
+    "language": "java",
+    "size": 55211,
+    "clone_url": "https://github.com/Pante/chimera.git",
+    "timestamp": "2023-06-15T16:18:16.079029Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "maven",
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Chimera CI/CD/nightly] \ud83d\ude80  Start image=crawlergpt:latest\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Pante-chimera] user=0 workdir=\n[Chimera CI/CD/nightly]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.11.0\n[Chimera CI/CD/nightly]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Chimera CI/CD/nightly] Non-terminating error while running 'git clone': some refs were not updated\n[Chimera CI/CD/nightly] \u2b50 Run Main styfle/cancel-workflow-action@0.11.0\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/styfle-cancel-workflow-action@0.11.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.11.0/\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/styfle-cancel-workflow-action@0.11.0/] user=0 workdir=\n[Chimera CI/CD/nightly]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.11.0/dist/index.js] user= workdir=\n[Chimera CI/CD/nightly]   | {\n[Chimera CI/CD/nightly]   |   eventName: 'pull_request',\n[Chimera CI/CD/nightly]   |   sha: '7ce8f214548ded366963ec85ba8444333f93eb08',\n[Chimera CI/CD/nightly]   |   headSha: '7ce8f214548ded366963ec85ba8444333f93eb08',\n[Chimera CI/CD/nightly]   |   branch: '!f(<nil>)/merge',\n[Chimera CI/CD/nightly]   |   owner: 'Pante',\n[Chimera CI/CD/nightly]   |   repo: 'chimera',\n[Chimera CI/CD/nightly]   |   GITHUB_RUN_ID: '1'\n[Chimera CI/CD/nightly]   | }\n[Chimera CI/CD/nightly]   | Found token: yes\n[Chimera CI/CD/nightly]   \u2757  ::error::Not Found\n[Chimera CI/CD/nightly]   \u274c  Failure - Main styfle/cancel-workflow-action@0.11.0\n[Chimera CI/CD/nightly] exitcode '1': failure\n[Chimera CI/CD/nightly] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'nightly' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Pante-chimera/.github/workflows/pr-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 15.907257318496704
+    }
+}

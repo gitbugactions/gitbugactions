@@ -1,0 +1,31 @@
+{
+    "repository": "jfrog/build-info",
+    "stars": 141,
+    "language": "java",
+    "size": 108930,
+    "clone_url": "https://github.com/jfrog/build-info.git",
+    "timestamp": "2023-06-15T13:41:16.773531Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 4,
+    "actions_build_tools": [
+        "gradle",
+        "unknown",
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": false,
+        "tests": [],
+        "stdout": "[Publish to Gradle Gallery/Publish_if_needed] \ud83d\ude80  Start image=crawlergpt:latest\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jfrog-build-info] user=0 workdir=\n[Publish to Gradle Gallery/Publish_if_needed]   \u2601  git clone 'https://github.com/actions-ecosystem/action-regex-match' # ref=v2\n[Publish to Gradle Gallery/Publish_if_needed]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v2\n[Publish to Gradle Gallery/Publish_if_needed]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Publish to Gradle Gallery/Publish_if_needed] Non-terminating error while running 'git clone': some refs were not updated\n[Publish to Gradle Gallery/Publish_if_needed] \u2b50 Run Main Get Maven Central Latest Version\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[Publish to Gradle Gallery/Publish_if_needed]   \u2705  Success - Main Get Maven Central Latest Version\n[Publish to Gradle Gallery/Publish_if_needed]   \u2699  ::set-env:: LATEST_MVN_CENTRAL_VERSION=4.32.0\n[Publish to Gradle Gallery/Publish_if_needed] \u2b50 Run Main Convert Version to Regex\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-ecosystem-action-regex-match@v2/ dst=/var/run/act/actions/actions-ecosystem-action-regex-match@v2/\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-ecosystem-action-regex-match@v2/] user=0 workdir=\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-ecosystem-action-regex-match@v2/dist/index.js] user= workdir=\n[Publish to Gradle Gallery/Publish_if_needed]   \u2699  ::set-output:: match=4.32.0\n[Publish to Gradle Gallery/Publish_if_needed]   \u2705  Success - Main Convert Version to Regex\n[Publish to Gradle Gallery/Publish_if_needed] \u2b50 Run Main Check Version in Gradle Gallery\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[Publish to Gradle Gallery/Publish_if_needed]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n[Publish to Gradle Gallery/Publish_if_needed]   |                                  Dload  Upload   Total   Spent    Left  Speed\n[Publish to Gradle Gallery/Publish_if_needed]   | \r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n[Publish to Gradle Gallery/Publish_if_needed]   | \r100   772    0   772    0     0    853      0 --:--:-- --:--:-- --:--:--   853\n[Publish to Gradle Gallery/Publish_if_needed]   | <html>\n[Publish to Gradle Gallery/Publish_if_needed]   | <head>\n[Publish to Gradle Gallery/Publish_if_needed]   | <script src=\"/cdn-cgi/apps/head/FN3vlmc8up4Hqc_DAK7ZtZN8qiw.js\"></script></head>\n[Publish to Gradle Gallery/Publish_if_needed]   | <body>\n[Publish to Gradle Gallery/Publish_if_needed]   | <pre><a href=\"build-info-extractor-gradle-4.32.0.jar\">build-info-extractor-gradle-4.32.0.jar</a></pre>\n[Publish to Gradle Gallery/Publish_if_needed]   | <pre><a href=\"build-info-extractor-gradle-4.32.0.jar.md5\">build-info-extractor-gradle-4.32.0.jar.md5</a></pre>\n[Publish to Gradle Gallery/Publish_if_needed]   | <pre><a href=\"build-info-extractor-gradle-4.32.0.jar.sha1\">build-info-extractor-gradle-4.32.0.jar.sha1</a></pre>\n[Publish to Gradle Gallery/Publish_if_needed]   | <pre><a href=\"build-info-extractor-gradle-4.32.0.pom\">build-info-extractor-gradle-4.32.0.pom</a></pre>\n[Publish to Gradle Gallery/Publish_if_needed]   | <pre><a href=\"build-info-extractor-gradle-4.32.0.pom.md5\">build-info-extractor-gradle-4.32.0.pom.md5</a></pre>\n[Publish to Gradle Gallery/Publish_if_needed]   | <pre><a href=\"build-info-extractor-gradle-4.32.0.pom.sha1\">build-info-extractor-gradle-4.32.0.pom.sha1</a></pre>\n[Publish to Gradle Gallery/Publish_if_needed]   | </body>\n[Publish to Gradle Gallery/Publish_if_needed]   | </html>\n[Publish to Gradle Gallery/Publish_if_needed]   \u2705  Success - Main Check Version in Gradle Gallery\n[Publish to Gradle Gallery/Publish_if_needed]   \u2699  ::set-env:: SHOULD_NOT_PUBLISH=TRUE\n[Publish to Gradle Gallery/Publish_if_needed] \u2b50 Run Main Log if Already Exist\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[Publish to Gradle Gallery/Publish_if_needed]   \ud83d\udea7  ::warning::Version 4.32.0 already exist in the Gradle Gallery.\n[Publish to Gradle Gallery/Publish_if_needed]   \u2705  Success - Main Log if Already Exist\n[Publish to Gradle Gallery/Publish_if_needed] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jfrog-build-info/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 20.406879663467407
+    }
+}

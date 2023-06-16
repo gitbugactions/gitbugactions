@@ -1,0 +1,28 @@
+{
+    "repository": "javarushcommunity/javarush-telegrambot",
+    "stars": 107,
+    "language": "java",
+    "size": 179,
+    "clone_url": "https://github.com/javarushcommunity/javarush-telegrambot.git",
+    "timestamp": "2023-06-15T18:00:50.012276Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/javarushcommunity-javarush-telegrambot] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/mirromutth/mysql-action' # ref=v1.1\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] \u2b50 Run Main Set up MySQL\n[Java CI with Maven/build]   \ud83d\udc33  docker build -t act-mirromutth-mysql-action-v1-1-dockeraction:latest /home/andre-silva/.cache/act/mirromutth-mysql-action@v1.1/\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[Java CI with Maven/build]   | Root password not empty, use root superuser\n[Java CI with Maven/build]   | Use specified database\n[Java CI with Maven/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[Java CI with Maven/build]   | See 'docker run --help'.\n[Java CI with Maven/build]   \u274c  Failure - Main Set up MySQL\n[Java CI with Maven/build] exit with `FAILURE`: 126\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/javarushcommunity-javarush-telegrambot/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 75.0363552570343
+    }
+}

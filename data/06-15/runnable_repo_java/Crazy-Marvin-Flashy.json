@@ -1,0 +1,29 @@
+{
+    "repository": "Crazy-Marvin/Flashy",
+    "stars": 65,
+    "language": "java",
+    "size": 1201,
+    "clone_url": "https://github.com/Crazy-Marvin/Flashy.git",
+    "timestamp": "2023-06-15T17:42:41.237782Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Crazy-Marvin-Flashy] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/malinskiy/action-android' # ref=release/0.1.4\n[CI/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[CI/build] \u2b50 Run Main \ud83d\udce5 Check-out\n[CI/build]   \u2705  Success - Main \ud83d\udce5 Check-out\n[CI/build] \u2b50 Run Main \ud83e\uddea Gradle Wrapper Validation\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[CI/build]   | \u2713 Found known Gradle Wrapper JAR files:\n[CI/build]   |   381dff8aa434499aa93bc25572b049c8c586a67faff2c02f375e4f23e17e49de gradle/wrapper/gradle-wrapper.jar\n[CI/build]   \u2705  Success - Main \ud83e\uddea Gradle Wrapper Validation\n[CI/build] \u2b50 Run Main \ud83e\uddf0 Install JDK\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[CI/build]   \u2753  ::group::Installed distributions\n[CI/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[CI/build]   \ud83d\udcac  ::debug::explicit? true\n[CI/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[CI/build]   \ud83d\udcac  ::debug::explicit? true\n[CI/build]   | Resolved Java 11.0.11+9 from tool-cache\n[CI/build]   | Setting Java 11.0.11+9 as the default\n[CI/build]   | Creating toolchains.xml for JDK version 11 from adopt\n[CI/build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[CI/build]   | \n[CI/build]   | Java configuration:\n[CI/build]   |   Distribution: adopt\n[CI/build]   |   Version: 11.0.11+9\n[CI/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[CI/build]   | \n[CI/build]   \u2753  ::endgroup::\n[CI/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[CI/build]   | Creating settings.xml with server-id: github\n[CI/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[CI/build]   \u2705  Success - Main \ud83e\uddf0 Install JDK\n[CI/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[CI/build]   \u2699  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[CI/build]   \u2699  ::set-output:: distribution=Adopt-Hotspot\n[CI/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[CI/build]   \u2699  ::set-output:: version=11.0.11+9\n[CI/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64/bin\n[CI/build] \u2b50 Run Main \ud83e\uddf0 Install Android SDK\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/malinskiy-action-android-install-sdk@release-0.1.4/ dst=/var/run/act/actions/malinskiy-action-android-install-sdk@release-0.1.4/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/malinskiy-action-android-install-sdk@release-0.1.4/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/malinskiy-action-android-install-sdk@release-0.1.4/install-sdk/lib/main.js] user= workdir=\n[CI/build]   | Android SDK URL is not set. Using default\n[CI/build]   \u2757  ::error::You can't use this unless you accept the Android SDK licenses\n[CI/build]   \u274c  Failure - Main \ud83e\uddf0 Install Android SDK\n[CI/build] exitcode '1': failure\n[CI/build] \u2b50 Run Post \ud83e\uddf0 Install JDK\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[CI/build]   \u2705  Success - Post \ud83e\uddf0 Install JDK\n[CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Crazy-Marvin-Flashy/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 75.81538343429565
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "devgianlu/Aria2App",
+    "stars": 721,
+    "language": "java",
+    "size": 164995,
+    "clone_url": "https://github.com/devgianlu/Aria2App.git",
+    "timestamp": "2023-06-15T17:05:07.282146Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/devgianlu-Aria2App] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/create-release' # ref=v1\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-release-asset' # ref=v1\n[Android CI/build] \u2b50 Run Main actions/checkout@v2\n[Android CI/build]   \u2705  Success - Main actions/checkout@v2\n[Android CI/build] \u2b50 Run Main actions/setup-java@v2\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Android CI/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Main actions/setup-java@v2\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container d602ef4967ac6e737cfea8cc39b056fd17c337d937ed1b1052848f531aaf38a9\n[Android CI/build] \u2b50 Run Post actions/setup-java@v2\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post actions/setup-java@v2\n[Android CI/build] failed to remove container: Error response from daemon: No such container: d602ef4967ac6e737cfea8cc39b056fd17c337d937ed1b1052848f531aaf38a9\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [7982dd24589facfc15f7b62864679fd22bb5950a73b5af27ca60377f03cf671b] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: d602ef4967ac6e737cfea8cc39b056fd17c337d937ed1b1052848f531aaf38a9 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/devgianlu-Aria2App/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 44.292964220047
+    }
+}

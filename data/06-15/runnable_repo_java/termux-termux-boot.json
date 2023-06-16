@@ -1,0 +1,28 @@
+{
+    "repository": "termux/termux-boot",
+    "stars": 616,
+    "language": "java",
+    "size": 239,
+    "clone_url": "https://github.com/termux/termux-boot.git",
+    "timestamp": "2023-06-15T16:23:35.833936Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/termux-termux-boot] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Build/build] \u2b50 Run Main Clone repository\n[Build/build]   \u2705  Success - Main Clone repository\n[Build/build] \u2b50 Run Main Build\n[Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Build/build]   | Downloading https://services.gradle.org/distributions/gradle-5.5.1-bin.zip\n[Build/build]   | .....................................................................................\n[Build/build]   | \n[Build/build]   | Welcome to Gradle 5.5.1!\n[Build/build]   | \n[Build/build]   | Here are the highlights of this release:\n[Build/build]   |  - Kickstart Gradle plugin development with gradle init\n[Build/build]   |  - Distribute organization-wide Gradle properties in custom Gradle distributions\n[Build/build]   |  - Transform dependency artifacts on resolution\n[Build/build]   | \n[Build/build]   | For more details see https://docs.gradle.org/5.5.1/release-notes.html\n[Build/build]   | \n[Build/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[Build/build]   | \n[Build/build]   | FAILURE: Build failed with an exception.\n[Build/build]   | \n[Build/build]   | * What went wrong:\n[Build/build]   | Task 'assembleDebug' not found in root project 'termux-termux-boot'.\n[Build/build]   | \n[Build/build]   | * Try:\n[Build/build]   | Run gradlew tasks to get a list of available tasks. Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.\n[Build/build]   | \n[Build/build]   | * Get more help at https://help.gradle.org\n[Build/build]   | \n[Build/build]   | BUILD FAILED in 18s\n[Build/build]   \u274c  Failure - Main Build\n[Build/build] exitcode '1': failure\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/termux-termux-boot/.github/workflows/debug_build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 35.89448571205139
+    }
+}

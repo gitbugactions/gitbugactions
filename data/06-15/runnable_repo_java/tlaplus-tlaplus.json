@@ -1,0 +1,30 @@
+{
+    "repository": "tlaplus/tlaplus",
+    "stars": 2056,
+    "language": "java",
+    "size": 139814,
+    "clone_url": "https://github.com/tlaplus/tlaplus.git",
+    "timestamp": "2023-06-15T15:56:12.100405Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "maven",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tlaplus-tlaplus] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[CI/build]   \u2601  git clone 'https://github.com/peter-evans/repository-dispatch' # ref=v1\n[CI/build]   \u2601  git clone 'https://github.com/peter-evans/repository-dispatch' # ref=v1\n[CI/build]   \u2601  git clone 'https://github.com/peter-evans/repository-dispatch' # ref=v2\n[CI/build] \ud83e\uddea  Matrix: map[GITHUB_RELEASE_NAME:The Clarke release MVN_COMMAND:mvn -Dmaven.test.skip=true TOOLBOX_PRODUCT_ZIP:TLAToolbox-1.8.0-macosx.cocoa.x86_64.zip operating-system:ubuntu-latest]\n[CI/build] \u2b50 Run Main actions/checkout@v2\n[CI/build]   \u2705  Success - Main actions/checkout@v2\n[CI/build] \u2b50 Run Main Set up JDK 11\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[CI/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.3\n[CI/build]   \ud83d\udcac  ::debug::explicit? true\n[CI/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/jdk/11.0.3/x64\n[CI/build]   \ud83d\udcac  ::debug::not found\n[CI/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[CI/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[CI/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu11.31.11-ca-jdk11.0.3-linux_x64.tar.gz\n[CI/build]   \ud83d\udcac  ::debug::Downloading /tmp/1f3d08a9-8dfa-4a3d-83d7-0865a22c2140\n[CI/build]   \ud83d\udcac  ::debug::download complete\n[CI/build]   | [command]/usr/bin/tar --version\n[CI/build]   | tar (GNU tar) 1.30\n[CI/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[CI/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[CI/build]   | This is free software: you are free to change and redistribute it.\n[CI/build]   | There is NO WARRANTY, to the extent permitted by law.\n[CI/build]   | \n[CI/build]   | Written by John Gilmore and Jay Fenlason.\n[CI/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_180915522 -f /tmp/1f3d08a9-8dfa-4a3d-83d7-0865a22c2140\n[CI/build]   \u274c  Failure - Main Set up JDK 11\n[CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 623e32c7f31a2dda794aa153d187913806bfb58896085aa8b4c9418c4cbf3cea\n[CI/build] \u2b50 Run Post Set up JDK 11\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[CI/build]   \u274c  Failure - Post Set up JDK 11\n[CI/build] failed to remove container: Error response from daemon: No such container: 623e32c7f31a2dda794aa153d187913806bfb58896085aa8b4c9418c4cbf3cea\n[CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-CI-build-03727a8f260608c14dbfbecd23630d3cd3cc939c3150870ab3631218246ce38f-env: volume is in use - [43f160d9fcae73854165f5929e87bcc3407743f3b7d5438ba3908f9f6404954d] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 623e32c7f31a2dda794aa153d187913806bfb58896085aa8b4c9418c4cbf3cea (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tlaplus-tlaplus/.github/workflows/main-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 24.952247142791748
+    }
+}

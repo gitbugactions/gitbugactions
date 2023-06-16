@@ -1,0 +1,28 @@
+{
+    "repository": "llazyl/TVBox",
+    "stars": 66,
+    "language": "java",
+    "size": 6200,
+    "clone_url": "https://github.com/llazyl/TVBox.git",
+    "timestamp": "2023-06-15T18:20:04.964938Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Test Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Test Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/llazyl-TVBox] user=0 workdir=\n[Test Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Test Build/build] \u2b50 Run Main actions/checkout@v3\n[Test Build/build]   \u2705  Success - Main actions/checkout@v3\n[Test Build/build] \u2b50 Run Main Build With Gradle\n[Test Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Test Build/build]   | Downloading https://services.gradle.org/distributions/gradle-6.7.1-bin.zip\n[Test Build/build]   | ..................................................................................................\n[Test Build/build]   | Unzipping /home/runneradmin/.gradle/wrapper/dists/gradle-6.7.1-bin/bwlcbys1h7rz3272sye1xwiv6/gradle-6.7.1-bin.zip to /home/runneradmin/.gradle/wrapper/dists/gradle-6.7.1-bin/bwlcbys1h7rz3272sye1xwiv6\n[Test Build/build]   | Set executable permissions for: /home/runneradmin/.gradle/wrapper/dists/gradle-6.7.1-bin/bwlcbys1h7rz3272sye1xwiv6/gradle-6.7.1/bin/gradle\n[Test Build/build]   | \n[Test Build/build]   | Welcome to Gradle 6.7.1!\n[Test Build/build]   | \n[Test Build/build]   | Here are the highlights of this release:\n[Test Build/build]   |  - File system watching is ready for production use\n[Test Build/build]   |  - Declare the version of Java your build requires\n[Test Build/build]   |  - Java 15 support\n[Test Build/build]   | \n[Test Build/build]   | For more details see https://docs.gradle.org/6.7.1/release-notes.html\n[Test Build/build]   | \n[Test Build/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[Test Build/build]   | \n[Test Build/build]   | FAILURE: Build failed with an exception.\n[Test Build/build]   | \n[Test Build/build]   | * What went wrong:\n[Test Build/build]   | Could not determine the dependencies of task ':app:mergeReleaseNativeLibs'.\n[Test Build/build]   | > Could not resolve all dependencies for configuration ':app:releaseRuntimeClasspath'.\n[Test Build/build]   |    > Could not create task ':app:minifyReleaseWithR8'.\n[Test Build/build]   |       > SDK location not found. Define location with an ANDROID_SDK_ROOT environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/llazyl-TVBox/local.properties'.\n[Test Build/build]   | \n[Test Build/build]   | * Try:\n[Test Build/build]   | Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.\n[Test Build/build]   | \n[Test Build/build]   | * Get more help at https://help.gradle.org\n[Test Build/build]   | \n[Test Build/build]   | BUILD FAILED in 31s\n[Test Build/build]   \u274c  Failure - Main Build With Gradle\n[Test Build/build] exitcode '1': failure\n[Test Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/llazyl-TVBox/.github/workflows/test-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 87.74956822395325
+    }
+}

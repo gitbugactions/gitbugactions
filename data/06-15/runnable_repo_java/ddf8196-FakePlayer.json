@@ -1,0 +1,28 @@
+{
+    "repository": "ddf8196/FakePlayer",
+    "stars": 134,
+    "language": "java",
+    "size": 610,
+    "clone_url": "https://github.com/ddf8196/FakePlayer.git",
+    "timestamp": "2023-06-15T18:03:15.049623Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ddf8196-FakePlayer] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1.0.0\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/softprops/action-gh-release' # ref=v1\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle/build] Error response from daemon: RWLayer of container 5469a0e7d5f3ca3b546327e7adf91d4b12aa8f655cf3bc32de8e786313a70cee is unexpectedly nil\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 8\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 8\n[Java CI with Gradle/build] Error response from daemon: No such container: 5469a0e7d5f3ca3b546327e7adf91d4b12aa8f655cf3bc32de8e786313a70cee\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 8\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 8\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: 5469a0e7d5f3ca3b546327e7adf91d4b12aa8f655cf3bc32de8e786313a70cee\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Gradle-build-42c27d48dbe5641fe5e32adbd8f632254df873720f678a51094f101f6c26aea2-env: volume is in use - [8934cd3419ea3a144d4d31dc16691d61c93b5afc187ae5e95cced82bf3ed593a] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 5469a0e7d5f3ca3b546327e7adf91d4b12aa8f655cf3bc32de8e786313a70cee (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ddf8196-FakePlayer/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 46.7782187461853
+    }
+}

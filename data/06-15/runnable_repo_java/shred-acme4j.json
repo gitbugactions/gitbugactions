@@ -1,0 +1,28 @@
+{
+    "repository": "shred/acme4j",
+    "stars": 448,
+    "language": "java",
+    "size": 2855,
+    "clone_url": "https://github.com/shred/acme4j.git",
+    "timestamp": "2023-06-15T15:52:08.784006Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/shred-acme4j] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build] \ud83e\uddea  Matrix: map[java:11]\n[CI/build] \u2b50 Run Main actions/checkout@v2\n[CI/build]   \u2705  Success - Main actions/checkout@v2\n[CI/build] \u2b50 Run Main Set up JDK\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[CI/build]   | Trying to resolve the latest version from remote\n[CI/build]   | Resolved latest version as 11.0.19+7\n[CI/build]   | Trying to download...\n[CI/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[CI/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[CI/build]   \ud83d\udcac  ::debug::Destination /tmp/c361d139-2ea4-4865-8b37-bcdabe8ed4b8\n[CI/build]   \u274c  Failure - Main Set up JDK\n[CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container acd3983b3d0be26eee95e15b2d70c8bd959f28234e1d87230414acb7142fec2b\n[CI/build] \u2b50 Run Post Set up JDK\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[CI/build]   \u274c  Failure - Post Set up JDK\n[CI/build] failed to remove container: Error response from daemon: No such container: acd3983b3d0be26eee95e15b2d70c8bd959f28234e1d87230414acb7142fec2b\n[CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: acd3983b3d0be26eee95e15b2d70c8bd959f28234e1d87230414acb7142fec2b (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/shred-acme4j/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 29.972118139266968
+    }
+}

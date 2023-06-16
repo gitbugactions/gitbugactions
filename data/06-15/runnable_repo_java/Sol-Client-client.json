@@ -1,0 +1,28 @@
+{
+    "repository": "Sol-Client/client",
+    "stars": 197,
+    "language": "java",
+    "size": 6213,
+    "clone_url": "https://github.com/Sol-Client/client.git",
+    "timestamp": "2023-06-15T18:10:53.844592Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build] failed to remove container: Error response from daemon: removal of container 1a7d8e15be2375dbcf2a3784498da7797e54b8d0424525aebf96b71daf623475 is already in progress\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n",
+        "stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-build-build-ffe70f9357c2d7c14ebfde912d047956fb5874e05393411fc4db9342708ced2f\" is already in use by container \"f69f18a4d7fab13a8850de815c274d0939db3d40dc9d7e8621dcbb7f998f4676\". You have to remove (or rename) that container to be able to reuse that name.'\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Sol-Client-client/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 6.500827074050903
+    }
+}

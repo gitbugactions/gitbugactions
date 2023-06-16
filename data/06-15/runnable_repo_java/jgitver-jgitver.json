@@ -1,0 +1,28 @@
+{
+    "repository": "jgitver/jgitver",
+    "stars": 166,
+    "language": "java",
+    "size": 1444,
+    "clone_url": "https://github.com/jgitver/jgitver.git",
+    "timestamp": "2023-06-15T16:02:08.905452Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jgitver-jgitver] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[Java CI with Maven/build] \u2b50 Run Main Checkout\n[Java CI with Maven/build]   \u2705  Success - Main Checkout\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 8\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI with Maven/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::match not found\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading /tmp/9b3d70d7-ad5e-4a82-8186-3a7fd1690e96\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 8\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container cb759c38ac9951d7cee1d3481c4db9ab0b42ce7c81094b0f9b8ae4a18078dd55\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 8\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 8\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: cb759c38ac9951d7cee1d3481c4db9ab0b42ce7c81094b0f9b8ae4a18078dd55\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: cb759c38ac9951d7cee1d3481c4db9ab0b42ce7c81094b0f9b8ae4a18078dd55 (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jgitver-jgitver/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 17.48261547088623
+    }
+}

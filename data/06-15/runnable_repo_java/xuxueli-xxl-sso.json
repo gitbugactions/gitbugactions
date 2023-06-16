@@ -1,0 +1,28 @@
+{
+    "repository": "xuxueli/xxl-sso",
+    "stars": 1828,
+    "language": "java",
+    "size": 1923,
+    "clone_url": "https://github.com/xuxueli/xxl-sso.git",
+    "timestamp": "2023-06-15T16:53:48.475702Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI/build] \u2b50 Run Main actions/checkout@v1\n[Java CI/build]   \u2705  Success - Main actions/checkout@v1\n[Java CI/build] Error response from daemon: No such container: 07bc2643824b1c50bf891e6463ddf93ee8841aebe4df84c3c0c36aaf640b6a65\n[Java CI/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI/build] Error response from daemon: No such container: 07bc2643824b1c50bf891e6463ddf93ee8841aebe4df84c3c0c36aaf640b6a65\n[Java CI/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI/build] failed to remove container: Error response from daemon: No such container: 07bc2643824b1c50bf891e6463ddf93ee8841aebe4df84c3c0c36aaf640b6a65\n[Java CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-build-695395555cc7764bb1bbc3fd56a3c818da4c53c8eca8a96790231cb8ffc83983-env: volume is in use - [b564a1a5f2a690f909955a6a039aff18a5f49b045b94751cbf63661df8535cf3] (original error: Error occurred running finally: Error response from daemon: No such container: 07bc2643824b1c50bf891e6463ddf93ee8841aebe4df84c3c0c36aaf640b6a65 (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/xuxueli-xxl-sso/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 12.907381534576416
+    }
+}

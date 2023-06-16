@@ -1,0 +1,28 @@
+{
+    "repository": "openjdk/skara",
+    "stars": 192,
+    "language": "java",
+    "size": 7493,
+    "clone_url": "https://github.com/openjdk/skara.git",
+    "timestamp": "2023-06-15T17:27:41.830446Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Pre-submit tests/Prerequisites] \ud83d\ude80  Start image=crawlergpt:latest\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/openjdk-skara] user=0 workdir=\n[Pre-submit tests/Prerequisites]   \u2601  git clone 'https://github.com/actions/github-script' # ref=v3\n[Pre-submit tests/Prerequisites] \u2b50 Run Main Determine target project name (fork source)\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-github-script@v3/ dst=/var/run/act/actions/actions-github-script@v3/\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-github-script@v3/] user=0 workdir=\n[Pre-submit tests/Prerequisites]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-github-script@v3/dist/index.js] user= workdir=\n[Pre-submit tests/Prerequisites]   \u2757  ::error::Unhandled error: TypeError: Cannot read property 'name' of undefined\n[Pre-submit tests/Prerequisites]   | TypeError: Cannot read property 'name' of undefined\n[Pre-submit tests/Prerequisites]   |     at eval (eval at callAsyncFunction (/run/act/actions/actions-github-script@v3/dist/index.js:7514:56), <anonymous>:3:101)\n[Pre-submit tests/Prerequisites]   |     at processTicksAndRejections (internal/process/task_queues.js:95:5)\n[Pre-submit tests/Prerequisites]   |     at async main (/run/act/actions/actions-github-script@v3/dist/index.js:7541:20)\n[Pre-submit tests/Prerequisites]   \u274c  Failure - Main Determine target project name (fork source)\n[Pre-submit tests/Prerequisites] exitcode '1': failure\n[Pre-submit tests/Prerequisites] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Prerequisites' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/openjdk-skara/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 189.20237731933594
+    }
+}

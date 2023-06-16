@@ -1,0 +1,28 @@
+{
+    "repository": "apache/dubbo-benchmark",
+    "stars": 61,
+    "language": "java",
+    "size": 156,
+    "clone_url": "https://github.com/apache/dubbo-benchmark.git",
+    "timestamp": "2023-06-15T16:59:34.258190Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-dubbo-benchmark] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[CI/build] Unable to checkout 82c141cc518b40d92cc801eee768e7aafc9c2fa2: from: open /home/andre-silva/.cache/act/actions-upload-artifact@v2/README.md: no such file or directory\n[CI/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: from: open /home/andre-silva/.cache/act/actions-upload-artifact@v2/README.md: no such file or directory\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-dubbo-benchmark/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 22.11682915687561
+    }
+}

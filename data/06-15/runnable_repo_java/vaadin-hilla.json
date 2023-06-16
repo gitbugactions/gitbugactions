@@ -1,0 +1,28 @@
+{
+    "repository": "vaadin/hilla",
+    "stars": 559,
+    "language": "java",
+    "size": 14858,
+    "clone_url": "https://github.com/vaadin/hilla.git",
+    "timestamp": "2023-06-15T18:05:51.577625Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Validation/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[Validation/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Validation/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Validation/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Validation/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/vaadin-hilla] user=0 workdir=\n[Validation/Build]   \u2601  git clone 'https://github.com/actions-cool/check-user-permission' # ref=main\n[Validation/Build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v3\n[Validation/Build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Validation/Build] \u2b50 Run Main actions-cool/check-user-permission@main\n[Validation/Build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-cool-check-user-permission@main/ dst=/var/run/act/actions/actions-cool-check-user-permission@main/\n[Validation/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-cool-check-user-permission@main/] user=0 workdir=\n[Validation/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cool-check-user-permission@main/dist/index.js] user= workdir=\n[Validation/Build]   \u2757  ::error::Must have push access to view collaborator permission.\n[Validation/Build]   \u274c  Failure - Main actions-cool/check-user-permission@main\n[Validation/Build] exitcode '1': failure\n[Validation/Build] \ud83c\udfc1  Job failed\n[Validation/Tests Summary  ] \ud83d\ude80  Start image=crawlergpt:latest\n[Validation/Tests Summary  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Validation/Tests Summary  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Validation/Tests Summary  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Validation/Tests Summary  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/vaadin-hilla] user=0 workdir=\n[Validation/Tests Summary  ] \u2b50 Run Main Fail if test jobs did not succeed\n[Validation/Tests Summary  ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[Validation/Tests Summary  ]   \u274c  Failure - Main Fail if test jobs did not succeed\n[Validation/Tests Summary  ] exitcode '1': failure\n[Validation/Tests Summary  ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/vaadin-hilla/.github/workflows/validation-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 51.16595530509949
+    }
+}

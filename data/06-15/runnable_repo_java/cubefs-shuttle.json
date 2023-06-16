@@ -1,0 +1,28 @@
+{
+    "repository": "cubefs/shuttle",
+    "stars": 149,
+    "language": "java",
+    "size": 448,
+    "clone_url": "https://github.com/cubefs/shuttle.git",
+    "timestamp": "2023-06-15T18:17:32.904441Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/cubefs-shuttle] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 26e8b04a65ec8067a4f8c57f001f5cf183d444aabb82d4c05670f562596b10f3\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI with Maven/build] Error response from daemon: No such container: 26e8b04a65ec8067a4f8c57f001f5cf183d444aabb82d4c05670f562596b10f3\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 26e8b04a65ec8067a4f8c57f001f5cf183d444aabb82d4c05670f562596b10f3\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 26e8b04a65ec8067a4f8c57f001f5cf183d444aabb82d4c05670f562596b10f3 (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/cubefs-shuttle/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 49.357280254364014
+    }
+}

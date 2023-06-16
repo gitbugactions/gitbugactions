@@ -1,0 +1,28 @@
+{
+    "repository": "jpenilla/reflection-remapper",
+    "stars": 60,
+    "language": "java",
+    "size": 227,
+    "clone_url": "https://github.com/jpenilla/reflection-remapper.git",
+    "timestamp": "2023-06-15T18:12:08.407274Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jpenilla-reflection-remapper] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2.3.1\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build] \u2b50 Run Main actions/checkout@v2.3.5\n[Build/build]   \u2705  Success - Main actions/checkout@v2.3.5\n[Build/build] \u2b50 Run Main gradle/wrapper-validation-action@v1\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[Build/build]   \u274c  Failure - Main gradle/wrapper-validation-action@v1\n[Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 1402e245a45c4e4f16120508168cca512a6ba910e2de5371eff087d9ea3e3422\n[Build/build] failed to remove container: Error response from daemon: No such container: 1402e245a45c4e4f16120508168cca512a6ba910e2de5371eff087d9ea3e3422\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Build-build-75c1633f7e6841be275e2c4040eaa0dd33d71ab392b6b6b2483256e051756329-env: volume is in use - [7d441a6b3c146cf3f3cf94d26974bc77e852fdc13970cec2a702f42436250413] (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jpenilla-reflection-remapper/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 60.35736441612244
+    }
+}

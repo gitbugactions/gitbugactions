@@ -1,0 +1,28 @@
+{
+    "repository": "skidfuscatordev/skidfuscator-java-obfuscator",
+    "stars": 453,
+    "language": "java",
+    "size": 12360,
+    "clone_url": "https://github.com/skidfuscatordev/skidfuscator-java-obfuscator.git",
+    "timestamp": "2023-06-15T18:09:32.548734Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/skidfuscatordev-skidfuscator-java-obfuscator] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3.1.0\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 17\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u2753  ::group::Installed distributions\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::explicit? true\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::explicit? true\n[Java CI with Gradle/build]   | Trying to resolve the latest version from remote\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 17\n[Java CI with Gradle/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container b81a29837025b3a73eca69f7039ed97d53e23d7e8110e564555fdb3bdb49c584\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 17\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 17\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: b81a29837025b3a73eca69f7039ed97d53e23d7e8110e564555fdb3bdb49c584\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Gradle-build-42c27d48dbe5641fe5e32adbd8f632254df873720f678a51094f101f6c26aea2-env: volume is in use - [c3009313a843a6483f65c73ee568223b4ce358dadb214eeec1073526be9b3e05] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: b81a29837025b3a73eca69f7039ed97d53e23d7e8110e564555fdb3bdb49c584 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/skidfuscatordev-skidfuscator-java-obfuscator/.github/workflows/maven-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 29.68057346343994
+    }
+}

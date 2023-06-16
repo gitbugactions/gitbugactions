@@ -1,0 +1,28 @@
+{
+    "repository": "LiuKay/mmall-java",
+    "stars": 62,
+    "language": "java",
+    "size": 18219,
+    "clone_url": "https://github.com/LiuKay/mmall-java.git",
+    "timestamp": "2023-06-15T16:55:38.183904Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/LiuKay-mmall-java] user=0 workdir=\n[Build/Build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Build/Build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/Build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[Build/Build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[Build/Build] \u2b50 Run Main actions/checkout@v2\n[Build/Build]   \u2705  Success - Main actions/checkout@v2\n[Build/Build] \u2b50 Run Main Set up JDK 11\n[Build/Build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Build/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Build/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Build/Build]   \ud83d\udcac  ::debug::isExplicit: \n[Build/Build]   \ud83d\udcac  ::debug::explicit? false\n[Build/Build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Build/Build]   \ud83d\udcac  ::debug::match not found\n[Build/Build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Build/Build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Build/Build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz\n[Build/Build]   \ud83d\udcac  ::debug::Downloading /tmp/052cdc4d-b4e5-4bcd-9dc3-17c1aaa4d28e\n[Build/Build]   \u274c  Failure - Main Set up JDK 11\n[Build/Build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 65907e762b97e030dc84520fd9572fa9da9f32ee0f6c23e147e40fd0253101c7\n[Build/Build] \u2b50 Run Post Set up JDK 11\n[Build/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Build/Build]   \u274c  Failure - Post Set up JDK 11\n[Build/Build] failed to remove container: Error response from daemon: No such container: 65907e762b97e030dc84520fd9572fa9da9f32ee0f6c23e147e40fd0253101c7\n[Build/Build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Build-Build-8f75946a61f2907ec480f47bee4d6a4e1e3861d9c54d6d51efd48afdda792176-env: volume is in use - [64bc1ada53b5516da9dcbd808f7907702961d8678fdf64f677a43904362a7168] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 65907e762b97e030dc84520fd9572fa9da9f32ee0f6c23e147e40fd0253101c7 (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/LiuKay-mmall-java/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 30.796082973480225
+    }
+}

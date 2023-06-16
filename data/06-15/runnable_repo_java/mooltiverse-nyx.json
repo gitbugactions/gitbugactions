@@ -1,0 +1,28 @@
+{
+    "repository": "mooltiverse/nyx",
+    "stars": 61,
+    "language": "java",
+    "size": 3239,
+    "clone_url": "https://github.com/mooltiverse/nyx.git",
+    "timestamp": "2023-06-15T17:44:13.480659Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Nyx workflow/Initialize] \ud83d\ude80  Start image=crawlergpt:latest\n[Nyx workflow/Initialize]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Nyx workflow/Initialize]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Nyx workflow/Initialize]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Nyx workflow/Initialize]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/mooltiverse-nyx] user=0 workdir=\n[Nyx workflow/Initialize]   \u2601  git clone 'https://github.com/dorny/paths-filter' # ref=v2\n[Nyx workflow/Initialize]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Nyx workflow/Initialize] Non-terminating error while running 'git clone': some refs were not updated\n[Nyx workflow/Initialize]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Nyx workflow/Initialize] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Nyx workflow/Initialize] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/mooltiverse-nyx/.github/workflows/workflow-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 16.011924028396606
+    }
+}

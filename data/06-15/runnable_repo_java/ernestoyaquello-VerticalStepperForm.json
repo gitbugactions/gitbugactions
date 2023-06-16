@@ -1,0 +1,28 @@
+{
+    "repository": "ernestoyaquello/VerticalStepperForm",
+    "stars": 1041,
+    "language": "java",
+    "size": 5790,
+    "clone_url": "https://github.com/ernestoyaquello/VerticalStepperForm.git",
+    "timestamp": "2023-06-15T16:07:49.234845Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Publish/Release build and publish] \ud83d\ude80  Start image=crawlergpt:latest\n[Publish/Release build and publish]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Publish/Release build and publish]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Publish/Release build and publish]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Publish/Release build and publish]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ernestoyaquello-VerticalStepperForm] user=0 workdir=\n[Publish/Release build and publish]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Publish/Release build and publish] Non-terminating error while running 'git clone': some refs were not updated\n[Publish/Release build and publish] \u2b50 Run Main Check out code\n[Publish/Release build and publish]   \u2705  Success - Main Check out code\n[Publish/Release build and publish] \u2b50 Run Main Set up JDK\n[Publish/Release build and publish]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Publish/Release build and publish]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Publish/Release build and publish]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Publish/Release build and publish]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[Publish/Release build and publish]   \ud83d\udcac  ::debug::explicit? true\n[Publish/Release build and publish]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[Publish/Release build and publish]   \ud83d\udcac  ::debug::explicit? true\n[Publish/Release build and publish]   | Resolved Java 11.0.11+9 from tool-cache\n[Publish/Release build and publish]   | Setting Java 11.0.11+9 as the default\n[Publish/Release build and publish]   | \n[Publish/Release build and publish]   | Java configuration:\n[Publish/Release build and publish]   |   Distribution: adopt\n[Publish/Release build and publish]   |   Version: 11.0.11+9\n[Publish/Release build and publish]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Publish/Release build and publish]   | \n[Publish/Release build and publish]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json\n[Publish/Release build and publish]   | Creating settings.xml with server-id: github\n[Publish/Release build and publish]   | Writing to /home/runneradmin/.m2/settings.xml\n[Publish/Release build and publish]   \u2705  Success - Main Set up JDK\n[Publish/Release build and publish]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Publish/Release build and publish]   \u2699  ::set-output:: distribution=Adopt-Hotspot\n[Publish/Release build and publish]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Publish/Release build and publish]   \u2699  ::set-output:: version=11.0.11+9\n[Publish/Release build and publish]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64/bin\n[Publish/Release build and publish] \u2b50 Run Main Create GPG file\n[Publish/Release build and publish]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[Publish/Release build and publish]   | fatal: --unshallow on a complete repository does not make sense\n[Publish/Release build and publish]   \u274c  Failure - Main Create GPG file\n[Publish/Release build and publish] exitcode '128': failure\n[Publish/Release build and publish] \u2b50 Run Post Set up JDK\n[Publish/Release build and publish]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Publish/Release build and publish]   \u2705  Success - Post Set up JDK\n[Publish/Release build and publish] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Release build and publish' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ernestoyaquello-VerticalStepperForm/.github/workflows/publish-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 34.31010437011719
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "OneBusAway/onebusaway-gtfs-modules",
+    "stars": 114,
+    "language": "java",
+    "size": 3365,
+    "clone_url": "https://github.com/OneBusAway/onebusaway-gtfs-modules.git",
+    "timestamp": "2023-06-15T14:01:57.614257Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/OneBusAway-onebusaway-gtfs-modules] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[CI/build] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[CI/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/OneBusAway-onebusaway-gtfs-modules/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 4.259326219558716
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "itsvks19/LayoutEditor",
+    "stars": 83,
+    "language": "java",
+    "size": 2818,
+    "clone_url": "https://github.com/itsvks19/LayoutEditor.git",
+    "timestamp": "2023-06-15T18:22:09.124012Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Test and Build/Unit Tests] \ud83d\ude80  Start image=crawlergpt:latest\n[Test and Build/Unit Tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test and Build/Unit Tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test and Build/Unit Tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test and Build/Unit Tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/itsvks19-LayoutEditor] user=0 workdir=\n[Test and Build/Unit Tests] \u2b50 Run Main actions/checkout@v3\n[Test and Build/Unit Tests]   \u2705  Success - Main actions/checkout@v3\n[Test and Build/Unit Tests] \u2b50 Run Main Unit tests\n[Test and Build/Unit Tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Test and Build/Unit Tests]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip\n[Test and Build/Unit Tests]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | Welcome to Gradle 7.5.1!\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | Here are the highlights of this release:\n[Test and Build/Unit Tests]   |  - Support for Java 18\n[Test and Build/Unit Tests]   |  - Support for building with Groovy 4\n[Test and Build/Unit Tests]   |  - Much more responsive continuous builds\n[Test and Build/Unit Tests]   |  - Improved diagnostics for dependency resolution\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | > Configure project :vectormaster\n[Test and Build/Unit Tests]   | WARNING:Software Components will not be created automatically for Maven publishing from Android Gradle Plugin 8.0. To opt-in to the future behavior, set the Gradle property android.disableAutomaticComponentCreation=true in the `gradle.properties` file or use the new publishing DSL.\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | FAILURE: Build failed with an exception.\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | * What went wrong:\n[Test and Build/Unit Tests]   | Could not determine the dependencies of task ':app:testDebugUnitTest'.\n[Test and Build/Unit Tests]   | > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/itsvks19-LayoutEditor/local.properties'.\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | * Try:\n[Test and Build/Unit Tests]   | > Run with --stacktrace option to get the stack trace.\n[Test and Build/Unit Tests]   | > Run with --info or --debug option to get more log output.\n[Test and Build/Unit Tests]   | > Run with --scan to get full insights.\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | * Get more help at \n[Test and Build/Unit Tests]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.\n[Test and Build/Unit Tests]   | https://help.gradle.org\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   | See https://docs.gradle.org/7.5.1/userguide/command_line_interface.html#sec:command_line_warnings\n[Test and Build/Unit Tests]   | BUILD FAILED in 51s\n[Test and Build/Unit Tests]   | \n[Test and Build/Unit Tests]   \u274c  Failure - Main Unit tests\n[Test and Build/Unit Tests] exitcode '1': failure\n[Test and Build/Unit Tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Unit Tests' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/itsvks19-LayoutEditor/.github/workflows/test_and_build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 77.44536662101746
+    }
+}

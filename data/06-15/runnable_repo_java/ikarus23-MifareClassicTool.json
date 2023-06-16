@@ -1,0 +1,28 @@
+{
+    "repository": "ikarus23/MifareClassicTool",
+    "stars": 3623,
+    "language": "java",
+    "size": 7223,
+    "clone_url": "https://github.com/ikarus23/MifareClassicTool.git",
+    "timestamp": "2023-06-15T14:23:31.379087Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ikarus23-MifareClassicTool] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build] \u2b50 Run Main actions/checkout@v3\n[CI/build]   \u2705  Success - Main actions/checkout@v3\n[CI/build] \u2b50 Run Main gradle/gradle-build-action@v2\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-gradle-build-action@v2/ dst=/var/run/act/actions/gradle-gradle-build-action@v2/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-gradle-build-action@v2/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/main/index.js] user= workdir=\n[CI/build]   \ud83d\udcac  ::debug::Determined user.home from java -version output: '/home/runneradmin'\n[CI/build]   | Cache is disabled: will not restore state from previous builds.\n[CI/build]   \u2705  Success - Main gradle/gradle-build-action@v2\n[CI/build]   \u2699  ::set-env:: GRADLE_BUILD_ACTION_SETUP_COMPLETED=true\n[CI/build]   \u2699  ::set-env:: GRADLE_BUILD_ACTION_CACHE_RESTORED=true\n[CI/build] \u2b50 Run Main Build\n[CI/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=Mifare Classic Tool\n[CI/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5-bin.zip\n[CI/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%\n[CI/build]   | \n[CI/build]   | Welcome to Gradle 7.5!\n[CI/build]   | \n[CI/build]   | Here are the highlights of this release:\n[CI/build]   |  - Support for Java 18\n[CI/build]   |  - Support for building with Groovy 4\n[CI/build]   |  - Much more responsive continuous builds\n[CI/build]   |  - Improved diagnostics for dependency resolution\n[CI/build]   | \n[CI/build]   | For more details see https://docs.gradle.org/7.5/release-notes.html\n[CI/build]   | \n[CI/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[CI/build]   | Configuration on demand is an incubating feature.\n[CI/build]   | \n[CI/build]   | FAILURE: Build failed with an exception.\n[CI/build]   | \n[CI/build]   | * What went wrong:\n[CI/build]   | Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.\n[CI/build]   | > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ikarus23-MifareClassicTool/Mifare Classic Tool/local.properties'.\n[CI/build]   | \n[CI/build]   | * Try:\n[CI/build]   | > Run with --stacktrace option to get the stack trace.\n[CI/build]   | > Run with --info or --debug option to get more log output.\n[CI/build]   | > Run with --scan to get full insights.\n[CI/build]   | \n[CI/build]   | * Get more help at https://help.gradle.org\n[CI/build]   | \n[CI/build]   | BUILD FAILED in 30s\n[CI/build]   \u274c  Failure - Main Build\n[CI/build] exitcode '1': failure\n[CI/build] \u2b50 Run Post gradle/gradle-build-action@v2\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/post/index.js] user= workdir=\n[CI/build]   | In final post-action step, saving state and writing summary\n[CI/build]   | Cache is disabled: will not save state for later builds.\n[CI/build]   | Writing job summary\n[CI/build]   \ud83d\udcac  ::debug::No Gradle build results found. Summary table will not be generated.\n[CI/build]   \u2705  Success - Post gradle/gradle-build-action@v2\n[CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/ikarus23-MifareClassicTool/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 40.96509337425232
+    }
+}

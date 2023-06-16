@@ -1,0 +1,31 @@
+{
+    "repository": "apache/commons-dbcp",
+    "stars": 305,
+    "language": "java",
+    "size": 6768,
+    "clone_url": "https://github.com/apache/commons-dbcp.git",
+    "timestamp": "2023-06-15T14:34:24.037390Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 4,
+    "actions_build_tools": [
+        "maven",
+        "unknown",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Coverage/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Coverage/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Coverage/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Coverage/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Coverage/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-commons-dbcp] user=0 workdir=\n[Coverage/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3.3.1\n[Coverage/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3.11.0\n[Coverage/build] Non-terminating error while running 'git clone': some refs were not updated\n[Coverage/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[Coverage/build] \ud83e\uddea  Matrix: map[java:8]\n[Coverage/build] \u2b50 Run Main actions/checkout@v3.5.2\n[Coverage/build]   \u2705  Success - Main actions/checkout@v3.5.2\n[Coverage/build] \u2b50 Run Main actions/cache@v3.3.1\n[Coverage/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-cache@v3.3.1/ dst=/var/run/act/actions/actions-cache@v3.3.1/\n[Coverage/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-cache@v3.3.1/] user=0 workdir=\n[Coverage/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3.3.1/dist/restore/index.js] user= workdir=\n[Coverage/build]   | [warning]An internal error has occurred in cache backend. Please check https://www.githubstatus.com/ for any ongoing issue in actions.\n[Coverage/build]   \u2705  Success - Main actions/cache@v3.3.1\n[Coverage/build]   \u2699  ::set-output:: cache-hit=false\n[Coverage/build] \u2b50 Run Main Set up JDK 8\n[Coverage/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3.11.0/ dst=/var/run/act/actions/actions-setup-java@v3.11.0/\n[Coverage/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3.11.0/] user=0 workdir=\n[Coverage/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3.11.0/dist/setup/index.js] user= workdir=\n[Coverage/build]   \u2753  ::group::Installed distributions\n[Coverage/build]   | Trying to resolve the latest version from remote\n[Coverage/build]   | Resolved latest version as 8.0.372+7\n[Coverage/build]   | Trying to download...\n[Coverage/build]   | Downloading Java 8.0.372+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz ...\n[Coverage/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz\n[Coverage/build]   \ud83d\udcac  ::debug::Destination /tmp/ad36b6c3-d538-41d3-834b-ba8250d463c8\n[Coverage/build]   \ud83d\udcac  ::debug::download complete\n[Coverage/build]   | Extracting Java archive...\n[Coverage/build]   \ud83d\udcac  ::debug::Checking tar --version\n[Coverage/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[Coverage/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/3e72d5fa-2f7e-4676-92f8-8ac42487d8e4 -f /tmp/ad36b6c3-d538-41d3-834b-ba8250d463c8\n[Coverage/build]   \u274c  Failure - Main Set up JDK 8\n[Coverage/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container e9dcf0040b7ca98728c94eb1a22a6a00f6ae0131035255ea24680e594c488379\n[Coverage/build] \u2b50 Run Post Set up JDK 8\n[Coverage/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3.11.0/dist/cleanup/index.js] user= workdir=\n[Coverage/build]   \u274c  Failure - Post Set up JDK 8\n[Coverage/build] failed to remove container: Error response from daemon: No such container: e9dcf0040b7ca98728c94eb1a22a6a00f6ae0131035255ea24680e594c488379\n[Coverage/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Coverage-build-4b1e44127771abc44a4c561b13a536ca02ac8202b19ccbf98ec356d99433ebed-env: volume is in use - [52fffede4a4e1effac2ac883ecd9efe1f4a9afde8ff2c2407fd08efee5908ea6] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: e9dcf0040b7ca98728c94eb1a22a6a00f6ae0131035255ea24680e594c488379 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-commons-dbcp/.github/workflows/coverage-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 23.317529439926147
+    }
+}

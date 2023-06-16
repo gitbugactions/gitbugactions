@@ -1,0 +1,29 @@
+{
+    "repository": "fm-sys/snapdrop-android",
+    "stars": 637,
+    "language": "java",
+    "size": 156502,
+    "clone_url": "https://github.com/fm-sys/snapdrop-android.git",
+    "timestamp": "2023-06-15T17:56:52.237618Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[APK Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[APK Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[APK Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[APK Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[APK Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fm-sys-snapdrop-android] user=0 workdir=\n[APK Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[APK Build/build] \u2b50 Run Main Checkout the code\n[APK Build/build]   \u2705  Success - Main Checkout the code\n[APK Build/build] \u2b50 Run Main Build the app\n[APK Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[APK Build/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5-bin.zip\n[APK Build/build]   | ...................................................................................................................\n[APK Build/build]   | Unzipping /home/runneradmin/.gradle/wrapper/dists/gradle-7.5-bin/f1w0cc9nuo0eivz97x2xlu9sv/gradle-7.5-bin.zip to /home/runneradmin/.gradle/wrapper/dists/gradle-7.5-bin/f1w0cc9nuo0eivz97x2xlu9sv\n[APK Build/build]   | Set executable permissions for: /home/runneradmin/.gradle/wrapper/dists/gradle-7.5-bin/f1w0cc9nuo0eivz97x2xlu9sv/gradle-7.5/bin/gradle\n[APK Build/build]   | \n[APK Build/build]   | Welcome to Gradle 7.5!\n[APK Build/build]   | \n[APK Build/build]   | Here are the highlights of this release:\n[APK Build/build]   |  - Support for Java 18\n[APK Build/build]   |  - Support for building with Groovy 4\n[APK Build/build]   |  - Much more responsive continuous builds\n[APK Build/build]   |  - Improved diagnostics for dependency resolution\n[APK Build/build]   | \n[APK Build/build]   | For more details see https://docs.gradle.org/7.5/release-notes.html\n[APK Build/build]   | \n[APK Build/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[APK Build/build]   | Configuration cache is an incubating feature.\n[APK Build/build]   | Calculating task graph as no configuration cache is available for tasks: build\n[APK Build/build]   | \n[APK Build/build]   | 0 problems were found storing the configuration cache.\n[APK Build/build]   | \n[APK Build/build]   | See the complete report at file:///tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fm-sys-snapdrop-android/build/reports/configuration-cache/1g5b7zmc9es3wvn7ff9jo9qrv/v49ia5x3yfke77frg83vjn7f/configuration-cache-report.html\n[APK Build/build]   | \n[APK Build/build]   | FAILURE: Build failed with an exception.\n[APK Build/build]   | \n[APK Build/build]   | * What went wrong:\n[APK Build/build]   | Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.\n[APK Build/build]   | > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fm-sys-snapdrop-android/local.properties'.\n[APK Build/build]   | \n[APK Build/build]   | * Try:\n[APK Build/build]   | > Run with --stacktrace option to get the stack trace.\n[APK Build/build]   | > Run with --info or --debug option to get more log output.\n[APK Build/build]   | > Run with --scan to get full insights.\n[APK Build/build]   | \n[APK Build/build]   | Configuration cache entry stored.\n[APK Build/build]   | * Get more help at https://help.gradle.org\n[APK Build/build]   | \n[APK Build/build]   | BUILD FAILED in 38s\n[APK Build/build]   \u274c  Failure - Main Build the app\n[APK Build/build] exitcode '1': failure\n[APK Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fm-sys-snapdrop-android/.github/workflows/ci_build-crawler.yaml",
+        "build_tool": "gradle",
+        "elapsed_time": 125.98329401016235
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "repository": "uber/piranha",
+    "stars": 2062,
+    "language": "java",
+    "size": 4909,
+    "clone_url": "https://github.com/uber/piranha.git",
+    "timestamp": "2023-06-15T17:11:11.137371Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 5,
+    "actions_build_tools": [
+        "unknown",
+        "gradle",
+        "unknown",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[detect/Detect Changes/changes] \ud83d\ude80  Start image=crawlergpt:latest\n[detect/Detect Changes/changes]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[detect/Detect Changes/changes]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[detect/Detect Changes/changes]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[detect/Detect Changes/changes]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/uber-piranha] user=0 workdir=\n[detect/Detect Changes/changes]   \u2601  git clone 'https://github.com/dorny/paths-filter' # ref=v2\n[detect/Detect Changes/changes] \u2b50 Run Main actions/checkout@v2\n[detect/Detect Changes/changes]   \u2705  Success - Main actions/checkout@v2\n[detect/Detect Changes/changes] \u2b50 Run Main dorny/paths-filter@v2\n[detect/Detect Changes/changes]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/dorny-paths-filter@v2/ dst=/var/run/act/actions/dorny-paths-filter@v2/\n[detect/Detect Changes/changes]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/dorny-paths-filter@v2/] user=0 workdir=\n[detect/Detect Changes/changes]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/dorny-paths-filter@v2/dist/index.js] user= workdir=\n[detect/Detect Changes/changes]   \u2753  ::group::Get current git ref\n[detect/Detect Changes/changes]   | [command]/usr/bin/git branch --show-current\n[detect/Detect Changes/changes]   | master\n[detect/Detect Changes/changes]   \u2753  ::endgroup::\n[detect/Detect Changes/changes]   \u2757  ::error::This action requires 'base' input to be configured or 'repository.default_branch' to be set in the event payload\n[detect/Detect Changes/changes]   \u274c  Failure - Main dorny/paths-filter@v2\n[detect/Detect Changes/changes] exitcode '1': failure\n[detect/Detect Changes/changes] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'changes' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/uber-piranha/.github/workflows/legacy-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 37.543357372283936
+    }
+}

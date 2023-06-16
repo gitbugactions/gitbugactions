@@ -1,0 +1,29 @@
+{
+    "repository": "lennartkoopmann/nzyme",
+    "stars": 1210,
+    "language": "java",
+    "size": 63263,
+    "clone_url": "https://github.com/lennartkoopmann/nzyme.git",
+    "timestamp": "2023-06-15T16:20:56.379295Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build and Test/build_and_test] \ud83d\ude80  Start image=crawlergpt:latest\n[Build and Test/build_and_test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build and Test/build_and_test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build and Test/build_and_test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build and Test/build_and_test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lennartkoopmann-nzyme] user=0 workdir=\n[Build and Test/build_and_test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Build and Test/build_and_test] Non-terminating error while running 'git clone': some refs were not updated\n[Build and Test/build_and_test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[Build and Test/build_and_test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[Build and Test/build_and_test] \u2b50 Run Main actions/checkout@v2\n[Build and Test/build_and_test]   \u2705  Success - Main actions/checkout@v2\n[Build and Test/build_and_test] \u2b50 Run Main Create Database\n[Build and Test/build_and_test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Build and Test/build_and_test]   | createdb: error: could not connect to database template1: could not connect to server: Connection refused\n[Build and Test/build_and_test]   | \tIs the server running on host \"localhost\" (127.0.0.1) and accepting\n[Build and Test/build_and_test]   | \tTCP/IP connections on port 5432?\n[Build and Test/build_and_test]   | could not connect to server: Cannot assign requested address\n[Build and Test/build_and_test]   | \tIs the server running on host \"localhost\" (::1) and accepting\n[Build and Test/build_and_test]   | \tTCP/IP connections on port 5432?\n[Build and Test/build_and_test]   \u274c  Failure - Main Create Database\n[Build and Test/build_and_test] exitcode '1': failure\n[Build and Test/build_and_test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build_and_test' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lennartkoopmann-nzyme/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 12.046663761138916
+    }
+}

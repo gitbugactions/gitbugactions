@@ -1,0 +1,28 @@
+{
+    "repository": "agoston/spring-data-mongodb-encrypt",
+    "stars": 71,
+    "language": "java",
+    "size": 254,
+    "clone_url": "https://github.com/agoston/spring-data-mongodb-encrypt.git",
+    "timestamp": "2023-06-15T16:46:15.283892Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/agoston-spring-data-mongodb-encrypt] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/supercharge/mongodb-github-action' # ref=1.6.0\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build] \u2b50 Run Main actions/checkout@v2\n[Build/build]   \u2705  Success - Main actions/checkout@v2\n[Build/build] \u2b50 Run Main Start MongoDB\n[Build/build]   \ud83d\udc33  docker build -t act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest /home/andre-silva/.cache/act/supercharge-mongodb-github-action@1.6.0/\n[Build/build]   \ud83d\udc33  docker pull image=act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest platform= entrypoint=[] cmd=[\"4.2\" \"\" \"27017\"]\n[Build/build]   \ud83d\udc33  docker run image=act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest platform= entrypoint=[] cmd=[\"4.2\" \"\" \"27017\"]\n[Build/build]   | \n[Build/build]   | #############################################\n[Build/build]   | Starting single-node instance, no replica set\n[Build/build]   |   - port [27017]\n[Build/build]   |   - version [4.2]\n[Build/build]   | #############################################\n[Build/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create?name=mongodb: dial unix /var/run/docker.sock: connect: permission denied.\n[Build/build]   | See 'docker run --help'.\n[Build/build]   \u274c  Failure - Main Start MongoDB\n[Build/build] exit with `FAILURE`: 126\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/agoston-spring-data-mongodb-encrypt/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 31.23639702796936
+    }
+}

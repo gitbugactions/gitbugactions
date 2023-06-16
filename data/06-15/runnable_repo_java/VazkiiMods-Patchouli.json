@@ -1,0 +1,30 @@
+{
+    "repository": "VazkiiMods/Patchouli",
+    "stars": 242,
+    "language": "java",
+    "size": 5321,
+    "clone_url": "https://github.com/VazkiiMods/Patchouli.git",
+    "timestamp": "2023-06-15T17:07:29.748859Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/VazkiiMods-Patchouli] user=0 workdir=\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[Java CI/build]   \u2601  git clone 'https://github.com/jwgmeligmeyling/pmd-github-action' # ref=v1\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Java CI/build] \u2b50 Run Main actions/checkout@v2\n[Java CI/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI/build] \u2b50 Run Main Set up JDK\n[Java CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Java CI/build]   \u274c  Failure - Main Set up JDK\n[Java CI/build] Error response from daemon: RWLayer of container a11a255d6b8fd94e0f569f6c005a50d873568d333b4f8e76b0491817061b6cd8 is unexpectedly nil\n[Java CI/build] \u2b50 Run Main PMD report\n[Java CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/jwgmeligmeyling-pmd-github-action@v1/ dst=/var/run/act/actions/jwgmeligmeyling-pmd-github-action@v1/\n[Java CI/build]   \u274c  Failure - Main PMD report\n[Java CI/build] Error response from daemon: No such container: a11a255d6b8fd94e0f569f6c005a50d873568d333b4f8e76b0491817061b6cd8\n[Java CI/build] \u2b50 Run Post Set up JDK\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI/build]   \u274c  Failure - Post Set up JDK\n[Java CI/build] failed to remove container: Error response from daemon: No such container: a11a255d6b8fd94e0f569f6c005a50d873568d333b4f8e76b0491817061b6cd8\n[Java CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: a11a255d6b8fd94e0f569f6c005a50d873568d333b4f8e76b0491817061b6cd8 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/VazkiiMods-Patchouli/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 43.17206692695618
+    }
+}

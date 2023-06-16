@@ -1,0 +1,28 @@
+{
+    "repository": "moneymod/moneymod",
+    "stars": 56,
+    "language": "java",
+    "size": 3289,
+    "clone_url": "https://github.com/moneymod/moneymod.git",
+    "timestamp": "2023-06-15T18:13:15.776518Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Gradle Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Gradle Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Gradle Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Gradle Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Gradle Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/moneymod-moneymod] user=0 workdir=\n[Gradle Build/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Gradle Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Gradle Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Gradle Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Gradle Build/build] \u2b50 Run Main actions/checkout@v2\n[Gradle Build/build]   \u2705  Success - Main actions/checkout@v2\n[Gradle Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 20bcd7fe7229d90d3c3679918380f7cf274d7f70eaaae7106ffe1baf0c7016f5\n[Gradle Build/build] \u2b50 Run Main Set up JDK 1.8\n[Gradle Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Gradle Build/build]   \u274c  Failure - Main Set up JDK 1.8\n[Gradle Build/build] Error response from daemon: No such container: 20bcd7fe7229d90d3c3679918380f7cf274d7f70eaaae7106ffe1baf0c7016f5\n[Gradle Build/build] \u2b50 Run Post Set up JDK 1.8\n[Gradle Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Gradle Build/build]   \u274c  Failure - Post Set up JDK 1.8\n[Gradle Build/build] failed to remove container: Error response from daemon: No such container: 20bcd7fe7229d90d3c3679918380f7cf274d7f70eaaae7106ffe1baf0c7016f5\n[Gradle Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 20bcd7fe7229d90d3c3679918380f7cf274d7f70eaaae7106ffe1baf0c7016f5 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/moneymod-moneymod/.github/workflows/gradle-publish-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 95.43077206611633
+    }
+}

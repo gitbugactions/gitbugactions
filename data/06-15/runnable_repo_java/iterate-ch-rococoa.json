@@ -1,0 +1,28 @@
+{
+    "repository": "iterate-ch/rococoa",
+    "stars": 66,
+    "language": "java",
+    "size": 2334,
+    "clone_url": "https://github.com/iterate-ch/rococoa.git",
+    "timestamp": "2023-06-15T15:26:38.054268Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/iterate-ch-rococoa] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 15\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI with Maven/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::match not found\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu15.46.17-ca-jdk15.0.10-linux_x64.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading /tmp/47738bec-78d9-4bd5-bb8b-a7d0ed0cbcfb\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 15\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container e860a2e7824849fffd6fe96faf959d351279d0e2106546f5e4dc125af93305a7\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 15\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 15\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: e860a2e7824849fffd6fe96faf959d351279d0e2106546f5e4dc125af93305a7\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [f68076eff286af212d45dc686f77766e22aca13af126cb00db2e0d20de599faf] (original error: Error occurred running finally: Error response from daemon: No such container: e860a2e7824849fffd6fe96faf959d351279d0e2106546f5e4dc125af93305a7 (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/iterate-ch-rococoa/.github/workflows/test-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 17.76968264579773
+    }
+}

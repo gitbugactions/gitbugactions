@@ -1,0 +1,29 @@
+{
+    "repository": "apache/datafu",
+    "stars": 106,
+    "language": "java",
+    "size": 30350,
+    "clone_url": "https://github.com/apache/datafu.git",
+    "timestamp": "2023-06-15T14:47:30.349269Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "gradle",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[tests/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[tests/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[tests/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[tests/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-datafu] user=0 workdir=\n[tests/Test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[tests/Test] Non-terminating error while running 'git clone': some refs were not updated\n[tests/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[tests/Test] Unable to checkout bd6b4b6205c4dbad673328db7b31b7fab9e241c0: invalid checksum\n[tests/Test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-datafu/.github/workflows/tests-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 11.344892978668213
+    }
+}

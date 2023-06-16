@@ -1,0 +1,28 @@
+{
+    "repository": "nutzam/nutzboot",
+    "stars": 487,
+    "language": "java",
+    "size": 6993,
+    "clone_url": "https://github.com/nutzam/nutzboot.git",
+    "timestamp": "2023-06-15T16:45:10.259089Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/nutzam-nutzboot] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \u2753  ::group::Installed distributions\n[Java CI with Maven/build]   | Trying to resolve the latest version from remote\n[Java CI with Maven/build]   | Resolved latest version as 11.0.19+7\n[Java CI with Maven/build]   | Trying to download...\n[Java CI with Maven/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Destination /tmp/5c929172-aa90-408e-9e79-e4cf2d151a02\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 11\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 58cedb8332dfd6d9d112ac74244fc5eeacf7a57994dcfde39a87cd9946b5b656\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 58cedb8332dfd6d9d112ac74244fc5eeacf7a57994dcfde39a87cd9946b5b656\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [bb8e34b4ca489e48cc646762a4570aff06099c02d0ff1ee2089f7fc5fd309338] (original error: Error occurred running finally: Error response from daemon: No such container: 58cedb8332dfd6d9d112ac74244fc5eeacf7a57994dcfde39a87cd9946b5b656 (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/nutzam-nutzboot/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 27.629433393478394
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "repository": "replydev/Quboscanner",
+    "stars": 101,
+    "language": "java",
+    "size": 363,
+    "clone_url": "https://github.com/replydev/Quboscanner.git",
+    "timestamp": "2023-06-15T17:45:46.744278Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/replydev-Quboscanner] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 19\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Java CI with Maven/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 19\n[Java CI with Maven/build] Error response from daemon: RWLayer of container b7ff6df196001c9736bc01cf9bc0a44534977cef54b6377700cc8289f15c14c7 is unexpectedly nil\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 19\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 19\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: b7ff6df196001c9736bc01cf9bc0a44534977cef54b6377700cc8289f15c14c7\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [c38d6b7a270f33665f37201c4dde30276681262cc05fcbba08e60b661c4f71dd] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: b7ff6df196001c9736bc01cf9bc0a44534977cef54b6377700cc8289f15c14c7 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/replydev-Quboscanner/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 43.784435987472534
+    }
+}

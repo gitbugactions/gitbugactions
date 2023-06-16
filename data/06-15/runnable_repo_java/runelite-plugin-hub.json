@@ -1,0 +1,28 @@
+{
+    "repository": "runelite/plugin-hub",
+    "stars": 177,
+    "language": "java",
+    "size": 4019,
+    "clone_url": "https://github.com/runelite/plugin-hub.git",
+    "timestamp": "2023-06-15T17:39:21.098411Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build-crawler.yml/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build-crawler.yml/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build-crawler.yml/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build-crawler.yml/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build-crawler.yml/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/runelite-plugin-hub] user=0 workdir=\n[build-crawler.yml/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[build-crawler.yml/build] Non-terminating error while running 'git clone': some refs were not updated\n[build-crawler.yml/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[build-crawler.yml/build] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[build-crawler.yml/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/runelite-plugin-hub/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 45.34624242782593
+    }
+}

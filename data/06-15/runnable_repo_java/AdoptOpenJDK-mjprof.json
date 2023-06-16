@@ -1,0 +1,28 @@
+{
+    "repository": "AdoptOpenJDK/mjprof",
+    "stars": 102,
+    "language": "java",
+    "size": 609,
+    "clone_url": "https://github.com/AdoptOpenJDK/mjprof.git",
+    "timestamp": "2023-06-15T14:50:18.811788Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Release/precheck] \ud83d\ude80  Start image=crawlergpt:latest\n[Release/precheck]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Release/precheck]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Release/precheck]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Release/precheck]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AdoptOpenJDK-mjprof] user=0 workdir=\n[Release/precheck] \u2b50 Run Main Checkout\n[Release/precheck]   \u2705  Success - Main Checkout\n[Release/precheck] \u2b50 Run Main Version\n[Release/precheck]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/vars.sh] user= workdir=\n[Release/precheck]   \u2705  Success - Main Version\n[Release/precheck]   \u2699  ::set-output:: VERSION=1.1.0\n[Release/precheck] \ud83c\udfc1  Job succeeded\n[Release/Build on ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[Release/Build on ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Release/Build on ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Release/Build on ubuntu-latest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Release/Build on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AdoptOpenJDK-mjprof] user=0 workdir=\n[Release/Build on ubuntu-latest]   \u2601  git clone 'https://github.com/graalvm/setup-graalvm' # ref=v1\n[Release/Build on ubuntu-latest]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Release/Build on ubuntu-latest] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Release/Build on ubuntu-latest] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AdoptOpenJDK-mjprof/.github/workflows/release-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 20.287952661514282
+    }
+}

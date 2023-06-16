@@ -1,0 +1,29 @@
+{
+    "repository": "sofastack/sofa-common-tools",
+    "stars": 166,
+    "language": "java",
+    "size": 545,
+    "clone_url": "https://github.com/sofastack/sofa-common-tools.git",
+    "timestamp": "2023-06-15T16:54:33.966597Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/sofastack-sofa-common-tools] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[build/build] \u2b50 Run Main actions/checkout@v2\n[build/build]   \u2705  Success - Main actions/checkout@v2\n[build/build] \u2b50 Run Main Set up JDK 1.8\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Main Set up JDK 1.8\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 801c2e7d1b43cf80c51508f5c615c4feacc6343d9590b0d8fda1e4c2699e248e\n[build/build] \u2b50 Run Post Set up JDK 1.8\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Post Set up JDK 1.8\n[build/build] failed to remove container: Error response from daemon: No such container: 801c2e7d1b43cf80c51508f5c615c4feacc6343d9590b0d8fda1e4c2699e248e\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 801c2e7d1b43cf80c51508f5c615c4feacc6343d9590b0d8fda1e4c2699e248e (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/sofastack-sofa-common-tools/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 18.109668493270874
+    }
+}

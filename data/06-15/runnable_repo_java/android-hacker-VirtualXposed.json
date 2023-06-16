@@ -1,0 +1,28 @@
+{
+    "repository": "android-hacker/VirtualXposed",
+    "stars": 14440,
+    "language": "java",
+    "size": 49794,
+    "clone_url": "https://github.com/android-hacker/VirtualXposed.git",
+    "timestamp": "2023-06-15T16:48:27.493434Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/android-hacker-VirtualXposed] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/srt32/git-actions' # ref=v0.0.3\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[Android CI/build] \u2b50 Run Main actions/checkout@v1\n[Android CI/build]   \u2705  Success - Main actions/checkout@v1\n[Android CI/build] \u2b50 Run Main Checkout submodules\n[Android CI/build]   \ud83d\udc33  docker build -t act-srt32-git-actions-v0-0-3-dockeraction:latest /home/andre-silva/.cache/act/srt32-git-actions@v0.0.3/\n[Android CI/build]   \ud83d\udc33  docker pull image=act-srt32-git-actions-v0-0-3-dockeraction:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=act-srt32-git-actions-v0-0-3-dockeraction:latest platform= entrypoint=[] cmd=[\"git\" \"submodule\" \"update\" \"--init\" \"--recursive\"]\n[Android CI/build]   \ud83d\udc33  docker run image=act-srt32-git-actions-v0-0-3-dockeraction:latest platform= entrypoint=[] cmd=[\"git\" \"submodule\" \"update\" \"--init\" \"--recursive\"]\n[Android CI/build]   | #################################################\n[Android CI/build]   | Starting the git Action\n[Android CI/build]   | Submodule 'VirtualApp/launcher' (https://github.com/android-hacker/Launcher3.git) registered for path 'VirtualApp/launcher'\n[Android CI/build]   | Cloning into '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/android-hacker-VirtualXposed/VirtualApp/launcher'...\n[Android CI/build]   | Submodule path 'VirtualApp/launcher': checked out '666d274d8a0d29101328552b5ce018d90e4deee6'\n[Android CI/build]   | #################################################\n[Android CI/build]   | Completed the git Action\n[Android CI/build]   \u2705  Success - Main Checkout submodules\n[Android CI/build] Error response from daemon: No such container: b24bdc7ed004ed072ffbcc8cb5555e2b99c407419a22dd312d478d93b86ac923\n[Android CI/build] \u2b50 Run Main set up JDK 1.8\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Android CI/build]   \u274c  Failure - Main set up JDK 1.8\n[Android CI/build] Error response from daemon: No such container: b24bdc7ed004ed072ffbcc8cb5555e2b99c407419a22dd312d478d93b86ac923\n[Android CI/build] \u2b50 Run Post set up JDK 1.8\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 1.8\n[Android CI/build] failed to remove container: Error response from daemon: No such container: b24bdc7ed004ed072ffbcc8cb5555e2b99c407419a22dd312d478d93b86ac923\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: b24bdc7ed004ed072ffbcc8cb5555e2b99c407419a22dd312d478d93b86ac923 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/android-hacker-VirtualXposed/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 99.51829838752747
+    }
+}

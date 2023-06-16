@@ -1,0 +1,30 @@
+{
+    "repository": "eclipse-platform/eclipse.platform.swt",
+    "stars": 60,
+    "language": "java",
+    "size": 75712,
+    "clone_url": "https://github.com/eclipse-platform/eclipse.platform.swt.git",
+    "timestamp": "2023-06-15T18:17:07.108355Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "maven",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[SWT Matrix Build/Event File               ] \ud83d\ude80  Start image=crawlergpt:latest\n[SWT Matrix Build/Verify Linux with Java-17] \ud83d\ude80  Start image=crawlergpt:latest\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[SWT Matrix Build/Verify Linux with Java-17]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[SWT Matrix Build/Verify Linux with Java-17]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[SWT Matrix Build/Verify Linux with Java-17]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[SWT Matrix Build/Verify Linux with Java-17]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-platform-eclipse.platform.swt] user=0 workdir=\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-platform-eclipse.platform.swt] user=0 workdir=\n[SWT Matrix Build/Verify Linux with Java-17]   \u2601  git clone 'https://github.com/actions/checkout' # ref=c85c95e3d7251135ab7dc9ce3241c5835cc595a9\n[SWT Matrix Build/Event File               ]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=0b7f8abb1508181956e8e162db84b466c27e18ce\n[SWT Matrix Build/Verify Linux with Java-17]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2\n[SWT Matrix Build/Event File               ] \u2b50 Run Main Upload\n[SWT Matrix Build/Verify Linux with Java-17] Non-terminating error while running 'git clone': some refs were not updated\n[SWT Matrix Build/Verify Linux with Java-17]   \u2601  git clone 'https://github.com/stCarolas/setup-maven' # ref=v4.5\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce/ dst=/var/run/act/actions/actions-upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce/\n[SWT Matrix Build/Verify Linux with Java-17] Unable to checkout 07fbbe97d97ef44336b7382563d66743297e442f: invalid checksum\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce/] user=0 workdir=\n[SWT Matrix Build/Event File               ]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce/dist/index.js] user= workdir=\n[SWT Matrix Build/Verify Linux with Java-17] \ud83c\udfc1  Job succeeded\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::Search path '/var/run/act/workflow/event.json'\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::File:/var/run/act/workflow/event.json was found using the provided searchPath\n[SWT Matrix Build/Event File               ]   | With the provided path, there will be 1 file uploaded\n[SWT Matrix Build/Event File               ]   \ud83d\udcac  ::debug::Root artifact directory is /var/run/act/workflow\n[SWT Matrix Build/Event File               ]   | Starting artifact upload\n[SWT Matrix Build/Event File               ]   | For more detailed logs during the artifact upload process, enable step-debugging: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging#enabling-step-debug-logging\n[SWT Matrix Build/Event File               ]   | Artifact name is valid!\n[SWT Matrix Build/Event File               ]   \u2757  ::error::Unable to get ACTIONS_RUNTIME_TOKEN env variable\n[SWT Matrix Build/Event File               ]   \u274c  Failure - Main Upload\n[SWT Matrix Build/Event File               ] exitcode '1': failure\n[SWT Matrix Build/Event File               ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-platform-eclipse.platform.swt/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 48.54408311843872
+    }
+}

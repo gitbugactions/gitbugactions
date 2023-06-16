@@ -1,0 +1,28 @@
+{
+    "repository": "google/compile-testing",
+    "stars": 657,
+    "language": "java",
+    "size": 890,
+    "clone_url": "https://github.com/google/compile-testing.git",
+    "timestamp": "2023-06-15T14:36:25.124557Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/JDK 8] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/JDK 8]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/JDK 8]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/JDK 8]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/JDK 8]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/google-compile-testing] user=0 workdir=\n[CI/JDK 8]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=b173b6ec0100793626c2d9e6b90435061f4fc3e5\n[CI/JDK 8]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2\n[CI/JDK 8] Non-terminating error while running 'git clone': some refs were not updated\n[CI/JDK 8] \ud83e\uddea  Matrix: map[java:8]\n[CI/JDK 8] \u2b50 Run Main Cancel previous runs\n[CI/JDK 8]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/ dst=/var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/\n[CI/JDK 8]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/] user=0 workdir=\n[CI/JDK 8]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/dist/index.js] user= workdir=\n[CI/JDK 8]   | {\n[CI/JDK 8]   |   eventName: 'push',\n[CI/JDK 8]   |   sha: '81ebd19a3582c88987014ae420932bb69c46c8d0',\n[CI/JDK 8]   |   headSha: '81ebd19a3582c88987014ae420932bb69c46c8d0',\n[CI/JDK 8]   |   branch: 'main',\n[CI/JDK 8]   |   owner: 'google',\n[CI/JDK 8]   |   repo: 'compile-testing',\n[CI/JDK 8]   |   GITHUB_RUN_ID: '1'\n[CI/JDK 8]   | }\n[CI/JDK 8]   | Found token: yes\n[CI/JDK 8]   \u2757  ::error::Not Found\n[CI/JDK 8]   \u274c  Failure - Main Cancel previous runs\n[CI/JDK 8] exitcode '1': failure\n[CI/JDK 8] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'JDK ${{ matrix.java }}' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/google-compile-testing/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 6.441412448883057
+    }
+}

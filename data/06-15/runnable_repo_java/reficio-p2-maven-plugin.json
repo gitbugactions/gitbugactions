@@ -1,0 +1,29 @@
+{
+    "repository": "reficio/p2-maven-plugin",
+    "stars": 220,
+    "language": "java",
+    "size": 796,
+    "clone_url": "https://github.com/reficio/p2-maven-plugin.git",
+    "timestamp": "2023-06-15T14:01:16.154745Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/reficio-p2-maven-plugin] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2.1.7\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \ud83e\uddea  Matrix: map[java:11 os:ubuntu-latest]\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] \u2b50 Run Main Set up cache for ~./m2/repository\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-cache@v2.1.7/ dst=/var/run/act/actions/actions-cache@v2.1.7/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-cache@v2.1.7/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2.1.7/dist/restore/index.js] user= workdir=\n[Java CI with Maven/build]   \ud83d\udcbe  ::save-state name=CACHE_KEY::maven-ubuntu-latest-java11-266146251696abf3a16582e1e8c4b658357a5b736c9709dc26f9c86874a24030\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::[\"maven-ubuntu-latest-java11-266146251696abf3a16582e1e8c4b658357a5b736c9709dc26f9c86874a24030\",\"maven-ubuntu-latest-java11-\",\"maven-ubuntu-latest-\"]\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::getCacheEntry - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.\n[Java CI with Maven/build]   | [warning]getCacheEntry failed: Cache Service Url not found, unable to restore cache.\n[Java CI with Maven/build]   | \n[Java CI with Maven/build]   \u2699  ::set-output:: cache-hit=false\n[Java CI with Maven/build]   \u2705  Success - Main Set up cache for ~./m2/repository\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 668a8ccc7c6c838e7f284a4f9d80ed779f032d80ad93e2ec51cd54612471cfd2\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 668a8ccc7c6c838e7f284a4f9d80ed779f032d80ad93e2ec51cd54612471cfd2\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [981907d11b356a7f6c187c10b2676e7fd9d755e9770960c0d319a64d59a7e411] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 668a8ccc7c6c838e7f284a4f9d80ed779f032d80ad93e2ec51cd54612471cfd2 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/reficio-p2-maven-plugin/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 24.397665977478027
+    }
+}

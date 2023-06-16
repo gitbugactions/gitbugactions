@@ -1,0 +1,28 @@
+{
+    "repository": "TachibanaGeneralLaboratories/download-navi",
+    "stars": 654,
+    "language": "java",
+    "size": 4882,
+    "clone_url": "https://github.com/TachibanaGeneralLaboratories/download-navi.git",
+    "timestamp": "2023-06-15T17:11:25.889959Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/TachibanaGeneralLaboratories-download-navi] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Android CI/build] \u2b50 Run Main actions/checkout@v1\n[Android CI/build]   \u2705  Success - Main actions/checkout@v1\n[Android CI/build] \u2b50 Run Main set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Android CI/build]   | Trying to resolve the latest version from remote\n[Android CI/build]   \u274c  Failure - Main set up JDK 11\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 627c4fa7205bd21a7773c04c0eee7c05ca9dd22660473d909b4f0000dd556964\n[Android CI/build] \u2b50 Run Post set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 11\n[Android CI/build] failed to remove container: Error response from daemon: No such container: 627c4fa7205bd21a7773c04c0eee7c05ca9dd22660473d909b4f0000dd556964\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 627c4fa7205bd21a7773c04c0eee7c05ca9dd22660473d909b4f0000dd556964 (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/TachibanaGeneralLaboratories-download-navi/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 23.461840629577637
+    }
+}

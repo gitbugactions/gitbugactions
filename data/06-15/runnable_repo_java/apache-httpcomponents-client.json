@@ -1,0 +1,30 @@
+{
+    "repository": "apache/httpcomponents-client",
+    "stars": 1327,
+    "language": "java",
+    "size": 18114,
+    "clone_url": "https://github.com/apache/httpcomponents-client.git",
+    "timestamp": "2023-06-15T13:28:18.323066Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CodeQL/Analyze] \ud83d\ude80  Start image=crawlergpt:latest\n[CodeQL/Analyze]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CodeQL/Analyze]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CodeQL/Analyze]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CodeQL/Analyze]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-httpcomponents-client] user=0 workdir=\n[CodeQL/Analyze]   \u2601  git clone 'https://github.com/github/codeql-action' # ref=v2\n[CodeQL/Analyze] Non-terminating error while running 'git clone': some refs were not updated\n[CodeQL/Analyze]   \u2601  git clone 'https://github.com/github/codeql-action' # ref=v2\n[CodeQL/Analyze] Non-terminating error while running 'git clone': some refs were not updated\n[CodeQL/Analyze] \ud83e\uddea  Matrix: map[language:java]\n[CodeQL/Analyze] \u2b50 Run Main Checkout repository\n[CodeQL/Analyze]   \u2705  Success - Main Checkout repository\n[CodeQL/Analyze] \u2b50 Run Main Initialize CodeQL\n[CodeQL/Analyze]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/github-codeql-action-init@v2/ dst=/var/run/act/actions/github-codeql-action-init@v2/\n[CodeQL/Analyze]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/github-codeql-action-init@v2/] user=0 workdir=\n[CodeQL/Analyze]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[CodeQL/Analyze]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/github-codeql-action-init@v2/lib/init-action.js] user= workdir=\n[CodeQL/Analyze]   \u274c  Failure - Main Initialize CodeQL\n[CodeQL/Analyze] Error response from daemon: RWLayer of container 744e563505078055ae4208c216c7dfa607adc1e03683a1efbd4543f981461afe is unexpectedly nil\n[CodeQL/Analyze] \u2b50 Run Post Initialize CodeQL\n[CodeQL/Analyze]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/github-codeql-action-init@v2/lib/init-action-post.js] user= workdir=\n[CodeQL/Analyze]   \u274c  Failure - Post Initialize CodeQL\n[CodeQL/Analyze] failed to remove container: Error response from daemon: No such container: 744e563505078055ae4208c216c7dfa607adc1e03683a1efbd4543f981461afe\n[CodeQL/Analyze] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 744e563505078055ae4208c216c7dfa607adc1e03683a1efbd4543f981461afe (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-httpcomponents-client/.github/workflows/codeql-analysis-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 21.933870315551758
+    }
+}

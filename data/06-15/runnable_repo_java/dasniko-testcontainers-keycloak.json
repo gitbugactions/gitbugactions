@@ -1,0 +1,28 @@
+{
+    "repository": "dasniko/testcontainers-keycloak",
+    "stars": 251,
+    "language": "java",
+    "size": 209,
+    "clone_url": "https://github.com/dasniko/testcontainers-keycloak.git",
+    "timestamp": "2023-06-15T17:39:15.851137Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/dasniko-testcontainers-keycloak] user=0 workdir=\n[CI build/build]   \u2601  git clone 'https://github.com/atomicjar/testcontainers-cloud-setup-action' # ref=v1\n[CI build/build] \u2b50 Run Pre Setup Testcontainers Cloud Client\n[CI build/build]   \u2705  Success - Pre Setup Testcontainers Cloud Client\n[CI build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[CI build/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI build/build] \u2b50 Run Main actions/checkout@v3\n[CI build/build]   \u2705  Success - Main actions/checkout@v3\n[CI build/build] \u2b50 Run Main Setup Testcontainers Cloud Client\n[CI build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/atomicjar-testcontainers-cloud-setup-action@v1/ dst=/var/run/act/actions/atomicjar-testcontainers-cloud-setup-action@v1/\n[CI build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/atomicjar-testcontainers-cloud-setup-action@v1/] user=0 workdir=\n[CI build/build] \u2b50 Run Main Download and run Testcontainers Cloud Client\n[CI build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1-composite-testcontainers-cloud.sh] user= workdir=\n[CI build/build]   | Downloading https://app.testcontainers.cloud/download/testcontainers-cloud-agent_latest_linux_x86-64\n[CI build/build]   | \u001b[90m2023-06-15T17:40:25.022Z ---\u001b[0m \u001b[32mINF\u001b[0m Testcontainers Cloud Agent \u001b[36march=\u001b[0mamd64 \u001b[36mos=\u001b[0m\"Ubuntu 20.04.2 LTS/ubuntu:20.04.2 (20.04)\" \u001b[36mversion=\u001b[0m1.3.36.2210+2487868\n[CI build/build]   | ERROR: cannot proceed without a Testcontainers Cloud API token. Please provide a token by setting the TC_CLOUD_TOKEN environment variable, or, in a desktop environment, enable an in-browser prompt using --allow-browser-token-prompt\n[CI build/build]   \u2705  Success - Main Download and run Testcontainers Cloud Client\n[CI build/build] \u2b50 Run Main Make sure TCC is ready before proceeding\n[CI build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1-composite-testcontainers-cloud-client-wait.sh] user= workdir=\n[CI build/build]   | \u001b[90m2023-06-15T17:40:55.693Z ---\u001b[0m \u001b[32mINF\u001b[0m Testcontainers Cloud Agent \u001b[36march=\u001b[0mamd64 \u001b[36mos=\u001b[0m\"Ubuntu 20.04.2 LTS/ubuntu:20.04.2 (20.04)\" \u001b[36mversion=\u001b[0m1.3.36.2210+2487868\n[CI build/build]   | \u001b[90m2023-06-15T17:40:55.694Z ---\u001b[0m \u001b[32mINF\u001b[0m Waiting up to 120 seconds for the agent to start...\n[CI build/build]   | \u001b[90m2023-06-15T17:42:55.704Z ---\u001b[0m \u001b[1m\u001b[31mFTL\u001b[0m\u001b[0m Timed out waiting for agent to be running \u001b[36maddr=\u001b[0munknown\n[CI build/build]   \u274c  Failure - Main Make sure TCC is ready before proceeding\n[CI build/build] exitcode '1': failure\n[CI build/build]   \u274c  Failure - Main Setup Testcontainers Cloud Client\n[CI build/build] exitcode '1': failure\n[CI build/build] \u2b50 Run Post Setup Testcontainers Cloud Client\n[CI build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/atomicjar-testcontainers-cloud-setup-action@v1/ dst=/var/run/act/actions/atomicjar-testcontainers-cloud-setup-action@v1/\n[CI build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/atomicjar-testcontainers-cloud-setup-action@v1/] user=0 workdir=\n[CI build/build]   \u2705  Success - Post Setup Testcontainers Cloud Client\n[CI build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/dasniko-testcontainers-keycloak/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 234.72264432907104
+    }
+}

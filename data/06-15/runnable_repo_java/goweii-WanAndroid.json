@@ -1,0 +1,28 @@
+{
+    "repository": "goweii/WanAndroid",
+    "stars": 849,
+    "language": "java",
+    "size": 5111,
+    "clone_url": "https://github.com/goweii/WanAndroid.git",
+    "timestamp": "2023-06-15T17:25:23.036246Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/goweii-WanAndroid] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build] \u2b50 Run Main actions/checkout@v2\n[Android CI/build]   \u2705  Success - Main actions/checkout@v2\n[Android CI/build] \u2b50 Run Main set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Android CI/build]   | Trying to resolve the latest version from remote\n[Android CI/build]   | Resolved latest version as 11.0.19+7\n[Android CI/build]   | Trying to download...\n[Android CI/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[Android CI/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[Android CI/build]   \ud83d\udcac  ::debug::Destination /tmp/de2e808a-e7b5-4bb8-971c-52b3ccdee801\n[Android CI/build]   \ud83d\udcac  ::debug::download complete\n[Android CI/build]   | Extracting Java archive...\n[Android CI/build]   \ud83d\udcac  ::debug::Checking tar --version\n[Android CI/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[Android CI/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/4937eaeb-5097-4f6d-8e66-ef944f64847e -f /tmp/de2e808a-e7b5-4bb8-971c-52b3ccdee801\n[Android CI/build]   \ud83d\udcac  ::debug::Caching tool Java_Temurin-Hotspot_jdk 11.0.19-7 x64\n[Android CI/build]   \ud83d\udcac  ::debug::source dir: /tmp/4937eaeb-5097-4f6d-8e66-ef944f64847e/jdk-11.0.19+7\n[Android CI/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[Android CI/build]   \u274c  Failure - Main set up JDK 11\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 29e431cd90566a5170b5afc4658cee9c6c7c7f52db145abfac63ac06d37298bf\n[Android CI/build] \u2b50 Run Post set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 11\n[Android CI/build] failed to remove container: Error response from daemon: No such container: 29e431cd90566a5170b5afc4658cee9c6c7c7f52db145abfac63ac06d37298bf\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 29e431cd90566a5170b5afc4658cee9c6c7c7f52db145abfac63ac06d37298bf (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/goweii-WanAndroid/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 74.97752833366394
+    }
+}

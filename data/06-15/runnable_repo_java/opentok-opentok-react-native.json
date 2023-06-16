@@ -1,0 +1,29 @@
+{
+    "repository": "opentok/opentok-react-native",
+    "stars": 199,
+    "language": "java",
+    "size": 2045,
+    "clone_url": "https://github.com/opentok/opentok-react-native.git",
+    "timestamp": "2023-06-15T16:54:29.918839Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "gradle",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Test Sample apps/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Test Sample apps/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Test Sample apps/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Sample apps/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Test Sample apps/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/opentok-opentok-react-native] user=0 workdir=\n[Test Sample apps/build]   \u2601  git clone 'https://github.com/maxim-lobanov/setup-xcode' # ref=v1.4.1\n[Test Sample apps/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v2\n[Test Sample apps/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Test Sample apps/build] Non-terminating error while running 'git clone': some refs were not updated\n[Test Sample apps/build] \ud83e\uddea  Matrix: map[platform:ios project:BasicVideoChat]\n[Test Sample apps/build] \u2b50 Run Main Checkout\n[Test Sample apps/build]   \u2705  Success - Main Checkout\n[Test Sample apps/build] \u2b50 Run Main Setup Xcode version\n[Test Sample apps/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/maxim-lobanov-setup-xcode@v1.4.1/ dst=/var/run/act/actions/maxim-lobanov-setup-xcode@v1.4.1/\n[Test Sample apps/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/maxim-lobanov-setup-xcode@v1.4.1/] user=0 workdir=\n[Test Sample apps/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/maxim-lobanov-setup-xcode@v1.4.1/dist/index.js] user= workdir=\n[Test Sample apps/build]   \u2757  ::error::This task is intended only for macOS platform. It can't be run on 'linux' platform\n[Test Sample apps/build]   \u274c  Failure - Main Setup Xcode version\n[Test Sample apps/build] exitcode '1': failure\n[Test Sample apps/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/opentok-opentok-react-native/.github/workflows/sample_test-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 11.797537326812744
+    }
+}

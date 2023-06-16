@@ -1,0 +1,28 @@
+{
+    "repository": "thomasdarimont/keycloak-health-checks",
+    "stars": 134,
+    "language": "java",
+    "size": 53,
+    "clone_url": "https://github.com/thomasdarimont/keycloak-health-checks.git",
+    "timestamp": "2023-06-15T16:33:11.941442Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/Create GitHub Release] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/thomasdarimont-keycloak-health-checks] user=0 workdir=\n[Java CI with Maven/Create GitHub Release]   \u2601  git clone 'https://github.com/actions/create-release' # ref=v1\n[Java CI with Maven/Create GitHub Release]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[Java CI with Maven/Create GitHub Release] \u2b50 Run Main Read the tag var\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/create_tag] user= workdir=\n[Java CI with Maven/Create GitHub Release]   \u2699  ::set-output:: tag=20.0.0.0\n[Java CI with Maven/Create GitHub Release]   \u2705  Success - Main Read the tag var\n[Java CI with Maven/Create GitHub Release] \u2b50 Run Main Create Release\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-create-release@v1/ dst=/var/run/act/actions/actions-create-release@v1/\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-create-release@v1/] user=0 workdir=\n[Java CI with Maven/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-create-release@v1/dist/index.js] user= workdir=\n[Java CI with Maven/Create GitHub Release]   \u2757  ##[error]Not Found\n[Java CI with Maven/Create GitHub Release]   \u274c  Failure - Main Create Release\n[Java CI with Maven/Create GitHub Release] exitcode '1': failure\n[Java CI with Maven/Create GitHub Release] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Create GitHub Release' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/thomasdarimont-keycloak-health-checks/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 29.565101623535156
+    }
+}

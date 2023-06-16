@@ -1,0 +1,28 @@
+{
+    "repository": "OpenLiberty/ci.maven",
+    "stars": 118,
+    "language": "java",
+    "size": 4598,
+    "clone_url": "https://github.com/OpenLiberty/ci.maven.git",
+    "timestamp": "2023-06-15T14:35:24.791759Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/OpenLiberty-ci.maven] user=0 workdir=\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/OpenLiberty-ci.maven] user=0 workdir=\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v3\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v3\n[Java CI with Maven/ol 22.0.0.12, Java 17, Windows] \ud83c\udfc1  Job succeeded\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Java CI with Maven/ol 22.0.0.12, Java 17, Linux  ] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/OpenLiberty-ci.maven/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 10.325725078582764
+    }
+}

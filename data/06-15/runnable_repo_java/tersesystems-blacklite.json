@@ -1,0 +1,28 @@
+{
+    "repository": "tersesystems/blacklite",
+    "stars": 52,
+    "language": "java",
+    "size": 1206,
+    "clone_url": "https://github.com/tersesystems/blacklite.git",
+    "timestamp": "2023-06-15T18:00:04.105719Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tersesystems-blacklite] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=67421db6bd0bf253fb4bd25b31ebb98943c375e1\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u2753  ::group::Installed distributions\n[Java CI with Gradle/build]   | Trying to resolve the latest version from remote\n[Java CI with Gradle/build]   | Resolved latest version as 11.0.19+7\n[Java CI with Gradle/build]   | Trying to download...\n[Java CI with Gradle/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Destination /tmp/b5a69447-66f8-45f8-9720-b9e2fa2185c6\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 11\n[Java CI with Gradle/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container ebc56a0fc75166b8408284cdf3556a4b1d6f3af556e0c557512758f7e257e60e\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: ebc56a0fc75166b8408284cdf3556a4b1d6f3af556e0c557512758f7e257e60e\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: ebc56a0fc75166b8408284cdf3556a4b1d6f3af556e0c557512758f7e257e60e (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tersesystems-blacklite/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 94.34392881393433
+    }
+}

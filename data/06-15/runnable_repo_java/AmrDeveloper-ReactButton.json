@@ -1,0 +1,28 @@
+{
+    "repository": "AmrDeveloper/ReactButton",
+    "stars": 107,
+    "language": "java",
+    "size": 1587,
+    "clone_url": "https://github.com/AmrDeveloper/ReactButton.git",
+    "timestamp": "2023-06-15T16:53:08.783893Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AmrDeveloper-ReactButton] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build] \u2b50 Run Main actions/checkout@v1\n[Build/build]   \u2705  Success - Main actions/checkout@v1\n[Build/build] \u2b50 Run Main actions/cache@v2\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[Build/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[Build/build]   \ud83d\udcac  ::debug::[\"Linux-gradle-df47d71661f9b042de69ab5a64ac6dc8f0bcff7fd8e929e5483cea44f41be2f9\",\"Linux-gradle-\"]\n[Build/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[Build/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[Build/build]   \ud83d\udcac  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.\n[Build/build]   \u274c  Failure - Main actions/cache@v2\n[Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 1883d2aa35923b62146d42360497827040fadf1e55c4ab72b276f8a141ff9ade\n[Build/build] failed to remove container: Error response from daemon: No such container: 1883d2aa35923b62146d42360497827040fadf1e55c4ab72b276f8a141ff9ade\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AmrDeveloper-ReactButton/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 37.39937925338745
+    }
+}

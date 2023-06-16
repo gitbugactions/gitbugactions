@@ -1,0 +1,28 @@
+{
+    "repository": "microg/GmsCore",
+    "stars": 5689,
+    "language": "java",
+    "size": 7241,
+    "clone_url": "https://github.com/microg/GmsCore.git",
+    "timestamp": "2023-06-15T14:54:24.442554Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/microg-GmsCore] user=0 workdir=\n[Build/build] \u2b50 Run Main actions/checkout@v2\n[Build/build]   \u2705  Success - Main actions/checkout@v2\n[Build/build] \u2b50 Run Main ./gradlew --no-daemon build\n[Build/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Build/build]   | Downloading https://services.gradle.org/distributions/gradle-7.3.3-bin.zip\n[Build/build]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%\n[Build/build]   | \n[Build/build]   | Welcome to Gradle 7.3.3!\n[Build/build]   | \n[Build/build]   | Here are the highlights of this release:\n[Build/build]   |  - Easily declare new test suites in Java projects\n[Build/build]   |  - Support for Java 17\n[Build/build]   |  - Support for Scala 3\n[Build/build]   | \n[Build/build]   | For more details see https://docs.gradle.org/7.3.3/release-notes.html\n[Build/build]   | \n[Build/build]   | To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.3.3/userguide/gradle_daemon.html#sec:disabling_the_daemon.\n[Build/build]   | Daemon will be stopped at the end of the build \n[Build/build]   | \n[Build/build]   | > Configure project :\n[Build/build]   | Starting build for version 0.2.28.231657-2 (d56b6a0) (231657057)...\n[Build/build]   | \n[Build/build]   | > Configure project :play-services-basement\n[Build/build]   | WARNING:API 'android.registerTransform' is obsolete.\n[Build/build]   | It will be removed in version 8.0 of the Android Gradle plugin.\n[Build/build]   | The Transform API is removed to improve build performance. Projects that use the\n[Build/build]   | Transform API force the Android Gradle plugin to use a less optimized flow for the\n[Build/build]   | build that can result in large regressions in build times. It\u2019s also difficult to\n[Build/build]   | use the Transform API and combine it with other Gradle features; the replacement\n[Build/build]   | APIs aim to make it easier to extend the build without introducing performance or\n[Build/build]   | correctness issues.\n[Build/build]   | \n[Build/build]   | There is no single replacement for the Transform API\u2014there are new, targeted\n[Build/build]   | APIs for each use case. All the replacement APIs are in the\n[Build/build]   | `androidComponents {}` block.\n[Build/build]   | For more information, see https://developer.android.com/studio/releases/gradle-plugin-api-updates#transform-api.\n[Build/build]   | To determine what is calling android.registerTransform, use -Pandroid.debug.obsoleteApi=true on the command line to display more information.\n[Build/build]   | \n[Build/build]   | FAILURE: Build failed with an exception.\n[Build/build]   | \n[Build/build]   | * What went wrong:\n[Build/build]   | Could not determine the dependencies of task ':firebase-auth:compileReleaseAidl'.\n[Build/build]   | > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/microg-GmsCore/local.properties'.\n[Build/build]   | \n[Build/build]   | * Try:\n[Build/build]   | > Run with --stacktrace option to get the stack trace.\n[Build/build]   | > Run with --info or --debug option to get more log output.\n[Build/build]   | > Run with --scan to get full insights.\n[Build/build]   | \n[Build/build]   | * Get more help at https://help.gradle.org\n[Build/build]   | \n[Build/build]   | BUILD FAILED in 49s\n[Build/build]   \u274c  Failure - Main ./gradlew --no-daemon build\n[Build/build] exitcode '1': failure\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/microg-GmsCore/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 68.64973711967468
+    }
+}

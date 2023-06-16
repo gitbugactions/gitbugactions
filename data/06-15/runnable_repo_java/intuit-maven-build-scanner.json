@@ -1,0 +1,30 @@
+{
+    "repository": "intuit/maven-build-scanner",
+    "stars": 125,
+    "language": "java",
+    "size": 999,
+    "clone_url": "https://github.com/intuit/maven-build-scanner.git",
+    "timestamp": "2023-06-15T17:15:30.256134Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/test] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/intuit-maven-build-scanner] user=0 workdir=\n[Java CI with Maven/test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/test] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Java CI with Maven/test] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Java CI with Maven/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/intuit-maven-build-scanner/.github/workflows/maven-test-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 18.620793104171753
+    }
+}

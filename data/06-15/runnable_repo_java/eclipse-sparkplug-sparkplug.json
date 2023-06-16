@@ -1,0 +1,28 @@
+{
+    "repository": "eclipse-sparkplug/sparkplug",
+    "stars": 71,
+    "language": "java",
+    "size": 11437,
+    "clone_url": "https://github.com/eclipse-sparkplug/sparkplug.git",
+    "timestamp": "2023-06-15T17:51:15.602726Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/Gradle Wrapper] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/Gradle Wrapper]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/Gradle Wrapper]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Gradle Wrapper]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Gradle Wrapper]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-sparkplug-sparkplug] user=0 workdir=\n[Build/Gradle Wrapper]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[Build/Gradle Wrapper] \u2b50 Run Main Fetch Sources\n[Build/Gradle Wrapper]   \u2705  Success - Main Fetch Sources\n[Build/Gradle Wrapper] \u2b50 Run Main Gradle Wrapper Validation\n[Build/Gradle Wrapper]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[Build/Gradle Wrapper]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[Build/Gradle Wrapper]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[Build/Gradle Wrapper]   | \u2713 Found known Gradle Wrapper JAR files:\n[Build/Gradle Wrapper]   |   575098db54a998ff1c6770b352c3b16766c09848bee7555dab09afc34e8cf590 gradle/wrapper/gradle-wrapper.jar\n[Build/Gradle Wrapper]   \u2705  Success - Main Gradle Wrapper Validation\n[Build/Gradle Wrapper] \ud83c\udfc1  Job succeeded\n[Build/Build         ] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/Build         ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/Build         ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build         ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build         ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-sparkplug-sparkplug] user=0 workdir=\n[Build/Build         ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Build/Build         ] Non-terminating error while running 'git clone': some refs were not updated\n[Build/Build         ]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Build/Build         ] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Build/Build         ] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/eclipse-sparkplug-sparkplug/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 81.73739552497864
+    }
+}

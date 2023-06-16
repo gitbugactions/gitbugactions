@@ -1,0 +1,28 @@
+{
+    "repository": "InnovativeOnlineIndustries/Industrial-Foregoing",
+    "stars": 202,
+    "language": "java",
+    "size": 9424,
+    "clone_url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing.git",
+    "timestamp": "2023-06-15T16:32:45.670058Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Changelog Action/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Changelog Action/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Changelog Action/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Changelog Action/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Changelog Action/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/InnovativeOnlineIndustries-Industrial-Foregoing] user=0 workdir=\n[Changelog Action/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Changelog Action/build] Non-terminating error while running 'git clone': some refs were not updated\n[Changelog Action/build]   \u2601  git clone 'https://github.com/EndBug/add-and-commit' # ref=v4\n[Changelog Action/build] \u2b50 Run Main actions/checkout@master\n[Changelog Action/build]   \u2705  Success - Main actions/checkout@master\n[Changelog Action/build] \u2b50 Run Main git fetch --prune --unshallow --tags\n[Changelog Action/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Changelog Action/build]   | fatal: --unshallow on a complete repository does not make sense\n[Changelog Action/build]   \u274c  Failure - Main git fetch --prune --unshallow --tags\n[Changelog Action/build] exitcode '128': failure\n[Changelog Action/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/InnovativeOnlineIndustries-Industrial-Foregoing/.github/workflows/changelog-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 39.4176549911499
+    }
+}

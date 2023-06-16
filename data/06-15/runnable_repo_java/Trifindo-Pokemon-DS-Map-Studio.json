@@ -1,0 +1,28 @@
+{
+    "repository": "Trifindo/Pokemon-DS-Map-Studio",
+    "stars": 144,
+    "language": "java",
+    "size": 19830,
+    "clone_url": "https://github.com/Trifindo/Pokemon-DS-Map-Studio.git",
+    "timestamp": "2023-06-15T17:54:38.831968Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Trifindo-Pokemon-DS-Map-Studio] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Gradle/build]   | OCI runtime exec failed: exec failed: cannot exec in a stopped container: unknown\r\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI with Gradle/build] Error response from daemon: No such container: 02ce4f0f541e6abb2b7de50c2bf25f661603020df2df9a3be63d1e025e30401f\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: 02ce4f0f541e6abb2b7de50c2bf25f661603020df2df9a3be63d1e025e30401f\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 02ce4f0f541e6abb2b7de50c2bf25f661603020df2df9a3be63d1e025e30401f (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Trifindo-Pokemon-DS-Map-Studio/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 39.48456811904907
+    }
+}

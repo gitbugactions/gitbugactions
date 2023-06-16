@@ -1,0 +1,28 @@
+{
+    "repository": "apache/rocketmq-connect",
+    "stars": 92,
+    "language": "java",
+    "size": 5056,
+    "clone_url": "https://github.com/apache/rocketmq-connect.git",
+    "timestamp": "2023-06-15T17:42:12.350467Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-rocketmq-connect] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 31d1576c175c589ca3b0e414b6b77744687966f12eb8170eba37891f08185fad\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 8\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 8\n[Java CI with Maven/build] Error response from daemon: No such container: 31d1576c175c589ca3b0e414b6b77744687966f12eb8170eba37891f08185fad\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 8\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 8\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 31d1576c175c589ca3b0e414b6b77744687966f12eb8170eba37891f08185fad\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [6f2df6da7986ed06110ed446cfd1c0c5d958cd1a5476e8f572b72b73c3ec5730] (original error: Error occurred running finally: Error response from daemon: No such container: 31d1576c175c589ca3b0e414b6b77744687966f12eb8170eba37891f08185fad (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-rocketmq-connect/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 42.29857659339905
+    }
+}

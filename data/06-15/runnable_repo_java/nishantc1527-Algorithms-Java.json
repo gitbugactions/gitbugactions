@@ -1,0 +1,28 @@
+{
+    "repository": "nishantc1527/Algorithms-Java",
+    "stars": 139,
+    "language": "java",
+    "size": 31979,
+    "clone_url": "https://github.com/nishantc1527/Algorithms-Java.git",
+    "timestamp": "2023-06-15T17:47:16.901857Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/nishantc1527-Algorithms-Java] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 1.8\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::isExplicit: \n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::explicit? false\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::match not found\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading /tmp/417675ac-f2d1-4ef9-94df-f554f0a41bc8\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::download complete\n[Java CI with Gradle/build]   | [command]/usr/bin/tar --version\n[Java CI with Gradle/build]   | tar (GNU tar) 1.30\n[Java CI with Gradle/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[Java CI with Gradle/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[Java CI with Gradle/build]   | This is free software: you are free to change and redistribute it.\n[Java CI with Gradle/build]   | There is NO WARRANTY, to the extent permitted by law.\n[Java CI with Gradle/build]   | \n[Java CI with Gradle/build]   | Written by John Gilmore and Jay Fenlason.\n[Java CI with Gradle/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1647194755 -f /tmp/417675ac-f2d1-4ef9-94df-f554f0a41bc8\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_1647194755/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Caching tool jdk 8.0.372 x64\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::source dir: /tmp/temp_1647194755/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 1.8\n[Java CI with Gradle/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container f7e5a9ad62e3153f0bf47209a9c8924d63fda96e6d157a0ecd0770b96296d420\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 1.8\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 1.8\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: f7e5a9ad62e3153f0bf47209a9c8924d63fda96e6d157a0ecd0770b96296d420\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Gradle-build-42c27d48dbe5641fe5e32adbd8f632254df873720f678a51094f101f6c26aea2-env: volume is in use - [7976aacf3f932f933f6df8d62f196ae53a1ccae5511a42ca80af5fee88f39a22] (original error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: f7e5a9ad62e3153f0bf47209a9c8924d63fda96e6d157a0ecd0770b96296d420 (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/nishantc1527-Algorithms-Java/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 20.914318323135376
+    }
+}

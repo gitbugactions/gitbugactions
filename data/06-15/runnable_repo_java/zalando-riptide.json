@@ -1,0 +1,30 @@
+{
+    "repository": "zalando/riptide",
+    "stars": 245,
+    "language": "java",
+    "size": 7764,
+    "clone_url": "https://github.com/zalando/riptide.git",
+    "timestamp": "2023-06-15T15:29:05.925383Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "maven",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/zalando-riptide] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[build/build] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[build/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/zalando-riptide/.github/workflows/build-crawler.yaml",
+        "build_tool": "maven",
+        "elapsed_time": 6.757993936538696
+    }
+}

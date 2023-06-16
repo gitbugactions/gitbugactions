@@ -1,0 +1,28 @@
+{
+    "repository": "danirod/rectball",
+    "stars": 64,
+    "language": "java",
+    "size": 6337,
+    "clone_url": "https://github.com/danirod/rectball.git",
+    "timestamp": "2023-06-15T15:45:30.242513Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/danirod-rectball] user=0 workdir=\n[Android/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Android/build] \u2b50 Run Main Checkout\n[Android/build]   \u2705  Success - Main Checkout\n[Android/build] \u2b50 Run Main Build an entire ospDebug flavor\n[Android/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Android/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-all.zip\n[Android/build]   | ..............................................................................................................................................................\n[Android/build]   | \n[Android/build]   | Welcome to Gradle 7.5.1!\n[Android/build]   | \n[Android/build]   | Here are the highlights of this release:\n[Android/build]   |  - Support for Java 18\n[Android/build]   |  - Support for building with Groovy 4\n[Android/build]   |  - Much more responsive continuous builds\n[Android/build]   |  - Improved diagnostics for dependency resolution\n[Android/build]   | \n[Android/build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html\n[Android/build]   | \n[Android/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[Android/build]   | \n[Android/build]   | > Configure project :app\n[Android/build]   | Configuration 'natives' was resolved during configuration time.\n[Android/build]   | This is a build performance and scalability issue.\n[Android/build]   | See https://github.com/gradle/gradle/issues/2298\n[Android/build]   | Run with --info for a stacktrace.\n[Android/build]   | \n[Android/build]   | FAILURE: Build failed with an exception.\n[Android/build]   | \n[Android/build]   | * What went wrong:\n[Android/build]   | Could not determine the dependencies of task ':app:compileOspDebugJavaWithJavac'.\n[Android/build]   | > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/danirod-rectball/local.properties'.\n[Android/build]   | \n[Android/build]   | * Try:\n[Android/build]   | > Run with --stacktrace option to get the stack trace.\n[Android/build]   | > Run with --info or --debug option to get more log output.\n[Android/build]   | > Run with --scan to get full insights.\n[Android/build]   | \n[Android/build]   | * Get more help at https://help.gradle.org\n[Android/build]   | \n[Android/build]   | BUILD FAILED in 37s\n[Android/build]   \u274c  Failure - Main Build an entire ospDebug flavor\n[Android/build] exitcode '1': failure\n[Android/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/danirod-rectball/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 57.32091212272644
+    }
+}

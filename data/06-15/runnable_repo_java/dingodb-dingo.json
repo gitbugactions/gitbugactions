@@ -1,0 +1,31 @@
+{
+    "repository": "dingodb/dingo",
+    "stars": 176,
+    "language": "java",
+    "size": 14306,
+    "clone_url": "https://github.com/dingodb/dingo.git",
+    "timestamp": "2023-06-15T18:11:39.061443Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 4,
+    "actions_build_tools": [
+        "gradle",
+        "unknown",
+        "gradle",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/dingodb-dingo] user=0 workdir=\n[Build/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=937999e9cc2425eddc7fd62d1053baf041147db7\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Build/build] \u2b50 Run Main actions/checkout@v3\n[Build/build]   \u2705  Success - Main actions/checkout@v3\n[Build/build] Error response from daemon: No such container: efd072a22c9ceb0e24e6a85078a0bb1596d04006bda637d9d752c0dc9e933fb0\n[Build/build] \u2b50 Run Main Set up JDK8\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Build/build]   \u274c  Failure - Main Set up JDK8\n[Build/build] Error response from daemon: No such container: efd072a22c9ceb0e24e6a85078a0bb1596d04006bda637d9d752c0dc9e933fb0\n[Build/build] \u2b50 Run Post Set up JDK8\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Build/build]   \u274c  Failure - Post Set up JDK8\n[Build/build] failed to remove container: Error response from daemon: No such container: efd072a22c9ceb0e24e6a85078a0bb1596d04006bda637d9d752c0dc9e933fb0\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Build-build-75c1633f7e6841be275e2c4040eaa0dd33d71ab392b6b6b2483256e051756329-env: volume is in use - [1402e245a45c4e4f16120508168cca512a6ba910e2de5371eff087d9ea3e3422] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: efd072a22c9ceb0e24e6a85078a0bb1596d04006bda637d9d752c0dc9e933fb0 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/dingodb-dingo/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 24.846888065338135
+    }
+}

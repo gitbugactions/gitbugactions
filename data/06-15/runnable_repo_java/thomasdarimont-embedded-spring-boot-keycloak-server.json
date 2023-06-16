@@ -1,0 +1,28 @@
+{
+    "repository": "thomasdarimont/embedded-spring-boot-keycloak-server",
+    "stars": 268,
+    "language": "java",
+    "size": 287,
+    "clone_url": "https://github.com/thomasdarimont/embedded-spring-boot-keycloak-server.git",
+    "timestamp": "2023-06-15T17:46:58.034101Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/thomasdarimont-embedded-spring-boot-keycloak-server] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::explicit? true\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::explicit? true\n[Java CI with Maven/build]   | Resolved Java 11.0.11+9 from tool-cache\n[Java CI with Maven/build]   | Setting Java 11.0.11+9 as the default\n[Java CI with Maven/build]   | \n[Java CI with Maven/build]   | Java configuration:\n[Java CI with Maven/build]   |   Distribution: adopt\n[Java CI with Maven/build]   |   Version: 11.0.11+9\n[Java CI with Maven/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Java CI with Maven/build]   | \n[Java CI with Maven/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json\n[Java CI with Maven/build]   | Creating settings.xml with server-id: github\n[Java CI with Maven/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[Java CI with Maven/build]   \u2705  Success - Main Set up JDK 11\n[Java CI with Maven/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Java CI with Maven/build]   \u2699  ::set-output:: distribution=Adopt-Hotspot\n[Java CI with Maven/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[Java CI with Maven/build]   \u2699  ::set-output:: version=11.0.11+9\n[Java CI with Maven/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64/bin\n[Java CI with Maven/build] \u2b50 Run Main Build with Maven\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[Java CI with Maven/build]   | [INFO] Scanning for projects...\n[Java CI with Maven/build]   \u274c  Failure - Main Build with Maven\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 7f9795c4b4d52fc854a0df79858bfa43a22fe9c71946c21e275a1da33bdb3986\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 7f9795c4b4d52fc854a0df79858bfa43a22fe9c71946c21e275a1da33bdb3986\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 7f9795c4b4d52fc854a0df79858bfa43a22fe9c71946c21e275a1da33bdb3986 (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/thomasdarimont-embedded-spring-boot-keycloak-server/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 25.895714282989502
+    }
+}

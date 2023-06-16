@@ -1,0 +1,28 @@
+{
+    "repository": "pedro-javierf/NTRGhidra",
+    "stars": 131,
+    "language": "java",
+    "size": 728,
+    "clone_url": "https://github.com/pedro-javierf/NTRGhidra.git",
+    "timestamp": "2023-06-15T17:45:32.127804Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build NTRGhidra/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build NTRGhidra/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build NTRGhidra/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build NTRGhidra/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build NTRGhidra/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/pedro-javierf-NTRGhidra] user=0 workdir=\n[Build NTRGhidra/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Build NTRGhidra/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build NTRGhidra/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=67421db6bd0bf253fb4bd25b31ebb98943c375e1\n[Build NTRGhidra/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build NTRGhidra/build]   \u2601  git clone 'https://github.com/er28-0652/setup-ghidra' # ref=master\n[Build NTRGhidra/build]   \u2601  git clone 'https://github.com/shogo82148/actions-upload-release-asset' # ref=v1\n[Build NTRGhidra/build] \u2b50 Run Main actions/checkout@v3\n[Build NTRGhidra/build]   \u2705  Success - Main actions/checkout@v3\n[Build NTRGhidra/build] Unable to interpolate expression 'format('{0}', vars.JDK_VERSION)': Unavailable context: vars\n[Build NTRGhidra/build] \u2b50 Run Main Set up JDK\n[Build NTRGhidra/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Build NTRGhidra/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Build NTRGhidra/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Build NTRGhidra/build]   \u2753  ::group::Installed distributions\n[Build NTRGhidra/build]   \u2757  ::error::java-version or java-version-file input expected\n[Build NTRGhidra/build]   \u274c  Failure - Main Set up JDK\n[Build NTRGhidra/build] exitcode '1': failure\n[Build NTRGhidra/build] Unable to interpolate expression 'format('{0}', vars.GHIDRA_BUILD_VERSION)': Unavailable context: vars\n[Build NTRGhidra/build] Unable to interpolate expression 'format('{0}', vars.JDK_VERSION)': Unavailable context: vars\n[Build NTRGhidra/build] \u2b50 Run Post Set up JDK\n[Build NTRGhidra/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Build NTRGhidra/build]   \u2705  Success - Post Set up JDK\n[Build NTRGhidra/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/pedro-javierf-NTRGhidra/.github/workflows/build_ntrghidra-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 46.400370836257935
+    }
+}

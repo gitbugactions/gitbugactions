@@ -1,0 +1,29 @@
+{
+    "repository": "Col-E/CAFED00D",
+    "stars": 86,
+    "language": "java",
+    "size": 1223,
+    "clone_url": "https://github.com/Col-E/CAFED00D.git",
+    "timestamp": "2023-06-15T17:53:01.034654Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/Event File] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build     ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Event File]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build     ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Event File]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build     ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Event File]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Event File]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Col-E-CAFED00D] user=0 workdir=\n[CI/Event File]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[CI/Event File] \u2b50 Run Main Upload\n[CI/Event File]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-upload-artifact@v2/ dst=/var/run/act/actions/actions-upload-artifact@v2/\n[CI/Event File]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-upload-artifact@v2/] user=0 workdir=\n[CI/Event File]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-upload-artifact@v2/dist/index.js] user= workdir=\n[CI/Event File]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[CI/Event File]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[CI/Event File]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[CI/Event File]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[CI/Event File]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[CI/Event File]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[CI/Event File]   \ud83d\udcac  ::debug::Search path '/var/run/act/workflow/event.json'\n[CI/Event File]   \ud83d\udcac  ::debug::File:/var/run/act/workflow/event.json was found using the provided searchPath\n[CI/Event File]   | With the provided path, there will be 1 file uploaded\n[CI/Event File]   \ud83d\udcac  ::debug::Root artifact directory is /var/run/act/workflow\n[CI/Event File]   | Starting artifact upload\n[CI/Event File]   | For more detailed logs during the artifact upload process, enable step-debugging: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging#enabling-step-debug-logging\n[CI/Event File]   | Artifact name is valid!\n[CI/Event File]   \u2757  ::error::Unable to get ACTIONS_RUNTIME_TOKEN env variable\n[CI/Event File]   \u274c  Failure - Main Upload\n[CI/Event File] exitcode '1': failure\n[CI/Event File] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-CI-build-03727a8f260608c14dbfbecd23630d3cd3cc939c3150870ab3631218246ce38f\" is already in use by container \"d8aa72ff2192a488e9cfa482a70051cb254d9cf522be14ce238bca67b0161244\". You have to remove (or rename) that container to be able to reuse that name.'\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Col-E-CAFED00D/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 41.693609952926636
+    }
+}

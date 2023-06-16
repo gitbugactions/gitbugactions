@@ -1,0 +1,28 @@
+{
+    "repository": "entropy-cloud/nop-entropy",
+    "stars": 168,
+    "language": "java",
+    "size": 71691,
+    "clone_url": "https://github.com/entropy-cloud/nop-entropy.git",
+    "timestamp": "2023-06-15T18:20:26.195875Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build] failed to remove container: Error response from daemon: removal of container 2ad58aa389a41649cc00fae2670f2ecdcea6f8aea223a3858a4b79726de2ddd9 is already in progress\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:0 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/entropy-cloud-nop-entropy] user=0 workdir=\n",
+        "stderr": "Error: failed to copy content to container: Error response from daemon: Could not find the file /var/run/act/ in container 778ce6af0fd24197eb0cd8ce105f8618ac91bf7058ce23eb9900653f72286e8a\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/entropy-cloud-nop-entropy/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 37.684041261672974
+    }
+}

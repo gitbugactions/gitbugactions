@@ -1,0 +1,28 @@
+{
+    "repository": "vmware/alb-sdk",
+    "stars": 61,
+    "language": "java",
+    "size": 178840,
+    "clone_url": "https://github.com/vmware/alb-sdk.git",
+    "timestamp": "2023-06-15T16:00:48.732271Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Publish SDK package/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Publish SDK package/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Publish SDK package/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Publish SDK package/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Publish SDK package/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/vmware-alb-sdk] user=0 workdir=\n[Publish SDK package/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Publish SDK package/build] Non-terminating error while running 'git clone': some refs were not updated\n[Publish SDK package/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[Publish SDK package/build] Unable to checkout e9aba2c848f5ebd159c070c61ea2c4e2b122355e: invalid checksum\n[Publish SDK package/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/vmware-alb-sdk/.github/workflows/release-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 20.695183277130127
+    }
+}

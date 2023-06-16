@@ -1,0 +1,28 @@
+{
+    "repository": "UriahShaulMandel/BaldPhone",
+    "stars": 253,
+    "language": "java",
+    "size": 170564,
+    "clone_url": "https://github.com/UriahShaulMandel/BaldPhone.git",
+    "timestamp": "2023-06-15T17:14:55.739857Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/UriahShaulMandel-BaldPhone] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build] \u2b50 Run Main actions/checkout@v1\n[Android CI/build]   \u2705  Success - Main actions/checkout@v1\n[Android CI/build] \u2b50 Run Main set up JDK 1.8\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[Android CI/build]   \u274c  Failure - Main set up JDK 1.8\n[Android CI/build] Error response from daemon: No such container: b0d473815fc3a16426db8bbac5060236a85d76d4238af5c7972a0a5152a0c19e\n[Android CI/build] \u2b50 Run Post set up JDK 1.8\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 1.8\n[Android CI/build] failed to remove container: Error response from daemon: No such container: b0d473815fc3a16426db8bbac5060236a85d76d4238af5c7972a0a5152a0c19e\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [0d39436afbda8f95f51e058d2071852ddf8a9b13a310eab2a3549a4b07dc4304] (original error: Error occurred running finally: Error response from daemon: No such container: b0d473815fc3a16426db8bbac5060236a85d76d4238af5c7972a0a5152a0c19e (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/UriahShaulMandel-BaldPhone/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 6.795160293579102
+    }
+}

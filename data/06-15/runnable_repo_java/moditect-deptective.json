@@ -1,0 +1,28 @@
+{
+    "repository": "moditect/deptective",
+    "stars": 134,
+    "language": "java",
+    "size": 746,
+    "clone_url": "https://github.com/moditect/deptective.git",
+    "timestamp": "2023-06-15T17:12:36.787499Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/moditect-deptective] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[Build/build] \u2b50 Run Main Check out repository\n[Build/build]   \u2705  Success - Main Check out repository\n[Build/build] \u2b50 Run Main Set up Java\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Build/build]   | Trying to resolve the latest version from remote\n[Build/build]   | Resolved latest version as 11.0.19+7\n[Build/build]   | Trying to download...\n[Build/build]   | Downloading Java 11.0.19+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz ...\n[Build/build]   \ud83d\udcac  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz\n[Build/build]   \ud83d\udcac  ::debug::Destination /tmp/bb0e6249-df1e-4820-b653-59c791eb6273\n[Build/build]   \ud83d\udcac  ::debug::download complete\n[Build/build]   | Extracting Java archive...\n[Build/build]   \ud83d\udcac  ::debug::Checking tar --version\n[Build/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[Build/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/0a208276-5910-4d9b-9010-c7f0053f07d4 -f /tmp/bb0e6249-df1e-4820-b653-59c791eb6273\n[Build/build]   \u274c  Failure - Main Set up Java\n[Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 473f3d97605537b29156aa25bd34337d9434e4df2201b3f959e26ff399cf00de\n[Build/build] \u2b50 Run Post Set up Java\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Build/build]   \u274c  Failure - Post Set up Java\n[Build/build] failed to remove container: Error response from daemon: No such container: 473f3d97605537b29156aa25bd34337d9434e4df2201b3f959e26ff399cf00de\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 473f3d97605537b29156aa25bd34337d9434e4df2201b3f959e26ff399cf00de (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/moditect-deptective/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 31.76584768295288
+    }
+}

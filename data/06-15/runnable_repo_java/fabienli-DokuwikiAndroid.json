@@ -1,0 +1,28 @@
+{
+    "repository": "fabienli/DokuwikiAndroid",
+    "stars": 51,
+    "language": "java",
+    "size": 1043,
+    "clone_url": "https://github.com/fabienli/DokuwikiAndroid.git",
+    "timestamp": "2023-06-15T17:25:10.439814Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fabienli-DokuwikiAndroid] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/vgaidarji/android-github-actions-build' # ref=v1.0.1\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle/build] \u2b50 Run Main Android Build\n[Java CI with Gradle/build]   \ud83d\udc33  docker build -t act-vgaidarji-android-github-actions-build-v1-0-1-dockeraction:latest /home/andre-silva/.cache/act/vgaidarji-android-github-actions-build@v1.0.1/\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=act-vgaidarji-android-github-actions-build-v1-0-1-dockeraction:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=act-vgaidarji-android-github-actions-build-v1-0-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=act-vgaidarji-android-github-actions-build-v1-0-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[Java CI with Gradle/build]   \u2705  Success - Main Android Build\n[Java CI with Gradle/build] Error response from daemon: No such container: 7cfe56277ea8071b5fd574e9f765b3b38e69fcc2d6b4c34a2dce172a5d9d1c68\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 11\n[Java CI with Gradle/build] Error response from daemon: No such container: 7cfe56277ea8071b5fd574e9f765b3b38e69fcc2d6b4c34a2dce172a5d9d1c68\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: 7cfe56277ea8071b5fd574e9f765b3b38e69fcc2d6b4c34a2dce172a5d9d1c68\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Gradle-build-42c27d48dbe5641fe5e32adbd8f632254df873720f678a51094f101f6c26aea2-env: volume is in use - [f220d702892148062e69ea92e9b7369906fbdea10db1cbe79a881f67cdd56c57] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 7cfe56277ea8071b5fd574e9f765b3b38e69fcc2d6b4c34a2dce172a5d9d1c68 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fabienli-DokuwikiAndroid/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 269.64763736724854
+    }
+}

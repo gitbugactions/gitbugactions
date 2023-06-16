@@ -1,0 +1,28 @@
+{
+    "repository": "momentumdevelopment/cosmos",
+    "stars": 153,
+    "language": "java",
+    "size": 9073,
+    "clone_url": "https://github.com/momentumdevelopment/cosmos.git",
+    "timestamp": "2023-06-15T18:08:49.462151Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle./build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle./build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle./build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle./build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle./build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/momentumdevelopment-cosmos] user=0 workdir=\n[Java CI with Gradle./build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[Java CI with Gradle./build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI with Gradle./build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle./build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[Java CI with Gradle./build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle./build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Java CI with Gradle./build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle./build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle./build] \u2b50 Run Main gradle/wrapper-validation-action@v1\n[Java CI with Gradle./build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[Java CI with Gradle./build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[Java CI with Gradle./build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[Java CI with Gradle./build]   \u274c  Failure - Main gradle/wrapper-validation-action@v1\n[Java CI with Gradle./build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 2fe7d1b7ffd322e81a5d4e5447c84e9cd827b6ad227e310d5b8730d5939855c6\n[Java CI with Gradle./build] failed to remove container: Error response from daemon: No such container: 2fe7d1b7ffd322e81a5d4e5447c84e9cd827b6ad227e310d5b8730d5939855c6\n[Java CI with Gradle./build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/momentumdevelopment-cosmos/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 24.411298513412476
+    }
+}

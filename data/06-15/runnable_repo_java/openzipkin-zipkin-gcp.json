@@ -1,0 +1,31 @@
+{
+    "repository": "openzipkin/zipkin-gcp",
+    "stars": 86,
+    "language": "java",
+    "size": 830,
+    "clone_url": "https://github.com/openzipkin/zipkin-gcp.git",
+    "timestamp": "2023-06-15T16:22:25.921356Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 4,
+    "actions_build_tools": [
+        "maven",
+        "unknown",
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[test/test] \ud83d\ude80  Start image=crawlergpt:latest\n[test/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[test/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/openzipkin-zipkin-gcp] user=0 workdir=\n[test/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[test/test] \u2b50 Run Main Checkout Repository\n[test/test]   \u2705  Success - Main Checkout Repository\n[test/test] \u2b50 Run Main Cache local Maven repository\n[test/test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[test/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[test/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[test/test]   \ud83d\udcac  ::debug::Resolved Keys:\n[test/test]   \ud83d\udcac  ::debug::[\"Linux-maven-37f0324ad67f04f776ab4a6cd28afdc1bf624173f2b55388c0d5c39a85da0dbe\",\"Linux-maven-\"]\n[test/test]   \ud83d\udcac  ::debug::Checking zstd --version\n[test/test]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[test/test]   \ud83d\udcac  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.\n[test/test]   \ud83d\udcac  ::debug::getCacheEntry - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.\n[test/test]   | [warning]getCacheEntry failed: Cache Service Url not found, unable to restore cache.\n[test/test]   \u2705  Success - Main Cache local Maven repository\n[test/test]   \u2699  ::set-output:: cache-hit=false\n[test/test] \u2b50 Run Main Test\n[test/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[test/test]   | tee: /etc/docker/daemon.json: No such file or directory\n[test/test]   | { \"registry-mirrors\": [\"https://mirror.gcr.io\"] }\n[test/test]   \u274c  Failure - Main Test\n[test/test] exitcode '1': failure\n[test/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/openzipkin-zipkin-gcp/.github/workflows/test-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 36.15742230415344
+    }
+}

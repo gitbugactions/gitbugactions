@@ -1,0 +1,32 @@
+{
+    "repository": "patheloper/pathetic",
+    "stars": 55,
+    "language": "java",
+    "size": 2093,
+    "clone_url": "https://github.com/patheloper/pathetic.git",
+    "timestamp": "2023-06-15T18:15:22.680428Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 5,
+    "actions_build_tools": [
+        "unknown",
+        "maven",
+        "maven",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build and Attach pathetic-example jar to release/Build and Attach] \ud83d\ude80  Start image=crawlergpt:latest\n[Build and Attach pathetic-example jar to release/Build and Attach]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build and Attach pathetic-example jar to release/Build and Attach]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build and Attach pathetic-example jar to release/Build and Attach]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build and Attach pathetic-example jar to release/Build and Attach]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/patheloper-pathetic] user=0 workdir=\n[Build and Attach pathetic-example jar to release/Build and Attach]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Build and Attach pathetic-example jar to release/Build and Attach] Non-terminating error while running 'git clone': some refs were not updated\n[Build and Attach pathetic-example jar to release/Build and Attach]   \u2601  git clone 'https://github.com/stCarolas/setup-maven' # ref=v4.4\n[Build and Attach pathetic-example jar to release/Build and Attach]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Build and Attach pathetic-example jar to release/Build and Attach] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Build and Attach pathetic-example jar to release/Build and Attach] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/patheloper-pathetic/.github/workflows/attach_jar-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 50.407209157943726
+    }
+}

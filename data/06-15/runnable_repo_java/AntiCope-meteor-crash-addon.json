@@ -1,0 +1,28 @@
+{
+    "repository": "AntiCope/meteor-crash-addon",
+    "stars": 63,
+    "language": "java",
+    "size": 4607,
+    "clone_url": "https://github.com/AntiCope/meteor-crash-addon.git",
+    "timestamp": "2023-06-15T18:16:10.058002Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AntiCope-meteor-crash-addon] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/marvinpinto/action-automatic-releases' # ref=latest\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v2\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v2\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 17\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   | Trying to resolve the latest version from remote\n[Java CI with Gradle/build]   | Resolved latest version as 17.0.7+7\n[Java CI with Gradle/build]   | Trying to download...\n[Java CI with Gradle/build]   | Downloading Java 17.0.7+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64.tar.gz ...\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Destination /tmp/186fc7b9-0ac7-4891-909c-7907dadeab6f\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 17\n[Java CI with Gradle/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 346039a7b97c530dc3b36281b966c75bd400a3b2630127653dff17c8a9869934\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 17\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 17\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: 346039a7b97c530dc3b36281b966c75bd400a3b2630127653dff17c8a9869934\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Gradle-build-42c27d48dbe5641fe5e32adbd8f632254df873720f678a51094f101f6c26aea2-env: volume is in use - [817fae050689e318b3133977b9893c1973b6d8e4242c9af7387718b4a476912c] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 346039a7b97c530dc3b36281b966c75bd400a3b2630127653dff17c8a9869934 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/AntiCope-meteor-crash-addon/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 68.11884784698486
+    }
+}

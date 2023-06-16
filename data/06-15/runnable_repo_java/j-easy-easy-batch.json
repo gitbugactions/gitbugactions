@@ -1,0 +1,29 @@
+{
+    "repository": "j-easy/easy-batch",
+    "stars": 589,
+    "language": "java",
+    "size": 27091,
+    "clone_url": "https://github.com/j-easy/easy-batch.git",
+    "timestamp": "2023-06-15T14:11:35.300110Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI build/build-on-linux  ] \ud83d\ude80  Start image=crawlergpt:latest\n[CI build/build-on-windows] \ud83d\ude80  Start image=crawlergpt:latest\n[CI build/build-on-linux  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI build/build-on-windows]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI build/build-on-windows]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI build/build-on-linux  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI build/build-on-windows]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI build/build-on-linux  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI build/build-on-linux  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/j-easy-easy-batch] user=0 workdir=\n[CI build/build-on-windows]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/j-easy-easy-batch] user=0 workdir=\n[CI build/build-on-linux  ]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v1\n[CI build/build-on-windows]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v1\n[CI build/build-on-linux  ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[CI build/build-on-windows]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[CI build/build-on-linux  ] Non-terminating error while running 'git clone': some refs were not updated\n[CI build/build-on-linux  ] \u2b50 Run Main Checkout source code\n[CI build/build-on-linux  ]   \u274c  Failure - Main Checkout source code\n[CI build/build-on-windows] Non-terminating error while running 'git clone': some refs were not updated\n[CI build/build-on-windows] \u2b50 Run Main Checkout source code\n[CI build/build-on-windows]   \u274c  Failure - Main Checkout source code\n[CI build/build-on-linux  ] The runs.using key must be one of: [docker node12 node16 composite], got \n[CI build/build-on-windows] The runs.using key must be one of: [docker node12 node16 composite], got \n[CI build/build-on-linux  ] \ud83c\udfc1  Job failed\n[CI build/build-on-windows] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build-on-linux' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/j-easy-easy-batch/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 6.844528436660767
+    }
+}

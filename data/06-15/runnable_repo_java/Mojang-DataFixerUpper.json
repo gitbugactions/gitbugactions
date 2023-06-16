@@ -1,0 +1,28 @@
+{
+    "repository": "Mojang/DataFixerUpper",
+    "stars": 1083,
+    "language": "java",
+    "size": 589,
+    "clone_url": "https://github.com/Mojang/DataFixerUpper.git",
+    "timestamp": "2023-06-15T16:59:58.096457Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[pr-check/Build and test] \ud83d\ude80  Start image=mcr.microsoft.com/openjdk/jdk:17-ubuntu\n[pr-check/Build and test]   \ud83d\udc33  docker pull image=mcr.microsoft.com/openjdk/jdk:17-ubuntu platform= username= forcePull=false\n[pr-check/Build and test]   \ud83d\udc33  docker create image=mcr.microsoft.com/openjdk/jdk:17-ubuntu platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[pr-check/Build and test]   \ud83d\udc33  docker run image=mcr.microsoft.com/openjdk/jdk:17-ubuntu platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[pr-check/Build and test]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[pr-check/Build and test] Non-terminating error while running 'git clone': some refs were not updated\n[pr-check/Build and test]   \u2601  git clone 'https://github.com/mikepenz/action-junit-report' # ref=v3\n[pr-check/Build and test] \u2b50 Run Main actions/checkout@v3\n[pr-check/Build and test]   \u2705  Success - Main actions/checkout@v3\n[pr-check/Build and test] \u2b50 Run Main Build with Gradle\n[pr-check/Build and test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-gradle-build-action@v2/ dst=/var/run/act/actions/gradle-gradle-build-action@v2/\n[pr-check/Build and test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/main/index.js] user= workdir=\n[pr-check/Build and test]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[pr-check/Build and test]   \u274c  Failure - Main Build with Gradle\n[pr-check/Build and test] exitcode '126': failure\n[pr-check/Build and test] \u2b50 Run Main Publish Test Report\n[pr-check/Build and test]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/mikepenz-action-junit-report@v3/ dst=/var/run/act/actions/mikepenz-action-junit-report@v3/\n[pr-check/Build and test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/mikepenz-action-junit-report@v3/dist/index.js] user= workdir=\n[pr-check/Build and test]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[pr-check/Build and test]   \u274c  Failure - Main Publish Test Report\n[pr-check/Build and test] exitcode '126': failure\n[pr-check/Build and test] \u2b50 Run Post Build with Gradle\n[pr-check/Build and test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/post/index.js] user= workdir=\n[pr-check/Build and test]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[pr-check/Build and test]   \u274c  Failure - Post Build with Gradle\n[pr-check/Build and test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: exitcode '126': failure (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Mojang-DataFixerUpper/.github/workflows/pr-check-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 49.53846764564514
+    }
+}

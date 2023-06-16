@@ -1,0 +1,28 @@
+{
+    "repository": "lateautumn233/Linuxdeploy-Pro",
+    "stars": 60,
+    "language": "java",
+    "size": 75713,
+    "clone_url": "https://github.com/lateautumn233/Linuxdeploy-Pro.git",
+    "timestamp": "2023-06-15T18:01:13.286406Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lateautumn233-Linuxdeploy-Pro] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build]   \u2601  git clone 'https://github.com/burrunan/gradle-cache-action' # ref=v1\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Android CI/build] \u2b50 Run Main actions/checkout@v3\n[Android CI/build]   \u2705  Success - Main actions/checkout@v3\n[Android CI/build] \u2b50 Run Main set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Android CI/build]   | OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1: unknown\r\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Main set up JDK 11\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container b31d488c324ff563ae3dd116eca1d1afe361660d3458464a885b22f8a81e02b1\n[Android CI/build] \u2b50 Run Post set up JDK 11\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK 11\n[Android CI/build] failed to remove container: Error response from daemon: No such container: b31d488c324ff563ae3dd116eca1d1afe361660d3458464a885b22f8a81e02b1\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [b09dcc555f7c0debec5e2740296e18ddb19195de05c72aa1cee69b4ba00bf62c] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: b31d488c324ff563ae3dd116eca1d1afe361660d3458464a885b22f8a81e02b1 (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/lateautumn233-Linuxdeploy-Pro/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 59.1957151889801
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "apache/mnemonic",
+    "stars": 112,
+    "language": "java",
+    "size": 3088,
+    "clone_url": "https://github.com/apache/mnemonic.git",
+    "timestamp": "2023-06-15T16:00:00.954155Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build in container/build-and-deploy] \ud83d\ude80  Start image=mnemonic/mneci:v6\n[build in container/build-and-deploy]   \ud83d\udc33  docker pull image=mnemonic/mneci:v6 platform= username= forcePull=false\n[build in container/build-and-deploy]   \ud83d\udc33  docker create image=mnemonic/mneci:v6 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build in container/build-and-deploy]   \ud83d\udc33  docker run image=mnemonic/mneci:v6 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build in container/build-and-deploy]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[build in container/build-and-deploy] \u2b50 Run Main Delete old project folder\n[build in container/build-and-deploy]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/0.sh] user= workdir=\n[build in container/build-and-deploy]   \u2705  Success - Main Delete old project folder\n[build in container/build-and-deploy] \u2b50 Run Main Checkout code\n[build in container/build-and-deploy]   \u2705  Success - Main Checkout code\n[build in container/build-and-deploy] \u2b50 Run Main Validate Gradle Wrapper\n[build in container/build-and-deploy]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[build in container/build-and-deploy]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[build in container/build-and-deploy]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[build in container/build-and-deploy]   \u274c  Failure - Main Validate Gradle Wrapper\n[build in container/build-and-deploy] exitcode '126': failure\n[build in container/build-and-deploy] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build-and-deploy' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/apache-mnemonic/.github/workflows/docker_ubuntu-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 74.82671642303467
+    }
+}

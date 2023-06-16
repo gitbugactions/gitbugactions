@@ -1,0 +1,29 @@
+{
+    "repository": "kestra-io/kestra",
+    "stars": 3516,
+    "language": "java",
+    "size": 11061,
+    "clone_url": "https://github.com/kestra-io/kestra.git",
+    "timestamp": "2023-06-15T17:30:44.418519Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Main/Check & Publish] \ud83d\ude80  Start image=crawlergpt:latest\n[Main/Check & Publish]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Main/Check & Publish]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/Check & Publish]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/Check & Publish]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/kestra-io-kestra] user=0 workdir=\n[Main/Check & Publish]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[Main/Check & Publish] Unable to checkout bd6b4b6205c4dbad673328db7b31b7fab9e241c0: invalid checksum\n[Main/Check & Publish] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/kestra-io-kestra/.github/workflows/main-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 32.405513048172
+    }
+}

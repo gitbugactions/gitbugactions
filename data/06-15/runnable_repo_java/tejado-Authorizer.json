@@ -1,0 +1,28 @@
+{
+    "repository": "tejado/Authorizer",
+    "stars": 387,
+    "language": "java",
+    "size": 175453,
+    "clone_url": "https://github.com/tejado/Authorizer.git",
+    "timestamp": "2023-06-15T16:17:08.478836Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tejado-Authorizer] user=0 workdir=\n[CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[CI/build] \u2b50 Run Main checkout\n[CI/build]   \u2705  Success - Main checkout\n[CI/build] \u2b50 Run Main set up JDK 17\n[CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[CI/build]   \u2753  ::group::Installed distributions\n[CI/build]   | Trying to resolve the latest version from remote\n[CI/build]   | Resolved latest version as 17.0.7+7\n[CI/build]   | Trying to download...\n[CI/build]   | Downloading Java 17.0.7+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz ...\n[CI/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%252B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz\n[CI/build]   \ud83d\udcac  ::debug::Destination /tmp/0cbed4e6-0143-4952-bbc4-a416c0396149\n[CI/build]   \ud83d\udcac  ::debug::download complete\n[CI/build]   | Extracting Java archive...\n[CI/build]   \ud83d\udcac  ::debug::Checking tar --version\n[CI/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[CI/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/a7d6c350-fe0a-4732-a6d9-2f93499cf5fe -f /tmp/0cbed4e6-0143-4952-bbc4-a416c0396149\n[CI/build]   \ud83d\udcac  ::debug::Caching tool Java_Temurin-Hotspot_jdk 17.0.7-7 x64\n[CI/build]   \ud83d\udcac  ::debug::source dir: /tmp/a7d6c350-fe0a-4732-a6d9-2f93499cf5fe/jdk-17.0.7+7\n[CI/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[CI/build]   \ud83d\udcac  ::debug::finished caching tool\n[CI/build]   | Java 17.0.7+7 was downloaded\n[CI/build]   | Setting Java 17.0.7+7 as the default\n[CI/build]   | Creating toolchains.xml for JDK version 17 from temurin\n[CI/build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[CI/build]   | \n[CI/build]   | Java configuration:\n[CI/build]   |   Distribution: temurin\n[CI/build]   |   Version: 17.0.7+7\n[CI/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[CI/build]   | \n[CI/build]   \u2753  ::endgroup::\n[CI/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[CI/build]   | Creating settings.xml with server-id: github\n[CI/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[CI/build]   \u2705  Success - Main set up JDK 17\n[CI/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[CI/build]   \u2699  ::set-env:: JAVA_HOME_17_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[CI/build]   \u2699  ::set-output:: distribution=Temurin-Hotspot\n[CI/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[CI/build]   \u2699  ::set-output:: version=17.0.7+7\n[CI/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64/bin\n[CI/build] \u2b50 Run Main Install NDK\n[CI/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[CI/build]   | sudo: /tools/bin/sdkmanager: command not found\n[CI/build]   \u274c  Failure - Main Install NDK\n[CI/build] exitcode '1': failure\n[CI/build] \u2b50 Run Post set up JDK 17\n[CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[CI/build]   \u2705  Success - Post set up JDK 17\n[CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/tejado-Authorizer/.github/workflows/main-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 33.66070103645325
+    }
+}

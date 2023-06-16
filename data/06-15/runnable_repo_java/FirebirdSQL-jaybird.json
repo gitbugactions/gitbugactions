@@ -1,0 +1,29 @@
+{
+    "repository": "FirebirdSQL/jaybird",
+    "stars": 79,
+    "language": "java",
+    "size": 95522,
+    "clone_url": "https://github.com/FirebirdSQL/jaybird.git",
+    "timestamp": "2023-06-15T15:31:00.950646Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "gradle",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[run-tests/build] \ud83d\ude80  Start image=crawlergpt:latest\n[run-tests/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[run-tests/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[run-tests/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[run-tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/FirebirdSQL-jaybird] user=0 workdir=\n[run-tests/build]   \u2601  git clone 'https://github.com/juarezr/firebirdsql-github-action' # ref=v1.2.0\n[run-tests/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[run-tests/build] Non-terminating error while running 'git clone': some refs were not updated\n[run-tests/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=8d49e559aae34d3e0eb16cde532684bc9702762b\n[run-tests/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[run-tests/build] \u2b50 Run Main juarezr/firebirdsql-github-action@v1.2.0\n[run-tests/build]   \ud83d\udc33  docker build -t act-juarezr-firebirdsql-github-action-v1-2-0-dockeraction:latest /home/andre-silva/.cache/act/juarezr-firebirdsql-github-action@v1.2.0/\n[run-tests/build]   \ud83d\udc33  docker pull image=act-juarezr-firebirdsql-github-action-v1-2-0-dockeraction:latest platform= username= forcePull=false\n[run-tests/build]   \ud83d\udc33  docker create image=act-juarezr-firebirdsql-github-action-v1-2-0-dockeraction:latest platform= entrypoint=[] cmd=[]\n[run-tests/build]   \ud83d\udc33  docker run image=act-juarezr-firebirdsql-github-action-v1-2-0-dockeraction:latest platform= entrypoint=[] cmd=[]\n[run-tests/build]   | # Creating FirebirdSQL Container: docker run --detach  --name 'firebirdsql' --publish '3050:3050'  --env 'ISC_PASSWORD=masterkey' --env 'EnableLegacyClientAuth=true' 'jacobalberty/firebird:v4.0'\n[run-tests/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create?name=firebirdsql: dial unix /var/run/docker.sock: connect: permission denied.\n[run-tests/build]   | See 'docker run --help'.\n[run-tests/build]   \u274c  Failure - Main juarezr/firebirdsql-github-action@v1.2.0\n[run-tests/build] exit with `FAILURE`: 126\n[run-tests/build] \u2b50 Run Main Store Report Artifact\n[run-tests/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-upload-artifact@v3/ dst=/var/run/act/actions/actions-upload-artifact@v3/\n[run-tests/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-upload-artifact@v3/] user=0 workdir=\n[run-tests/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-upload-artifact@v3/dist/index.js] user= workdir=\n[run-tests/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[run-tests/build]   \ud83d\udcac  ::debug::Search path '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/FirebirdSQL-jaybird/build/reports'\n[run-tests/build]   \ud83d\udea7  ::warning::No files were found with the provided path: build/reports. No artifacts will be uploaded.\n[run-tests/build]   \u2705  Success - Main Store Report Artifact\n[run-tests/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/FirebirdSQL-jaybird/.github/workflows/run-tests-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 36.59480404853821
+    }
+}

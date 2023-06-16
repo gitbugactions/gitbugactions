@@ -1,0 +1,28 @@
+{
+    "repository": "jenkinsci/gitea-plugin",
+    "stars": 170,
+    "language": "java",
+    "size": 429,
+    "clone_url": "https://github.com/jenkinsci/gitea-plugin.git",
+    "timestamp": "2023-06-15T16:39:55.546534Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[cd/validate] \ud83d\ude80  Start image=crawlergpt:latest\n[cd/validate]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[cd/validate]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cd/validate]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cd/validate]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jenkinsci-gitea-plugin] user=0 workdir=\n[cd/validate]   \u2601  git clone 'https://github.com/jenkins-infra/verify-ci-status-action' # ref=v1.2.1\n[cd/validate] \u2b50 Run Pre Verify CI status\n[cd/validate]   \u2705  Success - Pre Verify CI status\n[cd/validate]   \u2601  git clone 'https://github.com/release-drafter/release-drafter' # ref=v5\n[cd/validate]   \u2601  git clone 'https://github.com/jenkins-infra/interesting-category-action' # ref=v1.2.0\n[cd/validate] \u2b50 Run Pre Check interesting categories\n[cd/validate]   \u2705  Success - Pre Check interesting categories\n[cd/validate] \u2b50 Run Main Verify CI status\n[cd/validate]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/jenkins-infra-verify-ci-status-action@v1.2.1/ dst=/var/run/act/actions/jenkins-infra-verify-ci-status-action@v1.2.1/\n[cd/validate]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/jenkins-infra-verify-ci-status-action@v1.2.1/] user=0 workdir=\n[cd/validate] \u2b50 Run Main $GITHUB_ACTION_PATH/run.sh\n[cd/validate]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/verify-ci-status-composite-verify-ci-status.sh] user= workdir=\n[cd/validate]   | success\n[cd/validate]   \u2699  ::set-output:: result=success\n[cd/validate]   \u2705  Success - Main $GITHUB_ACTION_PATH/run.sh\n[cd/validate]   \u2699  ::set-output:: result=success\n[cd/validate]   \u2705  Success - Main Verify CI status\n[cd/validate] \u2b50 Run Main Release Drafter\n[cd/validate]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/release-drafter-release-drafter@v5/ dst=/var/run/act/actions/release-drafter-release-drafter@v5/\n[cd/validate]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/release-drafter-release-drafter@v5/] user=0 workdir=\n[cd/validate]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/release-drafter-release-drafter@v5/dist/index.js] user= workdir=\n[cd/validate]   | \"pull_request_target.opened\" is not a known webhook name (https://developer.github.com/v3/activity/events/types/)\n[cd/validate]   | \"pull_request_target.reopened\" is not a known webhook name (https://developer.github.com/v3/activity/events/types/)\n[cd/validate]   | \"pull_request_target.synchronize\" is not a known webhook name (https://developer.github.com/v3/activity/events/types/)\n[cd/validate]   | \"pull_request_target.edited\" is not a known webhook name (https://developer.github.com/v3/activity/events/types/)\n[cd/validate]   \ud83d\udea7  ::warning::Invalid config file%0A{%0A  name: 'event',%0A  id: '1',%0A  stack: 'Error: context.repo() is not supported for this webhook event.\\n' +%0A    '    at Context.repo (/run/act/actions/release-drafter-release-drafter@v5/dist/index.js:115818:19)\\n' +%0A    '    at Context.config (/run/act/actions/release-drafter-release-drafter@v5/dist/index.js:115923:29)\\n' +%0A    '    at getConfig (/run/act/actions/release-drafter-release-drafter@v5/dist/index.js:142712:38)\\n' +%0A    '    at drafter (/run/act/actions/release-drafter-release-drafter@v5/dist/index.js:142347:26)\\n' +%0A    '    at /run/act/actions/release-drafter-release-drafter@v5/dist/index.js:8816:14\\n' +%0A    '    at processTicksAndRejections (internal/process/task_queues.js:95:5)\\n' +%0A    '    at async Promise.all (index 0)',%0A  type: 'Error'%0A}\n[cd/validate]   \u2757  ::error::Invalid config file\n[cd/validate]   \u274c  Failure - Main Release Drafter\n[cd/validate] exitcode '1': failure\n[cd/validate] \u2b50 Run Post Verify CI status\n[cd/validate]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/jenkins-infra-verify-ci-status-action@v1.2.1/ dst=/var/run/act/actions/jenkins-infra-verify-ci-status-action@v1.2.1/\n[cd/validate]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/jenkins-infra-verify-ci-status-action@v1.2.1/] user=0 workdir=\n[cd/validate]   \u2705  Success - Post Verify CI status\n[cd/validate] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'validate' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/jenkinsci-gitea-plugin/.github/workflows/cd-crawler.yaml",
+        "build_tool": "maven",
+        "elapsed_time": 25.88584542274475
+    }
+}

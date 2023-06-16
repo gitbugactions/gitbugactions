@@ -1,0 +1,28 @@
+{
+    "repository": "Fabricators-of-Create/Porting-Lib",
+    "stars": 66,
+    "language": "java",
+    "size": 3032,
+    "clone_url": "https://github.com/Fabricators-of-Create/Porting-Lib.git",
+    "timestamp": "2023-06-15T18:16:09.576717Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Fabricators-of-Create-Porting-Lib] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[build/build] Non-terminating error while running 'git clone': some refs were not updated\n[build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[build/build]   \u2601  git clone 'https://github.com/Kir-Antipov/mc-publish' # ref=v3.2\n[build/build] \ud83e\uddea  Matrix: map[java:17]\n[build/build] \u2b50 Run Main checkout repository\n[build/build]   \u2705  Success - Main checkout repository\n[build/build] \u2b50 Run Main setup jdk 17\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[build/build]   \u2753  ::group::Installed distributions\n[build/build]   | Trying to resolve the latest version from remote\n[build/build]   | Resolved latest version as 17.0.7+7\n[build/build]   | Trying to download...\n[build/build]   | Downloading Java 17.0.7+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz ...\n[build/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%252B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz\n[build/build]   \ud83d\udcac  ::debug::Destination /tmp/a6b80d1b-ae57-4327-8759-822846ec4b9e\n[build/build]   \u274c  Failure - Main setup jdk 17\n[build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 3c91c43482744ade867d272e56a5b5e2973a9fd245f65f8b75f00540eff7b0de\n[build/build] \u2b50 Run Post setup jdk 17\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[build/build]   \u274c  Failure - Post setup jdk 17\n[build/build] failed to remove container: Error response from daemon: No such container: 3c91c43482744ade867d272e56a5b5e2973a9fd245f65f8b75f00540eff7b0de\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-build-build-ffe70f9357c2d7c14ebfde912d047956fb5874e05393411fc4db9342708ced2f-env: volume is in use - [0ecf96987f86cab5d1b2f7404dab2b4547e4fae6c9be8b1b2bfd6f7f98ddd3a3] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 3c91c43482744ade867d272e56a5b5e2973a9fd245f65f8b75f00540eff7b0de (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Fabricators-of-Create-Porting-Lib/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 102.16528797149658
+    }
+}

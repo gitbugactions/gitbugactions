@@ -1,0 +1,28 @@
+{
+    "repository": "fengyuecanzhu/FYReader",
+    "stars": 182,
+    "language": "java",
+    "size": 85734,
+    "clone_url": "https://github.com/fengyuecanzhu/FYReader.git",
+    "timestamp": "2023-06-15T17:54:30.413401Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fengyuecanzhu-FYReader] user=0 workdir=\n[build/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v2\n[build/build]   \u2601  git clone 'https://github.com/softprops/action-gh-release' # ref=v1\n[build/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[build/build] \u2b50 Run Main actions/checkout@v2\n[build/build]   \u2705  Success - Main actions/checkout@v2\n[build/build] \u2b50 Run Main Checkout Android Keystore\n[build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-checkout@v2/ dst=/var/run/act/actions/actions-checkout@v2/\n[build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-checkout@v2/] user=0 workdir=\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-checkout@v2/dist/index.js] user= workdir=\n[build/build]   \ud83d\udcac  ::debug::GITHUB_WORKSPACE = '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fengyuecanzhu-FYReader'\n[build/build]   \ud83d\udcac  ::debug::qualified repository = 'fengyuecanzhu/Key'\n[build/build]   \ud83d\udcac  ::debug::ref = ''\n[build/build]   \ud83d\udcac  ::debug::commit = 'undefined'\n[build/build]   \ud83d\udcac  ::debug::clean = true\n[build/build]   \ud83d\udcac  ::debug::fetch depth = 1\n[build/build]   \ud83d\udcac  ::debug::lfs = false\n[build/build]   \ud83d\udcac  ::debug::submodules = false\n[build/build]   \ud83d\udcac  ::debug::recursive submodules = false\n[build/build]   \u2757  ::error::Input required and not supplied: token\n[build/build]   \u274c  Failure - Main Checkout Android Keystore\n[build/build] exitcode '1': failure\n[build/build] \u2b50 Run Post Checkout Android Keystore\n[build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-checkout@v2/dist/index.js] user= workdir=\n[build/build]   \u2705  Success - Post Checkout Android Keystore\n[build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/fengyuecanzhu-FYReader/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 57.25404453277588
+    }
+}

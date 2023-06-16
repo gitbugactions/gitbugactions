@@ -1,0 +1,28 @@
+{
+    "repository": "linqs/psl",
+    "stars": 281,
+    "language": "java",
+    "size": 8894,
+    "clone_url": "https://github.com/linqs/psl.git",
+    "timestamp": "2023-06-15T13:49:30.074126Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Main/build-test] \ud83d\ude80  Start image=crawlergpt:latest\n[Main/style-lint] \ud83d\ude80  Start image=crawlergpt:latest\n[Main/build-test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Main/style-lint]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Main/style-lint]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/build-test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/build-test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/style-lint]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Main/style-lint]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/linqs-psl] user=0 workdir=\n[Main/build-test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/linqs-psl] user=0 workdir=\n[Main/style-lint]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Main/build-test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Main/style-lint] Non-terminating error while running 'git clone': some refs were not updated\n[Main/style-lint]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[Main/style-lint] Unable to checkout bd6b4b6205c4dbad673328db7b31b7fab9e241c0: invalid checksum\n[Main/build-test] Non-terminating error while running 'git clone': some refs were not updated\n[Main/build-test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[Main/build-test] Unable to checkout bd6b4b6205c4dbad673328db7b31b7fab9e241c0: invalid checksum\n[Main/style-lint] \ud83c\udfc1  Job succeeded\n[Main/build-test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/linqs-psl/.github/workflows/main-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 7.884401082992554
+    }
+}

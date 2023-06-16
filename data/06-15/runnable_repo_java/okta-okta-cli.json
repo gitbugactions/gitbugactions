@@ -1,0 +1,28 @@
+{
+    "repository": "okta/okta-cli",
+    "stars": 75,
+    "language": "java",
+    "size": 102836,
+    "clone_url": "https://github.com/okta/okta-cli.git",
+    "timestamp": "2023-06-15T17:30:23.120140Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java GraalVM CI/GraalVM - ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[Java GraalVM CI/GraalVM - ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/okta-okta-cli] user=0 workdir=\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \u2601  git clone 'https://github.com/graalvm/setup-graalvm' # ref=v1.0.11\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Java GraalVM CI/GraalVM - ubuntu-latest] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[Java GraalVM CI/GraalVM - ubuntu-latest] \u2b50 Run Main actions/checkout@v3\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \u2705  Success - Main actions/checkout@v3\n[Java GraalVM CI/GraalVM - ubuntu-latest] \u2b50 Run Main Set up GraalVM\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/graalvm-setup-graalvm@v1.0.11/ dst=/var/run/act/actions/graalvm-setup-graalvm@v1.0.11/\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/graalvm-setup-graalvm@v1.0.11/] user=0 workdir=\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/graalvm-setup-graalvm@v1.0.11/dist/main/index.js] user= workdir=\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \u2757  ::error::Could not find latest GraalVM release: jdk-20.0.1\n[Java GraalVM CI/GraalVM - ubuntu-latest]   \u274c  Failure - Main Set up GraalVM\n[Java GraalVM CI/GraalVM - ubuntu-latest] exitcode '1': failure\n[Java GraalVM CI/GraalVM - ubuntu-latest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-Java-GraalVM-CI-GraalVM--ubuntu-latest-47221f16c40c53a2cb5d87cc725748c9de8c3e7eddc94d940d175e7b07b23574\" is already in use by container \"97d2ea1d0df9a0f4df886f6c125ecfd80276995e17e4b28cba631f903a4262b2\". You have to remove (or rename) that container to be able to reuse that name.'\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/okta-okta-cli/.github/workflows/graalvm-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 102.33956241607666
+    }
+}

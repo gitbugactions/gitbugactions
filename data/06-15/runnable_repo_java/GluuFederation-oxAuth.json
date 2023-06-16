@@ -1,0 +1,29 @@
+{
+    "repository": "GluuFederation/oxAuth",
+    "stars": 397,
+    "language": "java",
+    "size": 31243,
+    "clone_url": "https://github.com/GluuFederation/oxAuth.git",
+    "timestamp": "2023-06-15T14:51:29.983924Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Code quality check/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Code quality check/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Code quality check/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Code quality check/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Code quality check/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/GluuFederation-oxAuth] user=0 workdir=\n[Code quality check/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3.3.0\n[Code quality check/build] Non-terminating error while running 'git clone': some refs were not updated\n[Code quality check/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3.0.2\n[Code quality check/build]   \u2601  git clone 'https://github.com/SonarSource/sonarcloud-github-action' # ref=master\n[Code quality check/build] \u2b50 Run Main actions/checkout@v2\n[Code quality check/build]   \u2705  Success - Main actions/checkout@v2\n[Code quality check/build] Error response from daemon: No such container: c3d0120ac97bd5cc8d1c8609de80ba20dc1c4459c1a3a0921a28973403e9c1db\n[Code quality check/build] \u2b50 Run Main Set up JDK 11\n[Code quality check/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3.3.0/ dst=/var/run/act/actions/actions-setup-java@v3.3.0/\n[Code quality check/build]   \u274c  Failure - Main Set up JDK 11\n[Code quality check/build] Error response from daemon: No such container: c3d0120ac97bd5cc8d1c8609de80ba20dc1c4459c1a3a0921a28973403e9c1db\n[Code quality check/build] \u2b50 Run Post Set up JDK 11\n[Code quality check/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3.3.0/dist/cleanup/index.js] user= workdir=\n[Code quality check/build]   \u274c  Failure - Post Set up JDK 11\n[Code quality check/build] failed to remove container: Error response from daemon: No such container: c3d0120ac97bd5cc8d1c8609de80ba20dc1c4459c1a3a0921a28973403e9c1db\n[Code quality check/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Code-quality-check-build-4086c04e8900b94d1f18e6aee301613e1fb365c70887159810631b96c15d4f8a-env: volume is in use - [e26494263f40411ec336afac0ba1f9efc9530fe72cb77f03f8558be298551726] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: c3d0120ac97bd5cc8d1c8609de80ba20dc1c4459c1a3a0921a28973403e9c1db (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/GluuFederation-oxAuth/.github/workflows/central_code_quality_check-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 23.35956645011902
+    }
+}

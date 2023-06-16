@@ -1,0 +1,28 @@
+{
+    "repository": "JodaOrg/joda-convert",
+    "stars": 86,
+    "language": "java",
+    "size": 492,
+    "clone_url": "https://github.com/JodaOrg/joda-convert.git",
+    "timestamp": "2023-06-15T13:46:36.432400Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/JodaOrg-joda-convert] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/github/codeql-action' # ref=v2\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/github/codeql-action' # ref=v2\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build] \u2b50 Run Main Checkout\n[Build/build]   \u2705  Success - Main Checkout\n[Build/build] \u2b50 Run Main Set up JDK\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Build/build]   \u2753  ::group::Installed distributions\n[Build/build]   | Trying to resolve the latest version from remote\n[Build/build]   | Resolved latest version as 11.0.19+7\n[Build/build]   | Trying to download...\n[Build/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[Build/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[Build/build]   \ud83d\udcac  ::debug::Destination /tmp/b3899e65-7ed0-42d0-8503-7d46a27c86a6\n[Build/build]   \u274c  Failure - Main Set up JDK\n[Build/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 42f544e50f6dd8403a270b029e65f1ddb5cfe6215fa8ddcbe9b2c334fa0a42a3\n[Build/build] \u2b50 Run Post Set up JDK\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Build/build]   \u274c  Failure - Post Set up JDK\n[Build/build] failed to remove container: Error response from daemon: No such container: 42f544e50f6dd8403a270b029e65f1ddb5cfe6215fa8ddcbe9b2c334fa0a42a3\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Build-build-75c1633f7e6841be275e2c4040eaa0dd33d71ab392b6b6b2483256e051756329-env: volume is in use - [bee35a9abae62abdd747d7a1dc24cb39786bd21d19f622b77ee117c05fbb8a5a] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 42f544e50f6dd8403a270b029e65f1ddb5cfe6215fa8ddcbe9b2c334fa0a42a3 (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/JodaOrg-joda-convert/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 14.201432466506958
+    }
+}

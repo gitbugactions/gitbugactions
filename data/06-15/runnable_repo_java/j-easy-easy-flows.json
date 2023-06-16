@@ -1,0 +1,28 @@
+{
+    "repository": "j-easy/easy-flows",
+    "stars": 578,
+    "language": "java",
+    "size": 188,
+    "clone_url": "https://github.com/j-easy/easy-flows.git",
+    "timestamp": "2023-06-15T16:34:26.384363Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/j-easy-easy-flows] user=0 workdir=\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v1\n[Java CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[Java CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI/build] \u2b50 Run Main Checkout source code\n[Java CI/build]   \u274c  Failure - Main Checkout source code\n[Java CI/build] The runs.using key must be one of: [docker node12 node16 composite], got \n[Java CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/j-easy-easy-flows/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 11.188311576843262
+    }
+}

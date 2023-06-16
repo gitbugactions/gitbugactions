@@ -1,0 +1,28 @@
+{
+    "repository": "602723113/ParticleLib",
+    "stars": 61,
+    "language": "java",
+    "size": 234,
+    "clone_url": "https://github.com/602723113/ParticleLib.git",
+    "timestamp": "2023-06-15T17:46:26.085139Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Gradle/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Gradle/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Gradle/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/602723113-ParticleLib] user=0 workdir=\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Gradle/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Gradle/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Java CI with Gradle/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Gradle/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Gradle/build] \u2b50 Run Main Set up JDK 11\n[Java CI with Gradle/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u2753  ::group::Installed distributions\n[Java CI with Gradle/build]   | Trying to resolve the latest version from remote\n[Java CI with Gradle/build]   | Resolved latest version as 11.0.19+7\n[Java CI with Gradle/build]   | Trying to download...\n[Java CI with Gradle/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[Java CI with Gradle/build]   \ud83d\udcac  ::debug::Destination /tmp/9210008d-6e90-4663-95c0-00a93195404f\n[Java CI with Gradle/build]   \u274c  Failure - Main Set up JDK 11\n[Java CI with Gradle/build] Error response from daemon: No such container: a4780526b9fed9a2342e0f42a81badd27f9297ffaa2a6eef4bac4b4a2f0cb031\n[Java CI with Gradle/build] \u2b50 Run Post Set up JDK 11\n[Java CI with Gradle/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Gradle/build]   \u274c  Failure - Post Set up JDK 11\n[Java CI with Gradle/build] failed to remove container: Error response from daemon: No such container: a4780526b9fed9a2342e0f42a81badd27f9297ffaa2a6eef4bac4b4a2f0cb031\n[Java CI with Gradle/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Gradle-build-42c27d48dbe5641fe5e32adbd8f632254df873720f678a51094f101f6c26aea2-env: volume is in use - [44b61003a4a9a27d33eaaf28e24ee85bcde57645eac65624502b7ed04e05d3c1] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: a4780526b9fed9a2342e0f42a81badd27f9297ffaa2a6eef4bac4b4a2f0cb031 (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/602723113-ParticleLib/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 40.1090452671051
+    }
+}

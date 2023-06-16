@@ -1,0 +1,28 @@
+{
+    "repository": "libpd/pd-for-android",
+    "stars": 338,
+    "language": "java",
+    "size": 24342,
+    "clone_url": "https://github.com/libpd/pd-for-android.git",
+    "timestamp": "2023-06-15T13:56:57.159281Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/libpd-pd-for-android] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[Android CI/build] \u2b50 Run Main actions/checkout@v2\n[Android CI/build]   \u2705  Success - Main actions/checkout@v2\n[Android CI/build] \u2b50 Run Main git submodule sync --recursive\ngit submodule update --init --recursive\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[Android CI/build]   | Submodule 'PdCore/src/main/jni/libpd' (git://github.com/libpd/libpd.git) registered for path 'PdCore/src/main/jni/libpd'\n[Android CI/build]   | Cloning into '/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/libpd-pd-for-android/PdCore/src/main/jni/libpd'...\n[Android CI/build]   \u274c  Failure - Main git submodule sync --recursive\ngit submodule update --init --recursive\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 8d7f55b4e9c0d872812a01e55cda8605d94abcae70753def9919f3192d3801f4\n[Android CI/build] failed to remove container: Error response from daemon: No such container: 8d7f55b4e9c0d872812a01e55cda8605d94abcae70753def9919f3192d3801f4\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [6a97eaa6c035208e24b430e3d4e79075178665c47375c536fc79ed0e43c8a5fb] (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/libpd-pd-for-android/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 98.94062852859497
+    }
+}

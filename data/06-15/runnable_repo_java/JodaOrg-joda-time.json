@@ -1,0 +1,30 @@
+{
+    "repository": "JodaOrg/joda-time",
+    "stars": 4910,
+    "language": "java",
+    "size": 12697,
+    "clone_url": "https://github.com/JodaOrg/joda-time.git",
+    "timestamp": "2023-06-15T13:45:32.687675Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "maven",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/JodaOrg-joda-time] user=0 workdir=\n[Build/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=3f07048e3d294f56e9b90ac5ea2c6f74e9ad0f98\n[Build/build] Non-terminating error while running 'git clone': some refs were not updated\n[Build/build]   \u2601  git clone 'https://github.com/github/codeql-action' # ref=8aff97f12c99086bdb92ff62ae06dbbcdf07941b\n[Build/build]   \u2601  git clone 'https://github.com/github/codeql-action' # ref=8aff97f12c99086bdb92ff62ae06dbbcdf07941b\n[Build/build] \u2b50 Run Main Checkout\n[Build/build]   \u2705  Success - Main Checkout\n[Build/build] Error response from daemon: No such container: bee35a9abae62abdd747d7a1dc24cb39786bd21d19f622b77ee117c05fbb8a5a\n[Build/build] \u2b50 Run Main Set up JDK\n[Build/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@3f07048e3d294f56e9b90ac5ea2c6f74e9ad0f98/ dst=/var/run/act/actions/actions-setup-java@3f07048e3d294f56e9b90ac5ea2c6f74e9ad0f98/\n[Build/build]   \u274c  Failure - Main Set up JDK\n[Build/build] Error response from daemon: No such container: bee35a9abae62abdd747d7a1dc24cb39786bd21d19f622b77ee117c05fbb8a5a\n[Build/build] \u2b50 Run Post Set up JDK\n[Build/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@3f07048e3d294f56e9b90ac5ea2c6f74e9ad0f98/dist/cleanup/index.js] user= workdir=\n[Build/build]   \u274c  Failure - Post Set up JDK\n[Build/build] failed to remove container: Error response from daemon: No such container: bee35a9abae62abdd747d7a1dc24cb39786bd21d19f622b77ee117c05fbb8a5a\n[Build/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Build-build-75c1633f7e6841be275e2c4040eaa0dd33d71ab392b6b6b2483256e051756329-env: volume is in use - [14d51d1d8511b5321b1e39226f5a37d6ce66e765017204777e02dcdacae9d73a] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: bee35a9abae62abdd747d7a1dc24cb39786bd21d19f622b77ee117c05fbb8a5a (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/JodaOrg-joda-time/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 89.8799877166748
+    }
+}

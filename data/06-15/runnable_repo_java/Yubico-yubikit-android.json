@@ -1,0 +1,29 @@
+{
+    "repository": "Yubico/yubikit-android",
+    "stars": 77,
+    "language": "java",
+    "size": 2560,
+    "clone_url": "https://github.com/Yubico/yubikit-android.git",
+    "timestamp": "2023-06-15T17:30:21.747106Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Android CI/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Android CI/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Android CI/build] failed to remove container: Error response from daemon: removal of container d4bcdc6491f07822629f6d9a9d7cec55f076a68aabffed852c7c4ac220208f1e is already in progress\n[Android CI/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Yubico-yubikit-android] user=0 workdir=\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Android CI/build] Non-terminating error while running 'git clone': some refs were not updated\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Android CI/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[Android CI/build] \u2b50 Run Main actions/checkout@v3\n[Android CI/build]   \u2705  Success - Main actions/checkout@v3\n[Android CI/build] \u2b50 Run Main set up JDK\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Android CI/build]   | OCI runtime exec failed: exec failed: cannot exec in a stopped container: unknown\r\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Main set up JDK\n[Android CI/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container cca1bbf8eefac166e1ebc9aacd60d9d85115b6686d0b1cf9721917a7cd423505\n[Android CI/build] \u2b50 Run Main Upload build reports\n[Android CI/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-upload-artifact@v3/ dst=/var/run/act/actions/actions-upload-artifact@v3/\n[Android CI/build]   \u274c  Failure - Main Upload build reports\n[Android CI/build] Error response from daemon: No such container: cca1bbf8eefac166e1ebc9aacd60d9d85115b6686d0b1cf9721917a7cd423505\n[Android CI/build] \u2b50 Run Post set up JDK\n[Android CI/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Android CI/build]   \u274c  Failure - Post set up JDK\n[Android CI/build] failed to remove container: Error response from daemon: No such container: cca1bbf8eefac166e1ebc9aacd60d9d85115b6686d0b1cf9721917a7cd423505\n[Android CI/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Android-CI-build-e97b3ca9db373efbc66d0f1b5f6aa64dfde0101991349c2360bc1d6e768719d9-env: volume is in use - [d80c7b88ad8d8c7e9fa99873f709cbd179d69bfbd3ee0208517d9feb9312fa08] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: cca1bbf8eefac166e1ebc9aacd60d9d85115b6686d0b1cf9721917a7cd423505 (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Yubico-yubikit-android/.github/workflows/android-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 44.61624717712402
+    }
+}

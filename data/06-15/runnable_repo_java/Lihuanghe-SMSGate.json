@@ -1,0 +1,29 @@
+{
+    "repository": "Lihuanghe/SMSGate",
+    "stars": 683,
+    "language": "java",
+    "size": 6341,
+    "clone_url": "https://github.com/Lihuanghe/SMSGate.git",
+    "timestamp": "2023-06-15T15:37:46.921755Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Java CI with Maven/build] \ud83d\ude80  Start image=crawlergpt:latest\n[Java CI with Maven/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Java CI with Maven/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Lihuanghe-SMSGate] user=0 workdir=\n[Java CI with Maven/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Java CI with Maven/build] Non-terminating error while running 'git clone': some refs were not updated\n[Java CI with Maven/build] \u2b50 Run Main actions/checkout@v3\n[Java CI with Maven/build]   \u2705  Success - Main actions/checkout@v3\n[Java CI with Maven/build] \u2b50 Run Main Set up JDK 8\n[Java CI with Maven/build]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[Java CI with Maven/build]   \u2753  ::group::Installed distributions\n[Java CI with Maven/build]   | Trying to resolve the latest version from remote\n[Java CI with Maven/build]   | Resolved latest version as 8.0.372+7\n[Java CI with Maven/build]   | Trying to download...\n[Java CI with Maven/build]   | Downloading Java 8.0.372+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz ...\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Destination /tmp/ad8b26ba-564e-4b0c-b573-76d3bbb1ce0a\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::download complete\n[Java CI with Maven/build]   | Extracting Java archive...\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::Checking tar --version\n[Java CI with Maven/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[Java CI with Maven/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/4f794f03-3263-40c8-ab30-27666fae8f0b -f /tmp/ad8b26ba-564e-4b0c-b573-76d3bbb1ce0a\n[Java CI with Maven/build]   \u274c  Failure - Main Set up JDK 8\n[Java CI with Maven/build] Error response from daemon: Could not find the file /var/run/act/workflow/pathcmd.txt in container 5a901a05b4cfafd6b375d1bbdd0cfd6efbd0b3d10e1f8c3a9d6b513191e29d57\n[Java CI with Maven/build] \u2b50 Run Post Set up JDK 8\n[Java CI with Maven/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[Java CI with Maven/build]   \u274c  Failure - Post Set up JDK 8\n[Java CI with Maven/build] failed to remove container: Error response from daemon: No such container: 5a901a05b4cfafd6b375d1bbdd0cfd6efbd0b3d10e1f8c3a9d6b513191e29d57\n[Java CI with Maven/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error response from daemon: remove act-Java-CI-with-Maven-build-32bf9cfa4e470e010625c4e8cd71bb26f43e206dcc456963d457735faa2f2549-env: volume is in use - [09c8a32c45e622bb8bf45ca7e8b2072778be1f8ba5da70bbd5b0d7447936133c] (original error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error response from daemon: No such container: 5a901a05b4cfafd6b375d1bbdd0cfd6efbd0b3d10e1f8c3a9d6b513191e29d57 (original error: <nil>) (original error: <nil>) (original error: <nil>)) (original error: <nil>)\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/Lihuanghe-SMSGate/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 15.573717594146729
+    }
+}

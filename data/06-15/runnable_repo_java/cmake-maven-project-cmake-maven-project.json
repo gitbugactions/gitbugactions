@@ -1,0 +1,29 @@
+{
+    "repository": "cmake-maven-project/cmake-maven-project",
+    "stars": 68,
+    "language": "java",
+    "size": 443,
+    "clone_url": "https://github.com/cmake-maven-project/cmake-maven-project.git",
+    "timestamp": "2023-06-15T15:48:48.082041Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[Build/Build on bullseye armv6] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/Build                  ] \ud83d\ude80  Start image=crawlergpt:latest\n[Build/Build on bullseye armv6]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/Build                  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[Build/Build on bullseye armv6]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build                  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build                  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build on bullseye armv6]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[Build/Build                  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/cmake-maven-project-cmake-maven-project] user=0 workdir=\n[Build/Build on bullseye armv6]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/cmake-maven-project-cmake-maven-project] user=0 workdir=\n[Build/Build                  ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[Build/Build on bullseye armv6]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Build/Build                  ] Non-terminating error while running 'git clone': some refs were not updated\n[Build/Build                  ]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[Build/Build on bullseye armv6] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Build/Build                  ] Unable to checkout 88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8: invalid checksum\n[Build/Build on bullseye armv6] \ud83c\udfc1  Job succeeded\n[Build/Build                  ] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: invalid checksum\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/cmake-maven-project-cmake-maven-project/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 17.897953748703003
+    }
+}

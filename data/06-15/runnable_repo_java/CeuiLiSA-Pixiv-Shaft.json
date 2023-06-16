@@ -1,0 +1,28 @@
+{
+    "repository": "CeuiLiSA/Pixiv-Shaft",
+    "stars": 3143,
+    "language": "java",
+    "size": 164257,
+    "clone_url": "https://github.com/CeuiLiSA/Pixiv-Shaft.git",
+    "timestamp": "2023-06-15T17:22:34.189235Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_data": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[CI/Build apk] \ud83d\ude80  Start image=crawlergpt:latest\n[CI/Build apk]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[CI/Build apk]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Build apk]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[CI/Build apk]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /tmp/569e0364-0b80-11ee-a890-af2cc187fc11/CeuiLiSA-Pixiv-Shaft] user=0 workdir=\n[CI/Build apk]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.5.0\n[CI/Build apk]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[CI/Build apk] Non-terminating error while running 'git clone': some refs were not updated\n[CI/Build apk]   \u2601  git clone 'https://github.com/eskatos/gradle-command-action' # ref=v1\n[CI/Build apk] Non-terminating error while running 'git clone': some refs were not updated\n[CI/Build apk]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[CI/Build apk]   \u2601  git clone 'https://github.com/eskatos/gradle-command-action' # ref=v1\n[CI/Build apk] Non-terminating error while running 'git clone': some refs were not updated\n[CI/Build apk]   \u2601  git clone 'https://github.com/softprops/action-gh-release' # ref=v1\n[CI/Build apk] \u2b50 Run Main Cancel previous runs\n[CI/Build apk]   \ud83d\udc33  docker cp src=/home/andre-silva/.cache/act/styfle-cancel-workflow-action@0.5.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.5.0/\n[CI/Build apk]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1000 /var/run/act/actions/styfle-cancel-workflow-action@0.5.0/] user=0 workdir=\n[CI/Build apk]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.5.0/dist/index.js] user= workdir=\n[CI/Build apk]   | {\n[CI/Build apk]   |   eventName: 'push',\n[CI/Build apk]   |   sha: '859a011ce4b38e0d2191fe48630681fee7a6ded8',\n[CI/Build apk]   |   headSha: '859a011ce4b38e0d2191fe48630681fee7a6ded8',\n[CI/Build apk]   |   branch: 'master',\n[CI/Build apk]   |   owner: 'CeuiLiSA',\n[CI/Build apk]   |   repo: 'Pixiv-Shaft',\n[CI/Build apk]   |   GITHUB_RUN_ID: '1'\n[CI/Build apk]   | }\n[CI/Build apk]   | Found token: yes\n[CI/Build apk]   \u2757  ::error::Not Found\n[CI/Build apk]   \u274c  Failure - Main Cancel previous runs\n[CI/Build apk] exitcode '1': failure\n[CI/Build apk] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Build apk' failed\n",
+        "workflow": "/tmp/569e0364-0b80-11ee-a890-af2cc187fc11/CeuiLiSA-Pixiv-Shaft/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 28.107816696166992
+    }
+}
