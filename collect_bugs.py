@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, re
 import uuid, json
 import shutil
 import pygit2
@@ -10,7 +10,7 @@ import fire
 from typing import List
 from enum import Enum
 from datetime import datetime
-from github import Github, Repository
+from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
 from dataclasses import asdict
 from crawlergpt.util import delete_repo_clone
@@ -34,6 +34,7 @@ class BugPatch:
         self.bug_patch: PatchSet = bug_patch
         self.test_patch: PatchSet = test_patch
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
+        self.issues = None
         # The actions are grouped by each phase of the strategy used
         self.actions_runs: List[List[ActTestsRun]] = []
 
@@ -84,13 +85,14 @@ class BugPatch:
             'bug_patch': str(self.bug_patch),
             'test_patch': str(self.test_patch),
             'actions_runs': actions_runs,
-            'strategy': self.strategy_used.name
+            'strategy': self.strategy_used.name,
+            'issues': self.issues
         }
 
 
 class PatchCollector:
     def __init__(self, repo: Repository):
-        self.repo = repo
+        self.repo: Repository = repo
         self.language = repo.language.strip().lower()
         self.cloned = False
         self.clone_lock = threading.Lock()
@@ -104,7 +106,7 @@ class PatchCollector:
         self.repo_path = os.path.join(tempfile.gettempdir(), self.repo.full_name.replace('/', '-'))
         self.repo_path = os.path.join(self.repo_path, str(uuid.uuid4()))
         logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-        self.repo_clone = pygit2.clone_repository(
+        self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, 
             self.repo_path
         )
@@ -224,6 +226,57 @@ class PatchCollector:
 
         return test_patch_runs
     
+
+    def __get_related_commit_info(self, commit_hex: str):
+        if not self.cloned:
+            self.__clone_repo()
+        
+        commit = self.repo_clone.revparse_single(commit_hex)
+        matches = re.findall("#[0-9]+", commit.message)
+        issues = []
+
+        if len(matches) > 0:
+            token = GithubToken.get_token()
+            # We need to get the repo again to use the current token
+            repo = token.github.get_repo(self.repo.full_name)
+        else:
+            return []
+
+        for match in matches:
+            match_id = int(match[1:])
+            try:
+                # GitHub's REST API considers every pull request an issue
+                # https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#get-an-issue
+                issue = repo.get_issue(match_id)
+                is_pull_request = issue.pull_request is not None
+                comments, labels, review_comments = [], [], None
+
+                if is_pull_request:
+                    review_comments = []
+                    pull_request = issue.as_pull_request()
+                    for comment in pull_request.get_review_comments():
+                        review_comments.append(comment.body)
+
+                for comment in issue.get_comments():
+                    comments.append(comment.body)
+
+                for label in issue.get_labels():
+                    labels.append({'name': label.name, 'description': label.description})
+
+                issues.append({
+                    'id': match_id,
+                    'title': issue.title,
+                    'body': issue.body,
+                    'comments': comments,
+                    'labels': labels,
+                    'is_pull_request': is_pull_request,
+                    'review_comments': review_comments
+                })
+            except (UnknownObjectException, GithubException):
+                continue
+
+        return issues
+    
     def get_possible_patches(self):
         if not self.cloned:
             self.__clone_repo()
@@ -276,6 +329,7 @@ class PatchCollector:
         # PASS_PASS strategy
         if prev_commit_passed and prev_with_diff_failed and curr_commit_passed:
             bug_patch.strategy_used = CollectionStrategy.PASS_PASS
+            bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
             return True
 
         prev_commit_failed = (bug_patch.actions_runs[0] is not None and 
@@ -284,6 +338,7 @@ class PatchCollector:
         # FAIL_PASS strategy
         if prev_commit_failed and curr_commit_passed:
             bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
+            bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
             return True
 
         return False
