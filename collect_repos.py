@@ -63,8 +63,27 @@ class CollectReposStrategy(RepoStrategy):
                 logging.info(f"Running actions for {repo.full_name}")
                 act_run = actions.run_workflow(actions.test_workflows[0])
                 data['actions_successful'] = not act_run.failed
-                run_data = asdict(act_run)
-                data['actions_data'] = run_data
+                data['actions_tests'] = []
+                for test in act_run.tests:
+                    results = []
+                    for result in test.result:
+                        results.append({
+                            'result': result.__class__.__name__,
+                            'message': result.message,
+                            'type': result.type
+                        })
+                    if len(results) == 0:
+                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
+
+                    data['actions_tests'].append({
+                        'classname': test.classname,
+                        'name': test.name,
+                        'time': test.time,
+                        'results': results,
+                        'stdout': test.system_out,
+                        'stderr': test.system_err
+                    })
+
             
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
