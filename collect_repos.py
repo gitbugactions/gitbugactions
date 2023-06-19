@@ -39,7 +39,7 @@ class CollectReposStrategy(RepoStrategy):
             'clone_url': repo.clone_url,
             'timestamp': datetime.utcnow().isoformat() + "Z",
             'clone_success': False,
-            'number of actions': 0,
+            'number_of_actions': 0,
             'number_of_test_actions': 0,
             'actions_successful': False
         }
