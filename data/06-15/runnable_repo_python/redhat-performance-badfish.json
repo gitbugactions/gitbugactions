@@ -1,0 +1,2615 @@
+{
+    "repository": "redhat-performance/badfish",
+    "stars": 71,
+    "language": "python",
+    "size": 737,
+    "clone_url": "https://github.com/redhat-performance/badfish.git",
+    "timestamp": "2023-06-16T13:08:37.263841Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 5,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_bios_attributes.TestSetBiosAttribute",
+            "name": "test_set_bios_attribute_bad_attr",
+            "time": 0.181,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_attributes.TestSetBiosAttribute",
+            "name": "test_set_bios_attribute_bad_value",
+            "time": 0.151,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_attributes.TestSetBiosAttribute",
+            "name": "test_set_bios_attribute_ok",
+            "time": 0.208,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_attributes.TestGetBiosAttribute",
+            "name": "test_get_all_attributes",
+            "time": 0.138,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_attributes.TestGetBiosAttribute",
+            "name": "test_get_one_attribute_ok",
+            "time": 0.171,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_attributes.TestGetBiosAttribute",
+            "name": "test_get_one_bad_attribute",
+            "time": 0.148,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestSetBiosPass",
+            "name": "test_set_bios_pass_missing_arg",
+            "time": 0.138,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestSetBiosPass",
+            "name": "test_set_bios_pass_ok",
+            "time": 0.187,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestRemoveBiosPass",
+            "name": "test_rm_bios_pass_missing_arg",
+            "time": 0.116,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestRemoveBiosPass",
+            "name": "test_rm_bios_pass_ok",
+            "time": 0.174,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestChangeBiosPass",
+            "name": "test_set_bios_pass_cmd_failed",
+            "time": 0.116,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestChangeBiosPass",
+            "name": "test_set_bios_pass_not_supported",
+            "time": 0.126,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestSetBiosPassCheckJobStatus",
+            "name": "test_sbp_check_job_bad_code",
+            "time": 0.19,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestSetBiosPassCheckJobStatus",
+            "name": "test_sbp_check_job_fail_msg",
+            "time": 0.201,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_bios_password.TestSetBiosPassCheckJobStatus",
+            "name": "test_sbp_check_job_unexpected_msg",
+            "time": 0.196,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to.TestBootTo",
+            "name": "test_boot_to",
+            "time": 0.215,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to.TestBootTo",
+            "name": "test_boot_to_bad_request",
+            "time": 0.22,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to.TestBootTo",
+            "name": "test_boot_to_no_match",
+            "time": 0.168,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to.TestBootTo",
+            "name": "test_boot_to_service_err_handler",
+            "time": 0.166,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to.TestBootTo",
+            "name": "test_boot_to_service_unavailable",
+            "time": 0.166,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to_mac.TestBootToMac",
+            "name": "test_boot_to_bad_mac",
+            "time": 0.148,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to_mac.TestBootToMac",
+            "name": "test_boot_to_good_mac",
+            "time": 0.231,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to_type.TestBootTo",
+            "name": "test_boot_to_bad_file",
+            "time": 0.117,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to_type.TestBootTo",
+            "name": "test_boot_to_bad_type",
+            "time": 0.149,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to_type.TestBootTo",
+            "name": "test_boot_to_no_file",
+            "time": 0.115,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_boot_to_type.TestBootTo",
+            "name": "test_boot_to_type_foreman",
+            "time": 0.247,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_bad_type",
+            "time": 0.158,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_boot_incorrect_path",
+            "time": 0.123,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_boot_less_valid_devices",
+            "time": 0.328,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_boot_patch_error",
+            "time": 0.345,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_boot_pxe",
+            "time": 0.393,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_no_interfaces",
+            "time": 0.194,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_to_director",
+            "time": 0.414,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_to_director_no_boot",
+            "time": 0.382,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_to_foreman",
+            "time": 0.3,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_to_same",
+            "time": 0.188,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestChangeBoot",
+            "name": "test_change_to_uefi",
+            "time": 0.199,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestToggleDevice",
+            "name": "test_toggle_bad_device",
+            "time": 0.093,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_change_boot.TestToggleDevice",
+            "name": "test_toggle_ok",
+            "time": 0.121,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_check_boot.TestCheckBoot",
+            "name": "test_check_boot_no_match",
+            "time": 0.19,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_check_boot.TestCheckBoot",
+            "name": "test_check_boot_with_interfaces_director",
+            "time": 0.142,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_check_boot.TestCheckBoot",
+            "name": "test_check_boot_with_interfaces_foreman",
+            "time": 0.151,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_check_boot.TestCheckBoot",
+            "name": "test_check_boot_without_interfaces",
+            "time": 0.08,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestSingleHostExecution",
+            "name": "test_no_host_error",
+            "time": 0.019,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestSingleHostExecution",
+            "name": "test_single_host_badfish_exception",
+            "time": 0.018,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestSingleHostExecution",
+            "name": "test_single_host_keyb_interrupt",
+            "time": 0.018,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestHostListExecution",
+            "name": "test_host_list_badfish_exception",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestHostListExecution",
+            "name": "test_host_list_extras",
+            "time": 0.118,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestHostListExecution",
+            "name": "test_host_list_keyb_interrupt",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestHostListExecution",
+            "name": "test_host_list_successful",
+            "time": 0.027,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestInitialization",
+            "name": "test_find_systems_resource_not_found",
+            "time": 0.047,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestInitialization",
+            "name": "test_find_systems_resource_unauthorized",
+            "time": 0.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestInitialization",
+            "name": "test_validate_credentials_failed_coms",
+            "time": 0.106,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_execution.TestInitialization",
+            "name": "test_validate_credentials_unauthorized",
+            "time": 0.034,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_firmware_inventory.TestFirmwareInventory",
+            "name": "test_firmware_inventory",
+            "time": 0.1,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_firmware_inventory.TestFirmwareInventory",
+            "name": "test_firmware_inventory_json_contains_error",
+            "time": 0.065,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_firmware_inventory.TestFirmwareInventory",
+            "name": "test_firmware_inventory_json_invalid",
+            "time": 0.059,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_firmware_inventory.TestFirmwareInventory",
+            "name": "test_firmware_inventory_none_response",
+            "time": 0.041,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_hosts_file.TestHostsFile",
+            "name": "test_hosts_bad",
+            "time": 0.037,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_hosts_file.TestHostsFile",
+            "name": "test_hosts_empty",
+            "time": 0.021,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_hosts_file.TestHostsFile",
+            "name": "test_hosts_good",
+            "time": 0.026,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_hosts_file.TestHostsFile",
+            "name": "test_hosts_non_existent",
+            "time": 0.019,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestJobQueue",
+            "name": "test_ls_jobs",
+            "time": 0.059,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestJobQueue",
+            "name": "test_ls_jobs_empty",
+            "time": 0.064,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestClearJobs",
+            "name": "test_clear_jobs",
+            "time": 0.081,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestClearJobs",
+            "name": "test_clear_jobs_force",
+            "time": 0.065,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestClearJobs",
+            "name": "test_clear_jobs_list",
+            "time": 0.093,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestClearJobs",
+            "name": "test_clear_jobs_list_exception",
+            "time": 0.08,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestClearJobs",
+            "name": "test_clear_jobs_unsupported",
+            "time": 0.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestDeleteJob",
+            "name": "test_delete_supported_exception",
+            "time": 0.08,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestDeleteJob",
+            "name": "test_delete_unsupported_exception",
+            "time": 0.082,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestCheckJob",
+            "name": "test_check_job_bad",
+            "time": 0.079,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestCheckJob",
+            "name": "test_check_job_error",
+            "time": 0.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_job_queue.TestCheckJob",
+            "name": "test_check_job_ok",
+            "time": 0.099,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_interfaces.TestLsInterfaces",
+            "name": "test_ls_interfaces_adapters",
+            "time": 0.189,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_interfaces.TestLsInterfaces",
+            "name": "test_ls_interfaces_ethernet",
+            "time": 0.088,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_interfaces.TestLsInterfaces",
+            "name": "test_ls_interfaces_ethernet_not_supported",
+            "time": 0.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_interfaces.TestLsInterfaces",
+            "name": "test_ls_interfaces_ethernet_value_error",
+            "time": 0.056,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_interfaces.TestLsInterfaces",
+            "name": "test_ls_interfaces_network_value_error",
+            "time": 0.073,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_interfaces.TestLsInterfaces",
+            "name": "test_ls_interfaces_none_supported",
+            "time": 0.088,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_memory.TestLsMemory",
+            "name": "test_ls_memory",
+            "time": 0.115,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_memory.TestLsMemory",
+            "name": "test_ls_memory_details_not_found",
+            "time": 0.092,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_memory.TestLsMemory",
+            "name": "test_ls_memory_details_value_error",
+            "time": 0.073,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_memory.TestLsMemory",
+            "name": "test_ls_memory_summary_proc_data_error",
+            "time": 0.068,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_memory.TestLsMemory",
+            "name": "test_ls_memory_summary_value_error",
+            "time": 0.055,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_processors.TestLsProcessors",
+            "name": "test_ls_processors",
+            "time": 0.119,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_processors.TestLsProcessors",
+            "name": "test_ls_processors_details_not_found",
+            "time": 0.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_processors.TestLsProcessors",
+            "name": "test_ls_processors_details_value_error",
+            "time": 0.078,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_processors.TestLsProcessors",
+            "name": "test_ls_processors_summary_proc_data_error",
+            "time": 0.059,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_processors.TestLsProcessors",
+            "name": "test_ls_processors_summary_value_error",
+            "time": 0.099,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_serial.TestLsSerial",
+            "name": "test_ls_serial_no_number",
+            "time": 0.076,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_serial.TestLsSerial",
+            "name": "test_ls_serial_serial_number",
+            "time": 0.064,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_serial.TestLsSerial",
+            "name": "test_ls_serial_service_tag",
+            "time": 0.061,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_serial.TestLsSerial",
+            "name": "test_ls_serial_something_wrong",
+            "time": 0.202,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_serial.TestLsSerial",
+            "name": "test_ls_serial_unsupported_root",
+            "time": 0.117,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ls_serial.TestLsSerial",
+            "name": "test_ls_serial_unsupported_systems",
+            "time": 0.112,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_next_boot_pxe.TestNextBootPxe",
+            "name": "test_next_boot_pxe_bad",
+            "time": 0.104,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_next_boot_pxe.TestNextBootPxe",
+            "name": "test_next_boot_pxe_ok",
+            "time": 0.156,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerOn",
+            "name": "test_power_on_not_ok",
+            "time": 0.111,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerOn",
+            "name": "test_power_on_ok",
+            "time": 0.112,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerOff",
+            "name": "test_power_miss_state",
+            "time": 0.107,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerOff",
+            "name": "test_power_off_already",
+            "time": 0.121,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerOff",
+            "name": "test_power_off_no_state",
+            "time": 0.148,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerOff",
+            "name": "test_power_off_none",
+            "time": 0.034,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerState",
+            "name": "test_power_state",
+            "time": 0.063,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerState",
+            "name": "test_power_state_bad_request",
+            "time": 0.061,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerState",
+            "name": "test_power_state_empty_data",
+            "time": 0.057,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power.TestPowerState",
+            "name": "test_power_state_none",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power_consumed_watts.TestPowerConsumed",
+            "name": "test_power_consumed",
+            "time": 0.058,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power_consumed_watts.TestPowerConsumed",
+            "name": "test_power_consumed_404",
+            "time": 0.086,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_power_consumed_watts.TestPowerConsumed",
+            "name": "test_power_consumed_value_error",
+            "time": 0.1,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reboot_only.TestRebootOnly",
+            "name": "test_reboot_only_failed_grace_and_force",
+            "time": 0.138,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reboot_only.TestRebootOnly",
+            "name": "test_reboot_only_failed_send_reset",
+            "time": 0.093,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reboot_only.TestRebootOnly",
+            "name": "test_reboot_only_success",
+            "time": 0.185,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reboot_only.TestRebootOnly",
+            "name": "test_reboot_only_success_with_ng_rt",
+            "time": 0.136,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reboot_only.TestRebootOnly",
+            "name": "test_reboot_only_success_with_polling_down",
+            "time": 0.145,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_bios.TestResetBios",
+            "name": "test_reset_bios",
+            "time": 0.114,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_bios.TestResetBios",
+            "name": "test_reset_bios_fail",
+            "time": 0.099,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_bmc.TestResetBMC",
+            "name": "test_reset_bmc",
+            "time": 0.122,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_bmc.TestResetBMC",
+            "name": "test_reset_bmc_fail",
+            "time": 0.106,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_bmc.TestResetBMC",
+            "name": "test_reset_bmc_no_allowable_values",
+            "time": 0.107,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_bmc.TestResetBMC",
+            "name": "test_reset_bmc_wrong_vendor",
+            "time": 0.101,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_idrac.TestResetIdrac",
+            "name": "test_reset_idrac",
+            "time": 0.153,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_idrac.TestResetIdrac",
+            "name": "test_reset_idrac_fail",
+            "time": 0.08,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_reset_idrac.TestResetIdrac",
+            "name": "test_reset_idrac_wrong_vendor",
+            "time": 0.078,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestGetSCPTargets",
+            "name": "test_idrac_scp_unsupported_err",
+            "time": 0.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestGetSCPTargets",
+            "name": "test_something_wrong",
+            "time": 0.081,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestGetSCPTargets",
+            "name": "test_with_allowables_pass",
+            "time": 0.09,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestGetSCPTargets",
+            "name": "test_without_allowables_err",
+            "time": 0.064,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestExportSCP",
+            "name": "test_no_location",
+            "time": 0.06,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestExportSCP",
+            "name": "test_pass",
+            "time": 0.091,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestExportSCP",
+            "name": "test_status_fail",
+            "time": 0.117,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestExportSCP",
+            "name": "test_time_out",
+            "time": 0.084,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestImportSCP",
+            "name": "test_fail_state",
+            "time": 0.091,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestImportSCP",
+            "name": "test_invalid_filepath",
+            "time": 0.066,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestImportSCP",
+            "name": "test_no_location",
+            "time": 0.088,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestImportSCP",
+            "name": "test_pass",
+            "time": 0.105,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestImportSCP",
+            "name": "test_status_fail",
+            "time": 0.064,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scp.TestImportSCP",
+            "name": "test_time_out",
+            "time": 0.131,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_screenshot.TestScreenshot",
+            "name": "test_screenshot_ok",
+            "time": 0.062,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_screenshot.TestScreenshotErrors",
+            "name": "test_screenshot_bad_request",
+            "time": 0.079,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_screenshot.TestScreenshotErrors",
+            "name": "test_screenshot_false_ok",
+            "time": 0.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_screenshot.TestScreenshotErrors",
+            "name": "test_screenshot_not_supported",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sriov_mode.TestSriovModeEnable",
+            "name": "test_enable_sriov_already",
+            "time": 0.072,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sriov_mode.TestSriovModeEnable",
+            "name": "test_enable_sriov_ok",
+            "time": 0.092,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sriov_mode.TestSriovModeDisable",
+            "name": "test_disable_sriov_already",
+            "time": 0.087,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sriov_mode.TestSriovModeDisable",
+            "name": "test_disable_sriov_ok",
+            "time": 0.115,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sriov_mode.TestSriovModeGet",
+            "name": "test_get_sriov_ok",
+            "time": 0.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_check_good_dell",
+            "time": 0.182,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_check_good_sm",
+            "time": 0.086,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_check_no_members_sm",
+            "time": 0.072,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_check_value_error_dell",
+            "time": 0.075,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_config_empty_dell",
+            "time": 0.073,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_config_empty_sm",
+            "time": 0.064,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckVirtualMedia",
+            "name": "test_config_no_resource",
+            "time": 0.067,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestMountVirtualMedia",
+            "name": "test_mount_already_filled_dell",
+            "time": 0.075,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestMountVirtualMedia",
+            "name": "test_mount_good_dell",
+            "time": 0.068,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestMountVirtualMedia",
+            "name": "test_mount_good_sm",
+            "time": 0.083,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestMountVirtualMedia",
+            "name": "test_mount_not_allowed_dell",
+            "time": 0.131,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestMountVirtualMedia",
+            "name": "test_mount_something_wrong_dell",
+            "time": 0.107,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestMountVirtualMedia",
+            "name": "test_mount_something_wrong_sm",
+            "time": 0.12,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestUnmountVirtualMedia",
+            "name": "test_mount_something_wrong_dell",
+            "time": 0.098,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestUnmountVirtualMedia",
+            "name": "test_unmount_empty_dell",
+            "time": 0.106,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestUnmountVirtualMedia",
+            "name": "test_unmount_good_dell",
+            "time": 0.091,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestUnmountVirtualMedia",
+            "name": "test_unmount_good_sm",
+            "time": 0.106,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestUnmountVirtualMedia",
+            "name": "test_unmount_not_allowed_dell",
+            "time": 0.096,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestUnmountVirtualMedia",
+            "name": "test_unmount_something_wrong_sm",
+            "time": 0.152,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootToVirtualMedia",
+            "name": "test_fail_sm",
+            "time": 0.22,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootToVirtualMedia",
+            "name": "test_good_dell",
+            "time": 0.139,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootToVirtualMedia",
+            "name": "test_good_sm",
+            "time": 0.129,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootToVirtualMedia",
+            "name": "test_no_media",
+            "time": 0.09,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootToVirtualMedia",
+            "name": "test_optical_missing_dell",
+            "time": 0.135,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckRemoteImage",
+            "name": "test_check_error",
+            "time": 0.094,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckRemoteImage",
+            "name": "test_check_fail",
+            "time": 0.092,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckRemoteImage",
+            "name": "test_check_good",
+            "time": 0.095,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestCheckRemoteImage",
+            "name": "test_os_deployment_not_supported",
+            "time": 0.079,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootRemoteImage",
+            "name": "test_boot_command_fail",
+            "time": 0.075,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootRemoteImage",
+            "name": "test_boot_good",
+            "time": 0.118,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootRemoteImage",
+            "name": "test_boot_os_deployment_not_supported",
+            "time": 0.117,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootRemoteImage",
+            "name": "test_boot_something_wrong",
+            "time": 0.114,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootRemoteImage",
+            "name": "test_boot_task_fail",
+            "time": 0.11,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestBootRemoteImage",
+            "name": "test_boot_wrong_path",
+            "time": 0.102,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestDetachRemoteImage",
+            "name": "test_detach_fail",
+            "time": 0.098,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestDetachRemoteImage",
+            "name": "test_detach_good",
+            "time": 0.095,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_virtual_media.TestDetachRemoteImage",
+            "name": "test_detach_os_deployment_not_supported",
+            "time": 0.096,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

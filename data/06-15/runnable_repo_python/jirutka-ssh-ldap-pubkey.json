@@ -1,0 +1,553 @@
+{
+    "repository": "jirutka/ssh-ldap-pubkey",
+    "stars": 217,
+    "language": "python",
+    "size": 115,
+    "clone_url": "https://github.com/jirutka/ssh-ldap-pubkey.git",
+    "timestamp": "2023-06-16T11:05:39.200451Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.config_test.describe_parse_config",
+            "name": "converts_keys_to_lowercase",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_config",
+            "name": "ignores_comments",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_config",
+            "name": "strips_trailing_whitespaces",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_config",
+            "name": "parses_key_value_separated_by_whitespace",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_config_file",
+            "name": "reads_file_and_calls_parse_config",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_True_when_given_truthy_value[on]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_True_when_given_truthy_value[true]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_True_when_given_truthy_value[yes]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_True_when_given_truthy_value[ON]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_True_when_given_truthy_value[TrUe]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_False_when_given_None",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_False_when_given_non_truthy_value[off]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_False_when_given_non_truthy_value[false]",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_False_when_given_non_truthy_value[no]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_False_when_given_non_truthy_value[NO]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_bool",
+            "name": "returns_False_when_given_non_truthy_value[fooo]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_ldap_OPT_X_TLS_constant_for_valid_value[never-0]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_ldap_OPT_X_TLS_constant_for_valid_value[allow-3]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_ldap_OPT_X_TLS_constant_for_valid_value[try-4]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_ldap_OPT_X_TLS_constant_for_valid_value[demand-2]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_ldap_OPT_X_TLS_constant_for_valid_value[hard-1]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "raises_KeyError_for_invalud_value",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_None_when_given_falsy[None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_tls_reqcert_opt",
+            "name": "returns_None_when_given_falsy[]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_scope_opt",
+            "name": "returns_ldap_SCOPE_constant_for_valid_value[base-0]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_scope_opt",
+            "name": "returns_ldap_SCOPE_constant_for_valid_value[one-1]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_scope_opt",
+            "name": "returns_ldap_SCOPE_constant_for_valid_value[sub-2]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_scope_opt",
+            "name": "raises_KeyError_for_invalud_value",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_scope_opt",
+            "name": "returns_None_when_given_falsy[None]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.config_test.describe_parse_scope_opt",
+            "name": "returns_None_when_given_falsy[]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_true_when_given_valid_pubkey[ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAYQCkNCKyyUPvwwefhEpnD/Khuowbv+13Cv3shWY3ck3j+hbHLqjCGUB66/igg0Atf3giU7sZOdPrSN6xdX43+k6Gn73yzWFJkWyImKzgHW9uVrU7vo3puailY+yC6RpwNME= flynn@encom.com\\n]",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_true_when_given_valid_pubkey[ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAYQCkNCKyyUPvwwefhEpnD/Khuowbv+13Cv3shWY3ck3j+hbHLqjCGUB66/igg0Atf3giU7sZOdPrSN6xdX43+k6Gn73yzWFJkWyImKzgHW9uVrU7vo3puailY+yC6RpwNME=\\n]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_true_when_given_valid_pubkey[ssh-dss AAAAB3NzaC1kc3MAAACBAKMfNb7OtqUc5vje5UMvm5r1javDreL+EvACyU7N/BqO+FnqYx6RWQgp0mgDW5b+eOVBBwCfqn41TKHoXIlOsD3Rci7REBA87jmRbgQnZLSaT6BgVFWtEMI8SXG3EsmC5fXKHfX8j6W6f0Tuqeof4eaFW2RC6pYN3rvVGCvJ68FXAAAAFQDbmXw8U17CkJDvFOZ8KqehrahunQAAAIAKg/NxJVqLTJOM6qp7zI0WOiStotzclC5899w3zqJ446P/jLD5nILpnhbnUHnGmw53Yz6endWKHInsUurODPRZcjgOOd2lG5/RViegrI81YsQtczzIRNU86xL/28UkzzAy1IMeJWiH2vSrLLzx37YKZFH4MBjPhlsFtEIfHeR3dQAAAIEAlAMlPaHMIMEP+4IQP3qUhcZhI8UIYlSag2DqRjPry9jRL6uaYUYZAPC82Bvfi83TqJEhowqIBDFib4HDrgp9BJyTGfDZsHjRcLP15FYQdqIg8Fdo2ptsWGJa6EdFmj8RDIyaHsQ4a/JtnHUu+nC7DMYvTHliWl55UUVCSJzAyzs=\\n]",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_false_when_given_invalid_pubkey[ssh-rsa\\n]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_false_when_given_invalid_pubkey[\\n]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_false_when_given_invalid_pubkey[AAAAB3NzaC1yc2EAAAADAQABAAAAYQCkNCKyyUPvwwefhEpnD/Khuowbv+13Cv3shWY3ck3j+hbHLqjCGUB66/igg0Atf3giU7sZOdPrSN6xdX43+k6Gn73yzWFJkWyImKzgHW9uVrU7vo3puailY+yC6RpwNME= flynn@encom.com\\n]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_false_when_given_invalid_pubkey[ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAYQCkNCKyyUPvwwefhEpnD/Khuowbv+13Cv3shWY3ck3j+hbHLqjCGUB66/igg0Atf3giU7sZOdPrSN6xdX43+k6Gn73yzWFJkWyImKzgHW9uVrU7vo3puailY+yC6RpwNM\\n]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functions_test.describe_is_valid_openssh_pubkey",
+            "name": "returns_false_when_given_invalid_pubkey[ssh-dss AAAAB3NzaC1yc2EAAAADAQABAAAAYQCkNCKyyUPvwwefhEpnD/Khuowbv+13Cv3shWY3ck3j+hbHLqjCGUB66/igg0Atf3giU7sZOdPrSN6xdX43+k6Gn73yzWFJkWyImKzgHW9uVrU7vo3puailY+yC6RpwNME=\\n]",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

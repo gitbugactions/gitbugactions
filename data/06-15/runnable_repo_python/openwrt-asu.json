@@ -1,0 +1,806 @@
+{
+    "repository": "openwrt/asu",
+    "stars": 220,
+    "language": "python",
+    "size": 1815,
+    "clone_url": "https://github.com/openwrt/asu.git",
+    "timestamp": "2023-06-16T12:25:27.633759Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build",
+            "time": 0.514,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_version_code",
+            "time": 0.246,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_rootfs_size",
+            "time": 0.222,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_version_code_bad",
+            "time": 0.22,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_diff_packages",
+            "time": 0.223,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_latest_default",
+            "time": 0.202,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_mapping",
+            "time": 0.231,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_mapping_abi",
+            "time": 0.236,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_bad_target",
+            "time": 0.211,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_get",
+            "time": 0.25,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_packages_versions",
+            "time": 0.234,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_packages_versions_bad",
+            "time": 0.235,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert 'init' == 'Error: Impos...: 0.0 vs. 1.0'\n  - Error: Impossible package selection: test1 version not as requested: 0.0 vs. 1.0\n  + init",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_packages_duplicate",
+            "time": 0.218,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_get_not_found",
+            "time": 0.251,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_get_no_post",
+            "time": 0.344,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_empty_packages_list",
+            "time": 0.305,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_withouth_packages_list",
+            "time": 0.513,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_prerelease_snapshot",
+            "time": 0.332,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_prerelease_rc",
+            "time": 0.289,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_bad_packages_str",
+            "time": 0.235,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_empty_request",
+            "time": 0.255,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_real_x86",
+            "time": 0.224,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_real_ath79",
+            "time": 0.219,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_needed",
+            "time": 0.216,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_bad_distro",
+            "time": 0.243,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_bad_branch",
+            "time": 0.44,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_bad_version",
+            "time": 0.425,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_bad_profile",
+            "time": 0.454,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_defaults_empty",
+            "time": 0.376,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_defaults_filled_not_allowed",
+            "time": 0.285,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_api",
+            "name": "test_api_build_defaults_filled_allowed",
+            "time": 0.246,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_get_str_hash",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_get_file_hash",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_get_packages_hash",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_get_request_hash",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_diff_packages",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_fingerprint_pubkey_usign",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_verify_usign",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_remove_prefix",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_get_version_container_tag",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_check_manifest",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_common",
+            "name": "test_run_container",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "podman.errors.exceptions.APIError: http://%2Ftmp%2Fpodman.sock/v4.5.0/libpod/containers/create (POST operation failed)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_factory",
+            "name": "test_pathlib",
+            "time": 0.377,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_factory",
+            "name": "test_branches_yaml",
+            "time": 0.266,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_factory",
+            "name": "test_branches_default",
+            "time": 0.256,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_factory",
+            "name": "test_other",
+            "time": 0.208,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_factory",
+            "name": "test_json_store",
+            "time": 0.276,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_janitor",
+            "name": "test_update_branch",
+            "time": 0.529,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_janitor",
+            "name": "test_update_meta_latest_json",
+            "time": 0.271,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_janitor",
+            "name": "test_update_meta_overview_json",
+            "time": 0.224,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_stats",
+            "name": "test_stats_image_builds",
+            "time": 0.217,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_stats",
+            "name": "test_stats_cache",
+            "time": 0.244,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert '500 INTERNAL SERVER ERROR' == '200 OK'\n  - 200 OK\n  + 500 INTERNAL SERVER ERROR",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_stats",
+            "name": "test_stats_clients_luci",
+            "time": 0.25,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_stats",
+            "name": "test_stats_clients_unknown",
+            "time": 0.29,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_stats",
+            "name": "test_stats_clients_auc",
+            "time": 0.214,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_stats",
+            "name": "test_stats_clients_auc_possible_new_format",
+            "time": 0.247,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

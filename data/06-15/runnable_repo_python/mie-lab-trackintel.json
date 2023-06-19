@@ -1,0 +1,4798 @@
+{
+    "repository": "mie-lab/trackintel",
+    "stars": 124,
+    "language": "python",
+    "size": 33391,
+    "clone_url": "https://github.com/mie-lab/trackintel.git",
+    "timestamp": "2023-06-16T13:21:24.931831Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 4,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_core.TestPrint_version",
+            "name": "test_print_version",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestCreate_activity_flag",
+            "name": "test_create_activity_flag",
+            "time": 0.022,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestCreate_activity_flag",
+            "name": "test_wrong_input_parameter",
+            "time": 0.018,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestPredict_transport_mode",
+            "name": "test_wrong_input_parameter",
+            "time": 0.018,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestPredict_transport_mode",
+            "name": "test_check_empty_dataframe",
+            "time": 0.015,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestPredict_transport_mode",
+            "name": "test_simple_coarse_identification_no_crs",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestPredict_transport_mode",
+            "name": "test_simple_coarse_identification_wgs_84",
+            "time": 0.019,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestPredict_transport_mode",
+            "name": "test_simple_coarse_identification_projected",
+            "time": 0.038,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_label.TestPredict_transport_mode",
+            "name": "test_check_categories",
+            "time": 0.015,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_no_kw",
+            "time": 0.042,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_thresh_sp",
+            "time": 0.035,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_thresh_loc",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_thresh_sp_at_loc",
+            "time": 0.029,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_tresh_loc_time",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_loc_period",
+            "time": 0.028,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_agg_level",
+            "time": 0.035,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_agg_level_error",
+            "time": 0.019,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestPre_Filter",
+            "name": "test_non_continous_index",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestFreq_method",
+            "name": "test_default_labels",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestFreq_method",
+            "name": "test_custom_labels",
+            "time": 0.029,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestFreq_method",
+            "name": "test_duration",
+            "time": 0.028,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.Test_Freq_Transform",
+            "name": "test_function",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.Test_Freq_Assign",
+            "name": "test_function",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.Test_Freq_Assign",
+            "name": "test_more_labels_than_entries",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestLocation_Identifier",
+            "name": "test_unkown_method",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestLocation_Identifier",
+            "name": "test_no_location_column",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestLocation_Identifier",
+            "name": "test_pre_filter",
+            "time": 0.086,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestLocation_Identifier",
+            "name": "test_freq_method",
+            "time": 0.05,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestLocation_Identifier",
+            "name": "test_osna_method",
+            "time": 0.097,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestLocation_Identifier",
+            "name": "test_pre_filter_index",
+            "time": 0.054,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_default",
+            "time": 0.044,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_overlap",
+            "time": 0.053,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_only_weekends",
+            "time": 0.023,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_two_users",
+            "time": 0.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_leisure_weighting",
+            "time": 0.036,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_only_one_work_location",
+            "time": 0.025,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_only_one_rest_location",
+            "time": 0.025,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_only_one_leisure_location",
+            "time": 0.024,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_prior_activity_label",
+            "time": 0.044,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.TestOsna_Method",
+            "name": "test_multiple_users_with_only_one_location",
+            "time": 0.037,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.Test_osna_label_timeframes",
+            "name": "test_weekend",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_location_identification.Test_osna_label_timeframes",
+            "name": "test_weekday",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_run_modal_split_with_geolife",
+            "time": 1.636,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_run_modal_split_with_geolife_accessors",
+            "time": 1.286,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_modal_split_total_count",
+            "time": 0.034,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_modal_split_total_no_user_count",
+            "time": 0.033,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_modal_split_total_distance",
+            "time": 0.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_modal_split_total_duration",
+            "time": 0.039,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_modal_split_daily_count",
+            "time": 0.051,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_modal_split_weekly_count",
+            "time": 0.042,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.TestModalSplit",
+            "name": "test_unknown_metric_error",
+            "time": 0.022,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.Test_calculate_length",
+            "name": "test_planar",
+            "time": 0.024,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_modal_split.Test_calculate_length",
+            "name": "test_non_planar",
+            "time": 0.022,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_all",
+            "time": 0.534,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_day",
+            "time": 0.706,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_week",
+            "time": 0.628,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_weekday",
+            "time": 0.613,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_hour",
+            "time": 0.678,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_error",
+            "time": 0.665,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_wrong_datamodel",
+            "time": 0.129,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_tracking_quality_user_error",
+            "time": 0.551,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_staypoints_accessors",
+            "time": 0.591,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_triplegs_accessors",
+            "time": 0.639,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_trips_accessors",
+            "time": 0.642,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_non_positive_duration_warning",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_absolute_extent",
+            "time": 0.139,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestTemporal_tracking_quality",
+            "name": "test_non_positive_duration_filtered",
+            "time": 0.116,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestSplit_overlaps",
+            "name": "test_split_overlaps_days",
+            "time": 0.594,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestSplit_overlaps",
+            "name": "test_split_overlaps_hours",
+            "time": 0.554,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestSplit_overlaps",
+            "name": "test_split_overlaps_hours_case2",
+            "time": 0.538,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestSplit_overlaps",
+            "name": "test_split_overlaps_duration",
+            "time": 0.585,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestSplit_overlaps",
+            "name": "test_exact_midnight_split",
+            "time": 0.027,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.analysis.test_tracking_quality.TestGet_times",
+            "name": "test_midnight_ns",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.examples.test_examples.Test_examples",
+            "name": "test_example_preprocess_trajectories",
+            "time": 31.705,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.examples.test_tutorial.Test_tutorial",
+            "name": "test_basic_tutorial",
+            "time": 24.368,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_shape_for_different_array_length",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_keyword_combinations",
+            "time": 0.018,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_compare_haversine_to_scikit_xy",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_trajectory_distance_dtw",
+            "time": 3.343,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_trajectory_distance_frechet",
+            "time": 0.509,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_trajectory_distance_via_accessor_x",
+            "time": 0.481,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_trajectory_distance_via_accessor_xy",
+            "time": 0.211,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_trajectory_distance_error",
+            "time": 0.031,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCalculate_distance_matrix",
+            "name": "test_distance_error",
+            "time": 0.019,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCheck_gdf_planar",
+            "name": "test_transformation",
+            "time": 0.027,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCheck_gdf_planar",
+            "name": "test_crs_warning",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCheck_gdf_planar",
+            "name": "test_if_planer",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestCheck_gdf_planar",
+            "name": "test_none_crs_transform",
+            "time": 0.016,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.TestMetersToDecimalDegrees",
+            "name": "test_meters_to_decimal_degrees",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_distances.Testcalc_haversine_length",
+            "name": "test_length",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_point_distances.TestHaversineDist",
+            "name": "test_haversine_dist",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_point_distances.TestHaversineDist",
+            "name": "test_haversine_vectorized",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.geogr.test_point_distances.TestHaversineDist",
+            "name": "test_example_from_sklean",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestReadGeolife",
+            "name": "test_loop_read",
+            "time": 0.04,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestReadGeolife",
+            "name": "test_print_progress_flag",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestReadGeolife",
+            "name": "test_label_reading",
+            "time": 0.069,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestReadGeolife",
+            "name": "test_wrong_folder_name",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestReadGeolife",
+            "name": "test_no_user_folders",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.Test_GetLabels",
+            "name": "test_example_data",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.Test_GetDf",
+            "name": "test_example_data",
+            "time": 0.049,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestGeolife_add_modes_to_triplegs",
+            "name": "test_duplicate_matching",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestGeolife_add_modes_to_triplegs",
+            "name": "test_geolife_mode_matching",
+            "time": 0.975,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestGeolife_add_modes_to_triplegs",
+            "name": "test_no_overlap",
+            "time": 0.906,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestGeolife_add_modes_to_triplegs",
+            "name": "test_mode_matching",
+            "time": 0.025,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestGeolife_add_modes_to_triplegs",
+            "name": "test_mode_matching_multi_user",
+            "time": 0.026,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_dataset_reader.TestGeolife_add_modes_to_triplegs",
+            "name": "test_impossible_matching",
+            "time": 0.015,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestPositionfixes",
+            "name": "test_from_to_csv",
+            "time": 0.021,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestPositionfixes",
+            "name": "test_set_crs",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestPositionfixes",
+            "name": "test_set_datatime_tz",
+            "time": 0.029,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestPositionfixes",
+            "name": "test_set_index_warning",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestPositionfixes",
+            "name": "test_set_index",
+            "time": 0.016,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTriplegs",
+            "name": "test_from_to_csv",
+            "time": 0.021,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTriplegs",
+            "name": "test_set_crs",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTriplegs",
+            "name": "test_set_datatime_tz",
+            "time": 0.027,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTriplegs",
+            "name": "test_set_index_warning",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTriplegs",
+            "name": "test_set_index",
+            "time": 0.016,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestStaypoints",
+            "name": "test_from_to_csv",
+            "time": 0.022,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestStaypoints",
+            "name": "test_set_crs",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestStaypoints",
+            "name": "test_set_datatime_tz",
+            "time": 0.029,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestStaypoints",
+            "name": "test_set_index_warning",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestStaypoints",
+            "name": "test_set_index",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestLocations",
+            "name": "test_from_to_csv",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestLocations",
+            "name": "test_set_crs",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestLocations",
+            "name": "test_set_index_warning",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestLocations",
+            "name": "test_set_index",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTrips",
+            "name": "test_from_to_csv",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTrips",
+            "name": "test_set_datatime_tz",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTrips",
+            "name": "test_set_index_warning",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTrips",
+            "name": "test_set_index",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTours",
+            "name": "test_from_to_csv",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTours",
+            "name": "test_to_csv_accessor",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_file.TestTours",
+            "name": "test_from_to_postgis",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_renaming",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_setting_geometry",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_set_crs",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_already_set_geometry",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_error_no_set_geometry",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_tz_cols",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.Test_Trackintel_Model",
+            "name": "test_multiple_timezones_in_col",
+            "time": 0.031,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Positionfixes_Gpd",
+            "name": "test_csv",
+            "time": 0.069,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Positionfixes_Gpd",
+            "name": "test_mapper",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Triplegs_Gpd",
+            "name": "test_csv",
+            "time": 0.039,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Triplegs_Gpd",
+            "name": "test_mapper",
+            "time": 0.021,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Staypoints_Gpd",
+            "name": "test_csv",
+            "time": 0.036,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Staypoints_Gpd",
+            "name": "test_mapper",
+            "time": 0.018,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Locations_Gpd",
+            "name": "test_csv",
+            "time": 0.021,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Locations_Gpd",
+            "name": "test_extent_col",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Locations_Gpd",
+            "name": "test_mapper",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Trips_Gpd",
+            "name": "test_csv",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Trips_Gpd",
+            "name": "test_with_geometry",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Trips_Gpd",
+            "name": "test_without_geometry",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Trips_Gpd",
+            "name": "test_mapper",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Trips_Gpd",
+            "name": "test_multiple_timezones_in_col",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Tours_Gpd",
+            "name": "test_csv",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_from_geopandas.TestRead_Tours_Gpd",
+            "name": "test_mapper",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestPositionfixes",
+            "name": "test_write",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestPositionfixes",
+            "name": "test_read",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestPositionfixes",
+            "name": "test_no_crs",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestPositionfixes",
+            "name": "test_non_standard_column_names",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestPositionfixes",
+            "name": "test_daylight_saving_tz",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTriplegs",
+            "name": "test_write",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTriplegs",
+            "name": "test_read",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTriplegs",
+            "name": "test_no_crs",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTriplegs",
+            "name": "test_non_standard_column_names",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestStaypoints",
+            "name": "test_write",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestStaypoints",
+            "name": "test_read",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestStaypoints",
+            "name": "test_no_crs",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestLocations",
+            "name": "test_write",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestLocations",
+            "name": "test_read",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestLocations",
+            "name": "test_no_crs",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestLocations",
+            "name": "test_write_extent",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestLocations",
+            "name": "test_read_extent",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestLocations",
+            "name": "test_non_standard_column_names",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTrips",
+            "name": "test_write",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTrips",
+            "name": "test_read",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTrips",
+            "name": "test_non_standard_column_names",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTrips",
+            "name": "test_write_with_geometry",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTrips",
+            "name": "test_read_with_geometry",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTours",
+            "name": "test_write",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTours",
+            "name": "test_read",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestTours",
+            "name": "test_no_crs",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.TestGetSrid",
+            "name": "test_srid",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.Test_Handle_Con_String",
+            "name": "test_conn_string",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_postgis.Test_Handle_Con_String",
+            "name": "test_conn",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Skipped",
+                    "message": "Cannot connect with postgresql database",
+                    "type": "pytest.skip"
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_locations.TestLocations",
+            "name": "test_accessor_column",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_locations.TestLocations",
+            "name": "test_accessor_geometry_type",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_positionfixes.TestPositionfixes",
+            "name": "test_accessor_column",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_positionfixes.TestPositionfixes",
+            "name": "test_accessor_geometry",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_positionfixes.TestPositionfixes",
+            "name": "test_accessor_geometry_type",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_positionfixes.TestPositionfixes",
+            "name": "test_center",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_positionfixes.TestPositionfixes",
+            "name": "test_similarity_matrix",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_staypoints.TestStaypoints",
+            "name": "test_accessor_columns",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_staypoints.TestStaypoints",
+            "name": "test_accessor_geometry",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_staypoints.TestStaypoints",
+            "name": "test_accessor_geometry_type",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_staypoints.TestStaypoints",
+            "name": "test_staypoints_center",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_triplegs.TestTriplegs",
+            "name": "test_accessor_column",
+            "time": 0.072,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_triplegs.TestTriplegs",
+            "name": "test_accessor_geometry",
+            "time": 0.096,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_triplegs.TestTriplegs",
+            "name": "test_accessor_geometry_type",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_trips.TestTrips",
+            "name": "test_accessor",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_trips.TestTrips",
+            "name": "test_accessor_geometry_type",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_trips.TestTrips",
+            "name": "test_accessor_geometry_name",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSpeedPositionfixes",
+            "name": "test_positionfixes_stable",
+            "time": 0.019,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSpeedPositionfixes",
+            "name": "test_accessor",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSpeedPositionfixes",
+            "name": "test_speed_correct",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSpeedPositionfixes",
+            "name": "test_one_speed",
+            "time": 0.016,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSpeedPositionfixes",
+            "name": "test_geometry_name",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSpeedPositionfixes",
+            "name": "test_planar_geometry",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_triplegs_stable",
+            "time": 0.561,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_tripleg_id_assertion",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_pfs_exist_assertion",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_one_speed_correct",
+            "time": 0.57,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_accessor",
+            "time": 0.7,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_pfs_input_assertion",
+            "time": 0.456,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestPfsMeanSpeedTriplegs",
+            "name": "test_pfs_tripleg_id_assertion",
+            "time": 0.473,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSimpleSpeedTriplegs",
+            "name": "test_triplegs_stable",
+            "time": 0.49,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSimpleSpeedTriplegs",
+            "name": "test_one_speed_correct",
+            "time": 0.456,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSimpleSpeedTriplegs",
+            "name": "test_accessor",
+            "time": 0.474,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.TestSimpleSpeedTriplegs",
+            "name": "test_method_error",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.model.test_util.Test_copy_docstring",
+            "name": "test_default",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_filter.TestSpatial_filter",
+            "name": "test_filter_staypoints",
+            "time": 0.047,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_filter.TestSpatial_filter",
+            "name": "test_filter_triplegs",
+            "time": 0.079,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_filter.TestSpatial_filter",
+            "name": "test_filter_locations",
+            "time": 0.106,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_filter.TestSpatial_filter",
+            "name": "test_re_project",
+            "time": 0.096,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_filter.TestSpatial_filter",
+            "name": "test_method_error",
+            "time": 0.079,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_empty_generation",
+            "time": 0.049,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_parallel_computing",
+            "time": 4.295,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_duplicate_pfs_warning",
+            "time": 0.176,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_duplicate_pfs_filtering",
+            "time": 0.053,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_duplicate_columns",
+            "time": 0.058,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_sliding_min",
+            "time": 0.443,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_sliding_max",
+            "time": 0.026,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_missing_link",
+            "time": 0.027,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_dtype_consistent",
+            "time": 0.191,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_index_start",
+            "time": 0.191,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_include_last",
+            "time": 0.061,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_print_progress",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_temporal",
+            "time": 1.359,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_gap_threshold",
+            "time": 0.079,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_staypoints",
+            "name": "test_str_userid",
+            "time": 0.044,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.Test_Generate_staypoints_sliding_user",
+            "name": "test_unknown_distance_metric",
+            "time": 0.016,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.Test__create_new_staypoints",
+            "name": "test_planar_crs",
+            "time": 0.36,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_empty_generation",
+            "time": 0.03,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_noncontinuous_unordered_index",
+            "time": 0.032,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_invalid_isolates",
+            "time": 0.028,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_duplicate_columns",
+            "time": 0.746,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_user_without_sp",
+            "time": 2.099,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_pfs_without_sp",
+            "time": 1.067,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_stability",
+            "time": 1.471,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_random_order",
+            "time": 0.777,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_pfs_index",
+            "time": 0.785,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_dtype_consistent",
+            "time": 0.441,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_missing_link",
+            "time": 0.429,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_index_start",
+            "time": 1.091,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_invalid_inputs",
+            "time": 0.179,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_temporal",
+            "time": 1.254,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_sp_tpls_overlap",
+            "time": 0.433,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_positionfixes.TestGenerate_triplegs",
+            "name": "test_str_userid",
+            "time": 0.032,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_empty_generation",
+            "time": 0.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_parallel_computing",
+            "time": 0.117,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dbscan_hav_euc",
+            "time": 0.105,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dbscan_haversine",
+            "time": 0.076,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dbscan_loc",
+            "time": 0.166,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dbscan_user_dataset",
+            "time": 0.093,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_crs",
+            "time": 0.051,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dbscan_min",
+            "time": 0.116,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dbscan_max",
+            "time": 0.107,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_missing_link",
+            "time": 0.072,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_num_samples_high",
+            "time": 0.056,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_num_samples_3",
+            "time": 0.109,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_dtype_consistent",
+            "time": 0.268,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_index_start",
+            "time": 0.217,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_print_progress_flag",
+            "time": 0.123,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_index_stability",
+            "time": 0.052,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_location_ids_and_noise",
+            "time": 0.051,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_location_ids_and_noise_dataset",
+            "time": 0.039,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_agg_level_error",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestGenerate_locations",
+            "name": "test_method_error",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints",
+            "time": 0.048,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints_triplegs",
+            "time": 0.041,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints_time",
+            "time": 0.043,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints_max_time_gap",
+            "time": 0.047,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints_time_gap_error",
+            "time": 0.044,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints_agg",
+            "time": 0.044,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_staypoints.TestMergeStaypoints",
+            "name": "test_merge_staypoints_error",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_duplicate_columns",
+            "time": 0.59,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_generate_trips",
+            "time": 0.557,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_trip_wo_geom",
+            "time": 0.565,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_trip_coordinates",
+            "time": 0.53,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_accessor",
+            "time": 0.601,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_accessor_arguments",
+            "time": 0.625,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_generate_trips_missing_link",
+            "time": 0.541,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_generate_trips_dtype_consistent",
+            "time": 0.583,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_compare_to_old_trip_function",
+            "time": 0.594,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_generate_trips_index_start",
+            "time": 0.565,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_generate_trips_gap_detection",
+            "time": 0.096,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_generate_trips_id_management",
+            "time": 0.587,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_only_staypoints_in_trip",
+            "time": 0.047,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_sp_tpls_index",
+            "time": 0.043,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_loop_linestring_case",
+            "time": 0.505,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_keeping_all_columns_sp_tpls",
+            "time": 0.543,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_missing_is_activity_column",
+            "time": 0.484,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_triplegs.TestGenerate_trips",
+            "name": "test_crs",
+            "time": 0.719,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_generate_tours",
+            "time": 0.037,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tours_with_gap",
+            "time": 0.037,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tour_times",
+            "time": 0.046,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tour_geom",
+            "time": 0.037,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tour_max_time",
+            "time": 0.044,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tours_locations",
+            "time": 0.041,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tours_crs",
+            "time": 0.083,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_generate_tours_geolife",
+            "time": 0.062,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_accessor",
+            "time": 0.073,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_print_progress_flag",
+            "time": 0.078,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_index_stability",
+            "time": 0.035,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_nested_tour",
+            "time": 0.05,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tours_warn_existing_column",
+            "time": 0.038,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestGenerate_tours",
+            "name": "test_tours_time_gap_error",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_trips.TestTourHelpers",
+            "name": "test_get_trips_grouped",
+            "time": 0.058,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestCalc_temp_overlap",
+            "name": "test_same_interval",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestCalc_temp_overlap",
+            "name": "test_1_in_2",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestCalc_temp_overlap",
+            "name": "test_2_in_1",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestCalc_temp_overlap",
+            "name": "test_no_overlap",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestCalc_temp_overlap",
+            "name": "test_no_duration",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestExplodeAgg",
+            "name": "test_empty_agg",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestExplodeAgg",
+            "name": "test_list_column",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.preprocessing.test_util.TestExplodeAgg",
+            "name": "test_index_dtype_with_None",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_locations.TestPlot_locations",
+            "name": "test_locations_plot",
+            "time": 1.489,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_locations.TestPlot_locations",
+            "name": "test_axis",
+            "time": 1.346,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_locations.TestPlot_locations",
+            "name": "test_parameter",
+            "time": 7.488,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_modal_split.TestPlot_modal_split",
+            "name": "test_create_plot_geolife",
+            "time": 1.087,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_modal_split.TestPlot_modal_split",
+            "name": "test_check_dtype_error",
+            "time": 1.06,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_modal_split.TestPlot_modal_split",
+            "name": "test_multi_user_error",
+            "time": 0.398,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_modal_split.TestPlot_modal_split",
+            "name": "test_create_plot_testdata",
+            "time": 2.479,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_modal_split.TestPlot_modal_split",
+            "name": "test_ax_arg",
+            "time": 0.573,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_modal_split.TestPlot_modal_split",
+            "name": "test_skip_xticks",
+            "time": 0.679,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_positionfixes.TestPlot_positionfixes",
+            "name": "test_positionfixes_plot",
+            "time": 0.357,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_staypoints.TestPlot_staypoints",
+            "name": "test_staypoints_plot",
+            "time": 1.203,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_staypoints.TestPlot_staypoints",
+            "name": "test_parameter",
+            "time": 8.144,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_triplegs.TestPlot_triplegs",
+            "name": "test_triplegs_plot",
+            "time": 1.597,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_triplegs.TestPlot_triplegs",
+            "name": "test_axis",
+            "time": 1.171,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_triplegs.TestPlot_triplegs",
+            "name": "test_parameter",
+            "time": 12.143,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.visualization.test_util.TestA4_figsize",
+            "name": "test_parameter",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

@@ -1,0 +1,2443 @@
+{
+    "repository": "movnetwork/swap",
+    "stars": 70,
+    "language": "python",
+    "size": 3275,
+    "clone_url": "https://github.com/movnetwork/swap.git",
+    "timestamp": "2023-06-16T14:01:11.639361Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_exceptions",
+            "name": "test_exceptions",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils",
+            "name": "test_swap_utils",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.test_cli",
+            "name": "test_swap_cli",
+            "time": 0.015,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_decode",
+            "name": "test_bitcoin_cli_decode",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_fund",
+            "name": "test_bitcoin_cli_fund",
+            "time": 0.199,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_htlc",
+            "name": "test_bitcoin_cli_htlc",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_refund",
+            "name": "test_bitcoin_cli_refund",
+            "time": 0.202,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_signature",
+            "name": "test_bitcoin_cli_signature",
+            "time": 7.075,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_submit",
+            "name": "test_bitcoin_cli_submit",
+            "time": 0.487,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bitcoin.test_bitcoin_cli_withdraw",
+            "name": "test_bitcoin_cli_withdraw",
+            "time": 0.162,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_decode",
+            "name": "test_bytom_cli_decode",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_fund",
+            "name": "test_bytom_cli_fund",
+            "time": 6.684,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert \"Error: Insufficient spend UTXO's, you don't have enough amount.\\n\" == 'eyJmZWUiOiA0NDkwMDAsICJhZGRyZXNzIjogImJtMXE5cjNwOXI3YWQ3bWplYXJxdTl5ZHM2ZWxmdWxuZjY2d2FldDd6dCIsICJyYXciOiAiMDcwMTAwMDEwMTVmMDE1ZDc2Zjk3ZTI1N2E1ZGIwOTdhNDAzOWViZjkwOGU2ZDEwM2Q0MjVjMWVhYWVkZGMzZGRjMzU5ZjJmNjdlZTFjY2JmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYzg4ZWQ3NDAwMTAxMTYwMDE0MjhlMjEyOGZkZDZmYjcyY2Y0NjBlMTQ4ZDg2YjNmNGYzZjM0ZWI0ZTIyMDEyMDVkZTczM2NmNWUwODlhZDZhMGQxOGJkZWU1ODYxMWVkNjNmNzc4OTdhYTM1Mjk5YzU5YjY4Mzc4ODY4ZTA1YjUwMjAxNDhmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmODBhZGUyMDQwMTIyMDAyMGE4NmFkZWE1NWJiYWJmMjc4Mjk1Yzg3NzdhYmRjNjMyMTYwNjNjYzE1ZmI5NTY5YTNjMWE0ODQ3YWMxNzRjMTAwMDAxM2NmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZTBhZGQ5M2IwMTE2MDAxNDI4ZTIxMjhmZGQ2ZmI3MmNmNDYwZTE0OGQ4NmIzZjRmM2YzNGViNGUwMCIsICJoYXNoIjogImFiMDYyMDEwYmMzYjEyZGU4NDhiZGRmZjg2Y2Y5MWQ0M2I5ODJmYjA2YjRhMmNjMDhjNDY2NTgwYzgxNTdiZjIiLCAidW5zaWduZWRfZGF0YXMiOiBbeyJkYXRhcyI6IFsiOGRlMzE3YmRkNDlkMmJlYzNjOGU1ODA0MDEwYWVlYmNkYWZiNGE1NjM3ZWYzZGQ5ZmQ0M2FhZTA5ZDA3NGUxYSJdLCAicHVibGljX2tleSI6ICI1ZGU3MzNjZjVlMDg5YWQ2YTBkMThiZGVlNTg2MTFlZDYzZjc3ODk3YWEzNTI5OWM1OWI2ODM3ODg2OGUwNWI1IiwgIm5ldHdvcmsiOiAibWFpbm5ldCIsICJwYXRoIjogIm0vNDQvMTUzLzEvMC8xIn1dLCAic2lnbmF0dXJlcyI6IFtdLCAibmV0d29yayI6ICJtYWlubmV0IiwgInR5cGUiOiAiYnl0b21fZnVuZF91bnNpZ25lZCJ9\\n'\n  - eyJmZWUiOiA0NDkwMDAsICJhZGRyZXNzIjogImJtMXE5cjNwOXI3YWQ3bWplYXJxdTl5ZHM2ZWxmdWxuZjY2d2FldDd6dCIsICJyYXciOiAiMDcwMTAwMDEwMTVmMDE1ZDc2Zjk3ZTI1N2E1ZGIwOTdhNDAzOWViZjkwOGU2ZDEwM2Q0MjVjMWVhYWVkZGMzZGRjMzU5ZjJmNjdlZTFjY2JmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYzg4ZWQ3NDAwMTAxMTYwMDE0MjhlMjEyOGZkZDZmYjcyY2Y0NjBlMTQ4ZDg2YjNmNGYzZjM0ZWI0ZTIyMDEyMDVkZTczM2NmNWUwODlhZDZhMGQxOGJkZWU1ODYxMWVkNjNmNzc4OTdhYTM1Mjk5YzU5YjY4Mzc4ODY4ZTA1YjUwMjAxNDhmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmODBhZGUyMDQwMTIyMDAyMGE4NmFkZWE1NWJiYWJmMjc4Mjk1Yzg3NzdhYmRjNjMyMTYwNjNjYzE1ZmI5NTY5YTNjMWE0ODQ3YWMxNzRjMTAwMDAxM2NmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZTBhZGQ5M2IwMTE2MDAxNDI4ZTIxMjhmZGQ2ZmI3MmNmNDYwZTE0OGQ4NmIzZjRmM2YzNGViNGUwMCIsICJoYXNoIjogImFiMDYyMDEwYmMzYjEyZGU4NDhiZGRmZjg2Y2Y5MWQ0M2I5ODJmYjA2YjRhMmNjMDhjNDY2NTgwYzgxNTdiZjIiLCAidW5zaWduZWRfZGF0YXMiOiBbeyJkYXRhcyI6IFsiOGRlMzE3YmRkNDlkMmJlYzNjOGU1ODA0MDEwYWVlYmNkYWZiNGE1NjM3ZWYzZGQ5ZmQ0M2FhZTA5ZDA3NGUxYSJdLCAicHVibGljX2tleSI6ICI1ZGU3MzNjZjVlMDg5YWQ2YTBkMThiZGVlNTg2MTFlZDYzZjc3ODk3YWEzNTI5OWM1OWI2ODM3ODg2OGUwNWI1IiwgIm5ldHdvcmsiOiAibWFpbm5ldCIsICJwYXRoIjogIm0vNDQvMTUzLzEvMC8xIn1dLCAic2lnbmF0dXJlcyI6IFtdLCAibmV0d29yayI6ICJtYWlubmV0IiwgInR5cGUiOiAiYnl0b21fZnVuZF91bnNpZ25lZCJ9\n  + Error: Insufficient spend UTXO's, you don't have enough amount.",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_htlc",
+            "name": "test_bytom_cli_htlc",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_refund",
+            "name": "test_bytom_cli_refund",
+            "time": 9.777,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_signature",
+            "name": "test_bytom_cli_signature",
+            "time": 0.117,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_submit",
+            "name": "test_bytom_cli_submit",
+            "time": 4.209,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.bytom.test_bytom_cli_withdraw",
+            "name": "test_bytom_cli_withdraw",
+            "time": 10.34,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_decode",
+            "name": "test_ethereum_cli_decode",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_fund",
+            "name": "test_ethereum_cli_fund",
+            "time": 1.035,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert False\n +  where False = is_transaction_raw('Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n')\n +    where 'Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n' = <Result okay>.output",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_htlc",
+            "name": "test_ethereum_cli_htlc",
+            "time": 0.014,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_refund",
+            "name": "test_ethereum_cli_refund",
+            "time": 0.631,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert False\n +  where False = is_transaction_raw('Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n')\n +    where 'Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n' = <Result okay>.output",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_signature",
+            "name": "test_ethereum_cli_signature",
+            "time": 5.571,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_submit",
+            "name": "test_ethereum_cli_submit",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.test_ethereum_cli_withdraw",
+            "name": "test_ethereum_cli_withdraw",
+            "time": 0.608,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert False\n +  where False = is_transaction_raw('Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n')\n +    where 'Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n' = <Result okay>.output",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.erc20.test_ethereum_cli_erc20_fund",
+            "name": "test_ethereum_cli_erc20_fund",
+            "time": 0.151,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert False\n +  where False = is_transaction_raw('Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n')\n +    where 'Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n' = <Result okay>.output",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.erc20.test_ethereum_cli_erc20_htlc",
+            "name": "test_ethereum_cli_erc20_htlc",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.erc20.test_ethereum_cli_erc20_refund",
+            "name": "test_ethereum_cli_erc20_refund",
+            "time": 0.61,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert False\n +  where False = is_transaction_raw('Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n')\n +    where 'Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n' = <Result okay>.output",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.ethereum.erc20.test_ethereum_cli_erc20_withdraw",
+            "name": "test_ethereum_cli_erc20_withdraw",
+            "time": 0.62,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert False\n +  where False = is_transaction_raw('Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n')\n +    where 'Error: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4\\n' = <Result okay>.output",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_decode",
+            "name": "test_vapor_cli_decode",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_fund",
+            "name": "test_vapor_cli_fund",
+            "time": 1.889,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert 'Error: Expecting value: line 1 column 1 (char 0)\\n' == 'eyJmZWUiOiA0NDkwMDAsICJhZGRyZXNzIjogInZwMXE5cjNwOXI3YWQ3bWplYXJxdTl5ZHM2ZWxmdWxuZjY2d2tjbXI4YSIsICJyYXciOiAiMDcwMTAwMDEwMTVmMDE1ZGMwMDlhMmRiZjA5ZjRlNjI3NDM3MGZiNjIzODFjYjlhZDUwZDE0OTdjZWU3ZDlmZTI0ZWFhODdlNjg0ZDNjYmFmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYzhkM2U3MzMwMTAxMTYwMDE0MjhlMjEyOGZkZDZmYjcyY2Y0NjBlMTQ4ZDg2YjNmNGYzZjM0ZWI0ZTIyMDEyMDVkZTczM2NmNWUwODlhZDZhMGQxOGJkZWU1ODYxMWVkNjNmNzc4OTdhYTM1Mjk5YzU5YjY4Mzc4ODY4ZTA1YjUwMjAxNGEwMDQ4ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZjgwYWRlMjA0MDEyMjAwMjBlNWQxYjM0N2Y4ZWZlYWE0NjE4YWVjODIyZmEzNTU1NzM2ZWJlMGU3MWVlYmVlN2U4MDE2NzA0YzYyMmZiY2FmMDAwMTNlMDAzY2ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZlMGYyZTkyZTAxMTYwMDE0MjhlMjEyOGZkZDZmYjcyY2Y0NjBlMTQ4ZDg2YjNmNGYzZjM0ZWI0ZTAwIiwgImhhc2giOiAiOTQ1NjUyZDJjNGY0ZWI4N2JmZjFkM2E1ZDY4YjgxMmFmOGJlOTdiZDM2NDVlYjBjYTlhYWJkMTQyZmE5YTlmYSIsICJ1bnNpZ25lZF9kYXRhcyI6IFt7ImRhdGFzIjogWyI1NmJkYTQ4MGJiYTQzNTFiYWEwMmU0NTZkZThiMTUyYTI3Y2RhNzM1NWE0OGRjZjVkYjMzMTExNzU4OGQ3M2VkIl0sICJwdWJsaWNfa2V5IjogIjVkZTczM2NmNWUwODlhZDZhMGQxOGJkZWU1ODYxMWVkNjNmNzc4OTdhYTM1Mjk5YzU5YjY4Mzc4ODY4ZTA1YjUiLCAibmV0d29yayI6ICJtYWlubmV0IiwgInBhdGgiOiAibS80NC8xNTMvMS8wLzEifV0sICJzaWduYXR1cmVzIjogW10sICJuZXR3b3JrIjogIm1haW5uZXQiLCAidHlwZSI6ICJ2YXBvcl9mdW5kX3Vuc2lnbmVkIn0=\\n'\n  - eyJmZWUiOiA0NDkwMDAsICJhZGRyZXNzIjogInZwMXE5cjNwOXI3YWQ3bWplYXJxdTl5ZHM2ZWxmdWxuZjY2d2tjbXI4YSIsICJyYXciOiAiMDcwMTAwMDEwMTVmMDE1ZGMwMDlhMmRiZjA5ZjRlNjI3NDM3MGZiNjIzODFjYjlhZDUwZDE0OTdjZWU3ZDlmZTI0ZWFhODdlNjg0ZDNjYmFmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYzhkM2U3MzMwMTAxMTYwMDE0MjhlMjEyOGZkZDZmYjcyY2Y0NjBlMTQ4ZDg2YjNmNGYzZjM0ZWI0ZTIyMDEyMDVkZTczM2NmNWUwODlhZDZhMGQxOGJkZWU1ODYxMWVkNjNmNzc4OTdhYTM1Mjk5YzU5YjY4Mzc4ODY4ZTA1YjUwMjAxNGEwMDQ4ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZjgwYWRlMjA0MDEyMjAwMjBlNWQxYjM0N2Y4ZWZlYWE0NjE4YWVjODIyZmEzNTU1NzM2ZWJlMGU3MWVlYmVlN2U4MDE2NzA0YzYyMmZiY2FmMDAwMTNlMDAzY2ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZlMGYyZTkyZTAxMTYwMDE0MjhlMjEyOGZkZDZmYjcyY2Y0NjBlMTQ4ZDg2YjNmNGYzZjM0ZWI0ZTAwIiwgImhhc2giOiAiOTQ1NjUyZDJjNGY0ZWI4N2JmZjFkM2E1ZDY4YjgxMmFmOGJlOTdiZDM2NDVlYjBjYTlhYWJkMTQyZmE5YTlmYSIsICJ1bnNpZ25lZF9kYXRhcyI6IFt7ImRhdGFzIjogWyI1NmJkYTQ4MGJiYTQzNTFiYWEwMmU0NTZkZThiMTUyYTI3Y2RhNzM1NWE0OGRjZjVkYjMzMTExNzU4OGQ3M2VkIl0sICJwdWJsaWNfa2V5IjogIjVkZTczM2NmNWUwODlhZDZhMGQxOGJkZWU1ODYxMWVkNjNmNzc4OTdhYTM1Mjk5YzU5YjY4Mzc4ODY4ZTA1YjUiLCAibmV0d29yayI6ICJtYWlubmV0IiwgInBhdGgiOiAibS80NC8xNTMvMS8wLzEifV0sICJzaWduYXR1cmVzIjogW10sICJuZXR3b3JrIjogIm1haW5uZXQiLCAidHlwZSI6ICJ2YXBvcl9mdW5kX3Vuc2lnbmVkIn0=\n  + Error: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_htlc",
+            "name": "test_vapor_cli_htlc",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_refund",
+            "name": "test_vapor_cli_refund",
+            "time": 2.943,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert 'Error: Expecting value: line 1 column 1 (char 0)\\n' == 'eyJmZWUiOiA1MDkwMDAsICJhZGRyZXNzIjogInZwMXF1aGdteDNsY2FsNDJnY3YyYWpwemxnNjQydW13aGM4OHJtNDd1bDVxemVjeWNjMzBoamhzYzczdGowIiwgImhhc2giOiAiMmFmMTIwOWQ2Yzg0MGI1NjIzY2M2MWE2ODNiYzNlYWYwZTJmMmVjNGY3NjM4YzQ1MmI4ZmM3OWI0N2YzM2YxMyIsICJyYXciOiAiMDcwMTAwMDEwMTZiMDE2OWMwMDlhMmRiZjA5ZjRlNjI3NDM3MGZiNjIzODFjYjlhZDUwZDE0OTdjZWU3ZDlmZTI0ZWFhODdlNjg0ZDNjYmFmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmODBhZGUyMDQwMDAxMjIwMDIwZTVkMWIzNDdmOGVmZWFhNDYxOGFlYzgyMmZhMzU1NTczNmViZTBlNzFlZWJlZTdlODAxNjcwNGM2MjJmYmNhZjAxMDAwMTAxM2UwMDNjZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmI4YTRjMzA0MDExNjAwMTQyOGUyMTI4ZmRkNmZiNzJjZjQ2MGUxNDhkODZiM2Y0ZjNmMzRlYjRlMDAiLCAidW5zaWduZWRfZGF0YXMiOiBbeyJkYXRhcyI6IFsiNGMzYzE1YTI5Mzg4MmQ5NWI4OTRkZDFiNDg1MzIwNmIyZTMyMDJkYmE1Njc1YTQxNzUyZDNjZTY5ZWNiZGJlNCJdLCAibmV0d29yayI6ICJtYWlubmV0IiwgInBhdGgiOiBudWxsfV0sICJzaWduYXR1cmVzIjogW10sICJuZXR3b3JrIjogIm1haW5uZXQiLCAidHlwZSI6ICJ2YXBvcl9yZWZ1bmRfdW5zaWduZWQifQ==\\n'\n  - eyJmZWUiOiA1MDkwMDAsICJhZGRyZXNzIjogInZwMXF1aGdteDNsY2FsNDJnY3YyYWpwemxnNjQydW13aGM4OHJtNDd1bDVxemVjeWNjMzBoamhzYzczdGowIiwgImhhc2giOiAiMmFmMTIwOWQ2Yzg0MGI1NjIzY2M2MWE2ODNiYzNlYWYwZTJmMmVjNGY3NjM4YzQ1MmI4ZmM3OWI0N2YzM2YxMyIsICJyYXciOiAiMDcwMTAwMDEwMTZiMDE2OWMwMDlhMmRiZjA5ZjRlNjI3NDM3MGZiNjIzODFjYjlhZDUwZDE0OTdjZWU3ZDlmZTI0ZWFhODdlNjg0ZDNjYmFmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmODBhZGUyMDQwMDAxMjIwMDIwZTVkMWIzNDdmOGVmZWFhNDYxOGFlYzgyMmZhMzU1NTczNmViZTBlNzFlZWJlZTdlODAxNjcwNGM2MjJmYmNhZjAxMDAwMTAxM2UwMDNjZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmI4YTRjMzA0MDExNjAwMTQyOGUyMTI4ZmRkNmZiNzJjZjQ2MGUxNDhkODZiM2Y0ZjNmMzRlYjRlMDAiLCAidW5zaWduZWRfZGF0YXMiOiBbeyJkYXRhcyI6IFsiNGMzYzE1YTI5Mzg4MmQ5NWI4OTRkZDFiNDg1MzIwNmIyZTMyMDJkYmE1Njc1YTQxNzUyZDNjZTY5ZWNiZGJlNCJdLCAibmV0d29yayI6ICJtYWlubmV0IiwgInBhdGgiOiBudWxsfV0sICJzaWduYXR1cmVzIjogW10sICJuZXR3b3JrIjogIm1haW5uZXQiLCAidHlwZSI6ICJ2YXBvcl9yZWZ1bmRfdW5zaWduZWQifQ==\n  + Error: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_signature",
+            "name": "test_vapor_cli_signature",
+            "time": 0.138,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_submit",
+            "name": "test_vapor_cli_submit",
+            "time": 3.653,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert 'Error: Expecting value: line 1 column 1 (char 0)\\n' == 'Error: (600), finalize tx fail\\n'\n  - Error: (600), finalize tx fail\n  + Error: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.vapor.test_vapor_cli_withdraw",
+            "name": "test_vapor_cli_withdraw",
+            "time": 5.699,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert 'Error: Expecting value: line 1 column 1 (char 0)\\n' == 'eyJmZWUiOiA1MDkwMDAsICJhZGRyZXNzIjogInZwMXF1aGdteDNsY2FsNDJnY3YyYWpwemxnNjQydW13aGM4OHJtNDd1bDVxemVjeWNjMzBoamhzYzczdGowIiwgInJhdyI6ICIwNzAxMDAwMTAxNmIwMTY5YzAwOWEyZGJmMDlmNGU2Mjc0MzcwZmI2MjM4MWNiOWFkNTBkMTQ5N2NlZTdkOWZlMjRlYWE4N2U2ODRkM2NiYWZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY4MGFkZTIwNDAwMDEyMjAwMjBlNWQxYjM0N2Y4ZWZlYWE0NjE4YWVjODIyZmEzNTU1NzM2ZWJlMGU3MWVlYmVlN2U4MDE2NzA0YzYyMmZiY2FmMDEwMDAxMDEzZTAwM2NmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYjhhNGMzMDQwMTE2MDAxNGM5NWUwOTJjYWVhZWNlMzVjNTczZTcxZTExMDU1NTZkOTI5Y2ZjOTAwMCIsICJoYXNoIjogIjdmNDBkNjI2MDVkMjM4NTEyNjgzYTQ3M2M1MmY4NzE3MjQyZDYxZjI4MmQyOTA0NDA2ZWYzYTQ4YzM3NmNhNDMiLCAidW5zaWduZWRfZGF0YXMiOiBbeyJkYXRhcyI6IFsiMTI3YjY5YTljNmQ1ZWViZGZkM2JlYjA2NWY5MTExMDdiNzQwZmU0YWZhNWY3ZmIzNDZmYjcyY2I4MjU0YmI4NCJdLCAibmV0d29yayI6ICJtYWlubmV0IiwgInBhdGgiOiBudWxsfV0sICJzaWduYXR1cmVzIjogW10sICJuZXR3b3JrIjogIm1haW5uZXQiLCAidHlwZSI6ICJ2YXBvcl93aXRoZHJhd191bnNpZ25lZCJ9\\n'\n  - eyJmZWUiOiA1MDkwMDAsICJhZGRyZXNzIjogInZwMXF1aGdteDNsY2FsNDJnY3YyYWpwemxnNjQydW13aGM4OHJtNDd1bDVxemVjeWNjMzBoamhzYzczdGowIiwgInJhdyI6ICIwNzAxMDAwMTAxNmIwMTY5YzAwOWEyZGJmMDlmNGU2Mjc0MzcwZmI2MjM4MWNiOWFkNTBkMTQ5N2NlZTdkOWZlMjRlYWE4N2U2ODRkM2NiYWZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY4MGFkZTIwNDAwMDEyMjAwMjBlNWQxYjM0N2Y4ZWZlYWE0NjE4YWVjODIyZmEzNTU1NzM2ZWJlMGU3MWVlYmVlN2U4MDE2NzA0YzYyMmZiY2FmMDEwMDAxMDEzZTAwM2NmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYjhhNGMzMDQwMTE2MDAxNGM5NWUwOTJjYWVhZWNlMzVjNTczZTcxZTExMDU1NTZkOTI5Y2ZjOTAwMCIsICJoYXNoIjogIjdmNDBkNjI2MDVkMjM4NTEyNjgzYTQ3M2M1MmY4NzE3MjQyZDYxZjI4MmQyOTA0NDA2ZWYzYTQ4YzM3NmNhNDMiLCAidW5zaWduZWRfZGF0YXMiOiBbeyJkYXRhcyI6IFsiMTI3YjY5YTljNmQ1ZWViZGZkM2JlYjA2NWY5MTExMDdiNzQwZmU0YWZhNWY3ZmIzNDZmYjcyY2I4MjU0YmI4NCJdLCAibmV0d29yayI6ICJtYWlubmV0IiwgInBhdGgiOiBudWxsfV0sICJzaWduYXR1cmVzIjogW10sICJuZXR3b3JrIjogIm1haW5uZXQiLCAidHlwZSI6ICJ2YXBvcl93aXRoZHJhd191bnNpZ25lZCJ9\n  + Error: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_decode",
+            "name": "test_xinfin_cli_decode",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_fund",
+            "name": "test_xinfin_cli_fund",
+            "time": 0.76,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_htlc",
+            "name": "test_xinfin_cli_htlc",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_refund",
+            "name": "test_xinfin_cli_refund",
+            "time": 0.626,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_signature",
+            "name": "test_xinfin_cli_signature",
+            "time": 5.414,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_submit",
+            "name": "test_xinfin_cli_submit",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.test_xinfin_cli_withdraw",
+            "name": "test_xinfin_cli_withdraw",
+            "time": 0.624,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.xrc20.test_xinfin_cli_xrc20_fund",
+            "name": "test_xinfin_cli_xrc20_fund",
+            "time": 0.715,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.xrc20.test_xinfin_cli_xrc20_htlc",
+            "name": "test_xinfin_cli_xrc20_htlc",
+            "time": 0.015,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.xrc20.test_xinfin_cli_xrc20_refund",
+            "name": "test_xinfin_cli_xrc20_refund",
+            "time": 0.673,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.cli.xinfin.xrc20.test_xinfin_cli_xrc20_withdraw",
+            "name": "test_xinfin_cli_xrc20_withdraw",
+            "time": 0.824,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.test_config",
+            "name": "test_config",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_htlc",
+            "name": "test_bitcoin_htlc",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_rpc",
+            "name": "test_bitcoin_rpc",
+            "time": 0.334,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "KeyError: 'tx_hex'",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_signature",
+            "name": "test_bitcoin_normal_signature",
+            "time": 4.785,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_signature",
+            "name": "test_bitcoin_fund_signature",
+            "time": 5.106,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_signature",
+            "name": "test_bitcoin_withdraw_signature",
+            "time": 4.203,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_signature",
+            "name": "test_bitcoin_refund_signature",
+            "time": 5.264,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_solver",
+            "name": "test_bitcoin_normal_solver",
+            "time": 2.051,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_solver",
+            "name": "test_bitcoin_fund_solver",
+            "time": 1.84,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_solver",
+            "name": "test_bitcoin_withdraw_solver",
+            "time": 2.26,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_solver",
+            "name": "test_bitcoin_refund_solver",
+            "time": 2.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_transaction",
+            "name": "test_bitcoin_normal_transaction",
+            "time": 2.839,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_transaction",
+            "name": "test_bitcoin_fund_transaction",
+            "time": 2.152,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_transaction",
+            "name": "test_bitcoin_withdraw_transaction",
+            "time": 2.697,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_transaction",
+            "name": "test_bitcoin_refund_transaction",
+            "time": 2.255,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_utils",
+            "name": "test_bitcoin_utils",
+            "time": 60.293,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='chain.so', port=443): Read timed out. (read timeout=60)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_wallet",
+            "name": "test_bitcoin_wallet_from_entropy",
+            "time": 2.673,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_wallet",
+            "name": "test_bitcoin_wallet_from_mnemonic",
+            "time": 2.438,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_wallet",
+            "name": "test_bitcoin_wallet_from_seed",
+            "time": 2.14,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_wallet",
+            "name": "test_bitcoin_wallet_from_root_xprivate_key",
+            "time": 2.297,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bitcoin.test_bitcoin_wallet",
+            "name": "test_bitcoin_wallet_from_private_key",
+            "time": 0.463,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_htlc",
+            "name": "test_bytom_htlc",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_rpc",
+            "name": "test_bytom_rpc",
+            "time": 0.945,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_signature",
+            "name": "test_bytom_normal_signature",
+            "time": 0.069,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_signature",
+            "name": "test_bytom_fund_signature",
+            "time": 0.069,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_signature",
+            "name": "test_bytom_withdraw_signature",
+            "time": 0.071,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_signature",
+            "name": "test_bytom_refund_signature",
+            "time": 0.072,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_solver",
+            "name": "test_bytom_normal_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_solver",
+            "name": "test_bytom_fund_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_solver",
+            "name": "test_bytom_withdraw_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_solver",
+            "name": "test_bytom_refund_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_transaction",
+            "name": "test_bytom_normal_transaction",
+            "time": 2.468,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "swap.exceptions.BalanceError: Insufficient spend UTXO's, you don't have enough amount.",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_transaction",
+            "name": "test_bytom_fund_transaction",
+            "time": 1.765,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "swap.exceptions.BalanceError: Insufficient spend UTXO's, you don't have enough amount.",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_transaction",
+            "name": "test_bytom_withdraw_transaction",
+            "time": 4.199,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_transaction",
+            "name": "test_bytom_refund_transaction",
+            "time": 5.896,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_utils",
+            "name": "test_bytom_utils",
+            "time": 1.249,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_wallet",
+            "name": "test_bytom_wallet_from_entropy",
+            "time": 6.426,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_wallet",
+            "name": "test_bytom_wallet_from_mnemonic",
+            "time": 0.913,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_wallet",
+            "name": "test_bytom_wallet_from_seed",
+            "time": 0.205,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_wallet",
+            "name": "test_bytom_wallet_from_xprivate_key",
+            "time": 0.196,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.bytom.test_bytom_wallet",
+            "name": "test_bytom_wallet_from_private_key",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_htlc",
+            "name": "test_ethereum_htlc",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_rpc",
+            "name": "test_ethereum_rpc",
+            "time": 0.627,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_signature",
+            "name": "test_ethereum_normal_signature",
+            "time": 3.31,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_signature",
+            "name": "test_ethereum_fund_signature",
+            "time": 3.231,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_signature",
+            "name": "test_ethereum_withdraw_signature",
+            "time": 3.505,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_signature",
+            "name": "test_ethereum_refund_signature",
+            "time": 3.475,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_solver",
+            "name": "test_ethereum_normal_solver",
+            "time": 1.693,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_solver",
+            "name": "test_ethereum_fund_solver",
+            "time": 1.877,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_solver",
+            "name": "test_ethereum_withdraw_solver",
+            "time": 1.756,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_solver",
+            "name": "test_ethereum_refund_solver",
+            "time": 1.766,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_transaction",
+            "name": "test_ethereum_normal_transaction",
+            "time": 0.599,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_transaction",
+            "name": "test_ethereum_fund_transaction",
+            "time": 0.627,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_transaction",
+            "name": "test_ethereum_withdraw_transaction",
+            "time": 0.628,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_transaction",
+            "name": "test_ethereum_refund_transaction",
+            "time": 0.623,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_utils",
+            "name": "test_ethereum_utils",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_wallet",
+            "name": "test_ethereum_wallet_from_entropy",
+            "time": 3.29,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_wallet",
+            "name": "test_ethereum_wallet_from_mnemonic",
+            "time": 2.463,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_wallet",
+            "name": "test_ethereum_wallet_from_seed",
+            "time": 2.069,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_wallet",
+            "name": "test_ethereum_wallet_from_root_xprivate_key",
+            "time": 2.107,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.test_ethereum_wallet",
+            "name": "test_ethereum_wallet_from_private_key",
+            "time": 0.462,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_htlc",
+            "name": "test_ethereum_erc20_htlc",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_signature",
+            "name": "test_ethereum_erc20_normal_signature",
+            "time": 3.537,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_signature",
+            "name": "test_ethereum_erc20_fund_signature",
+            "time": 3.475,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_signature",
+            "name": "test_ethereum_erc20_withdraw_signature",
+            "time": 3.827,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_signature",
+            "name": "test_ethereum_erc20_refund_signature",
+            "time": 3.755,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_solver",
+            "name": "test_ethereum_erc20_normal_solver",
+            "time": 1.875,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_solver",
+            "name": "test_ethereum_erc20_fund_solver",
+            "time": 2.028,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_solver",
+            "name": "test_ethereum_erc20_withdraw_solver",
+            "time": 1.67,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_solver",
+            "name": "test_ethereum_erc20_refund_solver",
+            "time": 1.644,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_transaction",
+            "name": "test_ethereum_erc20_normal_transaction",
+            "time": 0.61,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_transaction",
+            "name": "test_ethereum_erc20_fund_transaction",
+            "time": 0.62,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_transaction",
+            "name": "test_ethereum_erc20_withdraw_transaction",
+            "time": 0.612,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.ethereum.erc20.test_ethereum_erc20_transaction",
+            "name": "test_ethereum_erc20_refund_transaction",
+            "time": 0.616,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.HTTPError: 410 Client Error: Gone for url: https://ropsten.infura.io/v3/4414fea5f7454211956b1627621450b4",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_htlc",
+            "name": "test_vapor_htlc",
+            "time": 3.298,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_rpc",
+            "name": "test_vapor_rpc",
+            "time": 3.619,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_signature",
+            "name": "test_vapor_normal_signature",
+            "time": 0.068,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_signature",
+            "name": "test_vapor_fund_signature",
+            "time": 0.068,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_signature",
+            "name": "test_vapor_withdraw_signature",
+            "time": 0.085,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_signature",
+            "name": "test_vapor_refund_signature",
+            "time": 0.077,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_solver",
+            "name": "test_vapor_normal_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_solver",
+            "name": "test_vapor_fund_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_solver",
+            "name": "test_vapor_withdraw_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_solver",
+            "name": "test_vapor_refund_solver",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_transaction",
+            "name": "test_vapor_normal_transaction",
+            "time": 2.049,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_transaction",
+            "name": "test_vapor_fund_transaction",
+            "time": 2.41,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_transaction",
+            "name": "test_vapor_withdraw_transaction",
+            "time": 1.886,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_transaction",
+            "name": "test_vapor_refund_transaction",
+            "time": 2.158,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_utils",
+            "name": "test_vapor_utils",
+            "time": 0.753,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_wallet",
+            "name": "test_vapor_wallet_from_entropy",
+            "time": 2.995,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_wallet",
+            "name": "test_vapor_wallet_from_mnemonic",
+            "time": 0.157,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_wallet",
+            "name": "test_vapor_wallet_from_seed",
+            "time": 0.151,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_wallet",
+            "name": "test_vapor_wallet_from_xprivate_key",
+            "time": 0.163,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.vapor.test_vapor_wallet",
+            "name": "test_vapor_wallet_from_private_key",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_htlc",
+            "name": "test_xinfin_htlc",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_rpc",
+            "name": "test_xinfin_rpc",
+            "time": 0.13,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_signature",
+            "name": "test_xinfin_normal_signature",
+            "time": 4.188,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_signature",
+            "name": "test_xinfin_fund_signature",
+            "time": 4.421,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_signature",
+            "name": "test_xinfin_withdraw_signature",
+            "time": 3.684,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_signature",
+            "name": "test_xinfin_refund_signature",
+            "time": 3.416,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_solver",
+            "name": "test_xinfin_normal_solver",
+            "time": 2.139,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_solver",
+            "name": "test_xinfin_fund_solver",
+            "time": 1.681,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_solver",
+            "name": "test_xinfin_withdraw_solver",
+            "time": 1.587,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_solver",
+            "name": "test_xinfin_refund_solver",
+            "time": 1.902,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_transaction",
+            "name": "test_xinfin_normal_transaction",
+            "time": 2.19,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_transaction",
+            "name": "test_xinfin_fund_transaction",
+            "time": 2.638,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_transaction",
+            "name": "test_xinfin_withdraw_transaction",
+            "time": 2.668,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_transaction",
+            "name": "test_xinfin_refund_transaction",
+            "time": 2.922,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_utils",
+            "name": "test_xinfin_utils",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_wallet",
+            "name": "test_xinfin_wallet_from_entropy",
+            "time": 2.376,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_wallet",
+            "name": "test_xinfin_wallet_from_mnemonic",
+            "time": 2.377,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_wallet",
+            "name": "test_xinfin_wallet_from_seed",
+            "time": 2.202,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_wallet",
+            "name": "test_xinfin_wallet_from_root_xprivate_key",
+            "time": 2.287,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.test_xinfin_wallet",
+            "name": "test_xinfin_wallet_from_private_key",
+            "time": 0.477,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_htlc",
+            "name": "test_xinfin_xrc20_htlc",
+            "time": 0.013,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_signature",
+            "name": "test_xinfin_xrc20_normal_signature",
+            "time": 3.458,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_signature",
+            "name": "test_xinfin_xrc20_fund_signature",
+            "time": 3.981,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_signature",
+            "name": "test_xinfin_xrc20_withdraw_signature",
+            "time": 3.727,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_signature",
+            "name": "test_xinfin_xrc20_refund_signature",
+            "time": 3.724,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_solver",
+            "name": "test_xinfin_xrc20_normal_solver",
+            "time": 1.83,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_solver",
+            "name": "test_xinfin_xrc20_fund_solver",
+            "time": 1.931,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_solver",
+            "name": "test_xinfin_xrc20_withdraw_solver",
+            "time": 1.724,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_solver",
+            "name": "test_xinfin_xrc20_refund_solver",
+            "time": 1.621,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_transaction",
+            "name": "test_xinfin_xrc20_normal_transaction",
+            "time": 2.543,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_transaction",
+            "name": "test_xinfin_xrc20_fund_transaction",
+            "time": 2.431,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_transaction",
+            "name": "test_xinfin_xrc20_withdraw_transaction",
+            "time": 2.513,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.providers.xinfin.xrc20.test_xinfin_xrc20_transaction",
+            "name": "test_xinfin_xrc20_refund_transaction",
+            "time": 2.393,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

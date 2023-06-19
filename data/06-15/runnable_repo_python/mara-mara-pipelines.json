@@ -1,0 +1,63 @@
+{
+    "repository": "mara/mara-pipelines",
+    "stars": 2005,
+    "language": "python",
+    "size": 3419,
+    "clone_url": "https://github.com/mara/mara-pipelines.git",
+    "timestamp": "2023-06-16T12:50:52.285139Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.postgres.test_command_ReadFile",
+            "name": "test_read_file",
+            "time": 0.759,
+            "results": [
+                {
+                    "result": "Error",
+                    "message": "failed on setup with \"Exception: Command docker-compose -f \"/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mara-mara-pipelines/tests/docker-compose.yml\" -p \"pytest131\" up --build -d returned 255: \"\"\"[136] Failed to execute script docker-compose\nTraceback (most recent call last):\n  File \"urllib3/connectionpool.py\", line 677, in urlopen\n  File \"urllib3/connectionpool.py\", line 392, in _make_request\n  File \"http/client.py\", line 1277, in request\n  File \"http/client.py\", line 1323, in _send_request\n  File \"http/client.py\", line 1272, in endheaders\n  File \"http/client.py\", line 1032, in _send_output\n  File \"http/client.py\", line 972, in send\n  File \"docker/transport/unixconn.py\", line 43, in connect\nPermissionError: [Errno 13] Permission denied\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"requests/adapters.py\", line 449, in send\n  File \"urllib3/connectionpool.py\", line 727, in urlopen\n  File \"urllib3/util/retry.py\", line 410, in increment\n  File \"urllib3/packages/six.py\", line 734, in reraise\n  File \"urllib3/connectionpool.py\", line 677, in urlopen\n  File \"urllib3/connectionpool.py\", line 392, in _make_request\n  File \"http/client.py\", line 1277, in request\n  File \"http/client.py\", line 1323, in _send_request\n  File \"http/client.py\", line 1272, in endheaders\n  File \"http/client.py\", line 1032, in _send_output\n  File \"http/client.py\", line 972, in send\n  File \"docker/transport/unixconn.py\", line 43, in connect\nurllib3.exceptions.ProtocolError: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"docker/api/client.py\", line 214, in _retrieve_server_version\n  File \"docker/api/daemon.py\", line 181, in version\n  File \"docker/utils/decorators.py\", line 46, in inner\n  File \"docker/api/client.py\", line 237, in _get\n  File \"requests/sessions.py\", line 543, in get\n  File \"requests/sessions.py\", line 530, in request\n  File \"requests/sessions.py\", line 643, in send\n  File \"requests/adapters.py\", line 498, in send\nrequests.exceptions.ConnectionError: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"docker-compose\", line 3, in <module>\n  File \"compose/cli/main.py\", line 81, in main\n  File \"compose/cli/main.py\", line 200, in perform_command\n  File \"compose/cli/command.py\", line 70, in project_from_options\n  File \"compose/cli/command.py\", line 153, in get_project\n  File \"compose/cli/docker_client.py\", line 43, in get_client\n  File \"compose/cli/docker_client.py\", line 170, in docker_client\n  File \"docker/api/client.py\", line 197, in __init__\n  File \"docker/api/client.py\", line 222, in _retrieve_server_version\ndocker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\"\"\".\"",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.postgres.test_command_ReadFile",
+            "name": "test_read_file_old_parameters",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Error",
+                    "message": "failed on setup with \"Exception: Command docker-compose -f \"/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mara-mara-pipelines/tests/docker-compose.yml\" -p \"pytest131\" up --build -d returned 255: \"\"\"[136] Failed to execute script docker-compose\nTraceback (most recent call last):\n  File \"urllib3/connectionpool.py\", line 677, in urlopen\n  File \"urllib3/connectionpool.py\", line 392, in _make_request\n  File \"http/client.py\", line 1277, in request\n  File \"http/client.py\", line 1323, in _send_request\n  File \"http/client.py\", line 1272, in endheaders\n  File \"http/client.py\", line 1032, in _send_output\n  File \"http/client.py\", line 972, in send\n  File \"docker/transport/unixconn.py\", line 43, in connect\nPermissionError: [Errno 13] Permission denied\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"requests/adapters.py\", line 449, in send\n  File \"urllib3/connectionpool.py\", line 727, in urlopen\n  File \"urllib3/util/retry.py\", line 410, in increment\n  File \"urllib3/packages/six.py\", line 734, in reraise\n  File \"urllib3/connectionpool.py\", line 677, in urlopen\n  File \"urllib3/connectionpool.py\", line 392, in _make_request\n  File \"http/client.py\", line 1277, in request\n  File \"http/client.py\", line 1323, in _send_request\n  File \"http/client.py\", line 1272, in endheaders\n  File \"http/client.py\", line 1032, in _send_output\n  File \"http/client.py\", line 972, in send\n  File \"docker/transport/unixconn.py\", line 43, in connect\nurllib3.exceptions.ProtocolError: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"docker/api/client.py\", line 214, in _retrieve_server_version\n  File \"docker/api/daemon.py\", line 181, in version\n  File \"docker/utils/decorators.py\", line 46, in inner\n  File \"docker/api/client.py\", line 237, in _get\n  File \"requests/sessions.py\", line 543, in get\n  File \"requests/sessions.py\", line 530, in request\n  File \"requests/sessions.py\", line 643, in send\n  File \"requests/adapters.py\", line 498, in send\nrequests.exceptions.ConnectionError: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"docker-compose\", line 3, in <module>\n  File \"compose/cli/main.py\", line 81, in main\n  File \"compose/cli/main.py\", line 200, in perform_command\n  File \"compose/cli/command.py\", line 70, in project_from_options\n  File \"compose/cli/command.py\", line 153, in get_project\n  File \"compose/cli/docker_client.py\", line 43, in get_client\n  File \"compose/cli/docker_client.py\", line 170, in docker_client\n  File \"docker/api/client.py\", line 197, in __init__\n  File \"docker/api/client.py\", line 222, in _retrieve_server_version\ndocker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\"\"\".\"",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.postgres.test_postgres",
+            "name": "test_postgres_command_WriteFile",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Error",
+                    "message": "failed on setup with \"Exception: Command docker-compose -f \"/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mara-mara-pipelines/tests/docker-compose.yml\" -p \"pytest131\" up --build -d returned 255: \"\"\"[136] Failed to execute script docker-compose\nTraceback (most recent call last):\n  File \"urllib3/connectionpool.py\", line 677, in urlopen\n  File \"urllib3/connectionpool.py\", line 392, in _make_request\n  File \"http/client.py\", line 1277, in request\n  File \"http/client.py\", line 1323, in _send_request\n  File \"http/client.py\", line 1272, in endheaders\n  File \"http/client.py\", line 1032, in _send_output\n  File \"http/client.py\", line 972, in send\n  File \"docker/transport/unixconn.py\", line 43, in connect\nPermissionError: [Errno 13] Permission denied\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"requests/adapters.py\", line 449, in send\n  File \"urllib3/connectionpool.py\", line 727, in urlopen\n  File \"urllib3/util/retry.py\", line 410, in increment\n  File \"urllib3/packages/six.py\", line 734, in reraise\n  File \"urllib3/connectionpool.py\", line 677, in urlopen\n  File \"urllib3/connectionpool.py\", line 392, in _make_request\n  File \"http/client.py\", line 1277, in request\n  File \"http/client.py\", line 1323, in _send_request\n  File \"http/client.py\", line 1272, in endheaders\n  File \"http/client.py\", line 1032, in _send_output\n  File \"http/client.py\", line 972, in send\n  File \"docker/transport/unixconn.py\", line 43, in connect\nurllib3.exceptions.ProtocolError: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"docker/api/client.py\", line 214, in _retrieve_server_version\n  File \"docker/api/daemon.py\", line 181, in version\n  File \"docker/utils/decorators.py\", line 46, in inner\n  File \"docker/api/client.py\", line 237, in _get\n  File \"requests/sessions.py\", line 543, in get\n  File \"requests/sessions.py\", line 530, in request\n  File \"requests/sessions.py\", line 643, in send\n  File \"requests/adapters.py\", line 498, in send\nrequests.exceptions.ConnectionError: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"docker-compose\", line 3, in <module>\n  File \"compose/cli/main.py\", line 81, in main\n  File \"compose/cli/main.py\", line 200, in perform_command\n  File \"compose/cli/command.py\", line 70, in project_from_options\n  File \"compose/cli/command.py\", line 153, in get_project\n  File \"compose/cli/docker_client.py\", line 43, in get_client\n  File \"compose/cli/docker_client.py\", line 170, in docker_client\n  File \"docker/api/client.py\", line 197, in __init__\n  File \"docker/api/client.py\", line 222, in _retrieve_server_version\ndocker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))\n\"\"\".\"",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

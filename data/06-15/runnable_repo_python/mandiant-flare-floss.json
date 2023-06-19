@@ -1,0 +1,401 @@
+{
+    "repository": "mandiant/flare-floss",
+    "stars": 2675,
+    "language": "python",
+    "size": 24057,
+    "clone_url": "https://github.com/mandiant/flare-floss.git",
+    "timestamp": "2023-06-16T11:48:22.969372Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_buf_filled_with",
+            "name": "test_str",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_buf_filled_with",
+            "name": "test_mmap",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_functions",
+            "time": 0.037,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--function', '0x401560'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_shellcode",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/shellcode-stackstrings/bin/shellcode-stackstrings.bin', '-f', 'sc32'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--only-static]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--only', 'static'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--only-stack]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--only', 'stack'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--only-tight]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--only', 'tight'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--only-decoded]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--only', 'decoded'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--no-static]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--no', 'static'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--no-stack]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--no', 'stack'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--no-tight]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--no', 'tight'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli_args",
+            "name": "test_args_analysis_type[--no-decoded]",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe', '--no', 'decoded'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_language_id",
+            "name": "test_language_detection[data/src/go-hello/bin/go-hello.exe-Language.GO]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: File data/src/go-hello/bin/go-hello.exe does not exist\nassert False\n +  where False = <function exists at 0x7f97b9c08ef0>('/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/go-hello/bin/go-hello.exe')\n +    where <function exists at 0x7f97b9c08ef0> = <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'>.exists\n +      where <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'> = os.path",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_language_id",
+            "name": "test_language_detection[data/src/rust-hello/bin/rust-hello.exe-Language.RUST]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: File data/src/rust-hello/bin/rust-hello.exe does not exist\nassert False\n +  where False = <function exists at 0x7f97b9c08ef0>('/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/rust-hello/bin/rust-hello.exe')\n +    where <function exists at 0x7f97b9c08ef0> = <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'>.exists\n +      where <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'> = os.path",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_language_id",
+            "name": "test_language_detection[data/test-decode-to-stack.exe-Language.UNKNOWN]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: File data/test-decode-to-stack.exe does not exist\nassert False\n +  where False = <function exists at 0x7f97b9c08ef0>('/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/test-decode-to-stack.exe')\n +    where <function exists at 0x7f97b9c08ef0> = <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'>.exists\n +      where <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'> = os.path",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_language_id",
+            "name": "test_language_detection[data/src/dotnet-hello/bin/dotnet-hello.exe-Language.DOTNET]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: File data/src/dotnet-hello/bin/dotnet-hello.exe does not exist\nassert False\n +  where False = <function exists at 0x7f97b9c08ef0>('/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/dotnet-hello/bin/dotnet-hello.exe')\n +    where <function exists at 0x7f97b9c08ef0> = <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'>.exists\n +      where <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'> = os.path",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_language_id",
+            "name": "test_language_detection[data/src/shellcode-stackstrings/bin/shellcode-stackstrings.bin-Language.UNKNOWN]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: File data/src/shellcode-stackstrings/bin/shellcode-stackstrings.bin does not exist\nassert False\n +  where False = <function exists at 0x7f97b9c08ef0>('/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/shellcode-stackstrings/bin/shellcode-stackstrings.bin')\n +    where <function exists at 0x7f97b9c08ef0> = <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'>.exists\n +      where <module 'posixpath' from '/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/posixpath.py'> = os.path",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_load",
+            "name": "test_load",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_main",
+            "name": "test_main_help",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_main",
+            "name": "test_main",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: assert -1 == 0\n +  where -1 = <function main at 0x7f97b644bb00>(['/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/tests/data/src/decode-in-place/bin/test-decode-in-place.exe'])\n +    where <function main at 0x7f97b644bb00> = <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'>.main\n +      where <module 'floss.main' from '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/mandiant-flare-floss/floss/main.py'> = floss.main",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_memdiff",
+            "name": "test_basics",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_memdiff",
+            "name": "test_complex",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scripts",
+            "name": "test_scripts[render-binja-import-script.py-args0]",
+            "time": 0.145,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert 1 == 0\n +  where 1 = CompletedProcess(args=['/opt/hostedtoolcache/Python/3.7.11/x64/bin/python', '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11...\"Expecting value\", s, err.value) from None\\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\\n').returncode",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scripts",
+            "name": "test_scripts[render-ghidra-import-script.py-args1]",
+            "time": 0.116,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert 1 == 0\n +  where 1 = CompletedProcess(args=['/opt/hostedtoolcache/Python/3.7.11/x64/bin/python', '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11...\"Expecting value\", s, err.value) from None\\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\\n').returncode",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scripts",
+            "name": "test_scripts[render-ida-import-script.py-args2]",
+            "time": 0.13,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert 1 == 0\n +  where 1 = CompletedProcess(args=['/opt/hostedtoolcache/Python/3.7.11/x64/bin/python', '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11...\"Expecting value\", s, err.value) from None\\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\\n').returncode",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scripts",
+            "name": "test_scripts[render-r2-import-script.py-args3]",
+            "time": 0.145,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert 1 == 0\n +  where 1 = CompletedProcess(args=['/opt/hostedtoolcache/Python/3.7.11/x64/bin/python', '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11...\"Expecting value\", s, err.value) from None\\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\\n').returncode",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_scripts",
+            "name": "test_scripts[render-x64dbg-database.py-args4]",
+            "time": 0.132,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert 1 == 0\n +  where 1 = CompletedProcess(args=['/opt/hostedtoolcache/Python/3.7.11/x64/bin/python', '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11...\"Expecting value\", s, err.value) from None\\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\\n').returncode",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

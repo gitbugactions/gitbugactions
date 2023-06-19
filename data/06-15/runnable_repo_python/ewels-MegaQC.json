@@ -1,0 +1,2181 @@
+{
+    "repository": "ewels/MegaQC",
+    "stars": 82,
+    "language": "python",
+    "size": 17838,
+    "clone_url": "https://github.com/ewels/MegaQC.git",
+    "timestamp": "2023-06-16T12:20:34.454679Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 5,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_config",
+            "name": "test_production_config",
+            "time": 0.458,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_config",
+            "name": "test_dev_config",
+            "time": 0.184,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_docker",
+            "name": "test_docker",
+            "time": 2.762,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "subprocess.CalledProcessError: Command '['docker', 'build', '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/ewels-MegaQC']' returned non-zero exit status 1.",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_docker",
+            "name": "test_compose",
+            "time": 0.912,
+            "results": [
+                {
+                    "result": "Error",
+                    "message": "failed on setup with \"subprocess.CalledProcessError: Command '['docker-compose', 'up', '--build', '--detach']' returned non-zero exit status 255.\"",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_docker",
+            "name": "test_https_redirects",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Error",
+                    "message": "failed on setup with \"subprocess.CalledProcessError: Command '['docker-compose', 'up', '--build', '--detach']' returned non-zero exit status 255.\"",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestRegisterForm",
+            "name": "test_validate_user_already_registered",
+            "time": 2.715,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestRegisterForm",
+            "name": "test_validate_email_already_registered",
+            "time": 1.344,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestRegisterForm",
+            "name": "test_validate_success",
+            "time": 1.625,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestLoginForm",
+            "name": "test_validate_success",
+            "time": 0.985,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestLoginForm",
+            "name": "test_validate_unknown_username",
+            "time": 1.195,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestLoginForm",
+            "name": "test_validate_invalid_password",
+            "time": 1.564,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_forms.TestLoginForm",
+            "name": "test_validate_inactive_user",
+            "time": 2.059,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestLoggingIn",
+            "name": "test_can_log_in_returns_200",
+            "time": 1.74,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestLoggingIn",
+            "name": "test_sees_alert_on_log_out",
+            "time": 1.589,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestLoggingIn",
+            "name": "test_sees_error_message_if_password_is_incorrect",
+            "time": 1.27,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestLoggingIn",
+            "name": "test_sees_error_message_if_username_doesnt_exist",
+            "time": 1.505,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestRegistering",
+            "name": "test_can_register",
+            "time": 2.543,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestRegistering",
+            "name": "test_sees_error_message_if_passwords_dont_match",
+            "time": 2.074,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_functional.TestRegistering",
+            "name": "test_sees_error_message_if_user_already_registered",
+            "time": 2.027,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.TestUser",
+            "name": "test_created_at_defaults_to_datetime",
+            "time": 1.905,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.TestUser",
+            "name": "test_password_is_nullable",
+            "time": 1.23,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.TestUser",
+            "name": "test_factory",
+            "time": 1.498,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.TestUser",
+            "name": "test_check_password",
+            "time": 1.965,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.TestUser",
+            "name": "test_full_name",
+            "time": 1.41,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.TestUser",
+            "name": "test_roles",
+            "time": 1.214,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.uploadlist]",
+            "time": 2.659,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.sampledatalist]",
+            "time": 2.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.reportlist]",
+            "time": 2.199,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.reportmetalist]",
+            "time": 2.156,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.samplelist]",
+            "time": 1.965,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.metatypelist]",
+            "time": 2.947,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.datatypelist]",
+            "time": 1.061,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.userlist]",
+            "time": 1.862,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.filterlist]",
+            "time": 1.421,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.filtergrouplist]",
+            "time": 1.246,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.favouriteplotlist]",
+            "time": 1.401,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources[rest_api.dashboardlist]",
+            "time": 1.818,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.user_uploadlist-user_id]",
+            "time": 1.363,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.user_reportlist-user_id]",
+            "time": 3.986,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.report_reportmetalist-report_id]",
+            "time": 3.297,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.report_samplelist-report_id]",
+            "time": 2.324,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.sample_sampledatalist-sample_id]",
+            "time": 2.054,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.user_filterlist-user_id]",
+            "time": 2.036,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.user_favouriteplotlist-user_id]",
+            "time": 2.131,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_many_resources_associated[rest_api.user_dashboardlist-user_id]",
+            "time": 2.787,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.upload]",
+            "time": 2.308,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.sampledata]",
+            "time": 3.583,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.report]",
+            "time": 7.179,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.sample]",
+            "time": 2.78,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.datatype]",
+            "time": 2.099,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.user]",
+            "time": 2.169,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.filter]",
+            "time": 2.439,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.favouriteplot]",
+            "time": 2.571,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_get_single_resource[rest_api.dashboard]",
+            "time": 3.047,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.upload]",
+            "time": 1.734,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.report]",
+            "time": 3.468,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.sample]",
+            "time": 2.561,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.datatype]",
+            "time": 1.785,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.user]",
+            "time": 2.115,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.filter]",
+            "time": 2.319,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.favouriteplot]",
+            "time": 1.691,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_delete_single_resource[rest_api.dashboard]",
+            "time": 1.572,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.reportlist]",
+            "time": 2.462,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.samplelist]",
+            "time": 2.402,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.datatypelist]",
+            "time": 1.063,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.userlist]",
+            "time": 2.618,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.filterlist]",
+            "time": 1.238,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.favouriteplotlist]",
+            "time": 0.882,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_api",
+            "name": "test_post_resource[rest_api.dashboardlist]",
+            "time": 1.159,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_daterange_in",
+            "time": 3.857,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_daterange_not_in",
+            "time": 3.327,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_timedelta_in",
+            "time": 3.431,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_timedelta_not_in",
+            "time": 3.223,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_reportmeta_equals[key_1-20]",
+            "time": 3.175,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_reportmeta_equals[key_1-21]",
+            "time": 2.789,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_reportmeta_equals[key_2-20]",
+            "time": 3.443,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_reportmeta_equals[key_2-21]",
+            "time": 2.586,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_reportmeta_not_equals",
+            "time": 2.592,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[eq-2-correct0-0]",
+            "time": 3.655,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[ne-2-correct1-0]",
+            "time": 3.757,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[le-2-correct2-0]",
+            "time": 2.633,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[lt-2-correct3-0]",
+            "time": 2.582,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[ge-2-correct4-0]",
+            "time": 3.7,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[gt-2-correct5-0]",
+            "time": 2.766,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[gt-2-correct6-0]",
+            "time": 3.156,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[like-%ardv%-correct7-1]",
+            "time": 2.927,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[like-%-correct8-1]",
+            "time": 3.249,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[contains-ardv-correct9-1]",
+            "time": 1.926,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[contains-%ardv%-correct10-1]",
+            "time": 1.907,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[startswith-aard-correct11-1]",
+            "time": 2.455,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[startswith-bad-correct12-1]",
+            "time": 2.95,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[endswith-vark-correct13-1]",
+            "time": 3.282,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[endswith-ger-correct14-1]",
+            "time": 4.408,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notlike-%ardv%-correct15-1]",
+            "time": 2.888,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notlike-%-correct16-1]",
+            "time": 4.876,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notcontains-ardv-correct17-1]",
+            "time": 2.923,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notcontains-%ardv%-correct18-1]",
+            "time": 3.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notstartswith-aard-correct19-1]",
+            "time": 2.903,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notstartswith-bad-correct20-1]",
+            "time": 2.103,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notendswith-vark-correct21-1]",
+            "time": 2.891,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_samplemeta_operator[notendswith-ger-correct22-1]",
+            "time": 3.176,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_and_query",
+            "time": 2.455,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_build_filter",
+            "name": "test_or_query",
+            "time": 2.022,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_current_user",
+            "name": "test_current_user_session_working",
+            "time": 1.223,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_current_user",
+            "name": "test_current_user_session_invalid",
+            "time": 1.17,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.datatype]",
+            "time": 1.553,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.filter]",
+            "time": 1.59,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.sample]",
+            "time": 2.225,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.user]",
+            "time": 1.873,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.upload]",
+            "time": 1.396,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.sampledata]",
+            "time": 1.657,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.dashboard]",
+            "time": 1.799,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[GET-True-rest_api.favouriteplot]",
+            "time": 1.125,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.datatype]",
+            "time": 0.787,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.filter]",
+            "time": 1.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.sample]",
+            "time": 1.713,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.user]",
+            "time": 1.95,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.upload]",
+            "time": 1.766,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.sampledata]",
+            "time": 2.024,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.dashboard]",
+            "time": 2.356,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[PATCH-False-rest_api.favouriteplot]",
+            "time": 1.096,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.datatype]",
+            "time": 1.429,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.filter]",
+            "time": 1.189,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.sample]",
+            "time": 1.471,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.user]",
+            "time": 1.377,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.upload]",
+            "time": 2.068,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.sampledata]",
+            "time": 2.603,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.dashboard]",
+            "time": 0.894,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_single_resource_permissions[DELETE-False-rest_api.favouriteplot]",
+            "time": 1.868,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.filterlist]",
+            "time": 1.251,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.reportmetalist]",
+            "time": 0.957,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.metatypelist]",
+            "time": 1.754,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.sampledatalist]",
+            "time": 1.692,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.favouriteplotlist]",
+            "time": 0.922,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.filtergrouplist]",
+            "time": 1.879,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.dashboardlist]",
+            "time": 1.089,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.samplelist]",
+            "time": 1.506,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.reportlist]",
+            "time": 0.593,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[GET-True-rest_api.datatypelist]",
+            "time": 0.952,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.filterlist]",
+            "time": 0.975,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.reportmetalist]",
+            "time": 1.159,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.metatypelist]",
+            "time": 0.957,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.sampledatalist]",
+            "time": 0.987,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.favouriteplotlist]",
+            "time": 1.353,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.filtergrouplist]",
+            "time": 1.393,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.dashboardlist]",
+            "time": 1.34,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.samplelist]",
+            "time": 1.304,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.reportlist]",
+            "time": 1.715,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_many_resources_permissions[POST-False-rest_api.datatypelist]",
+            "time": 1.428,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_active_inactive[True]",
+            "time": 1.62,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_permissions",
+            "name": "test_active_inactive[False]",
+            "time": 2.093,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_plot",
+            "name": "test_trend_data_measurement",
+            "time": 10.952,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_plot",
+            "name": "test_trend_data_iforest",
+            "time": 8.495,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.api.test_upload",
+            "name": "test_post_upload_list",
+            "time": 1.169,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

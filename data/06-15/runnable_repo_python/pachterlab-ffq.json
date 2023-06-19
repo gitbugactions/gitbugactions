@@ -1,0 +1,835 @@
+{
+    "repository": "pachterlab/ffq",
+    "stars": 464,
+    "language": "python",
+    "size": 251,
+    "clone_url": "https://github.com/pachterlab/ffq.git",
+    "timestamp": "2023-06-16T14:09:27.586677Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_doi",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_doi_no_geo",
+            "time": 1.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_doi_no_title",
+            "time": 1.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_experiment",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_gse",
+            "time": 2.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_gsm",
+            "time": 1.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_run",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_ffq_study",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_gse_search_json",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_gse_summary_json",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_parse_experiment_with_run",
+            "time": 1.796,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: {'acc[19 chars]3', 'instrument': 'HiSeq X Ten', 'platform': '[2374 chars]Seq'} != {'acc[19 chars]3', 'title': 'HiSeq X Ten paired end sequencin[2191 chars]]}}}}\n  {'accession': 'SRX3517583',\n   'instrument': 'HiSeq X Ten',\n   'platform': 'ILLUMINA',\n   'runs': {'SRR6425163': {'accession': 'SRR6425163',\n                           'attributes': {'ENA-BASE-COUNT': 74994708900,\n                                          'ENA-FIRST-PUBLIC': '2017-12-30',\n                                          'ENA-LAST-UPDATE': '2017-12-30',\n                                          'ENA-SPOT-COUNT': 249982363},\n                           'experiment': 'SRX3517583',\n                           'files': {'aws': [{'accession': 'SRR6425163',\n                                              'filename': 'J2_S1_L001_R1_001.fastq.gz',\n                                              'filenumber': 1,\n                                              'filesize': None,\n                                              'filetype': 'fastq',\n                                              'md5': None,\n                                              'url': 's3://sra-pub-src-6/SRR6425163/J2_S1_L001_R1_001.fastq.gz',\n                                              'urltype': 'aws'},\n                                             {'accession': 'SRR6425163',\n                                              'filename': 'J2_S1_L001_R2_001.fastq.gz',\n                                              'filenumber': 2,\n                                              'filesize': None,\n                                              'filetype': 'fastq',\n                                              'md5': None,\n                                              'url': 's3://sra-pub-src-6/SRR6425163/J2_S1_L001_R2_001.fastq.gz',\n                                              'urltype': 'aws'},\n                                             {'accession': 'SRR6425163',\n                                              'filename': 'SRR6425163',\n                                              'filenumber': 1,\n                                              'filesize': None,\n                                              'filetype': 'sra',\n                                              'md5': None,\n                                              'url': 'https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR6425163/SRR6425163',\n                                              'urltype': 'aws'}],\n                                     'ftp': [{'accession': 'SRR6425163',\n                                              'filename': 'SRR6425163_1.fastq.gz',\n                                              'filenumber': 1,\n                                              'filesize': 21858866426,\n                                              'filetype': 'fastq',\n                                              'md5': '2dcf9ae4cfb30ec0aaf06edf0e3ca49a',\n                                              'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR642/003/SRR6425163/SRR6425163_1.fastq.gz',\n                                              'urltype': 'ftp'},\n                                             {'accession': 'SRR6425163',\n                                              'filename': 'SRR6425163_2.fastq.gz',\n                                              'filenumber': 2,\n                                              'filesize': 22946392178,\n                                              'filetype': 'fastq',\n                                              'md5': '1d0703967a2331527a3aebf97a3f1c32',\n                                              'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR642/003/SRR6425163/SRR6425163_2.fastq.gz',\n                                              'urltype': 'ftp'}],\n                                     'gcp': [{'accession': 'SRR6425163',\n-                                             'filename': 'J2_S1_L001_R1_001.fastq.gz',\n-                                             'filenumber': 1,\n-                                             'filesize': None,\n-                                             'filetype': 'fastq',\n-                                             'md5': None,\n-                                             'url': 'gs://sra-pub-src-6/SRR6425163/J2_S1_L001_R1_001.fastq.gz',\n-                                             'urltype': 'gcp'},\n-                                            {'accession': 'SRR6425163',\n-                                             'filename': 'J2_S1_L001_R2_001.fastq.gz',\n-                                             'filenumber': 2,\n-                                             'filesize': None,\n-                                             'filetype': 'fastq',\n-                                             'md5': None,\n-                                             'url': 'gs://sra-pub-src-6/SRR6425163/J2_S1_L001_R2_001.fastq.gz',\n-                                             'urltype': 'gcp'},\n-                                            {'accession': 'SRR6425163',\n-                                             'filename': 'SRR6425163.1',\n+                                             'filename': 'SRR6425163.noqual.1',\n?                                                                     +++++++\n\n                                              'filenumber': 1,\n                                              'filesize': None,\n                                              'filetype': 'sra',\n                                              'md5': None,\n-                                             'url': 'gs://sra-pub-crun-7/SRR6425163/SRR6425163.1',\n?                                                                  ^^^^\n\n+                                             'url': 'gs://sra-pub-zq-7/SRR6425163/SRR6425163.noqual.1',\n?                                                                  ^^                         +++++++\n\n                                              'urltype': 'gcp'}],\n+                                    'ncbi': [{'accession': 'SRR6425163',\n+                                              'filename': 'SRR6425163.sralite.1',\n+                                              'filenumber': 1,\n+                                              'filesize': None,\n+                                              'filetype': 'sra',\n+                                              'md5': None,\n+                                              'url': 'https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos5/sra-pub-zq-14/SRR006/425/SRR6425163.sralite.1',\n-                                    'ncbi': []},\n?                                          ^^^\n\n+                                              'urltype': 'ncbi'}]},\n?                                   +++++++++++++++++++++       ^\n\n                           'sample': 'SRS2792433',\n                           'study': 'SRP127624',\n                           'title': 'HiSeq X Ten paired end sequencing; '\n                                    'GSM2905292: BMPa-1; Homo sapiens; RNA-Seq'}},\n   'title': 'HiSeq X Ten paired end sequencing; GSM2905292: BMPa-1; Homo '\n            'sapiens; RNA-Seq'}",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_parse_run",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_parse_run_bam",
+            "time": 1.559,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: {'acc[19 chars]4', 'attributes': {'ENA-BASE-COUNT': 123989882[1464 chars]Seq'} != {'acc[19 chars]4', 'experiment': 'SRX3791763', 'study': 'SRP1[2191 chars]'}]}}\n  {'accession': 'SRR6835844',\n   'attributes': {'ENA-BASE-COUNT': 12398988240,\n                  'ENA-FIRST-PUBLIC': '2018-03-30',\n                  'ENA-LAST-UPDATE': '2018-03-30',\n                  'ENA-SPOT-COUNT': 137766536,\n                  'assembly': 'mm10',\n                  'dangling_references': 'treat_as_unmapped'},\n   'experiment': 'SRX3791763',\n   'files': {'aws': [{'accession': 'SRR6835844',\n                      'filename': '10X_P4_0.bam.1',\n                      'filenumber': 1,\n                      'filesize': None,\n                      'filetype': 'bam',\n                      'md5': None,\n+                     'url': 's3://sra-pub-src-15/SRR6835844/10X_P4_0.bam.1',\n+                     'urltype': 'aws'},\n+                    {'accession': 'SRR6835844',\n+                     'filename': '10X_P4_0.bam.1',\n+                     'filenumber': 1,\n+                     'filesize': None,\n+                     'filetype': 'bam',\n+                     'md5': None,\n                      'url': 'https://sra-pub-src-1.s3.amazonaws.com/SRR6835844/10X_P4_0.bam.1',\n                      'urltype': 'aws'},\n                     {'accession': 'SRR6835844',\n                      'filename': 'SRR6835844',\n                      'filenumber': 1,\n                      'filesize': None,\n                      'filetype': 'sra',\n                      'md5': None,\n                      'url': 'https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR6835844/SRR6835844',\n+                     'urltype': 'aws'},\n+                    {'accession': 'SRR6835844',\n+                     'filename': 'SRR6835844.sralite.1',\n+                     'filenumber': 1,\n+                     'filesize': None,\n+                     'filetype': 'sra',\n+                     'md5': None,\n+                     'url': 's3://sra-pub-zq-6/SRR6835844/SRR6835844.sralite.1',\n                      'urltype': 'aws'}],\n             'ftp': [{'accession': 'SRR6835844',\n                      'filename': '10X_P4_0.bam',\n                      'filenumber': 1,\n                      'filesize': 17093057664,\n                      'filetype': 'bam',\n                      'md5': '5355fe6a07155026085ce46631268ab1',\n                      'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/SRA653/SRA653146/bam/10X_P4_0.bam',\n+                     'urltype': 'ftp'},\n+                    {'accession': 'SRR6835844',\n+                     'filename': '10X_P4_0.bam.bai',\n+                     'filenumber': 1,\n+                     'filesize': 7163216,\n+                     'filetype': 'bam',\n+                     'md5': 'c9396c2596254831470a9138ae86ded7',\n+                     'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR683/SRR6835844/10X_P4_0.bam.bai',\n                      'urltype': 'ftp'}],\n             'gcp': [{'accession': 'SRR6835844',\n-                     'filename': '10X_P4_0.bam.1',\n-                     'filenumber': 1,\n-                     'filesize': None,\n-                     'filetype': 'bam',\n-                     'md5': None,\n-                     'url': 'gs://sra-pub-src-1/SRR6835844/10X_P4_0.bam.1',\n-                     'urltype': 'gcp'},\n-                    {'accession': 'SRR6835844',\n-                     'filename': 'SRR6835844.1',\n+                     'filename': 'SRR6835844.zq.1',\n?                                             +++\n\n                      'filenumber': 1,\n                      'filesize': None,\n                      'filetype': 'sra',\n                      'md5': None,\n-                     'url': 'gs://sra-pub-crun-7/SRR6835844/SRR6835844.1',\n?                                          ^^^^\n\n+                     'url': 'gs://sra-pub-zq-7/SRR6835844/SRR6835844.zq.1',\n?                                          ^^                         +++\n\n                      'urltype': 'gcp'}],\n-            'ncbi': []},\n+            'ncbi': [{'accession': 'SRR6835844',\n+                      'filename': 'SRR6835844.sralite.1',\n+                      'filenumber': 1,\n+                      'filesize': None,\n+                      'filetype': 'sra',\n+                      'md5': None,\n+                      'url': 'https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos5/sra-pub-zq-14/SRR006/835/SRR6835844.sralite.1',\n+                      'urltype': 'ncbi'}]},\n   'sample': 'SRS3044236',\n   'study': 'SRP131661',\n   'title': 'Illumina NovaSeq 6000 sequencing; GSM3040890: library 10X_P4_0; Mus '\n            'musculus; RNA-Seq'}",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_parse_sample",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_parse_study",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_split_output",
+            "time": 1.442,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_validate_accessions",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ffq.TestFfq",
+            "name": "test_version_string",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_cached_get",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_findkey",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_geo_id_to_srps",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_geo_id_to_srps_bioproject",
+            "time": 1.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_geo_ids_to_gses",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_geo_to_suppl",
+            "time": 2.457,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_doi",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_files_metadata_from_run",
+            "time": 0.384,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_files_metadata_from_run_bam",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: Lists differ: [{'ac[241 chars]bam'}] != [{'ac[241 chars]bam'}, {'accession': 'SRR6835844', 'filename':[212 chars]ai'}]\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n{'accession': 'SRR6835844', 'filename': '10X_P4_0.bam.bai', 'filetype': 'bam', 'filesize': 7163216, 'filenumber': 1, 'md5': 'c9396c2596254831470a9138ae86ded7', 'urltype': 'ftp', 'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR683/SRR6835844/10X_P4_0.bam.bai'}\n\n  [{'accession': 'SRR6835844',\n    'filename': '10X_P4_0.bam',\n    'filenumber': 1,\n    'filesize': 17093057664,\n    'filetype': 'bam',\n    'md5': '5355fe6a07155026085ce46631268ab1',\n    'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/SRA653/SRA653146/bam/10X_P4_0.bam',\n+   'urltype': 'ftp'},\n+  {'accession': 'SRR6835844',\n+   'filename': '10X_P4_0.bam.bai',\n+   'filenumber': 1,\n+   'filesize': 7163216,\n+   'filetype': 'bam',\n+   'md5': 'c9396c2596254831470a9138ae86ded7',\n+   'url': 'ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR683/SRR6835844/10X_P4_0.bam.bai',\n    'urltype': 'ftp'}]",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_gse_search_json",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_gse_summary_json",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_gsm_search_json",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_samples_from_study",
+            "time": 0.303,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_get_xml",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_gse_to_gsms",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_gsm_id_to_srs",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_gsm_id_to_srx",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_gsm_to_platform",
+            "time": 1.393,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_gsm_to_srx",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_ncbi_link",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_ncbi_search",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_ncbi_summary",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_bioproject",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_encode_biosample",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_encode_donor",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_encode_json",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_ncbi_fetch_fasta",
+            "time": 0.021,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_range_arbitrary",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_range_leading_zero",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_range_srr",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_tsv",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_parse_url",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_search_ena_run_sample",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_search_ena_run_study",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_search_ena_study_runs",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_search_ena_title",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_sra_ids_to_srrs",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_srp_to_srx",
+            "time": 0.275,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_srs_to_srx",
+            "time": 0.333,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AttributeError: 'NoneType' object has no attribute 'text'",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_utils.TestUtils",
+            "name": "test_srx_to_srrs",
+            "time": 0.352,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

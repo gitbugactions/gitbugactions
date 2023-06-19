@@ -1,0 +1,847 @@
+{
+    "repository": "click-contrib/click-configfile",
+    "stars": 56,
+    "language": "python",
+    "size": 417,
+    "clone_url": "https://github.com/click-contrib/click-configfile.git",
+    "timestamp": "2023-06-16T12:12:32.376263Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 1,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.functional.test_basics.TestCandidate1",
+            "name": "test_without_configfile__uses_defaults_from_cmdline",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate1",
+            "name": "test_with_cmdline_and_configfile__prefers_cmdline",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate1",
+            "name": "test_with_configfile1__preferred_over_cmdline_defaults",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate1",
+            "name": "test_with_configfile2__usable_as_alternative",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate1",
+            "name": "test_with_configfile12__prefers_configfile1",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate1",
+            "name": "test_configfile__can_pass_additional_params_in_context",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate2",
+            "name": "test_configfile__use_default_section_to_storage_name_mapping",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate2B",
+            "name": "test_configfile__with_unbound_section",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate3",
+            "name": "test_config_searchpath__with_many_items",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate3",
+            "name": "test_config_searchpath__merges_sections",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_basics.TestCandidate3",
+            "name": "test_config_searchpath__param_from_primary_file_overrides_secondary",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_param.TestCandidate1",
+            "name": "test_param_with_default__uses_param_default_when_missing",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_param.TestCandidate1",
+            "name": "test_param_with_default__uses_cmdline_when_provided",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.functional.test_param.TestCandidate1",
+            "name": "test_param_without_default__uses_cmdline_default_when_missing",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_class",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_other_schema_class",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_unbounded_section",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[foo.alice-schema1]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[foo.bob-schema1]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[some.foo-schema2]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[other.foo-schema2]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[loo.foo.bar-schema3]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[xxx.foo.zzz-schema3]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[foo_bar-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[baz_foo-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_config_schema_for__with_schema_using_wildcards[xxx_foo_zzz-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_collect_config_sections_from_schemas__without_arg",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_collect_config_sections_from_schemas__with_arg",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_storage_for__when_section_storage_is_created",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_storage_for__when_section_storage_exists",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+            "name": "test_select_storage_for__when_root_store_is_used",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_functions.TestFunction",
+            "name": "test_generate_configfile_names__without_config_files",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_functions.TestFunction",
+            "name": "test_generate_configfile_names__provides_reversed_order",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_functions.TestFunction",
+            "name": "test_generate_configfile_names__provides_existing_variants_with_searchpath",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_functions.TestFunction",
+            "name": "test_generate_configfile_names__without_searchpath_uses_curdir",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_functions.TestFunction",
+            "name": "test_generate_configfile_names__missing_variants_are_removed",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_functions.TestFunction",
+            "name": "test_generate_configfile_names__when_searchpath_part_isfile",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_param.TestParam",
+            "name": "test_ctor__without_type_attribute_has_string_type",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_param.TestParam",
+            "name": "test_ctor__with_help_attribute",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_param.TestParam",
+            "name": "test_ctor__without_help_attribute",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__with_schema_class",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__with_other_class",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__with_nested_schema_class",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__with_deeper_nested_schema_class",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__with_derived_param_class_in_schema",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__with_own_param_class_as_marker",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__skips_non_param_objects",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_assign_param_names__skips_params_with_assigned_names",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_arg[hello]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_arg[hello.*]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_arg[*.hello]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_multiple_args[section_names0]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_several_decorators",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_other_class",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_class_that_has_section_names",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_bad_arg[None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_bad_arg[123]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_bad_arg[False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.unit.test_schema_description.TestDecorators",
+            "name": "test_matches_section__with_bad_arg[1.23]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

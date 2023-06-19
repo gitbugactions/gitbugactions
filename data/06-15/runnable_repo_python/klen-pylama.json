@@ -1,0 +1,65 @@
+{
+    "repository": "klen/pylama",
+    "stars": 1001,
+    "language": "python",
+    "size": 4322,
+    "clone_url": "https://github.com/klen/pylama.git",
+    "timestamp": "2023-06-16T10:33:53.101273Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "pylama.__init__",
+            "name": "pylama",
+            "time": 2.717,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "pylama.__main__",
+            "name": "pylama",
+            "time": 0.41,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "pylama.check_async",
+            "name": "pylama",
+            "time": 1.8,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "pylama/check_async.py:31:35 [E]  Incompatible default for argument \"code\" (default has type \"None\", argument has type \"str\")  [assignment] [mypy]\npylama/check_async.py:31:35 [N]  PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True [mypy]\npylama/check_async.py:31:35 [N]  Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase [mypy]\npylama/check_async.py:31:84 [E]  Incompatible default for argument \"rootdir\" (default has type \"None\", argument has type \"Path\")  [assignment] [mypy]",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

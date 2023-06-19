@@ -1,0 +1,2248 @@
+{
+    "repository": "twu/skjold",
+    "stars": 55,
+    "language": "python",
+    "size": 434,
+    "clone_url": "https://github.com/twu/skjold.git",
+    "timestamp": "2023-06-16T14:04:50.624597Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_run_config",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_vulnerable_package_via_cli",
+            "time": 46.792,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_vulnerable_package_with_ignore_list_via_env",
+            "time": 43.719,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_vulnerable_package_with_ignore_list_via_cli",
+            "time": 40.611,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_json_report_with_package_list_via_stdin",
+            "time": 0.119,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_ensure_formats_are_handled_properly[minimal-poetry.lock]",
+            "time": 0.128,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_ensure_formats_are_handled_properly[minimal-requirements.txt]",
+            "time": 0.169,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_ensure_formats_are_handled_properly[minimal-Pipfile.lock]",
+            "time": 0.164,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_run_audit_with_multiple_different_files",
+            "time": 2.61,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_configuration_override_via_cli",
+            "time": 42.765,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cli",
+            "name": "test_cli_configuration_used_by_default",
+            "time": 37.054,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_base_score_calculation_cvss2[CVE-2002-0392]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_base_score_calculation_cvss2[CVE-2003-0818]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_base_score_calculation_cvss2[CVE-2003-0062]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N-0.0-NONE-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:P/AC:H/PR:H/UI:R/S:U/C:L/I:N/A:N-1.6-LOW-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:P/AC:H/PR:L/UI:R/S:C/C:L/I:N/A:N-1.9-LOW-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N-2.4-LOW-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L-3.9-LOW-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:N/A:N-4.0-MEDIUM-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:N/A:N-4.1-MEDIUM-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N-5.3-MEDIUM-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:L-5.0-MEDIUM-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H-6.1-MEDIUM-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:L/A:N-6.9-MEDIUM-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L-7.0-HIGH-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H-7.5-HIGH-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H-9.0-CRITICAL-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H-9.8-CRITICAL-U]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H-10.0-CRITICAL-C]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:L/AC:H/Au:M/C:N/I:N/A:N-0.0-NONE-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:A/AC:H/Au:N/C:N/I:N/A:N-0.0-NONE-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:L/AC:H/Au:M/C:P/I:P/A:N-2.3-LOW-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:L/AC:H/Au:S/C:N/I:N/A:C-3.8-LOW-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:N/AC:L/Au:S/C:N/I:N/A:P-4.0-MEDIUM-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:L/AC:H/Au:N/C:C/I:C/A:C-6.2-MEDIUM-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:A/AC:M/Au:M/C:C/I:C/A:C-7.0-HIGH-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:N/AC:L/Au:N/C:N/I:N/A:C-7.8-HIGH-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_cvss",
+            "name": "test_correct_cvss_score_and_severity_from_vector[AV:N/AC:L/Au:N/C:C/I:C/A:C-10.0-HIGH-None]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_using_minimal_examples[poetry.lock-minimal]",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_using_minimal_examples[poetry.lock-random]",
+            "time": 0.126,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_using_minimal_examples[requirements.txt-minimal]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_using_minimal_examples[requirements.txt-random]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_using_minimal_examples[Pipfile.lock-minimal]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_using_minimal_examples[Pipfile.lock-random]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[requirements.txt-None-minimal]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[requirements.txt-None-random]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[poetry.lock-None-minimal]",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[poetry.lock-None-random]",
+            "time": 0.151,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[Pipfile.lock-None-minimal]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[Pipfile.lock-None-random]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[requirements.txt-requirements.txt-minimal]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[requirements.txt-requirements.txt-random]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[poetry.lock-poetry.lock-minimal]",
+            "time": 0.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[poetry.lock-poetry.lock-random]",
+            "time": 0.145,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[Pipfile.lock-Pipfile.lock-minimal]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_with_poetry_lock[Pipfile.lock-Pipfile.lock-random]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_dependency_canonicalize_name[PyYAML-1.0-PyYAML-1.0-pyyaml]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_dependency_canonicalize_name[Requests-1.23.0-Requests-1.23.0-requests]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_dependency_canonicalize_name[requests-1.22.0-requests-1.22.0-requests]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_dependency_canonicalize_name[Django-1.22.0-Django-1.22.0-django]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_dependency_canonicalize_name[google_cloud_storage-1.0-google_cloud_storage-1.0-google-cloud-storage]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[package==0.6.0; python_version < \"3.8\"-expected_package_list0]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[foo==0.6.0; python_version < \"3.8\"\\nbar==1.0.0-expected_package_list1]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[foo==1.4.0; python_version < \"3.8\"-expected_package_list2]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[foo==1.3.0; sys_platform == \"win32\"-expected_package_list3]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[foo==1.3.0 --hash=sha256:05668158c7b85b791c5abde53e50265e16f98ad601c402ba44d70f96c4159612-expected_package_list4]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[foo==1.3.0 --hash=sha256:deaddood...\\\\ \\n --hash=sha256:deadbeef...\\nbar==1.2.0-expected_package_list5]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[# comment==0.1.2-expected_package_list6]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[bar==1.2.0\\n # comment==0.1.2\\nfoo==1.3.0; sys_platform == \"win32\"-expected_package_list7]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from[bar==1.2.0\\n--trusted-host internal-host\\nfoo==1.3.0\\n--extra-index-url http://internal-host/pypi/index/-expected_package_list8]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_dependencies_from_files",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_formats",
+            "name": "test_extract_package_versions_from_file_with_hashes",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_gemnasium_advisory_from_yaml_with_cvss3_and_cvss2",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_gemnasium_advisory_from_yaml_with_cvss2_only",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_gemnasium_advisory_from_yaml_with_empty_affected_range_string",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_gemnasium_advisory_from_yaml_with_no_cvss_vector",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-1.11.26-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-0.11.26-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-0.1.6-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-2.2.8-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-2.2.9-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-3.0.0-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-3.0.1-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-3.2-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_is_affected[doc0-package-4-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_gemnasium",
+            "name": "test_ensure_gemnasium_update",
+            "time": 33.61,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[ = 1.4.2-1.4.2-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[= 1.4.2-1.4.2-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[==1.4.2-1.4.2-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[== 1.4.2-1.4.2-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[ == 1.4.2-1.4.2-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[< 8.2.0-8.1.99-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[ >= 4.0, < 4.3-4.0-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[>= 5.0.0, < 5.2.1-5.2.0-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[>=5.0.0,<5.2.1-5.2.0-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[>= 5.0.0, < 5.2.1-5.0-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[>= 4.0, < 4.3-4.3-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[= 1.4.2-1.4.3-False0]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[= 1.4.2-1.4.3-False1]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_with_github_specifiers[< 8.2.0-8.2.0-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_raises_when_encountering_too_many_specifiers",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_using_build_obj",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_is_affected_example",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_accessing_advisories_triggers_update",
+            "time": 0.138,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_github",
+            "name": "test_ensure_missing_github_token_raises_usage_error",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ignore",
+            "name": "test_should_ignore_not_expired[CVE-2019-11236-urllib3]",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ignore",
+            "name": "test_should_ignore_not_expired[CVE-2019-11324-urllib3]",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ignore",
+            "name": "test_should_ignore_not_expired[CVE-2020-26137-urllib3]",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ignore",
+            "name": "test_should_ignore_not_expired[PYSEC-2020-149-urllib3]",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ignore",
+            "name": "test_should_ignore_expired[CVE-2018-20060-urllib3-entry0]",
+            "time": 0.011,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_ignore",
+            "name": "test_ignore_add_item",
+            "time": 0.01,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_osv_advisory_with_type_ecosystem_and_versions",
+            "time": 0.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_osv_advisory_from_yaml_with_no_cvss_vector",
+            "time": 0.047,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-1.11.26-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-0.11.26-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-0.1.6-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-2.2.8-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-2.2.9-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-3.0.0-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-3.0.1-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-3.2-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_is_affected[doc0-package-4-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_osv_advisory_with_vulnerable_package_via_osv_api",
+            "time": 0.978,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_osv",
+            "name": "test_ensure_pypi_advisory_db_update",
+            "time": 13.112,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pypa",
+            "name": "test_ensure_pypi_advisory_db_update",
+            "time": 52.864,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_using_build_obj[package_name-raw0-]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_using_build_obj[package_name-raw1-https://pyup.io/vulnerabilities/CVE-1970-0001/12345/]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-0.9.1-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-0.9.9-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-1.1.0-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-1.1.1-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-1.1.2-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-2.0.0-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs0-package-2.2.0-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-0.9.1-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-0.9.9-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-1.1.0-True]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-1.1.1-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-1.1.2-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-2.0.0-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected[specs1-package-2.2.0-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected_single[package-0.9.4-False]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected_single[package-1.0.0-True]",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_is_affected_single[package-2.0.0-False]",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency0-True]",
+            "time": 0.188,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency1-True]",
+            "time": 0.156,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency2-True]",
+            "time": 0.182,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency3-True]",
+            "time": 0.211,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency4-True]",
+            "time": 0.161,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency5-True]",
+            "time": 0.186,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency6-True]",
+            "time": 0.217,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency7-False]",
+            "time": 0.181,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_source_is_affected_single[pyup-dependency8-False]",
+            "time": 0.179,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_pyup_handle_metadata",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_pyup",
+            "name": "test_ensure_accessing_advisories_triggers_update",
+            "time": 0.188,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sources",
+            "name": "test_ensure_accessing_advisories_triggers_update",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sources",
+            "name": "test_register_source",
+            "time": 0.0,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_sources",
+            "name": "test_register_source_twice",
+            "time": 0.007,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}
