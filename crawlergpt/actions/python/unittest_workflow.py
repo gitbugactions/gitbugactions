@@ -7,7 +7,7 @@ from crawlergpt.actions.workflow import GitHubWorkflow
 from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 
 class UnittestWorkflow(GitHubWorkflow):
-    __TESTS_KEYWORDS = ["-m unittest", "-m xmlrunner"]
+    __TESTS_KEYWORDS = ["unittest", "xmlrunner"]
 
     def _is_test_keyword(self, name):
         return any(map(lambda word: word.lower() in UnittestWorkflow.__TESTS_KEYWORDS, name.split(' ')))

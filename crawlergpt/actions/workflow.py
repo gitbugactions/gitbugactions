@@ -186,7 +186,7 @@ class GitHubWorkflowFactory:
             'maven': ['maven', 'mvn', 'mavenw', 'mvnw'],
             'gradle': ['gradle', 'gradlew'],
             'pytest': ['pytest', 'py.test'],
-            'unittest': ['-m unittest', '-m xmlrunner'],
+            'unittest': ['unittest', 'xmlrunner'],
         }
         aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
         keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
