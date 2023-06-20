@@ -115,7 +115,3 @@ def add_new_layer(image_name: str, layer: Layer, new_image_name: str = None):
             os.remove(tar_path)
         if os.path.exists(final_tar):
             os.remove(final_tar)
-
-layer = extract_last_layer('8b74bae099c2', '.')
-add_new_layer("glitch:latest", layer, "glitch:new")
-layer.delete()

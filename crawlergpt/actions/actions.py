@@ -1,5 +1,7 @@
+import re
 import os
 import time
+import hashlib
 import docker
 import logging
 import subprocess
@@ -17,6 +19,7 @@ class ActTestsRun:
     stdout: str
     stderr: str
     workflow: str
+    workflow_name: str
     build_tool: str
     elapsed_time: int
 
@@ -50,7 +53,7 @@ class Act:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
-        self.timeout = timeout 
+        self.timeout = timeout
 
     @staticmethod
     def __setup_act():
@@ -96,7 +99,7 @@ class Act:
         stderr = run.stderr.decode('utf-8')
         tests = workflow.get_test_results(repo_path)
         tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
-                stderr=stderr, workflow=workflow.path, build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
+                stderr=stderr, workflow=workflow.path, workflow_name=workflow.doc["name"], build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
 
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
@@ -114,8 +117,9 @@ class GitHubActions:
     Class to handle GitHub Actions
     """
     
-    def __init__(self, repo_path, language: str):
+    def __init__(self, repo_path, language: str, keep_containers: bool=False):
         self.repo_path = repo_path
+        self.keep_containers = keep_containers
         self.language: str = language.strip().lower()
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
@@ -166,7 +170,7 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(self, workflow) -> ActTestsRun:
-        act = Act(False, timeout=10)
+        act = Act(self.keep_containers, timeout=10)
         return act.run_act(self.repo_path, workflow)
     
     def remove_containers(self):

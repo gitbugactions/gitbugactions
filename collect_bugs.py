@@ -146,29 +146,6 @@ class PatchCollector:
 
         return bug_patch, test_patch
     
-    def __run_tests(self, repo_clone) -> List[ActTestsRun]:
-        act_runs = []
-
-        test_actions = GitHubActions(repo_clone.workdir, self.language)
-        if len(test_actions.test_workflows) == 0:
-            for workflow in self.default_actions.test_workflows:
-                new_workflow = copy.deepcopy(workflow)
-                new_workflow.path = os.path.join(repo_clone.workdir, 
-                    '.github/workflows', os.path.basename(workflow.path))
-                test_actions.test_workflows.append(new_workflow)
-        # Act creates names for the containers by hashing the content of the workflows
-        # To avoid conflicts between threads, we randomize the name
-        for workflow in test_actions.test_workflows:
-            workflow.doc["name"] = str(uuid.uuid4())
-        test_actions.save_workflows()
-
-        for workflow in test_actions.test_workflows:
-            act_runs.append(test_actions.run_workflow(workflow))
-
-        test_actions.delete_workflows()
-
-        return act_runs
-    
     def __test_patch(self, commit_hex, previous_commit_hex, test_patch):
         test_patch_runs = [None, None, None]
         if not self.cloned:
@@ -190,7 +167,7 @@ class PatchCollector:
             repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
             repo_clone.set_head(previous_commit.oid)
             
-            act_runs = self.__run_tests(repo_clone)
+            act_runs = self.run_tests(repo_clone)
             all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
             if all_runs_failed:
                 return test_patch_runs
@@ -203,7 +180,7 @@ class PatchCollector:
                 except pygit2.GitError:
                     # Invalid patches
                     return test_patch_runs
-                act_runs = self.__run_tests(repo_clone)
+                act_runs = self.run_tests(repo_clone)
                 if all_runs_failed:
                     return test_patch_runs
                 test_patch_runs[1] = act_runs
@@ -214,7 +191,7 @@ class PatchCollector:
             repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
                                     commit.author, commit.message)
             repo_clone.set_head(commit.oid)
-            act_runs = self.__run_tests(repo_clone)
+            act_runs = self.run_tests(repo_clone)
             all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
             if all_runs_failed:
                 return test_patch_runs
@@ -224,6 +201,30 @@ class PatchCollector:
 
         return test_patch_runs
     
+    def run_tests(self, repo_clone, keep_containers: bool=False) -> List[ActTestsRun]:
+        act_runs = []
+
+        test_actions = GitHubActions(repo_clone.workdir, self.language, 
+                                     keep_containers=keep_containers)
+        if len(test_actions.test_workflows) == 0:
+            for workflow in self.default_actions.test_workflows:
+                new_workflow = copy.deepcopy(workflow)
+                new_workflow.path = os.path.join(repo_clone.workdir, 
+                    '.github/workflows', os.path.basename(workflow.path))
+                test_actions.test_workflows.append(new_workflow)
+        # Act creates names for the containers by hashing the content of the workflows
+        # To avoid conflicts between threads, we randomize the name
+        for workflow in test_actions.test_workflows:
+            workflow.doc["name"] = str(uuid.uuid4())
+        test_actions.save_workflows()
+
+        for workflow in test_actions.test_workflows:
+            act_runs.append(test_actions.run_workflow(workflow))
+
+        test_actions.delete_workflows()
+
+        return act_runs
+
     def get_possible_patches(self):
         if not self.cloned:
             self.__clone_repo()
