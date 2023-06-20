@@ -28,6 +28,10 @@ class UnittestWorkflow(GitHubWorkflow):
                         elif "-m xmlrunner" in step['run'] and "-o" in step['run']:
                             # Replace the output folder with the test_reports folder
                             new_step_run += re.sub(r"-o [^\s]+", "-o ./test_reports", step['run'])
+                        else:
+                            # We don't know how to instrument this command
+                            new_step_run += step['run']
+                        step['run'] = new_step_run
 
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
