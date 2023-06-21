@@ -209,6 +209,11 @@ class PatchCollector:
             
             self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
 
+            # Cleanup repository
+            repo_clone.reset(previous_commit.oid, pygit2.GIT_RESET_HARD)
+            # FIXME run the clean command with pygit2 (didn't find support for it)
+            subprocess.run(["git", "clean", "-f", "-d"], cwd=new_repo_path, capture_output=True)
+
             if len(test_patch) > 0:
                 # Apply diff and run tests
                 try:
