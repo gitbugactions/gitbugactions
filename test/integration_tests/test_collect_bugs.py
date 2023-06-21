@@ -98,6 +98,26 @@ def test_collect_bugs(teardown_out_bugs):
         assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
         assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"
 
+    with open("test/resources/test_collect_bugs_out/andre15silva-crawlergpt-unittest-test-repo.json", "r") as f:
+        lines = f.readlines()
+        assert len(lines) == 1
+        data = json.loads(lines[0])
+        assert data["commit_hash"] == "d3d7a607e3a8abc330f8fd69f677284a9afaf650"
+        assert data["strategy"] == "PASS_PASS"
+        assert len(data["actions_runs"]) == 3
+        # assert that number of total tests before == 2 and all pass
+        assert len(data["actions_runs"][0][0]["tests"]) == 2
+        assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][0][0]["tests"]] for r in _]])
+        # assert that number of tests failing before w/ new tests == 3, 2 pass and 1 fail
+        assert len(data["actions_runs"][1][0]["tests"]) == 3
+        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"]) == 2
+        assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"]) == 1
+        # assert that number of total tests after == 3 and all pass
+        assert len(data["actions_runs"][2][0]["tests"]) == 3
+        assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
+        assert data["commit_timestamp"] == "2023-06-20T14:54:30Z"
+
+
 def test_get_related_commit_info():
     collector = PatchCollector(GithubToken.get_token().github.get_repo('ASSERT-KTH/flacoco'))
     issues = collector._PatchCollector__get_related_commit_info("7bc38df")
