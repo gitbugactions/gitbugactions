@@ -7,7 +7,7 @@ import logging
 import copy
 import threading
 import fire
-from typing import List
+from typing import List, Tuple, Any
 from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
@@ -308,7 +308,7 @@ class PatchCollector:
         
         return patches
 
-    def test_patch(self, bug_patch: BugPatch, delete_repo = False):
+    def test_patch(self, bug_patch: BugPatch):
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
         
@@ -316,8 +316,6 @@ class PatchCollector:
                                             bug_patch.previous_commit, 
                                             bug_patch.test_patch)
         bug_patch.actions_runs = test_patch_runs
-        if delete_repo:
-            self.delete_repo()
         
         prev_commit_passed = (bug_patch.actions_runs[0] is not None and 
                                  len(flat_failed_tests(bug_patch.actions_runs[0])) == 0)
@@ -358,7 +356,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
     collectors_futures = []
-    patch_collectors = []
+    patch_collectors: List[Tuple[PatchCollector, Any]] = []
 
     dir_list = os.listdir(data_path)
     for file in dir_list:
@@ -382,15 +380,14 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
         bug_patches_len = len(bug_patches)
 
         for i, bug_patch in enumerate(bug_patches):
-            if i == bug_patches_len - 1:
-                # Last bug patch for this patch collector deletes the repo
-                future = executor.submit(patch_collector.test_patch, bug_patch, True)
-            else:
-                future = executor.submit(patch_collector.test_patch, bug_patch)
-            patches_futures.append((bug_patch, future))
+            future = executor.submit(patch_collector.test_patch, bug_patch)
+            patches_futures.append((bug_patch, future, i == bug_patches_len - 1))
 
-    for bug_patch, future in patches_futures:
+    for bug_patch, future, last_collector_bug_patch in patches_futures:
         is_patch = future.result()
+        # Last bug patch for this patch collector deletes the repo
+        if last_collector_bug_patch:
+            patch_collectors.pop(0)[0].delete_repo()
         if is_patch:
             data_path = os.path.join(results_path, bug_patch.repo.full_name.replace('/', '-') + '.json')
             with open(data_path, "a") as fp:
