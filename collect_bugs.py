@@ -7,7 +7,7 @@ import logging
 import copy
 import threading
 import fire
-from typing import List
+from typing import List, Dict
 from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
@@ -37,6 +37,22 @@ class BugPatch:
         self.issues = None
         # The actions are grouped by each phase of the strategy used
         self.actions_runs: List[List[ActTestsRun]] = []
+
+    @staticmethod
+    def from_data(data: Dict) -> 'BugPatch':
+        github = Github(login_or_token=GithubToken.get_token().token)
+        bug = BugPatch.__new__(BugPatch)
+        bug.repo = github.get_repo(data['repository'])
+        bug.commit = data['commit_hash']
+        bug.commit_message = data['commit_message']
+        bug.commit_timestamp = data['commit_timestamp']
+        bug.previous_commit = data['commit_hash'] + "^1"
+        bug.bug_patch = PatchSet(data['bug_patch'])
+        bug.test_patch = PatchSet(data['test_patch'])
+        bug.strategy_used = CollectionStrategy[data['strategy']]
+        bug.issues = None
+        bug.actions_runs = []
+        return bug
 
     def get_data(self):
         actions_runs = []
@@ -91,11 +107,17 @@ class BugPatch:
 
 
 class PatchCollector:
-    def __init__(self, repo: Repository):
+    def __init__(self, repo: Repository, runner: str="crawlergpt:latest", 
+                 repo_clone: pygit2.Repository = None):
         self.repo: Repository = repo
+        self.runner: str = runner
         self.language = repo.language.strip().lower()
-        self.cloned = False
+        self.repo_clone = repo_clone
+        self.cloned = repo_clone is not None
         self.clone_lock = threading.Lock()
+        if self.repo_clone is not None:
+            self.repo_path = self.repo_clone.workdir
+            self.__get_default_actions()
 
     def __clone_repo(self):
         self.clone_lock.acquire()
@@ -124,7 +146,7 @@ class PatchCollector:
                 self.first_commit = commit
             self.repo_clone.checkout_tree(commit)
             self.repo_clone.set_head(commit.oid)
-            actions = GitHubActions(self.repo_path, self.language)
+            actions = GitHubActions(self.repo_path, self.language, runner=self.runner)
             if len(actions.test_workflows) > 0:
                 self.default_actions = actions
 
@@ -207,7 +229,8 @@ class PatchCollector:
         act_runs = []
 
         test_actions = GitHubActions(repo_clone.workdir, self.language, 
-                                     keep_containers=keep_containers)
+                                     keep_containers=keep_containers, 
+                                     runner=self.runner)
         if len(test_actions.test_workflows) == 0:
             for workflow in self.default_actions.test_workflows:
                 new_workflow = copy.deepcopy(workflow)
@@ -309,7 +332,7 @@ class PatchCollector:
         
         return patches
 
-    def test_patch(self, bug_patch: BugPatch, delete_repo = False):
+    def test_patch(self, bug_patch: BugPatch, delete_repo: bool = False):
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
         

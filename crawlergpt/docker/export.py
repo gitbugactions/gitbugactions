@@ -132,7 +132,7 @@ class DiffNode:
         return len(self.children) == 0
 
 
-def extract_diff(container_id: str, diff_file_path: str):
+def extract_diff(container_id: str, diff_file_path: str, ignore_paths=[]):
     save_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
     client = docker.from_env(timeout=600)
     container: Container = client.containers.get(container_id)
@@ -142,6 +142,9 @@ def extract_diff(container_id: str, diff_file_path: str):
     parent_node = DiffNode({}, -1, '/', '/')
 
     for change in diff:
+        if any(map(lambda path: change['Path'].startswith(path), ignore_paths)):
+            continue
+
         # The index removes the empty string from the beggining (/path...)
         path = change['Path'].split(os.sep)[1:]
         current_node = parent_node
@@ -217,8 +220,3 @@ def apply_diff(container_id: str, diff_file_path: str):
 
     handle_removes(parent_node)
     shutil.rmtree(diff_path)
-
-
-extract_diff('8b74bae099c2', 'diff.tar.gz')
-apply_diff('f2dc9df3a875', 'diff.tar.gz')
-os.remove("diff.tar.gz")

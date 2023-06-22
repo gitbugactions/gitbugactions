@@ -39,11 +39,10 @@ class Act:
     __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
     __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
-    __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
     __SETUP_LOCK = threading.Lock()
     
     
-    def __init__(self, reuse, timeout=5):
+    def __init__(self, reuse, timeout=5, runner: str="crawlergpt:latest"):
         '''
         Args:
             timeout (int): Timeout in minutes
@@ -53,6 +52,7 @@ class Act:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
+        self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
         self.timeout = timeout
 
     @staticmethod
@@ -86,7 +86,7 @@ class Act:
 
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
@@ -117,12 +117,13 @@ class GitHubActions:
     Class to handle GitHub Actions
     """
     
-    def __init__(self, repo_path, language: str, keep_containers: bool=False):
+    def __init__(self, repo_path, language: str, keep_containers: bool=False, runner: str="crawlergpt:latest"):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
         self.language: str = language.strip().lower()
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
+        self.runner = runner
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
@@ -170,7 +171,7 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(self, workflow) -> ActTestsRun:
-        act = Act(self.keep_containers, timeout=10)
+        act = Act(self.keep_containers, timeout=10, runner=self.runner)
         return act.run_act(self.repo_path, workflow)
     
     def remove_containers(self):
