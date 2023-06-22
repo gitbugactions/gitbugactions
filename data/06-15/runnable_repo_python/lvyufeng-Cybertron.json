@@ -1,0 +1,372 @@
+{
+    "repository": "lvyufeng/Cybertron",
+    "stars": 51,
+    "language": "python",
+    "size": 478,
+    "clone_url": "https://github.com/lvyufeng/Cybertron.git",
+    "timestamp": "2023-06-16T15:17:13.011033Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_load_from_cache.TestLoadFromCache",
+            "name": "test_load_from_cache_default_path",
+            "time": 0.18,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_load_from_cache.TestLoadFromCache",
+            "name": "test_load_from_cache_default_path_force_download",
+            "time": 0.177,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_comparison.test_bert.TestBertComparison",
+            "name": "test_bert_comparsion",
+            "time": 1.138,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert False\n +  where False = <function allclose at 0x7f3c05392320>(array([[[-0.7007983 ,  1.1614683 , -0.5311884 , ...,  0.02077943,\\n          0.455132  , -1.0019765 ],\\n        [ 0.4033...\\n        [-1.1263939 ,  0.47949803,  0.1459754 , ..., -0.52740365,\\n          0.95312315, -0.04323715]]], dtype=float32), array([[[-0.00255289,  1.1047466 , -0.01536016, ..., -0.1290394 ,\\n          0.17036244, -0.7989182 ],\\n        [ 1.1278...\\n        [-0.4427368 ,  0.38739142,  0.6723096 , ..., -0.69375885,\\n          0.6730347 ,  0.19417368]]], dtype=float32), atol=1e-05)\n +    where <function allclose at 0x7f3c05392320> = np.allclose\n +    and   array([[[-0.7007983 ,  1.1614683 , -0.5311884 , ...,  0.02077943,\\n          0.455132  , -1.0019765 ],\\n        [ 0.4033...\\n        [-1.1263939 ,  0.47949803,  0.1459754 , ..., -0.52740365,\\n          0.95312315, -0.04323715]]], dtype=float32) = <bound method _stub_method.<locals>.fun of Tensor(shape=[1, 512, 256], dtype=Float32, value=\\n[[[-7.00798273e-01,  1.16...2e+00],\\n  [-1.12639391e+00,  4.79498029e-01,  1.45975396e-01 ... -5.27403653e-01,  9.53123152e-01, -4.32371460e-02]]])>()\n +      where <bound method _stub_method.<locals>.fun of Tensor(shape=[1, 512, 256], dtype=Float32, value=\\n[[[-7.00798273e-01,  1.16...2e+00],\\n  [-1.12639391e+00,  4.79498029e-01,  1.45975396e-01 ... -5.27403653e-01,  9.53123152e-01, -4.32371460e-02]]])> = Tensor(shape=[1, 512, 256], dtype=Float32, value=\\n[[[-7.00798273e-01,  1.16146827e+00, -5.31188428e-01 ...  2.07794346...32e+00],\\n  [-1.12639391e+00,  4.79498029e-01,  1.45975396e-01 ... -5.27403653e-01,  9.53123152e-01, -4.32371460e-02]]]).asnumpy\n +    and   array([[[-0.00255289,  1.1047466 , -0.01536016, ..., -0.1290394 ,\\n          0.17036244, -0.7989182 ],\\n        [ 1.1278...\\n        [-0.4427368 ,  0.38739142,  0.6723096 , ..., -0.69375885,\\n          0.6730347 ,  0.19417368]]], dtype=float32) = <built-in method numpy of Tensor object at 0x7f3ade049a70>()\n +      where <built-in method numpy of Tensor object at 0x7f3ade049a70> = tensor([[[-0.0026,  1.1047, -0.0154,  ..., -0.1290,  0.1704, -0.7989],\\n         [ 1.1278,  0.1686, -0.0910,  ..., -0.4...27,  0.0576,  ..., -0.4754,  0.1406, -0.8711],\\n         [-0.4427,  0.3874,  0.6723,  ..., -0.6938,  0.6730,  0.1942]]]).numpy\n +        where tensor([[[-0.0026,  1.1047, -0.0154,  ..., -0.1290,  0.1704, -0.7989],\\n         [ 1.1278,  0.1686, -0.0910,  ..., -0.4...27,  0.0576,  ..., -0.4754,  0.1406, -0.8711],\\n         [-0.4427,  0.3874,  0.6723,  ..., -0.6938,  0.6730,  0.1942]]]) = <built-in method detach of Tensor object at 0x7f3ade03c4d0>()\n +          where <built-in method detach of Tensor object at 0x7f3ade03c4d0> = tensor([[[-0.0026,  1.1047, -0.0154,  ..., -0.1290,  0.1704, -0.7989],\\n         [ 1.1278,  0.1686, -0.0910,  ..., -0.4...1],\\n         [-0.4427,  0.3874,  0.6723,  ..., -0.6938,  0.6730,  0.1942]]],\\n       grad_fn=<NativeLayerNormBackward0>).detach",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_comparison.test_bert.TestBertComparison",
+            "name": "test_bert_sequence_comparison",
+            "time": 0.839,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "assert False\n +  where False = <function allclose at 0x7f3c05392320>(array([[ 0.04530204, -0.01310827]], dtype=float32), array([[ 0.05076905, -0.03006507]], dtype=float32), atol=1e-05)\n +    where <function allclose at 0x7f3c05392320> = np.allclose\n +    and   array([[ 0.04530204, -0.01310827]], dtype=float32) = <bound method _stub_method.<locals>.fun of Tensor(shape=[1, 2], dtype=Float32, value=\\n[[ 4.53020409e-02, -1.31082684e-02]])>()\n +      where <bound method _stub_method.<locals>.fun of Tensor(shape=[1, 2], dtype=Float32, value=\\n[[ 4.53020409e-02, -1.31082684e-02]])> = Tensor(shape=[1, 2], dtype=Float32, value=\\n[[ 4.53020409e-02, -1.31082684e-02]]).asnumpy\n +    and   array([[ 0.05076905, -0.03006507]], dtype=float32) = <built-in method numpy of Tensor object at 0x7f3a9076bc50>()\n +      where <built-in method numpy of Tensor object at 0x7f3a9076bc50> = tensor([[ 0.0508, -0.0301]]).numpy\n +        where tensor([[ 0.0508, -0.0301]]) = <built-in method detach of Tensor object at 0x7f3a906f14d0>()\n +          where <built-in method detach of Tensor object at 0x7f3a906f14d0> = tensor([[ 0.0508, -0.0301]], grad_fn=<AddmmBackward0>).detach",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_comparison.test_gpt.TestGPTComparison",
+            "name": "test_gpt_comparison",
+            "time": 6.705,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_comparison.test_xlnet.TestXLNetComparison",
+            "name": "test_xlnet_comparison",
+            "time": 2.711,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_bart.TestModelingBert",
+            "name": "test_modeling_bert_1_True",
+            "time": 7.434,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "TypeError: Multiply values for specific argument: encoder_attn_mask\n\n----------------------------------------------------\n- The Traceback of Net Construct Code:\n----------------------------------------------------\nThe function call stack (See file '/tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/rank_0/om/analyze_fail.ir' for more details. Get instructions about `analyze_fail.ir` at https://www.mindspore.cn/search?inputValue=analyze_fail.ir):\n# 0 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/tests/test_models/test_modeling_bart.py:27\n            decoder_outputs, encoder_outputs = model(input_ids)\n                                               ^\n# 1 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:794\n        assert decoder_input_ids is not None\n        ^\n# 2 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/tests/test_models/test_modeling_bart.py:27\n            decoder_outputs, encoder_outputs = model(input_ids)\n                                               ^\n# 3 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:803\n        assert isinstance(encoder_outputs, tuple)\n        ^\n# 4 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:805\n        decoder_outputs = self.decoder(\n# 5 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:805\n        decoder_outputs = self.decoder(\n                          ^\n# 6 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:466\n        for idx, decoder_layer in enumerate(self.layers):\n        ^\n# 7 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:805\n        decoder_outputs = self.decoder(\n                          ^\n# 8 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:471\n            if self.training and (dropout_probability < self.layerdrop):\n            ^\n# 9 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:805\n        decoder_outputs = self.decoder(\n                          ^\n# 10 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:489\n            if self.layer_norm and (idx == len(self.layers) - 1):  # last layer of mbart\n            ^\n# 11 In file /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/lvyufeng-Cybertron/cybertron/models/bart.py:476\n            x, layer_self_attn, layer_past = decoder_layer(\n\n----------------------------------------------------\n- C++ Call Stack: (For framework developers)\n----------------------------------------------------\nmindspore/core/ir/func_graph_extends.cc:171 GenerateKwParams",
+                    "type": null
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_bart.TestModelingBert",
+            "name": "test_modeling_bert_2_False",
+            "time": 1.121,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_bert.TestModelingBert",
+            "name": "test_modeling_bert_1_True",
+            "time": 3.126,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_bert.TestModelingBert",
+            "name": "test_modeling_bert_2_False",
+            "time": 0.69,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_bert.TestModelingBert",
+            "name": "test_modeling_bert_pretraining_1_True",
+            "time": 4.137,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_bert.TestModelingBert",
+            "name": "test_modeling_bert_pretraining_2_False",
+            "time": 0.46,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_ernie.TestModelingBert",
+            "name": "test_modeling_bert",
+            "time": 0.002,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_gpt.TestModelingGPT",
+            "name": "test_modeling_gpt_1_True",
+            "time": 3.801,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_gpt.TestModelingGPT",
+            "name": "test_modeling_gpt_2_False",
+            "time": 0.817,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_roberta.TestModelingRoberta",
+            "name": "test_modeling_roberta_1_True",
+            "time": 3.203,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_roberta.TestModelingRoberta",
+            "name": "test_modeling_roberta_2_False",
+            "time": 0.386,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_roberta.TestModelingRoberta",
+            "name": "test_roberta_for_masked_lm_1_True",
+            "time": 3.72,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_roberta.TestModelingRoberta",
+            "name": "test_roberta_for_masked_lm_2_False",
+            "time": 0.5,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_roberta.TestModelingRoberta",
+            "name": "test_roberta_for_sequence_classification_1_True",
+            "time": 3.143,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_roberta.TestModelingRoberta",
+            "name": "test_roberta_for_sequence_classification_2_False",
+            "time": 0.732,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_xlnet.TestModelingXLNet",
+            "name": "test_modeling_xlnet_1_True",
+            "time": 4.02,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_models.test_modeling_xlnet.TestModelingXLNet",
+            "name": "test_modeling_xlnet_2_False",
+            "time": 1.602,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_optimization.test_bert_adam.ScheduleInitTest",
+            "name": "test_bert_sched_init",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_tokenizers.test_bert_tokenizer.TestBertTokenizer",
+            "name": "test_bert_tokenizer",
+            "time": 0.934,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

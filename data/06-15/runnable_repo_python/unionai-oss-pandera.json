@@ -1,0 +1,540 @@
+{
+    "repository": "unionai-oss/pandera",
+    "stars": 2378,
+    "language": "python",
+    "size": 2612,
+    "clone_url": "https://github.com/unionai-oss/pandera.git",
+    "timestamp": "2023-06-16T13:12:37.441788Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "number_of_actions": 2,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_inferred_schema_io",
+            "time": 0.029,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml",
+            "time": 0.036,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml[\\nschema_type: dataframe\\nversion: 0.0.0+dev0\\ncolumns:\\n  int_column:\\n    title: integer_col\\n    description: Integer column with title\\n    dtype: int64\\n    nullable: false\\n    checks:\\n      greater_than: 0\\n      less_than: 10\\n      in_range:\\n        min_value: 0\\n        max_value: 10\\n        include_min: true\\n        include_max: true\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  float_column:\\n    title: null\\n    description: Float col no title\\n    dtype: float64\\n    nullable: false\\n    checks:\\n      greater_than: -10\\n      less_than: 20\\n      in_range:\\n        min_value: -10\\n        max_value: 20\\n        include_min: true\\n        include_max: true\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  str_column:\\n    title: null\\n    description: null\\n    dtype: str\\n    nullable: false\\n    checks:\\n      isin:\\n      - foo\\n      - bar\\n      - x\\n      - xy\\n      str_length:\\n        min_value: 1\\n        max_value: 3\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  datetime_column:\\n    title: null\\n    description: null\\n    dtype: datetime64[ns]\\n    nullable: false\\n    checks:\\n      greater_than: '2010-01-01 00:00:00'\\n      less_than: '2020-01-01 00:00:00'\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  timedelta_column:\\n    title: null\\n    description: null\\n    dtype: timedelta64[ns]\\n    nullable: false\\n    checks:\\n      greater_than: 1000\\n      less_than: 10000\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  optional_props_column:\\n    title: null\\n    description: null\\n    dtype: str\\n    nullable: true\\n    checks:\\n      str_length:\\n        min_value: 1\\n        max_value: 3\\n    unique: false\\n    coerce: true\\n    required: false\\n    regex: true\\n  notype_column:\\n    title: null\\n    description: null\\n    dtype: null\\n    nullable: false\\n    checks:\\n      isin:\\n      - foo\\n      - bar\\n      - x\\n      - xy\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\nchecks: null\\nindex:\\n- title: null\\n  description: null\\n  dtype: int64\\n  nullable: false\\n  checks: null\\n  name: null\\n  unique: false\\n  coerce: false\\ndtype: null\\ncoerce: false\\nstrict: true\\nname: null\\nordered: false\\nunique: null\\nreport_duplicates: all\\nunique_column_names: false\\ntitle: null\\ndescription: null\\n-_create_schema]",
+            "time": 0.041,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml[\\nschema_type: dataframe\\nversion: 0.0.0+dev0\\ncolumns:\\n  float_column:\\n    dtype: float64\\n    nullable: false\\n    checks:\\n      greater_than: -10\\n      less_than: 20\\n      in_range:\\n        min_value: -10\\n        max_value: 20\\n  str_column:\\n    dtype: str\\n    nullable: false\\n    checks:\\n      isin:\\n      - foo\\n      - bar\\n      - x\\n      - xy\\n      str_length:\\n        min_value: 1\\n        max_value: 3\\nindex: null\\nchecks: null\\ncoerce: false\\nstrict: false\\n-_create_schema_null_index]",
+            "time": 0.017,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml[\\nschema_type: dataframe\\nversion: 0.0.0+dev0\\ncolumns:\\n  int_column:\\n    dtype: int64\\n  float_column:\\n    dtype: float64\\n  str_column:\\n    dtype: str\\n  object_column:\\n    dtype: object\\nchecks: null\\nindex: null\\ncoerce: false\\nstrict: false\\n-_create_schema_python_types]",
+            "time": 0.042,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml[\\nschema_type: dataframe\\nversion: 0.0.0+dev0\\ncolumns:\\n  int_column:\\n    title: null\\n    description: null\\n    dtype: int64\\n    nullable: false\\n    checks:\\n      greater_than: 0\\n      less_than: 10\\n      in_range:\\n        min_value: 0\\n        max_value: 10\\n        include_min: true\\n        include_max: true\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  float_column:\\n    title: null\\n    description: null\\n    dtype: float64\\n    nullable: false\\n    checks:\\n      greater_than: -10\\n      less_than: 20\\n      in_range:\\n        min_value: -10\\n        max_value: 20\\n        include_min: true\\n        include_max: true\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  str_column:\\n    title: null\\n    description: null\\n    dtype: str\\n    nullable: false\\n    checks:\\n      isin:\\n      - foo\\n      - bar\\n      - x\\n      - xy\\n      str_length:\\n        min_value: 1\\n        max_value: 3\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  datetime_column:\\n    title: null\\n    description: null\\n    dtype: datetime64[ns]\\n    nullable: false\\n    checks:\\n      greater_than: '2010-01-01 00:00:00'\\n      less_than: '2020-01-01 00:00:00'\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  timedelta_column:\\n    title: null\\n    description: null\\n    dtype: timedelta64[ns]\\n    nullable: false\\n    checks:\\n      greater_than: 1000\\n      less_than: 10000\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\n  optional_props_column:\\n    title: null\\n    description: null\\n    dtype: str\\n    nullable: true\\n    checks:\\n      str_length:\\n        min_value: 1\\n        max_value: 3\\n    unique: false\\n    coerce: true\\n    required: false\\n    regex: true\\n  notype_column:\\n    title: null\\n    description: null\\n    dtype: null\\n    nullable: false\\n    checks:\\n      isin:\\n      - foo\\n      - bar\\n      - x\\n      - xy\\n    unique: false\\n    coerce: false\\n    required: true\\n    regex: false\\nchecks: null\\nindex:\\n- title: null\\n  description: null\\n  dtype: int64\\n  nullable: false\\n  checks: null\\n  name: null\\n  unique: false\\n  coerce: false\\ndtype: null\\ncoerce: false\\nstrict: true\\nname: null\\nordered: false\\nunique: null\\nreport_duplicates: all\\nunique_column_names: false\\ntitle: null\\ndescription: null\\n-_create_schema_no_descr_no_title]",
+            "time": 0.045,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml_unregistered_checks",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml_load_required_fields",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml_retains_ordered_keyword[True-test_data0-SchemaError]",
+            "time": 0.006,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml_retains_ordered_keyword[True-test_data1-expected1]",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml_retains_ordered_keyword[False-test_data2-expected2]",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_from_yaml_retains_ordered_keyword[False-test_data3-expected3]",
+            "time": 0.008,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_yaml_file_obj",
+            "time": 0.058,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_yaml[single]",
+            "time": 0.131,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_yaml[multi]",
+            "time": 0.203,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_yaml[None]",
+            "time": 0.137,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_json[single]",
+            "time": 0.11,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_json[multi]",
+            "time": 0.125,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_io_json[None]",
+            "time": 0.119,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_script[single]",
+            "time": 0.609,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_script[multi]",
+            "time": 0.975,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_script[None]",
+            "time": 0.603,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_script_lambda_check",
+            "time": 0.066,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_lambda_check",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_format_checks_warning",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_registered_dataframe_check",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_custom_dataframe_check",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_bugfix_warn_unregistered_global_checks",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_retains_ordered_keyword[True-test_data0-SchemaError]",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_retains_ordered_keyword[True-test_data1-expected1]",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_retains_ordered_keyword[False-test_data2-expected2]",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_to_yaml_retains_ordered_keyword[False-test_data3-expected3]",
+            "time": 0.009,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_serialize_deserialize_custom_datetime_checks",
+            "time": 0.012,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_frictionless_schema_parses_correctly[frictionless_schema0]",
+            "time": 0.788,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_frictionless_schema_parses_correctly[frictionless_schema1]",
+            "time": 0.629,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_frictionless_schema_primary_key[frictionless_schema0]",
+            "time": 0.005,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.io.test_io",
+            "name": "test_frictionless_schema_primary_key[frictionless_schema1]",
+            "time": 0.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        }
+    ]
+}

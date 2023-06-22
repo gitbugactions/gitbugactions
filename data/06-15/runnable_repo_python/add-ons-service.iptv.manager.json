@@ -1,0 +1,79 @@
+{
+    "repository": "add-ons/service.iptv.manager",
+    "stars": 86,
+    "language": "python",
+    "size": 869,
+    "clone_url": "https://github.com/add-ons/service.iptv.manager.git",
+    "timestamp": "2023-06-16T14:16:45.391673Z",
+    "clone_success": true,
+    "number of actions": 0,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "number_of_actions": 3,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_tests": [
+        {
+            "classname": "tests.test_integration.IntegrationTest",
+            "name": "test_refresh",
+            "time": 1.083,
+            "results": [
+                {
+                    "result": "Failure",
+                    "message": "AssertionError: tests/home/userdata/addon_data/service.iptv.manager/playlist.m3u8 does not exist",
+                    "type": null
+                }
+            ],
+            "stdout": "#x1B[93m= IPTV Manager =========================================================================================================#x1B[0m\nDetecting IPTV add-ons...\n#x1B[34mFound Add-on info: \n- Kodi Home (special://home):       /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home \n- Add-on ID:                        plugin.video.example.three \n- Add-on Path:                      /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/addons/plugin.video.example.three \n- Kodi Profile (special://profile): /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/userdata \n#x1B[0m\n#x1B[34mFound Add-on info: \n- Kodi Home (special://home):       /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home \n- Add-on ID:                        inputstream.adaptive \n- Add-on Path:                      /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/addons/inputstream.adaptive \n- Kodi Profile (special://profile): /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/userdata \n#x1B[0m\n#x1B[34mFound Add-on info: \n- Kodi Home (special://home):       /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home \n- Add-on ID:                        plugin.video.example.two \n- Add-on Path:                      /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/addons/plugin.video.example.two \n- Kodi Profile (special://profile): /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/userdata \n#x1B[0m\n#x1B[34mFound Add-on info: \n- Kodi Home (special://home):       /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home \n- Add-on ID:                        plugin.video.example \n- Add-on Path:                      /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/addons/plugin.video.example \n- Kodi Profile (special://profile): /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/userdata \n#x1B[0m\n#x1B[34mFound Add-on info: \n- Kodi Home (special://home):       /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home \n- Add-on ID:                        pvr.iptvsimple \n- Add-on Path:                      /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/addons/pvr.iptvsimple \n- Kodi Profile (special://profile): /tmp/54ebbeb8-0c2e-11ee-a890-af2cc187fc11/add-ons-service.iptv.manager/tests/home/userdata \n#x1B[0m\n[service.iptv.manager] [resources.lib.modules.addon] Updating IPTV data for plugin.video.example.three...\n#x1B[93m0%#x1B[0m: Fetching channels and guide of Example IPTV Addon Three...\n[service.iptv.manager] [resources.lib.modules.addon] Requesting channels from plugin://plugin.video.example.three/iptv/channels...\n[service.iptv.manager] [resources.lib.modules.addon] Bound on port 53369...\n[service.iptv.manager] [resources.lib.modules.addon] Executing RunPlugin(plugin://plugin.video.example.three/iptv/channels?port=53369)...\n[service.iptv.manager] [resources.lib.modules.addon] Waiting for a connection from plugin.video.example.three on port 53369...\nInvoked plugin.video.example.three with route /iptv/channels and query {u'port': u'53369'}\n[service.iptv.manager] [resources.lib.modules.addon] Connected to 127.0.0.1:58278! Waiting for result...\n[service.iptv.manager] [resources.lib.modules.addon] Closing socket on port 53369\n[service.iptv.manager] [resources.lib.modules.addon] #EXTM3U\n#EXTINF:-1 tvg-name=\"Test 1\" tvg-id=\"raw1.com\" tvg-logo=\"https://example.com/raw1.png\" tvg-chno=\"1\" group-title=\"Test Addon\" catchup=\"vod\",RAW 1\nplugin://plugin.video.test/play/raw\n[service.iptv.manager] [resources.lib.modules.addon] Requesting epg from plugin://plugin.video.example.three/iptv/epg...\n[service.iptv.manager] [resources.lib.modules.addon] Bound on port 55125...\n[service.iptv.manager] [resources.lib.modules.addon] Executing RunPlugin(plugin://plugin.video.example.three/iptv/epg?port=55125)...\nInvoked plugin.video.example.three with route /iptv/epg and query {u'port': u'55125'}[service.iptv.manager] [resources.lib.modules.addon] Waiting for a connection from plugin.video.example.three on port 55125...\n\n[service.iptv.manager] [resources.lib.modules.addon] Connected to 127.0.0.1:59186! Waiting for result...\n[service.iptv.manager] [resources.lib.modules.addon] Closing socket on port 55125\n[service.iptv.manager] [resources.lib.modules.addon] <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE tv SYSTEM \"xmltv.dtd\">\n<tv source-info-url=\"http://www.schedulesdirect.org/\" source-info-name=\"Schedules Direct\" generator-info-name=\"XMLTV/$Id: tv_grab_na_dd.in,v 1.70 2008/03/03 15:21:41 rmeden Exp $\" generator-info-url=\"http://www.xmltv.org/\">\n<channel id=\"raw1.com\">\n <display-name>RAW 1</display-name>\n</channel>\n<programme start=\"20210123114255 +0100\" stop=\"20210123121255 +0100\" channel=\"raw1.com\" catchup-id=\"plugin://plugin.video.test/play/raw/1\">\n <title>RAW 1</title>\n <desc>RAW 1 description</desc>\n</programme>\n</tv>\n[service.iptv.manager] [resources.lib.modules.addon] Updating IPTV data for plugin.video.example.two...\n#x1B[93m33%#x1B[0m: Fetching channels and guide of Example IPTV Addon Two...\n[service.iptv.manager] [resources.lib.modules.addon] Requesting channels from plugin://plugin.video.example.two/iptv/channels...\n[service.iptv.manager] [resources.lib.modules.addon] Bound on port 60965...\n[service.iptv.manager] [resources.lib.modules.addon] Executing RunPlugin(plugin://plugin.video.example.two/iptv/channels?port=60965)...\n[service.iptv.manager] [resources.lib.modules.addon] Waiting for a connection from plugin.video.example.two on port 60965...Invoked plugin.video.example.two with route /iptv/channels and query {u'port': u'60965'}\n\n[service.iptv.manager] [resources.lib.modules.addon] Connected to 127.0.0.1:36322! Waiting for result...\n[service.iptv.manager] [resources.lib.modules.addon] Closing socket on port 60965\n[service.iptv.manager] [resources.lib.modules.addon] {u'version': 1, u'streams': [{u'logo': u'https://example.com/channel1.png', u'preset': 1, u'name': u'Channel 1', u'stream': u'plugin://plugin.video.example.two/play/1', u'id': u'channel1.com'}]}\n[service.iptv.manager] [resources.lib.modules.addon] Updating IPTV data for plugin.video.example...\n#x1B[93m66%#x1B[0m: Fetching channels and guide of Example IPTV Addon...\n[service.iptv.manager] [resources.lib.modules.addon] Requesting channels from plugin://plugin.video.example/iptv/channels...\n[service.iptv.manager] [resources.lib.modules.addon] Bound on port 44081...\n[service.iptv.manager] [resources.lib.modules.addon] Executing RunPlugin(plugin://plugin.video.example/iptv/channels?port=44081)...\n[service.iptv.manager] [resources.lib.modules.addon] Waiting for a connection from plugin.video.example on port 44081...\nInvoked plugin.video.example with route /iptv/channels and query {u'port': u'44081'}\n[service.iptv.manager] [resources.lib.modules.addon] Connected to 127.0.0.1:49990! Waiting for result...\n[service.iptv.manager] [resources.lib.modules.addon] Closing socket on port 44081\n[service.iptv.manager] [resources.lib.modules.addon] {u'version': 1, u'streams': [{u'name': u'Channel 1', u'stream': u'plugin://plugin.video.example/play/1', u'kodiprops': {u'mimetype': u'video/mp2t', u'inputstream.ffmpegdirect.is_realtime_stream': u'true', u'inputstream': u'inputstream.ffmpegdirect'}, u'preset': 1, u'logo': u'https://example.com/channel1.png', u'id': u'channel1.com'}, {u'logo': u'https://example.com/channel2.png', u'preset': 2, u'name': u'Channel 2', u'stream': u'plugin://plugin.video.example/play/2', u'id': u'channel2.com'}, {u'group': u'VRT', u'name': u'Radio 1', u'stream': u'plugin://plugin.video.example/play/901', u'preset': 901, u'radio': True, u'logo': u'https://example.com/radio1.png', u'id': u'radio1.com'}, {u'group': [u'Belgium', u'VRT'], u'name': u'\\xe9\\xe9n', u'stream': u'plugin://plugin.video.example/play/\\xe9\\xe9n', u'preset': 101, u'logo': u'https://example.com/\\xe9\\xe9n.png', u'id': u'\\xe9\\xe9n.be'}]}\n[service.iptv.manager] [resources.lib.modules.addon] Requesting epg from plugin://plugin.video.example/iptv/epg...\n[service.iptv.manager] [resources.lib.modules.addon] Bound on port 44901...\n[service.iptv.manager] [resources.lib.modules.addon] Executing RunPlugin(plugin://plugin.video.example/iptv/epg?port=44901)...\n[service.iptv.manager] [resources.lib.modules.addon] Waiting for a connection from plugin.video.example on port 44901...\nInvoked plugin.video.example with route /iptv/epg and query {u'port': u'44901'}\n[service.iptv.manager] [resources.lib.modules.addon] Connected to 127.0.0.1:56106! Waiting for result...\n[service.iptv.manager] [resources.lib.modules.addon] Closing socket on port 44901\n[service.iptv.manager] [resources.lib.modules.addon] {u'epg': {u'channel2.com': [{u'description': u'This is the description of the show 3', u'stream': u'plugin://plugin.video.example/play/something', u'title': u'This is a show 3 (no timezone info)', u'image': None, u'stop': u'2023-06-16T14:47:46.668920', u'start': u'2023-06-16T14:17:46.668920'}, {u'description': u'This is the description of the show 4', u'stream': u'plugin://plugin.video.example/play/something', u'title': u'This is a show 4 (no timezone info)', u'image': None, u'stop': u'2023-06-16T15:17:46.668920', u'start': u'2023-06-16T14:47:46.668920'}], u'channel1.com': [{u'subtitle': u'Pilot episode', u'description': u'This is the description of the show \\u20ac 4 + 4 > 6', u'stream': u'plugin://plugin.video.example/play/something', u'title': u'This is a show with an & ampersand.', u'image': u'https://example.com/image.png', u'stop': u'2023-06-16T16:47:46.668880+02:00', u'genre': u'Quiz', u'date': u'1987-06-15', u'episode': u'S01E01', u'start': u'2023-06-16T16:17:46.668880+02:00'}, {u'description': u'This is the description of the show 2', u'stream': u'plugin://plugin.video.example/play/something', u'title': u'This is a show 2 named \"Show 2\"', u'image': None, u'stop': u'2023-06-16T17:17:46.668880+02:00', u'start': u'2023-06-16T16:47:46.668880+02:00'}], u'\\xe9\\xe9n.be': [{u'subtitle': u'Pilot episode', u'description': u'This is the description of the show on \\xe9\\xe9n', u'stream': u'plugin://plugin.video.example/play/something', u'title': u'This is a show on \\xe9\\xe9n.', u'image': u'https://example.com/image.png', u'stop': u'2023-06-16T16:47:46.668880+02:00', u'credits': [{u'type': u'director', u'name': u'David Benioff'}, {u'type': u'director', u'name': u'D.B. Weiss'}, {u'type': u'actor', u'role': u'Jon Snow', u'name': u'Kit Harington'}, {u'type': u'actor', u'role': u'Daenerys Targaryen', u'name': u'Emilia Clarke'}, {u'type': u'writer', u'name': u'George R.R. Martin'}], u'date': u'1987-06-15', u'episode': u'S01E01', u'start': u'2023-06-16T16:17:46.668880+02:00'}]}, u'version': 1}\n#x1B[93m100%#x1B[0m: Updating channels and guide...\n#x1B[93m========================================================================================================================#x1B[0m\n",
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_iptvsimple.IptvSimpleTest",
+            "name": "test_restart",
+            "time": 1.003,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_iptvsimple.IptvSimpleTest",
+            "name": "test_setup",
+            "time": 0.001,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": "#x1B[31mExecutebuiltin: InstallAddon(pvr.iptvsimple) is not implemented#x1B[0m\n",
+            "stderr": null
+        },
+        {
+            "classname": "tests.test_service.TestService",
+            "name": "test_service",
+            "time": 5.004,
+            "results": [
+                {
+                    "result": "Passed",
+                    "message": "",
+                    "type": ""
+                }
+            ],
+            "stdout": "[service.iptv.manager] [resources.lib.service] Service started\n[service.iptv.manager] [resources.lib.service] Service stopped\n",
+            "stderr": null
+        }
+    ]
+}
