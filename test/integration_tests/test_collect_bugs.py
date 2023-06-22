@@ -112,7 +112,7 @@ def test_get_related_commit_info():
     assert len(issues[0]['labels']) == 0
     assert issues[0]['is_pull_request'] == True
     assert len(issues[0]['review_comments']) == 2
-    shutil.rmtree(collector.repo_path)
+    shutil.rmtree(collector.repo_clone.workdir)
 
     collector = PatchCollector(GithubToken.get_token().github.get_repo('sr-lab/GLITCH'))
     issues = collector._PatchCollector__get_related_commit_info("98dd01d")
@@ -121,4 +121,4 @@ def test_get_related_commit_info():
     assert issues[0]['title'] == 'Fix vscode extension for Ansible'
     assert issues[0]['body'] == 'Since autodetect was removed, the extension has to be updated.'
     assert issues[0]['is_pull_request'] == False
-    shutil.rmtree(collector.repo_path)
+    shutil.rmtree(collector.repo_clone.workdir)

@@ -4,7 +4,6 @@ import shutil
 import pygit2
 import tempfile
 import logging
-import copy
 import threading
 import fire
 from typing import List, Dict
@@ -14,9 +13,12 @@ from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
 from dataclasses import asdict
 from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import GitHubActions, ActTestsRun
+from crawlergpt.actions.actions import ActTestsRun
+from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
 from concurrent.futures import ThreadPoolExecutor
+
+# CHECK IF IMAGE IS BEING CREATED (IMPORT)
 
 class CollectionStrategy(Enum):
     UNKNOWN = 0
@@ -107,17 +109,11 @@ class BugPatch:
 
 
 class PatchCollector:
-    def __init__(self, repo: Repository, runner: str="crawlergpt:latest", 
-                 repo_clone: pygit2.Repository = None):
+    def __init__(self, repo: Repository):
         self.repo: Repository = repo
-        self.runner: str = runner
         self.language = repo.language.strip().lower()
-        self.repo_clone = repo_clone
-        self.cloned = repo_clone is not None
+        self.cloned = False
         self.clone_lock = threading.Lock()
-        if self.repo_clone is not None:
-            self.repo_path = self.repo_clone.workdir
-            self.__get_default_actions()
 
     def __clone_repo(self):
         self.clone_lock.acquire()
@@ -125,32 +121,16 @@ class PatchCollector:
             self.clone_lock.release()
             return
         self.delete_repo()
-        self.repo_path = os.path.join(tempfile.gettempdir(), self.repo.full_name.replace('/', '-'))
-        self.repo_path = os.path.join(self.repo_path, str(uuid.uuid4()))
+        repo_path = os.path.join(tempfile.gettempdir(), 
+                                 self.repo.full_name.replace('/', '-'))
+        repo_path = os.path.join(repo_path, str(uuid.uuid4()))
         logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, 
-            self.repo_path
+            repo_path
         )
         self.cloned = True
-        self.__get_default_actions()
         self.clone_lock.release()
-
-    def __get_default_actions(self):
-        if len(list(self.repo_clone.references.iterator())) == 0:
-            return
-        self.first_commit = None
-
-        for commit in self.repo_clone.walk(self.repo_clone.head.target):
-            if self.first_commit is None:
-                self.first_commit = commit
-            self.repo_clone.checkout_tree(commit)
-            self.repo_clone.set_head(commit.oid)
-            actions = GitHubActions(self.repo_path, self.language, runner=self.runner)
-            if len(actions.test_workflows) > 0:
-                self.default_actions = actions
-
-        self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
         
     def __is_bug_fix(self, commit):
         return 'fix' in commit.message.lower()
@@ -176,11 +156,13 @@ class PatchCollector:
             self.__clone_repo()
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-        shutil.copytree(self.repo_path, new_repo_path)
+        shutil.copytree(self.repo_clone.workdir, new_repo_path)
 
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
+        executor = TestExecutor(repo_clone, self.language)
+        
         try:
-            first_commit = repo_clone.revparse_single(self.first_commit.hex)
+            first_commit = repo_clone.revparse_single(executor.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
@@ -191,7 +173,7 @@ class PatchCollector:
             repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
             repo_clone.set_head(previous_commit.oid)
             
-            act_runs = self.run_tests(repo_clone)
+            act_runs = executor.run_tests()
             all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
             if all_runs_failed:
                 return test_patch_runs
@@ -204,7 +186,7 @@ class PatchCollector:
                 except pygit2.GitError:
                     # Invalid patches
                     return test_patch_runs
-                act_runs = self.run_tests(repo_clone)
+                act_runs = executor.run_tests()
                 if all_runs_failed:
                     return test_patch_runs
                 test_patch_runs[1] = act_runs
@@ -215,7 +197,7 @@ class PatchCollector:
             repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
                                     commit.author, commit.message)
             repo_clone.set_head(commit.oid)
-            act_runs = self.run_tests(repo_clone)
+            act_runs = executor.run_tests()
             all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
             if all_runs_failed:
                 return test_patch_runs
@@ -224,32 +206,6 @@ class PatchCollector:
             delete_repo_clone(repo_clone)
 
         return test_patch_runs
-    
-    def run_tests(self, repo_clone, keep_containers: bool=False) -> List[ActTestsRun]:
-        act_runs = []
-
-        test_actions = GitHubActions(repo_clone.workdir, self.language, 
-                                     keep_containers=keep_containers, 
-                                     runner=self.runner)
-        if len(test_actions.test_workflows) == 0:
-            for workflow in self.default_actions.test_workflows:
-                new_workflow = copy.deepcopy(workflow)
-                new_workflow.path = os.path.join(repo_clone.workdir, 
-                    '.github/workflows', os.path.basename(workflow.path))
-                test_actions.test_workflows.append(new_workflow)
-        # Act creates names for the containers by hashing the content of the workflows
-        # To avoid conflicts between threads, we randomize the name
-        for workflow in test_actions.test_workflows:
-            workflow.doc["name"] = str(uuid.uuid4())
-        test_actions.save_workflows()
-
-        for workflow in test_actions.test_workflows:
-            act_runs.append(test_actions.run_workflow(workflow))
-
-        test_actions.delete_workflows()
-
-        return act_runs
-
 
     def __get_related_commit_info(self, commit_hex: str):
         if not self.cloned:
@@ -368,7 +324,7 @@ class PatchCollector:
         return False
     
     def delete_repo(self):
-        if hasattr(self, "repo_path"):
+        if self.cloned:
             delete_repo_clone(self.repo_clone)
         self.cloned = False
 

@@ -31,29 +31,29 @@ for jsonl_path in os.listdir(dataset_path):
         for line in lines:
             bug = json.loads(line)
             repo = Github(login_or_token=GithubToken.get_token().token).get_repo(bug['repository'])
-            # collector = PatchCollector(repo)
-            # repo_clone = pygit2.clone_repository(repo.clone_url,
-            #                                      os.path.join(tempfile.gettempdir(), str(uuid.uuid4())))
-            # commit = repo_clone.revparse_single(bug['commit_hash'])
-            # repo_clone.checkout_tree(commit)
-            # repo_clone.set_head(commit.oid)
+            collector = PatchCollector(repo)
+            repo_clone = pygit2.clone_repository(repo.clone_url,
+                                                 os.path.join(tempfile.gettempdir(), str(uuid.uuid4())))
+            commit = repo_clone.revparse_single(bug['commit_hash'])
+            repo_clone.checkout_tree(commit)
+            repo_clone.set_head(commit.oid)
 
-            # docker_client = docker.from_env()
-            # runs = collector.run_tests(repo_clone, keep_containers=True)
+            docker_client = docker.from_env()
+            runs = collector.run_tests(repo_clone, keep_containers=True)
 
-            # for run in runs:
-            #     filters = {"name":f"act-{run.workflow_name}"}
-            #     containers: List[Container] = docker_client.containers.list(filters=filters)
-            #     for container in containers:
-            #         container.stop()
-            #         #FIXME
-            #         diff_file_path = os.path.join(diffs_folder, str(uuid.uuid4()))
-            #         extract_diff(container.id, 
-            #                      diff_file_path, 
-            #                      ignore_paths=['/tmp'])
-            #         container.remove()
+            for run in runs:
+                filters = {"name":f"act-{run.workflow_name}"}
+                containers: List[Container] = docker_client.containers.list(filters=filters)
+                for container in containers:
+                    container.stop()
+                    #FIXME
+                    diff_file_path = os.path.join(diffs_folder, str(uuid.uuid4()))
+                    extract_diff(container.id, 
+                                 diff_file_path, 
+                                 ignore_paths=['/tmp'])
+                    container.remove()
 
-            # create_act_image("test:test", diff_file_path)
+            create_act_image("test:test", diff_file_path)
             repo_clone = pygit2.Repository('/home/nfsaavedra/Downloads/epubcheck/.git')
             
             collector = PatchCollector(repo, runner="test:test", repo_clone=repo_clone)
