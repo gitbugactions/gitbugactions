@@ -30,12 +30,13 @@ class TestExecutor:
 
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
 
-    def run_tests(self, keep_containers: bool=False) -> List[ActTestsRun]:
+    def run_tests(self, keep_containers: bool=False, offline: bool=False) -> List[ActTestsRun]:
         act_runs = []
 
         test_actions = GitHubActions(self.repo_clone.workdir, self.language, 
                                      keep_containers=keep_containers, 
-                                     runner=self.runner)
+                                     runner=self.runner,
+                                     offline=offline)
         if len(test_actions.test_workflows) == 0:
             for workflow in self.default_actions.test_workflows:
                 new_workflow = copy.deepcopy(workflow)

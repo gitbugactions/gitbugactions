@@ -1,7 +1,5 @@
-import re
 import os
 import time
-import hashlib
 import docker
 import logging
 import subprocess
@@ -38,11 +36,11 @@ class Act:
     __ACT_PATH="act"
     __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
+    __FLAGS=f"--bind --pull=false"
     __SETUP_LOCK = threading.Lock()
     
-    
-    def __init__(self, reuse, timeout=5, runner: str="crawlergpt:latest"):
+    def __init__(self, reuse, timeout=5, runner: str="crawlergpt:latest", 
+                 offline: bool = False):
         '''
         Args:
             timeout (int): Timeout in minutes
@@ -52,6 +50,12 @@ class Act:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
+
+        self.flags += f" --container-options '-u {os.getuid()}"
+        if offline:
+            self.flags += " --network none"
+        self.flags += "'"
+        
         self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
         self.timeout = timeout
 
@@ -70,7 +74,9 @@ class Act:
         # Creates crawler image
         client = docker.from_env()
         if len(client.images.list(name="crawlergpt")) > 0:
-            client.images.remove(image="crawlergpt")
+            Act.__ACT_SETUP = True
+            Act.__SETUP_LOCK.release()
+            return
 
         with open("Dockerfile", "w") as f:
             client = docker.from_env()
@@ -117,13 +123,15 @@ class GitHubActions:
     Class to handle GitHub Actions
     """
     
-    def __init__(self, repo_path, language: str, keep_containers: bool=False, runner: str="crawlergpt:latest"):
+    def __init__(self, repo_path, language: str, keep_containers: bool=False, 
+                 runner: str="crawlergpt:latest", offline: bool=False):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
         self.language: str = language.strip().lower()
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
         self.runner = runner
+        self.offline = offline
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
@@ -171,7 +179,7 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(self, workflow) -> ActTestsRun:
-        act = Act(self.keep_containers, timeout=10, runner=self.runner)
+        act = Act(self.keep_containers, timeout=10, runner=self.runner, offline=self.offline)
         return act.run_act(self.repo_path, workflow)
     
     def remove_containers(self):

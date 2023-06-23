@@ -40,22 +40,6 @@ class BugPatch:
         # The actions are grouped by each phase of the strategy used
         self.actions_runs: List[List[ActTestsRun]] = []
 
-    @staticmethod
-    def from_data(data: Dict) -> 'BugPatch':
-        github = Github(login_or_token=GithubToken.get_token().token)
-        bug = BugPatch.__new__(BugPatch)
-        bug.repo = github.get_repo(data['repository'])
-        bug.commit = data['commit_hash']
-        bug.commit_message = data['commit_message']
-        bug.commit_timestamp = data['commit_timestamp']
-        bug.previous_commit = data['commit_hash'] + "^1"
-        bug.bug_patch = PatchSet(data['bug_patch'])
-        bug.test_patch = PatchSet(data['test_patch'])
-        bug.strategy_used = CollectionStrategy[data['strategy']]
-        bug.issues = None
-        bug.actions_runs = []
-        return bug
-
     def get_data(self):
         actions_runs = []
         
