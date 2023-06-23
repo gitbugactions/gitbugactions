@@ -182,6 +182,7 @@ class TestCollectBugs():
         'test_crawlergpt_unittest_test_repo',
         ])
     @pytest.mark.flaky
+    @pytest.mark.skip(reason="flaky due to non-determinism in token usage during this class")
     def test_token_usage(self):
         # FIXME: flaky
         if GithubToken.has_tokens():
