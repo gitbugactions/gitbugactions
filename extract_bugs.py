@@ -7,7 +7,7 @@ import docker
 import logging
 import tempfile
 from docker.models.containers import Container
-from typing import List
+from typing import List, Dict
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.docker.export import extract_diff
@@ -16,7 +16,7 @@ dataset_path: str = sys.argv[1]
 diffs_folder = tempfile.gettempdir()
 
 
-def export_bug_containers(bug, export_path):
+def export_bug_containers(bug: Dict, export_path: str):
     repo_full_name = bug['repository']
     commit_hash = bug['commit_hash']
     logging.info(f"Exporting {commit_hash} from {repo_full_name}...")
@@ -51,10 +51,10 @@ def export_bug_containers(bug, export_path):
 
     delete_repo_clone(repo_clone)
 
-
-for jsonl_path in os.listdir(dataset_path):
-    with open(os.path.join(dataset_path, jsonl_path), "r") as jsonl:
-        lines = jsonl.readlines()
-        for line in lines:
-            bug = json.loads(line)
-            export_bug_containers(bug, diffs_folder)
+if __name__ == '__main__':
+    for jsonl_path in os.listdir(dataset_path):
+        with open(os.path.join(dataset_path, jsonl_path), "r") as jsonl:
+            lines = jsonl.readlines()
+            for line in lines:
+                bug = json.loads(line)
+                export_bug_containers(bug, diffs_folder)

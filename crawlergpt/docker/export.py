@@ -220,3 +220,13 @@ def apply_diff(container_id: str, diff_file_path: str):
 
     handle_removes(parent_node)
     shutil.rmtree(diff_path)
+
+
+def create_act_image(new_image_name, diff_file_path):
+    client = docker.from_env()
+    container: Container = client.containers.run('crawlergpt:latest', detach=True)
+    apply_diff(container.id, diff_file_path)
+    repository, tag = new_image_name.split(':')
+    container.commit(repository=repository, tag=tag)
+    container.stop()
+    container.remove()
