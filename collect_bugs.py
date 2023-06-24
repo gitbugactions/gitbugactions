@@ -185,6 +185,7 @@ class PatchCollector:
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
+            all_runs_crashed = lambda x: all(map(lambda act_run: act_run.failed, x))
 
             # Previous commit
             repo_clone.checkout_tree(previous_commit)
@@ -193,10 +194,9 @@ class PatchCollector:
             repo_clone.set_head(previous_commit.oid)
             
             act_runs = self.__run_tests(repo_clone)
-            all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
-            if all_runs_failed:
-                return test_patch_runs
             test_patch_runs[0] = act_runs
+            if all_runs_crashed(act_runs):
+                return test_patch_runs
 
             if len(test_patch) > 0:
                 # Apply diff and run tests
@@ -206,9 +206,9 @@ class PatchCollector:
                     # Invalid patches
                     return test_patch_runs
                 act_runs = self.__run_tests(repo_clone)
-                if all_runs_failed:
-                    return test_patch_runs
                 test_patch_runs[1] = act_runs
+                if all_runs_crashed(act_runs):
+                    return test_patch_runs
 
             # Current commit
             repo_clone.checkout_tree(commit)
@@ -217,10 +217,9 @@ class PatchCollector:
                                     commit.author, commit.message)
             repo_clone.set_head(commit.oid)
             act_runs = self.__run_tests(repo_clone)
-            all_runs_failed = all(map(lambda act_run: act_run.failed, act_runs))
-            if all_runs_failed:
-                return test_patch_runs
             test_patch_runs[2] = act_runs
+            if all_runs_crashed(act_runs):
+                return test_patch_runs
         finally:
             delete_repo_clone(repo_clone)
 
@@ -334,7 +333,7 @@ class PatchCollector:
                                  len(flat_failed_tests(bug_patch.actions_runs[0])) > 0)
         
         # FAIL_PASS strategy
-        if prev_commit_failed and curr_commit_passed:
+        if prev_commit_failed and len(bug_patch.test_patch) == 0 and curr_commit_passed:
             bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
             bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
             return True
