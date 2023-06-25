@@ -164,17 +164,19 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths=[]):
         for _, child in node.children.items(): 
             if child.kind == 2:
                 continue
-            elif child.is_file:
-                file_path = os.path.join(save_path, child.full_path[1:])
-                with open(f'{file_path}.tar', 'wb') as f:
+            # if a directory was created we can download all the content there
+            elif child.is_file or child.kind == 1:
+                path = os.path.join(save_path, child.full_path[1:])
+                with open(f'{path}.tar', 'wb') as f:
                     bits, _ = container.get_archive(child.full_path)
                     for chunk in bits:
                         f.write(chunk)
                 
-                with tarfile.open(f'{file_path}.tar', 'r') as f:
-                    f.extractall(os.path.dirname(file_path))
+                with tarfile.open(f'{path}.tar', 'r') as f:
+                    f.extractall(os.path.dirname(path))
 
-                os.remove(f'{file_path}.tar')
+                os.remove(f'{path}.tar')
+                continue
             else:
                 os.makedirs(os.path.join(save_path, child.full_path[1:]))
             handle_node(child)
