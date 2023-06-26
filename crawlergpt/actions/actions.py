@@ -35,7 +35,7 @@ class Act:
     __ACT_PATH="act"
     __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}'"
+    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}:{os.getgid()}'"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
     __SETUP_LOCK = threading.Lock()
     
@@ -72,7 +72,8 @@ class Act:
         with open("Dockerfile", "w") as f:
             client = docker.from_env()
             dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin"
+            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
+            dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
             f.write(dockerfile)
 
         client.images.build(path="./", tag="crawlergpt", forcerm=True)
