@@ -1,9 +1,11 @@
 import os
+import grp
 import time
 import docker
 import logging
 import subprocess
 import threading
+import uuid
 from typing import List
 from junitparser import TestCase, Error
 from dataclasses import dataclass
@@ -73,6 +75,7 @@ class Act:
             client = docker.from_env()
             dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
             dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
+            dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
             dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
             f.write(dockerfile)
 
@@ -84,7 +87,7 @@ class Act:
 
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags} --cache-server-path /tmp/{uuid.uuid4()}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
