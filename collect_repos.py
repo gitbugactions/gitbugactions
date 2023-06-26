@@ -77,7 +77,8 @@ class CollectReposStrategy(RepoStrategy):
                         shutil.rmtree(act_cache_dir, ignore_errors=True)
 
                 data['actions_successful'] = not act_run.failed
-                data['actions_tests'] = []
+                data['actions_run'] = asdict(act_run)
+                data['actions_run']['tests'] = []
                 for test in act_run.tests:
                     results = []
                     for result in test.result:
@@ -89,7 +90,7 @@ class CollectReposStrategy(RepoStrategy):
                     if len(results) == 0:
                         results.append({ 'result': 'Passed', 'message': '', 'type': '' })
 
-                    data['actions_tests'].append({
+                    data['actions_run']['tests'].append({
                         'classname': test.classname,
                         'name': test.name,
                         'time': test.time,
