@@ -88,7 +88,7 @@ class Act:
 
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        cache_server_path = f"/tmp/{uuid.uuid4()}"
+        cache_server_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
         command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags} --cache-server-path {cache_server_path}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
