@@ -1,5 +1,6 @@
 import os
 import grp
+import tempfile
 import shutil
 import time
 import docker
