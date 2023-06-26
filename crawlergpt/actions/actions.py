@@ -89,32 +89,44 @@ class Act:
 
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
+        # We set a different cache server path for each execution so that there is no conflict between them
+        # The cache server port is set to 0 so that it is automatically assigned a random available one
         cache_server_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags} --cache-server-path {cache_server_path}"
+        cache_server_options = f"--cache-server-path {cache_server_path} --cache-server-port 0"
+        # We set a different artifact server path for each execution so that there is no conflict between them
+        # The artifact server port is set to 0 so that it is automatically assigned a random available one
+        artifact_server_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+        artifact_server_options = f"--artifact-server-path {artifact_server_path} --artifact-server-port 0"
+        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags} {cache_server_options} {artifact_server_options}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
         command += f" -W {workflow.path}"
 
-        start_time = time.time()
-        run = subprocess.run(command, shell=True, capture_output=True)
-        end_time = time.time()
-        shutil.rmtree(cache_server_path, ignore_errors=True)
-        stdout = run.stdout.decode('utf-8')
-        stderr = run.stderr.decode('utf-8')
-        tests = workflow.get_test_results(repo_path)
-        tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
-                stderr=stderr, workflow=workflow.path, build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
+        try:
+            start_time = time.time()
+            run = subprocess.run(command, shell=True, capture_output=True)
+            end_time = time.time()
+            stdout = run.stdout.decode('utf-8')
+            stderr = run.stderr.decode('utf-8')
+            tests = workflow.get_test_results(repo_path)
+            tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
+                    stderr=stderr, workflow=workflow.path, build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
 
-        if len(tests_run.failed_tests) == 0 and run.returncode != 0:
-            tests_run.failed = True
+            if len(tests_run.failed_tests) == 0 and run.returncode != 0:
+                tests_run.failed = True
 
-        if GithubToken.has_tokens():
-            token.update_rate_limit()
-            for token in workflow.tokens:
+            if GithubToken.has_tokens():
                 token.update_rate_limit()
+                for token in workflow.tokens:
+                    token.update_rate_limit()
 
-        return tests_run
+            return tests_run
+        finally:
+            if os.path.exists(cache_server_path):
+                shutil.rmtree(cache_server_path, ignore_errors=True)
+            if os.path.exists(artifact_server_path):
+                shutil.rmtree(artifact_server_path, ignore_errors=True)
 
 
 class GitHubActions:
