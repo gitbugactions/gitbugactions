@@ -1,5 +1,6 @@
 import os
 import grp
+import shutil
 import time
 import docker
 import logging
@@ -87,7 +88,8 @@ class Act:
 
     def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags} --cache-server-path /tmp/{uuid.uuid4()}"
+        cache_server_path = f"/tmp/{uuid.uuid4()}"
+        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags} --cache-server-path {cache_server_path}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
@@ -96,6 +98,7 @@ class Act:
         start_time = time.time()
         run = subprocess.run(command, shell=True, capture_output=True)
         end_time = time.time()
+        shutil.rmtree(cache_server_path, ignore_errors=True)
         stdout = run.stdout.decode('utf-8')
         stderr = run.stderr.decode('utf-8')
         tests = workflow.get_test_results(repo_path)
@@ -109,7 +112,7 @@ class Act:
             token.update_rate_limit()
             for token in workflow.tokens:
                 token.update_rate_limit()
-        
+
         return tests_run
 
 
