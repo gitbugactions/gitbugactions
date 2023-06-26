@@ -61,6 +61,12 @@ class CollectReposStrategy(RepoStrategy):
             
             if len(actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
+
+                # Act creates names for the containers by hashing the content of the workflows
+                # To avoid conflicts between threads, we randomize the name
+                actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
+                actions.save_workflows()
+
                 act_run = actions.run_workflow(actions.test_workflows[0])
                 data['actions_successful'] = not act_run.failed
                 data['actions_tests'] = []
