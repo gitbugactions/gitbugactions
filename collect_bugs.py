@@ -225,6 +225,7 @@ class PatchCollector:
             # Current commit
             repo_clone.checkout_tree(commit)
             self.__cleanup_repo(repo_clone, new_repo_path, commit)
+
             # Creates ref to avoid "failed to identify reference"
             repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
                                     commit.author, commit.message)
