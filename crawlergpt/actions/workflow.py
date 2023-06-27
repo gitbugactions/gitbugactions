@@ -214,7 +214,7 @@ class GitHubWorkflowFactory:
 
         # Return the build tool with the highest count
         max_build_tool = max(aggregate_keyword_counts, key=aggregate_keyword_counts.get)
-        return aggregate_keyword_counts[max_build_tool] if aggregate_keyword_counts[max_build_tool] > 0 else None
+        return max_build_tool if aggregate_keyword_counts[max_build_tool] > 0 else None
         
         
     @staticmethod
