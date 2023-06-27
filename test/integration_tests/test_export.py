@@ -10,7 +10,7 @@ import pytest
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.docker.export import create_act_image
-from extract_bugs import export_bug_containers
+from export_bugs import export_bug_containers
 
 repo_clone = None
 image_name = None

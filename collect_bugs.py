@@ -6,7 +6,7 @@ import tempfile
 import logging
 import threading
 import fire
-from typing import List, Dict
+from typing import List
 from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
@@ -18,7 +18,6 @@ from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
 from concurrent.futures import ThreadPoolExecutor
 
-# CHECK IF IMAGE IS BEING CREATED (IMPORT)
 
 class CollectionStrategy(Enum):
     UNKNOWN = 0
