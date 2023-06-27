@@ -338,11 +338,9 @@ class PatchCollector:
         return False
     
     def delete_repo(self):
-        self.clone_lock.acquire()
         if hasattr(self, "repo_path"):
             delete_repo_clone(self.repo_clone)
         self.cloned = False
-        self.clone_lock.release()
 
 
 def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
