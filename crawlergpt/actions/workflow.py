@@ -185,6 +185,7 @@ class GitHubWorkflowFactory:
         }
         aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
         keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
+        aggregate_keyword_counts = {build_tool: 0 for build_tool in build_tool_keywords}
         
         def _update_keyword_counts(keyword_counts, phrase):
             for name in phrase.strip().lower().split(' '):
@@ -199,22 +200,21 @@ class GitHubWorkflowFactory:
                 doc['on'] = doc[True]
                 doc.pop(True)
                 
-        # Iterate over the workflow to find build tool names
-        for job_name, job in doc['jobs'].items():
-            _update_keyword_counts(keyword_counts, job_name)
+        # Iterate over the workflow to find build tool names in the run commands
+        for _, job in doc['jobs'].items():
             if 'steps' in job:
                 for step in job['steps']:
                     if 'run' in step:
                         _update_keyword_counts(keyword_counts, step['run'])
                         
+        # Aggregate keyword counts per build tool
+        for build_tool in build_tool_keywords:
+            for keyword in build_tool_keywords[build_tool]:
+                aggregate_keyword_counts[build_tool] += keyword_counts[keyword]
+
         # Return the build tool with the highest count
-        max_keyword = max(keyword_counts, key=keyword_counts.get)
-        if keyword_counts[max_keyword] > 0:
-            for build_tool, keywords in build_tool_keywords.items():
-                if max_keyword in keywords:
-                    return build_tool
-        else:
-            return None
+        max_build_tool = max(aggregate_keyword_counts, key=aggregate_keyword_counts.get)
+        return aggregate_keyword_counts[max_build_tool] if aggregate_keyword_counts[max_build_tool] > 0 else None
         
         
     @staticmethod
