@@ -18,7 +18,7 @@ class PytestWorkflow(GitHubWorkflow):
     def _is_test_command(self, command) -> bool:
         # Checks if the given command matches any of the tests command patterns
         for pattern in PytestWorkflow.__TESTS_COMMAND_PATTERNS:
-            if re.match(pattern, command):
+            if re.search(pattern, command):
                 return True
         return False
     
