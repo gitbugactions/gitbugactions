@@ -173,8 +173,7 @@ class PatchCollector:
     
     def __test_patch(self, commit_hex, previous_commit_hex, test_patch):
         test_patch_runs = [None, None, None]
-        if not self.cloned:
-            self.__clone_repo()
+        self.__clone_repo()
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
         shutil.copytree(self.repo_path, new_repo_path)
@@ -227,8 +226,7 @@ class PatchCollector:
     
 
     def __get_related_commit_info(self, commit_hex: str):
-        if not self.cloned:
-            self.__clone_repo()
+        self.__clone_repo()
         
         commit = self.repo_clone.revparse_single(commit_hex)
         matches = re.findall("#[0-9]+", commit.message)
@@ -277,8 +275,7 @@ class PatchCollector:
         return issues
     
     def get_possible_patches(self):
-        if not self.cloned:
-            self.__clone_repo()
+        self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
             return
 
@@ -341,9 +338,11 @@ class PatchCollector:
         return False
     
     def delete_repo(self):
+        self.clone_lock.acquire()
         if hasattr(self, "repo_path"):
             delete_repo_clone(self.repo_clone)
         self.cloned = False
+        self.clone_lock.release()
 
 
 def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
