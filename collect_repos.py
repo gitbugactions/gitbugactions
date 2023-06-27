@@ -1,6 +1,6 @@
 import tempfile
 import pygit2
-import os, logging, sys
+import os, logging, sys, shutil
 import json
 import uuid
 import fire
@@ -67,7 +67,15 @@ class CollectReposStrategy(RepoStrategy):
                 actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
                 actions.save_workflows()
 
-                act_run = actions.run_workflow(actions.test_workflows[0])
+                # We need to set a different cache dir for each worker to avoid conflicts
+                # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
+                act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
+                try:
+                    act_run = actions.run_workflow(actions.test_workflows[0], act_cache_dir=act_cache_dir)
+                finally:
+                    if os.path.exists(act_cache_dir):
+                        shutil.rmtree(act_cache_dir, ignore_errors=True)
+
                 data['actions_successful'] = not act_run.failed
                 data['actions_tests'] = []
                 for test in act_run.tests:
