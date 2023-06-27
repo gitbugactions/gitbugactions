@@ -39,7 +39,8 @@ class Act:
     __ACT_PATH="act"
     __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}:{os.getgid()}'"
+    # The flag --cache-server-port 0 sets the cache server to a random port, so that we get one server per worker
+    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}:{os.getgid()}' --cache-server-port 0"
     __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
     __SETUP_LOCK = threading.Lock()
     
