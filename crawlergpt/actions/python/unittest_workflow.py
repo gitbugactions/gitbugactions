@@ -7,16 +7,25 @@ from crawlergpt.actions.workflow import GitHubWorkflow
 from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 
 class UnittestWorkflow(GitHubWorkflow):
-    __TESTS_KEYWORDS = ["unittest", "xmlrunner"]
-
-    def _is_test_keyword(self, name):
-        return any(map(lambda word: word.lower() in UnittestWorkflow.__TESTS_KEYWORDS, name.split(' ')))
+    BUILD_TOOL_KEYWORDS = ["unittest", "xmlrunner"]
+    # Regex patterns to match unittest commands
+    __TESTS_COMMAND_PATTERNS = [
+        r"python\s.*-m\sunittest", # Matches commands that call unittest through python's module option
+        r"python\s.*-m\sxmlrunner", # Matches commands that call xlmrunner through python's module option
+        ]
+    
+    def _is_test_command(self, command) -> bool:
+        # Checks if the given command matches any of the tests command patterns
+        for pattern in UnittestWorkflow.__TESTS_COMMAND_PATTERNS:
+            if re.search(pattern, command):
+                return True
+        return False
 
     def instrument_test_steps(self):
-        for job_name, job in self.doc['jobs'].items():
+        for _, job in self.doc['jobs'].items():
             if 'steps' in job:
                 for step in job['steps']:
-                    if 'run' in step and self._is_test_keyword(step['run']):
+                    if 'run' in step and self._is_test_command(step['run']):
                         # We need to install the xmlrunner package to generate the reports
                         new_step_run = "pip install unittest-xml-reporting && "
                         if "-m unittest" in step['run']:
