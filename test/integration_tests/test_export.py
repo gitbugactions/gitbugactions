@@ -15,6 +15,7 @@ from export_bugs import export_bug_containers
 repo_clone = None
 image_name = None
 export_path = None
+act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
 docker_client = docker.from_env()
 
 @pytest.fixture
@@ -26,6 +27,8 @@ def teardown():
         delete_repo_clone(repo_clone)
     if export_path is not None:
         shutil.rmtree(export_path)
+    if os.path.exists(act_cache_dir):
+        shutil.rmtree(act_cache_dir)
 
 def test_export():
     global repo_clone, image_name, export_path
@@ -60,7 +63,7 @@ def test_export():
 
     image_name = f"{str(uuid.uuid4())}:latest"
     create_act_image(image_name, commit_container_path)
-    executor = TestExecutor(repo_clone, bug['language'], runner=image_name)
+    executor = TestExecutor(repo_clone, bug['language'], act_cache_dir, runner=image_name)
     repo_clone.checkout_tree(commit)
     repo_clone.set_head(commit.oid)
     runs = executor.run_tests(offline=True)

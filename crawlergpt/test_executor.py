@@ -6,8 +6,9 @@ from typing import List
 
 
 class TestExecutor:
-    def __init__(self, repo_clone: Repository, language: str,
+    def __init__(self, repo_clone: Repository, language: str, act_cache_dir: str,
                  runner: str="crawlergpt:latest"):
+        self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
         self.runner = runner
         self.language = language
@@ -50,7 +51,7 @@ class TestExecutor:
         test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
-            act_runs.append(test_actions.run_workflow(workflow))
+            act_runs.append(test_actions.run_workflow(workflow, self.act_cache_dir))
 
         test_actions.delete_workflows()
 

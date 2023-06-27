@@ -36,11 +36,17 @@ class GitHubWorkflow(ABC):
 
 
     @abstractmethod
-    def _is_test_keyword(self, name):
+    def _is_test_command(self, command) -> bool:
+        """
+        Checks if a given command is a test command
+        
+        Returns:
+            bool: True if the command is a test command
+        """
         pass
 
 
-    def has_tests(self):
+    def has_tests(self) -> bool:
         """
         Check if the workflow has any tests.
 
@@ -48,23 +54,12 @@ class GitHubWorkflow(ABC):
             bool: True if the workflow has tests, False otherwise.
         """
         try:
-            # Check if the workflow name contains any test keywords
-            if "name" in self.doc and self._is_test_keyword(self.doc["name"]):
-                return True
-            
-            # Check if any job name or step name/run command contains any test keywords
-            for job_name, job in self.doc['jobs'].items():
-                if self._is_test_keyword(job_name):
-                    return True
-                
+            # Check if any run command is a test running command
+            for _, job in self.doc['jobs'].items():
                 if 'steps' in job:
                     for step in job['steps']:
-                        if 'name' in step and self._is_test_keyword(step['name']):
+                        if 'run' in step and self._is_test_command(step['run']):
                             return True
-                        
-                        if 'run' in step and self._is_test_keyword(step['run']):
-                            return True
-                    
             return False
         except yaml.YAMLError:
             return False
@@ -168,6 +163,7 @@ from crawlergpt.actions.multi.unknown_workflow import UnknownWorkflow
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
 from crawlergpt.actions.java.gradle_workflow import GradleWorkflow
 from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
+from crawlergpt.actions.python.unittest_workflow import UnittestWorkflow
 
 class GitHubWorkflowFactory:
     """
@@ -182,12 +178,14 @@ class GitHubWorkflowFactory:
         """
         # Build tool keywords
         build_tool_keywords = {
-            'maven': ['maven', 'mvn', 'mavenw', 'mvnw'],
-            'gradle': ['gradle', 'gradlew'],
-            'pytest': ['pytest', 'py.test'],
+            'maven': MavenWorkflow.BUILD_TOOL_KEYWORDS,
+            'gradle': GradleWorkflow.BUILD_TOOL_KEYWORDS,
+            'pytest': PytestWorkflow.BUILD_TOOL_KEYWORDS,
+            'unittest': UnittestWorkflow.BUILD_TOOL_KEYWORDS,
         }
         aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
         keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
+        aggregate_keyword_counts = {build_tool: 0 for build_tool in build_tool_keywords}
         
         def _update_keyword_counts(keyword_counts, phrase):
             for name in phrase.strip().lower().split(' '):
@@ -202,26 +200,21 @@ class GitHubWorkflowFactory:
                 doc['on'] = doc[True]
                 doc.pop(True)
                 
-        # Iterate over the workflow to find build tool names
-        for job_name, job in doc['jobs'].items():
-            _update_keyword_counts(keyword_counts, job_name)
+        # Iterate over the workflow to find build tool names in the run commands
+        for _, job in doc['jobs'].items():
             if 'steps' in job:
                 for step in job['steps']:
-                    if 'name' in step:
-                        _update_keyword_counts(keyword_counts, step['name'])
-                    if 'uses' in step:
-                        _update_keyword_counts(keyword_counts, step['uses'])
                     if 'run' in step:
                         _update_keyword_counts(keyword_counts, step['run'])
                         
+        # Aggregate keyword counts per build tool
+        for build_tool in build_tool_keywords:
+            for keyword in build_tool_keywords[build_tool]:
+                aggregate_keyword_counts[build_tool] += keyword_counts[keyword]
+
         # Return the build tool with the highest count
-        max_keyword = max(keyword_counts, key=keyword_counts.get)
-        if keyword_counts[max_keyword] > 0:
-            for build_tool, keywords in build_tool_keywords.items():
-                if max_keyword in keywords:
-                    return build_tool
-        else:
-            return None
+        max_build_tool = max(aggregate_keyword_counts, key=aggregate_keyword_counts.get)
+        return max_build_tool if aggregate_keyword_counts[max_build_tool] > 0 else None
         
         
     @staticmethod
@@ -238,5 +231,7 @@ class GitHubWorkflowFactory:
                 return GradleWorkflow(path)
             case ("python", "pytest"):
                 return PytestWorkflow(path)
+            case ("python", "unittest"):
+                return UnittestWorkflow(path)
             case (_, _):
                 return UnknownWorkflow(path)

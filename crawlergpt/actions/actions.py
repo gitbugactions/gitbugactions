@@ -1,9 +1,13 @@
 import os
+import grp
+import tempfile
+import shutil
 import time
 import docker
 import logging
 import subprocess
 import threading
+import uuid
 from typing import List
 from junitparser import TestCase, Error
 from dataclasses import dataclass
@@ -36,7 +40,7 @@ class Act:
     __ACT_PATH="act"
     __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --pull=false"
+    __FLAGS=f"--bind --pull=false --cache-server-port 0"
     __SETUP_LOCK = threading.Lock()
     
     def __init__(self, reuse, timeout=5, runner: str="crawlergpt:latest", 
@@ -51,7 +55,7 @@ class Act:
         else:
             self.flags = "--rm"
 
-        self.flags += f" --container-options '-u {os.getuid()}"
+        self.flags += f" --container-options '-u {os.getuid()}:{os.getgid()}"
         if offline:
             self.flags += " --network none"
         self.flags += "'"
@@ -81,7 +85,9 @@ class Act:
         with open("Dockerfile", "w") as f:
             client = docker.from_env()
             dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin"
+            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
+            dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
+            dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
             f.write(dockerfile)
 
         client.images.build(path="./", tag="crawlergpt", forcerm=True)
@@ -90,9 +96,9 @@ class Act:
         Act.__SETUP_LOCK.release()
 
 
-    def run_act(self, repo_path, workflow: GitHubWorkflow) -> ActTestsRun:
+    def run_act(self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        command += f"timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
@@ -114,7 +120,7 @@ class Act:
             token.update_rate_limit()
             for token in workflow.tokens:
                 token.update_rate_limit()
-        
+
         return tests_run
 
 
@@ -178,9 +184,9 @@ class GitHubActions:
         for workflow in self.test_workflows:
             self.delete_workflow(workflow)
 
-    def run_workflow(self, workflow) -> ActTestsRun:
+    def run_workflow(self, workflow, act_cache_dir: str) -> ActTestsRun:
         act = Act(self.keep_containers, timeout=10, runner=self.runner, offline=self.offline)
-        return act.run_act(self.repo_path, workflow)
+        return act.run_act(self.repo_path, workflow, act_cache_dir = act_cache_dir)
     
     def remove_containers(self):
         client = docker.from_env()

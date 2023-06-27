@@ -8,7 +8,7 @@ class UnknownWorkflow(GitHubWorkflow):
     # 1. not supported by CrawlerGPT, or
     # 2. not identified by CrawlerGPT
     
-    def _is_test_keyword(self, name):
+    def _is_test_command(self, command) -> bool:
         return False
     
     def instrument_test_steps(self):
