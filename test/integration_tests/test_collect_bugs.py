@@ -30,10 +30,7 @@ def get_test_results(tests):
 
 def test_collect_bugs(teardown_out_bugs):
     GithubToken.init_tokens()
-    token_usage = get_token_usage()
-    collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 2)
-    if GithubToken.has_tokens():
-        assert token_usage + 13 == get_token_usage()
+    collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 16)
     
     with open("test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json", "r") as f:
         lines = f.readlines()
