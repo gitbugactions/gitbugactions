@@ -36,11 +36,17 @@ class GitHubWorkflow(ABC):
 
 
     @abstractmethod
-    def _is_test_keyword(self, name):
+    def _is_test_command(self, command) -> bool:
+        """
+        Checks if a given command is a test command
+        
+        Returns:
+            bool: True if the command is a test command
+        """
         pass
 
 
-    def has_tests(self):
+    def has_tests(self) -> bool:
         """
         Check if the workflow has any tests.
 
@@ -48,23 +54,12 @@ class GitHubWorkflow(ABC):
             bool: True if the workflow has tests, False otherwise.
         """
         try:
-            # Check if the workflow name contains any test keywords
-            if "name" in self.doc and self._is_test_keyword(self.doc["name"]):
-                return True
-            
-            # Check if any job name or step name/run command contains any test keywords
-            for job_name, job in self.doc['jobs'].items():
-                if self._is_test_keyword(job_name):
-                    return True
-                
+            # Check if any run command is a test running command
+            for _, job in self.doc['jobs'].items():
                 if 'steps' in job:
                     for step in job['steps']:
-                        if 'name' in step and self._is_test_keyword(step['name']):
+                        if 'run' in step and self._is_test_command(step['run']):
                             return True
-                        
-                        if 'run' in step and self._is_test_keyword(step['run']):
-                            return True
-                    
             return False
         except yaml.YAMLError:
             return False
@@ -183,10 +178,10 @@ class GitHubWorkflowFactory:
         """
         # Build tool keywords
         build_tool_keywords = {
-            'maven': ['maven', 'mvn', 'mavenw', 'mvnw'],
-            'gradle': ['gradle', 'gradlew'],
-            'pytest': ['pytest', 'py.test'],
-            'unittest': ['unittest', 'xmlrunner'],
+            'maven': MavenWorkflow.BUILD_TOOL_KEYWORDS,
+            'gradle': GradleWorkflow.BUILD_TOOL_KEYWORDS,
+            'pytest': PytestWorkflow.BUILD_TOOL_KEYWORDS,
+            'unittest': UnittestWorkflow.BUILD_TOOL_KEYWORDS,
         }
         aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
         keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
@@ -209,10 +204,6 @@ class GitHubWorkflowFactory:
             _update_keyword_counts(keyword_counts, job_name)
             if 'steps' in job:
                 for step in job['steps']:
-                    if 'name' in step:
-                        _update_keyword_counts(keyword_counts, step['name'])
-                    if 'uses' in step:
-                        _update_keyword_counts(keyword_counts, step['uses'])
                     if 'run' in step:
                         _update_keyword_counts(keyword_counts, step['run'])
                         

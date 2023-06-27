@@ -1,21 +1,32 @@
 from typing import List
 from junitparser import TestCase
 from pathlib import Path
+import re
 
 from crawlergpt.actions.workflow import GitHubWorkflow
 from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 
-class PytestWorkflow(GitHubWorkflow): 
-    __TESTS_KEYWORDS = ["pytest", "py.test"]
+class PytestWorkflow(GitHubWorkflow):
+    BUILD_TOOL_KEYWORDS = ["pytest", "py.test"]
+    # Regex patterns to match pytest commands
+    __TESTS_COMMAND_PATTERNS = [
+        r"pytest",
+        r"py.test",
+        r"python.*\s.*-m\spytest", # Matches commands that call pytest through python's module option
+        ]
     
-    def _is_test_keyword(self, name):
-        return any(map(lambda word: word.lower() in PytestWorkflow.__TESTS_KEYWORDS, name.split(' ')))
+    def _is_test_command(self, command) -> bool:
+        # Checks if the given command matches any of the tests command patterns
+        for pattern in PytestWorkflow.__TESTS_COMMAND_PATTERNS:
+            if re.match(pattern, command):
+                return True
+        return False
     
     def instrument_test_steps(self):
-        for job_name, job in self.doc['jobs'].items():
+        for _, job in self.doc['jobs'].items():
             if 'steps' in job:
                 for step in job['steps']:
-                    if 'run' in step and self._is_test_keyword(step['run']):
+                    if 'run' in step and self._is_test_command(step['run']):
                         step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
                         step['run'] = step['run'].replace("py.test", "py.test --junitxml=report.xml")
                             

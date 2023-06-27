@@ -1,16 +1,24 @@
 from typing import List
 from junitparser import TestCase
 from pathlib import Path
+import re
 
 from crawlergpt.actions.workflow import GitHubWorkflow
 from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 
 class GradleWorkflow(GitHubWorkflow):
-    # Correspond to the gradle lifecycle phases that run tests
-    __TESTS_KEYWORDS = ["test", "check", "build", "buildDependents", "buildNeeded", ]
+    BUILD_TOOL_KEYWORDS = ["gradle", "gradlew"]
+    # Regex patterns to match gradle commands
+    __TESTS_COMMAND_PATTERNS = [
+        r"(gradle|gradlew)\s.*(test|check|build|buildDependents|buildNeeded)",
+        ]
     
-    def _is_test_keyword(self, name):
-        return any(map(lambda word: word.lower() in GradleWorkflow.__TESTS_KEYWORDS, name.split(' ')))
+    def _is_test_command(self, command) -> bool:
+        # Checks if the given command matches any of the tests command patterns
+        for pattern in GradleWorkflow.__TESTS_COMMAND_PATTERNS:
+            if re.match(pattern, command):
+                return True
+        return False
     
     def instrument_test_steps(self):
         pass
