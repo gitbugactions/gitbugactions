@@ -1,5 +1,6 @@
 import os
 import sys
+import yaml
 import shutil
 import fire
 import uuid
@@ -53,22 +54,27 @@ def export_bug_containers(bug: Dict, export_path: str):
 
                 for container in containers:
                     container.stop()
-                    diff_file_path = os.path.join(export_path, 
+                    diff_folder_path = os.path.join(export_path, 
                                                 repo_full_name.replace('/', '-'), 
                                                 c.hex)
                     with diff_file_lock:
-                        if not os.path.exists(diff_file_path):
-                            os.makedirs(diff_file_path)
+                        if not os.path.exists(diff_folder_path):
+                            os.makedirs(diff_folder_path)
                         else:
                             # Container already being saved. This may happen if bugs 
                             # were collected from two consecutive commits
                             container.remove()
                             continue
-                    diff_file_path = os.path.join(diff_file_path, container.name)
+                    diff_file_path = os.path.join(diff_folder_path, container.name)
                     extract_diff(container.id, 
                                 diff_file_path, 
                                 ignore_paths=['/tmp'])
                     container.remove()
+
+                    workflows = os.path.join(diff_folder_path, 'workflow')
+                    os.mkdir(workflows)
+                    with open(os.path.join(workflows, f'{run.workflow_name}.yml'), 'w') as f:
+                        yaml.dump(run.workflow.doc, f)
                 # FIXME: we only consider a single workflow per commit 
                 break
 

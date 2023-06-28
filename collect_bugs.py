@@ -11,7 +11,6 @@ from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
-from dataclasses import asdict
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.actions.actions import ActTestsRun
 from crawlergpt.test_executor import TestExecutor
@@ -49,28 +48,7 @@ class BugPatch:
             runs_data = []
             
             for run in runs:
-                run_data = asdict(run)
-                run_data['tests'] = []
-                for test in run.tests:
-                    results = []
-                    for result in test.result:
-                        results.append({
-                            'result': result.__class__.__name__,
-                            'message': result.message,
-                            'type': result.type
-                        })
-                    if len(results) == 0:
-                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
-
-                    run_data['tests'].append({
-                        'classname': test.classname,
-                        'name': test.name,
-                        'time': test.time,
-                        'results': results,
-                        'stdout': test.system_out,
-                        'stderr': test.system_err
-                    })
-                runs_data.append(run_data)
+                runs_data.append(run.asdict())
             actions_runs.append(runs_data)
 
         return { 
@@ -81,6 +59,7 @@ class BugPatch:
             'clone_url': self.repo.clone_url,
             'collection_timestamp': datetime.utcnow().isoformat() + "Z",
             'commit_hash': self.commit,
+            'previous_commit_hash': self.previous_commit,
             'commit_message': self.commit_message,
             'commit_timestamp': self.commit_timestamp,
             'bug_patch': str(self.bug_patch),

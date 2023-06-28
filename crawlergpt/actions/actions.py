@@ -1,14 +1,11 @@
 import os
 import grp
-import tempfile
-import shutil
 import time
 import docker
 import logging
 import subprocess
 import threading
-import uuid
-from typing import List
+from typing import List, Dict
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
@@ -20,7 +17,7 @@ class ActTestsRun:
     tests: List[TestCase]
     stdout: str
     stderr: str
-    workflow: str
+    workflow: GitHubWorkflow
     workflow_name: str
     build_tool: str
     elapsed_time: int
@@ -34,6 +31,38 @@ class ActTestsRun:
                         not any(map(lambda r: isinstance(r, Error), test.result))):
                 failed_tests.append(test)
         return failed_tests
+    
+    def asdict(self) -> Dict:
+        res = {}
+
+        for k, v in self.__dict__.items():
+            if k == "tests":
+                res[k] = []
+                for test in self.tests:
+                    results = []
+                    for result in test.result:
+                        results.append({
+                            'result': result.__class__.__name__,
+                            'message': result.message,
+                            'type': result.type
+                        })
+                    if len(results) == 0:
+                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
+
+                    res[k].append({
+                        'classname': test.classname,
+                        'name': test.name,
+                        'time': test.time,
+                        'results': results,
+                        'stdout': test.system_out,
+                        'stderr': test.system_err
+                    })
+            elif k == "workflow":
+                res[k] = self.workflow.path
+            else:
+                res[k] = v
+
+        return res
 
 
 class Act:
@@ -111,7 +140,7 @@ class Act:
         stderr = run.stderr.decode('utf-8')
         tests = workflow.get_test_results(repo_path)
         tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
-                stderr=stderr, workflow=workflow.path, workflow_name=workflow.doc["name"], build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
+                stderr=stderr, workflow=workflow, workflow_name=workflow.doc["name"], build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
 
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True

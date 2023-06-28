@@ -1,6 +1,7 @@
 import os, copy, uuid
 import pygit2
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
+from crawlergpt.actions.workflow import GitHubWorkflow
 from pygit2 import Repository
 from typing import List
 
@@ -31,28 +32,33 @@ class TestExecutor:
 
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
 
-    def run_tests(self, keep_containers: bool=False, offline: bool=False) -> List[ActTestsRun]:
+    def run_tests(self, keep_containers: bool=False, offline: bool=False, 
+                  workflows: List[GitHubWorkflow]=None) -> List[ActTestsRun]:
         act_runs = []
 
         test_actions = GitHubActions(self.repo_clone.workdir, self.language, 
                                      keep_containers=keep_containers, 
                                      runner=self.runner,
                                      offline=offline)
-        if len(test_actions.test_workflows) == 0:
-            for workflow in self.default_actions.test_workflows:
-                new_workflow = copy.deepcopy(workflow)
-                new_workflow.path = os.path.join(self.repo_clone.workdir, 
-                    '.github/workflows', os.path.basename(workflow.path))
-                test_actions.test_workflows.append(new_workflow)
-        # Act creates names for the containers by hashing the content of the workflows
-        # To avoid conflicts between threads, we randomize the name
-        for workflow in test_actions.test_workflows:
-            workflow.doc["name"] = str(uuid.uuid4())
-        test_actions.save_workflows()
+        if workflows is not None:
+            test_actions.test_workflows = workflows
+        else:
+            if len(test_actions.test_workflows) == 0:
+                for workflow in self.default_actions.test_workflows:
+                    new_workflow = copy.deepcopy(workflow)
+                    new_workflow.path = os.path.join(self.repo_clone.workdir, 
+                        '.github/workflows', os.path.basename(workflow.path))
+                    test_actions.test_workflows.append(new_workflow)
+            # Act creates names for the containers by hashing the content of the workflows
+            # To avoid conflicts between threads, we randomize the name
+            for workflow in test_actions.test_workflows:
+                workflow.doc["name"] = str(uuid.uuid4())
+            test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
             act_runs.append(test_actions.run_workflow(workflow, self.act_cache_dir))
 
-        test_actions.delete_workflows()
+        if workflows is None:
+            test_actions.delete_workflows()
 
         return act_runs

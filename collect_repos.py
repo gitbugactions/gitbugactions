@@ -5,7 +5,6 @@ import json
 import uuid
 import fire
 from datetime import datetime
-from dataclasses import asdict
 from github import Repository
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
@@ -77,28 +76,7 @@ class CollectReposStrategy(RepoStrategy):
                         shutil.rmtree(act_cache_dir, ignore_errors=True)
 
                 data['actions_successful'] = not act_run.failed
-                data['actions_run'] = asdict(act_run)
-                data['actions_run']['tests'] = []
-                for test in act_run.tests:
-                    results = []
-                    for result in test.result:
-                        results.append({
-                            'result': result.__class__.__name__,
-                            'message': result.message,
-                            'type': result.type
-                        })
-                    if len(results) == 0:
-                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
-
-                    data['actions_run']['tests'].append({
-                        'classname': test.classname,
-                        'name': test.name,
-                        'time': test.time,
-                        'results': results,
-                        'stdout': test.system_out,
-                        'stderr': test.system_err
-                    })
-
+                data['actions_run'] = act_run.asdict()
             
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
