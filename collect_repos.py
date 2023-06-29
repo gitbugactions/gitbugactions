@@ -1,6 +1,6 @@
 import tempfile
 import pygit2
-import os, logging, sys, shutil
+import os, logging, sys, shutil, traceback
 import json
 import uuid
 import fire
@@ -103,7 +103,7 @@ class CollectReposStrategy(RepoStrategy):
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
-            logging.error(f"Error while processing {repo.full_name}: {e}")
+            logging.error(f"Error while processing {repo.full_name}: {traceback.format_exc()}")
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         
