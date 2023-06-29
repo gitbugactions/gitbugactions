@@ -8,21 +8,21 @@ from typing import List
 
 class TestExecutor:
     def __init__(self, repo_clone: Repository, language: str, act_cache_dir: str,
-                 runner: str="crawlergpt:latest"):
+                 runner: str="crawlergpt:latest", workflows: List[GitHubWorkflow]=None):
         self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
         self.runner = runner
         self.language = language
-        self.__get_default_actions()
+        self.workflows = workflows
+        if self.workflows is None:
+            self.__get_default_actions()
 
     def __get_default_actions(self):
         if len(list(self.repo_clone.references.iterator())) == 0:
             return
-        self.first_commit = None
+        self.first_commit = self.repo_clone.revparse_single(str(self.repo_clone.head.target))
 
         for commit in self.repo_clone.walk(self.repo_clone.head.target):
-            if self.first_commit is None:
-                self.first_commit = commit
             self.repo_clone.checkout_tree(commit)
             self.repo_clone.set_head(commit.oid)
             actions = GitHubActions(self.repo_clone.workdir, self.language, 
@@ -32,16 +32,15 @@ class TestExecutor:
 
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
 
-    def run_tests(self, keep_containers: bool=False, offline: bool=False, 
-                  workflows: List[GitHubWorkflow]=None) -> List[ActTestsRun]:
+    def run_tests(self, keep_containers: bool=False, offline: bool=False) -> List[ActTestsRun]:
         act_runs = []
 
         test_actions = GitHubActions(self.repo_clone.workdir, self.language, 
                                      keep_containers=keep_containers, 
                                      runner=self.runner,
                                      offline=offline)
-        if workflows is not None:
-            test_actions.test_workflows = workflows
+        if self.workflows is not None:
+            test_actions.test_workflows = self.workflows
         else:
             if len(test_actions.test_workflows) == 0:
                 for workflow in self.default_actions.test_workflows:
@@ -58,7 +57,7 @@ class TestExecutor:
         for workflow in test_actions.test_workflows:
             act_runs.append(test_actions.run_workflow(workflow, self.act_cache_dir))
 
-        if workflows is None:
+        if self.workflows is None:
             test_actions.delete_workflows()
 
         return act_runs

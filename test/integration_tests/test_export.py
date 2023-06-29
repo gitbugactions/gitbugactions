@@ -8,9 +8,8 @@ import tempfile
 import subprocess
 import pytest
 from crawlergpt.util import delete_repo_clone
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.docker.export import create_act_image
 from export_bugs import export_bug_containers
+from run_bug import run_bug
 
 repo_clone = None
 image_name = None
@@ -51,45 +50,39 @@ def test_export():
     repo_export_path = os.path.join(export_path, repo_full_name.replace('/', '-'))
     assert os.path.exists(repo_export_path)
     assert os.path.exists(os.path.join(repo_export_path, commit_hash))
-    assert len(os.listdir(os.path.join(repo_export_path, commit_hash))) == 1
+    assert len(os.listdir(os.path.join(repo_export_path, commit_hash))) == 2
     assert os.path.exists(os.path.join(repo_export_path, previous_commit_hash))
-    assert len(os.listdir(os.path.join(repo_export_path, previous_commit_hash))) == 1
+    assert len(os.listdir(os.path.join(repo_export_path, previous_commit_hash))) == 2
 
-    commit_path = os.path.join(repo_export_path, commit_hash)
-    commit_container_path = os.path.join(commit_path, os.listdir(commit_path)[0])
-
-    prev_commit_path = os.path.join(repo_export_path, previous_commit_hash)
-    prev_commit_container_path = os.path.join(prev_commit_path, os.listdir(prev_commit_path)[0])
-
-    image_name = f"{str(uuid.uuid4())}:latest"
-    create_act_image(image_name, commit_container_path)
-    executor = TestExecutor(repo_clone, bug['language'], act_cache_dir, runner=image_name)
+    subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
     repo_clone.checkout_tree(commit)
     repo_clone.set_head(commit.oid)
-    runs = executor.run_tests(offline=True)
+
+    runs = run_bug(repo_full_name, commit_hash, repo_clone.workdir, 
+            "test/resources/test_export", export_path, offline=True)
     assert len(runs) == 1
     assert len(runs[0].failed_tests) == 0
     assert not runs[0].failed
 
-    docker_client.images.remove(image_name)
     repo_clone.reset(initial_commit.oid, pygit2.GIT_RESET_HARD)
     subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
     repo_clone.checkout_tree(previous_commit)
     repo_clone.set_head(previous_commit.oid)
 
-    image_name = f"{str(uuid.uuid4())}:latest"
-    create_act_image(image_name, prev_commit_container_path)
-
-    executor.runner = image_name
-    runs = executor.run_tests(offline=True)
+    runs = run_bug(repo_full_name, commit_hash, repo_clone.workdir, 
+            "test/resources/test_export", export_path, offline=True, previous_commit=True)
     assert len(runs) == 1
     assert len(runs[0].failed_tests) == 0
     assert not runs[0].failed
 
-    repo_clone.reset(previous_commit.oid, pygit2.GIT_RESET_HARD)
+    repo_clone.reset(initial_commit.oid, pygit2.GIT_RESET_HARD)
     subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
+    repo_clone.checkout_tree(previous_commit)
+    repo_clone.set_head(previous_commit.oid)
     repo_clone.apply(pygit2.Diff.parse_diff(bug['test_patch']))
-    runs = executor.run_tests(offline=True)
+
+    runs = run_bug(repo_full_name, commit_hash, repo_clone.workdir, 
+        "test/resources/test_export", export_path, offline=True, previous_commit=True)
     assert len(runs) == 1
     assert len(runs[0].failed_tests) == 1
     assert not runs[0].failed
