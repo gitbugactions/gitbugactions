@@ -23,12 +23,13 @@ class PytestWorkflow(GitHubWorkflow):
         return False
     
     def instrument_test_steps(self):
-        for _, job in self.doc['jobs'].items():
-            if 'steps' in job:
-                for step in job['steps']:
-                    if 'run' in step and self._is_test_command(step['run']):
-                        step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
-                        step['run'] = step['run'].replace("py.test", "py.test --junitxml=report.xml")
+        if 'jobs' in self.doc:
+            for _, job in self.doc['jobs'].items():
+                if 'steps' in job:
+                    for step in job['steps']:
+                        if 'run' in step and self._is_test_command(step['run']):
+                            step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
+                            step['run'] = step['run'].replace("py.test", "py.test --junitxml=report.xml")
                             
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
