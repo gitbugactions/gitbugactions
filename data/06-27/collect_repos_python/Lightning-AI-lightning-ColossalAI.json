@@ -1,0 +1,173 @@
+{
+    "repository": "Lightning-AI/lightning-ColossalAI",
+    "stars": 51,
+    "language": "python",
+    "size": 1131,
+    "clone_url": "https://github.com/Lightning-AI/lightning-ColossalAI.git",
+    "timestamp": "2023-06-28T18:48:04.897637Z",
+    "clone_success": true,
+    "number_of_actions": 6,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_invalid_colossalai",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_colossalai_strategy_with_trainer[colossalai]",
+                "time": 1.366,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_colossalai_strategy_with_trainer[by1]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_gradient_clip_algorithm_error",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [GPUs>=1]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_colossalai_optimizer",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [Standalone execution]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_warn_colossalai_ignored",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [Standalone execution]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_configure_sharded_model_hook_not_overridden",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [Standalone execution]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_multi_gpu_checkpointing",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [Standalone execution]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_run_trainer_test_without_fit",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [GPUs>=2 + Standalone execution]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_strategy",
+                "name": "test_multi_gpu_model_colossalai_fit_test",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Requires: [GPUs>=2 + Standalone execution]",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \ud83d\ude80  Start image=crawlergpt:latest\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Lightning-AI-lightning-ColossalAI] user=0 workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.9 requires:oldest]\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main actions/checkout@v3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2705  Success - Main actions/checkout@v3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main Set up Python 3.9\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/a49195a3-a606-4fe1-b9cf-cba279427c74/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2753  ::group::Installed versions\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: \n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? false\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? true\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? true\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? true\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? true\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? true\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::explicit? true\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::evaluating 6 versions\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::matched: 3.9.6\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Successfully set up CPython (3.9.6)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2753  ::endgroup::\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2705  Success - Main Set up Python 3.9\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-output:: python-version=3.9.6\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main Set min. dependencies\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[python /var/run/act/workflow/3.py] user= workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2705  Success - Main Set min. dependencies\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main Install package & dependencies\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4.sh] user= workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pip 21.2.4 from /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/pip (python 3.9)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Package              Version    Location\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | -------------------- ---------- -------------------------------------------------------------------------------\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | aiohttp              3.8.4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | aiosignal            1.3.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | anyio                3.7.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | arrow                1.2.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | async-timeout        4.0.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | attrs                23.1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | bcrypt               4.0.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | beautifulsoup4       4.12.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | blessed              1.20.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | certifi              2023.5.7\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | cffi                 1.15.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | cfgv                 3.3.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | charset-normalizer   3.1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | click                8.1.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | colossalai           0.2.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | contexttimer         0.3.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | coverage             5.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | croniter             1.3.15\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | cryptography         41.0.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | dateutils            0.6.12\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | decorator            5.1.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | deepdiff             6.3.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | distlib              0.3.6\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | exceptiongroup       1.1.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | fabric               3.1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | fastapi              0.88.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | filelock             3.12.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | frozenlist           1.3.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | fsspec               2023.6.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | h11                  0.14.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | identify             2.5.24\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | idna                 3.4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | iniconfig            2.0.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | inquirer             3.1.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | invoke               2.1.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | itsdangerous         2.1.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Jinja2               3.1.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | joblib               1.3.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | lightning            2.0.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | lightning-cloud      0.5.37\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | lightning-colossalai 0.1.0      /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Lightning-AI-lightning-ColossalAI/src\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | lightning-utilities  0.8.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | markdown-it-py       3.0.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | MarkupSafe           2.1.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | mdurl                0.1.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | more-itertools       9.1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | multidict            6.0.4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | mypy                 1.3.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | mypy-extensions      1.0.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | ninja                1.11.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | nodeenv              1.8.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | numpy                1.25.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | ordered-set          4.1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | packaging            23.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | paramiko             3.2.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pip                  21.2.4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | platformdirs         3.8.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pluggy               0.13.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pre-commit           3.3.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | psutil               5.9.5\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | py                   1.11.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pycparser            2.21\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pydantic             1.10.9\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pyDeprecate          0.3.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Pygments             2.15.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | PyJWT                2.7.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | PyNaCl               1.5.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pytest               6.0.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pytest-cov           2.10.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | python-dateutil      2.8.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | python-editor        1.0.4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | python-multipart     0.0.6\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pytorch-lightning    2.0.4\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | pytz                 2023.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | PyYAML               6.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | readchar             4.0.5\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | requests             2.31.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | rich                 13.4.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | scikit-learn         1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | scipy                1.11.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | setuptools           56.0.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | six                  1.16.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | sniffio              1.3.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | soupsieve            2.4.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | starlette            0.22.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | starsessions         1.3.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | threadpoolctl        3.1.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | toml                 0.10.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tomli                2.0.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | torch                1.11.0+cpu\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | torchmetrics         0.8.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tqdm                 4.65.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | traitlets            5.9.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | typing_extensions    4.6.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | urllib3              2.0.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | uvicorn              0.22.0\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | virtualenv           20.23.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | wcwidth              0.2.6\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | websocket-client     1.6.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | websockets           11.0.3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | yarl                 1.9.2\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2705  Success - Main Install package & dependencies\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main Tests\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5.sh] user= workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | \u001b[1m============================= test session starts ==============================\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | platform linux -- Python 3.9.6, pytest-6.0.0, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | cachedir: .pytest_cache\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Lightning-AI-lightning-ColossalAI, configfile: pyproject.toml\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | plugins: anyio-3.7.0, cov-2.10.1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | \u001b[1mcollecting ... \u001b[0mcollected 10 items\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | \n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_invalid_colossalai \u001b[32mPASSED\u001b[0m\u001b[33m                   [ 10%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_colossalai_strategy_with_trainer[colossalai] \u001b[32mPASSED\u001b[0m\u001b[33m [ 20%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_colossalai_strategy_with_trainer[by1] \u001b[32mPASSED\u001b[0m\u001b[33m [ 30%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_gradient_clip_algorithm_error \u001b[33mSKIPPED\u001b[0m\u001b[33m       [ 40%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_colossalai_optimizer \u001b[33mSKIPPED\u001b[0m\u001b[33m                [ 50%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_warn_colossalai_ignored \u001b[33mSKIPPED\u001b[0m\u001b[33m             [ 60%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_configure_sharded_model_hook_not_overridden \u001b[33mSKIPPED\u001b[0m\u001b[33m [ 70%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_multi_gpu_checkpointing \u001b[33mSKIPPED\u001b[0m\u001b[33m             [ 80%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_run_trainer_test_without_fit \u001b[33mSKIPPED\u001b[0m\u001b[33m        [ 90%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | tests/test_strategy.py::test_multi_gpu_model_colossalai_fit_test \u001b[33mSKIPPED\u001b[0m\u001b[33m [100%]\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | \n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Lightning-AI-lightning-ColossalAI/report.xml -\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | \u001b[33m=================== \u001b[32m3 passed\u001b[0m, \u001b[33m\u001b[1m7 skipped\u001b[0m, \u001b[33m\u001b[1m3 warnings\u001b[0m\u001b[33m in 8.24s\u001b[0m\u001b[33m ===================\u001b[0m\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2705  Success - Main Tests\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main Statistics\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/6.sh] user= workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Name                                    Stmts   Miss  Cover\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | -----------------------------------------------------------\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | src/lightning_colossalai/__about__.py       8      0   100%\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | src/lightning_colossalai/__init__.py        7      0   100%\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | src/lightning_colossalai/precision.py      32     16    50%\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | src/lightning_colossalai/strategy.py      253    184    27%\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | -----------------------------------------------------------\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | TOTAL                                     300    200    33%\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u2705  Success - Main Statistics\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \u2b50 Run Main Upload coverage to Codecov\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/a49195a3-a606-4fe1-b9cf-cba279427c74/act/codecov-codecov-action@v3/ dst=/var/run/act/actions/codecov-codecov-action@v3/\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v3/] user=0 workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v3/dist/index.js] user= workdir=\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Error: Cannot find module 'node:http'\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | Require stack:\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   | - /run/act/actions/codecov-codecov-action@v3/dist/index.js\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at /run/act/actions/codecov-codecov-action@v3/webpack:/codecov-action/external node-commonjs \"node:http\":1:1\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at /run/act/actions/codecov-codecov-action@v3/dist/index.js:24630:3\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Object.<anonymous> (/run/act/actions/codecov-codecov-action@v3/dist/index.js:24633:12)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest]   \u274c  Failure - Main Upload coverage to Codecov\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] exitcode '1': failure\n[9c1a35a0-ee6f-491a-adf6-61748676d87a/pytest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'pytest' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Lightning-AI-lightning-ColossalAI/.github/workflows/ci-testing-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 507.8734197616577
+    }
+}

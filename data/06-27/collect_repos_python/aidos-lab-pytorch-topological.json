@@ -1,0 +1,27 @@
+{
+    "repository": "aidos-lab/pytorch-topological",
+    "stars": 99,
+    "language": "python",
+    "size": 438,
+    "clone_url": "https://github.com/aidos-lab/pytorch-topological.git",
+    "timestamp": "2023-06-28T17:41:10.635464Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/aidos-lab-pytorch-topological] user=0 workdir=\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] \ud83e\uddea  Matrix: map[python-version:3.10]\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] \u2b50 Run Main actions/checkout@v3\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \u2705  Success - Main actions/checkout@v3\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] \u2b50 Run Main Install `poetry`\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | \u26a0\ufe0f  Note: '/home/runneradmin/.local/bin' is not on your PATH environment\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   |     variable. These apps will not be globally accessible until your PATH is\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   |     updated. Run `pipx ensurepath` to automatically add it, or manually modify\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   |     your PATH in your shell's config file (i.e. ~/.bashrc).\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | done! \u2728 \ud83c\udf1f \u2728\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | creating virtual environment...\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | creating shared libraries...\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | upgrading shared libraries...\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | installing poetry...\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   |   installed package poetry 1.5.1, Python 3.8.10\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   |   These apps are now globally available\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   |     - poetry\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   | /var/run/act/workflow/1: line 3: poetry: command not found\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests]   \u274c  Failure - Main Install `poetry`\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/b78751c050df49d9ff23ac8b12d49db1da289dccacea0c7c7068e5985f8d6399?force=1&v=1\": context deadline exceeded\n[4436ef4f-3201-4ce2-89de-ff69f979acca/tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/aidos-lab-pytorch-topological/.github/workflows/run_tests-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 546.155921459198
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "repository": "kristinemlarson/gnssrefl",
+    "stars": 119,
+    "language": "python",
+    "size": 197918,
+    "clone_url": "https://github.com/kristinemlarson/gnssrefl.git",
+    "timestamp": "2023-06-28T15:56:39.729602Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI] \ud83d\ude80  Start image=crawlergpt:latest\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/kristinemlarson-gnssrefl] user=0 workdir=\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI] \u2b50 Run Main Checkout\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \u2705  Success - Main Checkout\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI] \u2b50 Run Main Build Docker image\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=gnssrefl&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI]   \u274c  Failure - Main Build Docker image\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI] exitcode '1': failure\n[ddc3bd42-d7b5-4bba-8814-95aa97ef6997/CI] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'CI' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/kristinemlarson-gnssrefl/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 12.041770219802856
+    }
+}

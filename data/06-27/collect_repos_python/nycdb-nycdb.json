@@ -1,0 +1,27 @@
+{
+    "repository": "nycdb/nycdb",
+    "stars": 158,
+    "language": "python",
+    "size": 1585,
+    "clone_url": "https://github.com/nycdb/nycdb.git",
+    "timestamp": "2023-06-28T11:30:50.505247Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests] \ud83d\ude80  Start image=crawlergpt:latest\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/nycdb-nycdb] user=0 workdir=\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests] \ud83e\uddea  Matrix: map[postgres_version:15 python_version:3.12-rc-bullseye]\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests] \u2b50 Run Main Checkout code\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \u2705  Success - Main Checkout code\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests] \u2b50 Run Main Build containers\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   | docker: 'compose' is not a docker command.\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   | See 'docker --help'\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests]   \u274c  Failure - Main Build containers\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests] exitcode '1': failure\n[66f82019-5d0f-4d3b-974b-a11bdf9e57cb/python_tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'python_tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/nycdb-nycdb/.github/workflows/python-tests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 38.420679807662964
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "kingyiusuen/clip-image-search",
+    "stars": 101,
+    "language": "python",
+    "size": 22,
+    "clone_url": "https://github.com/kingyiusuen/clip-image-search.git",
+    "timestamp": "2023-06-28T17:16:10.430369Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] \ud83d\ude80  Start image=crawlergpt:latest\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/kingyiusuen-clip-image-search] user=0 workdir=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2601  git clone 'https://github.com/aws-actions/configure-aws-credentials' # ref=v1\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] \u2b50 Run Main Checkout repo\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2705  Success - Main Checkout repo\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] \u2b50 Run Main Configure AWS Credentials\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker cp src=/tmp/act-cache/24688bce-438b-41d4-b0b2-9f87ed4b9a2c/act/aws-actions-configure-aws-credentials@v1/ dst=/var/run/act/actions/aws-actions-configure-aws-credentials@v1/\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/aws-actions-configure-aws-credentials@v1/] user=0 workdir=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/aws-actions-configure-aws-credentials@v1/dist/index.js] user= workdir=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2757  ::error::Credentials could not be loaded, please check your action inputs: Could not load credentials from any providers\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u274c  Failure - Main Configure AWS Credentials\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_DEFAULT_REGION=us-east-1\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_REGION=us-east-1\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] exitcode '1': failure\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] \u2b50 Run Post Configure AWS Credentials\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/aws-actions-configure-aws-credentials@v1/dist/cleanup/index.js] user= workdir=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2705  Success - Post Configure AWS Credentials\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_ACCESS_KEY_ID=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_SECRET_ACCESS_KEY=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_SESSION_TOKEN=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_DEFAULT_REGION=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration]   \u2699  ::set-env:: AWS_REGION=\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/1ef7035f83a4dba5d978c52be38b46105af252fcd35d5f67173b190ce5942bb8?force=1&v=1\": context deadline exceeded\n[28e81c44-3bb9-409d-bb61-8a18c1371eaa/integration] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/kingyiusuen-clip-image-search/.github/workflows/pipeline-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 348.78297424316406
+    }
+}

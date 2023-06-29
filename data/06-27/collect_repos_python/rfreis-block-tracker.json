@@ -1,0 +1,28 @@
+{
+    "repository": "rfreis/block-tracker",
+    "stars": 53,
+    "language": "python",
+    "size": 5835,
+    "clone_url": "https://github.com/rfreis/block-tracker.git",
+    "timestamp": "2023-06-28T18:27:28.751107Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[3aaf2453-7b93-4774-8789-661d3294e9ef/build] \ud83d\ude80  Start image=crawlergpt:latest\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/rfreis-block-tracker] user=0 workdir=\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \u2601  git clone 'https://github.com/nanasess/setup-chromedriver' # ref=v1\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \u2601  git clone 'https://github.com/irongut/CodeCoverageSummary' # ref=v1.3.0\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build] \u2b50 Run Main actions/checkout@v3\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \u2705  Success - Main actions/checkout@v3\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build] \u2b50 Run Main nanasess/setup-chromedriver@v1\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/8cd2eacf-998b-4e29-b069-dc38889338d8/act/nanasess-setup-chromedriver@v1/ dst=/var/run/act/actions/nanasess-setup-chromedriver@v1/\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/nanasess-setup-chromedriver@v1/] user=0 workdir=\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/nanasess-setup-chromedriver@v1/lib/setup-chromedriver.js] user= workdir=\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   | internal/modules/cjs/loader.js:892\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |   throw err;\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |   ^\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   | \n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   | Error: Cannot find module '@actions/core'\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   | Require stack:\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   | - /run/act/actions/nanasess-setup-chromedriver@v1/lib/setup-chromedriver.js\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Object.<anonymous> (/run/act/actions/nanasess-setup-chromedriver@v1/lib/setup-chromedriver.js:35:27)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Function.Module._load (internal/modules/cjs/loader.js:778:12)\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12) {\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |   code: 'MODULE_NOT_FOUND',\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |   requireStack: [\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |     '/run/act/actions/nanasess-setup-chromedriver@v1/lib/setup-chromedriver.js'\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   |   ]\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   | }\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build]   \u274c  Failure - Main nanasess/setup-chromedriver@v1\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build] exitcode '1': failure\n[3aaf2453-7b93-4774-8789-661d3294e9ef/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/rfreis-block-tracker/.github/workflows/ci-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 327.8882782459259
+    }
+}

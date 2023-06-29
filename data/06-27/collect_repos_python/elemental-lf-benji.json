@@ -1,0 +1,28 @@
+{
+    "repository": "elemental-lf/benji",
+    "stars": 129,
+    "language": "python",
+    "size": 14645,
+    "clone_url": "https://github.com/elemental-lf/benji.git",
+    "timestamp": "2023-06-28T12:45:20.486868Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs] \ud83d\ude80  Start image=crawlergpt:latest\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/elemental-lf-benji] user=0 workdir=\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.11.0\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs] \u2b50 Run Main styfle/cancel-workflow-action@0.11.0\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker cp src=/tmp/act-cache/5740ac2d-c55a-4798-b68c-7f78c43f79cc/act/styfle-cancel-workflow-action@0.11.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.11.0/\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.11.0/] user=0 workdir=\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.11.0/dist/index.js] user= workdir=\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   | {\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   eventName: 'push',\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   sha: 'e1029ab69eb76018588e1a5309d7bed0c4234f83',\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   headSha: 'e1029ab69eb76018588e1a5309d7bed0c4234f83',\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   branch: 'master',\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   owner: 'elemental-lf',\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   repo: 'benji',\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   |   GITHUB_RUN_ID: '1'\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   | }\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   | Found token: yes\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \u2757  ::error::Not Found\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs]   \u274c  Failure - Main styfle/cancel-workflow-action@0.11.0\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs] exitcode '1': failure\n[24fa6aaf-4400-4197-a563-b613533abc64/Cancel previous workflow runs] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Cancel previous workflow runs' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/elemental-lf-benji/.github/workflows/all-in-one-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 53.05209469795227
+    }
+}

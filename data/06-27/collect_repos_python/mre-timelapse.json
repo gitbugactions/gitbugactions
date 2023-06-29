@@ -1,0 +1,27 @@
+{
+    "repository": "mre/timelapse",
+    "stars": 211,
+    "language": "python",
+    "size": 2493,
+    "clone_url": "https://github.com/mre/timelapse.git",
+    "timestamp": "2023-06-28T09:48:56.354752Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[194edafd-abb7-4843-bba2-0b684c36d3fa/build] \ud83d\ude80  Start image=crawlergpt:latest\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/mre-timelapse] user=0 workdir=\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \u2601  git clone 'https://github.com/softprops/action-gh-release' # ref=v1\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build] \u2b50 Run Main actions/checkout@v1\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \u2705  Success - Main actions/checkout@v1\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build] \u2b50 Run Main Install dependencies\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   | /var/run/act/workflow/1: line 2: brew: command not found\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build]   \u274c  Failure - Main Install dependencies\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[194edafd-abb7-4843-bba2-0b684c36d3fa/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/mre-timelapse/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 13.172305345535278
+    }
+}

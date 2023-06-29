@@ -1,0 +1,31 @@
+{
+    "repository": "mhostetter/galois",
+    "stars": 183,
+    "language": "python",
+    "size": 90872,
+    "clone_url": "https://github.com/mhostetter/galois.git",
+    "timestamp": "2023-06-28T16:14:36.882245Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel] \ud83d\ude80  Start image=crawlergpt:latest\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/mhostetter-galois] user=0 workdir=\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \u2601  git clone 'https://github.com/lewagon/wait-on-check-action' # ref=v1.0.0\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel] \u2b50 Run Main Wait on build.yaml to build the wheel\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \ud83d\udc33  docker build -t act-lewagon-wait-on-check-action-v1-0-0-dockeraction:latest /tmp/act-cache/f2475d95-33e5-4882-8a87-c61cdcbfe483/act/lewagon-wait-on-check-action@v1.0.0/\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel]   \u274c  Failure - Main Wait on build.yaml to build the wheel\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/a85259e01d2233b696c0342bf4df46014dff28cac5b29e144239d574f762dedb/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[e7e3d101-423a-4674-82dd-7b8eb6eee9a7/Wait for wheel] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: context canceled\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/mhostetter-galois/.github/workflows/test-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 608.7717995643616
+    }
+}

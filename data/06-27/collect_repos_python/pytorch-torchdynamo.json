@@ -1,0 +1,29 @@
+{
+    "repository": "pytorch/torchdynamo",
+    "stars": 869,
+    "language": "python",
+    "size": 6506,
+    "clone_url": "https://github.com/pytorch/torchdynamo.git",
+    "timestamp": "2023-06-28T17:16:50.220403Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor] \ud83d\ude80  Start image=crawlergpt:latest\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/pytorch-torchdynamo] user=0 workdir=\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor] \u2b50 Run Main actions/checkout@v2\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \u2705  Success - Main actions/checkout@v2\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor] \u2b50 Run Main actions/setup-python@v2\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker cp src=/tmp/act-cache/5789e455-7c3f-42f9-bee6-9e89ae4de2f5/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor]   \u274c  Failure - Main actions/setup-python@v2\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/56b9640f46e4b5f5d2d29ffd89d76980a24f27853fb2ac9bb06d9f30e9f8d308/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[1833d19f-d41d-45bc-9962-2b56836f70e0/test-inductor] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: context canceled\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/pytorch-torchdynamo/.github/workflows/test-inductor-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 641.7789967060089
+    }
+}

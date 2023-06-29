@@ -1,0 +1,29 @@
+{
+    "repository": "popsim-consortium/stdpopsim",
+    "stars": 103,
+    "language": "python",
+    "size": 3225,
+    "clone_url": "https://github.com/popsim-consortium/stdpopsim.git",
+    "timestamp": "2023-06-28T13:34:48.890619Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/popsim-consortium-stdpopsim] user=0 workdir=\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.6.0\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \u2601  git clone 'https://github.com/conda-incubator/setup-miniconda' # ref=v2\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests] \ud83e\uddea  Matrix: map[os:ubuntu-latest python:3.7]\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests] \u2b50 Run Main cancel previous runs\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker cp src=/tmp/act-cache/cbb16abe-f0f1-4b5f-88f1-43cc52146f1b/act/styfle-cancel-workflow-action@0.6.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.6.0/\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.6.0/] user=0 workdir=\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.6.0/dist/index.js] user= workdir=\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   | {\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   eventName: 'push',\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   sha: '5f319a5bbe4f0ffa3be8ce235307f662008eab7e',\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   headSha: '5f319a5bbe4f0ffa3be8ce235307f662008eab7e',\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   branch: 'main',\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   owner: 'popsim-consortium',\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   repo: 'stdpopsim',\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   |   GITHUB_RUN_ID: '1'\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   | }\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   | Found token: yes\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \u2757  ::error::Not Found\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests]   \u274c  Failure - Main cancel previous runs\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests] exitcode '1': failure\n[b29ff724-fe99-432b-874c-9a9d2c1195ce/tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/popsim-consortium-stdpopsim/.github/workflows/tests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 137.255530834198
+    }
+}

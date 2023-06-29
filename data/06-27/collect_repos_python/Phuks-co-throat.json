@@ -1,0 +1,27 @@
+{
+    "repository": "Phuks-co/throat",
+    "stars": 68,
+    "language": "python",
+    "size": 10303,
+    "clone_url": "https://github.com/Phuks-co/throat.git",
+    "timestamp": "2023-06-28T14:00:10.937709Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build] \ud83d\ude80  Start image=crawlergpt:latest\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Phuks-co-throat] user=0 workdir=\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \u2601  git clone 'https://github.com/supercharge/redis-github-action' # ref=1.2.0\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v2\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build] \u2b50 Run Main actions/checkout@v2\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \u2705  Success - Main actions/checkout@v2\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build] \u2b50 Run Main Start Redis\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker build -t act-supercharge-redis-github-action-1-2-0-dockeraction:latest /tmp/act-cache/0d0afea3-d2bf-4072-9190-2afd23b1a285/act/supercharge-redis-github-action@1.2.0/\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker pull image=act-supercharge-redis-github-action-1-2-0-dockeraction:latest platform= username= forcePull=false\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker create image=act-supercharge-redis-github-action-1-2-0-dockeraction:latest platform= entrypoint=[] cmd=[\"\"]\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \ud83d\udc33  docker run image=act-supercharge-redis-github-action-1-2-0-dockeraction:latest platform= entrypoint=[] cmd=[\"\"]\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   | Missing Redis version in the [redis-version] input. Received value: \n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   | Falling back to Redis version [latest]\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   | Starting single-node Redis instance\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create?name=redis: dial unix /var/run/docker.sock: connect: permission denied.\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   | See 'docker run --help'.\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build]   \u274c  Failure - Main Start Redis\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build] exit with `FAILURE`: 126\n[ccc7bbe6-8c7b-4c6a-8299-4bebc95d6872/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Phuks-co-throat/.github/workflows/python-app-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 139.00030159950256
+    }
+}

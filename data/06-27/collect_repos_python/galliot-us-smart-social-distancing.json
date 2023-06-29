@@ -1,0 +1,27 @@
+{
+    "repository": "galliot-us/smart-social-distancing",
+    "stars": 131,
+    "language": "python",
+    "size": 43734,
+    "clone_url": "https://github.com/galliot-us/smart-social-distancing.git",
+    "timestamp": "2023-06-28T15:28:24.982401Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests] \ud83d\ude80  Start image=crawlergpt:latest\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/galliot-us-smart-social-distancing] user=0 workdir=\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests] \u2b50 Run Main actions/checkout@v2\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \u2705  Success - Main actions/checkout@v2\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests] \u2b50 Run Main Download docker image\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=neuralet%2Fsmart-social-distancing&tag=latest-x86_64\": dial unix /var/run/docker.sock: connect: permission denied\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests]   \u274c  Failure - Main Download docker image\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests] exitcode '1': failure\n[6423bca2-d3a8-46db-82c6-bb718f19cd9b/Tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/galliot-us-smart-social-distancing/.github/workflows/continuous_integration-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 59.02169585227966
+    }
+}

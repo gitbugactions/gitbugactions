@@ -1,0 +1,630 @@
+{
+    "repository": "venth/aws-adfs",
+    "stars": 280,
+    "language": "python",
+    "size": 789,
+    "clone_url": "https://github.com/venth/aws-adfs.git",
+    "timestamp": "2023-06-28T11:25:00.869922Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_empty_account_dictionary_when_no_account_are_named",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_one_account_when_one_account_is_listed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_two_accounts_when_two_accounts_are_listed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_accounts_expected_for_real_case_response",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_two_accounts_expected_for_real_case_response",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_no_aliases_when_the_call_for_aliases_failed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_account_aliases_fetcher.TestAccountAliasesFetcher",
+                "name": "test_returns_full_saml_name_account_when_no_account_alias_is_provided",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_assertion_extractor.TestAssertionExtractor",
+                "name": "test_login_error_causes_error_and_exit",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_assertion_extractor.TestAssertionExtractor",
+                "name": "test_missing_saml_assertion_causes_to_return_nothing",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_assertion_extractor.TestAssertionExtractor",
+                "name": "test_beer_roles_are_extracted",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_assertion_extractor.TestAssertionExtractor",
+                "name": "test_provides_existing_in_response_session_duration",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_assertion_extractor.TestAssertionExtractor",
+                "name": "test_provides_default_session_duration_when_it_is_missing_in_response",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_authenticator.TestAuthenticator",
+                "name": "test_authenticated_and_second_factor_failure_returns_no_roles",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_authenticator.TestAuthenticator",
+                "name": "test_not_authenticated_returns_no_roles",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_authenticator.TestAuthenticator",
+                "name": "test_not_authenticated_returns_no_assertion",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_authenticator.TestAuthenticator",
+                "name": "test_returns_aws_roles_allowed_for_an_user_along_with_account_alias",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_authenticator.TestAuthenticator",
+                "name": "test_groups_iam_roles_by_account_alias",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_click_parses_command_line_arguments.TestClickParsesCommandLineArguments",
+                "name": "test_parses_help_argument",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_config_preparation.TestConfigPreparation",
+                "name": "test_when_there_is_no_profile_use_default_values",
+                "time": 0.092,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_config_preparation.TestConfigPreparation",
+                "name": "test_when_the_profile_exists_but_lacks_ssl_verification_use_default_value",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_credential_process_json.TestCredentialProcessJson",
+                "name": "test_json_is_valid_credential_process_format",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_fetch_html_encoded_roles.TestFetchHtmlEncodedRoles",
+                "name": "test_missing_cookie_and_credentials_results_with_empty",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_fetch_html_encoded_roles.TestFetchHtmlEncodedRoles",
+                "name": "test_always_use_en_on_accept_language",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_helpers_memset_zero.TestHelpersMemsetZero",
+                "name": "test_helpers_memset_zero",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_set_cache_dir_is_none",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_get_cache_dir_is_none",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_set",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_get_missing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_get_empty",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_get_corrupt",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_get_expired",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_get_not_expired",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_login_session_cache.TestLoginSessionCache",
+                "name": "test_session_cache_set_then_get",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_returns_no_roles_for_empty_list",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_returns_already_chosen_roles_when_it_is_named_for_an_user",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_returns_one_role_when_only_one_is_available",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_returns_second_role_chosen_by_the_user",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_goes_for_roles_choice_when_there_wasnt_any_previously_used_role_in_config",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_lets_user_choose_in_case_of_missing_already_chosen_role_in_current_list",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_asks_user_to_choose_a_role",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_role_chooser.TestRoleChooser",
+                "name": "test_fail_if_config_role_is_not_present_and_enforce_role_arn_is_true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_version.TestVersion",
+                "name": "test_returns_version",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.test_version.TestVersion",
+                "name": "test_versions_are_in_sync",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \ud83d\ude80  Start image=crawlergpt:latest\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/venth-aws-adfs] user=0 workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main actions/checkout@v3\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main actions/checkout@v3\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main Set up Python 3.7\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker cp src=/tmp/act-cache/74a7607c-abf8-4efd-b375-1525796dd967/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2753  ::group::Installed versions\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: \n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? false\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? true\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? true\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? true\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? true\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? true\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::explicit? true\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::evaluating 6 versions\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::matched: 3.7.11\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Successfully set up CPython (3.7.11)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2753  ::endgroup::\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main Set up Python 3.7\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-output:: python-version=3.7.11\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main Install libkrb5-dev\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Reading package lists...\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Building dependency tree...\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Reading state information...\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | libkrb5-dev is already the newest version (1.17-6ubuntu4.1).\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | 0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main Install libkrb5-dev\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main Install poetry 1.2.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting poetry==1.2.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading poetry-1.2.2-py3-none-any.whl (212 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting packaging>=20.4\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting cleo<2.0.0,>=1.0.0a5\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading cleo-1.0.0a5-py3-none-any.whl (78 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting backports.cached-property<2.0.0,>=1.0.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading backports.cached_property-1.0.2-py3-none-any.whl (6.1 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting importlib-metadata<5.0,>=4.4\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading importlib_metadata-4.13.0-py3-none-any.whl (23 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting requests<3.0,>=2.18\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting cachy<0.4.0,>=0.3.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading cachy-0.3.0-py2.py3-none-any.whl (20 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting pkginfo<2.0,>=1.5\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading pkginfo-1.9.6-py3-none-any.whl (30 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting poetry-plugin-export<2.0.0,>=1.1.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading poetry_plugin_export-1.4.0-py3-none-any.whl (10 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting jsonschema<5.0.0,>=4.10.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting tomlkit!=0.11.2,!=0.11.3,<1.0.0,>=0.11.1\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading tomlkit-0.11.8-py3-none-any.whl (35 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting html5lib<2.0,>=1.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting shellingham<2.0,>=1.5\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading shellingham-1.5.0.post1-py2.py3-none-any.whl (9.4 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting urllib3<2.0.0,>=1.26.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting cachecontrol[filecache]<0.13.0,>=0.12.9\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading CacheControl-0.12.14-py2.py3-none-any.whl (21 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting platformdirs<3.0.0,>=2.5.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading platformdirs-2.6.2-py3-none-any.whl (14 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting requests-toolbelt<0.10.0,>=0.9.1\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting crashtest<0.4.0,>=0.3.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading crashtest-0.3.1-py3-none-any.whl (7.0 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting keyring>=21.2.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading keyring-24.1.1-py3-none-any.whl (37 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting poetry-core==1.3.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading poetry_core-1.3.2-py3-none-any.whl (531 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting virtualenv!=20.4.5,!=20.4.6,>=20.4.3\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting pexpect<5.0.0,>=4.7.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting dulwich<0.21.0,>=0.20.46\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading dulwich-0.20.50-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (498 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting msgpack>=0.5.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading msgpack-1.0.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (299 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting lockfile>=0.9\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading lockfile-0.12.2-py2.py3-none-any.whl (13 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting pylev<2.0.0,>=1.3.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading pylev-1.4.0-py2.py3-none-any.whl (6.1 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting webencodings\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting six>=1.9\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting typing-extensions>=3.6.4\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting zipp>=0.5\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting pkgutil-resolve-name>=1.3.10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading pkgutil_resolve_name-1.3.10-py3-none-any.whl (4.7 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting importlib-resources>=1.4.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading importlib_resources-5.12.0-py3-none-any.whl (36 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting attrs>=17.4.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting SecretStorage>=3.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting jeepney>=0.4.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading jeepney-0.8.0-py3-none-any.whl (48 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting jaraco.classes\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading jaraco.classes-3.2.3-py3-none-any.whl (6.0 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting ptyprocess>=0.5\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting poetry-plugin-export<2.0.0,>=1.1.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading poetry_plugin_export-1.3.1-py3-none-any.whl (10 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading poetry_plugin_export-1.3.0-py3-none-any.whl (10 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading poetry_plugin_export-1.2.0-py3-none-any.whl (10 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting idna<4,>=2.5\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting charset-normalizer<4,>=2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading charset_normalizer-3.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (171 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting certifi>=2017.4.17\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting cryptography>=2.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting cffi>=1.12\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading cffi-1.15.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (427 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting pycparser\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting virtualenv!=20.4.5,!=20.4.6,>=20.4.3\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading virtualenv-20.23.0-py3-none-any.whl (3.3 MB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting filelock<4,>=3.11\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting virtualenv!=20.4.5,!=20.4.6,>=20.4.3\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading virtualenv-20.22.0-py3-none-any.whl (3.2 MB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading virtualenv-20.21.1-py3-none-any.whl (8.7 MB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting distlib<1,>=0.3.6\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Collecting more-itertools\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   Downloading more_itertools-9.1.0-py3-none-any.whl (54 kB)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Installing collected packages: pycparser, zipp, urllib3, typing-extensions, idna, charset-normalizer, cffi, certifi, requests, msgpack, more-itertools, jeepney, importlib-metadata, cryptography, webencodings, six, SecretStorage, pyrsistent, pylev, ptyprocess, poetry-core, platformdirs, pkgutil-resolve-name, lockfile, jaraco.classes, importlib-resources, filelock, distlib, crashtest, cachecontrol, attrs, virtualenv, tomlkit, shellingham, requests-toolbelt, poetry-plugin-export, pkginfo, pexpect, packaging, keyring, jsonschema, html5lib, dulwich, cleo, cachy, backports.cached-property, poetry\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Successfully installed SecretStorage-3.3.3 attrs-23.1.0 backports.cached-property-1.0.2 cachecontrol-0.12.14 cachy-0.3.0 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-3.1.0 cleo-1.0.0a5 crashtest-0.3.1 cryptography-41.0.1 distlib-0.3.6 dulwich-0.20.50 filelock-3.12.2 html5lib-1.1 idna-3.4 importlib-metadata-4.13.0 importlib-resources-5.12.0 jaraco.classes-3.2.3 jeepney-0.8.0 jsonschema-4.17.3 keyring-24.1.1 lockfile-0.12.2 more-itertools-9.1.0 msgpack-1.0.5 packaging-23.1 pexpect-4.8.0 pkginfo-1.9.6 pkgutil-resolve-name-1.3.10 platformdirs-2.6.2 poetry-1.2.2 poetry-core-1.3.2 poetry-plugin-export-1.2.0 ptyprocess-0.7.0 pycparser-2.21 pylev-1.4.0 pyrsistent-0.19.3 requests-2.31.0 requests-toolbelt-0.9.1 shellingham-1.5.0.post1 six-1.16.0 tomlkit-0.11.8 typing-extensions-4.6.3 urllib3-1.26.16 virtualenv-20.21.1 webencodings-0.5.1 zipp-3.15.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main Install poetry 1.2.2\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main Install aws-adfs and its dependencies\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Creating virtualenv aws-adfs-kl2dRVpp-py3.7 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Installing dependencies from lock file\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | \n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Package operations: 47 installs, 1 update, 0 removals\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | \n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pycparser (2.21)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing six (1.16.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing cffi (1.15.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing decorator (5.1.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing jmespath (1.0.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing python-dateutil (2.8.2)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing typing-extensions (4.6.3)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing urllib3 (1.26.16)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing zipp (3.15.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing botocore (1.29.160)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing certifi (2023.5.7)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing charset-normalizer (3.1.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing cryptography (41.0.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing distlib (0.3.6)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing filelock (3.12.2)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing gssapi (1.8.2)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing idna (3.4)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing importlib-metadata (6.7.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing krb5 (0.5.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing platformdirs (3.8.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Updating setuptools (67.6.1 -> 68.0.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing cfgv (3.3.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing click (8.1.3)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing exceptiongroup (1.1.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing identify (2.5.24)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing iniconfig (2.0.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing mypy-extensions (1.0.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing nodeenv (1.8.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing packaging (23.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pathspec (0.11.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pluggy (1.2.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pyspnego (0.9.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pyyaml (6.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing requests (2.31.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing s3transfer (0.6.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing tomli (2.0.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing typed-ast (1.5.4)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing virtualenv (20.23.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Connection pool is full, discarding connection: files.pythonhosted.org. Connection pool size: 10\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing black (23.3.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing boto3 (1.26.160)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing configparser (5.3.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing coverage (7.2.7)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing fido2 (1.1.1)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing lxml (4.9.2)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pre-commit (2.21.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing pytest (7.4.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing requests-kerberos (0.14.0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   |   \u2022 Installing toml (0.10.2)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | \n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Installing the current project: aws-adfs (2.8.2a0)\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main Install aws-adfs and its dependencies\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main Run all pre-commit checks\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] Initializing environment for https://github.com/python-jsonschema/check-jsonschema.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] Once installed this environment will be reused.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] This may take a few minutes...\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] Installing environment for https://github.com/python-jsonschema/check-jsonschema.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] Once installed this environment will be reused.\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | [INFO] This may take a few minutes...\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | trim trailing whitespace.................................................Passed\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | fix end of files.........................................................Passed\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | check yaml...............................................................Passed\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | check for added large files..............................................Passed\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Validate GitHub Actions..............................(no files to check)Skipped\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Validate GitHub Workflows................................................Passed\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | Update README help.......................................................Passed\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main Run all pre-commit checks\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Main Test with pytest\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/6] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | ============================= test session starts ==============================\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/venth-aws-adfs\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | collected 43 items\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | \n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_account_aliases_fetcher.py .......                             [ 16%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_assertion_extractor.py .....                                   [ 27%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_authenticator.py .....                                         [ 39%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_click_parses_command_line_arguments.py .                       [ 41%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_config_preparation.py ..                                       [ 46%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_credential_process_json.py .                                   [ 48%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_fetch_html_encoded_roles.py ..                                 [ 53%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_helpers_memset_zero.py .                                       [ 55%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_login_session_cache.py .........                               [ 76%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_role_chooser.py ........                                       [ 95%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | test/test_version.py ..                                                  [100%]\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | \n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/venth-aws-adfs/report.xml -\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   | ============================== 43 passed in 1.09s ==============================\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Main Test with pytest\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \u2b50 Run Post Set up Python 3.7\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)]   \u2705  Success - Post Set up Python 3.7\n[312a64c5-2532-4098-91f0-6245e97ba73a/Run tests (3.7 on ubuntu-latest)] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/venth-aws-adfs/.github/workflows/build-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 374.91952109336853
+    }
+}

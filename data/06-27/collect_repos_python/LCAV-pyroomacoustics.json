@@ -1,0 +1,28 @@
+{
+    "repository": "LCAV/pyroomacoustics",
+    "stars": 1141,
+    "language": "python",
+    "size": 93813,
+    "clone_url": "https://github.com/LCAV/pyroomacoustics.git",
+    "timestamp": "2023-06-28T11:10:32.424032Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[2cb9220b-d63a-42da-a069-848718569919/build] \ud83d\ude80  Start image=crawlergpt:latest\n[2cb9220b-d63a-42da-a069-848718569919/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2cb9220b-d63a-42da-a069-848718569919/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2cb9220b-d63a-42da-a069-848718569919/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2cb9220b-d63a-42da-a069-848718569919/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/LCAV-pyroomacoustics] user=0 workdir=\n[2cb9220b-d63a-42da-a069-848718569919/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[2cb9220b-d63a-42da-a069-848718569919/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[2cb9220b-d63a-42da-a069-848718569919/build] \u2b50 Run Main actions/checkout@v3\n[2cb9220b-d63a-42da-a069-848718569919/build]   \u2705  Success - Main actions/checkout@v3\n[2cb9220b-d63a-42da-a069-848718569919/build] \u2b50 Run Main Checkout submodules\n[2cb9220b-d63a-42da-a069-848718569919/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1.sh] user= workdir=\n[2cb9220b-d63a-42da-a069-848718569919/build]   \u274c  Failure - Main Checkout submodules\n[2cb9220b-d63a-42da-a069-848718569919/build] exitcode '1': failure\n[2cb9220b-d63a-42da-a069-848718569919/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/LCAV-pyroomacoustics/.github/workflows/pythonpackage-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 70.0693097114563
+    }
+}

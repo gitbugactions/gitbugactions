@@ -1,0 +1,28 @@
+{
+    "repository": "dmmiller612/bert-extractive-summarizer",
+    "stars": 1219,
+    "language": "python",
+    "size": 148,
+    "clone_url": "https://github.com/dmmiller612/bert-extractive-summarizer.git",
+    "timestamp": "2023-06-28T13:54:45.560734Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[0d927133-b319-467d-8ac3-09bf1a2da0bf/build] \ud83d\ude80  Start image=crawlergpt:latest\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/dmmiller612-bert-extractive-summarizer] user=0 workdir=\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build] \u2b50 Run Main Check out code\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \u2705  Success - Main Check out code\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build] \u2b50 Run Main Build docker images\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=local-test&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build]   \u274c  Failure - Main Build docker images\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build] exitcode '1': failure\n[0d927133-b319-467d-8ac3-09bf1a2da0bf/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/dmmiller612-bert-extractive-summarizer/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 44.91897797584534
+    }
+}

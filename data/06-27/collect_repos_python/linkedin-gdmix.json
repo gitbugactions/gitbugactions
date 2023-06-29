@@ -1,0 +1,27 @@
+{
+    "repository": "linkedin/gdmix",
+    "stars": 133,
+    "language": "python",
+    "size": 994,
+    "clone_url": "https://github.com/linkedin/gdmix.git",
+    "timestamp": "2023-06-28T15:32:01.574340Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox] \ud83d\ude80  Start image=linkedin/gdmix-dev\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \ud83d\udc33  docker pull image=linkedin/gdmix-dev platform= username= forcePull=false\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \ud83d\udc33  docker create image=linkedin/gdmix-dev platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \ud83d\udc33  docker run image=linkedin/gdmix-dev platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox] \ud83e\uddea  Matrix: map[python-version:3.7]\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox] \u2b50 Run Main actions/checkout@v2\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \u2705  Success - Main actions/checkout@v2\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox] \u2b50 Run Main Set up Python 3.7\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \ud83d\udc33  docker cp src=/tmp/act-cache/a29c72e2-2b9c-4fdb-8e91-a575bf9a6bc5/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox]   \u274c  Failure - Main Set up Python 3.7\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox] exitcode '126': failure\n[ae72b11e-a0a5-4232-85a8-43c1f44da7b2/testbox] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'testbox' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/linkedin-gdmix/.github/workflows/movieLens-py37-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 106.85224556922913
+    }
+}

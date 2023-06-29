@@ -1,0 +1,1078 @@
+{
+    "repository": "Snowflake-Labs/schemachange",
+    "stars": 366,
+    "language": "python",
+    "size": 1022,
+    "clone_url": "https://github.com/Snowflake-Labs/schemachange.git",
+    "timestamp": "2023-06-28T13:10:39.522011Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_JinjaEnvVar",
+                "name": "test_env_var_with_no_default_and_no_environmental_variables_should_raise_exception",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaEnvVar",
+                "name": "test_env_var_with_default_and_no_environmental_variables_should_return_default",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaEnvVar",
+                "name": "test_env_var_with_default_and_environmental_variables_should_return_environmental_variable_value",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaEnvVar",
+                "name": "test_JinjaEnvVar_with_jinja_template",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaTemplateProcessor",
+                "name": "test_JinjaTemplateProcessor_render_simple_string",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaTemplateProcessor",
+                "name": "test_JinjaTemplateProcessor_render_simple_string_expecting_variable_that_does_not_exist_should_raise_exception",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaTemplateProcessor",
+                "name": "test_JinjaTemplateProcessor_render_simple_string_expecting_variable",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_JinjaTemplateProcessor",
+                "name": "test_JinjaTemplateProcessor_render_from_subfolder",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_no_secrets_when_redact_then_return_original_value",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_secrets_when_redact_on_none_then_return_none",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_secrets_when_redact_then_return_redacted_value",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_secrets_when_clear_then_should_hold_zero_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_one_secrets_when_add_range_with_None_then_Count_should_remain_one",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_one_secrets_when_add_range_with_empty_set_then_Count_should_remain_one",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_given_one_secrets_when_add_range_with_two_secrets_then_count_of_secrets_three",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_check_global_assignment_round_trip",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_SecretManager",
+                "name": "test_SecretManager_global_redact",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given_empty_config_should_not_error",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given_None_should_not_error",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_keys_should_extract_secret[config0-secret_val1]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_keys_should_extract_secret[config1-secret_val2]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_keys_should_extract_secret[config2-secret_val3]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_keys_should_extract_secret[config3-secret_val4]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_keys_should_extract_secret[config4-secret_val5]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_keys_should_extract_secret[config5-secret_val6]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_secrets_key_then_all_children_should_be_treated_as_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_nested_secrets_key_then_all_children_should_be_treated_as_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_extract_config_secrets",
+                "name": "test_extract_config_secrets_given__vars_with_same_secret_twice_then_only_extracted_once",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_empty_folder_should_return_empty",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_just_non_change_files_should_return_empty",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_Version_files_should_return_version_files",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_same_Version_twice_should_raise_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_single_Version_file_should_extract_attributes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_single_Version_jinja_file_should_extract_attributes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_same_version_file_with_and_without_jinja_extension_should_raise_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_Always_files_should_return_always_files",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_same_Always_file_should_raise_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_single_Always_file_should_extract_attributes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_single_Always_jinja_file_should_extract_attributes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_same_Always_file_with_and_without_jinja_extension_should_raise_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_Repeatable_files_should_return_repeatable_files",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_same_Repeatable_file_should_raise_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_single_Repeatable_file_should_extract_attributes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_single_Repeatable_jinja_file_should_extract_attributes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_get_all_scripts_recursively",
+                "name": "test_get_all_scripts_recursively__given_same_Repeatable_file_with_and_without_jinja_extension_should_raise_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_jinja_env_var_template",
+                "name": "test_from_environ_not_set",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_jinja_env_var_template",
+                "name": "test_from_environ_set",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_jinja_env_var_template",
+                "name": "test_from_environ_not_set_default",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_load_schemachange_config",
+                "name": "test__load_schemachange_config__simple_config_file",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_load_schemachange_config",
+                "name": "test__load_schemachange_config__with_env_var_should_populate_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_load_schemachange_config",
+                "name": "test__load_schemachange_config__requiring_env_var_but_env_var_not_set_should_raise_exception",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args0-expected0]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args1-expected1]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args2-expected2]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args3-expected3]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args4-expected4]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args5-expected5]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args6-expected6]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args7-expected7]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args8-expected8]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args9-expected9]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args10-expected10]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args11-expected11]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args12-expected12]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args13-expected13]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args14-expected14]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_subcommand_given_arguments_make_sure_arguments_set_on_call[args15-expected15]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_render_subcommand_given_arguments_make_sure_arguments_set_on_call[args0-expected0]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_render_subcommand_given_arguments_make_sure_arguments_set_on_call[args1-expected1]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_render_subcommand_given_arguments_make_sure_arguments_set_on_call[args2-expected2]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_render_subcommand_given_arguments_make_sure_arguments_set_on_call[args3-expected3]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_config_folder[args0-schemachange.cli.deploy_command-expected_args0]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_config_folder[args1-schemachange.cli.render_command-expected_args1]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_modules_folder[args0-schemachange.cli.deploy_command-expected_args0]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_main_deploy_modules_folder[args1-schemachange.cli.render_command-expected_args1]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \ud83d\ude80  Start image=crawlergpt:latest\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Snowflake-Labs-schemachange] user=0 workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \ud83e\uddea  Matrix: map[github-runner:ubuntu-latest python-version:3.7]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \u2b50 Run Main actions/checkout@v2\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2705  Success - Main actions/checkout@v2\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \u2b50 Run Main Set up Python 3.7\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/b16b6f93-0491-4bfa-a16f-565c64daaff6/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: \n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? false\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? true\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? true\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? true\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? true\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? true\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::explicit? true\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Successfully setup CPython (3.7.11)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2705  Success - Main Set up Python 3.7\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2699  ::set-output:: python-version=3.7.11\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \u2b50 Run Main Install dependencies\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Obtaining file:///tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Snowflake-Labs-schemachange\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Installing build dependencies: started\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Installing build dependencies: finished with status 'done'\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Getting requirements to build wheel: started\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Getting requirements to build wheel: finished with status 'done'\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |     Preparing wheel metadata: started\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |     Preparing wheel metadata: finished with status 'done'\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting jinja2~=3.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pandas~=1.3\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pyyaml~=5.4\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl (636 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting snowflake-connector-python~=2.8\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading snowflake_connector_python-2.9.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (21.3 MB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pytest\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting MarkupSafe>=2.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading MarkupSafe-2.1.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting python-dateutil>=2.7.3\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting numpy>=1.17.3\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pytz>=2017.3\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting six>=1.5\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pycryptodomex!=3.5.0,<4.0.0,>=3.2\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pycryptodomex-3.18.0-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting requests<3.0.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pyOpenSSL<23.0.0,>=16.2.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pyOpenSSL-22.1.0-py3-none-any.whl (57 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting urllib3<1.27,>=1.21.1\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting idna<4,>=2.5\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting cffi<2.0.0,>=1.9\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading cffi-1.15.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (427 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Requirement already satisfied: setuptools>34.0.0 in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from snowflake-connector-python~=2.8->schemachange==3.5.2) (47.1.0)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting asn1crypto<2.0.0,>0.24.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pyjwt<3.0.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading PyJWT-2.7.0-py3-none-any.whl (22 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting charset-normalizer<3,>=2\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading charset_normalizer-2.1.1-py3-none-any.whl (39 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting certifi>=2017.4.17\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting filelock<4,>=3.5\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting cryptography<41.0.0,>=3.1.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading cryptography-40.0.2-cp36-abi3-manylinux_2_28_x86_64.whl (3.7 MB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting oscrypto<2.0.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading oscrypto-1.3.0-py2.py3-none-any.whl (194 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting typing-extensions<5,>=4.3\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pycparser\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting cryptography<41.0.0,>=3.1.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading cryptography-38.0.4-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting exceptiongroup>=1.0.0rc8\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting packaging\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting tomli>=1.0.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting pluggy<2.0,>=0.12\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting importlib-metadata>=0.12\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting iniconfig\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Collecting zipp>=0.5\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Installing collected packages: pycparser, cffi, zipp, urllib3, typing-extensions, six, idna, cryptography, charset-normalizer, certifi, asn1crypto, requests, pytz, python-dateutil, pyOpenSSL, pyjwt, pycryptodomex, oscrypto, numpy, MarkupSafe, importlib-metadata, filelock, tomli, snowflake-connector-python, pyyaml, pluggy, pandas, packaging, jinja2, iniconfig, exceptiongroup, schemachange, pytest\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   Running setup.py develop for schemachange\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | Successfully installed MarkupSafe-2.1.3 asn1crypto-1.5.1 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-2.1.1 cryptography-38.0.4 exceptiongroup-1.1.1 filelock-3.12.2 idna-3.4 importlib-metadata-6.7.0 iniconfig-2.0.0 jinja2-3.1.2 numpy-1.21.6 oscrypto-1.3.0 packaging-23.1 pandas-1.3.5 pluggy-1.2.0 pyOpenSSL-22.1.0 pycparser-2.21 pycryptodomex-3.18.0 pyjwt-2.7.0 pytest-7.4.0 python-dateutil-2.8.2 pytz-2023.3 pyyaml-5.4.1 requests-2.31.0 schemachange-3.5.2 six-1.16.0 snowflake-connector-python-2.9.0 tomli-2.0.1 typing-extensions-4.6.3 urllib3-1.26.16 zipp-3.15.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2705  Success - Main Install dependencies\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \u2b50 Run Main Test with pytest\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | ============================= test session starts ==============================\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Snowflake-Labs-schemachange\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | collected 75 items\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | \n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_JinjaEnvVar.py ....                                           [  5%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_JinjaTemplateProcessor.py ....                                [ 10%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_SecretManager.py .........                                    [ 22%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_extract_config_secrets.py ...........                         [ 37%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_get_all_scripts_recursively.py .................              [ 60%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_jinja_env_var_template.py ...                                 [ 64%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_load_schemachange_config.py ...                               [ 68%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | tests/test_main.py ........................                              [100%]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | \n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Snowflake-Labs-schemachange/report.xml -\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | ============================== 75 passed in 1.92s ==============================\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2705  Success - Main Test with pytest\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \u2b50 Run Main Test run\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | usage: schemachange deploy [-h] [--config-folder CONFIG_FOLDER]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [-f ROOT_FOLDER] [-m MODULES_FOLDER]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [-a SNOWFLAKE_ACCOUNT] [-u SNOWFLAKE_USER]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [-r SNOWFLAKE_ROLE] [-w SNOWFLAKE_WAREHOUSE]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [-d SNOWFLAKE_DATABASE] [-c CHANGE_HISTORY_TABLE]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [--vars VARS] [--create-change-history-table] [-ac]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [-v] [--dry-run] [--query-tag QUERY_TAG]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                            [--oauth-config OAUTH_CONFIG]\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | \n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   | optional arguments:\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -h, --help            show this help message and exit\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   --config-folder CONFIG_FOLDER\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The folder to look in for the schemachange-config.yml\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         file (the default is the current working directory)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -f ROOT_FOLDER, --root-folder ROOT_FOLDER\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The root folder for the database change scripts\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -m MODULES_FOLDER, --modules-folder MODULES_FOLDER\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The modules folder for jinja macros and templates to\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         be used across multiple scripts\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -a SNOWFLAKE_ACCOUNT, --snowflake-account SNOWFLAKE_ACCOUNT\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The name of the snowflake account (e.g. xy12345.east-\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         us-2.azure)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -u SNOWFLAKE_USER, --snowflake-user SNOWFLAKE_USER\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The name of the snowflake user\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -r SNOWFLAKE_ROLE, --snowflake-role SNOWFLAKE_ROLE\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The name of the default role to use\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -w SNOWFLAKE_WAREHOUSE, --snowflake-warehouse SNOWFLAKE_WAREHOUSE\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The name of the default warehouse to use. Can be\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         overridden in the change scripts.\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -d SNOWFLAKE_DATABASE, --snowflake-database SNOWFLAKE_DATABASE\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The name of the default database to use. Can be\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         overridden in the change scripts.\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -c CHANGE_HISTORY_TABLE, --change-history-table CHANGE_HISTORY_TABLE\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         Used to override the default name of the change\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         history table (the default is\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         METADATA.SCHEMACHANGE.CHANGE_HISTORY)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   --vars VARS           Define values for the variables to replaced in change\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         scripts, given in JSON format (e.g. {\"variable1\":\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         \"value1\", \"variable2\": \"value2\"})\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   --create-change-history-table\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         Create the change history schema and table, if they do\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         not exist (the default is False)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -ac, --autocommit     Enable autocommit feature for DML commands (the\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         default is False)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   -v, --verbose         Display verbose debugging details during execution\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         (the default is False)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   --dry-run             Run schemachange in dry run mode (the default is\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         False)\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   --query-tag QUERY_TAG\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         The string to add to the Snowflake QUERY_TAG session\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         value for each query executed\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |   --oauth-config OAUTH_CONFIG\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         Define values for the variables to Make Oauth Token\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         requests (e.g. {\"token-provider-url\": \"https//...\",\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         \"token-request-payload\": {\"client_id\":\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   |                         \"GUID_xyz\",...},... })\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2705  Success - Main Test run\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \u2b50 Run Post Set up Python 3.7\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build]   \u2705  Success - Post Set up Python 3.7\n[c8ca4bd3-5348-47ca-a142-28c63ff227a6/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Snowflake-Labs-schemachange/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 132.10886120796204
+    }
+}

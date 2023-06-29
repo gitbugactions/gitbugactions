@@ -1,0 +1,29 @@
+{
+    "repository": "frostming/marko",
+    "stars": 227,
+    "language": "python",
+    "size": 896,
+    "clone_url": "https://github.com/frostming/marko.git",
+    "timestamp": "2023-06-28T13:07:29.924822Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing] \ud83d\ude80  Start image=crawlergpt:latest\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/frostming-marko] user=0 workdir=\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \u2601  git clone 'https://github.com/pdm-project/setup-pdm' # ref=v3\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing] \u2b50 Run Main actions/checkout@v3\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \u2705  Success - Main actions/checkout@v3\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing] \u2b50 Run Main Set up PDM\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker cp src=/tmp/act-cache/28ccfd4a-2145-4077-b0da-89c6b85e6471/act/pdm-project-setup-pdm@v3/ dst=/var/run/act/actions/pdm-project-setup-pdm@v3/\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/pdm-project-setup-pdm@v3/] user=0 workdir=\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js] user= workdir=\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   | internal/modules/cjs/loader.js:892\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |   throw err;\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |   ^\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   | \n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   | Error: Cannot find module 'node:events'\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   | Require stack:\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   | - /run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Object.<anonymous> (/run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js:72703:27)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Function.Module._load (internal/modules/cjs/loader.js:778:12)\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |     at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12) {\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |   code: 'MODULE_NOT_FOUND',\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   |   requireStack: [ '/run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js' ]\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   | }\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing]   \u274c  Failure - Main Set up PDM\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing] exitcode '1': failure\n[3aef68ff-4282-4bae-9afc-9787ae23336f/Testing] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Testing' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/frostming-marko/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 97.15660643577576
+    }
+}

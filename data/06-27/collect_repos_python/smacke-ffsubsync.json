@@ -1,0 +1,27 @@
+{
+    "repository": "smacke/ffsubsync",
+    "stars": 6026,
+    "language": "python",
+    "size": 3921,
+    "clone_url": "https://github.com/smacke/ffsubsync.git",
+    "timestamp": "2023-06-28T13:41:01.261215Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[fc1301a9-b3ae-4865-8386-37524a10cfd5/build] \ud83d\ude80  Start image=crawlergpt:latest\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/smacke-ffsubsync] user=0 workdir=\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \u2601  git clone 'https://github.com/smacke/submodule-checkout' # ref=v3\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7.x]\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build] \u2b50 Run Main actions/checkout@v2\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \u2705  Success - Main actions/checkout@v2\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build] \u2b50 Run Main smacke/submodule-checkout@v3\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker build -t act-smacke-submodule-checkout-v3-dockeraction:latest /tmp/act-cache/1318eea8-1c81-4fff-bbbb-d8f8a8ddf17a/act/smacke-submodule-checkout@v3/\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker pull image=act-smacke-submodule-checkout-v3-dockeraction:latest platform= username= forcePull=false\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker create image=act-smacke-submodule-checkout-v3-dockeraction:latest platform= entrypoint=[] cmd=[\"\"]\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \ud83d\udc33  docker run image=act-smacke-submodule-checkout-v3-dockeraction:latest platform= entrypoint=[] cmd=[\"\"]\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   | error: could not lock config file //.gitconfig: Permission denied\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   | No user exists for uid 1012\r\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   | Signature validation failed!\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build]   \u274c  Failure - Main smacke/submodule-checkout@v3\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build] exit with `FAILURE`: 1\n[fc1301a9-b3ae-4865-8386-37524a10cfd5/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/smacke-ffsubsync/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 166.8752179145813
+    }
+}

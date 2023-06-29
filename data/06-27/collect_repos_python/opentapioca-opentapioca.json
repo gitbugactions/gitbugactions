@@ -1,0 +1,27 @@
+{
+    "repository": "opentapioca/opentapioca",
+    "stars": 224,
+    "language": "python",
+    "size": 2607,
+    "clone_url": "https://github.com/opentapioca/opentapioca.git",
+    "timestamp": "2023-06-28T12:31:55.443919Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4] \ud83d\ude80  Start image=crawlergpt:latest\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/opentapioca-opentapioca] user=0 workdir=\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4] \ud83e\uddea  Matrix: map[python-version:3.6 solr-version:7.4]\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4] \u2b50 Run Main checkout\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \u2705  Success - Main checkout\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4] \u2b50 Run Main run solr\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=solr\": dial unix /var/run/docker.sock: connect: permission denied.\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   | See 'docker run --help'.\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4]   \u274c  Failure - Main run solr\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4] exitcode '1': failure\n[84cdb124-d43b-4c00-8c9c-468d0cbde668/python-3.6_solr-7.4] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'python-${{ matrix.python-version }}_solr-${{ matrix.solr-version }}' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/opentapioca-opentapioca/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 22.818060159683228
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "friends-of-freeswitch/switchio",
+    "stars": 185,
+    "language": "python",
+    "size": 3938,
+    "clone_url": "https://github.com/friends-of-freeswitch/switchio.git",
+    "timestamp": "2023-06-28T12:19:45.691157Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test] \ud83d\ude80  Start image=crawlergpt:latest\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/friends-of-freeswitch-switchio] user=0 workdir=\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2601  git clone 'https://github.com/docker-practice/actions-setup-docker' # ref=v1\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test] \ud83e\uddea  Matrix: map[python_version:3.6]\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test] \u2b50 Run Main actions/checkout@v2\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2705  Success - Main actions/checkout@v2\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test] \u2b50 Run Main setup-docker\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/d7297d3c-25b3-4a8b-9668-06628e916375/act/docker-practice-actions-setup-docker@v1/ dst=/var/run/act/actions/docker-practice-actions-setup-docker@v1/\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/docker-practice-actions-setup-docker@v1/] user=0 workdir=\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-practice-actions-setup-docker@v1/lib/setup-docker.js] user= workdir=\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2753  ::group::check docker systemd status\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   | [command]/usr/bin/sudo systemctl status docker\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   | System has not been booted with systemd as init system (PID 1). Can't operate.\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   | Failed to connect to bus: Host is down\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2753  ::endgroup::\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udcac  ::debug::check docker version\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2753  ::group::check docker version\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   | [command]/usr/bin/docker version\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   | Client:\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  Version:           20.10.8+azure\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  API version:       1.41\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  Go version:        go1.16.7\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  Git commit:        3967b7d28e15a020e4ee344283128ead633b3e0c\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  Built:             Thu Jul 29 13:55:47 2021\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  OS/Arch:           linux/amd64\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  Context:           default\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   |  Experimental:      true\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version\": dial unix /var/run/docker.sock: connect: permission denied\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2753  ::endgroup::\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \ud83d\udcac  ::debug::add apt-key\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2757  ::error::Error: Command failed: %0A    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo cat >/usr/share/keyrings/docker-archive-keyring.gpg%0A    %0A/bin/sh: 2: cannot create /usr/share/keyrings/docker-archive-keyring.gpg: Permission denied%0Agpg: [stdout]: write error: Broken pipe%0Agpg: filter_flush failed on close: Broken pipe%0A\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u274c  Failure - Main setup-docker\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test]   \u2699  ::set-env:: DOCKER_CONFIG=/home/runner/.docker\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test] exitcode '1': failure\n[42d5feff-6f46-4df3-a6bd-4b12e96b9e8d/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/friends-of-freeswitch-switchio/.github/workflows/python-app-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 164.50376844406128
+    }
+}

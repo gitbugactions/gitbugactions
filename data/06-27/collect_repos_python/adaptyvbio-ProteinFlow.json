@@ -1,0 +1,30 @@
+{
+    "repository": "adaptyvbio/ProteinFlow",
+    "stars": 71,
+    "language": "python",
+    "size": 56686,
+    "clone_url": "https://github.com/adaptyvbio/ProteinFlow.git",
+    "timestamp": "2023-06-28T18:47:42.670574Z",
+    "clone_success": true,
+    "number_of_actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[f94e4ff0-9da3-431a-b914-8e090e7bee04/test] \ud83d\ude80  Start image=crawlergpt:latest\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/adaptyvbio-ProteinFlow] user=0 workdir=\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \u2601  git clone 'https://github.com/actions/github-script' # ref=0.9.0\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v3\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest version:3.8]\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test] \u2b50 Run Main Check if relevant files have changed\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/45b441be-fcc2-441c-8f6e-a842164a9a73/act/actions-github-script@0.9.0/ dst=/var/run/act/actions/actions-github-script@0.9.0/\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-github-script@0.9.0/] user=0 workdir=\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-github-script@0.9.0/dist/index.js] user= workdir=\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   | TypeError: Cannot read property 'owner' of undefined\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at eval (eval at callAsyncFunction (/run/act/actions/actions-github-script@0.9.0/dist/index.js:9163:56), <anonymous>:4:37)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at callAsyncFunction (/run/act/actions/actions-github-script@0.9.0/dist/index.js:9164:12)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at main (/run/act/actions/actions-github-script@0.9.0/dist/index.js:9188:26)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at Module.833 (/run/act/actions/actions-github-script@0.9.0/dist/index.js:9172:1)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at __webpack_require__ (/run/act/actions/actions-github-script@0.9.0/dist/index.js:22:30)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at startup (/run/act/actions/actions-github-script@0.9.0/dist/index.js:37:19)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at /run/act/actions/actions-github-script@0.9.0/dist/index.js:43:18\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at Object.<anonymous> (/run/act/actions/actions-github-script@0.9.0/dist/index.js:46:10)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \u2757  ::error::Cannot read property 'owner' of undefined\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test]   \u274c  Failure - Main Check if relevant files have changed\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test] exitcode '1': failure\n[f94e4ff0-9da3-431a-b914-8e090e7bee04/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/adaptyvbio-ProteinFlow/.github/workflows/process-pull-request-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 225.25445890426636
+    }
+}

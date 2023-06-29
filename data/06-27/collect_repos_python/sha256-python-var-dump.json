@@ -1,0 +1,154 @@
+{
+    "repository": "sha256/python-var-dump",
+    "stars": 147,
+    "language": "python",
+    "size": 27,
+    "clone_url": "https://github.com/sha256/python-var-dump.git",
+    "timestamp": "2023-06-28T10:13:16.775288Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export_circular_reference",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export_deep_circular_reference",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export_object_without_dict",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export [[<tests.var_export_test.Foo object at 0x7f2c2126c208>, '#0 object(Foo) (3)    x => int(5)     y => str(3) \"abc\"    z => bool(True) ']]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "'#0 object(Foo) (3)    x => int(5)     z => bool(True)     y => str(3) \"abc\"' != '#0 object(Foo) (3)    x => int(5)     y => str(3) \"abc\"    z => bool(True) ' - #0 object(Foo) (3)    x => int(5)     z => bool(True)     y => str(3) \"abc\" + #0 object(Foo) (3)    x => int(5)     y => str(3) \"abc\"    z => bool(True)  ",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export [[<tests.var_export_test.Bar object at 0x7f2c2126c550>, '#0 object(Bar) (2)    value => bool(False)     foo => object(Foo) (3)        x => int(5)         y => str(3) \"abc\"        z => bool(True) ']]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "'#0 o[72 chars] x => int(5)         z => bool(True)         y => str(3) \"abc\"' != '#0 o[72 chars] x => int(5)         y => str(3) \"abc\"        z => bool(True) ' - #0 object(Bar) (2)    value => bool(False)     foo => object(Foo) (3)        x => int(5)         z => bool(True)         y => str(3) \"abc\" ?                                                                                                  ^               ------------------------- + #0 object(Bar) (2)    value => bool(False)     foo => object(Foo) (3)        x => int(5)         y => str(3) \"abc\"        z => bool(True)  ?                                                                                                  ^   +++++++++++++++++++++++++ ",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export_compares_parents_by_reference_not_value",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "'#0 o[75 chars] x => int(5)         z => bool(True)         y => str(3) \"abc\"' != '#0 o[75 chars] x => int(5)         y => str(3) \"abc\"        z => bool(True) ' - #0 object(ParentObjectThatIsEqualToOthers) (1)    foo => object(Foo) (3)        x => int(5)         z => bool(True)         y => str(3) \"abc\" ?                                                                                                     ^               ------------------------- + #0 object(ParentObjectThatIsEqualToOthers) (1)    foo => object(Foo) (3)        x => int(5)         y => str(3) \"abc\"        z => bool(True)  ?                                                                                                     ^   +++++++++++++++++++++++++ ",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_export_test.VarExportTestCase",
+                "name": "test_var_export_multiple_values_at_once",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "'#0 s[113 chars]      z => bool(True)         y => str(3) \"abc\"#3 bool(False) ' != '#0 s[113 chars]      y => str(3) \"abc\"        z => bool(True) #3 bool(False) ' Diff is 687 characters long. Set self.maxDiff to None to see it.",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_dump_test.VarDumpTestCase",
+                "name": "test_var_dump",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.var_dump_test.VarDumpTestCase",
+                "name": "test_var_dump_multiple_values_at_once",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \ud83d\ude80  Start image=crawlergpt:latest\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \ud83d\ude80  Start image=crawlergpt:latest\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sha256-python-var-dump] user=0 workdir=\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \ud83e\uddea  Matrix: map[python-version:3.5]\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \u2b50 Run Main Checkout\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2705  Success - Main Checkout\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \u2b50 Run Main Setup python 3.5\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker cp src=/tmp/act-cache/a9283f87-a5de-4d53-b6de-6b24c4fb29c9/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::Semantic version spec of 3.5 is 3.5\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? false\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? true\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? true\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? true\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? true\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? true\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::explicit? true\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::evaluating 6 versions\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::matched: 3.5.10\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.5.10/x64\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udcac  ::debug::Found tool in cache Python 3.5.10 x64\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Successfully setup CPython (3.5.10)\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2705  Success - Main Setup python 3.5\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.5.10/x64\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.5.10/x64/lib\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2699  ::set-output:: python-version=3.5.10\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.5.10/x64\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.5.10/x64/bin\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \u2b50 Run Main Run tests\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | DEPRECATION: Python 3.5 reached the end of its life on September 13th, 2020. Please upgrade your Python as Python 3.5 is no longer maintained. pip 21.0 will drop support for Python 3.5 in January 2021. pip 21.0 will remove support for this functionality.\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Collecting unittest-xml-reporting\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |   Downloading unittest_xml_reporting-3.1.0-py2.py3-none-any.whl (20 kB)\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Collecting lxml\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |   Downloading lxml-4.9.2-cp35-cp35m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (5.7 MB)\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Installing collected packages: lxml, unittest-xml-reporting\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.1.0\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Running tests...\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ----------------------------------------------------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ..F.F.F.\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ======================================================================\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | FAIL [0.000s]: test_var_export (tests.var_export_test.VarExportTestCase) [[<tests.var_export_test.Foo object at 0x7f2c2126c208>, '#0 object(Foo) (3)    x => int(5)     y => str(3) \"abc\"    z => bool(True) ']]\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ----------------------------------------------------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Traceback (most recent call last):\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sha256-python-var-dump/tests/var_export_test.py\", line 107, in test_var_export\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |     expected\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | AssertionError: '#0 object(Foo) (3)    x => int(5)     z => bool(True)     y => str(3) \"abc\"' != '#0 object(Foo) (3)    x => int(5)     y => str(3) \"abc\"    z => bool(True) '\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | - #0 object(Foo) (3)    x => int(5)     z => bool(True)     y => str(3) \"abc\"\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | + #0 object(Foo) (3)    x => int(5)     y => str(3) \"abc\"    z => bool(True) \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ======================================================================\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | FAIL [0.006s]: test_var_export (tests.var_export_test.VarExportTestCase) [[<tests.var_export_test.Bar object at 0x7f2c2126c550>, '#0 object(Bar) (2)    value => bool(False)     foo => object(Foo) (3)        x => int(5)         y => str(3) \"abc\"        z => bool(True) ']]\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ----------------------------------------------------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Traceback (most recent call last):\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sha256-python-var-dump/tests/var_export_test.py\", line 107, in test_var_export\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |     expected\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | AssertionError: '#0 o[72 chars] x => int(5)         z => bool(True)         y => str(3) \"abc\"' != '#0 o[72 chars] x => int(5)         y => str(3) \"abc\"        z => bool(True) '\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | - #0 object(Bar) (2)    value => bool(False)     foo => object(Foo) (3)        x => int(5)         z => bool(True)         y => str(3) \"abc\"\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ?                                                                                                  ^               -------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | + #0 object(Bar) (2)    value => bool(False)     foo => object(Foo) (3)        x => int(5)         y => str(3) \"abc\"        z => bool(True) \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ?                                                                                                  ^   +++++++++++++++++++++++++\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ======================================================================\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | FAIL [0.002s]: test_var_export_compares_parents_by_reference_not_value (tests.var_export_test.VarExportTestCase)\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ----------------------------------------------------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Traceback (most recent call last):\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sha256-python-var-dump/tests/var_export_test.py\", line 141, in test_var_export_compares_parents_by_reference_not_value\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |     '#0 object(ParentObjectThatIsEqualToOthers) (1)'\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | AssertionError: '#0 o[75 chars] x => int(5)         z => bool(True)         y => str(3) \"abc\"' != '#0 o[75 chars] x => int(5)         y => str(3) \"abc\"        z => bool(True) '\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | - #0 object(ParentObjectThatIsEqualToOthers) (1)    foo => object(Foo) (3)        x => int(5)         z => bool(True)         y => str(3) \"abc\"\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ?                                                                                                     ^               -------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | + #0 object(ParentObjectThatIsEqualToOthers) (1)    foo => object(Foo) (3)        x => int(5)         y => str(3) \"abc\"        z => bool(True) \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ?                                                                                                     ^   +++++++++++++++++++++++++\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ======================================================================\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | FAIL [0.003s]: test_var_export_multiple_values_at_once (tests.var_export_test.VarExportTestCase)\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ----------------------------------------------------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Traceback (most recent call last):\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sha256-python-var-dump/tests/var_export_test.py\", line 113, in test_var_export_multiple_values_at_once\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   |     '#0 str(3) \"foo\"'\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | AssertionError: '#0 s[113 chars]      z => bool(True)         y => str(3) \"abc\"#3 bool(False) ' != '#0 s[113 chars]      y => str(3) \"abc\"        z => bool(True) #3 bool(False) '\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Diff is 687 characters long. Set self.maxDiff to None to see it.\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | ----------------------------------------------------------------------\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Ran 8 tests in 0.021s\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | FAILED (failures=4)\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | \n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   | Generating XML reports...\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests]   \u274c  Failure - Main Run tests\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] exitcode '1': failure\n[d32e90ce-b3ed-4c11-b907-d0be288b4d36/Run unit tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: failed to create container: 'Error response from daemon: Conflict. The container name \"/act-d32e90ce-b3ed-4c11-b907-d0be288b4d36-Run-unit-tests-cf61cd0725aab25c894002f6ca6b867f1c8c39c2585389097b3d80a924efb72f\" is already in use by container \"fff8ff36470c544d9a04cf9d939c8167c47d3832eb9e4be43369796e219fca9f\". You have to remove (or rename) that container to be able to reuse that name.'\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sha256-python-var-dump/.github/workflows/run-tests-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 66.03785252571106
+    }
+}

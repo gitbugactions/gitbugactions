@@ -1,0 +1,2746 @@
+{
+    "repository": "snakemake/snakefmt",
+    "stars": 117,
+    "language": "python",
+    "size": 661,
+    "clone_url": "https://github.com/snakemake/snakefmt.git",
+    "timestamp": "2023-06-28T15:01:00.981968Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [
+            {
+                "classname": "tests.test_config",
+                "name": "test_black_and_snakefmt_default_line_lengths_aligned",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestFindPyprojectToml",
+                "name": "test_find_pyproject_toml_nested_directory",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestConfigAdherence",
+                "name": "test_no_config_path_empty_config_dict",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestConfigAdherence",
+                "name": "test_config_adherence_for_python_outside_rules",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestConfigAdherence",
+                "name": "test_config_adherence_for_code_inside_rules",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_no_value_passed_and_no_pyproject_changes_nothing",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_empty_pyproject_is_detected_and_injects_nothing",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_nonempty_pyproject_is_detected_and_parsed",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_unknown_options_in_pyproject_get_parsed",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_passed_configfile_gets_parsed",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_passed_configfile_overrides_pyproject",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadSnakefmtDefaultsFromPyprojectToml",
+                "name": "test_malformatted_toml_raises_error",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_config_doesnt_exist_raises_error",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_empty_config_default_line_length_used",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_read_black_config_settings",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_snakefmt_line_length_overrides_black",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_unrecognised_black_options_in_config_ignored_and_default_line_length_used",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_malformatted_toml_raises_error",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_skip_string_normalisation_handled_with_snakecase",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_skip_string_normalisation_handled_with_kebabcase",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config.TestReadBlackConfig",
+                "name": "test_string_normalisation_handled",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestCompare",
+                "name": "test_empty_strings_returns_empty",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestCompare",
+                "name": "test_same_strings_returns_empty",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestCompare",
+                "name": "test_strings_differ_by_one_char_compact",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestCompare",
+                "name": "test_strings_differ_by_one_empty_line_compact",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestCompare",
+                "name": "test_strings_differ_by_one_char_non_compact",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestCompare",
+                "name": "test_strings_differ_compact_only_context_lines_returned",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestIsChanged",
+                "name": "test_same_strings_compact_returns_false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestIsChanged",
+                "name": "test_same_strings_non_compact_returns_false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestIsChanged",
+                "name": "test_different_strings_compact_returns_false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_diff.TestIsChanged",
+                "name": "test_different_strings_non_compact_returns_false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter",
+                "name": "test_emptyInput_emptyOutput",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimpleParamFormatting",
+                "name": "test_simple_rule_one_input",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimpleParamFormatting",
+                "name": "test_single_param_keyword_stays_on_same_line",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimpleParamFormatting",
+                "name": "test_shell_param_newline_indented",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimpleParamFormatting",
+                "name": "test_single_param_keyword_in_rule_gets_newline_indented",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimpleParamFormatting",
+                "name": "test_single_numeric_param_keyword_in_rule_stays_on_same_line",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestModuleFormatting",
+                "name": "test_module_specific_keyword_formatting",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestUseRuleFormatting",
+                "name": "test_use_rule_rule_like_indented",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestUseRuleFormatting",
+                "name": "test_use_rule_with_exclude",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestUseRuleFormatting",
+                "name": "test_use_rule_with_multiple_excludes",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestUseRuleFormatting",
+                "name": "test_use_rule_no_with_two_line_indented",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestUseRuleFormatting",
+                "name": "test_use_rule_with_comment",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestUseRuleFormatting",
+                "name": "test_use_rule_newline_spacing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexParamFormatting",
+                "name": "test_expand_as_param",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexParamFormatting",
+                "name": "test_lambda_function_with_multiple_args_and_ifelse",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexParamFormatting",
+                "name": "test_lambda_function_with_keyword_arg",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexParamFormatting",
+                "name": "test_lambda_function_with_input_keyword_and_nested_parentheses",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexParamFormatting",
+                "name": "test_arg_and_kwarg_unpacking",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_commented_snakemake_syntax_formatted_as_python_code",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_python_code_with_multi_indent_passes",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_python_code_with_rawString",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_python_code_inside_run_keyword",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_line_wrapped_python_code_outside_rule",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_line_wrapped_python_code_inside_rule",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestSimplePythonFormatting",
+                "name": "test_decorator_is_handled_correctly",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_if_statement_with_snakecode_2comments_snakecode_inside",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_snakemake_code_inside_python_code",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_python_code_after_nested_snakecode_gets_formatted",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_python_code_before_nested_snakecode_gets_formatted",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_pythoncode_parser_based_formatting_before_snakecode",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_snakecode_python_else_does_not_fail",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_multiple_rules_inside_python_code",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_indented_consecutive_snakemake_directives",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_spaced_out_consecutive_dedented_directive_dedented_stays_collated",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_comment_support_after_python_code",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_if_statements_with_comments_and_snakecode_inside",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_if_statements_with_comments_and_snakecode_inside2",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_if_statements_with_comments_and_snakecode_inside3",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_if_statements_with_function_and_snakecode_inside",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_ifelse_statements",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestComplexPythonFormatting",
+                "name": "test_nested_ifelse_statements_multiple_python_lines",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_param_with_string_mixture_retabbed_and_string_normalised",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_keyword_with_tpq_inside_expression_left_alone",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_rf_string_tpq_supported",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_tpq_alignment_and_keep_relative_indenting",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_tpq_alignment_and_keep_relative_indenting_for_r_string",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_tpq_alignment_and_keep_relative_indenting_for_multiline_string",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_single_quoted_multiline_string_proper_tabbing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_docstrings_get_retabbed_for_snakecode_only",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestStringFormatting",
+                "name": "test_tpq_inside_run_block",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestReformatting_SMK_BREAK",
+                "name": "test_key_value_parameter_repositioning",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comment_after_parameter_keyword_twonewlines",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comment_after_keyword_kept",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comments_after_parameters_kept",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comments_PEP8_spaced_and_aligned",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comment_outside_keyword_context_stays_untouched",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comment_below_paramkeyword_stays_untouched",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_aligned_comments_stay_untouched",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "This is non-trivial to implement, and black does no align the comments\n        like this, but places them two spaces after each line. See #86.",
+                        "type": "pytest.xfail"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comments_above_parameter_keyword_stay_untouched",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_inline_formatted_params_relocate_inline_comments",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_preceding_comments_in_inline_formatted_params_get_relocated",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_no_inline_comments_stay_untouched",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_snakecode_after_indented_comment_does_not_get_unindented",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comments_after_params_maintain_indentation",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comment_in_run_block_at_start",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_two_comments_in_rule_at_start",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_two_comments_in_global_context",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestCommentTreatment",
+                "name": "test_comment_documenting_onstart",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_parameter_keyword_spacing_above",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_parameter_keyword_spacing_below",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_repeated_parameter_keyword_no_spacing",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_repeated_parameter_keyword_comment_in_between_no_spacing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_repeated_parameter_keyword_spaced_comment_in_between_spacing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_repeated_parameter_keyword_code_in_between_spacing",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_double_spacing_for_rules",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_keyword_three_newlines_below_two_after_formatting",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_python_code_mixed_with_keywords_proper_spacing",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_initial_comment_does_not_trigger_spacing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_comment_sticks_to_rule",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_keyword_disjoint_comment_stays_keyword_disjoint",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_buffer_with_lone_comment",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_comment_inside_python_code_sticks_to_rule",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_comment_below_keyword_gets_spaced",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestNewlineSpacing",
+                "name": "test_spacing_in_python_code_after_keywrod_not_altered",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestLineWrapping",
+                "name": "test_long_line_within_rule_indentation_taken_into_account",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestLineWrapping",
+                "name": "test_multiline_parameter_list_gets_wrapped",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestLineWrapping",
+                "name": "test_indenting_long_param_lines",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestLineWrapping",
+                "name": "test_indented_block_with_functions_and_rule",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_formatter.TestLineWrapping",
+                "name": "test_wrap_line_in_run_directive",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_grammar.TestCompleteness",
+                "name": "test_global_context_completeness",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_grammar.TestCompleteness",
+                "name": "test_module_context_completeness",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_grammar.TestCompleteness",
+                "name": "test_subworkflow_context_completeness",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_grammar.TestCompleteness",
+                "name": "test_use_rule_context_completeness",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_grammar.TestCompleteness",
+                "name": "test_rule_context_completeness",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestSnakefileTokenizer",
+                "name": "test_snakefile_sequential_parsing",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestSnakefileTokenizer",
+                "name": "test_snakefile_staggered_parsing",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_nocolon",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_no_newline_in_keyword_context_SMK_NOBREAK",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_keyword_cannot_be_named",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_invalid_name_for_keyword",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_explicitly_unrecognised_keyword",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_implicitly_unrecognised_keyword",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_duplicate_anonymous_rule_passes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_authorised_duplicate_keyword_passes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_empty_keyword_SMK_NOBREAK",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_empty_keyword_2",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestKeywordSyntax",
+                "name": "test_empty_keyword_3",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestUseRuleKeywordSyntax",
+                "name": "test_rule_from_module_passes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestUseRuleKeywordSyntax",
+                "name": "test_rule_modified_from_rule_passes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestUseRuleKeywordSyntax",
+                "name": "test_renamed_rule_from_module_passes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestUseRuleKeywordSyntax",
+                "name": "test_modified_rule_from_module_passes",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestUseRuleKeywordSyntax",
+                "name": "test_invalid_syntax_throws",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestUseRuleKeywordSyntax",
+                "name": "test_use_rule_cannot_use_rule_specific_keywords",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_key_value_no_key_fails",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_key_value_invalid_key_fails",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_single_parameter_keyword_disallows_multiple_parameters",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_single_parameter_keyword_disallows_kwarg",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_parameter_list_keyword_disallows_kwarg",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_dictionary_unpacking_passes",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestParamSyntax",
+                "name": "test_key_value_no_value_fails",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestIndentationErrors",
+                "name": "test_param_collating",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestIndentationErrors",
+                "name": "test_keyword_under_indentation",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestIndentationErrors",
+                "name": "test_keyword_indented_at_parameter_level",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_invalid_python_code_fails",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_invalid_python_code_preceding_nested_rule_fails",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_rules_inside_python_code_passes",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_multicopy_rule_name_inside_python_code_passes",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_multicopy_parameter_keyword_inside_python_code_passes",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_snakecode_inside_run_directive_fails",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser.TestPythonCode",
+                "name": "test_multiline_correctly_passed_to_black",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_noArgsPassed_printsNothingToDo",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_nonExistentParam_nonZeroExit",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_invalidPath_nonZeroExit",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_dashMixedWithFiles_nonZeroExit",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_stdinAsSrc_WritesToStdout",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_src_dir_arg_files_modified_inplace",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_file_arg_write_back_happens",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIBasic",
+                "name": "test_file_arg_file_requires_no_changes_no_write_back_happens",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_file_needs_no_changes_correct_exit_code",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_file_needs_changes_correct_exit_code",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_file_syntax_correct_exit_code",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_does_not_format_file",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_two_files_both_unchanged",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_two_files_one_will_change",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_two_files_one_has_errors",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_and_diff_runs_both_with_check_exit_code",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLICheck",
+                "name": "test_check_and_diff_doesnt_output_diff_if_error",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIDiff",
+                "name": "test_diff_works_as_expected",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIDiff",
+                "name": "test_compact_diff_works_as_expected",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIDiff",
+                "name": "test_compact_diff_and_diff_given_runs_compact_diff",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIDiff",
+                "name": "test_diff_does_not_format_file",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIDiff",
+                "name": "test_diff_doesnt_output_diff_if_error",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestConstructRegex",
+                "name": "test_noNewline_returnsCompiledRegex",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestConstructRegex",
+                "name": "test_containsNewline_returnsCompiledRegexWithMultilineSetting",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestConstructRegex",
+                "name": "test_invalid_regex_raises_error",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIInvalidRegex",
+                "name": "test_invalidIncludeRegex_nonZeroExit",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIInvalidRegex",
+                "name": "test_invalidExcludeRegex_nonZeroExit",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIValidRegex",
+                "name": "test_excludeAllFiles_returnsEmpty",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIValidRegex",
+                "name": "test_includeAllFiles_returnAll",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIValidRegex",
+                "name": "test_includeOnlySnakefiles_returnsOnlySnakefiles",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCLIValidRegex",
+                "name": "test_gitignore_paths_excluded",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCliConfig",
+                "name": "test_black_skip_string_norm_is_obeyed",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snakefmt.TestCliConfig",
+                "name": "test_black_string_norm_is_obeyed",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \ud83d\ude80  Start image=crawlergpt:latest\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/snakemake-snakefmt] user=0 workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2601  git clone 'https://github.com/snok/install-poetry' # ref=v1\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Pre Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Pre Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main actions/checkout@v2\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main actions/checkout@v2\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Set up Python 3.7\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/29a400c8-bb5f-4a6d-bac3-945a6ad94d32/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? false\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? true\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? true\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? true\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? true\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? true\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::explicit? true\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Successfully setup CPython (3.7.11)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Set up Python 3.7\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::set-output:: python-version=3.7.11\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/29a400c8-bb5f-4a6d-bac3-945a6ad94d32/act/snok-install-poetry@v1/ dst=/var/run/act/actions/snok-install-poetry@v1/\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1/] user=0 workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2-composite-0.sh] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \u001b[33mSetting Poetry installation path as /home/runneradmin/.local\u001b[0m\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \u001b[33mInstalling Poetry \ud83d\udc77\u001b[0m\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Retrieving Poetry metadata\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | # Welcome to Poetry!\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | This will download and install the latest version of Poetry,\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | a dependency and package manager for Python.\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | It will add the `poetry` command to Poetry's bin directory, located at:\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | /home/runneradmin/.local/bin\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | You can uninstall at any time by executing this script with the --uninstall option,\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | and these changes will be reverted.\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing Poetry (1.3.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing Poetry (1.3.1): Creating environment\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing Poetry (1.3.1): Installing Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing Poetry (1.3.1): Creating script\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing Poetry (1.3.1): Done\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Poetry (1.3.1) is installed now. Great!\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | To get started you need Poetry's bin directory (/home/runneradmin/.local/bin) in your `PATH`\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | environment variable.\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Add `export PATH=\"/home/runneradmin/.local/bin:$PATH\"` to your shell configuration file.\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Alternatively, you can call Poetry explicitly with `/home/runneradmin/.local/bin/poetry`.\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | You can test that everything is set up by executing:\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | `poetry --version`\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \u001b[33mInstallation completed. Configuring settings \ud83d\udee0\u001b[0m\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \u001b[33mDone \u2705\u001b[0m\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \u001b[33mIf you are creating a venv in your project, you can activate it by running 'source .venv/bin/activate'. If you're running this in an OS matrix, you can use 'source $VENV' instead, as an OS agnostic option\u001b[0m\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Install dependencies\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tput: No value for $TERM and no -T specified\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tput: No value for $TERM and no -T specified\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | poetry install --no-interaction\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Creating virtualenv snakefmt-tDp-zKSQ-py3.7 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing dependencies from lock file\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Package operations: 65 installs, 0 updates, 0 removals\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing typing-extensions (4.5.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing zipp (3.15.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing attrs (22.2.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing importlib-metadata (4.13.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing importlib-resources (5.12.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pkgutil-resolve-name (1.3.10)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pyrsistent (0.19.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing smmap (5.0.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing traitlets (5.9.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing certifi (2022.12.7)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing charset-normalizer (3.1.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing dpath (2.1.5)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing fastjsonschema (2.16.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing gitdb (4.0.10)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing idna (3.4)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing iniconfig (2.0.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing jsonschema (4.17.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing jupyter-core (4.12.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing markupsafe (2.1.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing packaging (23.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing plac (1.3.5)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pluggy (1.0.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing py (1.11.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pyyaml (6.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing toml (0.10.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing urllib3 (1.26.15)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing appdirs (1.4.4)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing click (8.1.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing configargparse (1.5.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing connection-pool (0.0.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing coverage (7.2.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing datrie (0.8.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing docutils (0.19)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing gitpython (3.1.31)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing greenlet (2.0.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing humanfriendly (10.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing jinja2 (3.1.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing mccabe (0.6.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing msgpack (1.0.5)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing mypy-extensions (1.0.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing nbformat (5.8.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pathspec (0.11.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing platformdirs (3.2.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing psutil (5.9.4)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pulp (2.7.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pycodestyle (2.7.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pyflakes (2.3.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pytest (6.2.5)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing requests (2.28.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing reretry (0.11.8)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing smart-open (6.3.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing stopit (1.1.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing tabulate (0.9.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing throttler (1.2.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing tomli (2.0.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing toposort (1.10)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing typed-ast (1.5.4)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing wrapt (1.15.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing yte (1.5.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing black (23.3.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing flake8 (3.9.2)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing isort (5.11.5)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pynvim (0.4.3)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing pytest-cov (2.12.1)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |   \u2022 Installing snakemake (7.25.0)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Installing the current project: snakefmt (0.8.4)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | poetry run snakefmt --version\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | snakefmt, version 0.8.4\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Install dependencies\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Check formatting with black and isort\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tput: No value for $TERM and no -T specified\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | poetry run isort --check-only .\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tput: No value for $TERM and no -T specified\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Skipped 1 files\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | poetry run black --check .\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | All done! \u2728 \ud83c\udf70 \u2728\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | 20 files would be left unchanged.\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Check formatting with black and isort\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Lint with flake8\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tput: No value for $TERM and no -T specified\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tput: No value for $TERM and no -T specified\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | poetry run flake8 . --exclude venv\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Lint with flake8\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Test and generate coverage report with pytest\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/6] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | ============================= test session starts ==============================\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | platform linux -- Python 3.7.11, pytest-6.2.5, py-1.11.0, pluggy-1.0.0\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/snakemake-snakefmt\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | plugins: cov-2.12.1\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | collected 194 items\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tests/test_config.py .....................                               [ 10%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tests/test_diff.py ..........                                            [ 15%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tests/test_formatter.py ................................................ [ 40%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | .........x...............................                                [ 61%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tests/test_grammar.py .....                                              [ 64%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tests/test_parser.py ....................................                [ 82%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | tests/test_snakefmt.py .................................                 [100%]\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/snakemake-snakefmt/report.xml -\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | ---------- coverage: platform linux, python 3.7.11-final-0 -----------\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Coverage XML written to file /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/snakemake-snakefmt/coverage.xml\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | \n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | ======================== 193 passed, 1 xfailed in 2.18s ========================\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Main Test and generate coverage report with pytest\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Main Upload coverage to Codecov\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/29a400c8-bb5f-4a6d-bac3-945a6ad94d32/act/codecov-codecov-action@v3/ dst=/var/run/act/actions/codecov-codecov-action@v3/\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v3/] user=0 workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v3/dist/index.js] user= workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Error: Cannot find module 'node:http'\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | Require stack:\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   | - /run/act/actions/codecov-codecov-action@v3/dist/index.js\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at /run/act/actions/codecov-codecov-action@v3/webpack:/codecov-action/external node-commonjs \"node:http\":1:1\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at /run/act/actions/codecov-codecov-action@v3/dist/index.js:24630:3\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Object.<anonymous> (/run/act/actions/codecov-codecov-action@v3/dist/index.js:24633:12)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u274c  Failure - Main Upload coverage to Codecov\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] exitcode '1': failure\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \u2b50 Run Post Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/29a400c8-bb5f-4a6d-bac3-945a6ad94d32/act/snok-install-poetry@v1/ dst=/var/run/act/actions/snok-install-poetry@v1/\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1/] user=0 workdir=\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build]   \u2705  Success - Post Install and configure Poetry\n[da0d9d35-bfe2-4fdd-80ee-b1f308794b66/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/snakemake-snakefmt/.github/workflows/ci-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 371.75707817077637
+    }
+}

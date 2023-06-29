@@ -1,0 +1,38 @@
+{
+    "repository": "towhee-io/towhee",
+    "stars": 2371,
+    "language": "python",
+    "size": 38958,
+    "clone_url": "https://github.com/towhee-io/towhee.git",
+    "timestamp": "2023-06-28T17:07:53.017478Z",
+    "clone_success": true,
+    "number_of_actions": 12,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unittest",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run] \ud83d\ude80  Start image=towhee/towhee-ut:latest\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \ud83d\udc33  docker pull image=towhee/towhee-ut:latest platform= username= forcePull=false\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \ud83d\udc33  docker create image=towhee/towhee-ut:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \ud83d\udc33  docker run image=towhee/towhee-ut:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3.1.0\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run] \u2b50 Run Main work around permission\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/0.sh] user= workdir=\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \u2705  Success - Main work around permission\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run] \u2b50 Run Main actions/checkout@master\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \u2705  Success - Main actions/checkout@master\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run] \u2b50 Run Main Generate coverage report\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/2.sh] user= workdir=\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   | \n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   | Usage:   \n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   |   pip install [options] <requirement specifier> [package-index-options] ...\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   |   pip install [options] -r <requirements file> [package-index-options] ...\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   |   pip install [options] [-e] <vcs project url> ...\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   |   pip install [options] [-e] <local project path> ...\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   |   pip install [options] <archive url/path> ...\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   | \n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   | no such option: --junitxml\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run]   \u274c  Failure - Main Generate coverage report\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run] exitcode '2': failure\n[58f9a830-3cbc-49e0-af44-d512b9cc4fd7/run] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'run' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/towhee-io-towhee/.github/workflows/codecov-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 161.86697387695312
+    }
+}

@@ -1,0 +1,353 @@
+{
+    "repository": "irgolic/AutoPR",
+    "stars": 983,
+    "language": "python",
+    "size": 589,
+    "clone_url": "https://github.com/irgolic/AutoPR.git",
+    "timestamp": "2023-06-28T18:50:21.931860Z",
+    "clone_success": true,
+    "number_of_actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [
+            {
+                "classname": "autopr.tests.test_publish_service",
+                "name": "test_github_publish_service",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[Arguments]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[FileReference]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[CommitPlan]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[PullRequestDescription]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[PullRequestAmendment]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[InitialFileSelectResponse]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_guardrails_spec_validity[LookAtFilesResponse]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_mock_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"a\"\\n                description=\"i am a\"\\n            >\\n            <object\\n                name=\"a\"\\n            ><string name='a'/><string name='b'/>\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_mock_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"b\"\\n                \\n            >\\n            <object\\n                name=\"b\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_mock_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"a\"\\n                description=\"i am a\"\\n            >\\n            <object\\n                name=\"a\"\\n            ><string name='a'/><string name='b'/>\\n            </object>\\n            </case><case\\n                name=\"b\"\\n                \\n            >\\n            <object\\n                name=\"b\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_mock_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"a\"\\n                description=\"i am a\"\\n            >\\n            <object\\n                name=\"a\"\\n            ><string name='a'/><string name='b'/>\\n            </object>\\n            </case><case\\n                name=\"b\"\\n                \\n            >\\n            <object\\n                name=\"b\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_mock_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<string name='a'/><string name='b'/>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"plan_commits\"\\n                description=\"Plan commits to add to the pull request.\"\\n            >\\n            <object\\n                name=\"plan_commits\"\\n            ><object\\n    name='pull_request_amendment'\\n>\\n<string\\n    name=\"comment\"\\n    description=\"A comment to add to the pull request.\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n<list\\n    name=\"commits\"\\n    required=\"false\"\\n    on-fail=\"reask\"\\n    description=\"Additional commits to add to the pull request. Commits must change the code in the repository, and must not be empty.\"\\n>\\n<object>\\n<string\\n    name=\"commit_message\"\\n    description=\"The commit message, concisely describing the changes made.\"\\n    length=\"1 100\"\\n    on-fail=\"noop\"\\n/>\\n<list\\n    name=\"relevant_file_hunks\"\\n    description=\"The files we should be looking at while writing this commit. Include files that whose contents will be called by the code in this commit, and files that will be changed by this commit.\"\\n>\\n<object>\\n<string\\n    name=\"filepath\"\\n    description=\"The path to the file we are looking at.\"\\n    format=\"filepath\"\\n    on-fail=\"fix\"\\n/>\\n<integer\\n    name=\"start_line\"\\n    description=\"The line number of the first line of the hunk.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n<integer\\n    name=\"end_line\"\\n    description=\"The line number of the last line of the hunk.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n</object>\\n</list>\\n<string\\n    name=\"commit_changes_description\"\\n    description=\"A description of the changes made in this commit, in the form of a list of bullet points.\"\\n    required=\"true\"\\n    length=\"1 1000\"\\n/>\\n</object>\\n</list>\\n</object>\\n            </object>\\n            </case><case\\n                name=\"plan_pull_request\"\\n                description=\"Propose a pull request to the user.\"\\n            >\\n            <object\\n                name=\"plan_pull_request\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case><case\\n                name=\"b\"\\n                \\n            >\\n            <object\\n                name=\"b\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case><case\\n                name=\"a\"\\n                description=\"i am a\"\\n            >\\n            <object\\n                name=\"a\"\\n            ><string name='a'/><string name='b'/>\\n            </object>\\n            </case><case\\n                name=\"new_file\"\\n                description=\"Make a new file.\"\\n            >\\n            <object\\n                name=\"new_file\"\\n            >\\n<string\\n    name=\"filepath\"\\n    description=\"Path to the newly created file.\"\\n    required=\"true\"\\n/>\\n<string\\n    name=\"description\"\\n    description=\"Description of the contents of the new file.\"\\n    required=\"true\"\\n/>\\n\\n            </object>\\n            </case><case\\n                name=\"edit_file\"\\n                description=\"Rewrite a code hunk in a file.\"\\n            >\\n            <object\\n                name=\"edit_file\"\\n            >\\n<string\\n    name=\"filepath\"\\n    description=\"Path to the file to be edited.\"\\n    required=\"true\"\\n/>\\n<string\\n    name=\"description\"\\n    description=\"Description of the changes to be made to the file.\"\\n    required=\"true\"\\n/>\\n<integer\\n    name=\"start_line\"\\n    description=\"The line number of the first line of the hunk to be edited.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n<integer\\n    name=\"end_line\"\\n    description=\"The line number of the last line of the hunk to be edited. Keep the hunk as short as possible while fulfilling the description.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case><case\\n                name=\"request_more_information\"\\n                description=\"Request more information from the user.\"\\n            >\\n            <object\\n                name=\"request_more_information\"\\n            ><string name='message'/>\\n            </object>\\n            </case><case\\n                name=\"look_at_files\"\\n                \\n            >\\n            <object\\n                name=\"look_at_files\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"plan_commits\"\\n                description=\"Plan commits to add to the pull request.\"\\n            >\\n            <object\\n                name=\"plan_commits\"\\n            ><object\\n    name='pull_request_amendment'\\n>\\n<string\\n    name=\"comment\"\\n    description=\"A comment to add to the pull request.\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n<list\\n    name=\"commits\"\\n    required=\"false\"\\n    on-fail=\"reask\"\\n    description=\"Additional commits to add to the pull request. Commits must change the code in the repository, and must not be empty.\"\\n>\\n<object>\\n<string\\n    name=\"commit_message\"\\n    description=\"The commit message, concisely describing the changes made.\"\\n    length=\"1 100\"\\n    on-fail=\"noop\"\\n/>\\n<list\\n    name=\"relevant_file_hunks\"\\n    description=\"The files we should be looking at while writing this commit. Include files that whose contents will be called by the code in this commit, and files that will be changed by this commit.\"\\n>\\n<object>\\n<string\\n    name=\"filepath\"\\n    description=\"The path to the file we are looking at.\"\\n    format=\"filepath\"\\n    on-fail=\"fix\"\\n/>\\n<integer\\n    name=\"start_line\"\\n    description=\"The line number of the first line of the hunk.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n<integer\\n    name=\"end_line\"\\n    description=\"The line number of the last line of the hunk.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n</object>\\n</list>\\n<string\\n    name=\"commit_changes_description\"\\n    description=\"A description of the changes made in this commit, in the form of a list of bullet points.\"\\n    required=\"true\"\\n    length=\"1 1000\"\\n/>\\n</object>\\n</list>\\n</object>\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"plan_pull_request\"\\n                description=\"Propose a pull request to the user.\"\\n            >\\n            <object\\n                name=\"plan_pull_request\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"b\"\\n                \\n            >\\n            <object\\n                name=\"b\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"a\"\\n                description=\"i am a\"\\n            >\\n            <object\\n                name=\"a\"\\n            ><string name='a'/><string name='b'/>\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"new_file\"\\n                description=\"Make a new file.\"\\n            >\\n            <object\\n                name=\"new_file\"\\n            >\\n<string\\n    name=\"filepath\"\\n    description=\"Path to the newly created file.\"\\n    required=\"true\"\\n/>\\n<string\\n    name=\"description\"\\n    description=\"Description of the contents of the new file.\"\\n    required=\"true\"\\n/>\\n\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"edit_file\"\\n                description=\"Rewrite a code hunk in a file.\"\\n            >\\n            <object\\n                name=\"edit_file\"\\n            >\\n<string\\n    name=\"filepath\"\\n    description=\"Path to the file to be edited.\"\\n    required=\"true\"\\n/>\\n<string\\n    name=\"description\"\\n    description=\"Description of the changes to be made to the file.\"\\n    required=\"true\"\\n/>\\n<integer\\n    name=\"start_line\"\\n    description=\"The line number of the first line of the hunk to be edited.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n<integer\\n    name=\"end_line\"\\n    description=\"The line number of the last line of the hunk to be edited. Keep the hunk as short as possible while fulfilling the description.\"\\n    format=\"positive\"\\n    required=\"false\"\\n    on-fail=\"noop\"\\n/>\\n\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"request_more_information\"\\n                description=\"Request more information from the user.\"\\n            >\\n            <object\\n                name=\"request_more_information\"\\n            ><string name='message'/>\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "autopr.tests.test_rail_specs",
+                "name": "test_real_action_service_spec_validity[\\n<rail version=\"0.1\">\\n<output>\\n<choice\\n            name=\"action\"\\n            on-fail-choice=\"reask\"\\n        ><case\\n                name=\"look_at_files\"\\n                \\n            >\\n            <object\\n                name=\"look_at_files\"\\n            ><string \\n                    name=\"reason\"\\n                />\\n            </object>\\n            </case><case\\n                name=\"finished\"\\n                \\n            >\\n            <object\\n                name=\"finished\"\\n            ><string\\n                name=\"reason\"\\n                required=\"true\"\\n            />\\n            </object>\\n            </case></choice>\\n</output>\\n<instructions>\\nYou are AutoPR, an autonomous pull request creator and a helpful assistant only capable of communicating with valid JSON, and no other text.\\n\\n@autopr_json_suffix_prompt_examples\\n</instructions>\\n<prompt>\\n{{context}}\\n\\nYou are about to make a decision on what to do next, and return a JSON that follows the correct schema.\\n\\n@xml_prefix_prompt\\n\\n{output_schema}\\n</prompt>\\n</rail>\\n]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \ud83d\ude80  Start image=crawlergpt:latest\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/irgolic-AutoPR] user=0 workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2601  git clone 'https://github.com/snok/install-poetry' # ref=v1\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Pre Install Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Pre Install Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \ud83e\uddea  Matrix: map[poetry-version:1.3.2 python-version:3.9]\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Checkout repository\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Checkout repository\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Set up Python\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/e57858d7-b88d-43d5-b041-1c0c3c743aed/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2753  ::group::Installed versions\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? false\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? true\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? true\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? true\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? true\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? true\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::explicit? true\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::evaluating 6 versions\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::matched: 3.9.6\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Successfully set up CPython (3.9.6)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2753  ::endgroup::\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Set up Python\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-output:: python-version=3.9.6\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Cache poetry installation\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/e57858d7-b88d-43d5-b041-1c0c3c743aed/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Resolved Keys:\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::[\"poetry-1.3.2\"]\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Checking zstd --version\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:40961/_apis/artifactcache/cache?keys=poetry-1.3.2&version=f4b5713a4657ae30a7c2804b2ad5dbc790b3736f71a74a904bcab1f478b0ed29\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Cache not found for input keys: poetry-1.3.2\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Cache poetry installation\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Install Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/e57858d7-b88d-43d5-b041-1c0c3c743aed/act/snok-install-poetry@v1/ dst=/var/run/act/actions/snok-install-poetry@v1/\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1/] user=0 workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Install and configure Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3-composite-0.sh] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \u001b[33mSetting Poetry installation path as /home/runneradmin/.local\u001b[0m\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \u001b[33mInstalling Poetry \ud83d\udc77\u001b[0m\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Retrieving Poetry metadata\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | # Welcome to Poetry!\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | This will download and install the latest version of Poetry,\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | a dependency and package manager for Python.\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | It will add the `poetry` command to Poetry's bin directory, located at:\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | /home/runneradmin/.local/bin\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | You can uninstall at any time by executing this script with the --uninstall option,\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | and these changes will be reverted.\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing Poetry (1.5.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing Poetry (1.5.1): Creating environment\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing Poetry (1.5.1): Installing Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing Poetry (1.5.1): Creating script\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing Poetry (1.5.1): Done\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Poetry (1.5.1) is installed now. Great!\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | To get started you need Poetry's bin directory (/home/runneradmin/.local/bin) in your `PATH`\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | environment variable.\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Add `export PATH=\"/home/runneradmin/.local/bin:$PATH\"` to your shell configuration file.\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Alternatively, you can call Poetry explicitly with `/home/runneradmin/.local/bin/poetry`.\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | You can test that everything is set up by executing:\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | `poetry --version`\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \u001b[33mInstallation completed. Configuring settings \ud83d\udee0\u001b[0m\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \u001b[33mDone \u2705\u001b[0m\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \u001b[33mIf you are creating a venv in your project, you can activate it by running 'source .venv/bin/activate'. If you're running this in an OS matrix, you can use 'source $VENV' instead, as an OS agnostic option\u001b[0m\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Install and configure Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Install Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Cache dependencies\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/e57858d7-b88d-43d5-b041-1c0c3c743aed/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Resolved Keys:\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::[\"pydeps-d9cb4af4e55cc75050f7806deb095735b53f8a6ce3a005fad9dc4fbb79694366\"]\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Checking zstd --version\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:40961/_apis/artifactcache/cache?keys=pydeps-d9cb4af4e55cc75050f7806deb095735b53f8a6ce3a005fad9dc4fbb79694366&version=25e65b70d167147605b4332eb57b6d34df8e0303b88c4de252efb18cf3ed148a\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Cache not found for input keys: pydeps-d9cb4af4e55cc75050f7806deb095735b53f8a6ce3a005fad9dc4fbb79694366\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Cache dependencies\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Install dependencies\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Creating virtualenv autopr in /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/irgolic-AutoPR/.venv\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing dependencies from lock file\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Package operations: 69 installs, 1 update, 0 removals\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing frozenlist (1.3.3)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing idna (3.4)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing multidict (6.0.4)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing packaging (23.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Updating setuptools (67.8.0 -> 67.7.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing aiosignal (1.3.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing async-timeout (4.0.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing boltons (23.0.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing attrs (23.1.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing charset-normalizer (3.1.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing mdurl (0.1.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing mypy-extensions (1.0.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pyrsistent (0.19.3)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing certifi (2023.5.7)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing six (1.16.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing typing-extensions (4.5.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing urllib3 (2.0.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing yarl (1.9.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing zope-interface (6.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing marshmallow (3.19.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing aiohttp (3.8.4)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing click (8.1.3)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing colorama (0.4.6)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing colored (1.4.4)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing eliot (1.14.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing exceptiongroup (1.1.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing filelock (3.12.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing fsspec (2023.5.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing greenlet (2.0.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing iniconfig (2.0.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing iso8601 (1.1.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing markdown-it-py (2.2.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing marshmallow-enum (1.5.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing numpy (1.24.3)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pydantic (1.10.7)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing jmespath (1.0.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pyyaml (6.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing requests (2.30.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pluggy (1.0.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pygments (2.15.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing smmap (5.0.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing tomli (2.0.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing toolz (0.12.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing typing-inspect (0.8.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing tqdm (4.65.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing dataclasses-json (0.5.7)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing eliot-tree (21.0.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing gitdb (4.0.10)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing huggingface-hub (0.14.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing lxml (4.9.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing nodeenv (1.8.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing numexpr (2.8.4)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing griffe (0.27.5)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pytest (7.3.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing rich (13.3.5)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing sqlalchemy (1.4.48)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing tenacity (8.2.2)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing typer (0.9.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing regex (2023.5.5)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing tokenizers (0.13.3)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing openapi-schema-pydantic (1.2.4)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing openai (0.27.6)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing gitpython (3.1.31)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing guardrails-ai (0.1.5 9eccc4c)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing langchain (0.0.144)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pathspec (0.11.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pyright (1.1.308)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing pytest-subtests (0.10.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing structlog (22.3.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Installing transformers (4.29.1)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Install dependencies\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Install AutoPR\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/6] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing dependencies from lock file\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Package operations: 0 installs, 1 update, 0 removals\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   |   \u2022 Updating guardrails-ai (0.1.7 9eccc4c -> 0.1.5 9eccc4c)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | \n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   | Installing the current project: autopr (0.1.0)\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Install AutoPR\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Configure git credentials\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/7] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Main Configure git credentials\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Main Run pytest\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/8] user= workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u274c  Failure - Main Run pytest\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/01980086222f97409c78a0f9f3e9baa11944553ca58fe7020438facaeef70534/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \u2b50 Run Post Install Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker cp src=/tmp/act-cache/e57858d7-b88d-43d5-b041-1c0c3c743aed/act/snok-install-poetry@v1/ dst=/var/run/act/actions/snok-install-poetry@v1/\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1/] user=0 workdir=\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest]   \u2705  Success - Post Install Poetry\n[b968d4ad-daa9-43ca-93db-8ff8c72d91a7/pytest] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: context canceled\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/irgolic-AutoPR/.github/workflows/pytest-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 744.7181971073151
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "openzim/zimit",
+    "stars": 148,
+    "language": "python",
+    "size": 739,
+    "clone_url": "https://github.com/openzim/zimit.git",
+    "timestamp": "2023-06-28T11:25:04.501907Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests] \ud83d\ude80  Start image=crawlergpt:latest\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openzim-zimit] user=0 workdir=\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests] \u2b50 Run Main checkout\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \u2705  Success - Main checkout\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests] \u2b50 Run Main build image\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=zimit&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests]   \u274c  Failure - Main build image\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests] exitcode '1': failure\n[75271623-aba0-4174-bab0-4ed26d480ad1/integration-tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'integration-tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openzim-zimit/.github/workflows/ci-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 96.96417546272278
+    }
+}

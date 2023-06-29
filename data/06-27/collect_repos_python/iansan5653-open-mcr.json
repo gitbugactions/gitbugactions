@@ -1,0 +1,140 @@
+{
+    "repository": "iansan5653/open-mcr",
+    "stars": 94,
+    "language": "python",
+    "size": 52012,
+    "clone_url": "https://github.com/iansan5653/open-mcr.git",
+    "timestamp": "2023-06-28T14:18:04.325154Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path0]",
+                "time": 3.992,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path1]",
+                "time": 10.441,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path2]",
+                "time": 1.382,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path3]",
+                "time": 18.941,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path4]",
+                "time": 3.172,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path5]",
+                "time": 17.133,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path6]",
+                "time": 4.512,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test.end-to-end.test_e2e",
+                "name": "test_e2e[path7]",
+                "time": 3.145,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \ud83d\ude80  Start image=crawlergpt:latest\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iansan5653-open-mcr] user=0 workdir=\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \u2b50 Run Main actions/checkout@v2.3.1\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2705  Success - Main actions/checkout@v2.3.1\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \u2b50 Run Main actions/setup-python@v2\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/5e8b0018-06e3-4b23-b6b7-3b16c7bdab06/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.x is 3.x\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: \n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? false\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? true\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? true\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? true\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? true\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? true\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::explicit? true\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::matched: 3.9.6\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Successfully setup CPython (3.9.6)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2705  Success - Main actions/setup-python@v2\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2699  ::set-output:: python-version=3.9.6\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \u2b50 Run Main pip install -r requirements.txt\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting PyInstaller==3.5\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading PyInstaller-3.5.tar.gz (3.5 MB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Installing build dependencies: started\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Installing build dependencies: finished with status 'done'\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Getting requirements to build wheel: started\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Getting requirements to build wheel: finished with status 'done'\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |     Preparing wheel metadata: started\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |     Preparing wheel metadata: finished with status 'done'\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting typing==3.7.4.1\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading typing-3.7.4.1-py3-none-any.whl (25 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting numpy==1.22.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading numpy-1.22.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting opencv-python==4.5.4.60\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading opencv_python-4.5.4.60-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.3 MB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting flake8==3.7.8\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading flake8-3.7.8-py2.py3-none-any.whl (70 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting yapf==0.28.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading yapf-0.28.0-py2.py3-none-any.whl (180 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting pytest==6.2.5\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading pytest-6.2.5-py3-none-any.whl (280 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from PyInstaller==3.5->-r requirements.txt (line 1)) (56.0.0)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting altgraph\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading altgraph-0.17.3-py2.py3-none-any.whl (21 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting mccabe<0.7.0,>=0.6.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting pyflakes<2.2.0,>=2.1.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading pyflakes-2.1.1-py2.py3-none-any.whl (59 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting entrypoints<0.4.0,>=0.3.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading entrypoints-0.3-py2.py3-none-any.whl (11 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting pycodestyle<2.6.0,>=2.5.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading pycodestyle-2.5.0-py2.py3-none-any.whl (51 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting packaging\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting py>=1.8.2\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting toml\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting iniconfig\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting attrs>=19.2.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Collecting pluggy<2.0,>=0.12\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Building wheels for collected packages: PyInstaller\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Building wheel for PyInstaller (PEP 517): started\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Building wheel for PyInstaller (PEP 517): finished with status 'done'\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Created wheel for PyInstaller: filename=PyInstaller-3.5-py3-none-any.whl size=2877911 sha256=8a8d829c2a7adc19551bd0042c14163bb60a870a5f508a7e176f197bf9a18b58\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/e6/b4/37/0cee4da72fb9a013da567f7e5eb564d175d29ad623e452cdd0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Successfully built PyInstaller\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Installing collected packages: toml, pyflakes, pycodestyle, py, pluggy, packaging, numpy, mccabe, iniconfig, entrypoints, attrs, altgraph, yapf, typing, pytest, PyInstaller, opencv-python, flake8\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | Successfully installed PyInstaller-3.5 altgraph-0.17.3 attrs-23.1.0 entrypoints-0.3 flake8-3.7.8 iniconfig-2.0.0 mccabe-0.6.1 numpy-1.22.0 opencv-python-4.5.4.60 packaging-23.1 pluggy-1.2.0 py-1.11.0 pycodestyle-2.5.0 pyflakes-2.1.1 pytest-6.2.5 toml-0.10.2 typing-3.7.4.1 yapf-0.28.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2705  Success - Main pip install -r requirements.txt\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \u2b50 Run Main python -m pytest --junitxml=report.xml\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | ============================= test session starts ==============================\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | platform linux -- Python 3.9.6, pytest-6.2.5, py-1.11.0, pluggy-1.2.0\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iansan5653-open-mcr\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | collected 8 items\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | \n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | test/end-to-end/test_e2e.py ........                                     [100%]\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | \n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iansan5653-open-mcr/report.xml -\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   | ========================= 8 passed in 62.82s (0:01:02) =========================\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2705  Success - Main python -m pytest --junitxml=report.xml\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \u2b50 Run Post actions/setup-python@v2\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test]   \u2705  Success - Post actions/setup-python@v2\n[5c20d0e4-baf6-4a77-8ad2-972854981921/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iansan5653-open-mcr/.github/workflows/continuous_integration-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 313.76012802124023
+    }
+}

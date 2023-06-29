@@ -1,0 +1,27 @@
+{
+    "repository": "ryo-ma/covid19-japan-web-api",
+    "stars": 126,
+    "language": "python",
+    "size": 8029,
+    "clone_url": "https://github.com/ryo-ma/covid19-japan-web-api.git",
+    "timestamp": "2023-06-28T15:12:38.733610Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build] \ud83d\ude80  Start image=crawlergpt:latest\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ryo-ma-covid19-japan-web-api] user=0 workdir=\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \u2601  git clone 'https://github.com/ad-m/github-push-action' # ref=master\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build] \u2b50 Run Main actions/checkout@v2\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \u2705  Success - Main actions/checkout@v2\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build] \u2b50 Run Main Update submodule\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build]   \u274c  Failure - Main Update submodule\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build] exitcode '1': failure\n[83f1331b-484a-42bb-8eaf-c299ff1edd9f/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ryo-ma-covid19-japan-web-api/.github/workflows/update_submodule-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 161.47639918327332
+    }
+}

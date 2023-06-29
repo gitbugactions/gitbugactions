@@ -1,0 +1,29 @@
+{
+    "repository": "janw/pi-hole-influx",
+    "stars": 146,
+    "language": "python",
+    "size": 678,
+    "clone_url": "https://github.com/janw/pi-hole-influx.git",
+    "timestamp": "2023-06-28T12:59:31.841435Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test] \ud83d\ude80  Start image=python:3.9\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \ud83d\udc33  docker pull image=python:3.9 platform= username= forcePull=false\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \ud83d\udc33  docker create image=python:3.9 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \ud83d\udc33  docker run image=python:3.9 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \u2601  git clone 'https://github.com/paambaati/codeclimate-action' # ref=v3.2.0\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test] \ud83e\uddea  Matrix: map[python-version:3.9]\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test] \u2b50 Run Main Check out\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \u2705  Success - Main Check out\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test] \u2b50 Run Main Set up pip cache\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/c2a9d4eb-e187-4157-b78e-da478a2c5da5/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test]   \u274c  Failure - Main Set up pip cache\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test] exitcode '126': failure\n[e49ed87a-228a-4be4-9d8c-4eee81febdb6/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/janw-pi-hole-influx/.github/workflows/pytest-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 150.86862707138062
+    }
+}

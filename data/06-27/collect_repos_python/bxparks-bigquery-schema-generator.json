@@ -1,0 +1,350 @@
+{
+    "repository": "bxparks/bigquery-schema-generator",
+    "stars": 219,
+    "language": "python",
+    "size": 5722,
+    "clone_url": "https://github.com/bxparks/bigquery-schema-generator.git",
+    "timestamp": "2023-06-28T12:31:55.681991Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_anonymize.TestAnonymizer",
+                "name": "test_increment_anon_key",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestBigQuerySchemaToSchemaMap",
+                "name": "test_bq_schema_to_map_round_trip_permutations",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorDeduce",
+                "name": "test_deduce_schema_with_dict_input",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorDeduce",
+                "name": "test_run_with_input_and_output",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorDeduce",
+                "name": "test_run_with_invalid_input_throws_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestDataChunksFromFile",
+                "name": "test_all_data_chunks",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "\nTest chunk: 1; line_number: 2; first record: { \"s\": null, \"a\": [], \"m\": {} }\nTest chunk: 1; line_number: 2; input_format='dict'\nTest chunk: 2; line_number: 10; first record: { \"s\": null, \"a\": [], \"m\": {} }\nTest chunk: 2; line_number: 10; input_format='dict'\nTest chunk: 3; line_number: 41; first record: { \"s\": null, \"aBc\": [], \"m\": {} }\nTest chunk: 3; line_number: 41; input_format='dict'\nTest chunk: 4; line_number: 71; first record: { \"s\": \"string\", \"b\": true, \"d\": \"2017-01-01\", \"i\": 1, \"t\": \"17:10:00\", \"ts\": \"2017-05-22T17:10:00-07:00\", \"x\": 3.1 }\nTest chunk: 4; line_number: 71; input_format='dict'\nTest chunk: 5; line_number: 115; first record: []\nTest chunk: 5; line_number: 115; input_format='dict'\nTest chunk: 6; line_number: 133; first record: { \"x\": 3 }\nTest chunk: 6; line_number: 133; input_format='dict'\nTest chunk: 7; line_number: 147; first record: { \"x\": 3.1 }\nTest chunk: 7; line_number: 147; input_format='dict'\nTest chunk: 8; line_number: 161; first record: { \"ts\": \"2017-05-22T17:10:00-07:00\" }\nTest chunk: 8; line_number: 161; input_format='dict'\nTest chunk: 9; line_number: 171; first record: { \"d\": \"2017-01-01\" }\nTest chunk: 9; line_number: 171; input_format='dict'\nTest chunk: 10; line_number: 181; first record: { \"t\": \"17:10:01\" }\nTest chunk: 10; line_number: 181; input_format='dict'\nTest chunk: 11; line_number: 191; first record: { \"s\": \"17:10:02\" }\nTest chunk: 11; line_number: 191; input_format='dict'\nTest chunk: 12; line_number: 205; first record: { \"s\": \"17:10:03\" }\nTest chunk: 12; line_number: 205; input_format='dict'\nTest chunk: 13; line_number: 219; first record: { \"s\": \"2017-01-04\" }\nTest chunk: 13; line_number: 219; input_format='dict'\nTest chunk: 14; line_number: 233; first record: { \"a\": [1, 1], \"r\": { \"r0\": \"r0\", \"r1\": \"r1\" } }\nTest chunk: 14; line_number: 233; input_format='dict'\nTest chunk: 15; line_number: 263; first record: { \"a\": [1, 2], \"r\": {} }\nTest chunk: 15; line_number: 263; input_format='dict'\nTest chunk: 16; line_number: 295; first record: { \"a\": [1, 3], \"r\": {} }\nTest chunk: 16; line_number: 295; input_format='dict'\nTest chunk: 17; line_number: 329; first record: { \"a\": [[]] }\nTest chunk: 17; line_number: 329; input_format='dict'\nTest chunk: 18; line_number: 341; first record: { \"s\": \"string\", \"x\": 3.2, \"i\": 3, \"b\": true, \"a\": [ \"a\", 1] }\nTest chunk: 18; line_number: 341; input_format='dict'\nTest chunk: 19; line_number: 371; first record: { \"a\": [1, 2] }\nTest chunk: 19; line_number: 371; input_format='dict'\nTest chunk: 20; line_number: 390; first record: { \"r\" : { \"a\": [1, 2] } }\nTest chunk: 20; line_number: 390; input_format='dict'\nTest chunk: 21; line_number: 416; first record: { \"i\": 1 }\nTest chunk: 21; line_number: 416; input_format='dict'\nTest chunk: 22; line_number: 431; first record: { \"i\": null }\nTest chunk: 22; line_number: 431; input_format='dict'\nTest chunk: 23; line_number: 445; first record: { \"i\": 3 }\nTest chunk: 23; line_number: 445; input_format='dict'\nTest chunk: 24; line_number: 455; first record: { \"i\": [1, 2] }\nTest chunk: 24; line_number: 455; input_format='dict'\nTest chunk: 25; line_number: 465; first record: { \"r\" : { \"i\": 3 } }\nTest chunk: 25; line_number: 465; input_format='dict'\nTest chunk: 26; line_number: 488; first record: { \"r\" : [{ \"i\": 4 }] }\nTest chunk: 26; line_number: 488; input_format='dict'\nTest chunk: 27; line_number: 511; first record: { \"qi\" : \"1\", \"qf\": \"1.0\", \"qb\": \"true\" }\nTest chunk: 27; line_number: 511; input_format='dict'\nTest chunk: 28; line_number: 536; first record: { \"qi\" : \"1\", \"qf\": \"1.0\", \"qb\": \"true\" }\nTest chunk: 28; line_number: 536; input_format='dict'\nTest chunk: 29; line_number: 560; first record: { \"qf_i\" : \"1.0\", \"qi_f\": \"2\" }\nTest chunk: 29; line_number: 560; input_format='dict'\nTest chunk: 30; line_number: 579; first record: { \"qi\" : \"foo\", \"qf\": \"bar\", \"qb\": \"foo2\" }\nTest chunk: 30; line_number: 579; input_format='dict'\nTest chunk: 31; line_number: 603; first record: { \"qn\" : \"1\" }\nTest chunk: 31; line_number: 603; input_format='dict'\nTest chunk: 32; line_number: 618; first record: { \"qb\" : \"true\" }\nTest chunk: 32; line_number: 618; input_format='dict'\nTest chunk: 33; line_number: 633; first record: { \"qd\" : \"2018-12-07\", \"qt\": \"21:52:00\", \"qdt\": \"2018-12-07T21:52:00-08:00\" }\nTest chunk: 33; line_number: 633; input_format='dict'\nTest chunk: 34; line_number: 656; first record: { \"qd\" : \"2018-12-07\", \"qt\": \"21:52:00\", \"qdt\": \"2018-12-07T21:52:00-08:00\" }\nTest chunk: 34; line_number: 656; input_format='dict'\nTest chunk: 35; line_number: 680; first record: { \"qi\": \"1\" }\nTest chunk: 35; line_number: 680; input_format='dict'\nTest chunk: 36; line_number: 696; first record: { \"qf\": \"1.0\" }\nTest chunk: 36; line_number: 696; input_format='dict'\nTest chunk: 37; line_number: 754; first record: {\"name\": \"9223372036854775807\"}\nTest chunk: 37; line_number: 754; input_format='dict'\nTest chunk: 38; line_number: 769; first record: {\"name\": \"9223372036854775808\"}\nTest chunk: 38; line_number: 769; input_format='dict'\nTest chunk: 39; line_number: 784; first record: {\"name\": \"9223372036854775808\"}\nTest chunk: 39; line_number: 784; input_format='dict'\nTest chunk: 40; line_number: 799; first record: {\"date\": \"2019-01-16T12:46:02Z\"}\nTest chunk: 40; line_number: 799; input_format='dict'\nTest chunk: 41; line_number: 815; first record: { \"qi\" : \"1\", \"qf\": \"1.0\", \"qb\": \"true\" }\nTest chunk: 41; line_number: 815; input_format='dict'\nTest chunk: 42; line_number: 840; first record: {\"source_machine\":{\"port\":80},\"dest_machine\":{\"port\":80}}\nTest chunk: 42; line_number: 840; input_format='dict'\nTest chunk: 43; line_number: 869; first record: name,surname,age\nTest chunk: 44; line_number: 898; first record: name,surname,age\nTest chunk: 45; line_number: 925; first record: name,surname,age,is_student,registration_date,score\nTest chunk: 46; line_number: 967; first record: a,b,c,d,e\nTest chunk: 47; line_number: 1002; first record: name,surname,age\nTest chunk: 48; line_number: 1029; first record: { \"r\" : { \"a-name\": [1, 2] } }\nTest chunk: 48; line_number: 1029; input_format='dict'\nTest chunk: 49; line_number: 1049; first record: name,surname,age_in_#years,eighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacters\nTest chunk: 50; line_number: 1082; first record: {}\nTest chunk: 50; line_number: 1082; input_format='dict'\nTest chunk: 51; line_number: 1204; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_float\": 17.6, \"test_boolean\": \"True\"}\nTest chunk: 51; line_number: 1204; input_format='dict'\nTest chunk: 52; line_number: 1326; first record: {\"eventname\": \"test event1\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_float\": 17.6, \"test_boolean\": \"True\"}\nTest chunk: 52; line_number: 1326; input_format='dict'\nTest chunk: 53; line_number: 1448; first record: {\"event_name\": \"test event\", \"extra_field\": \"testing\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_float\": 17.6, \"test_boolean\": \"True\"}\nTest chunk: 53; line_number: 1448; input_format='dict'\nTest chunk: 54; line_number: 1575; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_boolean\": \"True\", \"test_float\": 1.3}\nTest chunk: 54; line_number: 1575; input_format='dict'\nTest chunk: 55; line_number: 1695; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_boolean\": \"True\", \"test_float\": 1.3}\nTest chunk: 55; line_number: 1695; input_format='dict'\nTest chunk: 56; line_number: 1817; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_boolean\": \"True\", \"test_float\": 1.3}\nTest chunk: 56; line_number: 1817; input_format='dict'\nTest chunk: 57; line_number: 1942; first record: { \"i\" : 1, \"f\": 1.0, \"r\": {\"a\": 1} }\nTest chunk: 57; line_number: 1942; input_format='dict'\nTest chunk: 58; line_number: 1975; first record: { \"a\": { \"b\": { \"c\": { \"d\": { \"e\": { \"f\": { \"g\": { \"h\": { \"i\": { \"j\": { \"k\": { \"l\": { \"m\" : { \"n\": { \"o\": { \"p\" : { \"q\": { \"r\": { \"s\": { \"t\": { \"u\": { \"v\": { \"w\": { \"x\": { \"y\": { \"z\": 1 }}}}}}}}}}}}}}}}}}}}}}}}}}\nTest chunk: 58; line_number: 1975; input_format='dict'\nTest chunk: 59; line_number: 2166; first record: { \"s\": \"string\", \"i\": 3, \"x\": 3.2, \"b\": true }\nTest chunk: 59; line_number: 2166; input_format='dict'\nTest chunk: 60; line_number: 2196; first record: { \"s\": \"string\", \"i\": 3, \"x\": 3.2, \"b\": true }\nTest chunk: 60; line_number: 2196; input_format='dict'\nTest chunk: 61; line_number: 2227; first record: { \"s\": \"string\", \"i\": 3 }\nTest chunk: 61; line_number: 2227; input_format='dict'\nTest chunk: 62; line_number: 2257; first record: {\"array\":null}\nTest chunk: 62; line_number: 2257; input_format='dict'\nTest chunk: 63; line_number: 2273; first record: {\"array\":null}\nTest chunk: 63; line_number: 2273; input_format='dict'\nTest chunk: 64; line_number: 2287; first record: {\"array\":[]}\nTest chunk: 64; line_number: 2287; input_format='dict'\nTest chunk: 65; line_number: 2304; first record: {\"array\":[]}\nTest chunk: 65; line_number: 2304; input_format='dict'\n\t\t",
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_convert_type",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_date_matcher_invalid",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_date_matcher_valid",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_float_matcher_invalid",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_float_matcher_valid",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_infer_array_type",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_infer_bigquery_type",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_infer_value_type",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_integer_matcher_invalid",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_integer_matcher_valid",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_is_string_type",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_json_full_path",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_quoted_values_are_strings",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_time_matcher_invalid",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_time_matcher_valid",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_timestamp_matcher_invalid",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_schema.TestSchemaGeneratorHelpers",
+                "name": "test_timestamp_matcher_valid",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \ud83d\ude80  Start image=crawlergpt:latest\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/bxparks-bigquery-schema-generator] user=0 workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \u2b50 Run Main actions/checkout@v3\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2705  Success - Main actions/checkout@v3\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \u2b50 Run Main Set up Python 3.7\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/4dd75134-0b58-4838-898c-0dbb2e25fd64/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: \n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? false\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? true\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? true\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? true\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? true\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? true\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::explicit? true\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Successfully setup CPython (3.7.11)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2705  Success - Main Set up Python 3.7\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2699  ::set-output:: python-version=3.7.11\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \u2b50 Run Main Install dependencies\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting pip\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Installing collected packages: pip\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Attempting uninstall: pip\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |     Found existing installation: pip 21.2.4\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |     Uninstalling pip-21.2.4:\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |       Successfully uninstalled pip-21.2.4\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Successfully installed pip-23.1.2\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting flake8\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.9/61.9 kB 2.8 MB/s eta 0:00:00\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting mccabe<0.8.0,>=0.7.0 (from flake8)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting pycodestyle<2.10.0,>=2.9.0 (from flake8)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 41.5/41.5 kB 981.1 kB/s eta 0:00:00\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting pyflakes<2.6.0,>=2.5.0 (from flake8)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 66.1/66.1 kB 1.9 MB/s eta 0:00:00\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting importlib-metadata<4.3,>=1.1.0 (from flake8)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting zipp>=0.5 (from importlib-metadata<4.3,>=1.1.0->flake8)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting typing-extensions>=3.6.4 (from importlib-metadata<4.3,>=1.1.0->flake8)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Installing collected packages: zipp, typing-extensions, pyflakes, pycodestyle, mccabe, importlib-metadata, flake8\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Successfully installed flake8-5.0.4 importlib-metadata-4.2.0 mccabe-0.7.0 pycodestyle-2.9.1 pyflakes-2.5.0 typing-extensions-4.6.3 zipp-3.15.0\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | \n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | [notice] To update, run: pip install --upgrade pip\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2705  Success - Main Install dependencies\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \u2b50 Run Main Lint with flake8\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | 0\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2705  Success - Main Lint with flake8\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \u2b50 Run Main Test with unittest\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting unittest-xml-reporting\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Collecting lxml (from unittest-xml-reporting)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |   Downloading lxml-4.9.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.6 MB)\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 6.6/6.6 MB 33.2 MB/s eta 0:00:00\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | \n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | [notice] To update, run: pip install --upgrade pip\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | \n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Running tests...\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | ----------------------------------------------------------------------\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | ..Test chunk: 1; line_number: 2; first record: { \"s\": null, \"a\": [], \"m\": {} }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 1; line_number: 2; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 2; line_number: 10; first record: { \"s\": null, \"a\": [], \"m\": {} }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 2; line_number: 10; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 3; line_number: 41; first record: { \"s\": null, \"aBc\": [], \"m\": {} }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 3; line_number: 41; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 4; line_number: 71; first record: { \"s\": \"string\", \"b\": true, \"d\": \"2017-01-01\", \"i\": 1, \"t\": \"17:10:00\", \"ts\": \"2017-05-22T17:10:00-07:00\", \"x\": 3.1 }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 4; line_number: 71; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 5; line_number: 115; first record: []\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 5; line_number: 115; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 6; line_number: 133; first record: { \"x\": 3 }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 6; line_number: 133; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 7; line_number: 147; first record: { \"x\": 3.1 }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 7; line_number: 147; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 8; line_number: 161; first record: { \"ts\": \"2017-05-22T17:10:00-07:00\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 8; line_number: 161; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 9; line_number: 171; first record: { \"d\": \"2017-01-01\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 9; line_number: 171; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 10; line_number: 181; first record: { \"t\": \"17:10:01\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 10; line_number: 181; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 11; line_number: 191; first record: { \"s\": \"17:10:02\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 11; line_number: 191; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 12; line_number: 205; first record: { \"s\": \"17:10:03\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 12; line_number: 205; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 13; line_number: 219; first record: { \"s\": \"2017-01-04\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 13; line_number: 219; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 14; line_number: 233; first record: { \"a\": [1, 1], \"r\": { \"r0\": \"r0\", \"r1\": \"r1\" } }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 14; line_number: 233; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 15; line_number: 263; first record: { \"a\": [1, 2], \"r\": {} }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 15; line_number: 263; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 16; line_number: 295; first record: { \"a\": [1, 3], \"r\": {} }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 16; line_number: 295; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 17; line_number: 329; first record: { \"a\": [[]] }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 17; line_number: 329; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 18; line_number: 341; first record: { \"s\": \"string\", \"x\": 3.2, \"i\": 3, \"b\": true, \"a\": [ \"a\", 1] }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 18; line_number: 341; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 19; line_number: 371; first record: { \"a\": [1, 2] }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 19; line_number: 371; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 20; line_number: 390; first record: { \"r\" : { \"a\": [1, 2] } }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 20; line_number: 390; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 21; line_number: 416; first record: { \"i\": 1 }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 21; line_number: 416; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 22; line_number: 431; first record: { \"i\": null }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 22; line_number: 431; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 23; line_number: 445; first record: { \"i\": 3 }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 23; line_number: 445; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 24; line_number: 455; first record: { \"i\": [1, 2] }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 24; line_number: 455; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 25; line_number: 465; first record: { \"r\" : { \"i\": 3 } }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 25; line_number: 465; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 26; line_number: 488; first record: { \"r\" : [{ \"i\": 4 }] }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 26; line_number: 488; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 27; line_number: 511; first record: { \"qi\" : \"1\", \"qf\": \"1.0\", \"qb\": \"true\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 27; line_number: 511; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 28; line_number: 536; first record: { \"qi\" : \"1\", \"qf\": \"1.0\", \"qb\": \"true\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 28; line_number: 536; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 29; line_number: 560; first record: { \"qf_i\" : \"1.0\", \"qi_f\": \"2\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 29; line_number: 560; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 30; line_number: 579; first record: { \"qi\" : \"foo\", \"qf\": \"bar\", \"qb\": \"foo2\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 30; line_number: 579; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 31; line_number: 603; first record: { \"qn\" : \"1\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 31; line_number: 603; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 32; line_number: 618; first record: { \"qb\" : \"true\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 32; line_number: 618; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 33; line_number: 633; first record: { \"qd\" : \"2018-12-07\", \"qt\": \"21:52:00\", \"qdt\": \"2018-12-07T21:52:00-08:00\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 33; line_number: 633; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 34; line_number: 656; first record: { \"qd\" : \"2018-12-07\", \"qt\": \"21:52:00\", \"qdt\": \"2018-12-07T21:52:00-08:00\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 34; line_number: 656; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 35; line_number: 680; first record: { \"qi\": \"1\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 35; line_number: 680; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 36; line_number: 696; first record: { \"qf\": \"1.0\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 36; line_number: 696; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 37; line_number: 754; first record: {\"name\": \"9223372036854775807\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 37; line_number: 754; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 38; line_number: 769; first record: {\"name\": \"9223372036854775808\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 38; line_number: 769; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 39; line_number: 784; first record: {\"name\": \"9223372036854775808\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 39; line_number: 784; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 40; line_number: 799; first record: {\"date\": \"2019-01-16T12:46:02Z\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 40; line_number: 799; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 41; line_number: 815; first record: { \"qi\" : \"1\", \"qf\": \"1.0\", \"qb\": \"true\" }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 41; line_number: 815; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 42; line_number: 840; first record: {\"source_machine\":{\"port\":80},\"dest_machine\":{\"port\":80}}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 42; line_number: 840; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 43; line_number: 869; first record: name,surname,age\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 44; line_number: 898; first record: name,surname,age\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 45; line_number: 925; first record: name,surname,age,is_student,registration_date,score\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 46; line_number: 967; first record: a,b,c,d,e\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 47; line_number: 1002; first record: name,surname,age\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 48; line_number: 1029; first record: { \"r\" : { \"a-name\": [1, 2] } }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 48; line_number: 1029; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 49; line_number: 1049; first record: name,surname,age_in_#years,eighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacterseighteencharacters\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 50; line_number: 1082; first record: {}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 50; line_number: 1082; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 51; line_number: 1204; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_float\": 17.6, \"test_boolean\": \"True\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 51; line_number: 1204; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 52; line_number: 1326; first record: {\"eventname\": \"test event1\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_float\": 17.6, \"test_boolean\": \"True\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 52; line_number: 1326; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 53; line_number: 1448; first record: {\"event_name\": \"test event\", \"extra_field\": \"testing\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_float\": 17.6, \"test_boolean\": \"True\"}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 53; line_number: 1448; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 54; line_number: 1575; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_boolean\": \"True\", \"test_float\": 1.3}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 54; line_number: 1575; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 55; line_number: 1695; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_boolean\": \"True\", \"test_float\": 1.3}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 55; line_number: 1695; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 56; line_number: 1817; first record: {\"event_name\": \"test event\", \"event_time\": \"2020-06-02 23:57:12.120174 UTC\", \"connection_info\": {\"src_ip\": \"10.0.1.102\", \"src_port\": 53, \"dest_ip\": \"10.0.0.1\", \"dest_port\": 53}, \"data_sources\": [\"dhcp\", \"bro\", \"dns\"], \"test_boolean\": \"True\", \"test_float\": 1.3}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 56; line_number: 1817; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 57; line_number: 1942; first record: { \"i\" : 1, \"f\": 1.0, \"r\": {\"a\": 1} }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 57; line_number: 1942; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 58; line_number: 1975; first record: { \"a\": { \"b\": { \"c\": { \"d\": { \"e\": { \"f\": { \"g\": { \"h\": { \"i\": { \"j\": { \"k\": { \"l\": { \"m\" : { \"n\": { \"o\": { \"p\" : { \"q\": { \"r\": { \"s\": { \"t\": { \"u\": { \"v\": { \"w\": { \"x\": { \"y\": { \"z\": 1 }}}}}}}}}}}}}}}}}}}}}}}}}}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 58; line_number: 1975; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 59; line_number: 2166; first record: { \"s\": \"string\", \"i\": 3, \"x\": 3.2, \"b\": true }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 59; line_number: 2166; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 60; line_number: 2196; first record: { \"s\": \"string\", \"i\": 3, \"x\": 3.2, \"b\": true }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 60; line_number: 2196; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 61; line_number: 2227; first record: { \"s\": \"string\", \"i\": 3 }\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 61; line_number: 2227; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 62; line_number: 2257; first record: {\"array\":null}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 62; line_number: 2257; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 63; line_number: 2273; first record: {\"array\":null}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 63; line_number: 2273; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 64; line_number: 2287; first record: {\"array\":[]}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 64; line_number: 2287; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 65; line_number: 2304; first record: {\"array\":[]}\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Test chunk: 65; line_number: 2304; input_format='dict'\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | .....................\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | ----------------------------------------------------------------------\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Ran 23 tests in 0.068s\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | \n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | OK\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | \n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   | Generating XML reports...\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2705  Success - Main Test with unittest\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \u2b50 Run Post Set up Python 3.7\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build]   \u2705  Success - Post Set up Python 3.7\n[ceaed7d6-fc3e-447f-83e4-e769733fb1e0/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/bxparks-bigquery-schema-generator/.github/workflows/pythonpackage-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 45.52203011512756
+    }
+}

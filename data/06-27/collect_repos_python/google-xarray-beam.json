@@ -1,0 +1,27 @@
+{
+    "repository": "google/xarray-beam",
+    "stars": 93,
+    "language": "python",
+    "size": 239,
+    "clone_url": "https://github.com/google/xarray-beam.git",
+    "timestamp": "2023-06-28T16:57:32.936267Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9] \ud83d\ude80  Start image=crawlergpt:latest\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/google-xarray-beam] user=0 workdir=\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.7.0\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9] \ud83e\uddea  Matrix: map[python-version:3.9]\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9] \u2b50 Run Main Cancel previous\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker cp src=/tmp/act-cache/f38048f4-8fbd-4b4c-b40f-0ca3fca6ab96/act/styfle-cancel-workflow-action@0.7.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.7.0/\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.7.0/] user=0 workdir=\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.7.0/dist/index.js] user= workdir=\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   | {\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   eventName: 'push',\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   sha: '4f4fcb965a65b5d577601af311d0e0142ee38076',\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   headSha: '4f4fcb965a65b5d577601af311d0e0142ee38076',\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   branch: '.6.2',\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   owner: 'google',\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   repo: 'xarray-beam',\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   |   GITHUB_RUN_ID: '1'\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   | }\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   | Found token: yes\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \u2757  ::error::Not Found\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9]   \u274c  Failure - Main Cancel previous\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9] exitcode '1': failure\n[fa7c97b1-8443-41fa-8832-72075f950b8d/python 3.9] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'python ${{ matrix.python-version }}' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/google-xarray-beam/.github/workflows/ci-build-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 227.4250180721283
+    }
+}

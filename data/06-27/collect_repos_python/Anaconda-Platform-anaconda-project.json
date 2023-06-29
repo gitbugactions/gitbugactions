@@ -1,0 +1,27 @@
+{
+    "repository": "Anaconda-Platform/anaconda-project",
+    "stars": 207,
+    "language": "python",
+    "size": 10124,
+    "clone_url": "https://github.com/Anaconda-Platform/anaconda-project.git",
+    "timestamp": "2023-06-28T11:51:13.096275Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package] \ud83d\ude80  Start image=crawlergpt:latest\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Anaconda-Platform-anaconda-project] user=0 workdir=\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2601  git clone 'https://github.com/conda-incubator/setup-miniconda' # ref=v2\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package] \u2b50 Run Main Retrieve the source code\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2705  Success - Main Retrieve the source code\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package] \u2b50 Run Main conda-incubator/setup-miniconda@v2\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker cp src=/tmp/act-cache/f31fe242-1876-45d3-8256-9fe12d54dc8a/act/conda-incubator-setup-miniconda@v2/ dst=/var/run/act/actions/conda-incubator-setup-miniconda@v2/\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/conda-incubator-setup-miniconda@v2/] user=0 workdir=\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/conda-incubator-setup-miniconda@v2/dist/setup/index.js] user= workdir=\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2753  ::group::Gathering Inputs...\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2753  ::endgroup::\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2757  ::error::Invalid Version: py37_4.10.3\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u274c  Failure - Main conda-incubator/setup-miniconda@v2\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package]   \u2699  ::set-env:: INPUT_RUN_POST=true\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package] exitcode '1': failure\n[956e73a7-b0ff-44ea-b4a4-03eeb1d0d60d/package] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'package' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Anaconda-Platform-anaconda-project/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 43.43012881278992
+    }
+}

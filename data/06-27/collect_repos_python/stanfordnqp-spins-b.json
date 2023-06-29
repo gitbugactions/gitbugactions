@@ -1,0 +1,31 @@
+{
+    "repository": "stanfordnqp/spins-b",
+    "stars": 230,
+    "language": "python",
+    "size": 1386,
+    "clone_url": "https://github.com/stanfordnqp/spins-b.git",
+    "timestamp": "2023-06-28T13:46:53.024203Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build] \ud83d\ude80  Start image=crawlergpt:latest\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/stanfordnqp-spins-b] user=0 workdir=\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.9.1\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build] \u2b50 Run Main Cancel Workflow Action\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/20454466-0b81-479d-a84a-b5dae77f07d9/act/styfle-cancel-workflow-action@0.9.1/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.9.1/\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.9.1/] user=0 workdir=\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.9.1/dist/index.js] user= workdir=\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   | {\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   eventName: 'push',\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   sha: '7575934fb99f8b50222cd1043bde6650743066ca',\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   headSha: '7575934fb99f8b50222cd1043bde6650743066ca',\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   branch: 'master',\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   owner: 'stanfordnqp',\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   repo: 'spins-b',\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   |   GITHUB_RUN_ID: '1'\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   | }\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   | Found token: yes\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \u2757  ::error::Not Found\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build]   \u274c  Failure - Main Cancel Workflow Action\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build] exitcode '1': failure\n[b9e88d3d-9955-484d-b956-fb33bfdf83b8/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/stanfordnqp-spins-b/.github/workflows/test_code-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 58.91534948348999
+    }
+}

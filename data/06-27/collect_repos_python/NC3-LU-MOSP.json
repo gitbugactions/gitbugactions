@@ -1,0 +1,30 @@
+{
+    "repository": "NC3-LU/MOSP",
+    "stars": 74,
+    "language": "python",
+    "size": 4359,
+    "clone_url": "https://github.com/NC3-LU/MOSP.git",
+    "timestamp": "2023-06-28T12:45:39.444351Z",
+    "clone_success": true,
+    "number_of_actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] \ud83d\ude80  Start image=crawlergpt:latest\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/NC3-LU-MOSP] user=0 workdir=\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \u2601  git clone 'https://github.com/Harmon758/postgresql-action' # ref=v1.0.0\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] \ud83e\uddea  Matrix: map[python-version:3.8]\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] \u2b50 Run Main actions/checkout@v1\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \u2705  Success - Main actions/checkout@v1\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] \u2b50 Run Main Install libxml2-dev and libxslt-dev\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | Reading package lists...\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | Building dependency tree...\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | Reading state information...\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | libxslt1-dev is already the newest version (1.1.34-4).\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | libxml2-dev is already the newest version (2.9.10+dfsg-5ubuntu0.20.04.1).\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | 0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \u2705  Success - Main Install libxml2-dev and libxslt-dev\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] \u2b50 Run Main Setup PostgreSQL\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker build -t act-harmon758-postgresql-action-v1-0-0-dockeraction:latest /tmp/act-cache/abecb96d-ece7-441f-8d31-a37fadd8e036/act/Harmon758-postgresql-action@v1.0.0/\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker pull image=act-harmon758-postgresql-action-v1-0-0-dockeraction:latest platform= username= forcePull=false\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker create image=act-harmon758-postgresql-action-v1-0-0-dockeraction:latest platform= entrypoint=[] cmd=[]\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \ud83d\udc33  docker run image=act-harmon758-postgresql-action-v1-0-0-dockeraction:latest platform= entrypoint=[] cmd=[]\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   | See 'docker run --help'.\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build]   \u274c  Failure - Main Setup PostgreSQL\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] exit with `FAILURE`: 126\n[8c9f448c-abe8-4eeb-8dcc-f3b837d7dfe5/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/NC3-LU-MOSP/.github/workflows/pythonapp-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 272.6201207637787
+    }
+}

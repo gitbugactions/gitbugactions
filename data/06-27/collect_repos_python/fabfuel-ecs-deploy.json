@@ -1,0 +1,3347 @@
+{
+    "repository": "fabfuel/ecs-deploy",
+    "stars": 783,
+    "language": "python",
+    "size": 461,
+    "clone_url": "https://github.com/fabfuel/ecs-deploy.git",
+    "timestamp": "2023-06-28T11:14:10.563454Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_cli",
+                "name": "test_get_client",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_ecs",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_credentials",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_invalid_cluster",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_invalid_service",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_rollback",
+                "time": 2.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_deregister",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_role_arn",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_execution_role_arn",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_new_tag",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_image",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_two_new_images",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_command",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_health_check[curl -f http://localhost/alive/-curl -f http://localhost/alive/]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_health_check[CMD-SHELL curl -f http://localhost/alive/ || 1-CMD-SHELL curl -f http://localhost/alive/ || 1]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_environment_variable",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_change_environment_variable_empty_string",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_new_empty_environment_variable",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_empty_environment_variable_again",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_previously_empty_environment_variable_with_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_s3_env_file_with_previous_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_runtime_platform_with_previous_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_previously_empty_runtime_platform_with_value",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_exclusive_environment",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_docker_laberl",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_change_docker_label_empty_string",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_new_empty_docker_label",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_empty_docker_label_again",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_previously_empty_docker_label_with_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_exclusive_docker_label",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_exclusive_secret",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_one_new_secret_variable",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_changing_environment_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_changing_docker_labels",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_changing_secrets_value",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_diff",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_errors",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_client_errors",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_ignore_warnings",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_newrelic_tag",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_newrelic_revision",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_newrelic_tag_revision",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_newrelic_errors",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_task_definition_arn",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_timeout",
+                "time": 1.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_with_wait_within_timeout",
+                "time": 2.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_without_timeout",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_deploy_unknown_task_definition_arn",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_with_invalid_cluster",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_with_invalid_service",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_with_errors",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_with_client_errors",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_ignore_warnings",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_with_timeout",
+                "time": 1.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_scale_without_credentials",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_with_command",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_with_environment_var",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_with_docker_label",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_without_diff",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_with_errors",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_without_credentials",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_run_task_with_invalid_cluster",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_record_deployment_without_revision",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_record_deployment_without_apikey",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_record_deployment_without_appid",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_record_deployment_tag",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_without_credentials",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_creates_new_revision",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_with_role_arn",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_new_tag",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_one_new_image",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_two_new_images",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_one_new_command",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_one_new_environment_variable",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_change_environment_variable_empty_string",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_new_empty_environment_variable",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_empty_environment_variable_again",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_previously_empty_environment_variable_with_value",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_exclusive_environment",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_one_new_docker_label",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_change_docker_label_empty_string",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_new_empty_docker_label",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_empty_docker_label_again",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_previously_empty_docker_label_with_value",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_exclusive_docker_labels",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_exclusive_secret",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_one_new_secret_variable",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_without_changing_environment_value",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_without_changing_docker_labels",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_without_changing_secrets_value",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_update_task_without_diff",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_cron_without_credentials",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_cron",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_diff",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_cli",
+                "name": "test_diff_without_credentials",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_init",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_set_task_definition",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_name",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_deployment_created_at",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_deployment_updated_at",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_deployment_created_at_without_deployments",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_deployment_updated_at_without_deployments",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_errors",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_service_older_errors",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_family",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_containers",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_container_names",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_volumes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_revision",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_no_diff",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_image_diff",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_tag",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_image",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_cpu",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_memory",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_memoryreservation",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_privileged",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_log_configurations",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_log_configurations_no_changes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_environment",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_read_env_file_wrong_env_format",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_env_file_wrong_file_name",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_environment_from_e_and_env_file",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_environment_from_env_file",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_environment_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_docker_labels",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_docker_label_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_s3_env_file_multiple_files",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_s3_env_file_single_file",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_s3_env_file_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_secrets_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_secrets_from_env_file",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_secrets_from_s_and_env_file",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_system_controls",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_system_controls_existing_not_set_again",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_system_controlsts_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_ulimits",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_ulimits_existing_not_set_again",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_ulimits_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_port_mappings",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_port_mappings_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_mount_points",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_task_cpu",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_task_memory",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_mount_points_exclusively",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_image_for_unknown_container",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_command",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_command_with_multiple_arguments",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_command_with_empty_argument",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_command_as_json_list",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_command_as_invalid_json_list",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_set_command_for_unknown_container",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs.TestSetHealthChecks",
+                "name": "test_success[webserver_health_check0-application_health_check0]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs.TestSetHealthChecks",
+                "name": "test_success[webserver_health_check1-application_health_check1]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs.TestSetHealthChecks",
+                "name": "test_unknown_container",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_with_command",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_with_environment",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_with_docker_labels",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_with_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_with_command_environment_and_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_with_command_secrets_and_environment_for_multiple_containers",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_command",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_environment",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_docker_labels",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_get_overrides_secrets",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_task_definition_diff",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_init",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_init_assuming_role",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_assume_role",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_describe_services",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_describe_task_definition",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_describe_unknown_task_definition",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_list_tasks",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_describe_tasks",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_register_task_definition",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_register_task_definition_without_optional_values",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_register_task_definition_without_tags",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_deregister_task_definition",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_update_service",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_update_service_without_desired_count",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_client_run_task",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_action_init",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_action_init_with_invalid_cluster",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_action_init_with_invalid_service",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_action_init_without_credentials",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_action_get_service",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_action_get_current_task_definition",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_update_task_definition",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deregister_task_definition",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_update_service",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_is_deployed",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_is_not_deployed_with_more_than_one_deployment",
+                "time": 0.054,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_is_deployed_if_no_tasks_should_be_running",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_is_not_deployed_if_no_tasks_running",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_is_not_deployed_if_deployment_failed",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_is_not_deployed_with_failed_tasks",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_get_running_tasks_count",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_get_running_tasks_count_new_revision",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deploy_action",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_scale_action",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_run_action",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_run_action_run",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_ecs_server_get_warnings",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_init_deployment",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_init_deployment_in_progress",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_init_deployment_failed_no_rollback",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_init_deployment_failed_with_rollback",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deployment_primary",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deployment_active",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deployment_failed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deployment_completed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_ecs",
+                "name": "test_deployment_rollout_state_reason",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_get_endpoint_us",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_get_endpoint_eu",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_get_endpoint_unknown_region",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_get_endpoint_no_region",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_get_headers",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_get_payload",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_deploy_sucessful",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_newrelic",
+                "name": "test_deploy_unsucessful",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_get_payload_without_messages",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_get_payload_with_messages",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_start",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_start_without_tag",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_success",
+                "time": 0.168,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_start_without_url",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_success_without_url",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_failure_without_url",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_start_failed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_success_failed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_slack",
+                "name": "test_notify_failure_failed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \ud83d\ude80  Start image=crawlergpt:latest\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/fabfuel-ecs-deploy] user=0 workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \ud83e\uddea  Matrix: map[python-version:2.7]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \u2b50 Run Main actions/checkout@v3\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2705  Success - Main actions/checkout@v3\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \u2b50 Run Main Set up Python 2.7\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/c616258f-fff4-4069-b439-8de64df6c54c/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2753  ::group::Installed versions\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udea7  ::warning::The support for python 2.7 will be removed on June 19. Related issue: https://github.com/actions/setup-python/issues/672\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::Semantic version spec of 2.7 is 2.7\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: \n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? false\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? true\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? true\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? true\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? true\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? true\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::explicit? true\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::matched: 2.7.18\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/2.7.18/x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udcac  ::debug::Found tool in cache Python 2.7.18 x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Successfully set up CPython (2.7.18)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2753  ::endgroup::\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2705  Success - Main Set up Python 2.7\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/2.7.18/x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/2.7.18/x64/lib\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/2.7.18/x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/2.7.18/x64/lib/pkgconfig\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/2.7.18/x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/2.7.18/x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-output:: python-version=2.7.18\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/2.7.18/x64/bin/python\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/2.7.18/x64\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/2.7.18/x64/bin\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \u2b50 Run Main Install dependencies\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already up-to-date: pip in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (20.3.4)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Processing /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/fabfuel-ecs-deploy\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting click<9,>=7.1.2\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting click-log==0.3.2\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading click_log-0.3.2-py2.py3-none-any.whl (4.6 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting botocore>=1.17.47\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading botocore-1.20.112-py2.py3-none-any.whl (7.7 MB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting boto3>=1.14.47\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading boto3-1.17.112-py2.py3-none-any.whl (131 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting future\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading future-0.18.3.tar.gz (840 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting requests<2.30.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting dictdiffer==0.8.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading dictdiffer-0.8.0-py2.py3-none-any.whl (16 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting awscli\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading awscli-1.19.112-py2.py3-none-any.whl (3.6 MB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting jmespath<1.0.0,>=0.7.1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading jmespath-0.10.0-py2.py3-none-any.whl (24 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting python-dateutil<3.0.0,>=2.1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting urllib3<1.27,>=1.25.4\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting s3transfer<0.5.0,>=0.4.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading s3transfer-0.4.2-py2.py3-none-any.whl (79 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting certifi>=2017.4.17\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting chardet<5,>=3.0.2; python_version < \"3\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading chardet-4.0.0-py2.py3-none-any.whl (178 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting idna<3,>=2.5; python_version < \"3\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading idna-2.10-py2.py3-none-any.whl (58 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting rsa<=4.5.0,>=3.1.2; python_version == \"2.7\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading rsa-4.5-py2.py3-none-any.whl (36 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting colorama<0.4.4,>=0.2.5\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading colorama-0.4.3-py2.py3-none-any.whl (15 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting PyYAML<5.5,>=3.10\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl (574 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting docutils<0.16,>=0.10\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading docutils-0.15.2-py2-none-any.whl (548 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting six>=1.5\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting futures<4.0.0,>=2.2.0; python_version == \"2.7\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading futures-3.4.0-py2-none-any.whl (16 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pyasn1>=0.1.3\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pyasn1-0.5.0-py2.py3-none-any.whl (83 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Using legacy 'setup.py install' for ecs-deploy, since package 'wheel' is not installed.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Using legacy 'setup.py install' for future, since package 'wheel' is not installed.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Installing collected packages: click, click-log, jmespath, six, python-dateutil, urllib3, botocore, futures, s3transfer, boto3, future, certifi, chardet, idna, requests, dictdiffer, pyasn1, rsa, colorama, PyYAML, docutils, awscli, ecs-deploy\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for future: started\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for future: finished with status 'done'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for ecs-deploy: started\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for ecs-deploy: finished with status 'done'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Successfully installed PyYAML-5.4.1 awscli-1.19.112 boto3-1.17.112 botocore-1.20.112 certifi-2021.10.8 chardet-4.0.0 click-7.1.2 click-log-0.3.2 colorama-0.4.3 dictdiffer-0.8.0 docutils-0.15.2 ecs-deploy-1.14.1 future-0.18.3 futures-3.4.0 idna-2.10 jmespath-0.10.0 pyasn1-0.5.0 python-dateutil-2.8.2 requests-2.27.1 rsa-4.5 s3transfer-0.4.2 six-1.16.0 urllib3-1.26.16\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pytest\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pytest-4.6.11-py2.py3-none-any.whl (231 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pytest-cov\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pytest_cov-2.12.1-py2.py3-none-any.whl (20 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pytest-mock\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pytest_mock-2.0.0-py2.py3-none-any.whl (10 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting mock\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading mock-3.0.5-py2.py3-none-any.whl (25 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: requests in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from -r requirements-test.txt (line 5)) (2.27.1)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: boto3 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from -r requirements-test.txt (line 6)) (1.17.112)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting freezegun\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading freezegun-0.3.15-py2.py3-none-any.whl (14 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting flake8\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading flake8-3.9.2-py2.py3-none-any.whl (73 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting importlib-metadata>=0.12; python_version < \"3.8\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading importlib_metadata-2.1.3-py2.py3-none-any.whl (10 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pathlib2>=2.2.0; python_version < \"3.6\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pathlib2-2.3.7.post1-py2.py3-none-any.whl (18 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pluggy<1.0,>=0.12\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting packaging\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading packaging-20.9-py2.py3-none-any.whl (40 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting wcwidth\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading wcwidth-0.2.6-py2.py3-none-any.whl (29 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: six>=1.10.0 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from pytest->-r requirements-test.txt (line 1)) (1.16.0)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting funcsigs>=1.0; python_version < \"3.0\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading funcsigs-1.0.2-py2.py3-none-any.whl (17 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting atomicwrites>=1.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading atomicwrites-1.4.1.tar.gz (14 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting attrs>=17.4.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting py>=1.5.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting more-itertools<6.0.0,>=4.0.0; python_version <= \"2.7\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading more_itertools-5.0.0-py2-none-any.whl (52 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting coverage>=5.2.1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading coverage-5.5-cp27-cp27mu-manylinux2010_x86_64.whl (236 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting toml\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: certifi>=2017.4.17 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from requests->-r requirements-test.txt (line 5)) (2021.10.8)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from requests->-r requirements-test.txt (line 5)) (1.26.16)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: chardet<5,>=3.0.2; python_version < \"3\" in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from requests->-r requirements-test.txt (line 5)) (4.0.0)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: idna<3,>=2.5; python_version < \"3\" in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from requests->-r requirements-test.txt (line 5)) (2.10)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: jmespath<1.0.0,>=0.7.1 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from boto3->-r requirements-test.txt (line 6)) (0.10.0)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: s3transfer<0.5.0,>=0.4.0 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from boto3->-r requirements-test.txt (line 6)) (0.4.2)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: botocore<1.21.0,>=1.20.112 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from boto3->-r requirements-test.txt (line 6)) (1.20.112)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: python-dateutil!=2.0,>=1.0 in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from freezegun->-r requirements-test.txt (line 7)) (2.8.2)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting typing; python_version < \"3.5\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading typing-3.10.0.0-py2-none-any.whl (26 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting configparser; python_version < \"3.2\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading configparser-4.0.2-py2.py3-none-any.whl (22 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting functools32; python_version < \"3.2\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading functools32-3.2.3-2.tar.gz (31 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting enum34; python_version < \"3.4\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading enum34-1.1.10-py2-none-any.whl (11 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pyflakes<2.4.0,>=2.3.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pyflakes-2.3.1-py2.py3-none-any.whl (68 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting mccabe<0.7.0,>=0.6.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pycodestyle<2.8.0,>=2.7.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pycodestyle-2.7.0-py2.py3-none-any.whl (41 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting contextlib2; python_version < \"3\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading contextlib2-0.6.0.post1-py2.py3-none-any.whl (9.8 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting zipp>=0.5\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading zipp-1.2.0-py2.py3-none-any.whl (4.8 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting scandir; python_version < \"3.5\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading scandir-1.10.0.tar.gz (33 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting pyparsing>=2.0.2\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Collecting backports.functools-lru-cache>=1.2.1; python_version < \"3.2\"\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |   Downloading backports.functools_lru_cache-1.6.5-py2.py3-none-any.whl (6.0 kB)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Requirement already satisfied: futures<4.0.0,>=2.2.0; python_version == \"2.7\" in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from s3transfer<0.5.0,>=0.4.0->boto3->-r requirements-test.txt (line 6)) (3.4.0)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Using legacy 'setup.py install' for atomicwrites, since package 'wheel' is not installed.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Using legacy 'setup.py install' for functools32, since package 'wheel' is not installed.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Using legacy 'setup.py install' for scandir, since package 'wheel' is not installed.\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Installing collected packages: contextlib2, zipp, configparser, typing, scandir, pathlib2, importlib-metadata, pluggy, pyparsing, packaging, backports.functools-lru-cache, wcwidth, funcsigs, atomicwrites, attrs, py, more-itertools, pytest, coverage, toml, pytest-cov, mock, pytest-mock, freezegun, functools32, enum34, pyflakes, mccabe, pycodestyle, flake8\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for scandir: started\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for scandir: finished with status 'done'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for atomicwrites: started\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for atomicwrites: finished with status 'done'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for functools32: started\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   |     Running setup.py install for functools32: finished with status 'done'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | Successfully installed atomicwrites-1.4.1 attrs-21.4.0 backports.functools-lru-cache-1.6.5 configparser-4.0.2 contextlib2-0.6.0.post1 coverage-5.5 enum34-1.1.10 flake8-3.9.2 freezegun-0.3.15 funcsigs-1.0.2 functools32-3.2.3.post2 importlib-metadata-2.1.3 mccabe-0.6.1 mock-3.0.5 more-itertools-5.0.0 packaging-20.9 pathlib2-2.3.7.post1 pluggy-0.13.1 py-1.11.0 pycodestyle-2.7.0 pyflakes-2.3.1 pyparsing-2.4.7 pytest-4.6.11 pytest-cov-2.12.1 pytest-mock-2.0.0 scandir-1.10.0 toml-0.10.2 typing-3.10.0.0 wcwidth-0.2.6 zipp-1.2.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2705  Success - Main Install dependencies\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \u2b50 Run Main Lint with flake8\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:37:48: E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:37:52: E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:81:5: E303 too many blank lines (2)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:433:25: E131 continuation line unaligned for hanging indent\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:652:17: E741 ambiguous variable name 'l'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:736:5: E301 expected 1 blank line, found 0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:793:17: E741 ambiguous variable name 'l'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:865:32: E201 whitespace after '['\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:900:34: E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:930:24: E201 whitespace after '['\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:965:34: E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:995:30: E201 whitespace after '['\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1029:34: E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1058:29: E201 whitespace after '['\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1093:34: E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1158:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1194:128: E501 line too long (128 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1199:32: F522 '...'.format(...) has unused named argument(s): container\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1199:32: F524 '...'.format(...) is missing argument(s) for placeholder(s): containers_\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/ecs.py:1199:128: E501 line too long (151 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/newrelic.py:40:25: E203 whitespace before ':'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:32:128: E501 line too long (128 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:33:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:34:128: E501 line too long (208 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:36:128: E501 line too long (131 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:37:128: E501 line too long (165 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:40:128: E501 line too long (144 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:41:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:42:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:43:128: E501 line too long (179 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:44:128: E501 line too long (193 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:45:128: E501 line too long (216 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:46:128: E501 line too long (173 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:47:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:48:128: E501 line too long (235 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:49:128: E501 line too long (210 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:50:128: E501 line too long (217 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:51:128: E501 line too long (217 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:52:128: E501 line too long (226 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:55:128: E501 line too long (132 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:56:128: E501 line too long (131 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:63:128: E501 line too long (198 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:64:128: E501 line too long (140 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:65:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:66:128: E501 line too long (166 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:67:128: E501 line too long (162 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:68:128: E501 line too long (196 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:71:128: E501 line too long (128 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:72:128: E501 line too long (134 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:73:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:74:128: E501 line too long (185 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:75:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:76:128: E501 line too long (187 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:77:128: E501 line too long (183 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:78:128: E501 line too long (131 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:79:128: E501 line too long (145 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:80:128: E501 line too long (231 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:81:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:82:128: E501 line too long (193 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:83:128: E501 line too long (179 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:84:128: E501 line too long (178 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:85:128: E501 line too long (147 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:86:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:87:128: E501 line too long (129 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:88:128: E501 line too long (762 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:181:128: E501 line too long (128 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:183:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:185:128: E501 line too long (131 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:186:128: E501 line too long (165 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:189:128: E501 line too long (159 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:190:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:191:128: E501 line too long (216 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:192:128: E501 line too long (173 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:193:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:194:128: E501 line too long (235 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:195:128: E501 line too long (210 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:196:128: E501 line too long (217 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:197:128: E501 line too long (217 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:198:128: E501 line too long (226 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:199:128: E501 line too long (150 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:200:128: E501 line too long (170 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:206:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:207:128: E501 line too long (166 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:208:128: E501 line too long (162 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:209:128: E501 line too long (196 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:216:128: E501 line too long (134 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:217:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:218:128: E501 line too long (185 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:219:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:220:128: E501 line too long (187 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:221:128: E501 line too long (183 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:222:128: E501 line too long (145 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:223:128: E501 line too long (243 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:224:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:225:128: E501 line too long (193 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:226:128: E501 line too long (179 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:227:128: E501 line too long (178 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:228:128: E501 line too long (147 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:229:128: E501 line too long (638 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:299:128: E501 line too long (128 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:301:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:302:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:303:128: E501 line too long (150 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:304:128: E501 line too long (170 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:305:128: E501 line too long (216 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:306:128: E501 line too long (173 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:307:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:309:128: E501 line too long (132 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:317:128: E501 line too long (185 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:318:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:319:128: E501 line too long (187 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:320:128: E501 line too long (183 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:321:128: E501 line too long (134 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:322:128: E501 line too long (303 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:368:128: E501 line too long (182 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:369:128: E501 line too long (140 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:370:128: E501 line too long (131 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:371:128: E501 line too long (154 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:408:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:409:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:410:128: E501 line too long (150 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:411:128: E501 line too long (170 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:412:128: E501 line too long (216 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:413:128: E501 line too long (173 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:414:128: E501 line too long (141 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:415:128: E501 line too long (152 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:416:128: E501 line too long (157 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:417:128: E501 line too long (172 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:418:128: E501 line too long (133 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:419:128: E501 line too long (157 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:426:128: E501 line too long (185 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:427:128: E501 line too long (169 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:428:128: E501 line too long (187 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:429:128: E501 line too long (183 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/cli.py:431:128: E501 line too long (332 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ecs_deploy/slack.py:39:5: C901 'SlackNotification.notify_start' is too complex (11)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:11:1: F401 'tests.test_ecs.TASK_DEFINITION_REVISION_2' imported but unused\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:125:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:202:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:224:5: F841 local variable 'expected_health_check' is assigned to but never used\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:243:5: E303 too many blank lines (2)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:247:1: W293 blank line contains whitespace\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:250:1: E303 too many blank lines (3)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:338:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:341:128: E501 line too long (190 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:348:128: E501 line too long (304 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:354:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:372:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:388:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:391:128: E501 line too long (130 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:410:1: E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:502:128: E501 line too long (142 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:523:128: E501 line too long (137 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:618:128: E501 line too long (131 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:806:128: E501 line too long (146 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:885:1: F811 redefinition of unused 'test_scale_without_credentials' from line 811\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:988:128: E501 line too long (134 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:1291:128: E501 line too long (137 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:1309:128: E501 line too long (132 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:1427:128: E501 line too long (130 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py:1469:128: E501 line too long (130 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_slack.py:164:14: E222 multiple spaces after operator\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_slack.py:184:1: F811 redefinition of unused 'test_notify_success' from line 156\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_slack.py:192:14: E222 multiple spaces after operator\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_slack.py:212:1: F811 redefinition of unused 'test_notify_start_without_url' from line 82\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_slack.py:234:1: E303 too many blank lines (3)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:7:1: F401 'logging' imported but unused\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:11:1: F401 'mock.mock.call' imported but unused\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:576:45: E712 comparison to False should be 'if cond is False:' or 'if not cond:'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:578:45: E712 comparison to True should be 'if cond is True:' or 'if cond:'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:634:5: E741 ambiguous variable name 'l'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:637:12: E741 ambiguous variable name 'l'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:751:128: E501 line too long (135 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py:1302:5: F841 local variable 'runtime_platform' is assigned to but never used\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     C901 'SlackNotification.notify_start' is too complex (11)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     E131 continuation line unaligned for hanging indent\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 4     E201 whitespace after '['\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     E203 whitespace before ':'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 2     E222 multiple spaces after operator\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 6     E231 missing whitespace after ','\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     E301 expected 1 blank line, found 0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 7     E302 expected 2 blank lines, found 1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 4     E303 too many blank lines (2)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 130   E501 line too long (128 > 127 characters)\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 2     E712 comparison to False should be 'if cond is False:' or 'if not cond:'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 4     E741 ambiguous variable name 'l'\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 3     F401 'tests.test_ecs.TASK_DEFINITION_REVISION_2' imported but unused\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     F522 '...'.format(...) has unused named argument(s): container\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     F524 '...'.format(...) is missing argument(s) for placeholder(s): containers_\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 3     F811 redefinition of unused 'test_scale_without_credentials' from line 811\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 2     F841 local variable 'expected_health_check' is assigned to but never used\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 1     W293 blank line contains whitespace\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | 174\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2705  Success - Main Lint with flake8\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \u2b50 Run Main Test with pytest --cov ecs_deploy\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ============================= test session starts ==============================\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | platform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/fabfuel-ecs-deploy, inifile: setup.cfg, testpaths: tests\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | plugins: cov-2.12.1, mock-2.0.0\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | collected 237 items\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | \n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_cli.py ...................................................... [ 22%]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | .............................................                            [ 41%]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_ecs.py ...................................................... [ 64%]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | .................................................................        [ 91%]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_newrelic.py ........                                          [ 95%]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | tests/test_slack.py ...........                                          [100%]\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | \n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/fabfuel-ecs-deploy/report.xml -\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   | ========================== 237 passed in 9.22 seconds ==========================\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2705  Success - Main Test with pytest --cov ecs_deploy\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \u2b50 Run Post Set up Python 2.7\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build]   \u2705  Success - Post Set up Python 2.7\n[7b212f67-7f69-4491-9908-cba5a92ecda3/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/fabfuel-ecs-deploy/.github/workflows/build-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 108.86929702758789
+    }
+}

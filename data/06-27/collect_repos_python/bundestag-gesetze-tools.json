@@ -1,0 +1,27 @@
+{
+    "repository": "bundestag/gesetze-tools",
+    "stars": 103,
+    "language": "python",
+    "size": 26102,
+    "clone_url": "https://github.com/bundestag/gesetze-tools.git",
+    "timestamp": "2023-06-28T10:02:43.730072Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[de0e2877-6424-4cde-baf1-83aebd9d0262/test] \ud83d\ude80  Start image=crawlergpt:latest\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/bundestag-gesetze-tools] user=0 workdir=\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test] \ud83e\uddea  Matrix: map[python-version:3.8]\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test] \u2b50 Run Main actions/checkout@v2\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \u2705  Success - Main actions/checkout@v2\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test] \u2b50 Run Main Install system dependencies\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | Reading package lists...\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | Building dependency tree...\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | Reading state information...\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | libxslt1-dev is already the newest version (1.1.34-4).\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | libxml2-dev is already the newest version (2.9.10+dfsg-5ubuntu0.20.04.1).\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | The following NEW packages will be installed:\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   |   libxml2-utils\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | 0 upgraded, 1 newly installed, 0 to remove and 20 not upgraded.\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | Need to get 37.1 kB of archives.\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | After this operation, 194 kB of additional disk space will be used.\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | Ign:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxml2-utils amd64 2.9.10+dfsg-5ubuntu0.20.04.1\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | Err:1 http://security.ubuntu.com/ubuntu focal-updates/main amd64 libxml2-utils amd64 2.9.10+dfsg-5ubuntu0.20.04.1\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   |   404  Not Found [IP: 185.125.190.39 80]\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.9.10+dfsg-5ubuntu0.20.04.1_amd64.deb  404  Not Found [IP: 185.125.190.39 80]\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   | E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test]   \u274c  Failure - Main Install system dependencies\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test] exitcode '100': failure\n[de0e2877-6424-4cde-baf1-83aebd9d0262/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/bundestag-gesetze-tools/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 37.699694871902466
+    }
+}

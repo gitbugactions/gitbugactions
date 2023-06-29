@@ -1,0 +1,28 @@
+{
+    "repository": "TheLovinator1/discord-twitter-webhooks",
+    "stars": 80,
+    "language": "python",
+    "size": 938,
+    "clone_url": "https://github.com/TheLovinator1/discord-twitter-webhooks.git",
+    "timestamp": "2023-06-28T13:01:50.588501Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[024795bc-e62c-48b3-88bc-07d87bd647e0/build] \ud83d\ude80  Start image=crawlergpt:latest\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TheLovinator1-discord-twitter-webhooks] user=0 workdir=\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2601  git clone 'https://github.com/docker/setup-qemu-action' # ref=v2\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2601  git clone 'https://github.com/docker/setup-buildx-action' # ref=v2\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2601  git clone 'https://github.com/docker/login-action' # ref=v2\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2601  git clone 'https://github.com/docker/build-push-action' # ref=v4\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build] \u2b50 Run Main actions/checkout@v3\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2705  Success - Main actions/checkout@v3\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build] \u2b50 Run Main Set up QEMU\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/c401e7b3-b5b6-4f68-a36c-fbc7c886f4f3/act/docker-setup-qemu-action@v2/ dst=/var/run/act/actions/docker-setup-qemu-action@v2/\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/docker-setup-qemu-action@v2/] user=0 workdir=\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-setup-qemu-action@v2/dist/index.js] user= workdir=\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2753  ::group::Docker info\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \ud83d\udcac  ::debug::Exec.exec: docker version\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   | [command]/usr/bin/docker version\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   | Client:\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  Version:           20.10.8+azure\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  API version:       1.41\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  Go version:        go1.16.7\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  Git commit:        3967b7d28e15a020e4ee344283128ead633b3e0c\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  Built:             Thu Jul 29 13:55:47 2021\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  OS/Arch:           linux/amd64\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  Context:           default\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   |  Experimental:      true\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version\": dial unix /var/run/docker.sock: connect: permission denied\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2753  ::endgroup::\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u2757  ::error::The process '/usr/bin/docker' failed with exit code 1\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build]   \u274c  Failure - Main Set up QEMU\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build] exitcode '1': failure\n[024795bc-e62c-48b3-88bc-07d87bd647e0/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TheLovinator1-discord-twitter-webhooks/.github/workflows/docker-publish-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 277.5866758823395
+    }
+}

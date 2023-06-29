@@ -1,0 +1,28 @@
+{
+    "repository": "pymc-devs/pytensor",
+    "stars": 130,
+    "language": "python",
+    "size": 84530,
+    "clone_url": "https://github.com/pymc-devs/pytensor.git",
+    "timestamp": "2023-06-28T18:34:55.711719Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes] \ud83d\ude80  Start image=crawlergpt:latest\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/pymc-devs-pytensor] user=0 workdir=\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \u2601  git clone 'https://github.com/dorny/paths-filter' # ref=v2\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes] \u2b50 Run Main actions/checkout@v3\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \u2705  Success - Main actions/checkout@v3\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes] \u2b50 Run Main dorny/paths-filter@v2\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker cp src=/tmp/act-cache/ce538a38-62b5-4d2e-9737-cb4a78e6a0bb/act/dorny-paths-filter@v2/ dst=/var/run/act/actions/dorny-paths-filter@v2/\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/dorny-paths-filter@v2/] user=0 workdir=\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/dorny-paths-filter@v2/dist/index.js] user= workdir=\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \u2753  ::group::Get current git ref\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   | [command]/usr/bin/git branch --show-current\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   | main\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \u2753  ::endgroup::\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \u2757  ::error::This action requires 'base' input to be configured or 'repository.default_branch' to be set in the event payload\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes]   \u274c  Failure - Main dorny/paths-filter@v2\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes] exitcode '1': failure\n[a8a4c166-163b-462b-975c-2c7f43e33108/Check for changes] \ud83c\udfc1  Job failed\n[a8a4c166-163b-462b-975c-2c7f43e33108/All tests                                                                                                        ] \ud83d\ude80  Start image=crawlergpt:latest\n[a8a4c166-163b-462b-975c-2c7f43e33108/All tests                                                                                                        ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[a8a4c166-163b-462b-975c-2c7f43e33108/All tests                                                                                                        ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a8a4c166-163b-462b-975c-2c7f43e33108/All tests                                                                                                        ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a8a4c166-163b-462b-975c-2c7f43e33108/All tests                                                                                                        ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/pymc-devs-pytensor] user=0 workdir=\n[a8a4c166-163b-462b-975c-2c7f43e33108/All tests                                                                                                        ] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: Job 'Check for changes' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/pymc-devs-pytensor/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 310.1455569267273
+    }
+}

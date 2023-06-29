@@ -1,0 +1,29 @@
+{
+    "repository": "transportkollektiv/cykel",
+    "stars": 80,
+    "language": "python",
+    "size": 300,
+    "clone_url": "https://github.com/transportkollektiv/cykel.git",
+    "timestamp": "2023-06-28T14:13:12.680936Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/transportkollektiv-cykel] user=0 workdir=\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \u2601  git clone 'https://github.com/huaxk/postgis-action' # ref=v1\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests] \u2b50 Run Main actions/checkout@v2\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \u2705  Success - Main actions/checkout@v2\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests] \u2b50 Run Main huaxk/postgis-action@v1\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker build -t act-huaxk-postgis-action-v1-dockeraction:latest /tmp/act-cache/b0be0278-521e-44cc-afc8-82c3559191df/act/huaxk-postgis-action@v1/\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker pull image=act-huaxk-postgis-action-v1-dockeraction:latest platform= username= forcePull=false\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker create image=act-huaxk-postgis-action-v1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \ud83d\udc33  docker run image=act-huaxk-postgis-action-v1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   | See 'docker run --help'.\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests]   \u274c  Failure - Main huaxk/postgis-action@v1\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests] exit with `FAILURE`: 126\n[dd7c849d-25a4-4d29-9017-e9e952bd086f/tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/transportkollektiv-cykel/.github/workflows/tests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 170.73210883140564
+    }
+}

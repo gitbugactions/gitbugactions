@@ -1,0 +1,35 @@
+{
+    "repository": "Getdeck/getdeck",
+    "stars": 80,
+    "language": "python",
+    "size": 1274,
+    "clone_url": "https://github.com/Getdeck/getdeck.git",
+    "timestamp": "2023-06-28T18:01:01.629341Z",
+    "clone_success": true,
+    "number_of_actions": 9,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[c5a2be95-3b13-467a-8950-97a8ffc15912/test] \ud83d\ude80  Start image=crawlergpt:latest\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Getdeck-getdeck] user=0 workdir=\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2601  git clone 'https://github.com/webfactory/ssh-agent' # ref=v0.5.4\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2601  git clone 'https://github.com/snok/install-poetry' # ref=v1\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test] \u2b50 Run Pre Install Poetry\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2705  Success - Pre Install Poetry\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test] \u2b50 Run Main actions/checkout@v2\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2705  Success - Main actions/checkout@v2\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test] \u2b50 Run Main ssh agent\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/d634a188-2dba-4500-aaca-0c0f75a6a520/act/webfactory-ssh-agent@v0.5.4/ dst=/var/run/act/actions/webfactory-ssh-agent@v0.5.4/\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/webfactory-ssh-agent@v0.5.4/] user=0 workdir=\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/webfactory-ssh-agent@v0.5.4/dist/index.js] user= workdir=\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2757  ::error::The ssh-private-key argument is empty. Maybe the secret has not been configured, or you are using a wrong secret name in your workflow file.\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u274c  Failure - Main ssh agent\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test] exitcode '1': failure\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test] \u2b50 Run Post ssh agent\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/webfactory-ssh-agent@v0.5.4/dist/cleanup.js] user= workdir=\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   | Stopping SSH agent\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   | SSH_AGENT_PID not set, cannot kill agent\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   | Command failed: ssh-agent -k\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   | Error stopping the SSH agent, proceeding anyway\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test]   \u2705  Success - Post ssh agent\n[c5a2be95-3b13-467a-8950-97a8ffc15912/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Getdeck-getdeck/.github/workflows/python-test-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 138.55735540390015
+    }
+}

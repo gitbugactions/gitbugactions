@@ -1,0 +1,27 @@
+{
+    "repository": "wookayin/expt",
+    "stars": 59,
+    "language": "python",
+    "size": 11583,
+    "clone_url": "https://github.com/wookayin/expt.git",
+    "timestamp": "2023-06-28T14:45:10.139088Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests] \ud83d\ude80  Start image=crawlergpt:latest\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/wookayin-expt] user=0 workdir=\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \u2601  git clone 'https://github.com/dtolnay/rust-toolchain' # ref=stable\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests] \u2b50 Run Pre Set up Rust Toolchain\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \u2705  Success - Pre Set up Rust Toolchain\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests] \ud83e\uddea  Matrix: map[python-version:3.7]\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests] \u2b50 Run Main Configure SSH on localhost\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Generating public/private ed25519 key pair.\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Created directory '/home/runneradmin/.ssh'.\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Your identification has been saved in /home/runneradmin/.ssh/id_localhost\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Your public key has been saved in /home/runneradmin/.ssh/id_localhost.pub\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | The key fingerprint is:\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | SHA256:nn3luVxcsjMQiJJFPHMC9G0V5g5l7Rny/bhyMU0lbAQ runneradmin@croaker\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | The key's randomart image is:\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | +--[ED25519 256]--+\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |     .o+o   E*.  |\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |       +=o.B. * .|\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |      o o== o= =.|\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |       . . o .+ o|\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |        S   o o+o|\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |       . o   ++=+|\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |        o . . *+o|\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |           ...o= |\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | |             oo  |\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | +----[SHA256]-----+\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Warning: Permanently added '127.0.0.1' (ECDSA) to the list of known hosts.\r\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Permission denied, please try again.\r\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | Permission denied, please try again.\r\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   | runner@127.0.0.1: Permission denied (publickey,password).\r\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests]   \u274c  Failure - Main Configure SSH on localhost\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests] exitcode '255': failure\n[d8e44acd-31b5-481f-a8f3-c4f21b22f0cb/run-tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'run-tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/wookayin-expt/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 44.31424140930176
+    }
+}

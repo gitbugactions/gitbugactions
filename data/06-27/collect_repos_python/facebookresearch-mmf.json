@@ -1,0 +1,29 @@
+{
+    "repository": "facebookresearch/mmf",
+    "stars": 5252,
+    "language": "python",
+    "size": 17920,
+    "clone_url": "https://github.com/facebookresearch/mmf.git",
+    "timestamp": "2023-06-28T12:59:58.089580Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[c1165aea-56d7-462c-a0c4-503113825caa/unittest] \ud83d\ude80  Start image=crawlergpt:latest\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/facebookresearch-mmf] user=0 workdir=\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2601  git clone 'https://github.com/conda-incubator/setup-miniconda' # ref=v2\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] \ud83e\uddea  Matrix: map[platform:ubuntu-latest python-version:3.7]\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] \u2b50 Run Main Checkout branch \ud83d\udece\ufe0f\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2705  Success - Main Checkout branch \ud83d\udece\ufe0f\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] \u2b50 Run Main Setup Conda Environment\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker cp src=/tmp/act-cache/9790de96-f696-4ab2-b34d-99844ad15e8b/act/conda-incubator-setup-miniconda@v2/ dst=/var/run/act/actions/conda-incubator-setup-miniconda@v2/\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/conda-incubator-setup-miniconda@v2/] user=0 workdir=\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/conda-incubator-setup-miniconda@v2/dist/setup/index.js] user= workdir=\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2753  ::group::Gathering Inputs...\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2753  ::endgroup::\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2753  ::group::Creating bootstrap condarc file in /home/runneradmin/.condarc...\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2753  ::endgroup::\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2753  ::group::Ensuring installer...\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   | Can we use bundled Miniconda?\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   | ... will use bundled Miniconda.\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2753  ::endgroup::\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2757  ::error::No installed conda 'base' environment found at !If you are using this action in a self-hosted runner that already provides its own Miniconda installation, please specify its location with a `CONDA` environment variable. If you want us to download and install Miniconda or Miniforge for you, add `miniconda-version: \"latest\"` or `miniforge-version: \"latest\"`, respectively, to the parameters for this action.\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u274c  Failure - Main Setup Conda Environment\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u2699  ::set-env:: INPUT_RUN_POST=true\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] exitcode '1': failure\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] \u2b50 Run Main Upload Test Results\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest]   \u274c  Failure - Main Upload Test Results\n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] The runs.using key must be one of: [docker node12 node16 composite], got \n[c1165aea-56d7-462c-a0c4-503113825caa/unittest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'unittest' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/facebookresearch-mmf/.github/workflows/cpu_test-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 88.80263996124268
+    }
+}

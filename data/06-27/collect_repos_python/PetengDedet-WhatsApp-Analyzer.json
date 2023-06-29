@@ -1,0 +1,98 @@
+{
+    "repository": "PetengDedet/WhatsApp-Analyzer",
+    "stars": 182,
+    "language": "python",
+    "size": 1142,
+    "clone_url": "https://github.com/PetengDedet/WhatsApp-Analyzer.git",
+    "timestamp": "2023-06-28T13:31:25.165657Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test_chatline.TestChatline",
+                "name": "test_extract_emojis",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_chatline.TestChatline",
+                "name": "test_parse_ampm_lowercase",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_chatline.TestChatline",
+                "name": "test_parse_ampm_lowercase_with_dots",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_chatline.TestChatline",
+                "name": "test_parse_ampm_uppercase",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_chatline.TestChatline",
+                "name": "test_parse_ampm_uppercase_with_dots",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": "\n/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/dateutil/parser/_parser.py:1212: UnknownTimezoneWarning: tzname M identified but not understood.  Pass `tzinfos` argument in order to correctly return a timezone-aware datetime.  In a future version, this will raise an exception.\n  category=UnknownTimezoneWarning)\n\t\t"
+            }
+        ],
+        "stdout": "[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \ud83d\ude80  Start image=crawlergpt:latest\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/PetengDedet-WhatsApp-Analyzer] user=0 workdir=\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \u2b50 Run Main actions/checkout@v2\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2705  Success - Main actions/checkout@v2\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \u2b50 Run Main Set up Python 3.6\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/35c90d7b-3274-4239-acf9-53bd095d1e6a/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: \n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? false\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? true\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? true\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? true\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? true\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? true\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::explicit? true\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Successfully setup CPython (3.6.14)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2705  Success - Main Set up Python 3.6\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.6.14/x64/lib\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2699  ::set-output:: python-version=3.6.14\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \u2b50 Run Main Install dependencies\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Collecting pip\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Installing collected packages: pip\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Attempting uninstall: pip\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |     Found existing installation: pip 21.2.4\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |     Uninstalling pip-21.2.4:\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |       Successfully uninstalled pip-21.2.4\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Successfully installed pip-21.3.1\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Collecting python-dateutil\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Collecting emoji>=1.7.0\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Downloading emoji-2.6.0.tar.gz (356 kB)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Preparing metadata (setup.py): started\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Preparing metadata (setup.py): finished with status 'done'\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Collecting six>=1.5\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Using legacy 'setup.py install' for emoji, since package 'wheel' is not installed.\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Installing collected packages: six, python-dateutil, emoji\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |     Running setup.py install for emoji: started\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |     Running setup.py install for emoji: finished with status 'done'\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Successfully installed emoji-2.6.0 python-dateutil-2.8.2 six-1.16.0\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2705  Success - Main Install dependencies\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \u2b50 Run Main Run tests\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Collecting unittest-xml-reporting\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Downloading unittest_xml_reporting-3.1.0-py2.py3-none-any.whl (20 kB)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Collecting lxml\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   Downloading lxml-4.9.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.6 MB)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.1.0\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | \n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Running tests...\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | ----------------------------------------------------------------------\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | ..../opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/dateutil/parser/_parser.py:1212: UnknownTimezoneWarning: tzname M identified but not understood.  Pass `tzinfos` argument in order to correctly return a timezone-aware datetime.  In a future version, this will raise an exception.\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   |   category=UnknownTimezoneWarning)\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | .\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | ----------------------------------------------------------------------\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Ran 5 tests in 0.041s\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | \n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | OK\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | \n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   | Generating XML reports...\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2705  Success - Main Run tests\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \u2b50 Run Post Set up Python 3.6\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build]   \u2705  Success - Post Set up Python 3.6\n[0f6c74ca-d685-4733-a6f5-0c95d2d3f8f9/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/PetengDedet-WhatsApp-Analyzer/.github/workflows/test-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 128.27251362800598
+    }
+}
