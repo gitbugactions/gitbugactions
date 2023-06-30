@@ -58,7 +58,10 @@ class ActTestsRun:
                         'stderr': test.system_err
                     })
             elif k == "workflow":
-                res[k] = self.workflow.path
+                res[k] = {
+                    "path": self.workflow.path,
+                    "type": self.workflow.get_build_tool()
+                }
             else:
                 res[k] = v
 
