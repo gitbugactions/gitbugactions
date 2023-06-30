@@ -17,7 +17,6 @@ act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4(
 docker_client = docker.from_env()
 
 def teardown_module():
-    print("HI")
     if repo_clone is not None:
         delete_repo_clone(repo_clone)
     if export_path is not None:
@@ -26,7 +25,7 @@ def teardown_module():
         shutil.rmtree(act_cache_dir)
 
 
-def test_export():
+def test_export_bug_containers():
     global repo_clone, export_path
 
     with open("test/resources/test_export/dkpro-dkpro-jwktl.json") as f:
@@ -50,7 +49,7 @@ def test_export():
     assert len(os.listdir(os.path.join(repo_export_path, previous_commit_hash))) == 2
 
 
-@pytest.mark.depends(on=['test_export'])
+@pytest.mark.depends(on=['test_export_bug_containers'])
 def test_run_bug():
     with open("test/resources/test_export/dkpro-dkpro-jwktl.json") as f:
         bug = json.loads(f.readlines()[0])
