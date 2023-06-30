@@ -1,4 +1,4 @@
-import os
+import os, shutil
 import time
 import hashlib
 import shutil
