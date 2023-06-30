@@ -1,0 +1,29 @@
+{
+    "repository": "franc6/ics_calendar",
+    "stars": 79,
+    "language": "python",
+    "size": 324,
+    "clone_url": "https://github.com/franc6/ics_calendar.git",
+    "timestamp": "2023-06-28T14:11:44.938225Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test] \ud83d\ude80  Start image=crawlergpt:latest\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/franc6-ics_calendar] user=0 workdir=\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test] \u2b50 Run Main Set timezone\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   | \u001b[0;1;31mSystem has not been booted with systemd as init system (PID 1). Can't operate.\u001b[0m\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   | \u001b[0;1;31mFailed to create bus connection: Host is down\u001b[0m\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test]   \u274c  Failure - Main Set timezone\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test] exitcode '1': failure\n[d7f8b594-a511-43ca-a5d6-14745d5cfd36/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/franc6-ics_calendar/.github/workflows/runtests-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 127.7204098701477
+    }
+}

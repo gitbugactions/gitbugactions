@@ -1,0 +1,29 @@
+{
+    "repository": "ourzora/offchain",
+    "stars": 84,
+    "language": "python",
+    "size": 1157,
+    "clone_url": "https://github.com/ourzora/offchain.git",
+    "timestamp": "2023-06-28T18:24:04.063831Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes] \ud83d\ude80  Start image=crawlergpt:latest\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ourzora-offchain] user=0 workdir=\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \u2601  git clone 'https://github.com/dorny/paths-filter' # ref=v2\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes] \u2b50 Run Main Checkout\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \u2705  Success - Main Checkout\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes] \u2b50 Run Main Get changed files\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker cp src=/tmp/act-cache/8ff0c2b6-feb9-4216-b459-bebc71629f36/act/dorny-paths-filter@v2/ dst=/var/run/act/actions/dorny-paths-filter@v2/\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/dorny-paths-filter@v2/] user=0 workdir=\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/dorny-paths-filter@v2/dist/index.js] user= workdir=\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \u2753  ::group::Get current git ref\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   | [command]/usr/bin/git branch --show-current\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   | main\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \u2753  ::endgroup::\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \u2757  ::error::This action requires 'base' input to be configured or 'repository.default_branch' to be set in the event payload\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes]   \u274c  Failure - Main Get changed files\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes] exitcode '1': failure\n[d691cb4b-f90a-435d-b340-fec7d2c46ed1/changes] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'changes' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ourzora-offchain/.github/workflows/app-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 61.33974862098694
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "lennartkoopmann/nzyme",
+    "stars": 1210,
+    "language": "java",
+    "size": 63107,
+    "clone_url": "https://github.com/lennartkoopmann/nzyme.git",
+    "timestamp": "2023-06-29T12:39:38.782836Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test] \ud83d\ude80  Start image=crawlergpt:latest\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lennartkoopmann-nzyme] user=0 workdir=\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test] \u2b50 Run Main actions/checkout@v2\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \u2705  Success - Main actions/checkout@v2\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test] \u2b50 Run Main Create Database\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   | createdb: error: could not connect to database template1: could not connect to server: Connection refused\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   | \tIs the server running on host \"localhost\" (127.0.0.1) and accepting\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   | \tTCP/IP connections on port 5432?\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test]   \u274c  Failure - Main Create Database\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test] exitcode '1': failure\n[5403f384-a230-4245-a9f6-b7ee9829acea/build_and_test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build_and_test' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lennartkoopmann-nzyme/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 230.07186603546143
+    }
+}

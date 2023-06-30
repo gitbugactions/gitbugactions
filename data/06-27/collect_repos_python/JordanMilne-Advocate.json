@@ -1,0 +1,27 @@
+{
+    "repository": "JordanMilne/Advocate",
+    "stars": 93,
+    "language": "python",
+    "size": 146,
+    "clone_url": "https://github.com/JordanMilne/Advocate.git",
+    "timestamp": "2023-06-28T10:50:53.280509Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \ud83d\ude80  Start image=crawlergpt:latest\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-2] \ud83d\udea7  Skipping unsupported platform -- Try running with `-P =...`\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/JordanMilne-Advocate] user=0 workdir=\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \ud83e\uddea  Matrix: map[os:ubuntu-latest requests_version:2.18.4]\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \u2b50 Run Main actions/checkout@v2\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \u2705  Success - Main actions/checkout@v2\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \u2b50 Run Main Set up Python \n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker cp src=/tmp/act-cache/84df87cf-2398-4f83-b726-cd381ee4f28b/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \u2705  Success - Main Set up Python \n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \u2b50 Run Main Install dependencies\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] Unable to interpolate expression 'format('pip install \"urllib3=={0}\"\npip install \"pytest --junitxml=report.xml=={1}\"\nmkdir build\npip install --src build/ -e git+https://github.com/psf/requests@v{2}#egg=requests -r requirements-test.txt\n', matrix.urllib3_version, matrix.pytest --junitxml=report.xml_version, matrix.requests_version)': Failed to parse: got unexpected character '-' while lexing integer part of number, expecting '0'..'9'\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \u2705  Success - Main Install dependencies\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \u2b50 Run Main Run tests\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   | /var/run/act/workflow/3: line 5: pytest: command not found\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1]   \u274c  Failure - Main Run tests\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[033ecc22-c532-42c1-95e1-e14dfcf5155a/build-1] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/JordanMilne-Advocate/.github/workflows/run_tests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 41.01558232307434
+    }
+}

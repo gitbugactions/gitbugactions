@@ -1,0 +1,27 @@
+{
+    "repository": "usnistgov/fipy",
+    "stars": 414,
+    "language": "python",
+    "size": 61269,
+    "clone_url": "https://github.com/usnistgov/fipy.git",
+    "timestamp": "2023-06-28T10:36:55.074254Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[8b9c9909-10bc-42fc-8462-5c90c947bc59/test] \ud83d\ude80  Start image=crawlergpt:latest\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/usnistgov-fipy] user=0 workdir=\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \u2601  git clone 'https://github.com/cachix/install-nix-action' # ref=v14.1\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test] \u2b50 Run Main actions/checkout@v2.3.4\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \u2705  Success - Main actions/checkout@v2.3.4\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test] \u2b50 Run Main cachix/install-nix-action@v14.1\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/bcad9fd6-a3f2-4647-b133-20cfed7f88a0/act/cachix-install-nix-action@v14.1/ dst=/var/run/act/actions/cachix-install-nix-action@v14.1/\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/cachix-install-nix-action@v14.1/] user=0 workdir=\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/cachix-install-nix-action@v14.1/lib/main.js] user= workdir=\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   | /run/act/actions/cachix-install-nix-action@v14.1/lib/install-nix.sh: line 16: USER: unbound variable\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   | child_process.js:800\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     throw err;\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     ^\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   | \n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   | Error: Command failed: /run/act/actions/cachix-install-nix-action@v14.1/lib/install-nix.sh\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at checkExecSyncError (child_process.js:760:11)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Object.execFileSync (child_process.js:797:15)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Object.<anonymous> (/run/act/actions/cachix-install-nix-action@v14.1/lib/main.js:4:17)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Function.Module._load (internal/modules/cjs/loader.js:778:12)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |     at internal/main/run_main_module.js:17:47 {\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |   status: 1,\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |   signal: null,\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |   output: [ null, null, null ],\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |   pid: 43,\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |   stdout: null,\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   |   stderr: null\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   | }\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test]   \u274c  Failure - Main cachix/install-nix-action@v14.1\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test] exitcode '1': failure\n[8b9c9909-10bc-42fc-8462-5c90c947bc59/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/usnistgov-fipy/.github/workflows/nix-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 45.257365226745605
+    }
+}

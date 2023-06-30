@@ -1,0 +1,183 @@
+{
+    "repository": "trezor/python-shamir-mnemonic",
+    "stars": 147,
+    "language": "python",
+    "size": 93,
+    "clone_url": "https://github.com/trezor/python-shamir-mnemonic.git",
+    "timestamp": "2023-06-28T13:19:08.007331Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test_shamir",
+                "name": "test_basic_sharing_random",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_basic_sharing_fixed",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_passphrase",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_iteration_exponent",
+                "time": 0.114,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_group_sharing",
+                "time": 1.61,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_group_sharing_threshold_1",
+                "time": 0.162,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_all_groups_exist",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_invalid_sharing",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_vectors",
+                "time": 0.127,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_split_ems",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shamir",
+                "name": "test_recover_ems",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \ud83d\ude80  Start image=crawlergpt:latest\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/trezor-python-shamir-mnemonic] user=0 workdir=\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \u2b50 Run Main actions/checkout@v2\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2705  Success - Main actions/checkout@v2\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \u2b50 Run Main Setup python for 3.6\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/80773315-c876-4ada-b4c1-d87be2ce13ea/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: \n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? false\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? true\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? true\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? true\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? true\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? true\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::explicit? true\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::matched: 3.6.14\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Successfully setup CPython (3.6.14)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2705  Success - Main Setup python for 3.6\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.6.14/x64/lib\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2699  ::set-output:: python-version=3.6.14\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \u2b50 Run Main Install dependencies\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Obtaining file:///tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/trezor-python-shamir-mnemonic\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting attrs\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting click<9,>=7\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading click-8.0.4-py3-none-any.whl (97 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting colorama\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading colorama-0.4.5-py2.py3-none-any.whl (16 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting pytest\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting importlib-metadata\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading importlib_metadata-4.8.3-py3-none-any.whl (17 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting typing-extensions>=3.6.4\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting zipp>=0.5\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting py>=1.8.2\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting iniconfig\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting packaging\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting pluggy<2.0,>=0.12\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting tomli>=1.0.0\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading tomli-1.2.3-py3-none-any.whl (12 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Installing collected packages: zipp, typing-extensions, pyparsing, importlib-metadata, tomli, py, pluggy, packaging, iniconfig, colorama, click, attrs, shamir-mnemonic, pytest\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   |   Running setup.py develop for shamir-mnemonic\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | Successfully installed attrs-22.2.0 click-8.0.4 colorama-0.4.5 importlib-metadata-4.8.3 iniconfig-1.1.1 packaging-21.3 pluggy-1.0.0 py-1.11.0 pyparsing-3.1.0 pytest-7.0.1 shamir-mnemonic-0.2.2 tomli-1.2.3 typing-extensions-4.1.1 zipp-3.6.0\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.6.14/x64/bin/python -m pip install --upgrade pip' command.\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2705  Success - Main Install dependencies\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \u2b50 Run Main Run tests for Python-3.6 with ubuntu-latest\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | ============================= test session starts ==============================\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | platform linux -- Python 3.6.14, pytest-7.0.1, pluggy-1.0.0\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/trezor-python-shamir-mnemonic\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | collected 11 items\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | \n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | test_shamir.py ...........                                               [100%]\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | \n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/trezor-python-shamir-mnemonic/report.xml -\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   | ============================== 11 passed in 2.40s ==============================\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2705  Success - Main Run tests for Python-3.6 with ubuntu-latest\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \u2b50 Run Post Setup python for 3.6\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test]   \u2705  Success - Post Setup python for 3.6\n[504782fe-9613-4ef5-ba40-c35e7d2821aa/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/trezor-python-shamir-mnemonic/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 52.67742085456848
+    }
+}

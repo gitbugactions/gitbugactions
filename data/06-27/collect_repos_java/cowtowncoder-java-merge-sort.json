@@ -1,0 +1,126 @@
+{
+    "repository": "cowtowncoder/java-merge-sort",
+    "stars": 83,
+    "language": "java",
+    "size": 539,
+    "clone_url": "https://github.com/cowtowncoder/java-merge-sort.git",
+    "timestamp": "2023-06-29T10:07:54.530772Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "com.fasterxml.sort.TestLongLineSort",
+                "name": "testLongLine",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.fasterxml.sort.TestSorter",
+                "name": "testMergeRoundCalculation",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.fasterxml.sort.TestIterableSorter",
+                "name": "testBasic",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.fasterxml.sort.TestIterableSorter",
+                "name": "testReused",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.fasterxml.sort.impl.TestByteArrayComparator",
+                "name": "testSimple",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.fasterxml.sort.TestJsonSort",
+                "name": "testSimple",
+                "time": 0.264,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.fasterxml.sort.TestLargeSort",
+                "name": "testLargeSort",
+                "time": 0.393,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \ud83d\ude80  Start image=crawlergpt:latest\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/cowtowncoder-java-merge-sort] user=0 workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \ud83e\uddea  Matrix: map[java_version:8 os:ubuntu-latest]\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \u2b50 Run Main actions/checkout@v3\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2705  Success - Main actions/checkout@v3\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \u2b50 Run Main Set up JDK\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/b18a2386-045c-4740-8ac5-f225e2c4f930/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2753  ::group::Installed distributions\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Trying to resolve the latest version from remote\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Resolved latest version as 8.0.372+7\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Trying to download...\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Downloading Java 8.0.372+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz ...\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Destination /tmp/97918c84-1f59-49d3-bfcb-cd2bf05d79f3\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::download complete\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Extracting Java archive...\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Checking tar --version\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/dbf8818a-996b-4e41-b378-dcb70b36df2f -f /tmp/97918c84-1f59-49d3-bfcb-cd2bf05d79f3\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Caching tool Java_Temurin-Hotspot_jdk 8.0.372-7 x64\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::source dir: /tmp/dbf8818a-996b-4e41-b378-dcb70b36df2f/jdk8u372-b07\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::finished caching tool\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Java 8.0.372+7 was downloaded\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Setting Java 8.0.372+7 as the default\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Creating toolchains.xml for JDK version 8 from temurin\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | \n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Java configuration:\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |   Distribution: temurin\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |   Version: 8.0.372+7\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | \n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2753  ::endgroup::\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Creating settings.xml with server-id: github\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Search path '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/cowtowncoder-java-merge-sort'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/cowtowncoder-java-merge-sort/pom.xml\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Found 1 files to hash.\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::primary key is setup-java-Linux-maven-5b19cba6971629c31f02095cc30b0ce34ab0feaeb22152ce49216b54cbc23bf4\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::[\"setup-java-Linux-maven-5b19cba6971629c31f02095cc30b0ce34ab0feaeb22152ce49216b54cbc23bf4\"]\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:35215/_apis/artifactcache/cache?keys=setup-java-Linux-maven-5b19cba6971629c31f02095cc30b0ce34ab0feaeb22152ce49216b54cbc23bf4&version=cf689304ceab961b43dfb969452ae56d000a022b1f5d36fc5110e872a51021d1\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | maven cache is not found\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2705  Success - Main Set up JDK\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::set-output:: distribution=Temurin-Hotspot\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::set-output:: version=8.0.372+7\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::set-output:: cache-hit=false\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64/bin\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \u2b50 Run Main Build\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2705  Success - Main Build\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \u2b50 Run Main Generate code coverage\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2705  Success - Main Generate code coverage\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \u2b50 Run Main Publish code coverage\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/b18a2386-045c-4740-8ac5-f225e2c4f930/act/codecov-codecov-action@v2/ dst=/var/run/act/actions/codecov-codecov-action@v2/\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v2/] user=0 workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v2/dist/index.js] user= workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | ==> linux OS detected\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | https://uploader.codecov.io/latest/linux/codecov.SHA256SUM\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | ==> SHASUM file signed by key id 806bb28aed779869\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | ==> Uploader SHASUM verified (0c9b79119b0d8dbe7aaf460dc3bd7c3094ceda06e5ae32b0d11a8ff56e2cc5c5  codecov)\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | ==> Running version latest\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | ==> Running version v0.6.1\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [command]/run/act/actions/codecov-codecov-action@v2/dist/codecov -n  -Q github-action-2.1.0 -f ./target/site/jacoco/jacoco.xml -F unittests\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [2023-06-29T10:10:25.661Z] ['info'] \n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |      _____          _\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |     / ____|        | |\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |    | |     ___   __| | ___  ___ _____   __\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |    | |    / _ \\ / _` |/ _ \\/ __/ _ \\ \\ / /\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |    | |___| (_) | (_| |  __/ (_| (_) \\ V /\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |     \\_____\\___/ \\__,_|\\___|\\___\\___/ \\_/\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | \n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   |   Codecov report uploader 0.6.1\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [2023-06-29T10:10:25.672Z] ['info'] => Project root located at: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/cowtowncoder-java-merge-sort\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [2023-06-29T10:10:25.675Z] ['info'] -> No token specified or token is empty\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [2023-06-29T10:10:25.693Z] ['info'] Searching for coverage files...\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [2023-06-29T10:10:25.768Z] ['error'] None of the following appear to exist as files: ./target/site/jacoco/jacoco.xml\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [2023-06-29T10:10:25.768Z] ['error'] There was an error running the uploader: Error while cleaning paths. No paths matched existing files!\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2705  Success - Main Publish code coverage\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \u2b50 Run Post Set up JDK\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.m2/repository'\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.m2/repository\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Cache Paths:\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.m2/repository\"]\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Archive Path: /tmp/f36bf86f-56aa-4c5a-9947-e1ba4837fada/cache.tzst\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | [command]/usr/bin/tar --posix --use-compress-program zstdmt -cf cache.tzst --exclude cache.tzst -P -C /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/cowtowncoder-java-merge-sort --files-from manifest.txt\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::File Size: 42864624\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Reserving Cache\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:35215/_apis/artifactcache/caches\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Upload cache\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:35215/_apis/artifactcache/caches/1\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Awaiting all uploads\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 0 with content range: bytes 0-33554431/*\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Uploading chunk of size 9310192 bytes at offset 33554432 with content range: bytes 33554432-42864623/*\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Commiting cache\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Cache Size: ~41 MB (42864624 B)\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:35215/_apis/artifactcache/caches/1\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Cache saved successfully\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   | Cache saved with the key: setup-java-Linux-maven-5b19cba6971629c31f02095cc30b0ce34ab0feaeb22152ce49216b54cbc23bf4\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build]   \u2705  Success - Post Set up JDK\n[241aac9f-c13e-4dd0-80f2-f748979148cf/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/cowtowncoder-java-merge-sort/.github/workflows/main-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 161.7503457069397
+    }
+}

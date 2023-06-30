@@ -1,0 +1,27 @@
+{
+    "repository": "flatironinstitute/sparse_dot",
+    "stars": 55,
+    "language": "python",
+    "size": 207,
+    "clone_url": "https://github.com/flatironinstitute/sparse_dot.git",
+    "timestamp": "2023-06-28T14:43:11.702493Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build] \ud83d\ude80  Start image=crawlergpt:latest\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/flatironinstitute-sparse_dot] user=0 workdir=\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build] \u2b50 Run Main actions/checkout@v2\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \u2705  Success - Main actions/checkout@v2\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build] \u2b50 Run Main Install conda python & MKL\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   | chown: missing operand after \u2018runneradmin\u2019\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   | Try 'chown --help' for more information.\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build]   \u274c  Failure - Main Install conda python & MKL\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build] exitcode '1': failure\n[e9ac2710-4e49-4c7f-bf9a-9369fbf5f9dc/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/flatironinstitute-sparse_dot/.github/workflows/python-package-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 97.17057752609253
+    }
+}

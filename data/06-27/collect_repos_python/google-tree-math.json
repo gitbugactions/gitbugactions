@@ -1,0 +1,27 @@
+{
+    "repository": "google/tree-math",
+    "stars": 146,
+    "language": "python",
+    "size": 30,
+    "clone_url": "https://github.com/google/tree-math.git",
+    "timestamp": "2023-06-28T17:40:58.543951Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[8ee4de30-60dd-4a96-ab63-bef4d4728851/build] \ud83d\ude80  Start image=crawlergpt:latest\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/google-tree-math] user=0 workdir=\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.7.0\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build] \u2b50 Run Main Cancel previous\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/071ac27d-d00e-497d-ac3c-c90c27c32402/act/styfle-cancel-workflow-action@0.7.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.7.0/\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.7.0/] user=0 workdir=\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.7.0/dist/index.js] user= workdir=\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   | {\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   eventName: 'push',\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   sha: '4f9cd0a03da8ee32f726d2e4d7604a014f247cfb',\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   headSha: '4f9cd0a03da8ee32f726d2e4d7604a014f247cfb',\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   branch: 'main',\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   owner: 'google',\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   repo: 'tree-math',\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   |   GITHUB_RUN_ID: '1'\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   | }\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   | Found token: yes\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \u2757  ::error::Not Found\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build]   \u274c  Failure - Main Cancel previous\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/6e0320dfd2a9f407c59578e73b64c7b9f7e1f9e6b0a08c0d964c683bbffae8e0/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[8ee4de30-60dd-4a96-ab63-bef4d4728851/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: context canceled\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/google-tree-math/.github/workflows/ci-build-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 649.495589017868
+    }
+}

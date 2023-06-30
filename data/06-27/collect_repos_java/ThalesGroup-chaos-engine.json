@@ -1,0 +1,28 @@
+{
+    "repository": "ThalesGroup/chaos-engine",
+    "stars": 64,
+    "language": "java",
+    "size": 5590,
+    "clone_url": "https://github.com/ThalesGroup/chaos-engine.git",
+    "timestamp": "2023-06-29T14:06:22.213811Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint] \ud83d\ude80  Start image=hadolint/hadolint:latest-debian\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ] \ud83d\ude80  Start image=crawlergpt:latest\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint]   \ud83d\udc33  docker pull image=hadolint/hadolint:latest-debian platform= username= forcePull=false\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint]   \ud83d\udc33  docker create image=hadolint/hadolint:latest-debian platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint]   \ud83d\udc33  docker run image=hadolint/hadolint:latest-debian platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ThalesGroup-chaos-engine] user=0 workdir=\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint] \u2b50 Run Main actions/checkout@v1\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint]   \u2705  Success - Main actions/checkout@v1\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint] \u2b50 Run Main Hadolint Scan\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/1.sh] user= workdir=\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint]   \u2705  Success - Main Hadolint Scan\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ] \u2b50 Run Main Generate Version\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/hadolint] \ud83c\udfc1  Job succeeded\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \u2705  Success - Main Generate Version\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ] \u2b50 Run Main Upload Version\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ]   \u274c  Failure - Main Upload Version\n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ] The runs.using key must be one of: [docker node12 node16 composite], got \n[01b435d2-c0a7-4651-b2ac-2ba891ecc6d0/version ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'version' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ThalesGroup-chaos-engine/.github/workflows/sanity_ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 67.95832800865173
+    }
+}

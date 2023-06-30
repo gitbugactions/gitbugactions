@@ -1,0 +1,28 @@
+{
+    "repository": "iamgreggarcia/codesherpa",
+    "stars": 51,
+    "language": "python",
+    "size": 18489,
+    "clone_url": "https://github.com/iamgreggarcia/codesherpa.git",
+    "timestamp": "2023-06-28T18:58:40.971602Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build] \ud83d\ude80  Start image=crawlergpt:latest\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iamgreggarcia-codesherpa] user=0 workdir=\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u2601  git clone 'https://github.com/docker/setup-buildx-action' # ref=v1\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u2601  git clone 'https://github.com/docker/build-push-action' # ref=v2\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build] \u2b50 Run Main Checkout code\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u2705  Success - Main Checkout code\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build] \u2b50 Run Main Set up Docker Buildx\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/32eb1891-c89a-42a0-b302-3c61252d1ca3/act/docker-setup-buildx-action@v1/ dst=/var/run/act/actions/docker-setup-buildx-action@v1/\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/docker-setup-buildx-action@v1/] user=0 workdir=\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-setup-buildx-action@v1/dist/index.js] user= workdir=\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udcbe  ::save-state name=isPost::true\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udcbe  ::save-state name=standalone::false\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u2753  ::group::Docker info\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   | [command]/usr/bin/docker version\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   | Client:\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  Version:           20.10.8+azure\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  API version:       1.41\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  Go version:        go1.16.7\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  Git commit:        3967b7d28e15a020e4ee344283128ead633b3e0c\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  Built:             Thu Jul 29 13:55:47 2021\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  OS/Arch:           linux/amd64\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  Context:           default\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   |  Experimental:      true\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version\": dial unix /var/run/docker.sock: connect: permission denied\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u2757  ::error::The process '/usr/bin/docker' failed with exit code 1\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u274c  Failure - Main Set up Docker Buildx\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build] exitcode '1': failure\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build] \u2b50 Run Post Set up Docker Buildx\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-setup-buildx-action@v1/dist/index.js] user= workdir=\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build]   \u2705  Success - Post Set up Docker Buildx\n[1d4c3cf3-727e-49ec-bdbc-a0c06df2825d/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iamgreggarcia-codesherpa/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 285.7343018054962
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "repository": "iTeam-S/Ampalibe",
+    "stars": 76,
+    "language": "python",
+    "size": 6126,
+    "clone_url": "https://github.com/iTeam-S/Ampalibe.git",
+    "timestamp": "2023-06-28T17:47:52.707665Z",
+    "clone_success": true,
+    "number_of_actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build] \ud83d\ude80  Start image=crawlergpt:latest\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iTeam-S-Ampalibe] user=0 workdir=\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build] \u2b50 Run Main actions/checkout@v3\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \u2705  Success - Main actions/checkout@v3\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build] \u2b50 Run Main Install dependencies\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | Collecting pip\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | Installing collected packages: pip\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   WARNING: The scripts pip, pip3, pip3.10 and pip3.8 are installed in '/home/runneradmin/.local/bin' which is not on PATH.\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | Successfully installed pip-23.1.2\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | \n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | Usage:   \n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   /usr/local/bin/python -m pip install [options] <requirement specifier> [package-index-options] ...\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   /usr/local/bin/python -m pip install [options] -r <requirements file> [package-index-options] ...\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   /usr/local/bin/python -m pip install [options] [-e] <vcs project url> ...\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   /usr/local/bin/python -m pip install [options] [-e] <local project path> ...\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   |   /usr/local/bin/python -m pip install [options] <archive url/path> ...\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | \n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   | no such option: --junitxml\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build]   \u274c  Failure - Main Install dependencies\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build] exitcode '2': failure\n[fb6daf0a-2620-498e-8af2-b383a56f8ee6/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/iTeam-S-Ampalibe/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 22.102076053619385
+    }
+}

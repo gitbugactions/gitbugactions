@@ -1,0 +1,31 @@
+{
+    "repository": "Saleor-Multi-Vendor/saleor-multi-vendor",
+    "stars": 109,
+    "language": "python",
+    "size": 108168,
+    "clone_url": "https://github.com/Saleor-Multi-Vendor/saleor-multi-vendor.git",
+    "timestamp": "2023-06-28T15:38:25.744579Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \ud83d\ude80  Start image=python:3.8\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker pull image=python:3.8 platform= username= forcePull=false\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker create image=python:3.8 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker run image=python:3.8 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2601  git clone 'https://github.com/NyanKiyoshi/pytest-django-queries-ci-tools' # ref=v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Pre NyanKiyoshi/pytest-django-queries-ci-tools@v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2705  Success - Pre NyanKiyoshi/pytest-django-queries-ci-tools@v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2601  git clone 'https://github.com/NyanKiyoshi/pytest-django-queries-ci-tools' # ref=v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Pre NyanKiyoshi/pytest-django-queries-ci-tools@v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2705  Success - Pre NyanKiyoshi/pytest-django-queries-ci-tools@v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Main actions/checkout@v2\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2705  Success - Main actions/checkout@v2\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Main Install system dependencies\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/1.sh] user= workdir=\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | Reading package lists...\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | Building dependency tree...\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | Reading state information...\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | libpq-dev is already the newest version (13.11-0+deb11u1).\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u2705  Success - Main Install system dependencies\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Main actions/cache@v2\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/44144670-e38f-40e2-8fea-9dda4087d639/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u274c  Failure - Main actions/cache@v2\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] exitcode '126': failure\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Main actions/upload-artifact@v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u274c  Failure - Main actions/upload-artifact@v1\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] The runs.using key must be one of: [docker node12 node16 composite], got \n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \u2b50 Run Main Run Linters and Checks\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/10.sh] user= workdir=\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   | /var/run/act/workflow/10.sh: 2: pre-commit: not found\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build]   \u274c  Failure - Main Run Linters and Checks\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[96ccd6a2-2fe4-401e-9b28-d98f9eea8c45/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Saleor-Multi-Vendor-saleor-multi-vendor/.github/workflows/pytest-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 277.78844118118286
+    }
+}

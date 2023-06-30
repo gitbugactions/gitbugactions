@@ -1,0 +1,140 @@
+{
+    "repository": "fornwall/jelf",
+    "stars": 120,
+    "language": "java",
+    "size": 506,
+    "clone_url": "https://github.com/fornwall/jelf.git",
+    "timestamp": "2023-06-29T11:22:06.366107Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "net.fornwall.jelf.EndianProblemTest",
+                "name": "testObjectFile()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.BasicTest",
+                "name": "testAndroidArmLibNcurses()",
+                "time": 0.083,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.BasicTest",
+                "name": "testAndroidArmBinTset()",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.BasicTest",
+                "name": "testObjectFile()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.BasicTest",
+                "name": "testLinxAmd64BinDash()",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.ElfGnuHashTableTest",
+                "name": "gnuHash()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.ReadmeTest",
+                "name": "versionInReadmeUpToDate()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.fornwall.jelf.ElfHashTableTest",
+                "name": "elfHash()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \ud83d\ude80  Start image=crawlergpt:latest\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/fornwall-jelf] user=0 workdir=\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \ud83e\uddea  Matrix: map[java:8]\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \u2b50 Run Main actions/checkout@v1\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2705  Success - Main actions/checkout@v1\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \u2b50 Run Main Set up JDK 8\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/a3f6e09e-82fb-4ea8-a31f-2e532f655d96/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Trying to resolve the latest version from remote\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Resolved latest version as 8.0.372+7\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Trying to download...\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Downloading Java 8.0.372+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz ...\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::Destination /tmp/f1b20276-0a0b-4c33-a332-6bc0a049f415\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::download complete\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Extracting Java archive...\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::Checking tar --version\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/5458d986-e0fd-4f2b-a449-c8ea4615894d -f /tmp/f1b20276-0a0b-4c33-a332-6bc0a049f415\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::Caching tool Java_Zulu_jdk 8.0.372-7 x64\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::source dir: /tmp/5458d986-e0fd-4f2b-a449-c8ea4615894d/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udcac  ::debug::finished caching tool\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Java 8.0.372+7 was downloaded\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Setting Java 8.0.372+7 as the default\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Java configuration:\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   |   Distribution: zulu\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   |   Version: 8.0.372+7\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Creating settings.xml with server-id: github\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2705  Success - Main Set up JDK 8\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2699  ::set-output:: distribution=Zulu\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2699  ::set-output:: version=8.0.372+7\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64/bin\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \u2b50 Run Main Build with Gradle\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Downloading https://services.gradle.org/distributions/gradle-7.4.2-bin.zip\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Welcome to Gradle 7.4.2!\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Here are the highlights of this release:\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   |  - Aggregated test and JaCoCo reports\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   |  - Marking additional test source directories as tests in IntelliJ\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   |  - Support for Adoptium JDKs in Java toolchains\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | For more details see https://docs.gradle.org/7.4.2/release-notes.html\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :compileJava\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :processResources NO-SOURCE\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :classes\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :jar\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :javadoc\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :javadocJar\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :sourcesJar\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :assemble\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :compileTestJava\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :processTestResources\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :testClasses\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :test\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test testAndroidArmLibNcurses() [net.fornwall.jelf.BasicTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test testAndroidArmBinTset() [net.fornwall.jelf.BasicTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test testObjectFile() [net.fornwall.jelf.BasicTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test testLinxAmd64BinDash() [net.fornwall.jelf.BasicTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test gnuHash() [net.fornwall.jelf.ElfGnuHashTableTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test elfHash() [net.fornwall.jelf.ElfHashTableTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test testObjectFile() [net.fornwall.jelf.EndianProblemTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | Test versionInReadmeUpToDate() [net.fornwall.jelf.ReadmeTest] result: SUCCESS\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :check\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | > Task :build\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | \n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | BUILD SUCCESSFUL in 23s\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   | 8 actionable tasks: 8 executed\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2705  Success - Main Build with Gradle\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \u2b50 Run Post Set up JDK 8\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build]   \u2705  Success - Post Set up JDK 8\n[a2469fc6-b9eb-4d4e-9bc2-019a0ada9ab7/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/fornwall-jelf/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 57.71205949783325
+    }
+}

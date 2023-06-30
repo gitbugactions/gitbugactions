@@ -1,0 +1,31 @@
+{
+    "repository": "JosXa/tgintegration",
+    "stars": 115,
+    "language": "python",
+    "size": 8790,
+    "clone_url": "https://github.com/JosXa/tgintegration.git",
+    "timestamp": "2023-06-28T12:52:41.085256Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[eb679a46-4840-41ca-8783-a62c949efbb0/build] \ud83d\ude80  Start image=crawlergpt:latest\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/JosXa-tgintegration] user=0 workdir=\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.5.0\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2601  git clone 'https://github.com/Gr1N/setup-poetry' # ref=v3\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2601  git clone 'https://github.com/pre-commit/action' # ref=v2.0.0\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[eb679a46-4840-41ca-8783-a62c949efbb0/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[eb679a46-4840-41ca-8783-a62c949efbb0/build] \u2b50 Run Main Cancel Previous Runs\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/3a7e6fa3-24c9-4014-ab68-82ff82015860/act/styfle-cancel-workflow-action@0.5.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.5.0/\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.5.0/] user=0 workdir=\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.5.0/dist/index.js] user= workdir=\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   | {\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   eventName: 'push',\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   sha: '39dfc82eb5c80bb6845c12edf0c112e2fa7de26f',\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   headSha: '39dfc82eb5c80bb6845c12edf0c112e2fa7de26f',\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   branch: 'master',\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   owner: 'JosXa',\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   repo: 'tgintegration',\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   |   GITHUB_RUN_ID: '1'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   | }\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   | Found token: yes\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2757  ::error::Not Found\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u274c  Failure - Main Cancel Previous Runs\n[eb679a46-4840-41ca-8783-a62c949efbb0/build] exitcode '1': failure\n[eb679a46-4840-41ca-8783-a62c949efbb0/build] \u2b50 Run Main Upload pytest test results\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/3a7e6fa3-24c9-4014-ab68-82ff82015860/act/actions-upload-artifact@v2/ dst=/var/run/act/actions/actions-upload-artifact@v2/\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-upload-artifact@v2/] user=0 workdir=\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-upload-artifact@v2/dist/index.js] user= workdir=\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udcac  ::debug::Search path '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/JosXa-tgintegration/junit/test-results-3.7.xml'\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \ud83d\udea7  ::warning::No files were found with the provided path: junit/test-results-3.7.xml. No artifacts will be uploaded.\n[eb679a46-4840-41ca-8783-a62c949efbb0/build]   \u2705  Success - Main Upload pytest test results\n[eb679a46-4840-41ca-8783-a62c949efbb0/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/JosXa-tgintegration/.github/workflows/build-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 195.8784794807434
+    }
+}

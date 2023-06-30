@@ -1,0 +1,28 @@
+{
+    "repository": "eclipse/jkube",
+    "stars": 516,
+    "language": "java",
+    "size": 23581,
+    "clone_url": "https://github.com/eclipse/jkube.git",
+    "timestamp": "2023-06-29T14:17:48.298650Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications] \ud83d\ude80  Start image=crawlergpt:latest\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/eclipse-jkube] user=0 workdir=\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \u2601  git clone 'https://github.com/step-security/harden-runner' # ref=55d479fb1c5bcad5a4f9099a5d9f37c8857b2845\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications] \u2b50 Run Pre Harden Runner\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker cp src=/tmp/act-cache/f0b05e91-be40-472b-8987-01ca75481b65/act/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/ dst=/var/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/] user=0 workdir=\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js] user= workdir=\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   | Error: Cannot find module 'node:fs'\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   | Require stack:\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   | - /run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at /run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/webpack:/step-security-harden-runner/external \"node:fs\":1:1\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at /run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js:69444:3\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Object.<anonymous> (/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js:69447:12)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications]   \u274c  Failure - Pre Harden Runner\n[8d64faca-7a8a-4fed-aa08-45d3d74697fa/Quickstart Verifications] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: exitcode '1': failure\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/eclipse-jkube/.github/workflows/quickstarts-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 90.38102698326111
+    }
+}

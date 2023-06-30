@@ -1,0 +1,27 @@
+{
+    "repository": "Deep-Symmetry/beat-link",
+    "stars": 152,
+    "language": "java",
+    "size": 2759,
+    "clone_url": "https://github.com/Deep-Symmetry/beat-link.git",
+    "timestamp": "2023-06-29T12:20:07.881908Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar] \ud83d\ude80  Start image=crawlergpt:latest\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Deep-Symmetry-beat-link] user=0 workdir=\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2601  git clone 'https://github.com/shimataro/ssh-key-action' # ref=v2\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2601  git clone 'https://github.com/Xotl/cool-github-releases' # ref=v1\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar] \u2b50 Run Main Check out main branch\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2705  Success - Main Check out main branch\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar] \u2b50 Run Main Install SSH Key\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker cp src=/tmp/act-cache/651871a9-6f35-4295-beb3-236e1e6ba2a8/act/shimataro-ssh-key-action@v2/ dst=/var/run/act/actions/shimataro-ssh-key-action@v2/\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/shimataro-ssh-key-action@v2/] user=0 workdir=\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/shimataro-ssh-key-action@v2/lib/index.js] user= workdir=\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2757  ::error::Error: Input required and not supplied: key\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u274c  Failure - Main Install SSH Key\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar] exitcode '1': failure\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar] \u2b50 Run Post Install SSH Key\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/shimataro-ssh-key-action@v2/lib/index.js] user= workdir=\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u2757  ::error::Error: Input required and not supplied: key\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar]   \u274c  Failure - Post Install SSH Key\n[2784e83c-3824-4815-8aa0-bb6dc77770de/Build library jar] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: Error occurred running finally: exitcode '1': failure (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Deep-Symmetry-beat-link/.github/workflows/jar-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 149.8161461353302
+    }
+}

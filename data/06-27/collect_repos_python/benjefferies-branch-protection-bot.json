@@ -1,0 +1,154 @@
+{
+    "repository": "benjefferies/branch-protection-bot",
+    "stars": 68,
+    "language": "python",
+    "size": 115,
+    "clone_url": "https://github.com/benjefferies/branch-protection-bot.git",
+    "timestamp": "2023-06-28T14:37:22.818718Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_always_disable_force_admins",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_always_disable_force_admins_when_disabled",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_always_enable_force_admins",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_always_enable_force_admins_when_enabled",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_disable_force_admins",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_enable_force_admins",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_enable_force_admins_using_github_repository_environment_variables",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_error_when_no_github_repository_or_owner_and_repo",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_run.TestRun",
+                "name": "test_should_use_owner_repo_over_github_repository",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[f17fb382-33c8-47bd-a9af-bece6049a385/build] \ud83d\ude80  Start image=crawlergpt:latest\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/benjefferies-branch-protection-bot] user=0 workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2601  git clone 'https://github.com/dschep/install-pipenv-action' # ref=v1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2601  git clone 'https://github.com/benjefferies/branch-protection-bot' # ref=master\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2601  git clone 'https://github.com/benjefferies/branch-protection-bot' # ref=master\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2601  git clone 'https://github.com/benjefferies/branch-protection-bot' # ref=master\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main actions/checkout@v1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2705  Success - Main actions/checkout@v1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Set up Python 3.7\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/f6fcaf0c-2ad8-426f-b500-45748bf5aa9a/act/actions-setup-python@v1/ dst=/var/run/act/actions/actions-setup-python@v1/\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v1/] user=0 workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v1/dist/index.js] user= workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: \n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? false\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? true\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? true\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? true\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? true\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? true\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::explicit? true\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Successfully setup CPython (3.7.11)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v1/.github/python.json\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2705  Success - Main Set up Python 3.7\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2699  ::set-output:: python-version=3.7.11\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main dschep/install-pipenv-action@v1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/f6fcaf0c-2ad8-426f-b500-45748bf5aa9a/act/dschep-install-pipenv-action@v1/ dst=/var/run/act/actions/dschep-install-pipenv-action@v1/\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/dschep-install-pipenv-action@v1/] user=0 workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/dschep-install-pipenv-action@v1/lib/main.js] user= workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | [command]sudo pip install pipenv\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting pipenv\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading pipenv-2023.6.26-py3-none-any.whl (2.8 MB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting setuptools>=67.0.0\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading setuptools-68.0.0-py3-none-any.whl (804 kB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting virtualenv-clone>=0.2.5\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Requirement already satisfied: certifi in /usr/lib/python3/dist-packages (from pipenv) (2019.11.28)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting virtualenv>=20.17.1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting distlib<1,>=0.3.6\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting filelock<4,>=3.12\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Collecting platformdirs<4,>=3.5.1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Installing collected packages: setuptools, virtualenv-clone, distlib, filelock, platformdirs, virtualenv, pipenv\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Attempting uninstall: setuptools\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |     Found existing installation: setuptools 45.2.0\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |     Not uninstalling setuptools at /usr/lib/python3/dist-packages, outside environment /usr\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |     Can't uninstall 'setuptools'. No files were found to uninstall.\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Successfully installed distlib-0.3.6 filelock-3.12.2 pipenv-2023.6.26 platformdirs-3.8.0 setuptools-68.0.0 virtualenv-20.23.1 virtualenv-clone-0.5.7\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2705  Success - Main dschep/install-pipenv-action@v1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Install dependencies\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Creating a virtualenv for this project...\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Pipfile: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/benjefferies-branch-protection-bot/Pipfile\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Using /opt/hostedtoolcache/Python/3.7.11/x64/bin/python3.7m (3.7.11) to create virtualenv...\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | created virtual environment CPython3.7.11.final.0-64 in 884ms\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   creator CPython3Posix(dest=/home/runneradmin/.local/share/virtualenvs/benjefferies-branch-protection-bot-CT5afS27, clear=False, no_vcs_ignore=False, global=False)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/runneradmin/.local/share/virtualenv)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |     added seed packages: pip==23.1.2, setuptools==67.8.0, wheel==0.40.0\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | \n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Successfully created virtual environment!\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Virtualenv location: /home/runneradmin/.local/share/virtualenvs/benjefferies-branch-protection-bot-CT5afS27\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Installing dependencies from Pipfile.lock (cdebd1)...\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:running egg_info\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:creating /tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:writing /tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/PKG-INFO\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:writing dependency_links to /tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/dependency_links.txt\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:writing requirements to /tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/requires.txt\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:writing top-level names to /tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/top_level.txt\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:writing manifest file '/tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/SOURCES.txt'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:reading manifest file '/tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/SOURCES.txt'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:reading manifest template 'MANIFEST.in'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | WARNING:root:no previously-included directories found matching '*.pyc'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | WARNING:root:warning: no files found matching '*.png' under directory 'images'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | WARNING:root:no previously-included directories found matching 'docs/_build'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:adding license file 'LICENSE'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:adding license file 'AUTHORS.rst'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | INFO:root:writing manifest file '/tmp/reqlib-srcysngcoe8/github3-py/reqlib-metadata/github3.py.egg-info/SOURCES.txt'\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Installing dependencies from Pipfile.lock (cdebd1)...\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | To activate this project's virtualenv, run pipenv shell.\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Alternatively, run a command inside the virtualenv with pipenv run.\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2705  Success - Main Install dependencies\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Lint with flake8\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | 0\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | ./test_run.py:150:9: E731 do not assign a lambda expression, use a def\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | ./test_run.py:183:28: W292 no newline at end of file\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | ./run.py:52:15: F541 f-string is missing placeholders\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | 1     E731 do not assign a lambda expression, use a def\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | 1     F541 f-string is missing placeholders\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | 1     W292 no newline at end of file\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | 3\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2705  Success - Main Lint with flake8\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Test with pytest\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | ============================= test session starts ==============================\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | platform linux -- Python 3.7.11, pytest-5.4.2, py-1.8.1, pluggy-0.13.1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/benjefferies-branch-protection-bot\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | collected 9 items\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | \n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | test_run.py .........                                                    [100%]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | \n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | =============================== warnings summary ===============================\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | /home/runneradmin/.local/share/virtualenvs/benjefferies-branch-protection-bot-CT5afS27/lib/python3.7/site-packages/_pytest/junitxml.py:417\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   /home/runneradmin/.local/share/virtualenvs/benjefferies-branch-protection-bot-CT5afS27/lib/python3.7/site-packages/_pytest/junitxml.py:417: PytestDeprecationWarning: The 'junit_family' default value will change to 'xunit2' in pytest 6.0.\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |   Add 'junit_family=xunit1' to your pytest.ini file to keep the current format in future versions of pytest and silence this warning.\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   |     _issue_warning_captured(deprecated.JUNIT_XML_DEFAULT_FAMILY, config.hook, 2)\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | \n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | -- Docs: https://docs.pytest.org/en/latest/warnings.html\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/benjefferies-branch-protection-bot/report.xml -\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | ========================= 9 passed, 1 warning in 0.92s =========================\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u2705  Success - Main Test with pytest\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Force disable \"include administrators\" branch protection\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker build -t act-benjefferies-branch-protection-bot-master-dockeraction:latest /tmp/act-cache/f6fcaf0c-2ad8-426f-b500-45748bf5aa9a/act/benjefferies-branch-protection-bot@master/\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker pull image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= username= forcePull=false\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker create image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= entrypoint=[] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker run image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= entrypoint=[] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Getting branch protection settings for benjefferies/branch-protection-bot\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Could not login. Have you provided credentials?\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u274c  Failure - Main Force disable \"include administrators\" branch protection\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] exit with `FAILURE`: 1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Toggle \"include administrators\" branch protection\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker build -t act-benjefferies-branch-protection-bot-master-dockeraction:latest /tmp/act-cache/f6fcaf0c-2ad8-426f-b500-45748bf5aa9a/act/benjefferies-branch-protection-bot@master/\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker pull image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= username= forcePull=false\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker create image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= entrypoint=[] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker run image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= entrypoint=[] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Getting branch protection settings for benjefferies/branch-protection-bot\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Could not login. Have you provided credentials?\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u274c  Failure - Main Toggle \"include administrators\" branch protection\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] exit with `FAILURE`: 1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \u2b50 Run Main Force enable \"include administrators\" branch protection\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker build -t act-benjefferies-branch-protection-bot-master-dockeraction:latest /tmp/act-cache/f6fcaf0c-2ad8-426f-b500-45748bf5aa9a/act/benjefferies-branch-protection-bot@master/\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker pull image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= username= forcePull=false\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker create image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= entrypoint=[] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \ud83d\udc33  docker run image=act-benjefferies-branch-protection-bot-master-dockeraction:latest platform= entrypoint=[] cmd=[]\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Getting branch protection settings for benjefferies/branch-protection-bot\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   | Could not login. Have you provided credentials?\n[f17fb382-33c8-47bd-a9af-bece6049a385/build]   \u274c  Failure - Main Force enable \"include administrators\" branch protection\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] exit with `FAILURE`: 1\n[f17fb382-33c8-47bd-a9af-bece6049a385/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/benjefferies-branch-protection-bot/.github/workflows/python-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 521.0357744693756
+    }
+}

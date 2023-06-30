@@ -1,0 +1,43 @@
+{
+    "repository": "ben-manes/caffeine",
+    "stars": 13824,
+    "language": "java",
+    "size": 105307,
+    "clone_url": "https://github.com/ben-manes/caffeine.git",
+    "timestamp": "2023-06-29T11:31:00.478636Z",
+    "clone_success": true,
+    "number_of_actions": 17,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "gradle",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "gradle",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "gradle",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples] \ud83d\ude80  Start image=crawlergpt:latest\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ben-manes-caffeine] user=0 workdir=\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \u2601  git clone 'https://github.com/step-security/harden-runner' # ref=55d479fb1c5bcad5a4f9099a5d9f37c8857b2845\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples] \u2b50 Run Pre Harden Runner\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker cp src=/tmp/act-cache/f2884c43-a669-4905-8679-585f3d8620e7/act/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/ dst=/var/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/] user=0 workdir=\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js] user= workdir=\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   | Error: Cannot find module 'node:fs'\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   | Require stack:\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   | - /run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at /run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/webpack:/step-security-harden-runner/external \"node:fs\":1:1\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at /run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js:69444:3\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Object.<anonymous> (/run/act/actions/step-security-harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845/dist/pre/index.js:69447:12)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples]   \u274c  Failure - Pre Harden Runner\n[cdccdb82-42f0-4b05-aacd-ef3895df7031/examples] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: exitcode '1': failure\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ben-manes-caffeine/.github/workflows/examples-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 36.844250440597534
+    }
+}

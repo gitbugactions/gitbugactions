@@ -1,0 +1,27 @@
+{
+    "repository": "piomin/spring-boot-logging",
+    "stars": 190,
+    "language": "java",
+    "size": 144,
+    "clone_url": "https://github.com/piomin/spring-boot-logging.git",
+    "timestamp": "2023-06-29T14:04:03.579137Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[81156667-c069-41af-a0bb-98e6a62591bd/build] \ud83d\ude80  Start image=crawlergpt:latest\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/piomin-spring-boot-logging] user=0 workdir=\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[81156667-c069-41af-a0bb-98e6a62591bd/build] \u2b50 Run Main actions/checkout@v3\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \u2705  Success - Main actions/checkout@v3\n[81156667-c069-41af-a0bb-98e6a62591bd/build] \u2b50 Run Main Set up JDK 1.8\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/4e45206c-8eb4-4b03-a987-c70c6cadba6c/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \u2757  ::error::Input required and not supplied: distribution\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \u274c  Failure - Main Set up JDK 1.8\n[81156667-c069-41af-a0bb-98e6a62591bd/build] exitcode '1': failure\n[81156667-c069-41af-a0bb-98e6a62591bd/build] \u2b50 Run Post Set up JDK 1.8\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[81156667-c069-41af-a0bb-98e6a62591bd/build]   \u2705  Success - Post Set up JDK 1.8\n[81156667-c069-41af-a0bb-98e6a62591bd/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/piomin-spring-boot-logging/.github/workflows/maven-publish-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 158.69537925720215
+    }
+}

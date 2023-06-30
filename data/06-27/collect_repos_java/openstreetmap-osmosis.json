@@ -1,0 +1,27 @@
+{
+    "repository": "openstreetmap/osmosis",
+    "stars": 590,
+    "language": "java",
+    "size": 13833,
+    "clone_url": "https://github.com/openstreetmap/osmosis.git",
+    "timestamp": "2023-06-29T10:11:34.945975Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration] \ud83d\ude80  Start image=crawlergpt:latest\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/openstreetmap-osmosis] user=0 workdir=\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration] \u2b50 Run Main Checkout\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \u2705  Success - Main Checkout\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration] \u2b50 Run Main Build\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%22CURRENT_GROUP_ID%22%3A%221013%22%2C%22CURRENT_USER_ID%22%3A%221012%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=openstreetmap.org%2Fosmosis-build-1012&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration]   \u274c  Failure - Main Build\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration] exitcode '1': failure\n[5c8fd4f1-32c3-4d9d-abe3-c22088c0f2f9/Continous-Integration] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Continous-Integration' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/openstreetmap-osmosis/.github/workflows/continuous-integration-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 7.509671926498413
+    }
+}

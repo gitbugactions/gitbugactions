@@ -1,0 +1,31 @@
+{
+    "repository": "openzipkin/zipkin-dependencies",
+    "stars": 171,
+    "language": "java",
+    "size": 1147,
+    "clone_url": "https://github.com/openzipkin/zipkin-dependencies.git",
+    "timestamp": "2023-06-29T12:01:27.510987Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven",
+        "unknown",
+        "maven",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] \ud83d\ude80  Start image=crawlergpt:latest\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/openzipkin-zipkin-dependencies] user=0 workdir=\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] \u2b50 Run Main Checkout Repository\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \u2705  Success - Main Checkout Repository\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] \u2b50 Run Main Cache local Maven repository\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker cp src=/tmp/act-cache/24dc8a58-6e1e-454c-81dd-2169a4721499/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udcac  ::debug::Resolved Keys:\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udcac  ::debug::[\"Linux-maven-bdd3ab395851ca26938ce3701f563c3df3a58184eda73146d1bc536efb289685\",\"Linux-maven-\"]\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udcac  ::debug::Checking zstd --version\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:44381/_apis/artifactcache/cache?keys=Linux-maven-bdd3ab395851ca26938ce3701f563c3df3a58184eda73146d1bc536efb289685%252CLinux-maven-&version=41d1ec4cf4a0f14e35637462cb542fdb4ca2f7d94ec87d84b439a859c4ebe98f\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   | Cache not found for input keys: Linux-maven-bdd3ab395851ca26938ce3701f563c3df3a58184eda73146d1bc536efb289685, Linux-maven-\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \u2705  Success - Main Cache local Maven repository\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] \u2b50 Run Main README.md\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \u2705  Success - Main README.md\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] \u2b50 Run Main docker/README.md\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   | Building image openzipkin/zipkin-dependencies:test\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%22release_from_maven_build%22%3A%22true%22%7D&buildid=b7d56a6eb680da53cbf244c6e470c863a4d1c9af9b72f1aa3d73967322e1cccb&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%22org.opencontainers.image.created%22%3A%222023-06-29%22%2C%22org.opencontainers.image.revision%22%3A%22ed22da6%22%7D&memory=0&memswap=0&networkmode=default&pull=1&remote=client-session&rm=1&session=cz3ps4ytf7bp9tjudw7gdjbek&shmsize=0&t=openzipkin%2Fzipkin-dependencies%3Atest&target=&ulimits=null&version=2\": dial unix /var/run/docker.sock: connect: permission denied\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test]   \u274c  Failure - Main docker/README.md\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] exitcode '1': failure\n[1cfc7730-4e78-4577-b38a-a049df10b299/readme_test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'readme_test' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/openzipkin-zipkin-dependencies/.github/workflows/readme_test-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 214.25665950775146
+    }
+}

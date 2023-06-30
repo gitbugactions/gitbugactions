@@ -1,0 +1,29 @@
+{
+    "repository": "amisadmin/fastapi-amis-admin",
+    "stars": 525,
+    "language": "python",
+    "size": 1878,
+    "clone_url": "https://github.com/amisadmin/fastapi-amis-admin.git",
+    "timestamp": "2023-06-28T17:44:58.646030Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[7e78b89b-6f34-4256-8008-0a0d97b3d583/test] \ud83d\ude80  Start image=crawlergpt:latest\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/amisadmin-fastapi-amis-admin] user=0 workdir=\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \u2601  git clone 'https://github.com/pdm-project/setup-pdm' # ref=v3\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test] \ud83e\uddea  Matrix: map[python-version:3.7]\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test] \u2b50 Run Main actions/checkout@v3\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \u2705  Success - Main actions/checkout@v3\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test] \u2b50 Run Main Set up PDM\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/c3752eec-17f6-479b-a3a6-bc3417f80188/act/pdm-project-setup-pdm@v3/ dst=/var/run/act/actions/pdm-project-setup-pdm@v3/\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/pdm-project-setup-pdm@v3/] user=0 workdir=\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js] user= workdir=\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   | internal/modules/cjs/loader.js:892\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |   throw err;\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |   ^\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   | \n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   | Error: Cannot find module 'node:events'\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   | Require stack:\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   | - /run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Object.<anonymous> (/run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js:72703:27)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Module.load (internal/modules/cjs/loader.js:937:32)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Function.Module._load (internal/modules/cjs/loader.js:778:12)\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |     at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12) {\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |   code: 'MODULE_NOT_FOUND',\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   |   requireStack: [ '/run/act/actions/pdm-project-setup-pdm@v3/dist/setup-pdm.js' ]\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   | }\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test]   \u274c  Failure - Main Set up PDM\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test] exitcode '1': failure\n[7e78b89b-6f34-4256-8008-0a0d97b3d583/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/amisadmin-fastapi-amis-admin/.github/workflows/pytest-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 215.04248142242432
+    }
+}

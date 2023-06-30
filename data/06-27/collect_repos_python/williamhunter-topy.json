@@ -1,0 +1,28 @@
+{
+    "repository": "williamhunter/topy",
+    "stars": 413,
+    "language": "python",
+    "size": 8938,
+    "clone_url": "https://github.com/williamhunter/topy.git",
+    "timestamp": "2023-06-28T11:03:08.880784Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ab146276-34e2-45e4-b1b3-4680be384168/build] \ud83d\ude80  Start image=crawlergpt:latest\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/williamhunter-topy] user=0 workdir=\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \u2601  git clone 'https://github.com/goanpeca/setup-miniconda' # ref=v1.0.2\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \u2601  git clone 'https://github.com/rhysd/github-action-benchmark' # ref=v1\n[ab146276-34e2-45e4-b1b3-4680be384168/build] \ud83e\uddea  Matrix: map[python-version:2.7]\n[ab146276-34e2-45e4-b1b3-4680be384168/build] \u2b50 Run Main Checkout repository\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \u2705  Success - Main Checkout repository\n[ab146276-34e2-45e4-b1b3-4680be384168/build] \u2b50 Run Main Install dependencies\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/3fdd887c-e1fe-4227-a245-ce96afc241da/act/goanpeca-setup-miniconda@v1.0.2/ dst=/var/run/act/actions/goanpeca-setup-miniconda@v1.0.2/\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/goanpeca-setup-miniconda@v1.0.2/] user=0 workdir=\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/goanpeca-setup-miniconda@v1.0.2/dist/index.js] user= workdir=\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   | \n[ab146276-34e2-45e4-b1b3-4680be384168/build]   | # Locating Miniconda...\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   | #######################\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   | \n[ab146276-34e2-45e4-b1b3-4680be384168/build]   | \n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \u2757  ::error::Bundled Miniconda not found!\n[ab146276-34e2-45e4-b1b3-4680be384168/build]   \u274c  Failure - Main Install dependencies\n[ab146276-34e2-45e4-b1b3-4680be384168/build] exitcode '1': failure\n[ab146276-34e2-45e4-b1b3-4680be384168/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/williamhunter-topy/.github/workflows/pytest-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 115.3913049697876
+    }
+}

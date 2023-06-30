@@ -1,0 +1,27 @@
+{
+    "repository": "nickbabcock/bottle-ssl",
+    "stars": 54,
+    "language": "python",
+    "size": 198,
+    "clone_url": "https://github.com/nickbabcock/bottle-ssl.git",
+    "timestamp": "2023-06-28T10:07:25.701029Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ddb4999f-977f-41df-8a48-2a948503d53e/build] \ud83d\ude80  Start image=crawlergpt:latest\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/nickbabcock-bottle-ssl] user=0 workdir=\n[ddb4999f-977f-41df-8a48-2a948503d53e/build] \ud83e\uddea  Matrix: map[python-version:2.7]\n[ddb4999f-977f-41df-8a48-2a948503d53e/build] \u2b50 Run Main actions/checkout@v3\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \u2705  Success - Main actions/checkout@v3\n[ddb4999f-977f-41df-8a48-2a948503d53e/build] \u2b50 Run Main build docker image\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%22PYTHON_VERSION%22%3A%222.7%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=bottle-ssl&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[ddb4999f-977f-41df-8a48-2a948503d53e/build]   \u274c  Failure - Main build docker image\n[ddb4999f-977f-41df-8a48-2a948503d53e/build] exitcode '1': failure\n[ddb4999f-977f-41df-8a48-2a948503d53e/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/nickbabcock-bottle-ssl/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 5.260785102844238
+    }
+}

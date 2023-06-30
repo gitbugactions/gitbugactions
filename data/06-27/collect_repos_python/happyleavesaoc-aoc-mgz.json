@@ -1,0 +1,28 @@
+{
+    "repository": "happyleavesaoc/aoc-mgz",
+    "stars": 161,
+    "language": "python",
+    "size": 15489,
+    "clone_url": "https://github.com/happyleavesaoc/aoc-mgz.git",
+    "timestamp": "2023-06-28T10:47:57.638566Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/happyleavesaoc-aoc-mgz] user=0 workdir=\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests] \u2b50 Run Main actions/checkout@v2\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \u2705  Success - Main actions/checkout@v2\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests] \u2b50 Run Main Install pytest\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   | \n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   | Usage:   \n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   |   pip install [options] <requirement specifier> [package-index-options] ...\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   |   pip install [options] -r <requirements file> [package-index-options] ...\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   |   pip install [options] [-e] <vcs project url> ...\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   |   pip install [options] [-e] <local project path> ...\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   |   pip install [options] <archive url/path> ...\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   | \n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   | no such option: --junitxml\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests]   \u274c  Failure - Main Install pytest\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests] exitcode '2': failure\n[977766c3-ab06-4d05-a268-47cd5ec6f9ad/tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/happyleavesaoc-aoc-mgz/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 15.430152893066406
+    }
+}

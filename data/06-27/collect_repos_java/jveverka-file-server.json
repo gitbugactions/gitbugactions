@@ -1,0 +1,1512 @@
+{
+    "repository": "jveverka/file-server",
+    "stars": 55,
+    "language": "java",
+    "size": 192,
+    "clone_url": "https://github.com/jveverka/file-server.git",
+    "timestamp": "2023-06-29T13:53:40.175836Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[1] sessionId=SessionJoe, path=joe/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[2] sessionId=SessionJoe, path=joe/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[3] sessionId=SessionJoe, path=jane/data.txt, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[4] sessionId=SessionJoe, path=secret.pdf, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[5] sessionId=SessionJane, path=secret.pdf, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[6] sessionId=SessionPublic, path=secret.pdf, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[7] sessionId=SessionJane, path=jane/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[8] sessionId=SessionJane, path=jane/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[9] sessionId=SessionJane, path=jane/nested/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[10] sessionId=SessionJane, path=joe/for-jane/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[11] sessionId=SessionJane, path=joe/for-jane/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[12] sessionId=SessionJane, path=joe/for-public/data.txt, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[13] sessionId=SessionJane, path=joe/data.txt, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[14] sessionId=SessionJoe, path=public/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[15] sessionId=SessionJoe, path=public/readonly, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[16] sessionId=SessionJoe, path=public/readonly/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[17] sessionId=SessionJane, path=public/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[18] sessionId=SessionJane, path=public/readonly, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[19] sessionId=SessionJane, path=public/readonly/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[20] sessionId=SessionPublic, path=public/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[21] sessionId=SessionPublic, path=public/readonly, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[22] sessionId=SessionPublic, path=public/readonly/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[23] sessionId=SessionPublic, path=public/readonly/subdir/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[1] sessionId=SessionJoe, path=joe/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[2] sessionId=SessionJoe, path=joe/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[3] sessionId=SessionJoe, path=jane/data.txt, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[4] sessionId=SessionJoe, path=secret.pdf, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[5] sessionId=SessionJane, path=secret.pdf, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[6] sessionId=SessionPublic, path=secret.pdf, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[7] sessionId=SessionJane, path=jane/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[8] sessionId=SessionJane, path=jane/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[9] sessionId=SessionJane, path=jane/nested/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[10] sessionId=SessionJane, path=joe/for-jane/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[11] sessionId=SessionJane, path=joe/for-jane/data.txt, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[12] sessionId=SessionJane, path=joe/for-public/data.txt, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[13] sessionId=SessionJane, path=joe/data.txt, expectedCanRead=false, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[14] sessionId=SessionJoe, path=public/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[15] sessionId=SessionJoe, path=public/readonly, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[16] sessionId=SessionJoe, path=public/readonly/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[17] sessionId=SessionJane, path=public/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[18] sessionId=SessionJane, path=public/readonly, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[19] sessionId=SessionJane, path=public/readonly/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[20] sessionId=SessionPublic, path=public/data, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[21] sessionId=SessionPublic, path=public/readonly, expectedCanRead=true, expectedCanReadAndWrite=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[22] sessionId=SessionPublic, path=public/readonly/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessServiceTest",
+                "name": "[23] sessionId=SessionPublic, path=public/readonly/subdir/image.jpg, expectedCanRead=true, expectedCanReadAndWrite=false",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileServerITTest",
+                "name": "testStorageInfoNoLogin()",
+                "time": 0.447,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileServerITTest",
+                "name": "testUserLogin()",
+                "time": 0.092,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileServerITTest",
+                "name": "testStorageInfo()",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileServerITTest",
+                "name": "testUserLogout()",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.SecurityServiceTest",
+                "name": "testAdminSession()",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.SecurityServiceTest",
+                "name": "testInvalidSession()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.SecurityServiceTest",
+                "name": "testValidLoginAndSession()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.SecurityServiceTest",
+                "name": "testInvalidLogin()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.SecurityServiceTest",
+                "name": "testAnonymousSession()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.UserManagerServiceTest",
+                "name": "[1] userManagerService=itx.fileserver.services.data.inmemory.UserManagerServiceInmemory@31880efa",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.UserManagerServiceTest",
+                "name": "[2] userManagerService=itx.fileserver.services.data.filesystem.UserManagerServiceFilesystem@7ee2423",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[1] accessTypes=[NONE], actualAccessType=NONE, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[2] accessTypes=[READ], actualAccessType=NONE, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[3] accessTypes=[READ_WRITE], actualAccessType=NONE, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[4] accessTypes=[READ], actualAccessType=READ, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[5] accessTypes=[READ_WRITE, READ], actualAccessType=READ, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[6] accessTypes=[READ_WRITE], actualAccessType=READ, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[7] accessTypes=[NONE, READ_WRITE, READ], actualAccessType=READ, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[8] accessTypes=[READ], actualAccessType=READ_WRITE, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[9] accessTypes=[READ_WRITE, READ], actualAccessType=READ_WRITE, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[10] accessTypes=[NONE, READ_WRITE, READ], actualAccessType=READ_WRITE, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.MostRestrictiveAccessTest",
+                "name": "[11] accessTypes=[READ_WRITE], actualAccessType=READ_WRITE, expectedResult=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@31533eb1",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@8cb7185",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@4dac40b",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@2c54c497",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@b788dc2",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@3ee258",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@4f676900",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@73a49597",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@5eb2972f",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@29699283",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@5d32c1c7",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@a6dffdb",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@40ac0a56",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@25b4754a",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[1] auditService=itx.fileserver.services.data.inmemory.AuditServiceInmemory@6ec3a4c2",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceTest",
+                "name": "[2] auditService=itx.fileserver.services.data.filesystem.AuditServiceFilesystem@bb50de6",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.AuditServiceInMemoryTest",
+                "name": "testInMemotyRolingBuffer()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[1] filename=, wildcardMatcher=, expectedResult=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[2] filename=c.txt, wildcardMatcher=*.txt, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[3] filename=c.txt, wildcardMatcher=*.jpg, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[4] filename=a/b/c.txt, wildcardMatcher=a/b/*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[5] filename=c.txt, wildcardMatcher=c.???, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[6] filename=c.txt, wildcardMatcher=c.????, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[7] filename=a/b/c.txt, wildcardMatcher=a/*/c.txt, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[8] filename=a/b/c.txt, wildcardMatcher=a/*/x.txt, expectedResult=false",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[9] filename=a.txt, wildcardMatcher=*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[10] filename=data/a.txt, wildcardMatcher=*, expectedResult=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[11] filename=home/a.txt, wildcardMatcher=home/*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[12] filename=home/subdir/a.txt, wildcardMatcher=home/*, expectedResult=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[13] filename=home/dir/subdir/a.txt, wildcardMatcher=home/*, expectedResult=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[14] filename=home/dir/subdir/a.txt, wildcardMatcher=home/dir/subdir/a.txt, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[15] filename=joe/data, wildcardMatcher=joe/*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[16] filename=joe/, wildcardMatcher=joe/*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[17] filename=joe/, wildcardMatcher=*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[18] filename=joe/data, wildcardMatcher=*, expectedResult=true",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileUtilsTest",
+                "name": "[19] filename=joe/data/file.txt, wildcardMatcher=*, expectedResult=true",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessManagerServiceTest",
+                "name": "[1] fileAccessManagerService=itx.fileserver.services.data.inmemory.FileAccessManagerServiceInmemory@246f8b8b",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "itx.fileserver.test.FileAccessManagerServiceTest",
+                "name": "[2] fileAccessManagerService=itx.fileserver.services.data.filesystem.FileAccessManagerServiceFilesystem@6d304f9d",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \ud83d\ude80  Start image=crawlergpt:latest\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jveverka-file-server] user=0 workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \u2b50 Run Main actions/checkout@v2\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2705  Success - Main actions/checkout@v2\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \u2b50 Run Main Set up JDK 11\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/d5d43dd1-6b7d-4266-8980-dc32ba6be299/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::isExplicit: \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::explicit? false\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::match not found\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64.tar.gz\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::Downloading /tmp/b6d2767e-4031-4ee6-a022-f48603b47e20\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::download complete\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | [command]/usr/bin/tar --version\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | tar (GNU tar) 1.30\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | This is free software: you are free to change and redistribute it.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | There is NO WARRANTY, to the extent permitted by law.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Written by John Gilmore and Jay Fenlason.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_986772460 -f /tmp/b6d2767e-4031-4ee6-a022-f48603b47e20\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_986772460/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::Caching tool jdk 17.0.7 x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::source dir: /tmp/temp_986772460/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/17.0.7/x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::finished caching tool\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udcac  ::debug::created directory /home/runneradmin/.m2\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | writing /home/runneradmin/.m2/settings.xml\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2705  Success - Main Set up JDK 11\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2699  ::set-env:: JAVA_HOME_17.0.7_x64=/opt/hostedtoolcache/jdk/17.0.7/x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/17.0.7/x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2699  ::set-env:: JAVA_HOME_17_0_7_X64=/opt/hostedtoolcache/jdk/17.0.7/x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2699  ::set-output:: version=17.0.7\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/jdk/17.0.7/x64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2699  ::add-path:: /opt/hostedtoolcache/jdk/17.0.7/x64/bin\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \u2b50 Run Main Check Java version\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | openjdk version \"17.0.7\" 2023-04-18 LTS\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | OpenJDK Runtime Environment Zulu17.42+21-CRaC-CA (build 17.0.7+7-LTS)\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | OpenJDK 64-Bit Server VM Zulu17.42+21-CRaC-CA (build 17.0.7+7-LTS, mixed mode, sharing)\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2705  Success - Main Check Java version\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \u2b50 Run Main Check Gradle version\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Welcome to Gradle 7.2!\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Here are the highlights of this release:\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   |  - Toolchain support for Scala\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   |  - More cache hits when Java source files have platform-specific line endings\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   |  - More resilient remote HTTP build cache behavior\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | For more details see https://docs.gradle.org/7.2/release-notes.html\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | ------------------------------------------------------------\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Gradle 7.2\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | ------------------------------------------------------------\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Build time:   2021-08-17 09:59:03 UTC\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Revision:     a773786b58bb28710e3dc96c4d1a7063628952ad\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Kotlin:       1.5.21\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Groovy:       3.0.8\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Ant:          Apache Ant(TM) version 1.10.9 compiled on September 27 2020\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | JVM:          17.0.7 (Azul Systems, Inc. 17.0.7+7-LTS)\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | OS:           Linux 5.4.0-146-generic amd64\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2705  Success - Main Check Gradle version\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \u2b50 Run Main Run Gradle Build and tests\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :clean UP-TO-DATE\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :compileJava\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :processResources\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :classes\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :bootJarMainClassName\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :bootJar\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :jar\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :assemble\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :compileTestJava\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Note: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jveverka-file-server/src/test/java/itx/fileserver/test/FileServerITTest.java uses or overrides a deprecated API.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Note: Recompile with -Xlint:deprecation for details.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Note: Some input files use unchecked or unsafe operations.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | Note: Recompile with -Xlint:unchecked for details.\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :processTestResources\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :testClasses\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :test\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessManagerServiceTest > fileAccessManagerServiceTest(FileAccessManagerService) > itx.fileserver.test.FileAccessManagerServiceTest.fileAccessManagerServiceTest(FileAccessManagerService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessManagerServiceTest > fileAccessManagerServiceTest(FileAccessManagerService) > itx.fileserver.test.FileAccessManagerServiceTest.fileAccessManagerServiceTest(FileAccessManagerService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileServerITTest > testStorageInfoNoLogin() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileServerITTest > testUserLogin() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileServerITTest > testStorageInfo() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileServerITTest > testUserLogout() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[3] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[4] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[5] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[6] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[7] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[8] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[9] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[10] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | MostRestrictiveAccessTest > accessTest(Set, AccessType, boolean) > itx.fileserver.test.MostRestrictiveAccessTest.accessTest(Set, AccessType, boolean)[11] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | UserManagerServiceTest > userManagerServiceTest(UserManagerService) > itx.fileserver.test.UserManagerServiceTest.userManagerServiceTest(UserManagerService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | UserManagerServiceTest > userManagerServiceTest(UserManagerService) > itx.fileserver.test.UserManagerServiceTest.userManagerServiceTest(UserManagerService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceInMemoryTest > testInMemotyRolingBuffer() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchTimeIntervals(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchTimeIntervals(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchTimeIntervals(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchTimeIntervals(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchAction(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchAction(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchAction(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchAction(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchResourcePatterns(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchResourcePatterns(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchResourcePatterns(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchResourcePatterns(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchMessagePatterns(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchMessagePatterns(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchMessagePatterns(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchMessagePatterns(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchUser(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchUser(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchUser(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchUser(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchCategory(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchCategory(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchCategory(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchCategory(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchMixed(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchMixed(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchMixed(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchMixed(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchAll(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchAll(AuditService)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | AuditServiceTest > testQueryAuditServiceMatchAll(AuditService) > itx.fileserver.test.AuditServiceTest.testQueryAuditServiceMatchAll(AuditService)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[3] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[4] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[5] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[6] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[7] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[8] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[9] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[10] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[11] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[12] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[13] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[14] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[15] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[16] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[17] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[18] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileUtilsTest > testMatcher(String, String, boolean) > itx.fileserver.test.FileUtilsTest.testMatcher(String, String, boolean)[19] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[3] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[4] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[5] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[6] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[7] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[8] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[9] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[10] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[11] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[12] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[13] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[14] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[15] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[16] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[17] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[18] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[19] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[20] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[21] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[22] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testReadAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testReadAccess(SessionId, String, boolean, boolean)[23] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[1] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[2] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[3] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[4] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[5] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[6] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[7] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[8] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[9] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[10] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[11] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[12] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[13] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[14] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[15] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[16] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[17] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[18] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[19] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[20] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[21] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[22] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | FileAccessServiceTest > testWriteAccess(SessionId, String, boolean, boolean) > itx.fileserver.test.FileAccessServiceTest.testWriteAccess(SessionId, String, boolean, boolean)[23] PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | SecurityServiceTest > testAdminSession() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | SecurityServiceTest > testInvalidSession() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | SecurityServiceTest > testValidLoginAndSession() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | SecurityServiceTest > testInvalidLogin() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | SecurityServiceTest > testAnonymousSession() PASSED\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | 2023-06-29 13:55:08.504  INFO 797 --- [ionShutdownHook] itx.fileserver.config.SessionListener    : sessionDestroyed: 46041866F7CEF22CF5B50EA61F7723E6\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | 2023-06-29 13:55:08.504  INFO 797 --- [ionShutdownHook] i.f.s.d.inmemory.AuditServiceInmemory    : storeAudit: 1688046908 ANONYMOUS LOGOUT\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :check\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | > Task :build\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | \n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | BUILD SUCCESSFUL in 37s\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   | 9 actionable tasks: 8 executed, 1 up-to-date\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2705  Success - Main Run Gradle Build and tests\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \u2b50 Run Post Set up JDK 11\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build]   \u2705  Success - Post Set up JDK 11\n[035a5071-d304-4a2c-8ac7-190d770ca89f/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jveverka-file-server/.github/workflows/build-and-test-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 92.09587478637695
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "developersIndia/resources",
+    "stars": 86,
+    "language": "python",
+    "size": 156,
+    "clone_url": "https://github.com/developersIndia/resources.git",
+    "timestamp": "2023-06-28T14:54:35.800623Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build] \ud83d\ude80  Start image=crawlergpt:latest\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/developersIndia-resources] user=0 workdir=\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build] \u2b50 Run Main actions/checkout@v2\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \u2705  Success - Main actions/checkout@v2\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build] \u2b50 Run Main Install dependencies\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | Collecting pip\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | Installing collected packages: pip\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   WARNING: The scripts pip, pip3, pip3.10 and pip3.8 are installed in '/home/runneradmin/.local/bin' which is not on PATH.\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | Successfully installed pip-23.1.2\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | \n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | Usage:   \n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   pip install [options] <requirement specifier> [package-index-options] ...\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   pip install [options] -r <requirements file> [package-index-options] ...\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   pip install [options] [-e] <vcs project url> ...\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   pip install [options] [-e] <local project path> ...\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   |   pip install [options] <archive url/path> ...\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | \n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   | no such option: --junitxml\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build]   \u274c  Failure - Main Install dependencies\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build] exitcode '2': failure\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/5b10086cda49ffb92346dadd14361828d7aeead89e57cf9a0f4575400ea93c4c?force=1&v=1\": context deadline exceeded\n[9ae24dc2-06ec-42e9-bbd1-4072eb006311/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/developersIndia-resources/.github/workflows/validate-schema-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 201.69887566566467
+    }
+}

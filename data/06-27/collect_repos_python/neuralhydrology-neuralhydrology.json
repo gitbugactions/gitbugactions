@@ -1,0 +1,30 @@
+{
+    "repository": "neuralhydrology/neuralhydrology",
+    "stars": 224,
+    "language": "python",
+    "size": 11502,
+    "clone_url": "https://github.com/neuralhydrology/neuralhydrology.git",
+    "timestamp": "2023-06-28T16:05:06.118737Z",
+    "clone_success": true,
+    "number_of_actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown",
+        "unknown",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test] \ud83d\ude80  Start image=crawlergpt:latest\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/neuralhydrology-neuralhydrology] user=0 workdir=\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2601  git clone 'https://github.com/s-weigand/setup-conda' # ref=v1\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test] \u2b50 Run Main actions/checkout@v2\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2705  Success - Main actions/checkout@v2\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test] \u2b50 Run Main Conda setup\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/587be792-8837-4837-ac00-b8706d5fc6ab/act/s-weigand-setup-conda@v1/ dst=/var/run/act/actions/s-weigand-setup-conda@v1/\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/s-weigand-setup-conda@v1/] user=0 workdir=\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/s-weigand-setup-conda@v1/dist/index.js] user= workdir=\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2753  ::group::Getting original pythonLocation\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   | [command]/usr/bin/which python\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   | /usr/local/bin/python\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2753  ::endgroup::\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2753  ::group::Adding conda path to PATH\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   | undefined\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u2757  ::error::The \"path\" argument must be of type string. Received undefined\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test]   \u274c  Failure - Main Conda setup\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test] exitcode '1': failure\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/972f72a629e1567e181f96e73bb2264f93f979a66dd62595b65a1804b2dc3301?force=1&v=1\": context deadline exceeded\n[93b30ede-edcd-4f3d-ad54-ca221430c9bb/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/neuralhydrology-neuralhydrology/.github/workflows/pytest-ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 216.87776160240173
+    }
+}

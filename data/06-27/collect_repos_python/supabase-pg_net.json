@@ -1,0 +1,28 @@
+{
+    "repository": "supabase/pg_net",
+    "stars": 86,
+    "language": "python",
+    "size": 645,
+    "clone_url": "https://github.com/supabase/pg_net.git",
+    "timestamp": "2023-06-28T17:08:49.134204Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[629d3d1a-410b-4435-86ef-279f27c07adf/test] \ud83d\ude80  Start image=crawlergpt:latest\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/supabase-pg_net] user=0 workdir=\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u2601  git clone 'https://github.com/cachix/install-nix-action' # ref=v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \u2b50 Run Pre cachix/install-nix-action@v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u2705  Success - Pre cachix/install-nix-action@v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \ud83e\uddea  Matrix: map[pg-version:12]\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \u2b50 Run Main actions/checkout@v1\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u2705  Success - Main actions/checkout@v1\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \u2b50 Run Main cachix/install-nix-action@v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/3e9c79e5-fc58-4abf-a195-a2d36ce38c6d/act/cachix-install-nix-action@v18/ dst=/var/run/act/actions/cachix-install-nix-action@v18/\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/cachix-install-nix-action@v18/] user=0 workdir=\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \u2b50 Run Main /var/run/act/actions/cachix-install-nix-action@v18/install-nix.sh\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1-composite-0.sh] user= workdir=\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u2753  ::group::Installing Nix\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   | /var/run/act/actions/cachix-install-nix-action@v18/install-nix.sh: line 23: USER: unbound variable\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u274c  Failure - Main /var/run/act/actions/cachix-install-nix-action@v18/install-nix.sh\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] exitcode '1': failure\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u274c  Failure - Main cachix/install-nix-action@v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] exitcode '1': failure\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \u2b50 Run Post cachix/install-nix-action@v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/3e9c79e5-fc58-4abf-a195-a2d36ce38c6d/act/cachix-install-nix-action@v18/ dst=/var/run/act/actions/cachix-install-nix-action@v18/\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/cachix-install-nix-action@v18/] user=0 workdir=\n[629d3d1a-410b-4435-86ef-279f27c07adf/test]   \u2705  Success - Post cachix/install-nix-action@v18\n[629d3d1a-410b-4435-86ef-279f27c07adf/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/supabase-pg_net/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 109.52317190170288
+    }
+}

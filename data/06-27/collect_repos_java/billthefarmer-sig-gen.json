@@ -1,0 +1,28 @@
+{
+    "repository": "billthefarmer/sig-gen",
+    "stars": 86,
+    "language": "java",
+    "size": 1597,
+    "clone_url": "https://github.com/billthefarmer/sig-gen.git",
+    "timestamp": "2023-06-29T10:49:19.424317Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[be3aff00-3cfb-490e-af1b-a797d8411286/build] \ud83d\ude80  Start image=crawlergpt:latest\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/billthefarmer-sig-gen] user=0 workdir=\n[be3aff00-3cfb-490e-af1b-a797d8411286/build] \u2b50 Run Main Checkout\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \u2705  Success - Main Checkout\n[be3aff00-3cfb-490e-af1b-a797d8411286/build] \u2b50 Run Main Build with Gradle\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5-bin.zip\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | Welcome to Gradle 7.5!\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | Here are the highlights of this release:\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   |  - Support for Java 18\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   |  - Support for building with Groovy 4\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   |  - Much more responsive continuous builds\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   |  - Improved diagnostics for dependency resolution\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | For more details see https://docs.gradle.org/7.5/release-notes.html\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | FAILURE: Build failed with an exception.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | * What went wrong:\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | Could not determine the dependencies of task ':compileDebugJavaWithJavac'.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | > Could not determine the dependencies of null.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   |    > SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/billthefarmer-sig-gen/local.properties'.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | * Try:\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | > Run with --stacktrace option to get the stack trace.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | > Run with --info or --debug option to get more log output.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | > Run with --scan to get full insights.\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | * Get more help at https://help.gradle.org\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | \n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   | BUILD FAILED in 25s\n[be3aff00-3cfb-490e-af1b-a797d8411286/build]   \u274c  Failure - Main Build with Gradle\n[be3aff00-3cfb-490e-af1b-a797d8411286/build] exitcode '1': failure\n[be3aff00-3cfb-490e-af1b-a797d8411286/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/billthefarmer-sig-gen/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 37.87006592750549
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "repository": "TyVik/YaDiskClient",
+    "stars": 59,
+    "language": "python",
+    "size": 45,
+    "clone_url": "https://github.com/TyVik/YaDiskClient.git",
+    "timestamp": "2023-06-28T10:25:31.467095Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [
+            {
+                "classname": "test_yaDisk.TestYaDisk",
+                "name": "test_bad_auth",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "\n\t\t",
+                "stderr": "\n\t\t"
+            },
+            {
+                "classname": "test_yaDisk.TestYaDisk",
+                "name": "test_00main",
+                "time": 0.675,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "401. ",
+                        "type": "YaDiskException"
+                    }
+                ],
+                "stdout": "\n\t\t",
+                "stderr": "\n\t\t"
+            },
+            {
+                "classname": "test_yaDisk.TestYaDisk",
+                "name": "test_deprecation",
+                "time": 0.49,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "401. ",
+                        "type": "YaDiskException"
+                    }
+                ],
+                "stdout": "\n\t\t",
+                "stderr": "\n\t\t"
+            },
+            {
+                "classname": "test_yaDisk.TestYaDisk",
+                "name": "test_df",
+                "time": 0.272,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "401. ",
+                        "type": "YaDiskException"
+                    }
+                ],
+                "stdout": "\n\t\t",
+                "stderr": "\n\t\t"
+            },
+            {
+                "classname": "test_yaDisk.TestYaDisk",
+                "name": "test_publish",
+                "time": 0.297,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "401. ",
+                        "type": "YaDiskException"
+                    }
+                ],
+                "stdout": "\n\t\t",
+                "stderr": "\n\t\t"
+            }
+        ],
+        "stdout": "[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \ud83d\ude80  Start image=crawlergpt:latest\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient] user=0 workdir=\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \ud83e\uddea  Matrix: map[python-version:2.7]\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \u2b50 Run Main actions/checkout@v3\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2705  Success - Main actions/checkout@v3\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \u2b50 Run Main Set up Python 2.7\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/826199b9-2992-46e6-9e08-d5eaac3c9d9e/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2753  ::group::Installed versions\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udea7  ::warning::The support for python 2.7 will be removed on June 19. Related issue: https://github.com/actions/setup-python/issues/672\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::Semantic version spec of 2.7 is 2.7\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? false\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? true\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? true\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? true\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? true\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? true\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::explicit? true\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::matched: 2.7.18\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/2.7.18/x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udcac  ::debug::Found tool in cache Python 2.7.18 x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Successfully set up CPython (2.7.18)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2753  ::endgroup::\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2705  Success - Main Set up Python 2.7\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/2.7.18/x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/2.7.18/x64/lib\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/2.7.18/x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/2.7.18/x64/lib/pkgconfig\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/2.7.18/x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/2.7.18/x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-output:: python-version=2.7.18\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/2.7.18/x64/bin/python\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/2.7.18/x64\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/2.7.18/x64/bin\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \u2b50 Run Main Install dependencies\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting requests\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting certifi>=2017.4.17\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting urllib3<1.27,>=1.21.1\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting chardet<5,>=3.0.2; python_version < \"3\"\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading chardet-4.0.0-py2.py3-none-any.whl (178 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting idna<3,>=2.5; python_version < \"3\"\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading idna-2.10-py2.py3-none-any.whl (58 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Installing collected packages: certifi, urllib3, chardet, idna, requests\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Successfully installed certifi-2021.10.8 chardet-4.0.0 idna-2.10 requests-2.27.1 urllib3-1.26.16\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u2705  Success - Main Install dependencies\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \u2b50 Run Main Run tests\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting unittest-xml-reporting\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading unittest_xml_reporting-2.5.2-py2.py3-none-any.whl (19 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Collecting six>=1.4.0\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Installing collected packages: six, unittest-xml-reporting\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Successfully installed six-1.16.0 unittest-xml-reporting-2.5.2\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Running tests...\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ----------------------------------------------------------------------\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | E.EEE\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ======================================================================\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ERROR [0.675s]: test_00main (test_yaDisk.TestYaDisk)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ----------------------------------------------------------------------\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Traceback (most recent call last):\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient/tests/test_yaDisk.py\", line 52, in test_00main\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     mkdir(self.remote_folder)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient/tests/test_yaDisk.py\", line 37, in mkdir\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     self.disk.mkdir(remote_folder)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"YaDiskClient/YaDiskClient.py\", line 141, in mkdir\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     raise YaDiskException(resp.status_code, resp.content)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | YaDiskException: 401. \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ======================================================================\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ERROR [0.490s]: test_deprecation (test_yaDisk.TestYaDisk)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ----------------------------------------------------------------------\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Traceback (most recent call last):\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient/tests/test_yaDisk.py\", line 103, in test_deprecation\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     self.disk.mkdir(self.remote_folder)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"YaDiskClient/YaDiskClient.py\", line 141, in mkdir\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     raise YaDiskException(resp.status_code, resp.content)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | YaDiskException: 401. \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ======================================================================\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ERROR [0.272s]: test_df (test_yaDisk.TestYaDisk)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ----------------------------------------------------------------------\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Traceback (most recent call last):\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient/tests/test_yaDisk.py\", line 78, in test_df\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     result = self.disk.df()\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"YaDiskClient/YaDiskClient.py\", line 129, in df\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     raise YaDiskException(resp.status_code, resp.content)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | YaDiskException: 401. \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ======================================================================\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ERROR [0.297s]: test_publish (test_yaDisk.TestYaDisk)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ----------------------------------------------------------------------\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Traceback (most recent call last):\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient/tests/test_yaDisk.py\", line 86, in test_publish\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     self.disk.mkdir(self.remote_folder)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |   File \"YaDiskClient/YaDiskClient.py\", line 141, in mkdir\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   |     raise YaDiskException(resp.status_code, resp.content)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | YaDiskException: 401. \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | ----------------------------------------------------------------------\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Ran 5 tests in 1.741s\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | FAILED (errors=4)\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | \n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   | Generating XML reports...\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build]   \u274c  Failure - Main Run tests\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] exitcode '1': failure\n[e9b48508-4f3e-4a0b-b0ae-812312dc45dc/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TyVik-YaDiskClient/.github/workflows/test-crawler.yaml",
+        "build_tool": "unittest",
+        "elapsed_time": 82.39519190788269
+    }
+}

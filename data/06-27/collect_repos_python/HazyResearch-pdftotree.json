@@ -1,0 +1,28 @@
+{
+    "repository": "HazyResearch/pdftotree",
+    "stars": 368,
+    "language": "python",
+    "size": 14472,
+    "clone_url": "https://github.com/HazyResearch/pdftotree.git",
+    "timestamp": "2023-06-28T12:30:32.064943Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[1246c6fb-d229-4f31-bc42-8c81995159d2/test] \ud83d\ude80  Start image=crawlergpt:latest\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/HazyResearch-pdftotree] user=0 workdir=\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u2601  git clone 'https://github.com/goanpeca/setup-miniconda' # ref=v1\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test] \u2b50 Run Main actions/checkout@v2\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u2705  Success - Main actions/checkout@v2\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test] \u2b50 Run Main Cache conda\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/07316beb-3dc9-4e1b-91ad-aac05794ef38/act/actions-cache@v1/ dst=/var/run/act/actions/actions-cache@v1/\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v1/] user=0 workdir=\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v1/dist/restore/index.js] user= workdir=\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udcac  ::debug::Cache Path: /home/runneradmin/conda_pkgs_dir\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udcac  ::debug::Resolved Keys:\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udcac  ::debug::[\"Linux-conda-0\"]\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:37271/_apis/artifactcache/cache?keys=Linux-conda-0\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   | Cache not found for input keys: Linux-conda-0.\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u2705  Success - Main Cache conda\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test] \u2b50 Run Main Install miniconda and python version 3.6\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/07316beb-3dc9-4e1b-91ad-aac05794ef38/act/goanpeca-setup-miniconda@v1/ dst=/var/run/act/actions/goanpeca-setup-miniconda@v1/\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/goanpeca-setup-miniconda@v1/] user=0 workdir=\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/goanpeca-setup-miniconda@v1/dist/setup/index.js] user= workdir=\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   | \n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   | # Locating Miniconda...\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   | #######################\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   | \n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   | \n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u2757  ::error::Bundled Miniconda not found!\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test]   \u274c  Failure - Main Install miniconda and python version 3.6\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test] exitcode '1': failure\n[1246c6fb-d229-4f31-bc42-8c81995159d2/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/HazyResearch-pdftotree/.github/workflows/pythontest-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 83.26676654815674
+    }
+}

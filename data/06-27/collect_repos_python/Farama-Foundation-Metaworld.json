@@ -1,0 +1,27 @@
+{
+    "repository": "Farama-Foundation/Metaworld",
+    "stars": 928,
+    "language": "python",
+    "size": 70962,
+    "clone_url": "https://github.com/Farama-Foundation/Metaworld.git",
+    "timestamp": "2023-06-28T14:19:06.294763Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker] \ud83d\ude80  Start image=crawlergpt:latest\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Farama-Foundation-Metaworld] user=0 workdir=\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker] \u2b50 Run Main actions/checkout@v2\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \u2705  Success - Main actions/checkout@v2\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker] \u2b50 Run Main Build the Docker image\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=rlworkgroup%2Fmetaworld-ci&tag=latest\": dial unix /var/run/docker.sock: connect: permission denied\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker]   \u274c  Failure - Main Build the Docker image\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker] exitcode '1': failure\n[406e6bfd-7643-4ec6-a082-7ed13d5da5f2/test-docker] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test-docker' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Farama-Foundation-Metaworld/.github/workflows/metaworld-ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 235.10237193107605
+    }
+}

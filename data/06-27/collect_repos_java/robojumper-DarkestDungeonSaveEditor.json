@@ -1,0 +1,112 @@
+{
+    "repository": "robojumper/DarkestDungeonSaveEditor",
+    "stars": 65,
+    "language": "java",
+    "size": 2782,
+    "clone_url": "https://github.com/robojumper/DarkestDungeonSaveEditor.git",
+    "timestamp": "2023-06-29T13:14:57.365622Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [
+            {
+                "classname": "de.robojumper.ddsavereader.updatechecker.VersionTests",
+                "name": "testVersions",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.robojumper.ddsavereader.file.ConverterTests",
+                "name": "testModLimit",
+                "time": 1.391,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.robojumper.ddsavereader.file.ConverterTests",
+                "name": "testMyProfile",
+                "time": 0.076,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.robojumper.ddsavereader.file.ConverterTests",
+                "name": "testOtherFiles",
+                "time": 1.822,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.robojumper.ddsavereader.file.ConverterTests",
+                "name": "testRedditProfile",
+                "time": 0.241,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.robojumper.ddsavereader.file.ConverterTests",
+                "name": "testSwitchProfile",
+                "time": 0.104,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[38965431-e379-47e7-8003-a781de3b901b/java] \ud83d\ude80  Start image=crawlergpt:latest\n[38965431-e379-47e7-8003-a781de3b901b/rust] \ud83d\ude80  Start image=crawlergpt:latest\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/robojumper-DarkestDungeonSaveEditor] user=0 workdir=\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/robojumper-DarkestDungeonSaveEditor] user=0 workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2601  git clone 'https://github.com/actions-rs/toolchain' # ref=v1\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v1\n[38965431-e379-47e7-8003-a781de3b901b/java] \u2b50 Run Main Checkout\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2705  Success - Main Checkout\n[38965431-e379-47e7-8003-a781de3b901b/java] \u2b50 Run Main Install Java\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker cp src=/tmp/act-cache/2c8d0e99-936b-4cb2-b2f3-eda2ae5b6dd9/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::isExplicit: \n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::explicit? false\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::evaluating 0 versions\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::match not found\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::Downloading /tmp/1ee931f9-1ebc-46c3-96a7-473c4ec5cce0\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::download complete\n[38965431-e379-47e7-8003-a781de3b901b/java]   | [command]/usr/bin/tar --version\n[38965431-e379-47e7-8003-a781de3b901b/java]   | tar (GNU tar) 1.30\n[38965431-e379-47e7-8003-a781de3b901b/java]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[38965431-e379-47e7-8003-a781de3b901b/java]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[38965431-e379-47e7-8003-a781de3b901b/java]   | This is free software: you are free to change and redistribute it.\n[38965431-e379-47e7-8003-a781de3b901b/java]   | There is NO WARRANTY, to the extent permitted by law.\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | Written by John Gilmore and Jay Fenlason.\n[38965431-e379-47e7-8003-a781de3b901b/java]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1991046822 -f /tmp/1ee931f9-1ebc-46c3-96a7-473c4ec5cce0\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_1991046822/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::Caching tool jdk 8.0.372 x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::source dir: /tmp/temp_1991046822/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::finished caching tool\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2753 add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json\n[38965431-e379-47e7-8003-a781de3b901b/java]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udcac  ::debug::created directory /home/runneradmin/.m2\n[38965431-e379-47e7-8003-a781de3b901b/java]   | writing /home/runneradmin/.m2/settings.xml\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2705  Success - Main Install Java\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2699  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2699  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2699  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2699  ::set-output:: version=8.0.372\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2699  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin\n[38965431-e379-47e7-8003-a781de3b901b/java] \u2b50 Run Main Test\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java]   | Downloading https://services.gradle.org/distributions/gradle-7.0-bin.zip\n[38965431-e379-47e7-8003-a781de3b901b/java]   | ...........................................................................................................\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | Welcome to Gradle 7.0!\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | Here are the highlights of this release:\n[38965431-e379-47e7-8003-a781de3b901b/java]   |  - File system watching enabled by default\n[38965431-e379-47e7-8003-a781de3b901b/java]   |  - Support for running with and building Java 16 projects\n[38965431-e379-47e7-8003-a781de3b901b/java]   |  - Native support for Apple Silicon processors\n[38965431-e379-47e7-8003-a781de3b901b/java]   |  - Dependency catalog feature preview\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | For more details see https://docs.gradle.org/7.0/release-notes.html\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2601  git clone 'https://github.com/crazy-max/ghaction-github-pages' # ref=v2\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :generateBuildConfig\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :compileJava\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :processResources\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :classes\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :generateTestBuildConfig SKIPPED\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :compileTestJava\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :processTestResources\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :testClasses\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :test\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | BUILD SUCCESSFUL in 50s\n[38965431-e379-47e7-8003-a781de3b901b/java]   | 6 actionable tasks: 6 executed\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2705  Success - Main Test\n[38965431-e379-47e7-8003-a781de3b901b/java] \u2b50 Run Main Build distribution zip\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :generateBuildConfig UP-TO-DATE\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :compileJava UP-TO-DATE\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :processResources UP-TO-DATE\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :classes UP-TO-DATE\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :fatJar\n[38965431-e379-47e7-8003-a781de3b901b/java]   | > Task :dist\n[38965431-e379-47e7-8003-a781de3b901b/java]   | \n[38965431-e379-47e7-8003-a781de3b901b/java]   | BUILD SUCCESSFUL in 3s\n[38965431-e379-47e7-8003-a781de3b901b/java]   | 5 actionable tasks: 2 executed, 3 up-to-date\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2705  Success - Main Build distribution zip\n[38965431-e379-47e7-8003-a781de3b901b/java] \u2b50 Run Main Upload distribution zip\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u274c  Failure - Main Upload distribution zip\n[38965431-e379-47e7-8003-a781de3b901b/java] The runs.using key must be one of: [docker node12 node16 composite], got \n[38965431-e379-47e7-8003-a781de3b901b/java] \u2b50 Run Post Install Java\n[38965431-e379-47e7-8003-a781de3b901b/java]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java]   \u2705  Success - Post Install Java\n[38965431-e379-47e7-8003-a781de3b901b/rust] \u2b50 Run Main Checkout\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2705  Success - Main Checkout\n[38965431-e379-47e7-8003-a781de3b901b/rust] \u2b50 Run Main Install Rust\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker cp src=/tmp/act-cache/2c8d0e99-936b-4cb2-b2f3-eda2ae5b6dd9/act/actions-rs-toolchain@v1/ dst=/var/run/act/actions/actions-rs-toolchain@v1/\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-rs-toolchain@v1/] user=0 workdir=\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-rs-toolchain@v1/dist/index.js] user= workdir=\n[38965431-e379-47e7-8003-a781de3b901b/java] \ud83c\udfc1  Job failed\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udcac  ::debug::using toolchain from input: nightly-2021-04-25\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udcac  ::debug::Unable to find \"rustup\" executable, installing it now. Reason: Error: Unable to locate executable file: rustup. Please verify either the file path exists or the file can be found within a directory specified by the PATH environment variable. Also check the file mode to verify the file is executable.\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udcac  ::debug::Downloading https://sh.rustup.rs\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udcac  ::debug::Destination /tmp/0fae92e6-8064-4348-bf25-18d16b499d17\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udcac  ::debug::download complete\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udcac  ::debug::Executing chmod 755 on the /tmp/0fae92e6-8064-4348-bf25-18d16b499d17\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/tmp/0fae92e6-8064-4348-bf25-18d16b499d17 --default-toolchain none -y\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: downloading installer\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: profile set to 'default'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: default host triple is x86_64-unknown-linux-gnu\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: skipping toolchain installation\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   | Rust is installed now. Great!\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   | To get started you may need to restart your current shell.\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | This would reload your PATH environment variable to include\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | Cargo's bin directory ($HOME/.cargo/bin).\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   | To configure your current shell, run:\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | source \"$HOME/.cargo/env\"\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustup show\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | Default host: x86_64-unknown-linux-gnu\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | rustup home:  /home/runneradmin/.rustup\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   | no active toolchain\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustup -V\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | rustup 1.26.0 (5af9b9484 2023-04-05)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: This is the version for the rustup toolchain manager, not the rustc compiler.\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | Installed rustup 1.26.0 support profiles\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustup set profile minimal\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: profile set to 'minimal'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustup toolchain install nightly-2021-04-25\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: syncing channel updates for 'nightly-2021-04-25-x86_64-unknown-linux-gnu'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: latest update on 2021-04-25, rust version 1.53.0-nightly (42816d61e 2021-04-24)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: downloading component 'cargo'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: downloading component 'rust-std'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: downloading component 'rustc'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: installing component 'cargo'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: installing component 'rust-std'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: installing component 'rustc'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   |   nightly-2021-04-25-x86_64-unknown-linux-gnu installed - rustc 1.53.0-nightly (42816d61e 2021-04-24)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: default toolchain set to 'nightly-2021-04-25-x86_64-unknown-linux-gnu'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: checking for self-update\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustup override set nightly-2021-04-25\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: using existing install for 'nightly-2021-04-25-x86_64-unknown-linux-gnu'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: override toolchain for '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/robojumper-DarkestDungeonSaveEditor' set to 'nightly-2021-04-25-x86_64-unknown-linux-gnu'\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   |   nightly-2021-04-25-x86_64-unknown-linux-gnu unchanged - rustc 1.53.0-nightly (42816d61e 2021-04-24)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | \n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2753  ::group::Gathering installed versions\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustc -V\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | rustc 1.53.0-nightly (42816d61e 2021-04-24)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2699  ::set-output:: rustc=1.53.0-nightly (42816d61e 2021-04-24)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2699  ::set-output:: rustc_hash=42816d61e\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/cargo -V\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | cargo 1.53.0-nightly (0ed318d18 2021-04-23)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2699  ::set-output:: cargo=1.53.0-nightly (0ed318d18 2021-04-23)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | [command]/home/runneradmin/.cargo/bin/rustup -V\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | rustup 1.26.0 (5af9b9484 2023-04-05)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: This is the version for the rustup toolchain manager, not the rustc compiler.\n[38965431-e379-47e7-8003-a781de3b901b/rust]   | info: The currently active `rustc` version is `rustc 1.53.0-nightly (42816d61e 2021-04-24)`\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2699  ::set-output:: rustup=1.26.0 (5af9b9484 2023-04-05)\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2753  ::endgroup::\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2705  Success - Main Install Rust\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u2699  ::add-path:: /home/runneradmin/.cargo/bin\n[38965431-e379-47e7-8003-a781de3b901b/rust] \u2b50 Run Main Test\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[38965431-e379-47e7-8003-a781de3b901b/rust]   |     Updating crates.io index\n[38965431-e379-47e7-8003-a781de3b901b/rust]   \u274c  Failure - Main Test\n[38965431-e379-47e7-8003-a781de3b901b/rust] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/6aedca35ef9e81f1eddaabbdf82bd9002f0a3f1a7593844645d6747b531d414a/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[38965431-e379-47e7-8003-a781de3b901b/rust] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "Error: context canceled\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/robojumper-DarkestDungeonSaveEditor/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 601.1650648117065
+    }
+}

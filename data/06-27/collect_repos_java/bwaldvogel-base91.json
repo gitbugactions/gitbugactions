@@ -1,0 +1,84 @@
+{
+    "repository": "bwaldvogel/base91",
+    "stars": 60,
+    "language": "java",
+    "size": 91,
+    "clone_url": "https://github.com/bwaldvogel/base91.git",
+    "timestamp": "2023-06-29T10:13:18.484057Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "de.bwaldvogel.base91.Base91Test",
+                "name": "testEncodeDecode",
+                "time": 0.198,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.bwaldvogel.base91.Base91Test",
+                "name": "testRandomEncodeDecode",
+                "time": 0.409,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.bwaldvogel.base91.Base91OutputStreamTest",
+                "name": "testWriteByteArrays",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "de.bwaldvogel.base91.Base91OutputStreamTest",
+                "name": "testWriteSingleBytes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \ud83d\ude80  Start image=crawlergpt:latest\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/bwaldvogel-base91] user=0 workdir=\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \ud83e\uddea  Matrix: map[java:8]\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \u2b50 Run Main actions/checkout@v2\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2705  Success - Main actions/checkout@v2\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \u2b50 Run Main Setup Java\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/4ba1b584-d3d9-4a0c-bc4f-45a396965ae4/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::isExplicit: \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::explicit? false\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::match not found\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::Downloading /tmp/df4dd1e3-55d1-4769-88ae-3c2b7fe36788\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::download complete\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | [command]/usr/bin/tar --version\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | tar (GNU tar) 1.30\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | This is free software: you are free to change and redistribute it.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | There is NO WARRANTY, to the extent permitted by law.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Written by John Gilmore and Jay Fenlason.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1661342390 -f /tmp/df4dd1e3-55d1-4769-88ae-3c2b7fe36788\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_1661342390/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::Caching tool jdk 8.0.372 x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::source dir: /tmp/temp_1661342390/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::finished caching tool\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udcac  ::debug::created directory /home/runneradmin/.m2\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | writing /home/runneradmin/.m2/settings.xml\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2705  Success - Main Setup Java\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2699  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2699  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2699  ::set-output:: version=8.0.372\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2699  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \u2b50 Run Main Build with Gradle\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Downloading https://services.gradle.org/distributions/gradle-6.7.1-all.zip\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | .............10%..............20%..............30%..............40%..............50%..............60%..............70%..............80%..............90%..............100%\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Welcome to Gradle 6.7.1!\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Here are the highlights of this release:\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   |  - File system watching is ready for production use\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   |  - Declare the version of Java your build requires\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   |  - Java 15 support\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | For more details see https://docs.gradle.org/6.7.1/release-notes.html\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :compileJava\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :processResources NO-SOURCE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :classes\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :jar\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :assemble\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :compileTestJava\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :processTestResources NO-SOURCE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :testClasses\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :test\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :check\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :build\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | BUILD SUCCESSFUL in 33s\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | 4 actionable tasks: 4 executed\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2705  Success - Main Build with Gradle\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \u2b50 Run Main Publish coverage\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :compileJava UP-TO-DATE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :processResources NO-SOURCE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :classes UP-TO-DATE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :compileTestJava UP-TO-DATE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :processTestResources NO-SOURCE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :testClasses UP-TO-DATE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :test UP-TO-DATE\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :jacocoTestReport\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | > Task :coverallsno COVERALLS_REPO_TOKEN environmental variable found\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | no available CI service\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | Use '--warning-mode all' to show the individual deprecation warnings.\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | See https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:command_line_warnings\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | \n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | BUILD SUCCESSFUL in 2s\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   | 5 actionable tasks: 2 executed, 3 up-to-date\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2705  Success - Main Publish coverage\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \u2b50 Run Post Setup Java\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build]   \u2705  Success - Post Setup Java\n[6ee62283-ac5f-4150-a6e8-066080339ff5/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/bwaldvogel-base91/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 89.92650532722473
+    }
+}

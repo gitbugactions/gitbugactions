@@ -1,0 +1,140 @@
+{
+    "repository": "skinny85/jilt",
+    "stars": 62,
+    "language": "java",
+    "size": 299,
+    "clone_url": "https://github.com/skinny85/jilt.git",
+    "timestamp": "2023-06-29T12:48:11.183052Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "org.jilt.test.TypeSafeUngroupedTest",
+                "name": "test_type_safe_builder",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.ConstructorTest",
+                "name": "test_builder_on_constructor",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.IgnoreValueTest",
+                "name": "test_ignored_value_builder",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.ClassicTest",
+                "name": "test_classic_builder",
+                "time": 0.067,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.ClassicTest",
+                "name": "classic_builder_has_a_factory_method",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.StaticFactoryTest",
+                "name": "test_builder_on_factory_method",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.TypeSafeUngroupedOptionalsTest",
+                "name": "test_type_safe_builder_with_optional_values",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "org.jilt.test.TypeSafeOptionalsTest",
+                "name": "test_type_safe_builder_with_optional_values",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \ud83d\ude80  Start image=crawlergpt:latest\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt] user=0 workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \ud83e\uddea  Matrix: map[version:8]\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \u2b50 Run Main actions/checkout@v2\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2705  Success - Main actions/checkout@v2\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \u2b50 Run Main Set up JDK version 8\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/45d497d4-772b-4d71-9e48-5ba19b010580/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::isExplicit: \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::explicit? false\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::match not found\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Downloading /tmp/66581f00-eca6-4ff6-832d-46afe9e67ef8\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::download complete\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | [command]/usr/bin/tar --version\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | tar (GNU tar) 1.30\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | This is free software: you are free to change and redistribute it.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | There is NO WARRANTY, to the extent permitted by law.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Written by John Gilmore and Jay Fenlason.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_938110727 -f /tmp/66581f00-eca6-4ff6-832d-46afe9e67ef8\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_938110727/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Caching tool jdk 8.0.372 x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::source dir: /tmp/temp_938110727/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::finished caching tool\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::created directory /home/runneradmin/.m2\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | writing /home/runneradmin/.m2/settings.xml\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2705  Success - Main Set up JDK version 8\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2699  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2699  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2699  ::set-output:: version=8.0.372\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2699  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \u2b50 Run Main Cache Gradle packages\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/45d497d4-772b-4d71-9e48-5ba19b010580/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::[\"Linux-gradle-7481e1511f78fc491d33a15fd3305211cb039a25339a6a7d4161270f949b03ee\",\"Linux-gradle\"]\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34555/_apis/artifactcache/cache?keys=Linux-gradle-7481e1511f78fc491d33a15fd3305211cb039a25339a6a7d4161270f949b03ee%252CLinux-gradle&version=c09c45a3e217e22c4a0d11ca722575f7f378f70b48a778289c5d7a2ac33a328c\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Cache not found for input keys: Linux-gradle-7481e1511f78fc491d33a15fd3305211cb039a25339a6a7d4161270f949b03ee, Linux-gradle\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2705  Success - Main Cache Gradle packages\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \u2b50 Run Main Build and test the project\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Downloading https://services.gradle.org/distributions/gradle-6.9.2-bin.zip\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | ..........10%..........20%..........30%...........40%..........50%..........60%..........70%...........80%..........90%..........100%\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Welcome to Gradle 6.9.2!\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Here are the highlights of this release:\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |  - This is a small backport release.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |  - Java 16 can be used to compile when used with Java toolchains\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |  - Dynamic versions can be used within plugin declarations\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |  - Native support for Apple Silicon processors\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | For more details see https://docs.gradle.org/6.9.2/release-notes.html\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :compileJava\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :processResources\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :classes\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :jar\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :javadoc\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/Builder.java:309: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String buildMethod() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/Builder.java:248: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String className() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/Builder.java:300: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String factoryMethod() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/Builder.java:257: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String packageName() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/Builder.java:273: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String setterPrefix() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/Builder.java:239: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     BuilderStyle style() default BuilderStyle.CLASSIC;\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |                  ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/BuilderInterfaces.java:65: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String innerNames() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/BuilderInterfaces.java:81: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String lastInnerName() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/BuilderInterfaces.java:41: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String outerName() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/src/main/java/org/jilt/BuilderInterfaces.java:50: warning: no @return\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |     String packageName() default \"\";\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   |            ^\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | 10 warnings\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :javadocJar\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :shadowJar\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :sourcesJar\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :signArchives SKIPPED\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :assemble\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :compileTestJava\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :processTestResources NO-SOURCE\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :testClasses\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :test\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :check\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | > Task :build\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Use '--warning-mode all' to show the individual deprecation warnings.\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | See https://docs.gradle.org/6.9.2/userguide/command_line_interface.html#sec:command_line_warnings\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | \n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | BUILD SUCCESSFUL in 28s\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | 9 actionable tasks: 9 executed\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2705  Success - Main Build and test the project\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \u2b50 Run Post Cache Gradle packages\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/save/index.js] user= workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Reserving Cache\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34555/_apis/artifactcache/caches\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Cache ID: 1\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.gradle/caches'\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.gradle/caches\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Cache Paths:\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.gradle/caches\"]\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Archive Path: /tmp/37bb63b0-7507-46ea-a7d6-e0f5e8329d20/cache.tzst\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | [command]/usr/bin/tar --posix --use-compress-program zstd -T0 -cf cache.tzst -P -C /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt --files-from manifest.txt\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::File Size: 18664881\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Upload cache\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34555/_apis/artifactcache/caches/1\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Awaiting all uploads\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Uploading chunk of size 18664881 bytes at offset 0 with content range: bytes 0-18664880/*\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Commiting cache\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | Cache Size: ~18 MB (18664881 B)\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34555/_apis/artifactcache/caches/1\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::commitCache - Attempt 1 of 2 failed with error: Cache service responded with 500\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udcac  ::debug::commitCache - Error is not retryable\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   | [warning]commitCache failed: Cache service responded with 500\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2705  Success - Post Cache Gradle packages\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \u2b50 Run Post Set up JDK version 8\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build]   \u2705  Success - Post Set up JDK version 8\n[e8d58666-aab5-4be6-abd5-57fa2cde0ea2/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "time=\"2023-06-29T14:50:42+02:00\" level=error msg=\"POST /_apis/artifactcache/caches/1: broken file: 18664881 != 0\" module=artifactcache\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/skinny85-jilt/.github/workflows/build-crawler.yaml",
+        "build_tool": "gradle",
+        "elapsed_time": 153.35903215408325
+    }
+}

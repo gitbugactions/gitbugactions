@@ -1,0 +1,30 @@
+{
+    "repository": "joowani/colorpedia",
+    "stars": 284,
+    "language": "python",
+    "size": 1149,
+    "clone_url": "https://github.com/joowani/colorpedia.git",
+    "timestamp": "2023-06-28T16:27:35.067046Z",
+    "clone_success": true,
+    "number_of_actions": 4,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/joowani-colorpedia] user=0 workdir=\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test] \u2b50 Run Main actions/checkout@v2\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \u2705  Success - Main actions/checkout@v2\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test] \u2b50 Run Main Fetch complete history for all tags and branches\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   | fatal: --unshallow on a complete repository does not make sense\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test]   \u274c  Failure - Main Fetch complete history for all tags and branches\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test] exitcode '128': failure\n[fe1ace9d-b5b3-4769-b041-1d0ce26fa3f6/Test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/joowani-colorpedia/.github/workflows/build-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 122.35074734687805
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "ahuarte47/geodataflow",
+    "stars": 53,
+    "language": "python",
+    "size": 3440,
+    "clone_url": "https://github.com/ahuarte47/geodataflow.git",
+    "timestamp": "2023-06-28T18:34:21.087672Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[162bc489-64b3-492a-81b0-1946777dacb7/build] \ud83d\ude80  Start image=ghcr.io/osgeo/gdal:ubuntu-small-3.6.4\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \ud83d\udc33  docker pull image=ghcr.io/osgeo/gdal:ubuntu-small-3.6.4 platform= username= forcePull=false\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \ud83d\udc33  docker create image=ghcr.io/osgeo/gdal:ubuntu-small-3.6.4 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \ud83d\udc33  docker run image=ghcr.io/osgeo/gdal:ubuntu-small-3.6.4 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[162bc489-64b3-492a-81b0-1946777dacb7/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[162bc489-64b3-492a-81b0-1946777dacb7/build] \u2b50 Run Main actions/checkout@v3\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \u2705  Success - Main actions/checkout@v3\n[162bc489-64b3-492a-81b0-1946777dacb7/build] \u2b50 Run Main Set up Python 3.7\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/3f78be5d-d738-4e4a-89df-92a19d522655/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[162bc489-64b3-492a-81b0-1946777dacb7/build]   \u274c  Failure - Main Set up Python 3.7\n[162bc489-64b3-492a-81b0-1946777dacb7/build] exitcode '126': failure\n[162bc489-64b3-492a-81b0-1946777dacb7/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ahuarte47-geodataflow/.github/workflows/python-package-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 104.2004292011261
+    }
+}

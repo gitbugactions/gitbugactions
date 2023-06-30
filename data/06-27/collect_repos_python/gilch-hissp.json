@@ -1,0 +1,27 @@
+{
+    "repository": "gilch/hissp",
+    "stars": 259,
+    "language": "python",
+    "size": 1420,
+    "clone_url": "https://github.com/gilch/hissp.git",
+    "timestamp": "2023-06-28T13:55:06.642238Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[9e908914-dbb7-492b-a075-726c789a7eff/build] \ud83d\ude80  Start image=crawlergpt:latest\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gilch-hissp] user=0 workdir=\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2601  git clone 'https://github.com/psf/black' # ref=stable\n[9e908914-dbb7-492b-a075-726c789a7eff/build] \u2b50 Run Pre Lint with black\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2705  Success - Pre Lint with black\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v1\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1.0.4\n[9e908914-dbb7-492b-a075-726c789a7eff/build] \u2b50 Run Main Checkout\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2705  Success - Main Checkout\n[9e908914-dbb7-492b-a075-726c789a7eff/build] \u2b50 Run Main Lint with black\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/8429107d-2593-4f11-93e1-945ce6e7cc54/act/psf-black@stable/ dst=/var/run/act/actions/psf-black@stable/\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/psf-black@stable/] user=0 workdir=\n[9e908914-dbb7-492b-a075-726c789a7eff/build] \u2b50 Run Main if [ \"$RUNNER_OS\" == \"Windows\" ]; then\n  python $GITHUB_ACTION_PATH/action/main.py\nelse\n  python3 $GITHUB_ACTION_PATH/action/main.py\nfi\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1-composite-0.sh] user= workdir=\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   | Installing black[colorama]==$Format:%(describe:tags=true,match=*[0-9]*)$...\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   | ERROR: Invalid requirement: 'black[colorama]==$Format:%(describe:tags=true,match=*[0-9]*)$'\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   | \n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2757  ::error::Failed to install Black.\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u274c  Failure - Main if [ \"$RUNNER_OS\" == \"Windows\" ]; then\n  python $GITHUB_ACTION_PATH/action/main.py\nelse\n  python3 $GITHUB_ACTION_PATH/action/main.py\nfi\n[9e908914-dbb7-492b-a075-726c789a7eff/build] exitcode '1': failure\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u274c  Failure - Main Lint with black\n[9e908914-dbb7-492b-a075-726c789a7eff/build] exitcode '1': failure\n[9e908914-dbb7-492b-a075-726c789a7eff/build] \u2b50 Run Post Lint with black\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/8429107d-2593-4f11-93e1-945ce6e7cc54/act/psf-black@stable/ dst=/var/run/act/actions/psf-black@stable/\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/psf-black@stable/] user=0 workdir=\n[9e908914-dbb7-492b-a075-726c789a7eff/build]   \u2705  Success - Post Lint with black\n[9e908914-dbb7-492b-a075-726c789a7eff/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gilch-hissp/.github/workflows/test-package-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 264.22198700904846
+    }
+}

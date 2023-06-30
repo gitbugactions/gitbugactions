@@ -1,0 +1,27 @@
+{
+    "repository": "uber/petastorm",
+    "stars": 1638,
+    "language": "python",
+    "size": 2794,
+    "clone_url": "https://github.com/uber/petastorm.git",
+    "timestamp": "2023-06-28T12:58:00.651011Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest] \ud83d\ude80  Start image=crawlergpt:latest\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/uber-petastorm] user=0 workdir=\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest] \ud83e\uddea  Matrix: map[ARROW_PRE_0_15_IPC_FORMAT:1 NUMPY_VERSION:1.19.1 PY:3.7 PYARROW_VERSION:2.0.0 PYSPARK_VERSION:2.4.4 TF_VERSION:1.15.5 config:pyspark-2.4]\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest] \u2b50 Run Main actions/checkout@v2\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \u2705  Success - Main actions/checkout@v2\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest] \u2b50 Run Main prepare\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=selitvin%2Fpetastorm_ci_auto&tag=ci-image-06-29-2021\": dial unix /var/run/docker.sock: connect: permission denied\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest]   \u274c  Failure - Main prepare\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest] exitcode '1': failure\n[69c99e4b-c051-45f8-8a2a-cc90ce3e1c4d/unittest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'unittest' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/uber-petastorm/.github/workflows/unittest-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 7.42763876914978
+    }
+}

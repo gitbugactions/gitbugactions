@@ -1,0 +1,27 @@
+{
+    "repository": "dustlight-cn/auth",
+    "stars": 79,
+    "language": "java",
+    "size": 3614,
+    "clone_url": "https://github.com/dustlight-cn/auth.git",
+    "timestamp": "2023-06-29T14:34:49.806890Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build] \ud83d\ude80  Start image=crawlergpt:latest\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dustlight-cn-auth] user=0 workdir=\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u2601  git clone 'https://github.com/docker/login-action' # ref=v1.8.0\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v2.1.5\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u2601  git clone 'https://github.com/docker/build-push-action' # ref=v2.3.0\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u2601  git clone 'https://github.com/docker/build-push-action' # ref=v2.3.0\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build] \u2b50 Run Main Login to DockerHub\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/cba08d8c-89c2-4bb6-ad1a-6ed84a53412a/act/docker-login-action@v1.8.0/ dst=/var/run/act/actions/docker-login-action@v1.8.0/\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/docker-login-action@v1.8.0/] user=0 workdir=\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-login-action@v1.8.0/dist/index.js] user= workdir=\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udcbe  ::save-state name=isPost::true\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udcbe  ::save-state name=registry::\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udcbe  ::save-state name=logout::true\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u2757  ::error::Username and password required\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u274c  Failure - Main Login to DockerHub\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build] exitcode '1': failure\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build] \u2b50 Run Post Login to DockerHub\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-login-action@v1.8.0/dist/index.js] user= workdir=\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   | [command]/usr/bin/docker logout \n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   | Removing login credentials for https://index.docker.io/v1/\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build]   \u2705  Success - Post Login to DockerHub\n[cea8cda1-42ce-4a08-ab16-97e377ec0c85/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dustlight-cn-auth/.github/workflows/docker-image-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 190.7921826839447
+    }
+}

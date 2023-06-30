@@ -1,0 +1,27 @@
+{
+    "repository": "WeBankBlockchain/WeIdentity",
+    "stars": 1090,
+    "language": "java",
+    "size": 35880,
+    "clone_url": "https://github.com/WeBankBlockchain/WeIdentity.git",
+    "timestamp": "2023-06-29T13:45:47.806502Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] \ud83d\ude80  Start image=crawlergpt:latest\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/WeBankBlockchain-WeIdentity] user=0 workdir=\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \u2601  git clone 'https://github.com/karenlrx/redis-github-action' # ref=1.2.0\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \u2601  git clone 'https://github.com/eskatos/gradle-command-action' # ref=v1\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] \u2b50 Run Main Checkout repo\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \u2705  Success - Main Checkout repo\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] \u2b50 Run Main Start Redis Server\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker build -t act-karenlrx-redis-github-action-1-2-0-dockeraction:latest /tmp/act-cache/107a2807-7d85-4904-a1e3-d18ae0b390a5/act/karenlrx-redis-github-action@1.2.0/\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker pull image=act-karenlrx-redis-github-action-1-2-0-dockeraction:latest platform= username= forcePull=false\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker create image=act-karenlrx-redis-github-action-1-2-0-dockeraction:latest platform= entrypoint=[] cmd=[\"5\"]\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \ud83d\udc33  docker run image=act-karenlrx-redis-github-action-1-2-0-dockeraction:latest platform= entrypoint=[] cmd=[\"5\"]\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create?name=redis: dial unix /var/run/docker.sock: connect: permission denied.\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   | See 'docker run --help'.\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \u274c  Failure - Main Start Redis Server\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] exit with `FAILURE`: 126\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] \u2b50 Run Main Download failed log (if any)\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ]   \u274c  Failure - Main Download failed log (if any)\n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] The runs.using key must be one of: [docker node12 node16 composite], got \n[81c1c95b-6dc8-43ff-bf5f-31a6eba2dd1c/weid-java-sdk-ci    ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'weid-java-sdk-ci' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/WeBankBlockchain-WeIdentity/.github/workflows/CI-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 104.41482472419739
+    }
+}

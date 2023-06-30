@@ -1,0 +1,28 @@
+{
+    "repository": "XanaduAI/thewalrus",
+    "stars": 88,
+    "language": "python",
+    "size": 16172,
+    "clone_url": "https://github.com/XanaduAI/thewalrus.git",
+    "timestamp": "2023-06-28T12:53:59.056145Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python] \ud83d\ude80  Start image=crawlergpt:latest\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/XanaduAI-thewalrus] user=0 workdir=\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.4.1\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python] \u2b50 Run Main Cancel Previous Runs\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker cp src=/tmp/act-cache/9656d797-ee59-423c-a939-96d491993b4b/act/styfle-cancel-workflow-action@0.4.1/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.4.1/\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.4.1/] user=0 workdir=\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.4.1/dist/index.js] user= workdir=\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   | {\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   eventName: 'push',\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   sha: '6c4de003d1a70e74bace32eb80f7bc85e4e3c22a',\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   headSha: '6c4de003d1a70e74bace32eb80f7bc85e4e3c22a',\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   branch: 'master',\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   owner: 'XanaduAI',\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   repo: 'thewalrus',\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   |   GITHUB_RUN_ID: '1'\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   | }\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   | Found token: yes\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \u2757  ::error::Not Found\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python]   \u274c  Failure - Main Cancel Previous Runs\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python] exitcode '1': failure\n[7fdc7c3c-ba39-487d-99e1-778e08d4621a/python] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'python' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/XanaduAI-thewalrus/.github/workflows/tests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 104.20718598365784
+    }
+}

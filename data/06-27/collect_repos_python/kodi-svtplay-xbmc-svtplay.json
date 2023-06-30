@@ -1,0 +1,407 @@
+{
+    "repository": "kodi-svtplay/xbmc-svtplay",
+    "stars": 64,
+    "language": "python",
+    "size": 1722,
+    "clone_url": "https://github.com/kodi-svtplay/xbmc-svtplay.git",
+    "timestamp": "2023-06-28T09:46:53.414491Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unknown",
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "testListItem.TestListItemModule",
+                "name": "test_missing_id_raise_error",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testListItem.TestListItemModule",
+                "name": "test_missing_title_raise_error",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testHelper.TestHelperModule",
+                "name": "test_get_url_parameters",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testHelper.TestHelperModule",
+                "name": "test_strip_html_tags_with_None",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testHelper.TestHelperModule",
+                "name": "test_strip_html_tags_with_tags",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testHelper.TestHelperModule",
+                "name": "test_strip_html_tags_without_tags",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getAtoO",
+                "time": 0.246,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ProgramsListing&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"1eeb0fb08078393c17658c1a22e7eea3fbaa34bd2667cec91bbc4db8d778580f\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getChannels",
+                "time": 0.058,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ChannelsQuery&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"210be4b72f03223b990f031d9a2e3501ff9284f8d2c66b01b255a807775f0b19\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getGenres",
+                "time": 0.079,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=AllGenres&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"6bef51146d05b427fba78f326453127f7601188e46038c9a5c7b9c2649d4719c\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getLastChance",
+                "time": 0.063,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"lastchance_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getLatest",
+                "time": 0.084,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"latest_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getLive",
+                "time": 0.078,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"live_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getPopular",
+                "time": 0.058,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"popular_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getProgramsByLetter",
+                "time": 0.109,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] getProgramsByLetter: A\n[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ProgramsListing&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"1eeb0fb08078393c17658c1a22e7eea3fbaa34bd2667cec91bbc4db8d778580f\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_getProgramsForGenre",
+                "time": 0.09,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GenreProgramsAO&variables={\"genre\":[\"drama\"]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"189b3613ec93e869feace9a379cca47d8b68b97b3f53c04163769dcffa509318\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_get_latest_news",
+                "time": 0.069,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GenreLists&variables={\"genre\":[\"nyheter\"]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"90dca0b51b57904ccc59a418332e43e17db21c93a2346d1c73e05583a9aa598c\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_get_thumbnail_url",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_get_video_content",
+                "time": 0.091,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=TitlePage&variables={\"titleSlugs\":[\"agenda\"]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"4122efcb63970216e0cfb8abb25b74d1ba2bb7e780f438bbee19d92230d491c5\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_get_video_data_for_video_url",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=DetailsPageQuery&variables={\"path\":\"/video/36902895/agenda/agenda-6-nov-21-15-1\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5be42eb4028ed8f2680ce2302f6887df3fed2dcb6f61ac091ff5a37a3d0bf477\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testGraphQL.TestGraphQLModule",
+                "name": "test_search_results",
+                "time": 0.121,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=SearchPage&variables={\"querystring\":\"agenda\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"ab8c604fc76d14885dcedd0f377b76afae9aabcde73b3324676f60ca86d12606\"}}&ua=svtplaywebb-play-render-prod-client\n",
+                "stderr": null
+            },
+            {
+                "classname": "testSvtPlay.TestSvtPlay",
+                "name": "test_view_a_to_z_and_select_random_item",
+                "time": 0.361,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] Current settings: {'addon': <xbmcaddon.Addon object at 0x7f52df7e0880>, 'geo_restriction': False, 'alpha_program_listing': False, 'inappropriate_for_children': False, 'show_subtitles': False, 'kids_mode': False}\n[plugin.video.svtplay] Addon params: {'mode': 'a-o'}\n[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ProgramsListing&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"1eeb0fb08078393c17658c1a22e7eea3fbaa34bd2667cec91bbc4db8d778580f\"}}&ua=svtplaywebb-play-render-prod-client\n[plugin.video.svtplay] Addon params: {'mode': 'video', 'id': '/video/ep3aBzq/algskogen'}\n[plugin.video.svtplay] Start video for /video/ep3aBzq/algskogen\n[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=DetailsPageQuery&variables={\"path\":\"/video/ep3aBzq/algskogen\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5be42eb4028ed8f2680ce2302f6887df3fed2dcb6f61ac091ff5a37a3d0bf477\"}}&ua=svtplaywebb-play-render-prod-client\n[plugin.video.svtplay] Requesting https://api.svt.se/video/8M33Dyd\n",
+                "stderr": null
+            },
+            {
+                "classname": "testSvt.TestSvtModule",
+                "name": "test_episode_url_to_show_url",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testSvt.TestSvtModule",
+                "name": "test_episode_url_to_show_url_2",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testSvt.TestSvtModule",
+                "name": "test_get_alphas",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "testSvt.TestSvtModule",
+                "name": "test_get_svt_video_json",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] Requesting https://api.svt.se/video/ew17zDY\n",
+                "stderr": null
+            },
+            {
+                "classname": "testSvt.TestSvtModule",
+                "name": "test_get_video_json",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "[plugin.video.svtplay] Getting video JSON for https://api.svt.se/videoplayer-api/video/ch-svt2\n",
+                "stderr": null
+            },
+            {
+                "classname": "testSvt.TestSvtModule",
+                "name": "test_single_video_url_to_show_url",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \ud83d\ude80  Start image=crawlergpt:latest\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/kodi-svtplay-xbmc-svtplay] user=0 workdir=\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \ud83e\uddea  Matrix: map[python-version:3.9]\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \u2b50 Run Main actions/checkout@v3\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2705  Success - Main actions/checkout@v3\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \u2b50 Run Main Set up Python 3.9\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/2b52c5df-7d3e-4b12-bd2f-65dff0fb19e4/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2753  ::group::Installed versions\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: \n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? false\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? true\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? true\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? true\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? true\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? true\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::explicit? true\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::matched: 3.9.6\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Successfully set up CPython (3.9.6)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2753  ::endgroup::\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2705  Success - Main Set up Python 3.9\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-output:: python-version=3.9.6\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \u2b50 Run Main Install dependencies\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (21.2.4)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting pip\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Installing collected packages: pip\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Attempting uninstall: pip\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |     Found existing installation: pip 21.2.4\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |     Uninstalling pip-21.2.4:\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |       Successfully uninstalled pip-21.2.4\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Successfully installed pip-23.1.2\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting future (from -r requirements.txt (line 1))\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading future-0.18.3.tar.gz (840 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 840.9/840.9 kB 9.1 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Installing build dependencies: started\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Installing build dependencies: finished with status 'done'\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Getting requirements to build wheel: started\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Getting requirements to build wheel: finished with status 'done'\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Preparing metadata (pyproject.toml): started\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting requests (from -r requirements.txt (line 2))\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.6/62.6 kB 2.3 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting charset-normalizer<4,>=2 (from requests->-r requirements.txt (line 2))\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (199 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 199.2/199.2 kB 4.5 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting idna<4,>=2.5 (from requests->-r requirements.txt (line 2))\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 6.2 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting urllib3<3,>=1.21.1 (from requests->-r requirements.txt (line 2))\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading urllib3-2.0.3-py3-none-any.whl (123 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 123.6/123.6 kB 2.8 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting certifi>=2017.4.17 (from requests->-r requirements.txt (line 2))\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 157.0/157.0 kB 12.0 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Building wheels for collected packages: future\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Building wheel for future (pyproject.toml): started\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Building wheel for future (pyproject.toml): finished with status 'done'\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Created wheel for future: filename=future-0.18.3-py3-none-any.whl size=492022 sha256=ce60072b7dc974e3983b1a1cb0e3cfad07ed1667957e86ed5d8c593663a6b69f\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/bf/5d/6a/2e53874f7ec4e2bede522385439531fafec8fafe005b5c3d1b\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Successfully built future\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Installing collected packages: urllib3, idna, future, charset-normalizer, certifi, requests\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Successfully installed certifi-2023.5.7 charset-normalizer-3.1.0 future-0.18.3 idna-3.4 requests-2.31.0 urllib3-2.0.3\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | \n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [notice] To update, run: pip install --upgrade pip\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2705  Success - Main Install dependencies\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \u2b50 Run Main Test with unittest\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting unittest-xml-reporting\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Collecting lxml (from unittest-xml-reporting)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |   Downloading lxml-4.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (7.1 MB)\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 7.1/7.1 MB 10.6 MB/s eta 0:00:00\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | \n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [notice] To update, run: pip install --upgrade pip\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | \n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Running tests...\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ----------------------------------------------------------------------\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ProgramsListing&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"1eeb0fb08078393c17658c1a22e7eea3fbaa34bd2667cec91bbc4db8d778580f\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ..[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ChannelsQuery&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"210be4b72f03223b990f031d9a2e3501ff9284f8d2c66b01b255a807775f0b19\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=AllGenres&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"6bef51146d05b427fba78f326453127f7601188e46038c9a5c7b9c2649d4719c\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ..[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"lastchance_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"latest_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"live_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GridPage&variables={\"selectionId\":\"popular_start\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b30578b1b188242ce190c8a2cefe3d4694efafd17a929d08d273ae224a302b24\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] getProgramsByLetter: A\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ProgramsListing&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"1eeb0fb08078393c17658c1a22e7eea3fbaa34bd2667cec91bbc4db8d778580f\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GenreProgramsAO&variables={\"genre\":[\"drama\"]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"189b3613ec93e869feace9a379cca47d8b68b97b3f53c04163769dcffa509318\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=GenreLists&variables={\"genre\":[\"nyheter\"]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"90dca0b51b57904ccc59a418332e43e17db21c93a2346d1c73e05583a9aa598c\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ..[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=TitlePage&variables={\"titleSlugs\":[\"agenda\"]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"4122efcb63970216e0cfb8abb25b74d1ba2bb7e780f438bbee19d92230d491c5\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=DetailsPageQuery&variables={\"path\":\"/video/36902895/agenda/agenda-6-nov-21-15-1\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5be42eb4028ed8f2680ce2302f6887df3fed2dcb6f61ac091ff5a37a3d0bf477\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=SearchPage&variables={\"querystring\":\"agenda\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"ab8c604fc76d14885dcedd0f377b76afae9aabcde73b3324676f60ca86d12606\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ..........[plugin.video.svtplay] Requesting https://api.svt.se/video/ew17zDY\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .[plugin.video.svtplay] Getting video JSON for https://api.svt.se/videoplayer-api/video/ch-svt2\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ..[plugin.video.svtplay] Current settings: {'addon': <xbmcaddon.Addon object at 0x7f52df7e0880>, 'geo_restriction': False, 'alpha_program_listing': False, 'inappropriate_for_children': False, 'show_subtitles': False, 'kids_mode': False}\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] Addon params: {'mode': 'a-o'}\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=ProgramsListing&variables={}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"1eeb0fb08078393c17658c1a22e7eea3fbaa34bd2667cec91bbc4db8d778580f\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] Addon params: {'mode': 'video', 'id': '/video/ep3aBzq/algskogen'}\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] Start video for /video/ep3aBzq/algskogen\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] GraphQL request: https://api.svt.se/contento/graphql?operationName=DetailsPageQuery&variables={\"path\":\"/video/ep3aBzq/algskogen\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5be42eb4028ed8f2680ce2302f6887df3fed2dcb6f61ac091ff5a37a3d0bf477\"}}&ua=svtplaywebb-play-render-prod-client\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | [plugin.video.svtplay] Requesting https://api.svt.se/video/8M33Dyd\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | .\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | ----------------------------------------------------------------------\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Ran 27 tests in 1.643s\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | \n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | OK\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | \n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   | Generating XML reports...\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2705  Success - Main Test with unittest\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \u2b50 Run Post Set up Python 3.9\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build]   \u2705  Success - Post Set up Python 3.9\n[4536925f-c10f-4bce-b4ae-14c41fb2fd33/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/kodi-svtplay-xbmc-svtplay/.github/workflows/python-package-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 48.515344858169556
+    }
+}

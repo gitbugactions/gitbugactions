@@ -1,0 +1,140 @@
+{
+    "repository": "furkanonder/bor",
+    "stars": 107,
+    "language": "python",
+    "size": 161,
+    "clone_url": "https://github.com/furkanonder/bor.git",
+    "timestamp": "2023-06-28T17:20:12.942250Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_color.TestColor",
+                "name": "test_colors",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_color.TestColor",
+                "name": "test_false_color",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_color.TestColor",
+                "name": "test_terminal_color_support",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bor.TestBor",
+                "name": "test_analyzer",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bor.TestBor",
+                "name": "test_file_parser",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bor.TestBor",
+                "name": "test_path",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bor.TestBor",
+                "name": "test_pattern",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bor.TestBor",
+                "name": "test_searcher",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[ebe0f7da-b176-40da-9963-00d37c411650/build] \ud83d\ude80  Start image=crawlergpt:latest\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/furkanonder-bor] user=0 workdir=\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest pyv:3.8]\n[ebe0f7da-b176-40da-9963-00d37c411650/build] \u2b50 Run Main actions/checkout@v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2705  Success - Main actions/checkout@v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build] \u2b50 Run Main actions/setup-python@v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/eb6d26b0-8b40-48a5-89e4-dc8fb2b5ae49/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: \n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? false\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? true\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? true\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? true\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? true\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? true\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::explicit? true\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::matched: 3.8.11\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Successfully setup CPython (3.8.11)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v3/.github/python.json\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2705  Success - Main actions/setup-python@v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2699  ::set-output:: python-version=3.8.11\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[ebe0f7da-b176-40da-9963-00d37c411650/build] \u2b50 Run Main Test\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Collecting unittest-xml-reporting\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Collecting lxml\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   Downloading lxml-4.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (7.1 MB)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.8.11/x64/bin/python -m pip install --upgrade pip' command.\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | \n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Running tests...\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | ----------------------------------------------------------------------\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_analyzer (tests.test_bor.TestBor) ... ok (0.012s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_file_parser (tests.test_bor.TestBor) ... ok (0.001s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_path (tests.test_bor.TestBor) ... ok (0.001s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_pattern (tests.test_bor.TestBor) ... ok (0.001s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_searcher (tests.test_bor.TestBor) ... ok (0.002s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_colors (tests.test_color.TestColor) ... ok (0.002s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_false_color (tests.test_color.TestColor) ... ok (0.001s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   |   test_terminal_color_support (tests.test_color.TestColor) ... ok (0.000s)\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | \n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | ----------------------------------------------------------------------\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Ran 8 tests in 0.021s\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | \n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | OK\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | \n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Generating XML reports...\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Generated XML report: ./test_reports/TEST-tests.test_bor.TestBor-20230628172416.xml\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   | Generated XML report: ./test_reports/TEST-tests.test_color.TestColor-20230628172416.xml\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2705  Success - Main Test\n[ebe0f7da-b176-40da-9963-00d37c411650/build] \u2b50 Run Post actions/setup-python@v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/cache-save/index.js] user= workdir=\n[ebe0f7da-b176-40da-9963-00d37c411650/build]   \u2705  Success - Post actions/setup-python@v3\n[ebe0f7da-b176-40da-9963-00d37c411650/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/furkanonder-bor/.github/workflows/test-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 308.3764228820801
+    }
+}

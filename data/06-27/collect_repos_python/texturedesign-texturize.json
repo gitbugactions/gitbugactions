@@ -1,0 +1,28 @@
+{
+    "repository": "texturedesign/texturize",
+    "stars": 635,
+    "language": "python",
+    "size": 4422,
+    "clone_url": "https://github.com/texturedesign/texturize.git",
+    "timestamp": "2023-06-28T13:11:22.877940Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/texturedesign-texturize] user=0 workdir=\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u2601  git clone 'https://github.com/s-weigand/setup-conda' # ref=v1\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest] \ud83e\uddea  Matrix: map[os:ubuntu-latest python:3.7]\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest] \u2b50 Run Main actions/checkout@v3\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u2705  Success - Main actions/checkout@v3\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest] \u2b50 Run Main Setup Conda\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker cp src=/tmp/act-cache/e843b4bc-63c4-461f-9eb1-64f66334b7d9/act/s-weigand-setup-conda@v1/ dst=/var/run/act/actions/s-weigand-setup-conda@v1/\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/s-weigand-setup-conda@v1/] user=0 workdir=\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/s-weigand-setup-conda@v1/dist/index.js] user= workdir=\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u2753  ::group::Getting original pythonLocation\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   | [command]/usr/bin/which python\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   | /usr/local/bin/python\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u2753  ::endgroup::\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u2753  ::group::Adding conda path to PATH\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   | undefined\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u2757  ::error::The \"path\" argument must be of type string. Received undefined\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest]   \u274c  Failure - Main Setup Conda\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest] exitcode '1': failure\n[4a8f9fb3-fdc0-418c-bf94-bb894fd6a5a2/Python 3.7 ubuntu-latest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Python ${{ matrix.python }} ${{ matrix.os }}' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/texturedesign-texturize/.github/workflows/python-package-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 58.12140154838562
+    }
+}

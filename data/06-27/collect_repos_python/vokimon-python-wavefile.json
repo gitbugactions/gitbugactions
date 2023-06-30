@@ -1,0 +1,27 @@
+{
+    "repository": "vokimon/python-wavefile",
+    "stars": 57,
+    "language": "python",
+    "size": 1243,
+    "clone_url": "https://github.com/vokimon/python-wavefile.git",
+    "timestamp": "2023-06-28T10:04:16.931771Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7] \ud83d\ude80  Start image=crawlergpt:latest\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vokimon-python-wavefile] user=0 workdir=\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \u2601  git clone 'https://github.com/BSFishy/pip-action' # ref=v1\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \u2601  git clone 'https://github.com/AndreMiras/coveralls-python-action' # ref=develop\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7] \ud83e\uddea  Matrix: map[python-version:2.7]\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7] \u2b50 Run Main actions/checkout@v2\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \u2705  Success - Main actions/checkout@v2\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7] \u2b50 Run Main Install system dependencies\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   | \n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   | WARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   | \n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   | E: The repository 'https://dl.hhvm.com/ubuntu focal Release' no longer has a Release file.\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   | W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://dl.google.com/linux/chrome/deb stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 4EB27DB2A3B88B8B\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7]   \u274c  Failure - Main Install system dependencies\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7] exitcode '100': failure\n[160a94d9-9b23-4284-88f6-04df06ffb30a/Python 2.7] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Python ${{ matrix.python-version }}' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vokimon-python-wavefile/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 40.22541832923889
+    }
+}

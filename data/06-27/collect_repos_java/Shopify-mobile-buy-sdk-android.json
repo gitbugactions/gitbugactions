@@ -1,0 +1,31 @@
+{
+    "repository": "Shopify/mobile-buy-sdk-android",
+    "stars": 199,
+    "language": "java",
+    "size": 4017,
+    "clone_url": "https://github.com/Shopify/mobile-buy-sdk-android.git",
+    "timestamp": "2023-06-29T11:59:23.369015Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "gradle",
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[941ebc55-8cce-46df-83f9-6381f3594338/build] \ud83d\ude80  Start image=crawlergpt:latest\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Shopify-mobile-buy-sdk-android] user=0 workdir=\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \u2601  git clone 'https://github.com/ruby/setup-ruby' # ref=v1\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[941ebc55-8cce-46df-83f9-6381f3594338/build] \u2b50 Run Main Get API Version\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/version] user= workdir=\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \u2705  Success - Main Get API Version\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \u2699  ::set-env:: API_VERSION=2023-06\n[941ebc55-8cce-46df-83f9-6381f3594338/build] \u2b50 Run Main Checkout Repository\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \u2705  Success - Main Checkout Repository\n[941ebc55-8cce-46df-83f9-6381f3594338/build] \u2b50 Run Main Install Ruby\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/1e86bcc9-f110-47cf-81f3-c6593423bb30/act/ruby-setup-ruby@v1/ dst=/var/run/act/actions/ruby-setup-ruby@v1/\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/ruby-setup-ruby@v1/] user=0 workdir=\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/ruby-setup-ruby@v1/dist/index.js] user= workdir=\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   | internal/modules/cjs/loader.js:892\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |   throw err;\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |   ^\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   | \n[941ebc55-8cce-46df-83f9-6381f3594338/build]   | Error: Cannot find module 'node:os'\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   | Require stack:\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   | - /run/act/actions/ruby-setup-ruby@v1/dist/index.js\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:889:15)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at Function.Module._load (internal/modules/cjs/loader.js:745:27)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at Module.require (internal/modules/cjs/loader.js:961:19)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at require (internal/modules/cjs/helpers.js:92:18)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at Module.3143 (/run/act/actions/ruby-setup-ruby@v1/dist/index.js:322:42)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at __nccwpck_require__ (/run/act/actions/ruby-setup-ruby@v1/dist/index.js:65136:43)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at /run/act/actions/ruby-setup-ruby@v1/dist/index.js:65194:16\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at /run/act/actions/ruby-setup-ruby@v1/dist/index.js:65381:3\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at Object.<anonymous> (/run/act/actions/ruby-setup-ruby@v1/dist/index.js:65384:12)\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |     at Module._compile (internal/modules/cjs/loader.js:1072:14) {\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |   code: 'MODULE_NOT_FOUND',\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   |   requireStack: [ '/run/act/actions/ruby-setup-ruby@v1/dist/index.js' ]\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   | }\n[941ebc55-8cce-46df-83f9-6381f3594338/build]   \u274c  Failure - Main Install Ruby\n[941ebc55-8cce-46df-83f9-6381f3594338/build] exitcode '1': failure\n[941ebc55-8cce-46df-83f9-6381f3594338/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Shopify-mobile-buy-sdk-android/.github/workflows/test-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 114.5854856967926
+    }
+}

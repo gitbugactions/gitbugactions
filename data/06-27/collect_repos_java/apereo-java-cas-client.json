@@ -1,0 +1,27 @@
+{
+    "repository": "apereo/java-cas-client",
+    "stars": 862,
+    "language": "java",
+    "size": 2792,
+    "clone_url": "https://github.com/apereo/java-cas-client.git",
+    "timestamp": "2023-06-29T10:20:37.304576Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs] \ud83d\ude80  Start image=crawlergpt:latest\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/apereo-java-cas-client] user=0 workdir=\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.11.0\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs] \u2b50 Run Main styfle/cancel-workflow-action@0.11.0\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker cp src=/tmp/act-cache/6acfbfa2-1579-40c9-afa9-450d3df865b4/act/styfle-cancel-workflow-action@0.11.0/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.11.0/\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.11.0/] user=0 workdir=\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.11.0/dist/index.js] user= workdir=\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   | {\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   eventName: 'push',\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   sha: '4a4820c5ece87055dce1d6ec347637d4726f4e9a',\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   headSha: '4a4820c5ece87055dce1d6ec347637d4726f4e9a',\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   branch: 'master',\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   owner: 'apereo',\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   repo: 'java-cas-client',\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   |   GITHUB_RUN_ID: '1'\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   | }\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   | Found token: yes\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \u2757  ::error::Not Found\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs]   \u274c  Failure - Main styfle/cancel-workflow-action@0.11.0\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs] exitcode '1': failure\n[2fa12408-6fed-40ad-ad46-f0ebe3a198bb/cancel-previous-runs] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'cancel-previous-runs' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/apereo-java-cas-client/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 9.12614130973816
+    }
+}

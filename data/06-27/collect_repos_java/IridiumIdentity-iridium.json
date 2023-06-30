@@ -1,0 +1,31 @@
+{
+    "repository": "IridiumIdentity/iridium",
+    "stars": 101,
+    "language": "java",
+    "size": 3784,
+    "clone_url": "https://github.com/IridiumIdentity/iridium.git",
+    "timestamp": "2023-06-29T15:23:30.585065Z",
+    "clone_success": true,
+    "number_of_actions": 5,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven",
+        "unknown",
+        "unknown",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build] \ud83d\ude80  Start image=crawlergpt:latest\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/IridiumIdentity-iridium] user=0 workdir=\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u2601  git clone 'https://github.com/docker/login-action' # ref=65b78e6e13532edd9afa3aa52ac7964289d1a9c1\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1.4.4\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v3\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build] \u2b50 Run Main actions/checkout@v3\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u2705  Success - Main actions/checkout@v3\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build] \u2b50 Run Main Log in to the Container registry\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/3c9700c5-dbf0-4858-b9d0-6dadcb614fda/act/docker-login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1/ dst=/var/run/act/actions/docker-login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1/\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/docker-login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1/] user=0 workdir=\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1/dist/index.js] user= workdir=\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   | Logging into ghcr.io...\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udcac  ::debug::Exec.getExecOutput: docker login --password-stdin --username nektos/act ghcr.io\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u2757  ::error::Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%252Fvar%252Frun%252Fdocker.sock/v1.24/auth\": dial unix /var/run/docker.sock: connect: permission denied\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u274c  Failure - Main Log in to the Container registry\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build] exitcode '1': failure\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build] \u2b50 Run Post Log in to the Container registry\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1/dist/index.js] user= workdir=\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \ud83d\udcac  ::debug::Exec.getExecOutput: docker logout ghcr.io\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   | [command]/usr/bin/docker logout ghcr.io\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   | Removing login credentials for ghcr.io\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build]   \u2705  Success - Post Log in to the Container registry\n[2b619f3a-9519-4264-970c-2e7cd0ddb0cf/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/IridiumIdentity-iridium/.github/workflows/build-iridium-pull-request-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 111.41099619865417
+    }
+}

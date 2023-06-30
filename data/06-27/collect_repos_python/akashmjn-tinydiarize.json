@@ -1,0 +1,28 @@
+{
+    "repository": "akashmjn/tinydiarize",
+    "stars": 103,
+    "language": "python",
+    "size": 15585,
+    "clone_url": "https://github.com/akashmjn/tinydiarize.git",
+    "timestamp": "2023-06-28T18:49:49.670306Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test] \ud83d\ude80  Start image=crawlergpt:latest\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/akashmjn-tinydiarize] user=0 workdir=\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2601  git clone 'https://github.com/conda-incubator/setup-miniconda' # ref=v2\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test] \ud83e\uddea  Matrix: map[python-version:3.8 pytorch-version:1.10.2]\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test] \u2b50 Run Main conda-incubator/setup-miniconda@v2\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker cp src=/tmp/act-cache/8507cbce-75a5-438d-ba5e-54aaaf402a46/act/conda-incubator-setup-miniconda@v2/ dst=/var/run/act/actions/conda-incubator-setup-miniconda@v2/\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/conda-incubator-setup-miniconda@v2/] user=0 workdir=\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/conda-incubator-setup-miniconda@v2/dist/setup/index.js] user= workdir=\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2753  ::group::Gathering Inputs...\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2753  ::endgroup::\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2753  ::group::Creating bootstrap condarc file in /home/runneradmin/.condarc...\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2753  ::endgroup::\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2753  ::group::Ensuring installer...\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   | Can we use bundled Miniconda?\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   | ... will use bundled Miniconda.\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2753  ::endgroup::\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2757  ::error::No installed conda 'base' environment found at !If you are using this action in a self-hosted runner that already provides its own Miniconda installation, please specify its location with a `CONDA` environment variable. If you want us to download and install Miniconda or Miniforge for you, add `miniconda-version: \"latest\"` or `miniforge-version: \"latest\"`, respectively, to the parameters for this action.\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u274c  Failure - Main conda-incubator/setup-miniconda@v2\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test]   \u2699  ::set-env:: INPUT_RUN_POST=true\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test] exitcode '1': failure\n[fac27a6b-a32d-442e-843f-06573d7bfdfa/whisper-test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'whisper-test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/akashmjn-tinydiarize/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 155.723491191864
+    }
+}

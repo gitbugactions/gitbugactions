@@ -1,0 +1,27 @@
+{
+    "repository": "computational-cell-analytics/micro-sam",
+    "stars": 74,
+    "language": "python",
+    "size": 262,
+    "clone_url": "https://github.com/computational-cell-analytics/micro-sam.git",
+    "timestamp": "2023-06-28T18:57:18.292944Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10] \ud83d\ude80  Start image=crawlergpt:latest\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/computational-cell-analytics-micro-sam] user=0 workdir=\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2601  git clone 'https://github.com/conda-incubator/setup-miniconda' # ref=v2\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.10]\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10] \u2b50 Run Main Checkout\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2705  Success - Main Checkout\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10] \u2b50 Run Main Setup miniconda\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker cp src=/tmp/act-cache/7d3c2335-aa46-4b3c-8b4b-04c0e5daa695/act/conda-incubator-setup-miniconda@v2/ dst=/var/run/act/actions/conda-incubator-setup-miniconda@v2/\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/conda-incubator-setup-miniconda@v2/] user=0 workdir=\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/conda-incubator-setup-miniconda@v2/dist/setup/index.js] user= workdir=\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2753  ::group::Gathering Inputs...\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2753  ::endgroup::\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2753  ::group::Creating bootstrap condarc file in /home/runneradmin/.condarc...\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2753  ::endgroup::\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2753  ::group::Ensuring installer...\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   | Can we use bundled Miniconda?\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   | ... will use bundled Miniconda.\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2753  ::endgroup::\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2757  ::error::No installed conda 'base' environment found at !If you are using this action in a self-hosted runner that already provides its own Miniconda installation, please specify its location with a `CONDA` environment variable. If you want us to download and install Miniconda or Miniforge for you, add `miniconda-version: \"latest\"` or `miniforge-version: \"latest\"`, respectively, to the parameters for this action.\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u274c  Failure - Main Setup miniconda\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10]   \u2699  ::set-env:: INPUT_RUN_POST=true\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10] exitcode '1': failure\n[9dc6d083-6dea-4934-a011-df66dff69921/ubuntu-latest 3.10] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job '${{ matrix.os }} ${{ matrix.python-version }}' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/computational-cell-analytics-micro-sam/.github/workflows/test-crawler.yaml",
+        "build_tool": "unittest",
+        "elapsed_time": 285.6885447502136
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "repository": "aerospike/aerospike-client-java",
+    "stars": 222,
+    "language": "java",
+    "size": 7969,
+    "clone_url": "https://github.com/aerospike/aerospike-client-java.git",
+    "timestamp": "2023-06-29T11:06:08.131742Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[9fce8446-7b5d-4749-a774-8656ee2cb892/build] \ud83d\ude80  Start image=crawlergpt:latest\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/aerospike-aerospike-client-java] user=0 workdir=\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \u2601  git clone 'https://github.com/reugn/github-action-aerospike' # ref=v1\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build] \u2b50 Run Main Checkout client\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \u2705  Success - Main Checkout client\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build] \u2b50 Run Main Setup Aerospike Database\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker build -t act-reugn-github-action-aerospike-v1-dockeraction:latest /tmp/act-cache/9862198d-c6a0-49fb-a5c3-fca1441baba4/act/reugn-github-action-aerospike@v1/\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker pull image=act-reugn-github-action-aerospike-v1-dockeraction:latest platform= username= forcePull=false\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker create image=act-reugn-github-action-aerospike-v1-dockeraction:latest platform= entrypoint=[] cmd=[\"3000\" \"latest\" \"\" \"\"]\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \ud83d\udc33  docker run image=act-reugn-github-action-aerospike-v1-dockeraction:latest platform= entrypoint=[] cmd=[\"3000\" \"latest\" \"\" \"\"]\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   | docker run -d --name gha_aerospike -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 aerospike/aerospike-server:latest\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create?name=gha_aerospike: dial unix /var/run/docker.sock: connect: permission denied.\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   | See 'docker run --help'.\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build]   \u274c  Failure - Main Setup Aerospike Database\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build] exit with `FAILURE`: 126\n[9fce8446-7b5d-4749-a774-8656ee2cb892/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/aerospike-aerospike-client-java/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 7.948751449584961
+    }
+}

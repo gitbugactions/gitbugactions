@@ -55,11 +55,12 @@ class GitHubWorkflow(ABC):
         """
         try:
             # Check if any run command is a test running command
-            for _, job in self.doc['jobs'].items():
-                if 'steps' in job:
-                    for step in job['steps']:
-                        if 'run' in step and self._is_test_command(step['run']):
-                            return True
+            if 'jobs' in self.doc:
+                for _, job in self.doc['jobs'].items():
+                    if 'steps' in job:
+                        for step in job['steps']:
+                            if 'run' in step and self._is_test_command(step['run']):
+                                return True
             return False
         except yaml.YAMLError:
             return False
@@ -87,24 +88,26 @@ class GitHubWorkflow(ABC):
                     doc.append('ubuntu-latest')
 
         # Replace any unsupported OS with Ubuntu
-        for _, job in self.doc['jobs'].items():
-            if 'runs-on' in job and str(job['runs-on']).lower() in GitHubWorkflow.__UNSUPPORTED_OS:
-                job['runs-on'] = 'ubuntu-latest'
-            if 'strategy' in job and 'os' in job['strategy'] and isinstance(job['strategy']['os'], list):
-                job['strategy']['os'] = ['ubuntu-latest']
-            if 'strategy' in job:
-                walk_doc(job['strategy'])
+        if 'jobs' in self.doc:
+            for _, job in self.doc['jobs'].items():
+                if 'runs-on' in job and str(job['runs-on']).lower() in GitHubWorkflow.__UNSUPPORTED_OS:
+                    job['runs-on'] = 'ubuntu-latest'
+                if 'strategy' in job and 'os' in job['strategy'] and isinstance(job['strategy']['os'], list):
+                    job['strategy']['os'] = ['ubuntu-latest']
+                if 'strategy' in job:
+                    walk_doc(job['strategy'])
 
 
     def instrument_strategy(self):
         """
         Instruments the workflow to run only one configuration (the fisrt one) per job.
         """
-        for _, job in self.doc['jobs'].items():
-            if 'strategy' in job and 'matrix' in job['strategy']:
-                for key, value in job['strategy']['matrix'].items():
-                    if isinstance(value, list):
-                        job['strategy']['matrix'][key] = [value[0]]
+        if 'jobs' in self.doc:
+            for _, job in self.doc['jobs'].items():
+                if 'strategy' in job and 'matrix' in job['strategy']:
+                    for key, value in job['strategy']['matrix'].items():
+                        if isinstance(value, list):
+                            job['strategy']['matrix'][key] = [value[0]]
 
     
     def instrument_setup_steps(self):
@@ -112,22 +115,23 @@ class GitHubWorkflow(ABC):
             return
         self.tokens = []
 
-        for _, job in self.doc['jobs'].items():
-            if 'steps' not in job:
-                continue
-
-            for step in job['steps']:
-                if 'uses' not in step or 'setup' not in step['uses']:
+        if 'jobs' in self.doc:
+            for _, job in self.doc['jobs'].items():
+                if 'steps' not in job:
                     continue
 
-                if 'with' in step and 'token' not in step['with']:
-                    token = GithubToken.get_token()
-                    step['with']['token'] = token.token
-                    self.tokens.append(token)
-                elif 'with' not in step:
-                    token = GithubToken.get_token()
-                    step['with'] = {'token': token.token}
-                    self.tokens.append(token)
+                for step in job['steps']:
+                    if 'uses' not in step or 'setup' not in step['uses']:
+                        continue
+
+                    if 'with' in step and 'token' not in step['with']:
+                        token = GithubToken.get_token()
+                        step['with']['token'] = token.token
+                        self.tokens.append(token)
+                    elif 'with' not in step:
+                        token = GithubToken.get_token()
+                        step['with'] = {'token': token.token}
+                        self.tokens.append(token)
 
 
     @abstractmethod
@@ -201,11 +205,12 @@ class GitHubWorkflowFactory:
                 doc.pop(True)
                 
         # Iterate over the workflow to find build tool names in the run commands
-        for _, job in doc['jobs'].items():
-            if 'steps' in job:
-                for step in job['steps']:
-                    if 'run' in step:
-                        _update_keyword_counts(keyword_counts, step['run'])
+        if 'jobs' in doc:
+            for _, job in doc['jobs'].items():
+                if 'steps' in job:
+                    for step in job['steps']:
+                        if 'run' in step:
+                            _update_keyword_counts(keyword_counts, step['run'])
                         
         # Aggregate keyword counts per build tool
         for build_tool in build_tool_keywords:

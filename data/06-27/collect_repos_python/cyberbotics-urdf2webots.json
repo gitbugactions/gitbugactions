@@ -1,0 +1,99 @@
+{
+    "repository": "cyberbotics/urdf2webots",
+    "stars": 98,
+    "language": "python",
+    "size": 119488,
+    "clone_url": "https://github.com/cyberbotics/urdf2webots.git",
+    "timestamp": "2023-06-28T13:01:47.519294Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unknown",
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test_export.TestScript",
+                "name": "testInputContentOutputProto",
+                "time": 0.085,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "\nStart tests with input \"URDF content\" and output \"PROTO file\"...\nRoot link: pelvis\nThere are 20 links, 19 joints and 0 sensors\n\t\t",
+                "stderr": null
+            },
+            {
+                "classname": "test_export.TestScript",
+                "name": "testInputContentStdinOutputProto",
+                "time": 0.189,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "\nStart tests with input \"URDF content\" and output \"PROTO file\"...\n\"--input\" not specified, a URDF content will be read in the in stdin.\n\n            The \"</robot>\" tag will stop the reading.\nURDF lecture is finished!\nRoot link: pelvis\nThere are 20 links, 19 joints and 0 sensors\n\t\t",
+                "stderr": null
+            },
+            {
+                "classname": "test_export.TestScript",
+                "name": "testInputFileOutputRobotString",
+                "time": 0.077,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "\nStart tests with input \"URDF file\" and output \"Robot node strings\"...\nRoot link: base\nThere are 10 links, 9 joints and 0 sensors\n\t\t",
+                "stderr": null
+            },
+            {
+                "classname": "test_export.TestScript",
+                "name": "testInputFileOutputProto",
+                "time": 0.371,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "256 != 0 : Error when exporting \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots/tests/sources/motoman/motoman_sia20d_support/urdf/sia20d.urdf\"",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": "\nStart tests with input \"URDF file\" and output \"PROTO file\"...\n\t\t",
+                "stderr": null
+            },
+            {
+                "classname": "test_pep8.TestCodeFormat",
+                "name": "test_pep8_conformance",
+                "time": 1.101,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots] user=0 workdir=\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] \ud83e\uddea  Matrix: map[python:3.7]\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] \u2b50 Run Main actions/checkout@v2\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2705  Success - Main actions/checkout@v2\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] \u2b50 Run Main Set up Python 3.7\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker cp src=/tmp/act-cache/1c97ab2b-6203-4d54-9198-7ba367d7f2ed/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: \n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? false\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? true\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? true\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? true\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? true\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? true\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::explicit? true\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::evaluating 6 versions\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::matched: 3.7.11\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Successfully setup CPython (3.7.11)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2705  Success - Main Set up Python 3.7\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2699  ::set-output:: python-version=3.7.11\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] \u2b50 Run Main Test\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting unittest-xml-reporting\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting lxml\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading lxml-4.9.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.6 MB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Installing collected packages: lxml, unittest-xml-reporting\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Obtaining file:///tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting Pillow\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading Pillow-9.5.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.4 MB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting numpy\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting rospkg\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading rospkg-1.5.0-py3-none-any.whl (36 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting catkin-pkg\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading catkin_pkg-0.5.2-py3-none-any.whl (76 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting PyYAML\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting docutils\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading docutils-0.20.1-py3-none-any.whl (572 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from catkin-pkg->rospkg->urdf2webots==2.0.3) (47.1.0)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting python-dateutil\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting pyparsing\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting six>=1.5\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Installing collected packages: six, python-dateutil, pyparsing, docutils, PyYAML, catkin-pkg, rospkg, Pillow, numpy, urdf2webots\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Running setup.py develop for urdf2webots\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Successfully installed Pillow-9.5.0 PyYAML-6.0 catkin-pkg-0.5.2 docutils-0.20.1 numpy-1.21.6 pyparsing-3.1.0 python-dateutil-2.8.2 rospkg-1.5.0 six-1.16.0 urdf2webots-2.0.3\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting pycodestyle\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading pycodestyle-2.10.0-py2.py3-none-any.whl (41 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Collecting pyflakes\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   Downloading pyflakes-3.0.1-py2.py3-none-any.whl (62 kB)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Installing collected packages: pyflakes, pycodestyle\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Successfully installed pycodestyle-2.10.0 pyflakes-3.0.1\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | \n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Running tests...\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | ----------------------------------------------------------------------\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Start tests with input \"URDF content\" and output \"PROTO file\"...\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Root link: pelvis\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | There are 20 links, 19 joints and 0 sensors\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | ..Start tests with input \"URDF content\" and output \"PROTO file\"...\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | \"--input\" not specified, a URDF content will be read in the in stdin.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | \n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |             The \"</robot>\" tag will stop the reading.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | URDF lecture is finished!\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Root link: pelvis\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | There are 20 links, 19 joints and 0 sensors\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Input file \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots/tests/sources/motoman/motoman_sia20d_support/urdf/sia20d.urdf\" does not exists.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Start tests with input \"URDF file\" and output \"PROTO file\"...\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | FStart tests with input \"URDF file\" and output \"Robot node strings\"...\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Root link: base\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | There are 10 links, 9 joints and 0 sensors\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | ..\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | ======================================================================\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | FAIL [0.371s]: testInputFileOutputProto (test_export.TestScript)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Test that urdf2webots produces an expected PROTO file using URDF file as input.\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | ----------------------------------------------------------------------\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Traceback (most recent call last):\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots/tests/test_export.py\", line 119, in testInputFileOutputProto\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   |     self.assertEqual(retcode, 0, msg='Error when exporting \"%s\"' % (paths['input']))\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | AssertionError: 256 != 0 : Error when exporting \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots/tests/sources/motoman/motoman_sia20d_support/urdf/sia20d.urdf\"\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | \n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | ----------------------------------------------------------------------\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Ran 5 tests in 1.823s\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | \n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | FAILED (failures=1)\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | \n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   | Generating XML reports...\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests]   \u274c  Failure - Main Test\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] exitcode '1': failure\n[21556fe5-5c02-40ab-8569-1067e1fccfc9/tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/cyberbotics-urdf2webots/.github/workflows/test-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 114.10106563568115
+    }
+}

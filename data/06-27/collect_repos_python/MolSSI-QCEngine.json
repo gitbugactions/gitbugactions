@@ -1,0 +1,28 @@
+{
+    "repository": "MolSSI/QCEngine",
+    "stars": 136,
+    "language": "python",
+    "size": 10647,
+    "clone_url": "https://github.com/MolSSI/QCEngine.git",
+    "timestamp": "2023-06-28T12:40:00.861843Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ] \ud83d\ude80  Start image=crawlergpt:latest\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/MolSSI-QCEngine] user=0 workdir=\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2601  git clone 'https://github.com/conda-incubator/setup-miniconda' # ref=v2\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ] \ud83e\uddea  Matrix: map[cfg:map[conda-env:psi label:Psi4-release python-version:3.7 runs-on:ubuntu-latest]]\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ] \u2b50 Run Main actions/checkout@v2\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2705  Success - Main actions/checkout@v2\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ] \u2b50 Run Main Create Environment\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker cp src=/tmp/act-cache/a35f84e6-66a9-4377-bfc6-7bc3dfc09222/act/conda-incubator-setup-miniconda@v2/ dst=/var/run/act/actions/conda-incubator-setup-miniconda@v2/\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/conda-incubator-setup-miniconda@v2/] user=0 workdir=\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/conda-incubator-setup-miniconda@v2/dist/setup/index.js] user= workdir=\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2753  ::group::Gathering Inputs...\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2753  ::endgroup::\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2753  ::group::Creating bootstrap condarc file in /home/runneradmin/.condarc...\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2753  ::endgroup::\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2753  ::group::Ensuring installer...\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   | Can we use bundled Miniconda?\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   | ... will use bundled Miniconda.\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2753  ::endgroup::\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2757  ::error::No installed conda 'base' environment found at !If you are using this action in a self-hosted runner that already provides its own Miniconda installation, please specify its location with a `CONDA` environment variable. If you want us to download and install Miniconda or Miniforge for you, add `miniconda-version: \"latest\"` or `miniforge-version: \"latest\"`, respectively, to the parameters for this action.\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u274c  Failure - Main Create Environment\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ]   \u2699  ::set-env:: INPUT_RUN_POST=true\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ] exitcode '1': failure\n[aea350c3-156e-4d48-8257-733731e76e11/\ud83d\udc0d 3.7 \u2022 Psi4-release     ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job '\ud83d\udc0d ${{ matrix.cfg.python-version }} \u2022 ${{ matrix.cfg.label }}' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/MolSSI-QCEngine/.github/workflows/CI-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 104.5727949142456
+    }
+}

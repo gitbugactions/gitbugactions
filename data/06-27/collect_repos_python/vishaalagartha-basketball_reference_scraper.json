@@ -1,0 +1,294 @@
+{
+    "repository": "vishaalagartha/basketball_reference_scraper",
+    "stars": 226,
+    "language": "python",
+    "size": 187,
+    "clone_url": "https://github.com/vishaalagartha/basketball_reference_scraper.git",
+    "timestamp": "2023-06-28T14:46:07.223729Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test_seasons.TestSeason",
+                "name": "test_get_schedule",
+                "time": 3.78,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_seasons.TestSeason",
+                "name": "test_get_standings",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "Lists differ: [] != ['EASTERN_CONF', 'WESTERN_CONF']  Second list contains 2 additional elements. First extra element 0: 'EASTERN_CONF'  - [] + ['EASTERN_CONF', 'WESTERN_CONF']",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_seasons.TestSeason",
+                "name": "test_get_standings_weird_season",
+                "time": 0.058,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "Lists differ: [] != ['EASTERN_CONF', 'WESTERN_CONF']  Second list contains 2 additional elements. First extra element 0: 'EASTERN_CONF'  - [] + ['EASTERN_CONF', 'WESTERN_CONF']",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_seasons.TestSeason",
+                "name": "test_get_schedule_weird_season",
+                "time": 6.343,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "Length mismatch: Expected axis has 0 elements, new values have 5 elements",
+                        "type": "ValueError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_players.TestPlayers",
+                "name": "test_get_player_headshot",
+                "time": 1.496,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "You searched for \"Kobe Bryant\"\n4 results found.\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_players.TestPlayers",
+                "name": "test_get_stats",
+                "time": 2.091,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "Element counts were not equal:  Diff is 1018 characters long. Set self.maxDiff to None to see it.",
+                        "type": "AssertionError"
+                    }
+                ],
+                "stdout": "You searched for \"Joe Johnson\"\n40 results found.\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_players.TestPlayers",
+                "name": "test_get_game_logs",
+                "time": 1.316,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "'NoneType' object has no attribute 'columns'",
+                        "type": "AttributeError"
+                    }
+                ],
+                "stdout": "You searched for \"Stephen Curry\"\n3 results found.\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_drafts.TestDraft",
+                "name": "test_should_get_class",
+                "time": 0.174,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_drafts.TestDraft",
+                "name": "test_should_get_old_class",
+                "time": 0.171,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_drafts.TestDraft",
+                "name": "test_should_handle_forfeit",
+                "time": 0.171,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_injury_report.TestInjuryReport",
+                "name": "test_injury_report",
+                "time": 0.175,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_box_scores.TestBoxScores",
+                "name": "test_get_all_star_box_score",
+                "time": 1.729,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "'SEASON'",
+                        "type": "KeyError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_box_scores.TestBoxScores",
+                "name": "test_get_box_scores",
+                "time": 2.369,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_teams.TestTeams",
+                "name": "test_get_roster",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "'NoneType' object is not subscriptable",
+                        "type": "TypeError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_teams.TestTeams",
+                "name": "test_get_roster_on_missing_nationality",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "'NoneType' object has no attribute 'columns'",
+                        "type": "AttributeError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_teams.TestTeams",
+                "name": "test_get_roster_stats",
+                "time": 0.232,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_teams.TestTeams",
+                "name": "test_get_team_misc",
+                "time": 0.175,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "html5lib not found, please install it",
+                        "type": "ImportError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_shot_charts.TestShotCharts",
+                "name": "test_get_shot_chart",
+                "time": 0.051,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "'NoneType' object has no attribute 'replace'",
+                        "type": "AttributeError"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "test_pbp.TestPbp",
+                "name": "test_pbp",
+                "time": 3.473,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \ud83d\ude80  Start image=crawlergpt:latest\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper] user=0 workdir=\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \ud83e\uddea  Matrix: map[python-version:3.8]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \u2b50 Run Main actions/checkout@v2\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2705  Success - Main actions/checkout@v2\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \u2b50 Run Main Set up Python 3.8\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/df72db5e-1bea-4fc6-a426-3c611a139aa6/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? false\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? true\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? true\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? true\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? true\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? true\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::explicit? true\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::matched: 3.8.11\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Successfully setup CPython (3.8.11)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2705  Success - Main Set up Python 3.8\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2699  ::set-output:: python-version=3.8.11\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \u2b50 Run Main Install dependencies\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting beautifulsoup4==4.8.2\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading beautifulsoup4-4.8.2-py3-none-any.whl (106 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting bs4==0.0.1\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading bs4-0.0.1.tar.gz (1.1 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting lxml==4.6.5\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading lxml-4.6.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.9 MB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting numpy==1.21.0\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading numpy-1.21.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting pandas==1.3.5\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading pandas-1.3.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.5 MB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting python-dateutil==2.8.1\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting pytz==2019.3\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting requests==2.22.0\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading requests-2.22.0-py2.py3-none-any.whl (57 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting six==1.13.0\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading six-1.13.0-py2.py3-none-any.whl (10 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting soupsieve==1.9.5\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading soupsieve-1.9.5-py2.py3-none-any.whl (33 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting unidecode==1.2.0\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading Unidecode-1.2.0-py2.py3-none-any.whl (241 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting certifi>=2017.4.17\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting chardet<3.1.0,>=3.0.2\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading urllib3-1.25.11-py2.py3-none-any.whl (127 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting idna<2.9,>=2.5\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading idna-2.8-py2.py3-none-any.whl (58 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Using legacy 'setup.py install' for bs4, since package 'wheel' is not installed.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Installing collected packages: soupsieve, six, urllib3, pytz, python-dateutil, numpy, idna, chardet, certifi, beautifulsoup4, unidecode, requests, pandas, lxml, bs4\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     Running setup.py install for bs4: started\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     Running setup.py install for bs4: finished with status 'done'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Successfully installed beautifulsoup4-4.8.2 bs4-0.0.1 certifi-2023.5.7 chardet-3.0.4 idna-2.8 lxml-4.6.5 numpy-1.21.0 pandas-1.3.5 python-dateutil-2.8.1 pytz-2019.3 requests-2.22.0 six-1.13.0 soupsieve-1.9.5 unidecode-1.2.0 urllib3-1.25.11\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.8.11/x64/bin/python -m pip install --upgrade pip' command.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u2705  Success - Main Install dependencies\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \u2b50 Run Main Test\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Collecting unittest-xml-reporting\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Requirement already satisfied: lxml in /opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages (from unittest-xml-reporting) (4.6.5)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Installing collected packages: unittest-xml-reporting\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Successfully installed unittest-xml-reporting-3.2.0\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.8.11/x64/bin/python -m pip install --upgrade pip' command.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Running tests...\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | EEEEEE.You searched for \"Stephen Curry\"\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | 3 results found.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | E.You searched for \"Kobe Bryant\"\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | 4 results found.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | You searched for \"Joe Johnson\"\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | 40 results found.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | F.EFFEEEEE\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [1.729s]: test_get_all_star_box_score (test_box_scores.TestBoxScores)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/indexes/base.py\", line 3361, in get_loc\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return self._engine.get_loc(casted_key)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"pandas/_libs/index.pyx\", line 76, in pandas._libs.index.IndexEngine.get_loc\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"pandas/_libs/index.pyx\", line 108, in pandas._libs.index.IndexEngine.get_loc\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"pandas/_libs/hashtable_class_helper.pxi\", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"pandas/_libs/hashtable_class_helper.pxi\", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | KeyError: 'SEASON'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | The above exception was the direct cause of the following exception:\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_box_scores.py\", line 14, in test_get_all_star_box_score\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     d = get_all_star_box_score(2020)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/box_scores.py\", line 92, in get_all_star_box_score\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     team = stats_df[stats_df['SEASON'] == f'{year-1}-{str(year)[-2:]}'].head(1)['TEAM'].values[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/frame.py\", line 3458, in __getitem__\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     indexer = self.columns.get_loc(key)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/indexes/base.py\", line 3363, in get_loc\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise KeyError(key) from err\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | KeyError: 'SEASON'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [2.369s]: test_get_box_scores (test_box_scores.TestBoxScores)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_box_scores.py\", line 6, in test_get_box_scores\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     d = get_box_scores('2020-01-06', 'DEN', 'ATL')\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/box_scores.py\", line 25, in get_box_scores\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raw_df = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.174s]: test_should_get_class (test_drafts.TestDraft)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_drafts.py\", line 7, in test_should_get_class\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = get_draft_class(2003)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/drafts.py\", line 12, in get_draft_class\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.171s]: test_should_get_old_class (test_drafts.TestDraft)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_drafts.py\", line 14, in test_should_get_old_class\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = get_draft_class(1987)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/drafts.py\", line 12, in get_draft_class\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.171s]: test_should_handle_forfeit (test_drafts.TestDraft)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_drafts.py\", line 18, in test_should_handle_forfeit\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = get_draft_class(2002)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/drafts.py\", line 12, in get_draft_class\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.175s]: test_injury_report (test_injury_report.TestInjuryReport)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_injury_report.py\", line 6, in test_injury_report\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = get_injury_report()\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/injury_report.py\", line 15, in get_injury_report\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [1.316s]: test_get_game_logs (test_players.TestPlayers)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_players.py\", line 23, in test_get_game_logs\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self.assertCountEqual(list(df.columns), expected_columns)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | AttributeError: 'NoneType' object has no attribute 'columns'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [6.343s]: test_get_schedule_weird_season (test_seasons.TestSeason)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_seasons.py\", line 14, in test_get_schedule_weird_season\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     cur_season = get_schedule(season, playoffs=use_playoffs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/seasons.py\", line 31, in get_schedule\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df.columns = ['DATE', 'VISITOR', 'VISITOR_PTS', 'HOME', 'HOME_PTS']\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/generic.py\", line 5500, in __setattr__\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return object.__setattr__(self, name, value)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"pandas/_libs/properties.pyx\", line 70, in pandas._libs.properties.AxisProperty.__set__\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/generic.py\", line 766, in _set_axis\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self._mgr.set_axis(axis, labels)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 216, in set_axis\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self._validate_set_axis(axis, new_labels)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/core/internals/base.py\", line 57, in _validate_set_axis\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ValueError(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ValueError: Length mismatch: Expected axis has 0 elements, new values have 5 elements\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.051s]: test_get_shot_chart (test_shot_charts.TestShotCharts)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_shot_charts.py\", line 6, in test_get_shot_chart\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     d = get_shot_chart('2019-12-28', 'TOR', 'BOS')\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/shot_charts.py\", line 36, in get_shot_chart\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     suffix = get_game_suffix(date, team1, team2).replace('/boxscores', '')\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | AttributeError: 'NoneType' object has no attribute 'replace'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.048s]: test_get_roster (test_teams.TestTeams)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_teams.py\", line 7, in test_get_roster\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     curry_df = df[df['PLAYER']=='Stephen Curry']\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | TypeError: 'NoneType' object is not subscriptable\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.046s]: test_get_roster_on_missing_nationality (test_teams.TestTeams)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_teams.py\", line 21, in test_get_roster_on_missing_nationality\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self.assertListEqual(list(df.columns), expected_columns)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | AttributeError: 'NoneType' object has no attribute 'columns'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.232s]: test_get_roster_stats (test_teams.TestTeams)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_teams.py\", line 34, in test_get_roster_stats\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = get_roster_stats('GSW', 2019)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/teams.py\", line 124, in get_roster_stats\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df2 = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ERROR [0.175s]: test_get_team_misc (test_teams.TestTeams)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_teams.py\", line 39, in test_get_team_misc\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     series = get_team_misc('GSW', 2019)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/basketball_reference_scraper/teams.py\", line 93, in get_team_misc\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     df = pd.read_html(str(table))[0]\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return func(*args, **kwargs)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 1098, in read_html\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     return _parse(\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 902, in _parse\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     parser = _parser_dispatch(flav)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages/pandas/io/html.py\", line 851, in _parser_dispatch\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     raise ImportError(\"html5lib not found, please install it\")\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ImportError: html5lib not found, please install it\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | FAIL [2.091s]: test_get_stats (test_players.TestPlayers)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_players.py\", line 8, in test_get_stats\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self.assertCountEqual(list(df.columns), expected_columns)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | AssertionError: Element counts were not equal:\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Diff is 1018 characters long. Set self.maxDiff to None to see it.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | FAIL [0.056s]: test_get_standings (test_seasons.TestSeason)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_seasons.py\", line 21, in test_get_standings\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self.assertListEqual(list(d.keys()), ['EASTERN_CONF', 'WESTERN_CONF'])\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | AssertionError: Lists differ: [] != ['EASTERN_CONF', 'WESTERN_CONF']\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Second list contains 2 additional elements.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | First extra element 0:\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | 'EASTERN_CONF'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | - []\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | + ['EASTERN_CONF', 'WESTERN_CONF']\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ======================================================================\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | FAIL [0.058s]: test_get_standings_weird_season (test_seasons.TestSeason)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Traceback (most recent call last):\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/test/test_seasons.py\", line 30, in test_get_standings_weird_season\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   |     self.assertListEqual(list(d.keys()), ['EASTERN_CONF', 'WESTERN_CONF'])\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | AssertionError: Lists differ: [] != ['EASTERN_CONF', 'WESTERN_CONF']\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Second list contains 2 additional elements.\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | First extra element 0:\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | 'EASTERN_CONF'\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | - []\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | + ['EASTERN_CONF', 'WESTERN_CONF']\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | ----------------------------------------------------------------------\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Ran 19 tests in 23.958s\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | FAILED (failures=3, errors=13)\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | \n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   | Generating XML reports...\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build]   \u274c  Failure - Main Test\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] exitcode '1': failure\n[833b9c58-de69-4a70-af6a-80a5e292ea4b/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/vishaalagartha-basketball_reference_scraper/.github/workflows/main-crawler.yml",
+        "build_tool": "unittest",
+        "elapsed_time": 183.00886249542236
+    }
+}

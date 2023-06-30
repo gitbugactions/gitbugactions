@@ -1,0 +1,27 @@
+{
+    "repository": "llazyl/TVBox",
+    "stars": 69,
+    "language": "java",
+    "size": 6200,
+    "clone_url": "https://github.com/llazyl/TVBox.git",
+    "timestamp": "2023-06-29T15:23:08.201102Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[a3074075-9bda-41fd-84a1-fb38cadbfac5/build] \ud83d\ude80  Start image=crawlergpt:latest\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/llazyl-TVBox] user=0 workdir=\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build] \u2b50 Run Main actions/checkout@v3\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \u2705  Success - Main actions/checkout@v3\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build] \u2b50 Run Main Build With Gradle\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Downloading https://services.gradle.org/distributions/gradle-6.7.1-bin.zip\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | ..................................................................................................\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Unzipping /home/runneradmin/.gradle/wrapper/dists/gradle-6.7.1-bin/bwlcbys1h7rz3272sye1xwiv6/gradle-6.7.1-bin.zip to /home/runneradmin/.gradle/wrapper/dists/gradle-6.7.1-bin/bwlcbys1h7rz3272sye1xwiv6\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Set executable permissions for: /home/runneradmin/.gradle/wrapper/dists/gradle-6.7.1-bin/bwlcbys1h7rz3272sye1xwiv6/gradle-6.7.1/bin/gradle\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Welcome to Gradle 6.7.1!\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Here are the highlights of this release:\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   |  - File system watching is ready for production use\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   |  - Declare the version of Java your build requires\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   |  - Java 15 support\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | For more details see https://docs.gradle.org/6.7.1/release-notes.html\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | FAILURE: Build failed with an exception.\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | * What went wrong:\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Could not determine the dependencies of task ':app:packageRelease'.\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | > Could not create task ':app:minifyReleaseWithR8'.\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   |    > SDK location not found. Define location with an ANDROID_SDK_ROOT environment variable or by setting the sdk.dir path in your project's local properties file at '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/llazyl-TVBox/local.properties'.\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | * Try:\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | * Get more help at https://help.gradle.org\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | \n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   | BUILD FAILED in 32s\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build]   \u274c  Failure - Main Build With Gradle\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build] exitcode '1': failure\n[a3074075-9bda-41fd-84a1-fb38cadbfac5/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/llazyl-TVBox/.github/workflows/test-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 107.13658928871155
+    }
+}

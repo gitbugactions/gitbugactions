@@ -1,0 +1,29 @@
+{
+    "repository": "amidaware/tacticalrmm",
+    "stars": 1724,
+    "language": "python",
+    "size": 68381,
+    "clone_url": "https://github.com/amidaware/tacticalrmm.git",
+    "timestamp": "2023-06-28T14:29:06.037417Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests] \ud83d\ude80  Start image=crawlergpt:latest\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/amidaware-tacticalrmm] user=0 workdir=\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \u2601  git clone 'https://github.com/harmon758/postgresql-action' # ref=v1\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests] \ud83e\uddea  Matrix: map[python-version:3.11.4]\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests] \u2b50 Run Main actions/checkout@v3\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \u2705  Success - Main actions/checkout@v3\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests] \u2b50 Run Main harmon758/postgresql-action@v1\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker build -t act-harmon758-postgresql-action-v1-dockeraction:latest /tmp/act-cache/3139d0c4-fa53-4398-a4de-354d3e3d109d/act/harmon758-postgresql-action@v1/\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker pull image=act-harmon758-postgresql-action-v1-dockeraction:latest platform= username= forcePull=false\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker create image=act-harmon758-postgresql-action-v1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \ud83d\udc33  docker run image=act-harmon758-postgresql-action-v1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   | See 'docker run --help'.\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests]   \u274c  Failure - Main harmon758/postgresql-action@v1\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests] exit with `FAILURE`: 126\n[19487fba-d0e4-4e91-aa44-0d65fad1d697/Tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/amidaware-tacticalrmm/.github/workflows/ci-tests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 286.97863245010376
+    }
+}

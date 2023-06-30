@@ -1,0 +1,32 @@
+{
+    "repository": "Farama-Foundation/Minigrid",
+    "stars": 1815,
+    "language": "python",
+    "size": 13457,
+    "clone_url": "https://github.com/Farama-Foundation/Minigrid.git",
+    "timestamp": "2023-06-28T12:29:44.336531Z",
+    "clone_success": true,
+    "number_of_actions": 6,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[7da333c7-c15c-4212-b8ea-1abd34199a22/build] \ud83d\ude80  Start image=crawlergpt:latest\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Farama-Foundation-Minigrid] user=0 workdir=\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build] \u2b50 Run Main actions/checkout@v2\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \u2705  Success - Main actions/checkout@v2\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build] \u2b50 Run Main docker build -f py.Dockerfile \\\n  --build-arg PYTHON_VERSION=3.7 \\\n  --tag minigrid-docker .      \n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%22PYTHON_VERSION%22%3A%223.7%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=py.Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=minigrid-docker&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build]   \u274c  Failure - Main docker build -f py.Dockerfile \\\n  --build-arg PYTHON_VERSION=3.7 \\\n  --tag minigrid-docker .      \n[7da333c7-c15c-4212-b8ea-1abd34199a22/build] exitcode '1': failure\n[7da333c7-c15c-4212-b8ea-1abd34199a22/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Farama-Foundation-Minigrid/.github/workflows/build-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 3.5170254707336426
+    }
+}

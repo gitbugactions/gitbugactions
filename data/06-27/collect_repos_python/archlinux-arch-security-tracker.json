@@ -1,0 +1,27 @@
+{
+    "repository": "archlinux/arch-security-tracker",
+    "stars": 113,
+    "language": "python",
+    "size": 718,
+    "clone_url": "https://github.com/archlinux/arch-security-tracker.git",
+    "timestamp": "2023-06-28T11:30:53.604048Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test] \ud83d\ude80  Start image=archlinux/archlinux:latest\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test]   \ud83d\udc33  docker pull image=archlinux/archlinux:latest platform= username= forcePull=false\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test]   \ud83d\udc33  docker create image=archlinux/archlinux:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test]   \ud83d\udc33  docker run image=archlinux/archlinux:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test] \u2b50 Run Main Install dependencies\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/0.sh] user= workdir=\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test]   | pacman: unrecognized option '--junitxml=report.xml'\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test]   \u274c  Failure - Main Install dependencies\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test] exitcode '1': failure\n[388e4d6a-5d80-47b8-ba8e-fe6ef345e6f1/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/archlinux-arch-security-tracker/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 33.138893127441406
+    }
+}

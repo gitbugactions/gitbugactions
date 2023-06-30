@@ -1,0 +1,27 @@
+{
+    "repository": "CVxTz/time_series_forecasting",
+    "stars": 152,
+    "language": "python",
+    "size": 171,
+    "clone_url": "https://github.com/CVxTz/time_series_forecasting.git",
+    "timestamp": "2023-06-28T16:57:16.442564Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[05167df7-a7e6-4d6c-9664-3381a823b855/build] \ud83d\ude80  Start image=crawlergpt:latest\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/CVxTz-time_series_forecasting] user=0 workdir=\n[05167df7-a7e6-4d6c-9664-3381a823b855/build] \u2b50 Run Main actions/checkout@v2\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \u2705  Success - Main actions/checkout@v2\n[05167df7-a7e6-4d6c-9664-3381a823b855/build] \u2b50 Run Main Lint with flake8\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | Collecting flake8\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Downloading flake8-6.0.0-py2.py3-none-any.whl (57 kB)\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | Collecting pyflakes<3.1.0,>=3.0.0\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Downloading pyflakes-3.0.1-py2.py3-none-any.whl (62 kB)\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | Collecting pycodestyle<2.11.0,>=2.10.0\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Downloading pycodestyle-2.10.0-py2.py3-none-any.whl (41 kB)\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | Installing collected packages: mccabe, pyflakes, pycodestyle, flake8\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   WARNING: The script pyflakes is installed in '/home/runneradmin/.local/bin' which is not on PATH.\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   WARNING: The script pycodestyle is installed in '/home/runneradmin/.local/bin' which is not on PATH.\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   WARNING: The script flake8 is installed in '/home/runneradmin/.local/bin' which is not on PATH.\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   |   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | Successfully installed flake8-6.0.0 mccabe-0.7.0 pycodestyle-2.10.0 pyflakes-3.0.1\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   | /var/run/act/workflow/1: line 4: flake8: command not found\n[05167df7-a7e6-4d6c-9664-3381a823b855/build]   \u274c  Failure - Main Lint with flake8\n[05167df7-a7e6-4d6c-9664-3381a823b855/build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[05167df7-a7e6-4d6c-9664-3381a823b855/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/CVxTz-time_series_forecasting/.github/workflows/CI-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 134.5760006904602
+    }
+}

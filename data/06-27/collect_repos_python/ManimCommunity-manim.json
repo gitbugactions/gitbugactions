@@ -1,0 +1,32 @@
+{
+    "repository": "ManimCommunity/manim",
+    "stars": 14842,
+    "language": "python",
+    "size": 36601,
+    "clone_url": "https://github.com/ManimCommunity/manim.git",
+    "timestamp": "2023-06-28T15:27:29.441151Z",
+    "clone_success": true,
+    "number_of_actions": 6,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[19bb2984-22eb-4783-a496-38379d6287e5/test] \ud83d\ude80  Start image=crawlergpt:latest\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ManimCommunity-manim] user=0 workdir=\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/FedericoCarboni/setup-ffmpeg' # ref=v2\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/awalsh128/cache-apt-pkgs-action' # ref=latest\n[19bb2984-22eb-4783-a496-38379d6287e5/test] \u2b50 Run Pre Install system dependencies (Linux)\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2705  Success - Pre Install system dependencies (Linux)\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/teatimeguest/setup-texlive-action' # ref=v2\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2601  git clone 'https://github.com/ssciwr/setup-mesa-dist-win' # ref=v1\n[19bb2984-22eb-4783-a496-38379d6287e5/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python:3.8]\n[19bb2984-22eb-4783-a496-38379d6287e5/test] \u2b50 Run Main Checkout the repository\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u2705  Success - Main Checkout the repository\n[19bb2984-22eb-4783-a496-38379d6287e5/test] \u2b50 Run Main Install Poetry\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | \u26a0\ufe0f  Note: '/home/runneradmin/.local/bin' is not on your PATH environment\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   |     variable. These apps will not be globally accessible until your PATH is\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   |     updated. Run `pipx ensurepath` to automatically add it, or manually modify\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   |     your PATH in your shell's config file (i.e. ~/.bashrc).\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | done! \u2728 \ud83c\udf1f \u2728\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | creating virtual environment...\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | creating shared libraries...\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | upgrading shared libraries...\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | installing poetry from spec 'poetry==1.5.*'...\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   |   installed package poetry 1.5.1, Python 3.8.10\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   |   These apps are now globally available\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   |     - poetry\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   | /var/run/act/workflow/1: line 3: poetry: command not found\n[19bb2984-22eb-4783-a496-38379d6287e5/test]   \u274c  Failure - Main Install Poetry\n[19bb2984-22eb-4783-a496-38379d6287e5/test] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[19bb2984-22eb-4783-a496-38379d6287e5/test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'test' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ManimCommunity-manim/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 262.2793848514557
+    }
+}

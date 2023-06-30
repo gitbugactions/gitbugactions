@@ -1,0 +1,154 @@
+{
+    "repository": "CCEmuX/CCEmuX",
+    "stars": 70,
+    "language": "java",
+    "size": 2818,
+    "clone_url": "https://github.com/CCEmuX/CCEmuX.git",
+    "timestamp": "2023-06-29T12:22:15.355894Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testList()",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testRead()",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testSize()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testFollowInvalidPath()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testDirectory()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testFollowEntries()",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testExists()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VirtualMountTest",
+                "name": "testFollowRoot()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "net.clgd.ccemux.test.VersionTest",
+                "name": "test()",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/CCEmuX-CCEmuX] user=0 workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \u2b50 Run Main Clone repository\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2705  Success - Main Clone repository\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \u2b50 Run Main Set up Java\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker cp src=/tmp/act-cache/53ee0bc1-d351-4a84-862d-98eab3532866/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2753  ::group::Installed distributions\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Trying to resolve the latest version from remote\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Resolved latest version as 17.0.7+7\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Trying to download...\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Downloading Java 17.0.7+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz ...\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%252B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Destination /tmp/ef3267bd-c6b8-4f2b-9d4e-9e61737250ed\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::download complete\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Extracting Java archive...\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Checking tar --version\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/8d699ba5-2bc9-422c-95b4-bd6e76bfc994 -f /tmp/ef3267bd-c6b8-4f2b-9d4e-9e61737250ed\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Caching tool Java_Temurin-Hotspot_jdk 17.0.7-7 x64\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::source dir: /tmp/8d699ba5-2bc9-422c-95b4-bd6e76bfc994/jdk-17.0.7+7\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::finished caching tool\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Java 17.0.7+7 was downloaded\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Setting Java 17.0.7+7 as the default\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Creating toolchains.xml for JDK version 17 from temurin\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Java configuration:\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |   Distribution: temurin\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |   Version: 17.0.7+7\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2753  ::endgroup::\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Creating settings.xml with server-id: github\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Writing to /home/runneradmin/.m2/settings.xml\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2705  Success - Main Set up Java\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-env:: JAVA_HOME_17_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-output:: distribution=Temurin-Hotspot\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-output:: version=17.0.7+7\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.7-7/x64/bin\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \u2b50 Run Main Setup Gradle\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker cp src=/tmp/act-cache/53ee0bc1-d351-4a84-862d-98eab3532866/act/gradle-gradle-build-action@v2/ dst=/var/run/act/actions/gradle-gradle-build-action@v2/\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-gradle-build-action@v2/] user=0 workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/main/index.js] user= workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Determined user.home from java -version output: '/home/runneradmin'\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2753  ::group::Restore Gradle state from cache\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Requesting Gradle User Home with%0A    key:v8-gradle|Linux|22549bcc-0f0c-4982-9477-d389b22ea645-build[99914b932bd37a50b983c5e7c90ae93b]-17ff25bc8b397998422595979403eb5f39867ed8%0A    restoreKeys:[v8-gradle|Linux|22549bcc-0f0c-4982-9477-d389b22ea645-build[99914b932bd37a50b983c5e7c90ae93b],v8-gradle|Linux|22549bcc-0f0c-4982-9477-d389b22ea645-build,v8-gradle|Linux]\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Using cache paths: /home/runneradmin/.gradle/caches,/home/runneradmin/.gradle/notifications,/home/runneradmin/.gradle/.gradle-build-action\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Resolved Keys:\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::[\"v8-gradle|Linux|22549bcc-0f0c-4982-9477-d389b22ea645-build[99914b932bd37a50b983c5e7c90ae93b]-17ff25bc8b397998422595979403eb5f39867ed8\",\"v8-gradle|Linux|22549bcc-0f0c-4982-9477-d389b22ea645-build[99914b932bd37a50b983c5e7c90ae93b]\",\"v8-gradle|Linux|22549bcc-0f0c-4982-9477-d389b22ea645-build\",\"v8-gradle|Linux\"]\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::1.5.0\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:43035/_apis/artifactcache/cache?keys=v8-gradle%257CLinux%257C22549bcc-0f0c-4982-9477-d389b22ea645-build%255B99914b932bd37a50b983c5e7c90ae93b%255D-17ff25bc8b397998422595979403eb5f39867ed8%252Cv8-gradle%257CLinux%257C22549bcc-0f0c-4982-9477-d389b22ea645-build%255B99914b932bd37a50b983c5e7c90ae93b%255D%252Cv8-gradle%257CLinux%257C22549bcc-0f0c-4982-9477-d389b22ea645-build%252Cv8-gradle%257CLinux&version=7e0f66437efb161be47bb1072c6fc17ab6d53d5793ce4732de3c3ce29c5348a5\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Gradle User Home cache not found. Will initialize empty.\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2753  ::endgroup::\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2705  Success - Main Setup Gradle\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-env:: GRADLE_BUILD_ACTION_SETUP_COMPLETED=true\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2699  ::set-env:: GRADLE_BUILD_ACTION_CACHE_RESTORED=true\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \u2b50 Run Main Build with Gradle\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Welcome to Gradle 7.5.1!\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Here are the highlights of this release:\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |  - Support for Java 18\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |  - Support for building with Groovy 4\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |  - Much more responsive continuous builds\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   |  - Improved diagnostics for dependency resolution\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Configure project :\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Project : => no module-info.java found\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:compileJava\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :compileJava\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :processResources\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :classes\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :jar\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:processResources NO-SOURCE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:classes\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:jar\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :startScripts\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :distTar\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :distZip\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :compileTestJava\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :processTestResources NO-SOURCE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :testClasses\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :shadowJar\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :startShadowScripts\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :shadowDistTar\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :shadowDistZip\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :assemble\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :test\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :check\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :build\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:assemble\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:compileTestJava NO-SOURCE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:processTestResources NO-SOURCE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:testClasses UP-TO-DATE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:test NO-SOURCE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:check UP-TO-DATE\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | > Task :plugin-api:build\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | \n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | BUILD SUCCESSFUL in 1m 34s\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | 14 actionable tasks: 14 executed\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2705  Success - Main Build with Gradle\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \u2b50 Run Post Setup Gradle\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/post/index.js] user= workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | In final post-action step, saving state and writing summary\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Cache is read-only: will not save state for use in subsequent builds.\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   | Writing job summary\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2705  Success - Post Setup Gradle\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \u2b50 Run Post Set up Java\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build]   \u2705  Success - Post Set up Java\n[22549bcc-0f0c-4982-9477-d389b22ea645/Build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/CCEmuX-CCEmuX/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 254.05426454544067
+    }
+}

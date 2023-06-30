@@ -1,0 +1,770 @@
+{
+    "repository": "RKrahl/pytest-dependency",
+    "stars": 124,
+    "language": "python",
+    "size": 199,
+    "clone_url": "https://github.com/RKrahl/pytest-dependency.git",
+    "timestamp": "2023-06-28T11:20:41.953259Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test_01_marker",
+                "name": "test_marker_registered",
+                "time": 0.278,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "@pytest.mark.dependency(name=None, depends=[]): mark a test to be used as a dependency for other tests or to depend on other tests.\n\n@pytest.mark.filterwarnings(warning): add a warning filter to the given test. see https://docs.pytest.org/en/latest/warnings.html#pytest-mark-filterwarnings \n\n@pytest.mark.skip(reason=None): skip the given test function with an optional reason. Example: skip(reason=\"no way of currently testing this\") skips the test.\n\n@pytest.mark.skipif(condition): skip the given test function if eval(condition) results in a True value.  Evaluation happens within the module global context. Example: skipif('sys.platform == \"win32\"') skips the test if we are on the win32 platform. see https://docs.pytest.org/en/latest/skipping.html\n\n@pytest.mark.xfail(condition, reason=None, run=True, raises=None, strict=False): mark the test function as an expected failure if eval(condition) has a True value. Optionally specify a reason for better reporting and run=False if you don't even want to execute the test function. If only specific exception(s) are expected, you can list them in raises, and if the test fails in other ways, it will be reported as a true failure. See https://docs.pytest.org/en/latest/skipping.html\n\n@pytest.mark.parametrize(argnames, argvalues): call a test function multiple times passing in different arguments in turn. argvalues generally needs to be a list of values if argnames specifies only one name or a list of tuples of values if argnames specifies multiple names. Example: @parametrize('arg1', [1,2]) would lead to two calls of the decorated test function, one with arg1=1 and another with arg1=2.see https://docs.pytest.org/en/latest/parametrize.html for more info and examples.\n\n@pytest.mark.usefixtures(fixturename1, fixturename2, ...): mark tests as needing all of the specified fixtures. see https://docs.pytest.org/en/latest/fixture.html#usefixtures \n\n@pytest.mark.tryfirst: mark a hook implementation function such that the plugin machinery will try to call it first/as early as possible.\n\n@pytest.mark.trylast: mark a hook implementation function such that the plugin machinery will try to call it last/as late as possible.\n\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_01_marker",
+                "name": "test_marker",
+                "time": 0.242,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_marker0, inifile: pytest.ini\ncollecting ... collected 1 item\n\ntest_marker.py::test_marker PASSED\n\n=========================== 1 passed in 0.05 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_02_simple_dependency",
+                "name": "test_no_skip",
+                "time": 0.32,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_no_skip0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_no_skip.py::test_a SKIPPED\ntest_no_skip.py::test_b PASSED\ntest_no_skip.py::test_c PASSED\ntest_no_skip.py::test_d PASSED\n\n===================== 3 passed, 1 skipped in 0.17 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_02_simple_dependency",
+                "name": "test_skip_depend",
+                "time": 0.403,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_skip_depend0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_skip_depend.py::test_a PASSED\ntest_skip_depend.py::test_b SKIPPED\ntest_skip_depend.py::test_c SKIPPED\ntest_skip_depend.py::test_d SKIPPED\n\n===================== 1 passed, 3 skipped in 0.22 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_02_simple_dependency",
+                "name": "test_fail_depend",
+                "time": 0.403,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_fail_depend0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_fail_depend.py::test_a PASSED\ntest_fail_depend.py::test_b FAILED\ntest_fail_depend.py::test_c SKIPPED\ntest_fail_depend.py::test_d SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_b ____________________________________\n\n    @pytest.mark.dependency()\n    def test_b():\n>       assert False\nE       assert False\n\ntest_fail_depend.py:9: AssertionError\n================ 1 failed, 1 passed, 2 skipped in 0.17 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_02_simple_dependency",
+                "name": "test_named_fail_depend",
+                "time": 0.451,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_named_fail_depend0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_named_fail_depend.py::test_a PASSED\ntest_named_fail_depend.py::test_b FAILED\ntest_named_fail_depend.py::test_c SKIPPED\ntest_named_fail_depend.py::test_d SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_b ____________________________________\n\n    @pytest.mark.dependency(name=\"b\")\n    def test_b():\n>       assert False\nE       assert False\n\ntest_named_fail_depend.py:9: AssertionError\n================ 1 failed, 1 passed, 2 skipped in 0.13 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_02_simple_dependency",
+                "name": "test_explicit_select",
+                "time": 0.325,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_explicit_select0, inifile: pytest.ini\ncollecting ... collected 1 item\n\ntest_explicit_select.py::test_d SKIPPED\n\n========================== 1 skipped in 0.14 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_02_simple_dependency",
+                "name": "test_depend_unknown",
+                "time": 0.249,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_depend_unknown0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_depend_unknown.py::test_a PASSED\ntest_depend_unknown.py::test_b PASSED\ntest_depend_unknown.py::test_c PASSED\ntest_depend_unknown.py::test_d SKIPPED\n\n===================== 3 passed, 1 skipped in 0.07 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_class",
+                "name": "test_class_simple",
+                "time": 0.237,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_class_simple0, inifile: pytest.ini\ncollecting ... collected 5 items\n\ntest_class_simple.py::TestClass::test_a FAILED\ntest_class_simple.py::TestClass::test_b PASSED\ntest_class_simple.py::TestClass::test_c SKIPPED\ntest_class_simple.py::TestClass::test_d PASSED\ntest_class_simple.py::TestClass::test_e SKIPPED\n\n=================================== FAILURES ===================================\n_______________________________ TestClass.test_a _______________________________\n\nself = <test_class_simple.TestClass object at 0x7fab9add22d0>\n\n    @pytest.mark.dependency()\n    def test_a(self):\n>       assert False\nE       assert False\n\ntest_class_simple.py:7: AssertionError\n================ 1 failed, 2 passed, 2 skipped in 0.09 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_class",
+                "name": "test_class_simple_named",
+                "time": 0.162,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_class_simple_named0, inifile: pytest.ini\ncollecting ... collected 5 items\n\ntest_class_simple_named.py::TestClassNamed::test_a FAILED\ntest_class_simple_named.py::TestClassNamed::test_b PASSED\ntest_class_simple_named.py::TestClassNamed::test_c SKIPPED\ntest_class_simple_named.py::TestClassNamed::test_d PASSED\ntest_class_simple_named.py::TestClassNamed::test_e SKIPPED\n\n=================================== FAILURES ===================================\n____________________________ TestClassNamed.test_a _____________________________\n\nself = <test_class_simple_named.TestClassNamed object at 0x7fab9ad65f50>\n\n    @pytest.mark.dependency(name=\"a\")\n    def test_a(self):\n>       assert False\nE       assert False\n\ntest_class_simple_named.py:7: AssertionError\n================ 1 failed, 2 passed, 2 skipped in 0.04 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_class",
+                "name": "test_class_default_name",
+                "time": 0.187,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_class_default_name0, inifile: pytest.ini\ncollecting ... collected 3 items\n\ntest_class_default_name.py::test_a FAILED\ntest_class_default_name.py::TestClass::test_a PASSED\ntest_class_default_name.py::test_b SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_a ____________________________________\n\n    @pytest.mark.dependency()\n    def test_a():\n>       assert False\nE       assert False\n\ntest_class_default_name.py:5: AssertionError\n================ 1 failed, 1 passed, 1 skipped in 0.06 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_multiple_dependency",
+                "name": "test_multiple",
+                "time": 0.234,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_multiple0, inifile: pytest.ini\ncollecting ... collected 11 items\n\ntest_multiple.py::test_a SKIPPED\ntest_multiple.py::test_b FAILED\ntest_multiple.py::test_c PASSED\ntest_multiple.py::test_d PASSED\ntest_multiple.py::test_e PASSED\ntest_multiple.py::test_f SKIPPED\ntest_multiple.py::test_g SKIPPED\ntest_multiple.py::test_h PASSED\ntest_multiple.py::test_i SKIPPED\ntest_multiple.py::test_j PASSED\ntest_multiple.py::test_k SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_b ____________________________________\n\n    @pytest.mark.dependency(name=\"b\")\n    def test_b():\n>       assert False\nE       assert False\n\ntest_multiple.py:9: AssertionError\n================ 1 failed, 5 passed, 5 skipped in 0.07 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_param",
+                "name": "test_simple_params",
+                "time": 0.196,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_simple_params0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_simple_params.py::test_a[0] PASSED\ntest_simple_params.py::test_a[1] FAILED\ntest_simple_params.py::test_b[0] PASSED\ntest_simple_params.py::test_b[1] SKIPPED\n\n=================================== FAILURES ===================================\n__________________________________ test_a[1] ___________________________________\n\nx = 1\n\n    @pytest.mark.parametrize(\"x\", [ 0, 1 ])\n    @pytest.mark.dependency()\n    def test_a(x):\n>       assert x == 0\nE       assert 1 == 0\nE         -1\nE         +0\n\ntest_simple_params.py:8: AssertionError\n================ 1 failed, 2 passed, 1 skipped in 0.09 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_param",
+                "name": "test_multiple",
+                "time": 0.245,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_multiple1, inifile: pytest.ini\ncollecting ... collected 13 items\n\ntest_multiple.py::test_a[0-0] PASSED\ntest_multiple.py::test_a[0-1] PASSED\ntest_multiple.py::test_a[1-0] PASSED\ntest_multiple.py::test_a[1-1] FAILED\ntest_multiple.py::test_b[1-2] PASSED\ntest_multiple.py::test_b[1-3] PASSED\ntest_multiple.py::test_b[1-4] SKIPPED\ntest_multiple.py::test_b[2-3] PASSED\ntest_multiple.py::test_b[2-4] SKIPPED\ntest_multiple.py::test_b[3-4] SKIPPED\ntest_multiple.py::test_c[1] SKIPPED\ntest_multiple.py::test_c[2] SKIPPED\ntest_multiple.py::test_c[3] PASSED\n\n=================================== FAILURES ===================================\n_________________________________ test_a[1-1] __________________________________\n\nx = 1, y = 1\n\n    @pytest.mark.parametrize(\"x,y\", [\n        pytest.param(0, 0, marks=_md(name=\"a1\")),\n        pytest.param(0, 1, marks=_md(name=\"a2\")),\n        pytest.param(1, 0, marks=_md(name=\"a3\")),\n        pytest.param(1, 1, marks=_md(name=\"a4\"))\n    ])\n    def test_a(x,y):\n>       assert x==0 or y==0\nE       assert (1 == 0\nE         -1\nE         +0 or 1 == 0\nE         -1\nE         +0)\n\ntest_multiple.py:12: AssertionError\n================ 1 failed, 7 passed, 5 skipped in 0.14 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_runtime",
+                "name": "test_skip_depend_runtime",
+                "time": 0.164,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_skip_depend_runtime0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_skip_depend_runtime.py::test_a PASSED\ntest_skip_depend_runtime.py::test_b SKIPPED\ntest_skip_depend_runtime.py::test_c SKIPPED\ntest_skip_depend_runtime.py::test_d SKIPPED\n\n===================== 1 passed, 3 skipped in 0.05 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_module",
+                "time": 0.198,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_module0, inifile: pytest.ini\ncollecting ... collected 5 items\n\ntest_scope_module.py::test_a FAILED\ntest_scope_module.py::test_b PASSED\ntest_scope_module.py::test_c SKIPPED\ntest_scope_module.py::test_d PASSED\ntest_scope_module.py::test_e SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_a ____________________________________\n\n    @pytest.mark.dependency()\n    def test_a():\n>       assert False\nE       assert False\n\ntest_scope_module.py:5: AssertionError\n================ 1 failed, 2 passed, 2 skipped in 0.05 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_session",
+                "time": 0.256,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_session0, inifile: pytest.ini\ncollecting ... collected 9 items\n\ntest_scope_session_01.py::test_a PASSED\ntest_scope_session_01.py::test_b FAILED\ntest_scope_session_01.py::test_c PASSED\ntest_scope_session_01.py::TestClass::test_b PASSED\ntest_scope_session_02.py::test_a FAILED\ntest_scope_session_02.py::test_e PASSED\ntest_scope_session_02.py::test_f SKIPPED\ntest_scope_session_02.py::test_g PASSED\ntest_scope_session_02.py::test_h PASSED\n\n=================================== FAILURES ===================================\n____________________________________ test_b ____________________________________\n\n    @pytest.mark.dependency()\n    def test_b():\n>       assert False\nE       assert False\n\ntest_scope_session_01.py:9: AssertionError\n____________________________________ test_a ____________________________________\n\n    @pytest.mark.dependency()\n    def test_a():\n>       assert False\nE       assert False\n\ntest_scope_session_02.py:5: AssertionError\n================ 2 failed, 6 passed, 1 skipped in 0.14 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_package",
+                "time": 0.265,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_package0, inifile: pytest.ini\ncollecting ... collected 7 items\n\ntest_scope_package_a/test_01.py::test_a PASSED\ntest_scope_package_b/test_02.py::test_c PASSED\ntest_scope_package_b/test_02.py::test_d FAILED\ntest_scope_package_b/test_03.py::test_e PASSED\ntest_scope_package_b/test_03.py::test_f SKIPPED\ntest_scope_package_b/test_03.py::test_g PASSED\ntest_scope_package_b/test_03.py::test_h SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_d ____________________________________\n\n    @pytest.mark.dependency()\n    def test_d():\n>       assert False\nE       assert False\n\ntest_scope_package_b/test_02.py:9: AssertionError\n================ 1 failed, 4 passed, 2 skipped in 0.10 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_class",
+                "time": 0.292,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_class0, inifile: pytest.ini\ncollecting ... collected 10 items\n\ntest_scope_class.py::test_a FAILED\ntest_scope_class.py::test_b PASSED\ntest_scope_class.py::TestClass1::test_c PASSED\ntest_scope_class.py::TestClass2::test_a PASSED\ntest_scope_class.py::TestClass2::test_b FAILED\ntest_scope_class.py::TestClass2::test_d SKIPPED\ntest_scope_class.py::TestClass2::test_e PASSED\ntest_scope_class.py::TestClass2::test_f PASSED\ntest_scope_class.py::TestClass2::test_g SKIPPED\ntest_scope_class.py::TestClass2::test_h SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_a ____________________________________\n\n    @pytest.mark.dependency()\n    def test_a():\n>       assert False\nE       assert False\n\ntest_scope_class.py:5: AssertionError\n______________________________ TestClass2.test_b _______________________________\n\nself = <test_scope_class.TestClass2 object at 0x7fab9abb2850>\n\n    @pytest.mark.dependency()\n    def test_b(self):\n>       assert False\nE       assert False\n\ntest_scope_class.py:25: AssertionError\n================ 2 failed, 5 passed, 3 skipped in 0.13 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_nodeid",
+                "time": 0.276,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_nodeid0, inifile: pytest.ini\ncollecting ... collected 15 items\n\ntest_scope_nodeid.py::test_a PASSED\ntest_scope_nodeid.py::test_b PASSED\ntest_scope_nodeid.py::test_c SKIPPED\ntest_scope_nodeid.py::test_d SKIPPED\ntest_scope_nodeid.py::test_e PASSED\ntest_scope_nodeid.py::TestClass::test_f PASSED\ntest_scope_nodeid.py::TestClass::test_g PASSED\ntest_scope_nodeid.py::TestClass::test_h SKIPPED\ntest_scope_nodeid.py::TestClass::test_i SKIPPED\ntest_scope_nodeid.py::TestClass::test_j SKIPPED\ntest_scope_nodeid.py::TestClass::test_k PASSED\ntest_scope_nodeid.py::TestClass::test_l SKIPPED\ntest_scope_nodeid.py::TestClass::test_m SKIPPED\ntest_scope_nodeid.py::TestClass::test_n SKIPPED\ntest_scope_nodeid.py::TestClass::test_o PASSED\n\n===================== 7 passed, 8 skipped in 0.11 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_named",
+                "time": 0.266,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_named0, inifile: pytest.ini\ncollecting ... collected 12 items\n\ntest_scope_named.py::test_a PASSED\ntest_scope_named.py::test_b PASSED\ntest_scope_named.py::test_c SKIPPED\ntest_scope_named.py::test_d PASSED\ntest_scope_named.py::test_e SKIPPED\ntest_scope_named.py::TestClass::test_f PASSED\ntest_scope_named.py::TestClass::test_g PASSED\ntest_scope_named.py::TestClass::test_h SKIPPED\ntest_scope_named.py::TestClass::test_i PASSED\ntest_scope_named.py::TestClass::test_j SKIPPED\ntest_scope_named.py::TestClass::test_k PASSED\ntest_scope_named.py::TestClass::test_l SKIPPED\n\n===================== 7 passed, 5 skipped in 0.14 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_scope",
+                "name": "test_scope_dependsfunc",
+                "time": 0.442,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_dependsfunc0, inifile: pytest.ini\ncollecting ... collected 16 items\n\ntest_scope_dependsfunc_01.py::test_a PASSED\ntest_scope_dependsfunc_01.py::test_b FAILED\ntest_scope_dependsfunc_01.py::test_c PASSED\ntest_scope_dependsfunc_01.py::TestClass::test_b PASSED\ntest_scope_dependsfunc_02.py::test_a FAILED\ntest_scope_dependsfunc_02.py::test_b PASSED\ntest_scope_dependsfunc_02.py::test_e PASSED\ntest_scope_dependsfunc_02.py::test_f SKIPPED\ntest_scope_dependsfunc_02.py::test_g PASSED\ntest_scope_dependsfunc_02.py::test_h PASSED\ntest_scope_dependsfunc_02.py::test_i SKIPPED\ntest_scope_dependsfunc_02.py::test_j PASSED\ntest_scope_dependsfunc_02.py::TestClass::test_a PASSED\ntest_scope_dependsfunc_02.py::TestClass::test_b FAILED\ntest_scope_dependsfunc_02.py::TestClass::test_c PASSED\ntest_scope_dependsfunc_02.py::TestClass::test_d SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_b ____________________________________\n\n    @pytest.mark.dependency()\n    def test_b():\n>       assert False\nE       assert False\n\ntest_scope_dependsfunc_01.py:9: AssertionError\n____________________________________ test_a ____________________________________\n\n    @pytest.mark.dependency()\n    def test_a():\n>       assert False\nE       assert False\n\ntest_scope_dependsfunc_02.py:6: AssertionError\n_______________________________ TestClass.test_b _______________________________\n\nself = <test_scope_dependsfunc_02.TestClass object at 0x7fab9ade7750>\n\n    @pytest.mark.dependency()\n    def test_b(self):\n>       assert False\nE       assert False\n\ntest_scope_dependsfunc_02.py:59: AssertionError\n================ 3 failed, 10 passed, 3 skipped in 0.18 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_03_skipmsgs",
+                "name": "test_simple",
+                "time": 0.247,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_simple0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_simple.py::test_a PASSED\ntest_simple.py::test_b FAILED\ntest_simple.py::test_c SKIPPED\ntest_simple.py::test_d SKIPPED\n\n=================================== FAILURES ===================================\n____________________________________ test_b ____________________________________\n\n    @pytest.mark.dependency()\n    def test_b():\n>       assert False\nE       assert False\n\ntest_simple.py:9: AssertionError\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_d depends on test_c\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_c depends on test_b\n================ 1 failed, 1 passed, 2 skipped in 0.09 seconds =================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_not_set",
+                "time": 0.185,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_not_set0, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_not_set.py::test_a PASSED\ntest_not_set.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.03 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[0]",
+                "time": 0.267,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false0, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.11 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[no]",
+                "time": 0.242,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false1, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.12 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[n]",
+                "time": 0.142,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false2, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.03 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[False]",
+                "time": 0.138,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false3, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.04 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[false]",
+                "time": 0.201,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false4, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.08 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[f]",
+                "time": 0.175,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false5, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.07 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_false[off]",
+                "time": 0.197,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_false6, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_false.py::test_a PASSED\ntest_set_false.py::test_b SKIPPED\n\n=========================== short test summary info ============================\nSKIPPED [1] /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/build/lib/pytest_dependency.py:102: test_b depends on test_a\n===================== 1 passed, 1 skipped in 0.03 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[1]",
+                "time": 0.164,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true0, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.04 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[yes]",
+                "time": 0.144,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true1, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.03 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[y]",
+                "time": 0.23,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true2, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.08 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[True]",
+                "time": 0.232,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true3, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.08 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[true]",
+                "time": 0.189,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true4, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.05 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[t]",
+                "time": 0.146,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true5, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.02 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_automark",
+                "name": "test_set_true[on]",
+                "time": 0.172,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_set_true6, inifile: pytest.ini\ncollecting ... collected 2 items\n\ntest_set_true.py::test_a PASSED\ntest_set_true.py::test_b PASSED\n\n=========================== 2 passed in 0.05 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_ignore_unknown",
+                "name": "test_no_ignore",
+                "time": 0.153,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_no_ignore0, inifile: pytest.ini\ncollecting ... collected 1 item\n\ntest_no_ignore.py::test_d SKIPPED\n\n========================== 1 skipped in 0.03 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_04_ignore_unknown",
+                "name": "test_ignore",
+                "time": 0.21,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_ignore0, inifile: pytest.ini\ncollecting ... collected 1 item\n\ntest_ignore.py::test_d PASSED\n\n=========================== 1 passed in 0.08 seconds ===========================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_advanced",
+                "name": "test_dyn_parametrized",
+                "time": 0.255,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_dyn_parametrized0, inifile: pytest.ini\ncollecting ... collected 13 items\n\ntest_dyn_parametrized.py::test_child[c0] PASSED\ntest_dyn_parametrized.py::test_child[c1] PASSED\ntest_dyn_parametrized.py::test_child[c2] PASSED\ntest_dyn_parametrized.py::test_child[c3] PASSED\ntest_dyn_parametrized.py::test_child[c4] PASSED\ntest_dyn_parametrized.py::test_child[c5] PASSED\ntest_dyn_parametrized.py::test_child[c6] PASSED\ntest_dyn_parametrized.py::test_child[c7] XFAIL\ntest_dyn_parametrized.py::test_child[c8] PASSED\ntest_dyn_parametrized.py::test_parent[p0] PASSED\ntest_dyn_parametrized.py::test_parent[p1] PASSED\ntest_dyn_parametrized.py::test_parent[p2] PASSED\ntest_dyn_parametrized.py::test_parent[p3] SKIPPED\n\n=============== 11 passed, 1 skipped, 1 xfailed in 0.15 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_advanced",
+                "name": "test_group_fixture1",
+                "time": 0.336,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_group_fixture10, inifile: pytest.ini\ncollecting ... collected 18 items\n\ntest_group_fixture1.py::test_a[1] PASSED\ntest_group_fixture1.py::test_b[1] PASSED\ntest_group_fixture1.py::test_a[2] PASSED\ntest_group_fixture1.py::test_b[2] PASSED\ntest_group_fixture1.py::test_a[3] PASSED\ntest_group_fixture1.py::test_b[3] PASSED\ntest_group_fixture1.py::test_a[4] PASSED\ntest_group_fixture1.py::test_b[4] PASSED\ntest_group_fixture1.py::test_a[5] PASSED\ntest_group_fixture1.py::test_b[5] PASSED\ntest_group_fixture1.py::test_a[6] PASSED\ntest_group_fixture1.py::test_b[6] PASSED\ntest_group_fixture1.py::test_a[7] XFAIL\ntest_group_fixture1.py::test_b[7] SKIPPED\ntest_group_fixture1.py::test_a[8] PASSED\ntest_group_fixture1.py::test_b[8] PASSED\ntest_group_fixture1.py::test_a[9] PASSED\ntest_group_fixture1.py::test_b[9] PASSED\n\n=============== 16 passed, 1 skipped, 1 xfailed in 0.13 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_advanced",
+                "name": "test_group_fixture2",
+                "time": 0.532,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_group_fixture20, inifile: pytest.ini\ncollecting ... collected 27 items\n\ntest_group_fixture2.py::test_a[1] PASSED\ntest_group_fixture2.py::test_b[1] PASSED\ntest_group_fixture2.py::test_c[1] PASSED\ntest_group_fixture2.py::test_a[2] PASSED\ntest_group_fixture2.py::test_b[2] PASSED\ntest_group_fixture2.py::test_c[2] PASSED\ntest_group_fixture2.py::test_a[3] PASSED\ntest_group_fixture2.py::test_b[3] PASSED\ntest_group_fixture2.py::test_c[3] PASSED\ntest_group_fixture2.py::test_a[4] PASSED\ntest_group_fixture2.py::test_b[4] PASSED\ntest_group_fixture2.py::test_c[4] PASSED\ntest_group_fixture2.py::test_a[5] PASSED\ntest_group_fixture2.py::test_b[5] PASSED\ntest_group_fixture2.py::test_c[5] PASSED\ntest_group_fixture2.py::test_a[6] PASSED\ntest_group_fixture2.py::test_b[6] PASSED\ntest_group_fixture2.py::test_c[6] PASSED\ntest_group_fixture2.py::test_a[7] XFAIL\ntest_group_fixture2.py::test_b[7] SKIPPED\ntest_group_fixture2.py::test_c[7] SKIPPED\ntest_group_fixture2.py::test_a[8] PASSED\ntest_group_fixture2.py::test_b[8] PASSED\ntest_group_fixture2.py::test_c[8] PASSED\ntest_group_fixture2.py::test_a[9] PASSED\ntest_group_fixture2.py::test_b[9] PASSED\ntest_group_fixture2.py::test_c[9] PASSED\n\n=============== 24 passed, 2 skipped, 1 xfailed in 0.24 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_advanced",
+                "name": "test_all_params",
+                "time": 0.382,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_all_params0, inifile: pytest.ini\ncollecting ... collected 26 items\n\ntest_all_params.py::test_a[0] PASSED\ntest_all_params.py::test_a[1] PASSED\ntest_all_params.py::test_a[2] PASSED\ntest_all_params.py::test_a[3] PASSED\ntest_all_params.py::test_a[4] PASSED\ntest_all_params.py::test_a[5] PASSED\ntest_all_params.py::test_a[6] PASSED\ntest_all_params.py::test_a[7] PASSED\ntest_all_params.py::test_a[8] PASSED\ntest_all_params.py::test_a[9] PASSED\ntest_all_params.py::test_a[10] PASSED\ntest_all_params.py::test_a[11] PASSED\ntest_all_params.py::test_a[12] PASSED\ntest_all_params.py::test_a[13] XFAIL\ntest_all_params.py::test_a[14] PASSED\ntest_all_params.py::test_a[15] PASSED\ntest_all_params.py::test_a[16] PASSED\ntest_all_params.py::test_b SKIPPED\ntest_all_params.py::test_c[0-2] PASSED\ntest_all_params.py::test_c[2-3] PASSED\ntest_all_params.py::test_c[4-4] PASSED\ntest_all_params.py::test_c[6-5] XFAIL\ntest_all_params.py::test_d SKIPPED\ntest_all_params.py::test_e[abc] PASSED\ntest_all_params.py::test_e[def] XFAIL\ntest_all_params.py::test_f SKIPPED\n\n=============== 20 passed, 3 skipped, 3 xfailed in 0.16 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_names",
+                "name": "test_nodeid",
+                "time": 0.231,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_nodeid0, inifile: pytest.ini\ncollecting ... collected 7 items\n\ntest_nodeid.py::test_a PASSED\ntest_nodeid.py::test_b[7-True] PASSED\ntest_nodeid.py::test_b[0-False] PASSED\ntest_nodeid.py::test_b[-1-False] XFAIL\ntest_nodeid.py::TestClass::test_c PASSED\ntest_nodeid.py::TestClass::test_d[order] PASSED\ntest_nodeid.py::TestClass::test_d[disorder] PASSED\n\n===================== 6 passed, 1 xfailed in 0.05 seconds ======================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_scope",
+                "name": "test_scope_module",
+                "time": 0.144,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_module1, inifile: pytest.ini\ncollecting ... collected 5 items\n\ntest_scope_module.py::test_a XFAIL\ntest_scope_module.py::test_b PASSED\ntest_scope_module.py::test_c SKIPPED\ntest_scope_module.py::test_d PASSED\ntest_scope_module.py::test_e SKIPPED\n\n================ 2 passed, 2 skipped, 1 xfailed in 0.03 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_scope",
+                "name": "test_scope_session",
+                "time": 0.215,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_session1, inifile: pytest.ini\ncollecting ... collected 8 items\n\ntests/test_mod_01.py::test_a PASSED\ntests/test_mod_01.py::test_b XFAIL\ntests/test_mod_01.py::test_c PASSED\ntests/test_mod_01.py::TestClass::test_b PASSED\ntests/test_mod_02.py::test_a XFAIL\ntests/test_mod_02.py::test_e PASSED\ntests/test_mod_02.py::test_f SKIPPED\ntests/test_mod_02.py::test_g PASSED\n\n================ 5 passed, 1 skipped, 2 xfailed in 0.12 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_scope",
+                "name": "test_scope_class",
+                "time": 0.152,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_scope_class1, inifile: pytest.ini\ncollecting ... collected 6 items\n\ntest_scope_class.py::test_a XFAIL\ntest_scope_class.py::TestClass1::test_b PASSED\ntest_scope_class.py::TestClass2::test_a PASSED\ntest_scope_class.py::TestClass2::test_c SKIPPED\ntest_scope_class.py::TestClass2::test_d PASSED\ntest_scope_class.py::TestClass2::test_e SKIPPED\n\n================ 3 passed, 2 skipped, 1 xfailed in 0.05 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_usage",
+                "name": "test_basic",
+                "time": 0.247,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_basic0, inifile: pytest.ini\ncollecting ... collected 5 items\n\ntest_basic.py::test_a XFAIL\ntest_basic.py::test_b PASSED\ntest_basic.py::test_c SKIPPED\ntest_basic.py::test_d PASSED\ntest_basic.py::test_e SKIPPED\n\n================ 2 passed, 2 skipped, 1 xfailed in 0.07 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_usage",
+                "name": "test_named",
+                "time": 0.225,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_named0, inifile: pytest.ini\ncollecting ... collected 5 items\n\ntest_named.py::test_a XFAIL\ntest_named.py::test_b PASSED\ntest_named.py::test_c SKIPPED\ntest_named.py::test_d PASSED\ntest_named.py::test_e SKIPPED\n\n================ 2 passed, 2 skipped, 1 xfailed in 0.08 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_usage",
+                "name": "test_testclass",
+                "time": 0.238,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_testclass0, inifile: pytest.ini\ncollecting ... collected 10 items\n\ntest_testclass.py::TestClass::test_a XFAIL\ntest_testclass.py::TestClass::test_b PASSED\ntest_testclass.py::TestClass::test_c SKIPPED\ntest_testclass.py::TestClass::test_d PASSED\ntest_testclass.py::TestClass::test_e SKIPPED\ntest_testclass.py::TestClassNamed::test_a XFAIL\ntest_testclass.py::TestClassNamed::test_b PASSED\ntest_testclass.py::TestClassNamed::test_c SKIPPED\ntest_testclass.py::TestClassNamed::test_d PASSED\ntest_testclass.py::TestClassNamed::test_e SKIPPED\n\n================ 4 passed, 4 skipped, 2 xfailed in 0.10 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_usage",
+                "name": "test_parametrized",
+                "time": 0.454,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_parametrized0, inifile: pytest.ini\ncollecting ... collected 13 items\n\ntest_parametrized.py::test_a[0-0] PASSED\ntest_parametrized.py::test_a[0-1] XFAIL\ntest_parametrized.py::test_a[1-0] PASSED\ntest_parametrized.py::test_a[1-1] PASSED\ntest_parametrized.py::test_b[1-2] SKIPPED\ntest_parametrized.py::test_b[1-3] PASSED\ntest_parametrized.py::test_b[1-4] PASSED\ntest_parametrized.py::test_b[2-3] SKIPPED\ntest_parametrized.py::test_b[2-4] SKIPPED\ntest_parametrized.py::test_b[3-4] PASSED\ntest_parametrized.py::test_c[1] SKIPPED\ntest_parametrized.py::test_c[2] PASSED\ntest_parametrized.py::test_c[3] SKIPPED\n\n================ 7 passed, 5 skipped, 1 xfailed in 0.24 seconds ================\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_09_examples_usage",
+                "name": "test_runtime",
+                "time": 0.268,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "============================= test session starts ==============================\nplatform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1 -- /opt/hostedtoolcache/Python/2.7.18/x64/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/pytest-of-runneradmin/pytest-0/test_runtime0, inifile: pytest.ini\ncollecting ... collected 4 items\n\ntest_runtime.py::test_a PASSED\ntest_runtime.py::test_b XFAIL\ntest_runtime.py::test_c SKIPPED\ntest_runtime.py::test_d SKIPPED\n\n================ 1 passed, 2 skipped, 1 xfailed in 0.06 seconds ================\n",
+                "stderr": null
+            }
+        ],
+        "stdout": "[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency] user=0 workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:2.7]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \u2b50 Run Main Check out repository code\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2705  Success - Main Check out repository code\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \u2b50 Run Main Set up Python 2.7\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/e9087488-6eb6-417e-9b59-644a7bdc30c4/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udea7  ::warning::The support for python 2.7 will be removed on June 19. Related issue: https://github.com/actions/setup-python/issues/672\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::Semantic version spec of 2.7 is 2.7\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: \n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? false\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? true\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? true\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? true\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? true\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? true\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::explicit? true\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::matched: 2.7.18\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/2.7.18/x64\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udcac  ::debug::Found tool in cache Python 2.7.18 x64\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Successfully setup CPython (2.7.18)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2705  Success - Main Set up Python 2.7\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/2.7.18/x64\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/2.7.18/x64/lib\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2699  ::set-output:: python-version=2.7.18\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/2.7.18/x64\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/2.7.18/x64/bin\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \u2b50 Run Main Install dependencies\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting pathlib\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading pathlib-1.0.1.tar.gz (49 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting pytest>=3.7.0\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading pytest-4.6.11-py2.py3-none-any.whl (231 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting setuptools_scm\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading setuptools_scm-5.0.2-py2.py3-none-any.whl (29 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting importlib-metadata>=0.12; python_version < \"3.8\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading importlib_metadata-2.1.3-py2.py3-none-any.whl (10 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting pathlib2>=2.2.0; python_version < \"3.6\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading pathlib2-2.3.7.post1-py2.py3-none-any.whl (18 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting pluggy<1.0,>=0.12\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting packaging\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading packaging-20.9-py2.py3-none-any.whl (40 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting wcwidth\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading wcwidth-0.2.6-py2.py3-none-any.whl (29 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting six>=1.10.0\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting funcsigs>=1.0; python_version < \"3.0\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading funcsigs-1.0.2-py2.py3-none-any.whl (17 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting atomicwrites>=1.0\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading atomicwrites-1.4.1.tar.gz (14 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting attrs>=17.4.0\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting py>=1.5.0\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting more-itertools<6.0.0,>=4.0.0; python_version <= \"2.7\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading more_itertools-5.0.0-py2-none-any.whl (52 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages (from setuptools_scm->-r .github/requirements.txt (line 3)) (41.2.0)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting contextlib2; python_version < \"3\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading contextlib2-0.6.0.post1-py2.py3-none-any.whl (9.8 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting zipp>=0.5\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading zipp-1.2.0-py2.py3-none-any.whl (4.8 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting configparser>=3.5; python_version < \"3\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading configparser-4.0.2-py2.py3-none-any.whl (22 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting typing; python_version < \"3.5\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading typing-3.10.0.0-py2-none-any.whl (26 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting scandir; python_version < \"3.5\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading scandir-1.10.0.tar.gz (33 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting pyparsing>=2.0.2\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Collecting backports.functools-lru-cache>=1.2.1; python_version < \"3.2\"\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |   Downloading backports.functools_lru_cache-1.6.5-py2.py3-none-any.whl (6.0 kB)\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Using legacy 'setup.py install' for pathlib, since package 'wheel' is not installed.\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Using legacy 'setup.py install' for atomicwrites, since package 'wheel' is not installed.\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Using legacy 'setup.py install' for scandir, since package 'wheel' is not installed.\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Installing collected packages: pathlib, contextlib2, zipp, configparser, typing, scandir, six, pathlib2, importlib-metadata, pluggy, pyparsing, packaging, backports.functools-lru-cache, wcwidth, funcsigs, atomicwrites, attrs, py, more-itertools, pytest, setuptools-scm\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |     Running setup.py install for pathlib: started\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |     Running setup.py install for pathlib: finished with status 'done'\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |     Running setup.py install for scandir: started\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |     Running setup.py install for scandir: finished with status 'done'\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |     Running setup.py install for atomicwrites: started\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   |     Running setup.py install for atomicwrites: finished with status 'done'\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | Successfully installed atomicwrites-1.4.1 attrs-21.4.0 backports.functools-lru-cache-1.6.5 configparser-4.0.2 contextlib2-0.6.0.post1 funcsigs-1.0.2 importlib-metadata-2.1.3 more-itertools-5.0.0 packaging-20.9 pathlib-1.0.1 pathlib2-2.3.7.post1 pluggy-0.13.1 py-1.11.0 pyparsing-2.4.7 pytest-4.6.11 scandir-1.10.0 setuptools-scm-5.0.2 six-1.16.0 typing-3.10.0.0 wcwidth-0.2.6 zipp-1.2.0\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2705  Success - Main Install dependencies\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \u2b50 Run Main Build\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | running build\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | running build_py\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | creating build\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | creating build/lib\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | copying (with substitutions) src/pytest_dependency.py -> build/lib\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2705  Success - Main Build\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \u2b50 Run Main Test with pytest\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | ============================= test session starts ==============================\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | platform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.11.0, pluggy-0.13.1\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/tests, inifile: pytest.ini\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | collected 53 items\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | \n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_01_marker.py ..                                               [  3%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_02_simple_dependency.py ......                                [ 15%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_03_class.py ...                                               [ 20%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_03_multiple_dependency.py .                                   [ 22%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_03_param.py ..                                                [ 26%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_03_runtime.py .                                               [ 28%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_03_scope.py .......                                           [ 41%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_03_skipmsgs.py .                                              [ 43%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_04_automark.py ...............                                [ 71%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_04_ignore_unknown.py ..                                       [ 75%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_09_examples_advanced.py ....                                  [ 83%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_09_examples_names.py .                                        [ 84%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_09_examples_scope.py ...                                      [ 90%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | tests/test_09_examples_usage.py .....                                    [100%]\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | \n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/report.xml -\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   | ========================== 53 passed in 14.37 seconds ==========================\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2705  Success - Main Test with pytest\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \u2b50 Run Post Set up Python 2.7\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test]   \u2705  Success - Post Set up Python 2.7\n[5d9992d0-ffbd-4f1d-bfa9-f4b170160816/Test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/RKrahl-pytest-dependency/.github/workflows/run-tests-crawler.yaml",
+        "build_tool": "pytest",
+        "elapsed_time": 197.3059115409851
+    }
+}

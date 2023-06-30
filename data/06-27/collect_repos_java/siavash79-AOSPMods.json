@@ -1,0 +1,28 @@
+{
+    "repository": "siavash79/AOSPMods",
+    "stars": 950,
+    "language": "java",
+    "size": 43238,
+    "clone_url": "https://github.com/siavash79/AOSPMods.git",
+    "timestamp": "2023-06-29T15:18:01.291994Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[f5905ae4-34ca-4e77-91c7-088a763ceafa/build] \ud83d\ude80  Start image=crawlergpt:latest\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/siavash79-AOSPMods] user=0 workdir=\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \u2601  git clone 'https://github.com/r0adkll/sign-android-release' # ref=v1\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build] \u2b50 Run Main Grab source code\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   | fatal: destination path '.' already exists and is not an empty directory.\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build]   \u274c  Failure - Main Grab source code\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build] exitcode '128': failure\n[f5905ae4-34ca-4e77-91c7-088a763ceafa/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/siavash79-AOSPMods/.github/workflows/fullPackageTestBuild-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 98.2933714389801
+    }
+}

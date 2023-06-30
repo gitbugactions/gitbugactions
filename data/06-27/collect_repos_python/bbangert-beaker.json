@@ -1,0 +1,27 @@
+{
+    "repository": "bbangert/beaker",
+    "stars": 507,
+    "language": "python",
+    "size": 1158,
+    "clone_url": "https://github.com/bbangert/beaker.git",
+    "timestamp": "2023-06-28T09:53:11.017756Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests] \ud83d\ude80  Start image=crawlergpt:latest\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/bbangert-beaker] user=0 workdir=\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \u2601  git clone 'https://github.com/niden/actions-memcached' # ref=v7\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \u2601  git clone 'https://github.com/supercharge/redis-github-action' # ref=1.4.0\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \u2601  git clone 'https://github.com/supercharge/mongodb-github-action' # ref=1.8.0\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests] \u2b50 Run Main actions/checkout@v2\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \u2705  Success - Main actions/checkout@v2\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests] \u2b50 Run Main Install locales\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | Reading package lists...\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | Building dependency tree...\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | Reading state information...\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | locales is already the newest version (2.31-0ubuntu9.2).\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | The following NEW packages will be installed:\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   |   language-pack-it language-pack-it-base\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | 0 upgraded, 2 newly installed, 0 to remove and 20 not upgraded.\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | Need to get 1724 kB of archives.\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | After this operation, 7474 kB of additional disk space will be used.\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | Err:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 language-pack-it-base all 1:20.04+20210802\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   |   404  Not Found [IP: 91.189.91.39 80]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | Err:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 language-pack-it all 1:20.04+20210802\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   |   404  Not Found [IP: 91.189.91.39 80]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/l/language-pack-it-base/language-pack-it-base_20.04+20210802_all.deb  404  Not Found [IP: 91.189.91.39 80]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/l/language-pack-it/language-pack-it_20.04+20210802_all.deb  404  Not Found [IP: 91.189.91.39 80]\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   | E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests]   \u274c  Failure - Main Install locales\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests] exitcode '100': failure\n[74d8d30d-9e31-4410-a7b2-a17c8272f5fa/Run tests] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Run tests' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/bbangert-beaker/.github/workflows/runtests-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 27.402226448059082
+    }
+}

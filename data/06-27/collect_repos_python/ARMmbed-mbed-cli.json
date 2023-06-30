@@ -1,0 +1,27 @@
+{
+    "repository": "ARMmbed/mbed-cli",
+    "stars": 327,
+    "language": "python",
+    "size": 1408,
+    "clone_url": "https://github.com/ARMmbed/mbed-cli.git",
+    "timestamp": "2023-06-28T11:18:40.030861Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[c810a1b0-d1ed-48e3-955b-7740c48c091d/build] \ud83d\ude80  Start image=ghcr.io/armmbed/mbed-os-env:master-latest\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \ud83d\udc33  docker pull image=ghcr.io/armmbed/mbed-os-env:master-latest platform= username= forcePull=false\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \ud83d\udc33  docker create image=ghcr.io/armmbed/mbed-os-env:master-latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \ud83d\udc33  docker run image=ghcr.io/armmbed/mbed-os-env:master-latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build] \ud83e\uddea  Matrix: map[python-version:pypy-2.7]\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build] \u2b50 Run Main Checkout\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \u2705  Success - Main Checkout\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build] \u2b50 Run Main Setup python\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/29e72015-9e8a-4067-8dd3-5cb19ce1d428/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build]   \u274c  Failure - Main Setup python\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build] exitcode '126': failure\n[c810a1b0-d1ed-48e3-955b-7740c48c091d/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ARMmbed-mbed-cli/.github/workflows/main-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 104.37181401252747
+    }
+}

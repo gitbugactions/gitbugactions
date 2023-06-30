@@ -1,0 +1,560 @@
+{
+    "repository": "lastfm/coverartarchive-api",
+    "stars": 55,
+    "language": "java",
+    "size": 115,
+    "clone_url": "https://github.com/lastfm/coverartarchive-api.git",
+    "timestamp": "2023-06-29T10:31:22.705537Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.IsImageWithIdTest",
+                "name": "imageWithDifferentIdReturnsFalse",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.IsImageWithIdTest",
+                "name": "imageWithCorrectIdReturnsTrue",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.FetchJsonListingResponseHandlerTest",
+                "name": "jsonIsReturnedWhenReleaseExists",
+                "time": 0.084,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.FetchJsonListingResponseHandlerTest",
+                "name": "ioExceptionIsThrownWhenRequestCannotBeFulfilled",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.FetchJsonListingResponseHandlerTest",
+                "name": "nullIsReturnedWhenNoReleaseExists",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.FetchImageDataResponseHandlerTest",
+                "name": "inputStreamIsReturnedWhenImageExists",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.FetchImageDataResponseHandlerTest",
+                "name": "ioExceptionIsThrownWhenRequestCannotBeFulfilled",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.ProxiedCoverArtImageBeanDecoratorTest",
+                "name": "coverArtTypesAreConvertedFromStringsToEnumValues",
+                "time": 0.137,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.ProxiedCoverArtImageBeanDecoratorTest",
+                "name": "gettingAnImageIsDelegatedToClient",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.ProxiedCoverArtImageBeanDecoratorTest",
+                "name": "gettersDelegateToBeans",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.IsBackImageTest",
+                "name": "backImageReturnsTrue",
+                "time": 0.133,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.IsBackImageTest",
+                "name": "notBackImageReturnsFalse",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.IsFrontImageTest",
+                "name": "frontImageReturnsTrue",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.IsFrontImageTest",
+                "name": "notFrontImageReturnsFalse",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtTypeStringToEnumValueTest",
+                "name": "casingOfStringIsIrrelevant",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.ProxiedCoverArtFactoryTest",
+                "name": "validJsonResponseReturnsPopulatedCoverArt",
+                "time": 0.241,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.ProxiedCoverArtFactoryTest",
+                "name": "emptyJsonStringReturnsNull",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "mbidWithCoverArtReturnsCoverArt",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "releaseGroupNullMbidThrowsCoverArtException",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "mbidWithoutCoverArtReturnsNull",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "releaseGroupMbidWithoutCoverArtReturnsNull",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "releaseGroupMbidWithCoverArtReturnsCoverArt",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "useHttps",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "customClient",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "constructorControlsHttps",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "usesHttpByDefault",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "nullMbidThrowsCoverArtException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "nonExistantImageThrowsIoException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest",
+                "name": "correctImageCanBeRequested",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingNotExistingBackImageReturnsNull",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingExistingFrontImageReturnsProxiedCoverArtImage",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingExistingBackImageReturnsProxiedCoverArtImage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingExistingImageByIdReturnsProxiedCoverArtImage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "imagesAreOrdered",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingNotExistingFrontImageReturnsNull",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettersDelegateToBean",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingNotExistingImageByIdReturnsNull",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest",
+                "name": "gettingImagesReturnsProxiedCoverArtImages",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests] \ud83d\ude80  Start image=crawlergpt:latest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api] user=0 workdir=\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests] \u2b50 Run Main actions/checkout@v2\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2705  Success - Main actions/checkout@v2\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests] \u2b50 Run Main Set up JDK\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker cp src=/tmp/act-cache/f5c365cf-7c5b-466b-b715-2479f3307751/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::isExplicit: \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::explicit? false\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::evaluating 0 versions\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::match not found\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::Downloading /tmp/17c04ed8-160f-4dc1-b276-2d01b7eb96ef\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::download complete\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [command]/usr/bin/tar --version\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | tar (GNU tar) 1.30\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | This is free software: you are free to change and redistribute it.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | There is NO WARRANTY, to the extent permitted by law.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Written by John Gilmore and Jay Fenlason.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_712880844 -f /tmp/17c04ed8-160f-4dc1-b276-2d01b7eb96ef\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_712880844/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::Caching tool jdk 8.0.372 x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::source dir: /tmp/temp_712880844/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::finished caching tool\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2753 add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udcac  ::debug::created directory /home/runneradmin/.m2\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | writing /home/runneradmin/.m2/settings.xml\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2705  Success - Main Set up JDK\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2699  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2699  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2699  ::set-output:: version=8.0.372\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2699  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2699  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests] \u2b50 Run Main Run Maven Targets\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Apache Maven 3.8.2 (ea98e05a04480131370aa0c110b8c54cf726c06f)\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Maven home: /usr/share/apache-maven-3.8.2\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Java version: 1.8.0_372, vendor: Azul Systems, Inc., runtime: /opt/hostedtoolcache/jdk/8.0.372/x64/jre\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Default locale: en, platform encoding: UTF-8\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | OS name: \"linux\", version: \"5.4.0-146-generic\", arch: \"amd64\", family: \"unix\"\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Scanning for projects...\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Inspecting build with total of 1 modules...\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Installing Nexus Staging features:\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --------------------< fm.last:coverartarchive-api >---------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Building coverartarchive-api 2.2.0-SNAPSHOT\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --------------------------------[ jar ]---------------------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [WARNING] The artifact org.slf4j:slf4j-log4j12:jar:1.7.36 has been relocated to org.slf4j:slf4j-reload4j:jar:1.7.36\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- license-maven-plugin:3.0:format (default) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Updating license headers...\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [debug] execute contextualize\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] skip non existing resourceDirectory /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/src/main/resources\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Compiling 18 source files to /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/target/classes\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [debug] execute contextualize\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Copying 1 resource\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] skip non existing resourceDirectory /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/src/test/config\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Compiling 10 source files to /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/target/test-classes\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Surefire report directory: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/target/surefire-reports\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | -------------------------------------------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   |  T E S T S\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | -------------------------------------------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.IsBackImageTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.ProxiedCoverArtImageBeanDecoratorTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.FetchJsonListingResponseHandlerTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.IsFrontImageTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.ProxiedCoverArtFactoryTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.243 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.CoverArtBeanDecoratorTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.FetchImageDataResponseHandlerTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.IsImageWithIdTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClientTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,398 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=2ba4396d-c0be-4a56-b4ea-0438306eb3be\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,406 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=null\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,407 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=2ba4396d-c0be-4a56-b4ea-0438306eb3be\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,408 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=2ba4396d-c0be-4a56-b4ea-0438306eb3be\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,409 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=2ba4396d-c0be-4a56-b4ea-0438306eb3be\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,413 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=2ba4396d-c0be-4a56-b4ea-0438306eb3be\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,417 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=2ba4396d-c0be-4a56-b4ea-0438306eb3be\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,433 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getByMbid(DefaultCoverArtArchiveClient.java:104) mbid=null\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,434 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getImageData(DefaultCoverArtArchiveClient.java:117) location=doesnotexist.jpg\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | 2023-06-29 10:32:10,435 INFO fm.last.musicbrainz.coverart.impl.DefaultCoverArtArchiveClient.getImageData(DefaultCoverArtArchiveClient.java:117) location=exists.jpg\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Running fm.last.musicbrainz.coverart.impl.CoverArtTypeStringToEnumValueTest\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Results :\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | Tests run: 38, Failures: 0, Errors: 0, Skipped: 0\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] \n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ coverartarchive-api ---\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Building jar: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/target/coverartarchive-api-2.2.0-SNAPSHOT.jar\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] ------------------------------------------------------------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] BUILD SUCCESS\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] ------------------------------------------------------------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Total time:  20.642 s\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] Finished at: 2023-06-29T10:32:10Z\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   | [INFO] ------------------------------------------------------------------------\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2705  Success - Main Run Maven Targets\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests] \u2b50 Run Post Set up JDK\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests]   \u2705  Success - Post Set up JDK\n[55abd033-87a7-411b-b006-408d40b90348/Package and run all tests] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lastfm-coverartarchive-api/.github/workflows/main-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 52.740782022476196
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "Athou/commafeed",
+    "stars": 2079,
+    "language": "java",
+    "size": 11731,
+    "clone_url": "https://github.com/Athou/commafeed.git",
+    "timestamp": "2023-06-29T10:44:21.566213Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[64f81a8f-23d6-4d29-b846-d1962eea85ad/build] \ud83d\ude80  Start image=crawlergpt:latest\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Athou-commafeed] user=0 workdir=\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/docker/setup-qemu-action' # ref=v2\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/docker/setup-buildx-action' # ref=v2\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/docker/login-action' # ref=v2\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/docker/build-push-action' # ref=v4\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/docker/build-push-action' # ref=v4\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/mindsers/changelog-reader-action' # ref=v2\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2601  git clone 'https://github.com/softprops/action-gh-release' # ref=v1\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build] \ud83e\uddea  Matrix: map[java:8]\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build] \u2b50 Run Main Checkout\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2705  Success - Main Checkout\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build] \u2b50 Run Main Set up QEMU\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/2afde7db-1521-489a-a23b-4d4356fc41a7/act/docker-setup-qemu-action@v2/ dst=/var/run/act/actions/docker-setup-qemu-action@v2/\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/docker-setup-qemu-action@v2/] user=0 workdir=\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/docker-setup-qemu-action@v2/dist/index.js] user= workdir=\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2753  ::group::Docker info\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \ud83d\udcac  ::debug::Exec.exec: docker version\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   | [command]/usr/bin/docker version\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   | Client:\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  Version:           20.10.8+azure\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  API version:       1.41\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  Go version:        go1.16.7\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  Git commit:        3967b7d28e15a020e4ee344283128ead633b3e0c\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  Built:             Thu Jul 29 13:55:47 2021\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  OS/Arch:           linux/amd64\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  Context:           default\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   |  Experimental:      true\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version\": dial unix /var/run/docker.sock: connect: permission denied\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2753  ::endgroup::\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u2757  ::error::The process '/usr/bin/docker' failed with exit code 1\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build]   \u274c  Failure - Main Set up QEMU\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build] exitcode '1': failure\n[64f81a8f-23d6-4d29-b846-d1962eea85ad/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Athou-commafeed/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 76.94805788993835
+    }
+}

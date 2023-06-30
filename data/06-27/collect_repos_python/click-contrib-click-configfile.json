@@ -1,0 +1,854 @@
+{
+    "repository": "click-contrib/click-configfile",
+    "stars": 56,
+    "language": "python",
+    "size": 417,
+    "clone_url": "https://github.com/click-contrib/click-configfile.git",
+    "timestamp": "2023-06-28T11:46:49.142622Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.functional.test_basics.TestCandidate1",
+                "name": "test_without_configfile__uses_defaults_from_cmdline",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate1",
+                "name": "test_with_cmdline_and_configfile__prefers_cmdline",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate1",
+                "name": "test_with_configfile1__preferred_over_cmdline_defaults",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate1",
+                "name": "test_with_configfile2__usable_as_alternative",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate1",
+                "name": "test_with_configfile12__prefers_configfile1",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate1",
+                "name": "test_configfile__can_pass_additional_params_in_context",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate2",
+                "name": "test_configfile__use_default_section_to_storage_name_mapping",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate2B",
+                "name": "test_configfile__with_unbound_section",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate3",
+                "name": "test_config_searchpath__with_many_items",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate3",
+                "name": "test_config_searchpath__merges_sections",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_basics.TestCandidate3",
+                "name": "test_config_searchpath__param_from_primary_file_overrides_secondary",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_param.TestCandidate1",
+                "name": "test_param_with_default__uses_param_default_when_missing",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_param.TestCandidate1",
+                "name": "test_param_with_default__uses_cmdline_when_provided",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.functional.test_param.TestCandidate1",
+                "name": "test_param_without_default__uses_cmdline_default_when_missing",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_class",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_other_schema_class",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_unbounded_section",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[foo.alice-schema1]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[foo.bob-schema1]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[some.foo-schema2]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[other.foo-schema2]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[loo.foo.bar-schema3]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[xxx.foo.zzz-schema3]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[foo_bar-None]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[baz_foo-None]",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_config_schema_for__with_schema_using_wildcards[xxx_foo_zzz-None]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_collect_config_sections_from_schemas__without_arg",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_collect_config_sections_from_schemas__with_arg",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_storage_for__when_section_storage_is_created",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_storage_for__when_section_storage_exists",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_configfile_reader.TestConfigFileReader",
+                "name": "test_select_storage_for__when_root_store_is_used",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_functions.TestFunction",
+                "name": "test_generate_configfile_names__without_config_files",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_functions.TestFunction",
+                "name": "test_generate_configfile_names__provides_reversed_order",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_functions.TestFunction",
+                "name": "test_generate_configfile_names__provides_existing_variants_with_searchpath",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_functions.TestFunction",
+                "name": "test_generate_configfile_names__without_searchpath_uses_curdir",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_functions.TestFunction",
+                "name": "test_generate_configfile_names__missing_variants_are_removed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_functions.TestFunction",
+                "name": "test_generate_configfile_names__when_searchpath_part_isfile",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_param.TestParam",
+                "name": "test_ctor__without_type_attribute_has_string_type",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_param.TestParam",
+                "name": "test_ctor__with_help_attribute",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_param.TestParam",
+                "name": "test_ctor__without_help_attribute",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__with_schema_class",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__with_other_class",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__with_nested_schema_class",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__with_deeper_nested_schema_class",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__with_derived_param_class_in_schema",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__with_own_param_class_as_marker",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__skips_non_param_objects",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_assign_param_names__skips_params_with_assigned_names",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_arg[hello]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_arg[hello.*]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_arg[*.hello]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_multiple_args[section_names0]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_several_decorators",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_other_class",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_class_that_has_section_names",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_bad_arg[None]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_bad_arg[123]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_bad_arg[False]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.unit.test_schema_description.TestDecorators",
+                "name": "test_matches_section__with_bad_arg[1.23]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[80989546-c123-4ae4-9b74-53593df07e77/test] \ud83d\ude80  Start image=crawlergpt:latest\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile] user=0 workdir=\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[80989546-c123-4ae4-9b74-53593df07e77/test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.9]\n[80989546-c123-4ae4-9b74-53593df07e77/test] \u2b50 Run Main actions/checkout@v3\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2705  Success - Main actions/checkout@v3\n[80989546-c123-4ae4-9b74-53593df07e77/test] \u2b50 Run Main actions/setup-python@v3\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/c065468d-f5ac-45c8-8657-8c9a5623bc94/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: \n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? false\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? true\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? true\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? true\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? true\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? true\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::explicit? true\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::matched: 3.9.6\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Successfully setup CPython (3.9.6)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Search path '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/py.requirements'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/py.requirements/all.txt\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/py.requirements/basic.txt\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/py.requirements/develop.txt\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/py.requirements/testing.txt\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Found 4 files to hash.\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | [command]/opt/hostedtoolcache/Python/3.9.6/x64/bin/pip cache dir\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | /home/runneradmin/.cache/pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::global cache directory path is /home/runneradmin/.cache/pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Resolved Keys:\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::[\"setup-python-Linux-python-3.9.6-pip-df86af2b91fc36c4d22139c6035592bdd033129eebf1075afca75c7f3330e00b\",\"setup-python-Linux-python-3.9.6-pip\"]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Checking zstd --version\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:39429/_apis/artifactcache/cache?keys=setup-python-Linux-python-3.9.6-pip-df86af2b91fc36c4d22139c6035592bdd033129eebf1075afca75c7f3330e00b%252Csetup-python-Linux-python-3.9.6-pip&version=79a244514713d0ea96d5d8aab70186082a897848df6e845ec8308965d2f82f4f\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | pip cache is not found\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v3/.github/python.json\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2705  Success - Main actions/setup-python@v3\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2699  ::set-output:: cache-hit=false\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2699  ::set-output:: python-version=3.9.6\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[80989546-c123-4ae4-9b74-53593df07e77/test] \u2b50 Run Main Install Python package dependencies\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (21.2.4)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (56.0.0)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting setuptools\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading setuptools-68.0.0-py3-none-any.whl (804 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting wheel\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading wheel-0.40.0-py3-none-any.whl (64 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Installing collected packages: wheel, setuptools, pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Attempting uninstall: setuptools\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |     Found existing installation: setuptools 56.0.0\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |     Uninstalling setuptools-56.0.0:\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |       Successfully uninstalled setuptools-56.0.0\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Attempting uninstall: pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |     Found existing installation: pip 21.2.4\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |     Uninstalling pip-21.2.4:\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |       Successfully uninstalled pip-21.2.4\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Successfully installed pip-23.1.2 setuptools-68.0.0 wheel-0.40.0\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Ignoring pytest: markers 'python_version < \"3.0\"' don't match your environment\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting pytest>=5.0 (from -r py.requirements/testing.txt (line 12))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 10.8 MB/s eta 0:00:00\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting pytest-html>=1.19.0 (from -r py.requirements/testing.txt (line 13))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading pytest_html-3.2.0-py3-none-any.whl (16 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting click>=6.6 (from -r py.requirements/testing.txt (line 16))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading click-8.1.3-py3-none-any.whl (96 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 96.6/96.6 kB 2.4 MB/s eta 0:00:00\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting iniconfig (from pytest>=5.0->-r py.requirements/testing.txt (line 12))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting packaging (from pytest>=5.0->-r py.requirements/testing.txt (line 12))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 926.0 kB/s eta 0:00:00\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting pluggy<2.0,>=0.12 (from pytest>=5.0->-r py.requirements/testing.txt (line 12))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest>=5.0->-r py.requirements/testing.txt (line 12))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting tomli>=1.0.0 (from pytest>=5.0->-r py.requirements/testing.txt (line 12))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting py>=1.8.2 (from pytest-html>=1.19.0->-r py.requirements/testing.txt (line 13))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.7/98.7 kB 2.8 MB/s eta 0:00:00\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting pytest-metadata (from pytest-html>=1.19.0->-r py.requirements/testing.txt (line 13))\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading pytest_metadata-3.0.0-py3-none-any.whl (10 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Installing collected packages: tomli, py, pluggy, packaging, iniconfig, exceptiongroup, click, pytest, pytest-metadata, pytest-html\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Successfully installed click-8.1.3 exceptiongroup-1.1.1 iniconfig-2.0.0 packaging-23.1 pluggy-1.2.0 py-1.11.0 pytest-7.4.0 pytest-html-3.2.0 pytest-metadata-3.0.0 tomli-2.0.1\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | \n[80989546-c123-4ae4-9b74-53593df07e77/test]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | [notice] To update, run: pip install --upgrade pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Obtaining file:///tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Preparing metadata (setup.py): started\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Preparing metadata (setup.py): finished with status 'done'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Requirement already satisfied: click>=6.6 in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from click-configfile==0.2.4) (8.1.3)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Collecting six>=1.10 (from click-configfile==0.2.4)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Installing collected packages: six, click-configfile\n[80989546-c123-4ae4-9b74-53593df07e77/test]   |   Running setup.py develop for click-configfile\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Successfully installed click-configfile-0.2.4 six-1.16.0\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | \n[80989546-c123-4ae4-9b74-53593df07e77/test]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | [notice] To update, run: pip install --upgrade pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2705  Success - Main Install Python package dependencies\n[80989546-c123-4ae4-9b74-53593df07e77/test] \u2b50 Run Main Run tests\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | ============================= test session starts ==============================\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | platform linux -- Python 3.9.6, pytest-7.4.0, pluggy-1.2.0\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | configfile: pytest.ini\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | testpaths: tests\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | plugins: metadata-3.0.0, html-3.2.0\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | collected 59 items\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | \n[80989546-c123-4ae4-9b74-53593df07e77/test]   | tests/functional/test_basics.py ...........                              [ 18%]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | tests/functional/test_param.py ...                                       [ 23%]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | tests/unit/test_configfile_reader.py .................                   [ 52%]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | tests/unit/test_functions.py ......                                      [ 62%]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | tests/unit/test_param.py ...                                             [ 67%]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | tests/unit/test_schema_description.py ...................                [100%]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | \n[80989546-c123-4ae4-9b74-53593df07e77/test]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/report.xml -\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | - generated html file: file:///tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/build/testing/report.html -\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | ============================== 59 passed in 0.63s ==============================\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2705  Success - Main Run tests\n[80989546-c123-4ae4-9b74-53593df07e77/test] \u2b50 Run Post actions/setup-python@v3\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/cache-save/index.js] user= workdir=\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::paths for caching are /home/runneradmin/.cache/pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Checking zstd --version\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.cache/pip'\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.cache/pip\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Cache Paths:\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.cache/pip\"]\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Archive Path: /tmp/4981fbf6-39c9-4194-9e16-2dfc3940e1e3/cache.tzst\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | [command]/usr/bin/tar --posix --use-compress-program zstd -T0 -cf cache.tzst -P -C /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile --files-from manifest.txt\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::File Size: 3652806\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Reserving Cache\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:39429/_apis/artifactcache/caches\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Upload cache\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:39429/_apis/artifactcache/caches/1\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Awaiting all uploads\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Uploading chunk of size 3652806 bytes at offset 0 with content range: bytes 0-3652805/*\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Commiting cache\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Cache Size: ~3 MB (3652806 B)\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:39429/_apis/artifactcache/caches/1\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Cache saved successfully\n[80989546-c123-4ae4-9b74-53593df07e77/test]   | Cache saved with the key: setup-python-Linux-python-3.9.6-pip-df86af2b91fc36c4d22139c6035592bdd033129eebf1075afca75c7f3330e00b\n[80989546-c123-4ae4-9b74-53593df07e77/test]   \u2705  Success - Post actions/setup-python@v3\n[80989546-c123-4ae4-9b74-53593df07e77/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/click-contrib-click-configfile/.github/workflows/test-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 168.5361521244049
+    }
+}

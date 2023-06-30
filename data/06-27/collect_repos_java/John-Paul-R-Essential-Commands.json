@@ -1,0 +1,27 @@
+{
+    "repository": "John-Paul-R/Essential-Commands",
+    "stars": 73,
+    "language": "java",
+    "size": 1341,
+    "clone_url": "https://github.com/John-Paul-R/Essential-Commands.git",
+    "timestamp": "2023-06-29T14:09:57.737624Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test] \ud83d\ude80  Start image=crawlergpt:latest\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/John-Paul-R-Essential-Commands] user=0 workdir=\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test] \u2b50 Run Main \u2728 Checkout repository\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2705  Success - Main \u2728 Checkout repository\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test] \u2b50 Run Main \ud83d\udec2 Validate Gradle wrapper\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/39eb7fb0-5434-4262-a6a6-f56287443800/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2757  ::error::connect ETIMEDOUT 104.17.46.54:443\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u274c  Failure - Main \ud83d\udec2 Validate Gradle wrapper\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test] exitcode '1': failure\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test] \u2b50 Run Main \ud83d\udcdd Upload reports\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/39eb7fb0-5434-4262-a6a6-f56287443800/act/actions-upload-artifact@v2/ dst=/var/run/act/actions/actions-upload-artifact@v2/\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-upload-artifact@v2/] user=0 workdir=\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-upload-artifact@v2/dist/index.js] user= workdir=\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udcac  ::debug::Search path '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/John-Paul-R-Essential-Commands'\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \ud83d\udea7  ::warning::No files were found with the provided path: **/build/reports/. No artifacts will be uploaded.\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test]   \u2705  Success - Main \ud83d\udcdd Upload reports\n[8d8bfde7-5af6-4be7-9af3-fdc727478f8e/Build and Test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Build and Test' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/John-Paul-R-Essential-Commands/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 279.11221170425415
+    }
+}

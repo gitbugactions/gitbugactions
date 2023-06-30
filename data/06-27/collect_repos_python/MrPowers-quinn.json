@@ -1,0 +1,828 @@
+{
+    "repository": "MrPowers/quinn",
+    "stars": 475,
+    "language": "python",
+    "size": 3343,
+    "clone_url": "https://github.com/MrPowers/quinn.git",
+    "timestamp": "2023-06-28T12:17:21.470041Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unknown",
+        "unknown",
+        "pytest"
+    ],
+    "actions_test_build_tools": [
+        "pytest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_append_if_schema_identical",
+                "name": "test_append_if_schema_identical",
+                "time": 7.3843162059783936,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": "23/06/28 12:25:01 WARN Utils: Your hostname, croaker resolves to a loopback address: 127.0.1.1; using 130.242.72.40 instead (on interface ens2f0)\n23/06/28 12:25:01 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address\n23/06/28 12:25:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable\nUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties\nSetting default log level to \"WARN\".\nTo adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).\n"
+            },
+            {
+                "classname": "tests.test_dataframe_helpers.describe_column_to_list",
+                "name": "it_returns_a_list",
+                "time": 4.312490463256836,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": "\n[Stage 0:>                                                      (0 + 128) / 128]\n                                                                                \n"
+            },
+            {
+                "classname": "tests.test_dataframe_helpers.describe_two_columns_to_dictionary",
+                "name": "it_returns_a_dictionary",
+                "time": 0.4409022331237793,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_helpers.describe_to_list_of_dictionaries",
+                "name": "returns_a_list_of_dicts",
+                "time": 0.39395952224731445,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_helpers.describe_show_output_to_df",
+                "name": "it_converts_a_show_string_to_a_dataframe",
+                "time": 0.6569256782531738,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_helpers.describe_print_athena_create_table",
+                "name": "it_prints_a_create_table_string_for_athena",
+                "time": 0.04669332504272461,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_presence_of_columns",
+                "name": "it_raises_if_a_required_column_is_missing",
+                "time": 0.022687673568725586,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_presence_of_columns",
+                "name": "it_does_nothing_if_all_required_columns_are_present",
+                "time": 0.03156232833862305,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_schema",
+                "name": "it_raises_when_struct_field_is_missing1",
+                "time": 0.02550506591796875,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_schema",
+                "name": "it_does_nothing_when_the_schema_matches",
+                "time": 0.023537397384643555,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_schema",
+                "name": "nullable_column_mismatches_are_ignored",
+                "time": 0.019064664840698242,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_absence_of_columns",
+                "name": "it_raises_when_a_unallowed_column_is_present",
+                "time": 0.023947477340698242,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dataframe_validator.describe_validate_absence_of_columns",
+                "name": "it_does_nothing_when_no_unallowed_columns_are_present",
+                "time": 0.021658897399902344,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_week_start_date",
+                "name": "it_works_with_start_date_of_monday",
+                "time": 0.8713791370391846,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_week_start_date",
+                "name": "it_defaults_to_sunday_start_date",
+                "time": 0.48626089096069336,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_week_start_date",
+                "name": "it_errors_out_if_with_invalid_week_start_date",
+                "time": 0.027659893035888672,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_week_end_date",
+                "name": "it_works_with_end_date_of_sunday",
+                "time": 0.3654196262359619,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_week_end_date",
+                "name": "it_defaults_to_saturday_week_end",
+                "time": 0.493466854095459,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_week_end_date",
+                "name": "it_errors_out_if_with_invalid_week_end_date",
+                "time": 0.021181583404541016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_approx_equal",
+                "name": "it_works_with_floating_values",
+                "time": 0.4752030372619629,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_approx_equal",
+                "name": "it_works_with_integer_values",
+                "time": 0.35898423194885254,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_uuid5",
+                "name": "test_no_extra_string",
+                "time": 0.5882675647735596,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions.describe_uuid5",
+                "name": "test_with_extra_string",
+                "time": 0.41968226432800293,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_single_space",
+                "time": 0.30353546142578125,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_remove_all_whitespace",
+                "time": 0.34268784523010254,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_remove_non_word_characters",
+                "time": 0.2965106964111328,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_anti_trim",
+                "time": 0.31134533882141113,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_exists",
+                "time": 1.4527080059051514,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": "\n[Stage 17:>                                                     (0 + 128) / 128]\n[Stage 17:=======================>                              (56 + 72) / 128]\n                                                                                \n"
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_forall",
+                "time": 0.504558801651001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_multi_equals",
+                "time": 0.580758810043335,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_array_choice",
+                "time": 0.2947719097137451,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functions",
+                "name": "test_regexp_extract_all",
+                "time": 0.5277512073516846,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_scala_to_pyspark",
+                "name": "test_clean_args",
+                "time": 0.0005292892456054688,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_schema_helpers",
+                "name": "test_print_schema_as_code",
+                "time": 0.001142740249633789,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_with_columns_renamed",
+                "name": "it_renames_spaces_to_underscores",
+                "time": 0.4808924198150635,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_with_columns_renamed",
+                "name": "it_renames_dots_to_underscores",
+                "time": 0.4682619571685791,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_with_some_columns_renamed",
+                "name": "it_renames_columns_based_on_a_map",
+                "time": 0.5032374858856201,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_with_some_columns_renamed",
+                "name": "it_renames_some_columns_with_dots",
+                "time": 0.5159690380096436,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_snake_case_col_names",
+                "name": "it_snake_cases_col_names",
+                "time": 0.4434959888458252,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_sort_columns",
+                "name": "it_sorts_columns_in_asc_order",
+                "time": 0.5581154823303223,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_sort_columns",
+                "name": "it_sorts_columns_in_desc_order",
+                "time": 0.49797868728637695,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_transformations.describe_sort_columns",
+                "name": "it_throws_an_error_if_the_sort_order_is_invalid",
+                "time": 0.022840499877929688,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_is_falsy",
+                "time": 0.3665487766265869,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_is_truthy",
+                "time": 0.2698354721069336,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_is_false",
+                "time": 0.34305787086486816,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_is_true",
+                "time": 0.24670076370239258,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_is_null_or_blank",
+                "time": 0.3242154121398926,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_is_not_in",
+                "time": 0.3465392589569092,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_column_ext",
+                "name": "test_null_between",
+                "time": 0.33330297470092773,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_verbose_code_without_transform",
+                "time": 0.49453210830688477,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_transform_with_lambda",
+                "time": 0.4926035404205322,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_transform_with_no_arg_fun",
+                "time": 0.5588943958282471,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_transform_with_one_arg_fun",
+                "time": 0.5296311378479004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_chain_transforms",
+                "time": 0.4960906505584717,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_transform_with_closure",
+                "time": 0.47739696502685547,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_dataframe_ext",
+                "name": "test_transform_with_functools_partial",
+                "time": 0.4348304271697998,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.extensions.test_spark_session_ext",
+                "name": "test_create_df",
+                "time": 1.4477083683013916,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \ud83d\ude80  Start image=crawlergpt:latest\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/MrPowers-quinn] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2601  git clone 'https://github.com/haya14busa/action-cond' # ref=v1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2601  git clone 'https://github.com/snok/install-poetry' # ref=v1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Pre Install Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Pre Install Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \ud83e\uddea  Matrix: map[pip-packages:pypandoc==1.7 pyspark==2.4.8 pyspark-version:2.4.8]\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main actions/checkout@v1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main actions/checkout@v1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Setup Java\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/b2c5fcc4-ff57-49fd-83cb-ae05857c1ab0/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2753  ::group::Installed distributions\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Trying to resolve the latest version from remote\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Gathering available versions from 'https://api.azul.com/zulu/download/community/v1.0/bundles/?os=linux&ext=tar.gz&bundle_type=jdk&javafx=false&arch=x86&hw_bitness=64&release_status=ga'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Resolved latest version as 8.0.372+7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Trying to download...\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Downloading Java 8.0.372+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz ...\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Destination /tmp/3b374b09-50f9-4fe1-8502-ac6c0666eff1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::download complete\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Extracting Java archive...\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Checking tar --version\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/992e9daa-37a9-4a75-a76f-2478159c811f -f /tmp/3b374b09-50f9-4fe1-8502-ac6c0666eff1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Caching tool Java_Zulu_jdk 8.0.372-7 x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::source dir: /tmp/992e9daa-37a9-4a75-a76f-2478159c811f/zulu8.70.0.23-ca-jdk8.0.372-linux_x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::finished caching tool\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Java 8.0.372+7 was downloaded\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Setting Java 8.0.372+7 as the default\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Creating toolchains.xml for JDK version 8 from zulu\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Java configuration:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Distribution: zulu\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Version: 8.0.372+7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2753  ::endgroup::\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Creating settings.xml with server-id: github\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Writing to /home/runneradmin/.m2/settings.xml\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Setup Java\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-output:: distribution=Zulu\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-output:: version=8.0.372+7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64/bin\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Get supported Python Version depending on PySpark\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/b2c5fcc4-ff57-49fd-83cb-ae05857c1ab0/act/haya14busa-action-cond@v1/ dst=/var/run/act/actions/haya14busa-action-cond@v1/\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/haya14busa-action-cond@v1/] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/haya14busa-action-cond@v1/dist/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Get supported Python Version depending on PySpark\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-output:: value=3.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Set up Python 3.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/b2c5fcc4-ff57-49fd-83cb-ae05857c1ab0/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? false\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? true\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? true\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? true\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? true\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? true\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::explicit? true\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::matched: 3.7.11\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Successfully setup CPython (3.7.11)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Set up Python 3.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-output:: python-version=3.7.11\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Install Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/b2c5fcc4-ff57-49fd-83cb-ae05857c1ab0/act/snok-install-poetry@v1/ dst=/var/run/act/actions/snok-install-poetry@v1/\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1/] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Install and configure Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4-composite-0.sh] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \u001b[33mSetting Poetry installation path as /home/runneradmin/.local\u001b[0m\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \u001b[33mInstalling Poetry \ud83d\udc77\u001b[0m\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Retrieving Poetry metadata\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | # Welcome to Poetry!\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | This will download and install the latest version of Poetry,\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | a dependency and package manager for Python.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | It will add the `poetry` command to Poetry's bin directory, located at:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | /home/runneradmin/.local/bin\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | You can uninstall at any time by executing this script with the --uninstall option,\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | and these changes will be reverted.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing Poetry (1.5.1)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing Poetry (1.5.1): Creating environment\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing Poetry (1.5.1): Installing Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing Poetry (1.5.1): Creating script\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing Poetry (1.5.1): Done\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Poetry (1.5.1) is installed now. Great!\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | To get started you need Poetry's bin directory (/home/runneradmin/.local/bin) in your `PATH`\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | environment variable.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Add `export PATH=\"/home/runneradmin/.local/bin:$PATH\"` to your shell configuration file.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Alternatively, you can call Poetry explicitly with `/home/runneradmin/.local/bin/poetry`.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | You can test that everything is set up by executing:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | `poetry --version`\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \u001b[33mInstallation completed. Configuring settings \ud83d\udee0\u001b[0m\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \u001b[33mDone \u2705\u001b[0m\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \u001b[33mIf you are creating a venv in your project, you can activate it by running 'source .venv/bin/activate'. If you're running this in an OS matrix, you can use 'source $VENV' instead, as an OS agnostic option\u001b[0m\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Install and configure Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Install Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Cache Poetry virtualenv\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/b2c5fcc4-ff57-49fd-83cb-ae05857c1ab0/act/actions-cache@v1/ dst=/var/run/act/actions/actions-cache@v1/\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v1/] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v1/dist/restore/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Cache Path: /home/runneradmin/.virtualenvs\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Resolved Keys:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::[\"poetry-b492abe0640a1a5ee41dcb67474092f49ccafa059a10574daf74106cd3e976bf\",\"poetry-b492abe0640a1a5ee41dcb67474092f49ccafa059a10574daf74106cd3e976bf\"]\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:38097/_apis/artifactcache/cache?keys=poetry-b492abe0640a1a5ee41dcb67474092f49ccafa059a10574daf74106cd3e976bf%252Cpoetry-b492abe0640a1a5ee41dcb67474092f49ccafa059a10574daf74106cd3e976bf\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Cache not found for input keys: poetry-b492abe0640a1a5ee41dcb67474092f49ccafa059a10574daf74106cd3e976bf, poetry-b492abe0640a1a5ee41dcb67474092f49ccafa059a10574daf74106cd3e976bf.\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Cache Poetry virtualenv\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Install dependencies\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/6] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Creating virtualenv quinn-EZ8hTafe-py3.7 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing dependencies from lock file\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Package operations: 7 installs, 1 update, 0 removals\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing py (1.11.0)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Updating setuptools (67.8.0 -> 67.7.2)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing py4j (0.10.9.7)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing pytest (3.2.2)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing chispa (0.9.2)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing pyspark (3.4.0)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing pytest-describe (1.0.0)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   \u2022 Installing semver (3.0.0)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing the current project: quinn (0.10.0)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Install dependencies\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Change PySpark to version 2.4.8\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/7] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Collecting pypandoc==1.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Downloading pypandoc-1.7.0.tar.gz (27 kB)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Installing build dependencies: started\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Installing build dependencies: finished with status 'done'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Getting requirements to build wheel: started\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Getting requirements to build wheel: finished with status 'done'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Preparing metadata (pyproject.toml): started\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Collecting pyspark==2.4.8\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Downloading pyspark-2.4.8.tar.gz (220.5 MB)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 220.5/220.5 MB 5.8 MB/s eta 0:00:00\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Preparing metadata (setup.py): started\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Preparing metadata (setup.py): finished with status 'done'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Collecting py4j==0.10.7 (from pyspark==2.4.8)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Downloading py4j-0.10.7-py2.py3-none-any.whl (197 kB)\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 197.3/197.3 kB 2.1 MB/s eta 0:00:00\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Building wheels for collected packages: pypandoc, pyspark\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Building wheel for pypandoc (pyproject.toml): started\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Building wheel for pypandoc (pyproject.toml): finished with status 'done'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Created wheel for pypandoc: filename=pypandoc-1.7.0-py3-none-any.whl size=29876 sha256=1d1a763eb66b0cb64777440ee273273052c8f49cd8275c05d123e29efa53d8f4\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/17/3f/10/baec75da1b07abec30a8350e265fec70f3ab751bbeac708f39\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Building wheel for pyspark (setup.py): started\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Building wheel for pyspark (setup.py): finished with status 'done'\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Created wheel for pyspark: filename=pyspark-2.4.8-py2.py3-none-any.whl size=220864363 sha256=17454d05a8755b19f811850684ffa2280b13bd023cbb8313fd4e7bc638d8a16a\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/7a/30/ee/5a852a877bb88fd5a6f75665d2544e107b914c2bad97181751\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Successfully built pypandoc pyspark\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Installing collected packages: py4j, pyspark, pypandoc\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Attempting uninstall: py4j\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |     Found existing installation: py4j 0.10.9.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |     Uninstalling py4j-0.10.9.7:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |       Successfully uninstalled py4j-0.10.9.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |   Attempting uninstall: pyspark\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |     Found existing installation: pyspark 3.4.0\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |     Uninstalling pyspark-3.4.0:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   |       Successfully uninstalled pyspark-3.4.0\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | Successfully installed py4j-0.10.7 pypandoc-1.7.0 pyspark-2.4.8\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Change PySpark to version 2.4.8\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Main Run tests with pytest against PySpark 2.4.8\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/8] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | ============================= test session starts ==============================\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | platform linux -- Python 3.7.11, pytest-3.2.2, py-1.11.0, pluggy-0.4.0\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/MrPowers-quinn, inifile:\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | plugins: describe-1.0.0\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | collected 57 items\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_append_if_schema_identical.py .\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_dataframe_helpers.py .....\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_dataframe_validator.py .......\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_functions.py ...................\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_scala_to_pyspark.py .\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_schema_helpers.py .\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/test_transformations.py ........\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/extensions/test_column_ext.py .......\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/extensions/test_dataframe_ext.py .......\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | tests/extensions/test_spark_session_ext.py .\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/MrPowers-quinn/report.xml -\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | ========================== 57 passed in 33.05 seconds ==========================\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Main Run tests with pytest against PySpark 2.4.8\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Post Cache Poetry virtualenv\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v1/dist/save/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::State: \n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Reserving Cache\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:38097/_apis/artifactcache/caches\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Cache ID: 1\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Cache Path: /home/runneradmin/.virtualenvs\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udcac  ::debug::Archive Path: /tmp/9f5a68e6-98bf-44c9-9cae-5bbecc0bdf79/cache.tgz\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | [command]/usr/bin/tar -cz -f /tmp/9f5a68e6-98bf-44c9-9cae-5bbecc0bdf79/cache.tgz -C /home/runneradmin/.virtualenvs .\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | /usr/bin/tar: /home/runneradmin/.virtualenvs: Cannot open: No such file or directory\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | /usr/bin/tar: Error is not recoverable: exiting now\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   | [warning]Tar failed with error: The process '/usr/bin/tar' failed with exit code 2\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Post Cache Poetry virtualenv\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Post Install Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/b2c5fcc4-ff57-49fd-83cb-ae05857c1ab0/act/snok-install-poetry@v1/ dst=/var/run/act/actions/snok-install-poetry@v1/\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1/] user=0 workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Post Install Poetry\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Post Set up Python 3.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Post Set up Python 3.7\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \u2b50 Run Post Setup Java\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test]   \u2705  Success - Post Setup Java\n[4e2e0de7-5dd5-47e5-a432-f0c71e7ad8b0/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/MrPowers-quinn/.github/workflows/ci-crawler.yml",
+        "build_tool": "pytest",
+        "elapsed_time": 528.4714291095734
+    }
+}
