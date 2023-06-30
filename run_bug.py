@@ -25,7 +25,8 @@ def get_bug_from_metadata(metadata_path, repo_name, commit):
                 break
         
     return res_bug
-        
+
+
 def run_bug(repo_name: str, commit: str, repo_clone_path: str, metadata_path: str, 
             exported_path: str, offline: bool=False, previous_commit: bool=False):
     repo_name = repo_name.replace('/', '-')
@@ -56,6 +57,8 @@ def run_bug(repo_name: str, commit: str, repo_clone_path: str, metadata_path: st
             shutil.copyfile(workflow_path, new_workflow_path)
 
             workflows = [GitHubWorkflowFactory.create_workflow(new_workflow_path, bug['language'])]
+            workflows[0].instrument_offline_execution()
+            workflows[0].save_yaml(new_workflow_path)
             executor = TestExecutor(repo_clone, bug['language'], act_cache_dir, 
                                     runner=image_name, workflows=workflows)
             runs = executor.run_tests(offline=offline)

@@ -12,7 +12,6 @@ from export_bugs import export_bug_containers
 from run_bug import run_bug
 
 repo_clone = None
-image_name = None
 export_path = None
 act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
 docker_client = docker.from_env()
@@ -20,8 +19,6 @@ docker_client = docker.from_env()
 @pytest.fixture
 def teardown():
     yield
-    if image_name is not None:
-        docker_client.images.remove(image_name)
     if repo_clone is not None:
         delete_repo_clone(repo_clone)
     if export_path is not None:
@@ -30,9 +27,9 @@ def teardown():
         shutil.rmtree(act_cache_dir)
 
 def test_export():
-    global repo_clone, image_name, export_path
+    global repo_clone, export_path
 
-    with open("test/resources/test_export/alibaba-transmittable-thread-local.json") as f:
+    with open("test/resources/test_export/dkpro-dkpro-jwktl.json") as f:
         bug = json.loads(f.readlines()[0])
     repo_full_name: str = bug['repository']
     repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
