@@ -28,8 +28,12 @@ class PytestWorkflow(GitHubWorkflow):
                 if 'steps' in job:
                     for step in job['steps']:
                         if 'run' in step and self._is_test_command(step['run']):
-                            step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
-                            step['run'] = step['run'].replace("py.test", "py.test --junitxml=report.xml")
+                            if "pytest" in step['run'] and "--junitxml" not in step['run']:
+                                step['run'] = step['run'].replace("pytest", "pytest --junitxml=report.xml")
+                            elif "py.test" in step['run'] and "--junitxml" not in step['run']:
+                                step['run'] = step['run'].replace("py.test", "py.test --junitxml=report.xml")
+                            elif ("pytest" in step['run'] or "py.test" in step['run']) and "--junitxml" in step['run']:
+                                step['run'] = re.sub(r"--junitxml=[^\s]+", "--junitxml=report.xml", step['run'])
                             
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
