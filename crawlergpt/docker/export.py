@@ -61,7 +61,7 @@ def extract_last_layer(container_id: str, layer_path: str) -> Layer:
         if os.path.exists(manifest_path):
             os.remove(manifest_path)
         if os.path.exists(container_path):
-            os.rmdir(container_path)
+            shutil.rmtree(container_path, ignore_errors=True)
 
     return Layer(layer, os.path.join(layer_path, layer))
 
