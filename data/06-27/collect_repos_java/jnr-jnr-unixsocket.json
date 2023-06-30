@@ -1,0 +1,27 @@
+{
+    "repository": "jnr/jnr-unixsocket",
+    "stars": 264,
+    "language": "java",
+    "size": 970,
+    "clone_url": "https://github.com/jnr/jnr-unixsocket.git",
+    "timestamp": "2023-06-29T10:00:03.278241Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11] \ud83d\ude80  Start image=crawlergpt:latest\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ] \ud83d\ude80  Start image=crawlergpt:latest\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jnr-jnr-unixsocket] user=0 workdir=\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jnr-jnr-unixsocket] user=0 workdir=\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1.4.3\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1.4.3\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ] \u2b50 Run Main actions/checkout@v2\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \u2705  Success - Main actions/checkout@v2\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ] \u2b50 Run Main Set up JDK 8\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker cp src=/tmp/act-cache/0bc201d8-20a4-4eb3-850c-c8a402b746f8/act/actions-setup-java@v1.4.3/ dst=/var/run/act/actions/actions-setup-java@v1.4.3/\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11] Unable to checkout d202f5dbf7256730fb690ec59f6381650114feb2: remove /tmp/act-cache/0bc201d8-20a4-4eb3-850c-c8a402b746f8/act/actions-setup-java@v1.4.3/.gitignore: no such file or directory\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1.4.3/] user=0 workdir=\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk11] \ud83c\udfc1  Job succeeded\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1.4.3/dist/setup/index.js] user= workdir=\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \u2757  ::error::Input required and not supplied: distribution\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \u274c  Failure - Main Set up JDK 8\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ] exitcode '1': failure\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ] \u2b50 Run Post Set up JDK 8\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1.4.3/dist/cleanup/index.js] user= workdir=\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ]   \u2705  Success - Post Set up JDK 8\n[30ba43dd-bdd1-4869-a3ac-e9c9a50bf267/jdk8 ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: remove /tmp/act-cache/0bc201d8-20a4-4eb3-850c-c8a402b746f8/act/actions-setup-java@v1.4.3/.gitignore: no such file or directory\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jnr-jnr-unixsocket/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 42.19113111495972
+    }
+}

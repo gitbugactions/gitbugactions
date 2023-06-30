@@ -1,0 +1,27 @@
+{
+    "repository": "agoston/spring-data-mongodb-encrypt",
+    "stars": 71,
+    "language": "java",
+    "size": 254,
+    "clone_url": "https://github.com/agoston/spring-data-mongodb-encrypt.git",
+    "timestamp": "2023-06-29T13:09:57.204720Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[c6c5a0cc-3a9d-459c-847b-774a64b91424/build] \ud83d\ude80  Start image=crawlergpt:latest\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/agoston-spring-data-mongodb-encrypt] user=0 workdir=\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \u2601  git clone 'https://github.com/supercharge/mongodb-github-action' # ref=1.6.0\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build] \u2b50 Run Main actions/checkout@v2\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \u2705  Success - Main actions/checkout@v2\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build] \u2b50 Run Main Start MongoDB\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker build -t act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest /tmp/act-cache/d9e81f43-b034-4be0-9d2a-586eb4c9d5e3/act/supercharge-mongodb-github-action@1.6.0/\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker pull image=act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest platform= username= forcePull=false\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker create image=act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest platform= entrypoint=[] cmd=[\"4.2\" \"\" \"27017\"]\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \ud83d\udc33  docker run image=act-supercharge-mongodb-github-action-1-6-0-dockeraction:latest platform= entrypoint=[] cmd=[\"4.2\" \"\" \"27017\"]\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   | \n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   | #############################################\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   | Starting single-node instance, no replica set\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   |   - port [27017]\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   |   - version [4.2]\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   | #############################################\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create?name=mongodb: dial unix /var/run/docker.sock: connect: permission denied.\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   | See 'docker run --help'.\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build]   \u274c  Failure - Main Start MongoDB\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build] exit with `FAILURE`: 126\n[c6c5a0cc-3a9d-459c-847b-774a64b91424/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/agoston-spring-data-mongodb-encrypt/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 65.1584882736206
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "Universite-Gustave-Eiffel/NoiseModelling",
+    "stars": 123,
+    "language": "java",
+    "size": 81414,
+    "clone_url": "https://github.com/Universite-Gustave-Eiffel/NoiseModelling.git",
+    "timestamp": "2023-06-29T10:27:15.433077Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build] \ud83d\ude80  Start image=crawlergpt:latest\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Universite-Gustave-Eiffel-NoiseModelling] user=0 workdir=\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \u2601  git clone 'https://github.com/SPalominos/PostGIS-Installer-Action' # ref=v1.0.1\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build] \u2b50 Run Main SPalominos/PostGIS-Installer-Action@v1.0.1\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker build -t act-spalominos-postgis-installer-action-v1-0-1-dockeraction:latest /tmp/act-cache/58f867a0-dbe8-417f-be18-aec894002442/act/SPalominos-PostGIS-Installer-Action@v1.0.1/\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker pull image=act-spalominos-postgis-installer-action-v1-0-1-dockeraction:latest platform= username= forcePull=false\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker create image=act-spalominos-postgis-installer-action-v1-0-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \ud83d\udc33  docker run image=act-spalominos-postgis-installer-action-v1-0-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   | See 'docker run --help'.\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build]   \u274c  Failure - Main SPalominos/PostGIS-Installer-Action@v1.0.1\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build] exit with `FAILURE`: 126\n[6a30bf39-3e9f-47c5-ab54-f25e08aa55dd/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Universite-Gustave-Eiffel-NoiseModelling/.github/workflows/CI-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 93.74133062362671
+    }
+}

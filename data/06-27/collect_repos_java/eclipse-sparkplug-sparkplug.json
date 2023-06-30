@@ -1,0 +1,27 @@
+{
+    "repository": "eclipse-sparkplug/sparkplug",
+    "stars": 72,
+    "language": "java",
+    "size": 11542,
+    "clone_url": "https://github.com/eclipse-sparkplug/sparkplug.git",
+    "timestamp": "2023-06-29T14:36:27.078874Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper] \ud83d\ude80  Start image=crawlergpt:latest\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/eclipse-sparkplug-sparkplug] user=0 workdir=\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper] \u2b50 Run Main Fetch Sources\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \u2705  Success - Main Fetch Sources\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper] \u2b50 Run Main Gradle Wrapper Validation\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker cp src=/tmp/act-cache/0ff97451-1e22-49e5-b035-5ae444d2a64d/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \u2757  ::error::connect ETIMEDOUT 104.17.46.54:443\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper]   \u274c  Failure - Main Gradle Wrapper Validation\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper] exitcode '1': failure\n[8e8d22a2-cfb2-4937-9c5e-08c113539b88/Gradle Wrapper] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Gradle Wrapper' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/eclipse-sparkplug-sparkplug/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 184.40409803390503
+    }
+}

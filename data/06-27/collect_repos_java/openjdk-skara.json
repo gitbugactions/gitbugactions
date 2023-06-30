@@ -1,0 +1,27 @@
+{
+    "repository": "openjdk/skara",
+    "stars": 193,
+    "language": "java",
+    "size": 7523,
+    "clone_url": "https://github.com/openjdk/skara.git",
+    "timestamp": "2023-06-29T14:07:19.939531Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites] \ud83d\ude80  Start image=crawlergpt:latest\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/openjdk-skara] user=0 workdir=\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \u2601  git clone 'https://github.com/actions/github-script' # ref=v3\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites] \u2b50 Run Main Determine target project name (fork source)\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker cp src=/tmp/act-cache/1271fb22-7e06-4035-8c22-f59870606d05/act/actions-github-script@v3/ dst=/var/run/act/actions/actions-github-script@v3/\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-github-script@v3/] user=0 workdir=\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-github-script@v3/dist/index.js] user= workdir=\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   | TypeError: Cannot read property 'name' of undefined\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   |     at eval (eval at callAsyncFunction (/run/act/actions/actions-github-script@v3/dist/index.js:7514:56), <anonymous>:3:101)\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   |     at processTicksAndRejections (internal/process/task_queues.js:95:5)\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   |     at async main (/run/act/actions/actions-github-script@v3/dist/index.js:7541:20)\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \u2757  ::error::Unhandled error: TypeError: Cannot read property 'name' of undefined\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites]   \u274c  Failure - Main Determine target project name (fork source)\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites] exitcode '1': failure\n[71b6bffe-2ded-45a0-8630-96f80fc74ce3/Prerequisites] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Prerequisites' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/openjdk-skara/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 40.77915048599243
+    }
+}

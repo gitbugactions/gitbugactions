@@ -1,0 +1,27 @@
+{
+    "repository": "google/auto",
+    "stars": 10160,
+    "language": "java",
+    "size": 30777,
+    "clone_url": "https://github.com/google/auto.git",
+    "timestamp": "2023-06-29T10:48:24.329600Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8] \ud83d\ude80  Start image=crawlergpt:latest\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/google-auto] user=0 workdir=\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=b173b6ec0100793626c2d9e6b90435061f4fc3e5\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \u2601  git clone 'https://github.com/actions/cache' # ref=88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8] \ud83e\uddea  Matrix: map[java:8]\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8] \u2b50 Run Main Cancel previous runs\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker cp src=/tmp/act-cache/dfe05ba1-9b19-41ec-83b3-f0cdafb04094/act/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/ dst=/var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/] user=0 workdir=\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/dist/index.js] user= workdir=\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   | {\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   eventName: 'push',\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   sha: 'ac6de46f7d46b1e0ac308bd0211112d27f4ae767',\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   headSha: 'ac6de46f7d46b1e0ac308bd0211112d27f4ae767',\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   branch: 'main',\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   owner: 'google',\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   repo: 'auto',\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   |   GITHUB_RUN_ID: '1'\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   | }\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   | Found token: yes\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \u2757  ::error::Not Found\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8]   \u274c  Failure - Main Cancel previous runs\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8] exitcode '1': failure\n[a92fc3ac-4596-42a9-9107-703d82dbf148/JDK 8] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'JDK ${{ matrix.java }}' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/google-auto/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 61.75388503074646
+    }
+}

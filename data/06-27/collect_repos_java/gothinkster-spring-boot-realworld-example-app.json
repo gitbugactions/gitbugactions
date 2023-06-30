@@ -1,0 +1,980 @@
+{
+    "repository": "gothinkster/spring-boot-realworld-example-app",
+    "stars": 1168,
+    "language": "java",
+    "size": 759,
+    "clone_url": "https://github.com/gothinkster/spring-boot-realworld-example-app.git",
+    "timestamp": "2023-06-29T13:05:02.796366Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "io.spring.infrastructure.article.ArticleRepositoryTransactionTest",
+                "name": "transactional_test()",
+                "time": 0.093,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.tag.TagsQueryServiceTest",
+                "name": "should_get_all_tags()",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.comment.MyBatisCommentRepositoryTest",
+                "name": "should_create_and_fetch_comment_success()",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticlesApiTest",
+                "name": "should_get_error_message_with_duplicated_title()",
+                "time": 0.094,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticlesApiTest",
+                "name": "should_get_error_message_with_wrong_parameter()",
+                "time": 0.09,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticlesApiTest",
+                "name": "should_create_article_success()",
+                "time": 0.131,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ListArticleApiTest",
+                "name": "should_get_default_article_list()",
+                "time": 0.027,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ListArticleApiTest",
+                "name": "should_get_feeds_success()",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ListArticleApiTest",
+                "name": "should_get_feeds_401_without_login()",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleApiTest",
+                "name": "should_read_article_success()",
+                "time": 1.935,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleApiTest",
+                "name": "should_update_article_content_success()",
+                "time": 0.237,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleApiTest",
+                "name": "should_403_if_not_author_delete_article()",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleApiTest",
+                "name": "should_delete_article_success()",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleApiTest",
+                "name": "should_get_403_if_not_author_to_update_article()",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleApiTest",
+                "name": "should_404_if_article_not_found()",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.article.MyBatisArticleRepositoryTest",
+                "name": "should_update_and_fetch_article_success()",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.article.MyBatisArticleRepositoryTest",
+                "name": "should_delete_article()",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.article.MyBatisArticleRepositoryTest",
+                "name": "should_create_and_fetch_article_success()",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_query_article_by_author()",
+                "time": 0.135,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_query_article_by_tag()",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_get_user_feed()",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_get_article_with_right_favorite_and_favorite_count()",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_fetch_article_success()",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_get_default_article_list()",
+                "time": 0.028,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_show_following_if_user_followed_author()",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_query_article_by_favorite()",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.article.ArticleQueryServiceTest",
+                "name": "should_get_default_article_list_by_cursor()",
+                "time": 0.028,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.RealworldApplicationTests",
+                "name": "contextLoads()",
+                "time": 0.394,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CurrentUserApiTest",
+                "name": "should_get_401_with_invalid_token()",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CurrentUserApiTest",
+                "name": "should_get_401_if_not_login()",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CurrentUserApiTest",
+                "name": "should_get_current_user_with_token()",
+                "time": 0.095,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CurrentUserApiTest",
+                "name": "should_get_error_if_email_exists_when_update_user_profile()",
+                "time": 0.087,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CurrentUserApiTest",
+                "name": "should_update_current_user_profile()",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CurrentUserApiTest",
+                "name": "should_get_401_without_token()",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_login_success()",
+                "time": 0.284,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_create_user_success()",
+                "time": 0.071,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_show_error_message_for_invalid_email()",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_show_error_for_duplicated_username()",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_show_error_for_duplicated_email()",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_show_error_message_for_blank_username()",
+                "time": 0.029,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.UsersApiTest",
+                "name": "should_fail_login_with_wrong_password()",
+                "time": 0.029,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.comment.CommentQueryServiceTest",
+                "name": "should_read_comments_of_article()",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.comment.CommentQueryServiceTest",
+                "name": "should_read_comment_success()",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.service.DefaultJwtServiceTest",
+                "name": "should_generate_and_parse_token()",
+                "time": 0.153,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.service.DefaultJwtServiceTest",
+                "name": "should_get_null_with_wrong_jwt()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.service.DefaultJwtServiceTest",
+                "name": "should_get_null_with_expired_jwt()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ProfileApiTest",
+                "name": "should_unfollow_user_success()",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ProfileApiTest",
+                "name": "should_follow_user_success()",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ProfileApiTest",
+                "name": "should_get_user_profile_success()",
+                "time": 0.02,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleFavoriteApiTest",
+                "name": "should_unfavorite_an_article_success()",
+                "time": 0.173,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.ArticleFavoriteApiTest",
+                "name": "should_favorite_an_article_success()",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CommentsApiTest",
+                "name": "should_create_comment_success()",
+                "time": 0.057,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CommentsApiTest",
+                "name": "should_get_403_if_not_author_of_article_or_author_of_comment_when_delete_comment()",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CommentsApiTest",
+                "name": "should_get_comments_of_article_success()",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CommentsApiTest",
+                "name": "should_delete_comment_success()",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.api.CommentsApiTest",
+                "name": "should_get_422_with_empty_body()",
+                "time": 0.07,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.application.profile.ProfileQueryServiceTest",
+                "name": "should_fetch_profile_success()",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.favorite.MyBatisArticleFavoriteRepositoryTest",
+                "name": "should_remove_favorite_success()",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.favorite.MyBatisArticleFavoriteRepositoryTest",
+                "name": "should_save_and_fetch_articleFavorite_success()",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.core.article.ArticleTest",
+                "name": "should_get_right_slug_with_number_in_title()",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.core.article.ArticleTest",
+                "name": "should_handle_other_language()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.core.article.ArticleTest",
+                "name": "should_get_right_slug()",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.core.article.ArticleTest",
+                "name": "should_get_lower_case_slug()",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.core.article.ArticleTest",
+                "name": "should_handle_commas()",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.user.MyBatisUserRepositoryTest",
+                "name": "should_update_user_success()",
+                "time": 0.02,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.user.MyBatisUserRepositoryTest",
+                "name": "should_create_new_user_follow_success()",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.user.MyBatisUserRepositoryTest",
+                "name": "should_save_and_fetch_user_success()",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.spring.infrastructure.user.MyBatisUserRepositoryTest",
+                "name": "should_unfollow_user_success()",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \ud83d\ude80  Start image=crawlergpt:latest\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/gothinkster-spring-boot-realworld-example-app] user=0 workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \u2b50 Run Main actions/checkout@v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2705  Success - Main actions/checkout@v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \u2b50 Run Main Set up JDK 11\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/e1000b05-e2f3-41cd-8a60-f775cba6a259/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Trying to resolve the latest version from remote\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Resolved latest version as 11.0.19+7\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Trying to download...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Downloading Java 11.0.19+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz ...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Destination /tmp/b1d7d046-704b-4b86-9b22-77a4ae341067\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::download complete\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Extracting Java archive...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Checking tar --version\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/8dcf39e2-bf8c-432a-8768-8a8e1fbd5479 -f /tmp/b1d7d046-704b-4b86-9b22-77a4ae341067\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Caching tool Java_Zulu_jdk 11.0.19-7 x64\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::source dir: /tmp/8dcf39e2-bf8c-432a-8768-8a8e1fbd5479/zulu11.64.19-ca-jdk11.0.19-linux_x64\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/11.0.19-7/x64\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::finished caching tool\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Java 11.0.19+7 was downloaded\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Setting Java 11.0.19+7 as the default\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Java configuration:\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   |   Distribution: zulu\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   |   Version: 11.0.19+7\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.19-7/x64\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Creating settings.xml with server-id: github\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2705  Success - Main Set up JDK 11\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.19-7/x64\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2699  ::set-output:: version=11.0.19+7\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2699  ::set-output:: distribution=Zulu\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.19-7/x64\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.19-7/x64/bin\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \u2b50 Run Main actions/cache@v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/e1000b05-e2f3-41cd-8a60-f775cba6a259/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::[\"Linux-gradle-a621f0ff8cb2749a90647a040462070b5a09dda3ceead94b2f23f180b4be7588\",\"Linux-gradle-\"]\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:36993/_apis/artifactcache/cache?keys=Linux-gradle-a621f0ff8cb2749a90647a040462070b5a09dda3ceead94b2f23f180b4be7588%252CLinux-gradle-&version=569019faed09f5f63af8a1ab2f5e0433d94f66e572509c03e0e3df35d24400c7\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Cache not found for input keys: Linux-gradle-a621f0ff8cb2749a90647a040462070b5a09dda3ceead94b2f23f180b4be7588, Linux-gradle-\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2705  Success - Main actions/cache@v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \u2b50 Run Main Test with Gradle\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Downloading https://services.gradle.org/distributions/gradle-7.4-bin.zip\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Welcome to Gradle 7.4!\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Here are the highlights of this release:\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   |  - Aggregated test and JaCoCo reports\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   |  - Marking additional test source directories as tests in IntelliJ\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   |  - Support for Adoptium JDKs in Java toolchains\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | For more details see https://docs.gradle.org/7.4/release-notes.html\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Configure project :\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | DGS CodeGen added [com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-client-core:5.0.6] to the implementation dependencies.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :clean\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :generateJava\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Note: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/gothinkster-spring-boot-realworld-example-app/src/main/java/io/spring/graphql/exception/GraphQLCustomizeExceptionHandler.java uses or overrides a deprecated API.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Note: Recompile with -Xlint:deprecation for details.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :compileJava\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Note: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/gothinkster-spring-boot-realworld-example-app/src/main/java/io/spring/graphql/exception/GraphQLCustomizeExceptionHandler.java uses unchecked or unsafe operations.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Note: Recompile with -Xlint:unchecked for details.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :processResources\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :classes\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :compileTestJava\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :processTestResources NO-SOURCE\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :testClasses\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | > Task :test\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.861  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.874  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.902  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.917  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.922  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.933  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.949  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.956  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.958  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.964  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:54.980  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.002  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.004  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.006  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.011  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.018  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.022  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.029  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.031  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 2023-06-29 13:10:55.037  INFO 1124 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | \n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | BUILD SUCCESSFUL in 2m 19s\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | 6 actionable tasks: 6 executed\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2705  Success - Main Test with Gradle\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \u2b50 Run Post actions/cache@v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/save/index.js] user= workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Reserving Cache\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:36993/_apis/artifactcache/caches\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Cache ID: 1\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.gradle/caches'\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.gradle/wrapper'\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.gradle/caches\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.gradle/wrapper\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Cache Paths:\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.gradle/caches\",\"../../../home/runneradmin/.gradle/wrapper\"]\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Archive Path: /tmp/dc8328b3-57b0-4d94-aaa4-88ebfd053219/cache.tzst\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | [command]/usr/bin/tar --posix --use-compress-program zstd -T0 -cf cache.tzst -P -C /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/gothinkster-spring-boot-realworld-example-app --files-from manifest.txt\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::File Size: 369846650\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Upload cache\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:36993/_apis/artifactcache/caches/1\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Awaiting all uploads\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 0 with content range: bytes 0-33554431/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 33554432 with content range: bytes 33554432-67108863/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 67108864 with content range: bytes 67108864-100663295/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 100663296 with content range: bytes 100663296-134217727/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 134217728 with content range: bytes 134217728-167772159/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 167772160 with content range: bytes 167772160-201326591/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 201326592 with content range: bytes 201326592-234881023/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 234881024 with content range: bytes 234881024-268435455/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 268435456 with content range: bytes 268435456-301989887/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 301989888 with content range: bytes 301989888-335544319/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 335544320 with content range: bytes 335544320-369098751/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Uploading chunk of size 747898 bytes at offset 369098752 with content range: bytes 369098752-369846649/*\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Commiting cache\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | Cache Size: ~353 MB (369846650 B)\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:36993/_apis/artifactcache/caches/1\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::commitCache - Attempt 1 of 2 failed with error: Cache service responded with 500\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udcac  ::debug::commitCache - Error is not retryable\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   | [warning]commitCache failed: Cache service responded with 500\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2705  Success - Post actions/cache@v2\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \u2b50 Run Post Set up JDK 11\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build]   \u2705  Success - Post Set up JDK 11\n[7e420a57-dee7-4483-9d45-26c2f2aea4df/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "time=\"2023-06-29T15:11:02+02:00\" level=error msg=\"POST /_apis/artifactcache/caches/1: broken file: 369846650 != 0\" module=artifactcache\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/gothinkster-spring-boot-realworld-example-app/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 365.09507608413696
+    }
+}

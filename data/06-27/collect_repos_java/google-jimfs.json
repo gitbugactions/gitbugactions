@@ -1,0 +1,27 @@
+{
+    "repository": "google/jimfs",
+    "stars": 2290,
+    "language": "java",
+    "size": 4832,
+    "clone_url": "https://github.com/google/jimfs.git",
+    "timestamp": "2023-06-29T10:59:16.660177Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/google-jimfs] user=0 workdir=\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=b173b6ec0100793626c2d9e6b90435061f4fc3e5\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \u2601  git clone 'https://github.com/actions/cache' # ref=88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest] \ud83e\uddea  Matrix: map[java:15 os:ubuntu-latest]\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest] \u2b50 Run Main Cancel previous runs\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker cp src=/tmp/act-cache/392b1c11-9889-42be-b295-4218cc33e321/act/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/ dst=/var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/] user=0 workdir=\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5/dist/index.js] user= workdir=\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   | {\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   eventName: 'push',\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   sha: 'a236f6fb481d4042a83114ed6ff18ab202d26adb',\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   headSha: 'a236f6fb481d4042a83114ed6ff18ab202d26adb',\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   branch: 'master',\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   owner: 'google',\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   repo: 'jimfs',\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   |   GITHUB_RUN_ID: '1'\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   | }\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   | Found token: yes\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \u2757  ::error::Not Found\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest]   \u274c  Failure - Main Cancel previous runs\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest] exitcode '1': failure\n[509ef5a6-b545-451e-af71-5c177efd704d/JDK 15 on ubuntu-latest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'JDK ${{ matrix.java }} on ${{ matrix.os }}' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/google-jimfs/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 135.558500289917
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "ev3dev-lang-java/ev3dev-lang-java",
+    "stars": 90,
+    "language": "java",
+    "size": 125466,
+    "clone_url": "https://github.com/ev3dev-lang-java/ev3dev-lang-java.git",
+    "timestamp": "2023-06-29T12:02:05.995317Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[bec9de58-86ed-4996-a36e-c597e58788f5/build] \ud83d\ude80  Start image=crawlergpt:latest\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ev3dev-lang-java-ev3dev-lang-java] user=0 workdir=\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v1\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[bec9de58-86ed-4996-a36e-c597e58788f5/build] \u2b50 Run Main Checkout source code\n[bec9de58-86ed-4996-a36e-c597e58788f5/build]   \u274c  Failure - Main Checkout source code\n[bec9de58-86ed-4996-a36e-c597e58788f5/build] The runs.using key must be one of: [docker node12 node16 composite], got \n[bec9de58-86ed-4996-a36e-c597e58788f5/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ev3dev-lang-java-ev3dev-lang-java/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 50.033843755722046
+    }
+}

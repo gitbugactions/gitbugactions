@@ -1,0 +1,183 @@
+{
+    "repository": "dropwizard/dropwizard-flyway",
+    "stars": 59,
+    "language": "java",
+    "size": 1664,
+    "clone_url": "https://github.com/dropwizard/dropwizard-flyway.git",
+    "timestamp": "2023-06-29T11:14:49.629466Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "io.dropwizard.flyway.cli.DbMigrateCommandTest",
+                "name": "testOutOfOrder",
+                "time": 0.319,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbMigrateCommandTest",
+                "name": "testCleanOnValidationError",
+                "time": 0.191,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbMigrateCommandTest",
+                "name": "testDefaultArguments",
+                "time": 0.19,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbMigrateCommandTest",
+                "name": "testDefaultArgumentsWithWarnings",
+                "time": 0.148,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbMigrateCommandTest",
+                "name": "testValidateOMigrate",
+                "time": 0.191,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "WARN  [2023-06-29 11:17:34,204] io.dropwizard.flyway.cli.DbMigrateCommand: 2 warnings when migrating schema in database db from schema initial -> target: [warning1, warning2]\n",
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbMigrateCommandTest",
+                "name": "testInitOnMigrate",
+                "time": 0.16,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.FlywayFactoryTest",
+                "name": "defaultConfigurationShouldBeValid",
+                "time": 0.364,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.FlywayFactoryTest",
+                "name": "checkConfigurationWithOverridedSetting",
+                "time": 0.061,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbValidateCommandTest",
+                "name": "testOutOfOrder",
+                "time": 5.323,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbValidateCommandTest",
+                "name": "testCleanOnValidationError",
+                "time": 0.319,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "io.dropwizard.flyway.cli.DbValidateCommandTest",
+                "name": "testDefaultArguments",
+                "time": 0.317,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[b63d999b-96d3-466f-894a-26606e337e13/build] \ud83d\ude80  Start image=crawlergpt:latest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway] user=0 workdir=\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8\n[b63d999b-96d3-466f-894a-26606e337e13/build] \ud83e\uddea  Matrix: map[java_version:11 os:ubuntu-latest]\n[b63d999b-96d3-466f-894a-26606e337e13/build] \u2b50 Run Main actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2705  Success - Main actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9\n[b63d999b-96d3-466f-894a-26606e337e13/build] \u2b50 Run Main Set up JDK\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/35afb4e2-b052-4608-a995-4df3b6d91b3b/act/actions-setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2/ dst=/var/run/act/actions/actions-setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2/\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2/] user=0 workdir=\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2/dist/setup/index.js] user= workdir=\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2753  ::group::Installed distributions\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Trying to resolve the latest version from remote\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Resolved latest version as 11.0.19+7\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Trying to download...\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Downloading Java 11.0.19+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz ...\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%252B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Destination /tmp/fd3d45d6-dd17-4204-b932-28dad4cf829c\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::download complete\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Extracting Java archive...\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Checking tar --version\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/ae519b7b-5312-44a6-84cd-420472842d14 -f /tmp/fd3d45d6-dd17-4204-b932-28dad4cf829c\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Caching tool Java_Temurin-Hotspot_jdk 11.0.19-7 x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::source dir: /tmp/ae519b7b-5312-44a6-84cd-420472842d14/jdk-11.0.19+7\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::finished caching tool\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Java 11.0.19+7 was downloaded\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Setting Java 11.0.19+7 as the default\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Creating toolchains.xml for JDK version 11 from temurin\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Java configuration:\n[b63d999b-96d3-466f-894a-26606e337e13/build]   |   Distribution: temurin\n[b63d999b-96d3-466f-894a-26606e337e13/build]   |   Version: 11.0.19+7\n[b63d999b-96d3-466f-894a-26606e337e13/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | \n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2753  ::endgroup::\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2/.github/java.json\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Creating settings.xml with server-id: github\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Search path '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/pom.xml\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Found 1 files to hash.\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::primary key is setup-java-Linux-maven-07db434f59d478a206eea0624a5ca6093a13892771639d9e4cbdf2ccd22882c5\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::[\"setup-java-Linux-maven-07db434f59d478a206eea0624a5ca6093a13892771639d9e4cbdf2ccd22882c5\"]\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:46229/_apis/artifactcache/cache?keys=setup-java-Linux-maven-07db434f59d478a206eea0624a5ca6093a13892771639d9e4cbdf2ccd22882c5&version=cf689304ceab961b43dfb969452ae56d000a022b1f5d36fc5110e872a51021d1\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | maven cache is not found\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2705  Success - Main Set up JDK\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::set-output:: version=11.0.19+7\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::set-output:: cache-hit=false\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::set-output:: distribution=Temurin-Hotspot\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64/bin\n[b63d999b-96d3-466f-894a-26606e337e13/build] \u2b50 Run Main Build\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Downloading https://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.9.3/apache-maven-3.9.3-bin.zip\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | ....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Unzipping /home/runneradmin/.m2/wrapper/dists/apache-maven-3.9.3-bin/44qbje3n7nn0094acc47leklpo/apache-maven-3.9.3-bin.zip to /home/runneradmin/.m2/wrapper/dists/apache-maven-3.9.3-bin/44qbje3n7nn0094acc47leklpo\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Set executable permissions for: /home/runneradmin/.m2/wrapper/dists/apache-maven-3.9.3-bin/44qbje3n7nn0094acc47leklpo/apache-maven-3.9.3/bin/mvn\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Apache Maven 3.9.3 (21122926829f1ead511c958d89bd2f672198ae9f)\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Maven home: /home/runneradmin/.m2/wrapper/dists/apache-maven-3.9.3-bin/44qbje3n7nn0094acc47leklpo/apache-maven-3.9.3\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Java version: 11.0.19, vendor: Eclipse Adoptium, runtime: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.19-7/x64\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Default locale: en, platform encoding: UTF-8\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | OS name: \"linux\", version: \"5.4.0-146-generic\", arch: \"amd64\", family: \"unix\"\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Scanning for projects...\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --------------< io.dropwizard.modules:dropwizard-flyway >---------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Building Dropwizard Flyway Bundle 4.0.0-3-SNAPSHOT\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO]   from pom.xml\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --------------------------------[ jar ]---------------------------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- jacoco:0.8.10:prepare-agent (prepare-agent) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] argLine set to -javaagent:/home/runneradmin/.m2/repository/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10-runtime.jar=destfile=/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/target/jacoco.exec\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- resources:3.3.1:resources (default-resources) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] skip non existing resourceDirectory /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/src/main/resources\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- compiler:3.11.0:compile (default-compile) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Changes detected - recompiling the module! :dependency\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Compiling 12 source files with javac [debug release 11] to target/classes\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- resources:3.3.1:testResources (default-testResources) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] skip non existing resourceDirectory /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/src/test/resources\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Changes detected - recompiling the module! :dependency\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Compiling 4 source files with javac [debug release 11] to target/test-classes\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/src/test/java/io/dropwizard/flyway/cli/AbstractCommandTest.java: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/src/test/java/io/dropwizard/flyway/cli/AbstractCommandTest.java uses unchecked or unsafe operations.\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/src/test/java/io/dropwizard/flyway/cli/AbstractCommandTest.java: Recompile with -Xlint:unchecked for details.\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- surefire:3.1.2:test (default-test) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] -------------------------------------------------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO]  T E S T S\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] -------------------------------------------------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Running io.dropwizard.flyway.cli.DbValidateCommandTest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.000 s -- in io.dropwizard.flyway.cli.DbValidateCommandTest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Running io.dropwizard.flyway.cli.DbMigrateCommandTest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | WARN  [2023-06-29 11:17:34,204] io.dropwizard.flyway.cli.DbMigrateCommand: 2 warnings when migrating schema in database db from schema initial -> target: [warning1, warning2]\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.209 s -- in io.dropwizard.flyway.cli.DbMigrateCommandTest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Running io.dropwizard.flyway.FlywayFactoryTest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.430 s -- in io.dropwizard.flyway.FlywayFactoryTest\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Results:\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- jar:3.3.0:jar (default-jar) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Building jar: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/target/dropwizard-flyway-4.0.0-3-SNAPSHOT.jar\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- jacoco:0.8.10:report (report) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Loading execution data file /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/target/jacoco.exec\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Analyzed bundle 'Dropwizard Flyway Bundle' with 11 classes\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] \n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] --- install:3.1.1:install (default-install) @ dropwizard-flyway ---\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Installing /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/pom.xml to /home/runneradmin/.m2/repository/io/dropwizard/modules/dropwizard-flyway/4.0.0-3-SNAPSHOT/dropwizard-flyway-4.0.0-3-SNAPSHOT.pom\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Installing /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/target/dropwizard-flyway-4.0.0-3-SNAPSHOT.jar to /home/runneradmin/.m2/repository/io/dropwizard/modules/dropwizard-flyway/4.0.0-3-SNAPSHOT/dropwizard-flyway-4.0.0-3-SNAPSHOT.jar\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] ------------------------------------------------------------------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] BUILD SUCCESS\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] ------------------------------------------------------------------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Total time:  22.743 s\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] Finished at: 2023-06-29T11:17:36Z\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [INFO] ------------------------------------------------------------------------\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2705  Success - Main Build\n[b63d999b-96d3-466f-894a-26606e337e13/build] \u2b50 Run Post Set up JDK\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2/dist/cleanup/index.js] user= workdir=\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.m2/repository'\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.m2/repository\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Cache Paths:\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.m2/repository\"]\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Archive Path: /tmp/e2b74d0f-e5e7-44d8-bb15-129659323af7/cache.tzst\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | [command]/usr/bin/tar --posix --use-compress-program zstdmt -cf cache.tzst --exclude cache.tzst -P -C /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway --files-from manifest.txt\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::File Size: 32360935\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Reserving Cache\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:46229/_apis/artifactcache/caches\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Upload cache\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:46229/_apis/artifactcache/caches/1\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Awaiting all uploads\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Uploading chunk of size 32360935 bytes at offset 0 with content range: bytes 0-32360934/*\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Commiting cache\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Cache Size: ~31 MB (32360935 B)\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:46229/_apis/artifactcache/caches/1\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Cache saved successfully\n[b63d999b-96d3-466f-894a-26606e337e13/build]   | Cache saved with the key: setup-java-Linux-maven-07db434f59d478a206eea0624a5ca6093a13892771639d9e4cbdf2ccd22882c5\n[b63d999b-96d3-466f-894a-26606e337e13/build]   \u2705  Success - Post Set up JDK\n[b63d999b-96d3-466f-894a-26606e337e13/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/dropwizard-dropwizard-flyway/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 166.88426995277405
+    }
+}

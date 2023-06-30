@@ -1,0 +1,27 @@
+{
+    "repository": "j-easy/easy-flows",
+    "stars": 579,
+    "language": "java",
+    "size": 188,
+    "clone_url": "https://github.com/j-easy/easy-flows.git",
+    "timestamp": "2023-06-29T12:55:58.653404Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[2e565491-c4f4-4645-94b4-260671131cfb/build] \ud83d\ude80  Start image=crawlergpt:latest\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/j-easy-easy-flows] user=0 workdir=\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \u2601  git clone 'https://github.com/actions/checkout' # ref=v1\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[2e565491-c4f4-4645-94b4-260671131cfb/build] \u2b50 Run Main Checkout source code\n[2e565491-c4f4-4645-94b4-260671131cfb/build]   \u274c  Failure - Main Checkout source code\n[2e565491-c4f4-4645-94b4-260671131cfb/build] The runs.using key must be one of: [docker node12 node16 composite], got \n[2e565491-c4f4-4645-94b4-260671131cfb/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/j-easy-easy-flows/.github/workflows/build-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 79.79957723617554
+    }
+}

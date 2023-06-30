@@ -1,0 +1,27 @@
+{
+    "repository": "rostrovsky/pdf-table",
+    "stars": 59,
+    "language": "java",
+    "size": 148,
+    "clone_url": "https://github.com/rostrovsky/pdf-table.git",
+    "timestamp": "2023-06-29T12:49:34.995645Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[20aa3659-2dd6-4b43-9665-f206f13808bf/build] \ud83d\ude80  Start image=crawlergpt:latest\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/rostrovsky-pdf-table] user=0 workdir=\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build] \u2b50 Run Main actions/checkout@v2\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \u2705  Success - Main actions/checkout@v2\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build] \u2b50 Run Main Download OpenCV 3.4.2\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \ud83d\udc33  docker exec cmd=[powershell -command . /var/run/act/workflow/1.ps1] user= workdir=\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"powershell\": executable file not found in $PATH: unknown\r\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build]   \u274c  Failure - Main Download OpenCV 3.4.2\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build] exitcode '126': failure\n[20aa3659-2dd6-4b43-9665-f206f13808bf/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/rostrovsky-pdf-table/.github/workflows/mvn-test-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 64.37447905540466
+    }
+}

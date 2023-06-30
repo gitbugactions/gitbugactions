@@ -1,0 +1,27 @@
+{
+    "repository": "swri-robotics/bag-database",
+    "stars": 282,
+    "language": "java",
+    "size": 7992,
+    "clone_url": "https://github.com/swri-robotics/bag-database.git",
+    "timestamp": "2023-06-29T12:19:59.760420Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[fd402727-15a5-4994-b00b-1c64b53e9849/build] \ud83d\ude80  Start image=crawlergpt:latest\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/swri-robotics-bag-database] user=0 workdir=\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[fd402727-15a5-4994-b00b-1c64b53e9849/build] \u2b50 Run Main actions/checkout@v2\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \u2705  Success - Main actions/checkout@v2\n[fd402727-15a5-4994-b00b-1c64b53e9849/build] \u2b50 Run Main Set up JDK 1.11\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/0953cebf-2ae4-491b-8e18-3cc85a103516/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::isExplicit: \n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::explicit? false\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::evaluating 0 versions\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::match not found\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udcac  ::debug::Downloading /tmp/c505414d-911c-4987-818e-4e105722ee74\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \u2757  ::error::getaddrinfo EAI_AGAIN static.azul.com\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \u274c  Failure - Main Set up JDK 1.11\n[fd402727-15a5-4994-b00b-1c64b53e9849/build] exitcode '1': failure\n[fd402727-15a5-4994-b00b-1c64b53e9849/build] \u2b50 Run Post Set up JDK 1.11\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[fd402727-15a5-4994-b00b-1c64b53e9849/build]   \u2705  Success - Post Set up JDK 1.11\n[fd402727-15a5-4994-b00b-1c64b53e9849/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/swri-robotics-bag-database/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 129.67369508743286
+    }
+}

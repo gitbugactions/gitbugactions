@@ -1,0 +1,27 @@
+{
+    "repository": "apache/mnemonic",
+    "stars": 113,
+    "language": "java",
+    "size": 3089,
+    "clone_url": "https://github.com/apache/mnemonic.git",
+    "timestamp": "2023-06-29T12:17:57.101129Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy] \ud83d\ude80  Start image=mnemonic/mneci:v6\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \ud83d\udc33  docker pull image=mnemonic/mneci:v6 platform= username= forcePull=false\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \ud83d\udc33  docker create image=mnemonic/mneci:v6 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \ud83d\udc33  docker run image=mnemonic/mneci:v6 platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy] \u2b50 Run Main Delete old project folder\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \ud83d\udc33  docker exec cmd=[sh -e /var/run/act/workflow/0.sh] user= workdir=\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \u2705  Success - Main Delete old project folder\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy] \u2b50 Run Main Checkout code\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \u2705  Success - Main Checkout code\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy] \u2b50 Run Main Validate Gradle Wrapper\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \ud83d\udc33  docker cp src=/tmp/act-cache/622bfeec-430e-4a53-b916-fcdbc671e71e/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"node\": executable file not found in $PATH: unknown\r\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy]   \u274c  Failure - Main Validate Gradle Wrapper\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy] exitcode '126': failure\n[cadb7abe-ea71-44d0-9f18-8e5d398fda6c/build-and-deploy] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build-and-deploy' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/apache-mnemonic/.github/workflows/docker_ubuntu-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 35.919185161590576
+    }
+}

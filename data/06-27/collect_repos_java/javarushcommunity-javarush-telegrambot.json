@@ -1,0 +1,27 @@
+{
+    "repository": "javarushcommunity/javarush-telegrambot",
+    "stars": 107,
+    "language": "java",
+    "size": 179,
+    "clone_url": "https://github.com/javarushcommunity/javarush-telegrambot.git",
+    "timestamp": "2023-06-29T14:53:28.049846Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[1441a271-7d49-4f72-ad5a-b130b572206c/build] \ud83d\ude80  Start image=crawlergpt:latest\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/javarushcommunity-javarush-telegrambot] user=0 workdir=\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \u2601  git clone 'https://github.com/mirromutth/mysql-action' # ref=v1.1\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[1441a271-7d49-4f72-ad5a-b130b572206c/build] \u2b50 Run Main actions/checkout@v2\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \u2705  Success - Main actions/checkout@v2\n[1441a271-7d49-4f72-ad5a-b130b572206c/build] \u2b50 Run Main Set up MySQL\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker build -t act-mirromutth-mysql-action-v1-1-dockeraction:latest /tmp/act-cache/38e06209-aeee-44f2-8a95-bb5153a32b02/act/mirromutth-mysql-action@v1.1/\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker pull image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= username= forcePull=false\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker create image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \ud83d\udc33  docker run image=act-mirromutth-mysql-action-v1-1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   | Root password not empty, use root superuser\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   | Use specified database\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   | See 'docker run --help'.\n[1441a271-7d49-4f72-ad5a-b130b572206c/build]   \u274c  Failure - Main Set up MySQL\n[1441a271-7d49-4f72-ad5a-b130b572206c/build] exit with `FAILURE`: 126\n[1441a271-7d49-4f72-ad5a-b130b572206c/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/javarushcommunity-javarush-telegrambot/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 128.54925346374512
+    }
+}

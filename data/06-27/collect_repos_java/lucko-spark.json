@@ -1,0 +1,27 @@
+{
+    "repository": "lucko/spark",
+    "stars": 803,
+    "language": "java",
+    "size": 4117,
+    "clone_url": "https://github.com/lucko/spark.git",
+    "timestamp": "2023-06-29T13:32:07.007185Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle] \ud83d\ude80  Start image=crawlergpt:latest\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lucko-spark] user=0 workdir=\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u2601  git clone 'https://github.com/gradle/gradle-build-action' # ref=v2\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle] \u2b50 Run Main Checkout repository\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u2705  Success - Main Checkout repository\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle] \u2b50 Run Main validate gradle wrapper\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker cp src=/tmp/act-cache/d3086413-b1fc-48b2-a70e-3f5ec6fb7cfc/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u2757  ::error::connect ETIMEDOUT 104.17.46.54:443\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle]   \u274c  Failure - Main validate gradle wrapper\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle] exitcode '1': failure\n[6a4d22b4-a9e7-4f22-8ef4-cf8bab200990/build-gradle] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build-gradle' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/lucko-spark/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 283.42828273773193
+    }
+}

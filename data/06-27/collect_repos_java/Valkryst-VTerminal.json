@@ -1,0 +1,28 @@
+{
+    "repository": "Valkryst/VTerminal",
+    "stars": 71,
+    "language": "java",
+    "size": 20925,
+    "clone_url": "https://github.com/Valkryst/VTerminal.git",
+    "timestamp": "2023-06-29T12:56:52.368558Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build] \ud83d\ude80  Start image=crawlergpt:latest\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Valkryst-VTerminal] user=0 workdir=\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build] \u2b50 Run Main actions/checkout@v2\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \u2705  Success - Main actions/checkout@v2\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build] \u2b50 Run Main Setup XVFB\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   | W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://dl.google.com/linux/chrome/deb stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 4EB27DB2A3B88B8B\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   | E: The repository 'https://dl.hhvm.com/ubuntu focal Release' no longer has a Release file.\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build]   \u274c  Failure - Main Setup XVFB\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build] exitcode '100': failure\n[da9cbaeb-79d0-4a8d-a517-ba0b8e7c1b18/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/Valkryst-VTerminal/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 129.92602920532227
+    }
+}

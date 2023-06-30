@@ -1,0 +1,4286 @@
+{
+    "repository": "pusher/pusher-websocket-java",
+    "stars": 297,
+    "language": "java",
+    "size": 1342,
+    "clone_url": "https://github.com/pusher/pusher-websocket-java.git",
+    "timestamp": "2023-06-29T10:45:59.595876Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle",
+        "gradle",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "com.pusher.client.util.HttpChannelAuthorizerTest",
+                "name": "testHTTPSURLIsIdentifiedAsSSL",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpChannelAuthorizerTest",
+                "name": "testConstructWithMalformedURLThrowsRuntimeException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpChannelAuthorizerTest",
+                "name": "testHTTPURLIsIdentifiedAsSSL",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpChannelAuthorizerTest",
+                "name": "testNon200ResponseThrowsAuthorizationFailureException",
+                "time": 0.278,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "stateIsReconnectingAfterTryingToConnectForTheFirstTime",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testOnErrorCallbackRaisesErrorEvent",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testPongTimeoutResultsInClosingConnection",
+                "time": 1.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testReceivePusherErrorMessageRaisesErrorEvent",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testDisconnectInConnectedStateUpdatesStateToDisconnectingAndNotifiesListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testSendMessageSendsMessageToPusher",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testReceivePusherConnectionEstablishedMessageIsTranslatedToAConnectedCallback",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testStopsReconnectingAfterMaxReconnectionAttemptsIsReached",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testConnectCallIsDelegatedToUnderlyingConnection",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testSendMessageWhenWebSocketLibraryThrowsExceptionRaisesErrorEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testOnCloseCallbackUpdatesStateToDisconnectedWhenPreviousStateIsDisconnecting",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testListenerDoesNotReceiveConnectingEventIfItIsOnlyBoundToTheConnectedEvent",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testDisconnectCallIsDelegatedToUnderlyingConnection",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testStartsInDisconnectedState",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testDisconnectInDisconnectingStateIsIgnored",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testSendMessageWhenNotConnectedRaisesErrorEvent",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testDisconnectInDisconnectedStateIsIgnored",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testConnectAfterDisconnect",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testOnCloseCallbackDoesNotCallListenerIfItIsNotBoundToDisconnectedEvent",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testReceivePusherConnectionEstablishedMessageSetsSocketId",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testUnbindingWhenBoundReturnsTrue",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testConnectUpdatesStateAndNotifiesListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testUnbindingWhenNotAlreadyBoundReturnsFalse",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testReceiveUserMessagePassesMessageToEventHandler",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "testConnectDoesNotCallConnectOnUnderlyingConnectionIfAlreadyInConnectingState",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "stateIsDisconnectedAfterOnCloseWithoutTheUserDisconnectingCode4000",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "stateIsDisconnectedAfterOnCloseWithoutTheUserDisconnectingCode4099",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "stateIsDisconnectedAfterOnCloseWithoutTheUserDisconnectingCode4100",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketConnectionTest",
+                "name": "stateIsReconnectingAfterOnCloseWithoutTheUserDisconnecting",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.ConnectionStateChangeTest",
+                "name": "testHashCodeAndEquals",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.ConnectionStateChangeTest",
+                "name": "testGetters",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessage",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testPrivateChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testIsSubscribedMethod",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testUpdateStateToSubscribedNotifiesListenerThatSubscriptionSucceeded",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testThatUserIdsPassedAsIntegersGetStoredAsStringIntegersAndNotDoubles",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testInternalMemberAddedMessageIsTranslatedToUserSubscribedCallback",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testStoresCorrectUser",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testInternalMemberRemovedMessageIsTranslatedToUserUnsubscribedCallback",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testPublicChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testCannotBindIfListenerIsNotAPresenceChannelEventListener",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testInternalSubscriptionSucceededMessageWithNoPresenceDataReturnsError",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testExtractUserIdFromChannelData",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testExtractUserIdFromChannelDataInt",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessageWhenNumericId",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testPrivateEncryptedChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testInternalSubscriptionSucceededMessageIsTranslatedToASubscriptionSuccessfulCallback",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testPresenceChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerReturnsBasicString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWhenConnectionIsInConnectingStateThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testConstructWithNonPrivateChannelNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWhenChannelIsInInitialStateThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWithNullEventNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerThrowsException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWithInvalidEventNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerReturnsJSONWithoutAnAuthToken",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessageWithChannelData",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWhenConnectionIsInDisconnectedStateThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWithValidEventSendsMessage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWhenChannelIsInSubscribeSentStateThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWhenChannelIsInUnsubscribedStateThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testTriggerWithString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerReturnsInvalidJSON",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testCannotBindIfListenerIsNotAPrivateChannelEventListener",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testEventIsNotPassedOnIfThereAreNoMatchingListeners",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testUnbindWithNullEventNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testBindWithNullEventNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testUpdateStateToSubscribeSentDoesNotNotifyListenerThatSubscriptionSucceeded",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testBindToInternalEventThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testReturnsCorrectUnsubscribeMessage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromEvent",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testNullChannelNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromGlobalEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testUnbindWhenListenerIsNotBoundToEventIsIgnoredAndDoesNotThrowException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testUnbindWithNullListenerThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testGetNameReturnsName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListenerGlobalEvent",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToMultipleListeners",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PresenceChannelImplTest",
+                "name": "testBindWithNullListenerThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testUnsubscribeWithNullChannelNameThrowsException",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetNonExistentPrivateChannel",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testReceiveMessageWithNoMatchingChannelIsIgnoredAndDoesNotThrowException",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testDelayedSubscriptionThatFailsToAuthorizeNotifiesListenerAndDoesNotAttemptToSubscribe",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testReceiveMessageWithNoChannelIsIgnoredAndDoesNotThrowException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeWhileDisconnectedQueuesSubscriptionUntilConnectedCallbackIsReceived",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetNonExistentPresenceChannel",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSetConnectionWithNullConnectionThrowsException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscriptionsAreResubscribedEveryTimeTheConnectionIsReestablished",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSetConnectionUnbindsFromPreviousConnection",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testUnsubscribeFromSubscribedChannelSendsUnsubscribeMessage",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeWithAListenerAndEventsBindsTheListenerToTheEventsBeforeSubscribing",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetPrivateChannelPassingInPresencePrefixedString",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testConcurrentModificationExceptionDoesNotHappenWhenConnectionIsEstablished",
+                "time": 0.639,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetNonExistentChannelFromString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testReceiveMessageForSubscribedChannelPassesItToChannel",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeWithADuplicateNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeWithANullListenerAndNoEventsSubscribes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetPresenceChannelFromString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetChannelFromString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testUnsubscribeFromSubscribedChannelSetsStatusOfChannelToUnsubscribed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testReceiveMessageAfterUnsubscribeDoesNotPassItToChannel",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeSetsStatusOfChannelToSubscribeSent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscriptionIsReSubscribedFollowingDisconnectThenConnect",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeToPrivateChannelSubscribes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetPrivateChannelWithGetChannelRaisesError",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testUnsubscribeFromSubscribedChannelUnsubscribesInEventQueue",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeWithAListenerAndNoEventsSubscribes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetPrivateChannelFromString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testGetPresenceChannelPassingInPrivatePrefixedString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSetConnectionBindsAsListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testSubscribeWithNullChannelThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelManagerTest",
+                "name": "testDelayedSubscriptionDoesNotUpdateChannelStateToSubscribeSentUntilConnectedCallbackIsReceived",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessage",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testEventIsNotPassedOnIfThereAreNoMatchingListeners",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testUnbindWithNullEventNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testPrivateChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testBindWithNullEventNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListener",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testUpdateStateToSubscribeSentDoesNotNotifyListenerThatSubscriptionSucceeded",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testIsSubscribedMethod",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testUpdateStateToSubscribedNotifiesListenerThatSubscriptionSucceeded",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testBindToInternalEventThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testPublicChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testReturnsCorrectUnsubscribeMessage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testNullChannelNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromGlobalEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testUnbindWhenListenerIsNotBoundToEventIsIgnoredAndDoesNotThrowException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testPrivateEncryptedChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testUnbindWithNullListenerThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testGetNameReturnsName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListenerGlobalEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToMultipleListeners",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testBindWithNullListenerThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testInternalSubscriptionSucceededMessageIsTranslatedToASubscriptionSuccessfulCallback",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.ChannelImplTest",
+                "name": "testPresenceChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelClearsKeyTest",
+                "name": "secretBoxOpenerIsClearedOnceOnUnsubscribedAndThenDisconnected",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelClearsKeyTest",
+                "name": "secretBoxOpenerIsClearedOnDisconnected",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelClearsKeyTest",
+                "name": "secretBoxOpenerIsClearedOnUnsubscribed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.Base64Test",
+                "name": "failDecodingMinusChar",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.Base64Test",
+                "name": "decodeValidChars",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.Base64Test",
+                "name": "failDecodingUnderscoreChar",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testHandleEventSigninSuccessEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testSigninWhenSignedIn",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testSigninMalformedResponse",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testSigninWhenConnected",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testSigninWhenNotConnected",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testHandleEventSigninSuccessEventMissingId",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.user.impl.InternalUserTest",
+                "name": "testHandleEventSigninSuccessEventMalformed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.EndToEndTest",
+                "name": "testSubscribeToPublicChannelSendsSubscribeMessage",
+                "time": 0.322,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.EndToEndTest",
+                "name": "testForQueuedSubscriptionsAuthorizerIsNotCalledUntilTimeToSubscribe",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.EndToEndTest",
+                "name": "testSubscriptionsAreResubscribedWithFreshAuthTokensEveryTimeTheConnectionComesUp",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.EndToEndTest",
+                "name": "testSubscribeToPrivateChannelSendsSubscribeMessage",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSigninThrowsIfUserAuthenticatorIsNotSet",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribeWithoutListenerCreatesPublicChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePresenceCreatesPresenceChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePresenceWhenDisconnectedCreatesPresenceChannelAndDelegatesCallToChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testCreatesConnectionObjectWhenConstructed",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testConnectCallWithNoListenerIsDelegatedToUnderlyingConnection",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePrivateCreatesPrivateChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSigninCallsUserSignin",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePrivateIfNoPusherOptionsHaveBeenPassedThrowsException",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testDisconnectCallDoesNothingIfStateIsDisconnecting",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testConnectCallWithNullListenerAndNoEventsJustConnectsWithoutBinding",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testNullAPIKeyThrowsIllegalArgumentException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePresenceWhenConnectingCreatesPresenceChannelAndDelegatesCallToChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testConnectCallWithListenerAndEventsBindsListenerToEventsBeforeConnecting",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePrivateWhenDisconnectedCreatesPrivateChannelAndDelegatesCallToChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testEmptyAPIKeyThrowsIllegalArgumentException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePrivateIfPusherOptionsHaveBeenPassedButNoChannelAuthorizerHasBeenSetThrowsException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePresenceIfPusherOptionsHaveBeenPassedButNoChannelAuthorizerHasBeenSetThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testNullPusherOptionsThrowsIllegalArgumentException",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testConnectCallWithListenerAndNoEventsBindsListenerToAllEventsBeforeConnecting",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testDisconnectCallDoesNothingIfStateIsDisconnected",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testDisconnectCallIsDelegatedToUnderlyingConnection",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePresenceIfNoPusherOptionsHaveBeenPassedThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribeWithEventNamesCreatesPublicChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testUnsubscribeDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePrivateWithEventNamesCreatesPrivateChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testConnectCallWithNullListenerAndEventsThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribeWhenDisconnectedCreatesPublicChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePresenceWithEventNamesCreatesPresenceChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribePrivateWhenConnectingCreatesPrivateChannelAndDelegatesCallToChannelManager",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribeWhenConnectingCreatesPublicChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherTest",
+                "name": "testSubscribeCreatesPublicChannelAndDelegatesCallToTheChannelManager",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testClusterSetURLIsCorrect",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testAuthorizerIsInitiallyNull",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testUserAuthenticatorIsInitiallyNull",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testClusterSetNonSSLURLIsCorrect",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testUseTLSInitializedAsTrue",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testChannelAuthorizerCanBeSet",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testSetUseTLSReturnsSelf",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testCustomHostAndPortURLIsCorrect",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testGetProxyReturnDefaultProxy",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testDefaultURL",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testSetAuthorizerReturnsSelf",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testCustomHostAndPortNonSSLURLIsCorrect",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testChannelAuthorizerIsInitiallyNull",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testEncryptedCanBeSetToTrue",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testEncryptedInitializedAsTrue",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testUseTLSCanBeSetToTrue",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testUserAuthenticatorBeSet",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testSetEncryptedReturnsSelf",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testAuthorizerCanBeSet",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testSetUserAuthenticatorReturnsSelf",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testSetChannelAuthorizerReturnsSelf",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testNonSSLURLIsCorrect",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.PusherOptionsTest",
+                "name": "testSetProxy",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.PusherEventTest",
+                "name": "testChannelNameIsExtracted",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.PusherEventTest",
+                "name": "testErrorData",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.PusherEventTest",
+                "name": "testDataIsExtracted",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.PusherEventTest",
+                "name": "testUserIdIsExtracted",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.PusherEventTest",
+                "name": "testEventNameIsExtracted",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.crypto.nacl.SecretBoxOpenerTest",
+                "name": "openFailsForTamperedCipher",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.crypto.nacl.SecretBoxOpenerTest",
+                "name": "openEmptyMessage",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.crypto.nacl.SecretBoxOpenerTest",
+                "name": "open",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.crypto.nacl.SecretBoxOpenerTest",
+                "name": "openFailsAfterClearKey",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerReturnsBasicString",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWhenConnectionIsInConnectingStateThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testPrivateChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testConstructWithNonPrivateChannelNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWhenChannelIsInInitialStateThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWithNullEventNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testPublicChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWithInvalidEventNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerReturnsJSONWithoutAnAuthToken",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testPrivateEncryptedChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessageWithChannelData",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWhenConnectionIsInDisconnectedStateThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWithValidEventSendsMessage",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWhenChannelIsInSubscribeSentStateThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWhenChannelIsInUnsubscribedStateThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testTriggerWithString",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testThrowsAuthorizationFailureExceptionIfAuthorizerReturnsInvalidJSON",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testCannotBindIfListenerIsNotAPrivateChannelEventListener",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testPresenceChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testEventIsNotPassedOnIfThereAreNoMatchingListeners",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testUnbindWithNullEventNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testBindWithNullEventNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testUpdateStateToSubscribeSentDoesNotNotifyListenerThatSubscriptionSucceeded",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testIsSubscribedMethod",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testUpdateStateToSubscribedNotifiesListenerThatSubscriptionSucceeded",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testBindToInternalEventThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testReturnsCorrectUnsubscribeMessage",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testNullChannelNameThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromGlobalEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testUnbindWhenListenerIsNotBoundToEventIsIgnoredAndDoesNotThrowException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testUnbindWithNullListenerThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testGetNameReturnsName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListenerGlobalEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToMultipleListeners",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testBindWithNullListenerThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateChannelImplTest",
+                "name": "testInternalSubscriptionSucceededMessageIsTranslatedToASubscriptionSuccessfulCallback",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testReturnsCorrectSubscribeMessage",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "authenticationThrowsExceptionIfMalformedJson",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "handleEventRaisesExceptionWhenFailingToDecryptTwice",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testPrivateChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListener",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "authenticationThrowsExceptionIfNoSharedSecret",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "authenticationThrowsExceptionIfNoAuthKey",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testPublicChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "authenticationSucceedsGivenValidChannelAuthorizer",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testPrivateEncryptedChannelName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "twoEventsReceivedWithSecondRetryCorrect",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "toStringIsAccurate",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToSingleListenerGlobalEvent",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testDataIsExtractedFromMessageAndPassedToMultipleListeners",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "handleEventRetriesDecryptionOnce",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "twoEventsReceivedWithIncorrectSharedSecret",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testPresenceChannelName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testEventIsNotPassedOnIfThereAreNoMatchingListeners",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testUnbindWithNullEventNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testBindWithNullEventNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testUpdateStateToSubscribeSentDoesNotNotifyListenerThatSubscriptionSucceeded",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testIsSubscribedMethod",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testUpdateStateToSubscribedNotifiesListenerThatSubscriptionSucceeded",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testBindToInternalEventThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testReturnsCorrectUnsubscribeMessage",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testNullChannelNameThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testEventIsNotPassedOnIfListenerHasUnboundFromGlobalEvent",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testUnbindWhenListenerIsNotBoundToEventIsIgnoredAndDoesNotThrowException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testUnbindWithNullListenerThrowsException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testGetNameReturnsName",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testBindWithNullListenerThrowsException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.channel.impl.PrivateEncryptedChannelImplTest",
+                "name": "testInternalSubscriptionSucceededMessageIsTranslatedToASubscriptionSuccessfulCallback",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpUserAuthenticatorTest",
+                "name": "testNon200ResponseThrowsAuthenticationFailtureException",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpUserAuthenticatorTest",
+                "name": "testHTTPSURLIsIdentifiedAsSSL",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpUserAuthenticatorTest",
+                "name": "testConstructWithMalformedURLThrowsRuntimeException",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.util.HttpUserAuthenticatorTest",
+                "name": "testHTTPURLIsIdentifiedAsSSL",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketClientWrapperTest",
+                "name": "testhandleEventIsDelegatedToTheListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketClientWrapperTest",
+                "name": "testOnCloseIsDelegatedToTheListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketClientWrapperTest",
+                "name": "testRemoveWebSocketListener",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketClientWrapperTest",
+                "name": "testOnOpenCallIsDelegatedToTheListener",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.pusher.client.connection.websocket.WebSocketClientWrapperTest",
+                "name": "testOnErrorIsDelegatedToTheListener",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \ud83d\ude80  Start image=crawlergpt:latest\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/pusher-pusher-websocket-java] user=0 workdir=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2.3.1\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \ud83e\uddea  Matrix: map[java-version:8]\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \u2b50 Run Main actions/checkout@v2.3.1\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2705  Success - Main actions/checkout@v2.3.1\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \u2b50 Run Main Set up JDK 8\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/4ce98983-9f6b-4e26-b569-af1417f21751/act/actions-setup-java@v2.3.1/ dst=/var/run/act/actions/actions-setup-java@v2.3.1/\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2.3.1/] user=0 workdir=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2.3.1/dist/setup/index.js] user= workdir=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Trying to resolve the latest version from remote\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Resolved latest version as 8.0.372+7\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Trying to download...\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Downloading Java 8.0.372+7 (Adopt-OpenJ9) from https://github.com/AdoptOpenJDK/semeru8-binaries/releases/download/jdk8u372-b07_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_8u372b07_openj9-0.38.0.tar.gz ...\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::Downloading https://github.com/AdoptOpenJDK/semeru8-binaries/releases/download/jdk8u372-b07_openj9-0.38.0/ibm-semeru-open-jdk_x64_linux_8u372b07_openj9-0.38.0.tar.gz\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::Destination /tmp/4a545364-c5c6-4ec4-b098-73be1b87c32b\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::download complete\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Extracting Java archive...\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::Checking tar --version\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/cf97c659-788d-428b-8645-da75c3e7eb3e -f /tmp/4a545364-c5c6-4ec4-b098-73be1b87c32b\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::Caching tool Java_Adopt-OpenJ9_jdk 8.0.372-7 x64\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::source dir: /tmp/cf97c659-788d-428b-8645-da75c3e7eb3e/jdk8u372-b07\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Adopt-OpenJ9_jdk/8.0.372-7/x64\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udcac  ::debug::finished caching tool\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Java 8.0.372+7 was downloaded\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Setting Java 8.0.372+7 as the default\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2699  ::set-output:: distribution=Adopt-OpenJ9\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt-OpenJ9_jdk/8.0.372-7/x64\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2699  ::set-output:: version=8.0.372+7\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Java configuration:\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |   Distribution: adopt-openj9\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |   Version: 8.0.372+7\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |   Path: /opt/hostedtoolcache/Java_Adopt-OpenJ9_jdk/8.0.372-7/x64\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2.3.1/.github/java.json\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Creating settings.xml with server-id: github\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2705  Success - Main Set up JDK 8\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt-OpenJ9_jdk/8.0.372-7/x64\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt-OpenJ9_jdk/8.0.372-7/x64/bin\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \u2b50 Run Main Build & Test\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Downloading https://services.gradle.org/distributions/gradle-7.3-bin.zip\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | ..............................................................................................................\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Welcome to Gradle 7.3!\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Here are the highlights of this release:\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |  - Easily declare new test suites in Java projects\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |  - Support for Java 17\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |  - Support for Scala 3\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | For more details see https://docs.gradle.org/7.3/release-notes.html\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Configure project :\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | org.ajoberstar.github-pages is deprecated will be removed in gradle-git 2.0.0. Users should migrate to org.ajoberstar.git-publish (https://github.com/ajoberstar/gradle-git-publish).\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :compileJava\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Note: Some input files use or override a deprecated API.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Note: Recompile with -Xlint:deprecation for details.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :processResources\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :classes\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :compileTestJava\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Note: Some input files use or override a deprecated API.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Note: Recompile with -Xlint:deprecation for details.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Note: Some input files use unchecked or unsafe operations.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Note: Recompile with -Xlint:unchecked for details.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :processTestResources NO-SOURCE\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :testClasses\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :test\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | com.pusher.client.EndToEndTest > testSubscribeToPublicChannelSendsSubscribeMessage STANDARD_ERROR\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     SLF4J: Failed to load class \"org.slf4j.impl.StaticLoggerBinder\".\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     SLF4J: Defaulting to no-operation (NOP) logger implementation\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | com.pusher.client.user.impl.InternalUserTest > testHandleEventSigninSuccessEventMissingId STANDARD_ERROR\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     Jun 29, 2023 10:47:47 AM com.pusher.client.user.impl.InternalUser onSigninSuccess\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     SEVERE: User data doesn't contain an id\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | com.pusher.client.user.impl.InternalUserTest > testHandleEventSigninSuccessEventMalformed STANDARD_ERROR\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     Jun 29, 2023 10:47:47 AM com.pusher.client.user.impl.InternalUser onSigninSuccess\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     SEVERE: Failed parsing user data after signin\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | > Task :jacocoTestReport\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | BUILD SUCCESSFUL in 49s\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | 5 actionable tasks: 5 executed\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2705  Success - Main Build & Test\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \u2b50 Run Main Code coverage\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |   _____          _\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |  / ____|        | |\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | | |     ___   __| | ___  ___ _____   __\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | | |    / _ \\ / _` |/ _ \\/ __/ _ \\ \\ / /\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | | |___| (_) | (_| |  __/ (_| (_) \\ V /\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |  \\_____\\___/ \\__,_|\\___|\\___\\___/ \\_/\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |                               Bash-1.0.6\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;36m==>\u001b[0m git version 2.33.0 found\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;36m==>\u001b[0m curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Release-Date: 2020-01-08\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m GitHub Actions detected.\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     Env vars used:\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_ACTIONS:    true\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_HEAD_REF:   \n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_REF:        refs/heads/master\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_REPOSITORY: pusher/pusher-websocket-java\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_RUN_ID:     1\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_SHA:        d0a7ea80cba4dffa45bff8e6a4fd9767acb8cb6d\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |       -> GITHUB_WORKFLOW:   c60934b1-7d41-4676-bcf0-b5eaa1302c8c\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;90mcurrent dir: \u001b[0m /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/pusher-pusher-websocket-java\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;90mproject root:\u001b[0m .\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;32mYaml not found, that's ok! Learn more at\u001b[0m \u001b[0;36mhttp://docs.codecov.io/docs/codecov-yaml\u001b[0m\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Running gcov in . \u001b[0;90m(disable via -X gcov)\u001b[0m\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Python coveragepy not found\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Searching for coverage reports in:\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;32m+\u001b[0m .\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;90m->\u001b[0m Found 1 reports\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Detecting git/mercurial file structure\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Reading reports\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;32m+\u001b[0m ./build/reports/jacoco/test/jacocoTestReport.xml \u001b[0;90mbytes=251041\u001b[0m\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Appending adjustments\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;36mhttps://docs.codecov.io/docs/fixing-reports\u001b[0m\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;90m->\u001b[0m No adjustments found\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Gzipping contents\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |         20K\t/tmp/codecov.0so2sv.gz\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Uploading reports\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;90murl:\u001b[0m https://codecov.io\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;90mquery:\u001b[0m branch=master&commit=d0a7ea80cba4dffa45bff8e6a4fd9767acb8cb6d&build=1&build_url=https%3A%2F%2Fgithub.com%2Fpusher%2Fpusher-websocket-java%2Factions%2Fruns%2F1&name=&tag=&slug=pusher%2Fpusher-websocket-java&service=github-actions&flags=&pr=&job=c60934b1-7d41-4676-bcf0-b5eaa1302c8c&cmd_args=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m->\u001b[0m  Pinging Codecov\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | https://codecov.io/upload/v4?package=bash-1.0.6&token=<hidden>&package=bash-1.0.6&token=&branch=master&commit=d0a7ea80cba4dffa45bff8e6a4fd9767acb8cb6d&build=1&build_url=https%3A%2F%2Fgithub.com%2Fpusher%2Fpusher-websocket-java%2Factions%2Fruns%2F1&name=&tag=&slug=pusher%2Fpusher-websocket-java&service=github-actions&flags=&pr=&job=c60934b1-7d41-4676-bcf0-b5eaa1302c8c&cmd_args=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;31m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | 404\u001b[0m\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \u001b[0;90m==>\u001b[0m Uploading to Codecov\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |                                  Dload  Upload   Total   Spent    Left  Speed\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   | \r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100 18677  100   171  100 18506    244  26474 --:--:-- --:--:-- --:--:-- 26719\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   |     \u001b[0;32m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}\u001b[0m\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2705  Success - Main Code coverage\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \u2b50 Run Post Set up JDK 8\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2.3.1/dist/cleanup/index.js] user= workdir=\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build]   \u2705  Success - Post Set up JDK 8\n[c60934b1-7d41-4676-bcf0-b5eaa1302c8c/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/pusher-pusher-websocket-java/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 107.0098307132721
+    }
+}

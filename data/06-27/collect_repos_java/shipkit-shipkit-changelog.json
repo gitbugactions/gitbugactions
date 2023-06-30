@@ -1,0 +1,27 @@
+{
+    "repository": "shipkit/shipkit-changelog",
+    "stars": 52,
+    "language": "java",
+    "size": 296,
+    "clone_url": "https://github.com/shipkit/shipkit-changelog.git",
+    "timestamp": "2023-06-29T14:30:46.654296Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[75695337-19a8-4906-bc2c-03186c258bdd/windows_build] \ud83d\ude80  Start image=crawlergpt:latest\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/shipkit-shipkit-changelog] user=0 workdir=\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build] \u2b50 Run Main actions/checkout@v2.3.4\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \u2705  Success - Main actions/checkout@v2.3.4\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build] \u2b50 Run Main Run build\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   | /var/run/act/workflow/1: line 2: .gradlew.bat: command not found\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build]   \u274c  Failure - Main Run build\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build] exitcode '127': command not found, please refer to https://github.com/nektos/act/issues/107 for more information\n[75695337-19a8-4906-bc2c-03186c258bdd/windows_build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'windows_build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/shipkit-shipkit-changelog/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 44.48536419868469
+    }
+}

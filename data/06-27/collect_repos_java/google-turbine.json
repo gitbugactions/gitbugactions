@@ -1,0 +1,27 @@
+{
+    "repository": "google/turbine",
+    "stars": 58,
+    "language": "java",
+    "size": 1772,
+    "clone_url": "https://github.com/google/turbine.git",
+    "timestamp": "2023-06-29T12:33:40.253286Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest] \ud83d\ude80  Start image=crawlergpt:latest\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/google-turbine] user=0 workdir=\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \u2601  git clone 'https://github.com/styfle/cancel-workflow-action' # ref=0.9.1\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest] \ud83e\uddea  Matrix: map[experimental:false java:19 os:ubuntu-latest]\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest] \u2b50 Run Main Cancel previous\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker cp src=/tmp/act-cache/ab7ab490-2b0a-43d2-929e-7fb2b5b3901f/act/styfle-cancel-workflow-action@0.9.1/ dst=/var/run/act/actions/styfle-cancel-workflow-action@0.9.1/\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/styfle-cancel-workflow-action@0.9.1/] user=0 workdir=\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/styfle-cancel-workflow-action@0.9.1/dist/index.js] user= workdir=\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   | {\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   eventName: 'push',\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   sha: '701bb990443345880777525234284d6fb5f28396',\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   headSha: '701bb990443345880777525234284d6fb5f28396',\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   branch: 'main',\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   owner: 'google',\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   repo: 'turbine',\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   |   GITHUB_RUN_ID: '1'\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   | }\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   | Found token: yes\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \u2757  ::error::Not Found\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest]   \u274c  Failure - Main Cancel previous\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest] exitcode '1': failure\n[a40340ec-64dd-4e16-81a5-7a53a21f9928/JDK 19 on ubuntu-latest] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'JDK ${{ matrix.java }} on ${{ matrix.os }}' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/google-turbine/.github/workflows/ci-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 52.67644929885864
+    }
+}

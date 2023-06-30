@@ -1,0 +1,29 @@
+{
+    "repository": "hivemq/hivemq-community-edition",
+    "stars": 931,
+    "language": "java",
+    "size": 12588,
+    "clone_url": "https://github.com/hivemq/hivemq-community-edition.git",
+    "timestamp": "2023-06-29T14:01:03.694981Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "gradle",
+        "gradle",
+        "unknown"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check] \ud83d\ude80  Start image=crawlergpt:latest\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/hivemq-hivemq-community-edition] user=0 workdir=\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \u2601  git clone 'https://github.com/docker/login-action' # ref=v1\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check] \u2b50 Run Main Checkout\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \u2705  Success - Main Checkout\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check] \u2b50 Run Main Checkout Extension SDK\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   | fatal: could not create work tree dir '../hivemq-extension-sdk': Permission denied\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check]   \u274c  Failure - Main Checkout Extension SDK\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check] exitcode '128': failure\n[032c910f-c6e5-4c85-9e1a-0c1dd1bb5f12/check] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'check' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/hivemq-hivemq-community-edition/.github/workflows/check-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 112.75407576560974
+    }
+}

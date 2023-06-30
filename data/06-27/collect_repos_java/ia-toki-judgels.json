@@ -1,0 +1,28 @@
+{
+    "repository": "ia-toki/judgels",
+    "stars": 95,
+    "language": "java",
+    "size": 13350,
+    "clone_url": "https://github.com/ia-toki/judgels.git",
+    "timestamp": "2023-06-29T13:36:27.466542Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web] \ud83d\ude80  Start image=crawlergpt:latest\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ] \ud83d\ude80  Start image=crawlergpt:latest\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ia-toki-judgels] user=0 workdir=\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ia-toki-judgels] user=0 workdir=\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v3\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \u2601  git clone 'https://github.com/shimataro/ssh-key-action' # ref=v2\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v3\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web] \u2b50 Run Main Checkout\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \u2705  Success - Main Checkout\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web] \u2b50 Run Main Check changed files\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/changed-files] user= workdir=\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   | Traceback (most recent call last):\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   |   File \"ci/check-changed-files.py\", line 87, in <module>\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   |     head_sha = event['after']\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   | KeyError: 'after'\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web]   \u274c  Failure - Main Check changed files\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web] exitcode '1': failure\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/deploy-web] \ud83c\udfc1  Job failed\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ] \u2b50 Run Main actions/checkout@v3\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \u2705  Success - Main actions/checkout@v3\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ] \u2b50 Run Main Check changed files\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/changed-files] user= workdir=\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   | Traceback (most recent call last):\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   |   File \"ci/check-changed-files.py\", line 87, in <module>\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   |     head_sha = event['after']\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   | KeyError: 'after'\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ]   \u274c  Failure - Main Check changed files\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ] exitcode '1': failure\n[cd8c1f41-9666-4e65-b435-bd2dc47cb6e1/test      ] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'deploy-web' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/ia-toki-judgels/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 131.6144299507141
+    }
+}

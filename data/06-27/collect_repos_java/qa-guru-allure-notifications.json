@@ -1,0 +1,127 @@
+{
+    "repository": "qa-guru/allure-notifications",
+    "stars": 340,
+    "language": "java",
+    "size": 82080,
+    "clone_url": "https://github.com/qa-guru/allure-notifications.git",
+    "timestamp": "2023-06-29T14:20:45.700310Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "guru.qa.allure.notifications.util.MailPropertiesTests",
+                "name": "shouldCreateMailPropertiesWithoutSecurityProtocolSpecified()",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "guru.qa.allure.notifications.util.MailPropertiesTests",
+                "name": "[1] SSL, ssl",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "guru.qa.allure.notifications.util.MailPropertiesTests",
+                "name": "[2] STARTTLS, starttls",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "guru.qa.allure.notifications.clients.skype.SkypeClientTest",
+                "name": "Get host name from service url: smba.trafficmanager.net/apis/",
+                "time": 0.2,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "guru.qa.allure.notifications.clients.skype.SkypeClientTest",
+                "name": "Get host name from service url: smba.net/apis/",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "guru.qa.allure.notifications.clients.skype.SkypeClientTest",
+                "name": "Get host name from service url: smba.trafficmanager.net/",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "guru.qa.allure.notifications.clients.skype.SkypeClientTest",
+                "name": "Get host name from service url: smba.trafficmanager.net",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[23fae330-c7a8-49a3-952d-30ac9a924054/build] \ud83d\ude80  Start image=crawlergpt:latest\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/qa-guru-allure-notifications] user=0 workdir=\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[23fae330-c7a8-49a3-952d-30ac9a924054/build] \ud83e\uddea  Matrix: map[java:8]\n[23fae330-c7a8-49a3-952d-30ac9a924054/build] \u2b50 Run Main Checkout\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2705  Success - Main Checkout\n[23fae330-c7a8-49a3-952d-30ac9a924054/build] \u2b50 Run Main Set up JDK\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/4966a5c0-a386-4acf-9ab5-1e20fec6fe85/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2753  ::group::Installed distributions\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Trying to resolve the latest version from remote\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Resolved latest version as 8.0.372+7\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Trying to download...\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Downloading Java 8.0.372+7 (Temurin-Hotspot) from https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz ...\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Downloading https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u372-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Destination /tmp/3e4f5a1a-7a56-4dea-9014-04dbde4edaa5\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::download complete\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Extracting Java archive...\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Checking tar --version\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/b8268bd9-4aa8-491c-a75e-b1e40f08bb00 -f /tmp/3e4f5a1a-7a56-4dea-9014-04dbde4edaa5\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Caching tool Java_Temurin-Hotspot_jdk 8.0.372-7 x64\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::source dir: /tmp/b8268bd9-4aa8-491c-a75e-b1e40f08bb00/jdk8u372-b07\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::finished caching tool\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Java 8.0.372+7 was downloaded\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Setting Java 8.0.372+7 as the default\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Creating toolchains.xml for JDK version 8 from temurin\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Java configuration:\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |   Distribution: temurin\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |   Version: 8.0.372+7\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2753  ::endgroup::\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Creating settings.xml with server-id: github\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Search path '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/qa-guru-allure-notifications'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/qa-guru-allure-notifications/build.gradle\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/qa-guru-allure-notifications/gradle/wrapper/gradle-wrapper.properties\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Found 2 files to hash.\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::primary key is setup-java-Linux-gradle-10dd5bbeff36f5a617761c5691d61850e5719da1b3e1deb4a10926420848f0f3\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::[\"setup-java-Linux-gradle-10dd5bbeff36f5a617761c5691d61850e5719da1b3e1deb4a10926420848f0f3\"]\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:43235/_apis/artifactcache/cache?keys=setup-java-Linux-gradle-10dd5bbeff36f5a617761c5691d61850e5719da1b3e1deb4a10926420848f0f3&version=09ba73ab57fcd4582177c49695fd068c4719cc0cab32d2335af27897fd9c08a0\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | gradle cache is not found\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2705  Success - Main Set up JDK\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::set-output:: version=8.0.372+7\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::set-output:: cache-hit=false\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::set-output:: distribution=Temurin-Hotspot\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.372-7/x64/bin\n[23fae330-c7a8-49a3-952d-30ac9a924054/build] \u2b50 Run Main Build\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5-bin.zip\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Welcome to Gradle 7.5!\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Here are the highlights of this release:\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |  - Support for Java 18\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |  - Support for building with Groovy 4\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |  - Much more responsive continuous builds\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   |  - Improved diagnostics for dependency resolution\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | For more details see https://docs.gradle.org/7.5/release-notes.html\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :compileJava\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :processResources\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :classes\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :jar\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE.txt\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE.txt\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE.txt\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE.txt\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/DEPENDENCIES\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/DEPENDENCIES\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/DEPENDENCIES\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE.txt\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE.txt\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/DEPENDENCIES\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/DEPENDENCIES\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/DEPENDENCIES\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/LICENSE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Encountered duplicate path \"META-INF/NOTICE\" during copy operation configured with DuplicatesStrategy.WARN\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :assemble\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :compileTestJava\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :processTestResources NO-SOURCE\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :testClasses\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :test\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :check\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | > Task :build\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | \n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | BUILD SUCCESSFUL in 38s\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | 5 actionable tasks: 5 executed\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2705  Success - Main Build\n[23fae330-c7a8-49a3-952d-30ac9a924054/build] \u2b50 Run Post Set up JDK\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Checking zstd --version\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.gradle/caches'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.gradle/wrapper'\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.gradle/caches\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.gradle/wrapper\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Cache Paths:\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.gradle/caches\",\"../../../home/runneradmin/.gradle/wrapper\"]\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Archive Path: /tmp/f637cf0d-ad16-4b48-bc03-a34ba3bac070/cache.tzst\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | [command]/usr/bin/tar --posix --use-compress-program zstdmt -cf cache.tzst --exclude cache.tzst -P -C /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/qa-guru-allure-notifications --files-from manifest.txt\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::File Size: 261823581\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Reserving Cache\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:43235/_apis/artifactcache/caches\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Upload cache\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:43235/_apis/artifactcache/caches/1\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Awaiting all uploads\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 0 with content range: bytes 0-33554431/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 33554432 with content range: bytes 33554432-67108863/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 67108864 with content range: bytes 67108864-100663295/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 100663296 with content range: bytes 100663296-134217727/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 134217728 with content range: bytes 134217728-167772159/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 167772160 with content range: bytes 167772160-201326591/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 201326592 with content range: bytes 201326592-234881023/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Uploading chunk of size 26942557 bytes at offset 234881024 with content range: bytes 234881024-261823580/*\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Commiting cache\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Cache Size: ~250 MB (261823581 B)\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:43235/_apis/artifactcache/caches/1\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Cache saved successfully\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   | Cache saved with the key: setup-java-Linux-gradle-10dd5bbeff36f5a617761c5691d61850e5719da1b3e1deb4a10926420848f0f3\n[23fae330-c7a8-49a3-952d-30ac9a924054/build]   \u2705  Success - Post Set up JDK\n[23fae330-c7a8-49a3-952d-30ac9a924054/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/qa-guru-allure-notifications/.github/workflows/build-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 222.43461894989014
+    }
+}

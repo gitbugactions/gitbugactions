@@ -1,0 +1,113 @@
+{
+    "repository": "jacamo-lang/jacamo",
+    "stars": 55,
+    "language": "java",
+    "size": 26001,
+    "clone_url": "https://github.com/jacamo-lang/jacamo.git",
+    "timestamp": "2023-06-29T12:19:47.875279Z",
+    "clone_success": true,
+    "number_of_actions": 2,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unknown",
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "JaCamoProjectTest",
+                "name": "testParseInst",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "JaCamoProjectTest",
+                "name": "testToString",
+                "time": 0.057,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "JaCamoProjectTest",
+                "name": "testParse1",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "JaCamoProjectTest",
+                "name": "testParse2",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "WorkspaceCreationTest",
+                "name": "test101GetWorkspaces",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "WorkspaceCreationTest",
+                "name": "test201PostProperty",
+                "time": 0.103,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \ud83d\ude80  Start image=crawlergpt:latest\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jacamo-lang-jacamo] user=0 workdir=\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \u2b50 Run Main actions/checkout@v2\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2705  Success - Main actions/checkout@v2\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \u2b50 Run Main Set up JDK 17\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/5a008853-bdb9-46d9-b938-d0c243a62d02/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::isExplicit: \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::explicit? false\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::evaluating 0 versions\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::match not found\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::Downloading JDK from Azul\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::Searching for files with extension: -linux_x64.tar.gz\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::Downloading https://static.azul.com/zulu/bin/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64.tar.gz\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::Downloading /tmp/5581ec4b-d9fd-42e4-a1a3-5a015eb0ca8c\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::download complete\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | [command]/usr/bin/tar --version\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | tar (GNU tar) 1.30\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Copyright (C) 2017 Free Software Foundation, Inc.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | This is free software: you are free to change and redistribute it.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | There is NO WARRANTY, to the extent permitted by law.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Written by John Gilmore and Jay Fenlason.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_489472764 -f /tmp/5581ec4b-d9fd-42e4-a1a3-5a015eb0ca8c\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::jdk extracted to /tmp/temp_489472764/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::Caching tool jdk 17.0.7 x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::source dir: /tmp/temp_489472764/zulu17.42.21-ca-crac-jdk17.0.7-linux_x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/jdk/17.0.7/x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::finished caching tool\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2753 add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udcac  ::debug::created directory /home/runneradmin/.m2\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | writing /home/runneradmin/.m2/settings.xml\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2705  Success - Main Set up JDK 17\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2699  ::set-env:: JAVA_HOME_17.0.7_x64=/opt/hostedtoolcache/jdk/17.0.7/x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/17.0.7/x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2699  ::set-env:: JAVA_HOME_17_0_7_X64=/opt/hostedtoolcache/jdk/17.0.7/x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2699  ::set-output:: path=/opt/hostedtoolcache/jdk/17.0.7/x64\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2699  ::set-output:: version=17.0.7\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2699  ::add-path:: /opt/hostedtoolcache/jdk/17.0.7/x64/bin\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \u2b50 Run Main Grant execute permission for gradlew\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2705  Success - Main Grant execute permission for gradlew\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \u2b50 Run Main Build with Gradle\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Downloading https://services.gradle.org/distributions/gradle-7.4.2-bin.zip\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Welcome to Gradle 7.4.2!\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Here are the highlights of this release:\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   |  - Aggregated test and JaCoCo reports\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   |  - Marking additional test source directories as tests in IntelliJ\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   |  - Support for Adoptium JDKs in Java toolchains\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | For more details see https://docs.gradle.org/7.4.2/release-notes.html\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Starting a Gradle Daemon (subsequent builds will be faster)\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :compileJavacc\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Java Compiler Compiler Version 6.1_2 (Parser Generator)\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | (type \"javacc\" with no arguments for help)\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Reading from file /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jacamo-lang-jacamo/src/main/javacc/JaCaMoProjectParser.jj . . .\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: UNICODE_INPUT option is specified. Please make sure you create the parser/lexer using a Reader with the correct character encoding.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Warning: Choice conflict in (...)+ construct at line 365, column 34.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   |          Expansion nested within construct and expansion following construct\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   |          have common prefixes, one of which is: <ATOM>\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   |          Consider using a lookahead of 2 or more for nested expansion.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | File \"TokenMgrError.java\" does not exist.  Will create one.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | File \"ParseException.java\" does not exist.  Will create one.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | File \"Token.java\" does not exist.  Will create one.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | File \"SimpleCharStream.java\" does not exist.  Will create one.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Parser generated with 0 errors and 1 warnings.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :compileJava\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jacamo-lang-jacamo/src/main/java/jacamo/util/Config.java uses or overrides a deprecated API.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: Recompile with -Xlint:deprecation for details.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jacamo-lang-jacamo/build/generated/javacc/jacamo/project/parser/JaCaMoProjectParser.java uses unchecked or unsafe operations.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: Recompile with -Xlint:unchecked for details.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :processResources\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :classes\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :compileTestJava\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jacamo-lang-jacamo/build/generated/javacc/jacamo/project/parser/JaCaMoProjectParser.java uses unchecked or unsafe operations.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Note: Recompile with -Xlint:unchecked for details.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :processTestResources NO-SOURCE\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :testClasses\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | > Task :test\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | See https://docs.gradle.org/7.4.2/userguide/command_line_interface.html#sec:command_line_warnings\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | \n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | BUILD SUCCESSFUL in 58s\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   | 5 actionable tasks: 5 executed\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2705  Success - Main Build with Gradle\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \u2b50 Run Post Set up JDK 17\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test]   \u2705  Success - Post Set up JDK 17\n[ac17b3ac-e94a-4607-81d5-e6d24b32fe46/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/jacamo-lang-jacamo/.github/workflows/gradle-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 218.70342803001404
+    }
+}

@@ -1,0 +1,686 @@
+{
+    "repository": "orphan-oss/launch4j-maven-plugin",
+    "stars": 323,
+    "language": "java",
+    "size": 3666,
+    "clone_url": "https://github.com/orphan-oss/launch4j-maven-plugin.git",
+    "timestamp": "2023-06-29T09:58:57.826182Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.CopyrightGeneratorTest",
+                "name": "shouldContain_InceptionYear_And_BuildYear",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.CopyrightGeneratorTest",
+                "name": "shouldContain_BuildYear",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.CopyrightGeneratorTest",
+                "name": "shouldContain_BuildYear_And_OrganizationName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.CopyrightGeneratorTest",
+                "name": "shouldContain_InceptionYear_And_BuildYear_And_OrganizationName",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldReturnNull_WhenProjectVersionIsNull",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTextFlags(1-SNAPSHOT, 1.0.0.0) [0]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTextFlags(1.2.1-alpha, 1.2.1.0) [1]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTextFlags(1.2.3.4-beta, 1.2.3.4) [2]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTextFlags(0.0.1-snapshot, 0.0.1.0) [3]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat() [0]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat( ) [1]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(null) [2]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(alpha-1.2.3) [3]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(1a.2.3) [4]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(1.X.3) [5]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(1.2.3_11) [6]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(1.2.3;4) [7]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(1.2.3.4SNAPSHOT) [8]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldThrowException_WhenProjectVersion_HaveWrongFormat(1.2.3.4.SNAPSHOT) [9]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTooManyNestedDigits(0.0.0.0.1, 0.0.0.0) [0]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTooManyNestedDigits(1.22.333.4444.55555.666666, 1.22.333.4444) [1]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTooManyNestedDigits(9.8.7.6.5-SNAPSHOT, 9.8.7.6) [2]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldCutOffTooManyNestedDigits(3.0.1.12.44.62.1.0.0.0.1-alpha, 3.0.1.12) [3]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldFillMissingPlacesByZeros(0, 0.0.0.0) [0]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldFillMissingPlacesByZeros(1, 1.0.0.0) [1]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldFillMissingPlacesByZeros(2, 2.0.0.0) [2]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldFillMissingPlacesByZeros(3.14, 3.14.0.0) [3]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldFillMissingPlacesByZeros(4.0.1, 4.0.1.0) [4]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest",
+                "name": "shouldFillMissingPlacesByZeros(55.44.33, 55.44.33.0) [5]",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "should_Not_FillOut_ByDefault_LastSegmentOfOutfilePath_When_OriginalFilenameWas_Filled",
+                "time": 1.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldConvertIntoL4jFormatProperly",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldFillOut_Copyright_ByDefault_When_ItWas_Empty",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldFillOutByDefaults_SimpleValues_From_MavenProject_When_VersionInfoPropsWere_Empty",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldLogWarningsAboutDummyValues",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "should_Not_FillOutByDefaults_From_OrganizationName_When_VersionInfoPropsWere_Filled",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldThrowException_WhenTryingToFillOutDefaults_WithEmptyOutfile",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldFillOutByDefaults_From_OrganizationName_When_OrganizationWas_Filled",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldFillOut_ByDefaultVersion_InL4jFormat_When_VersionInfoPropsWere_Empty",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldThrowException_WhenTryingToFillOutDefaults_WithEmptyProject",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "should_Not_FillOutByDefaults_SimpleValues_From_MavenProject_When_VersionInfoPropsWere_Filled",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldFillOut_ByDummyValues_When_OriginalValues_Empty_And_ProjectParams_Empty",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "should_Not_FillOut_Copyright_ByDefault_When_ItWas_Filled",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldGenerateString_WithTestParams",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldConvertIntoL4jFormat_For_All_Languages",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "should_Not_FillOut_ByDefaultVersion_InL4jFormat_When_VersionInfoPropsWere_Filled",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.VersionInfoTest",
+                "name": "shouldFillOut_ByDefault_LastSegmentOfOutfilePath_When_OriginalFilenameWas_Empty",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.akathist.maven.plugins.launch4j.Launch4jMojoTest",
+                "name": "testPrintOutFulfilledConfiguration",
+                "time": 1.427,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[59c71f78-8b6d-4e94-9591-39f14a567616/build] \ud83d\ude80  Start image=crawlergpt:latest\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin] user=0 workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3.3.1\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \ud83e\uddea  Matrix: map[java:8]\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \u2b50 Run Main Checkout code\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2705  Success - Main Checkout code\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \u2b50 Run Main Set up cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/35ef1f79-3f66-4680-b11c-7f45aba43bc0/act/actions-cache@v3.3.1/ dst=/var/run/act/actions/actions-cache@v3.3.1/\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v3.3.1/] user=0 workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3.3.1/dist/restore/index.js] user= workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Resolved Keys:\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::[\"Linux-maven-bd192d4dcf388048ce527ce96a29bc6e449c825ab080ba16fc644cd790f59d48\",\"Linux-maven-\"]\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::1.5.0\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34671/_apis/artifactcache/cache?keys=Linux-maven-bd192d4dcf388048ce527ce96a29bc6e449c825ab080ba16fc644cd790f59d48%252CLinux-maven-&version=41d1ec4cf4a0f14e35637462cb542fdb4ca2f7d94ec87d84b439a859c4ebe98f\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Cache not found for input keys: Linux-maven-bd192d4dcf388048ce527ce96a29bc6e449c825ab080ba16fc644cd790f59d48, Linux-maven-\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2705  Success - Main Set up cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \u2b50 Run Main Set up JDK 8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/35ef1f79-3f66-4680-b11c-7f45aba43bc0/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2753  ::group::Installed distributions\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::explicit? true\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::explicit? true\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Resolved Java 8.0.292+1 from tool-cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Setting Java 8.0.292+1 as the default\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Creating toolchains.xml for JDK version 8 from adopt\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Writing to /home/runneradmin/.m2/toolchains.xml\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Java configuration:\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   |   Distribution: adopt\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   |   Version: 8.0.292+1\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/8.0.292-1/x64\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2753  ::endgroup::\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Creating settings.xml with server-id: github\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2705  Success - Main Set up JDK 8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2699  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Adopt_jdk/8.0.292-1/x64\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/8.0.292-1/x64\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2699  ::set-output:: version=8.0.292+1\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2699  ::set-output:: distribution=Adopt-Hotspot\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/8.0.292-1/x64\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/8.0.292-1/x64/bin\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \u2b50 Run Main Build with Maven on Java 8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Apache Maven 3.8.2 (ea98e05a04480131370aa0c110b8c54cf726c06f)\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Maven home: /usr/share/apache-maven-3.8.2\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Java version: 1.8.0_292, vendor: AdoptOpenJDK, runtime: /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64/jre\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Default locale: en, platform encoding: UTF-8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | OS name: \"linux\", version: \"5.4.0-146-generic\", arch: \"amd64\", family: \"unix\"\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Scanning for projects...\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] -----< com.akathist.maven.plugins.launch4j:launch4j-maven-plugin >------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Building Maven Launch4j Plugin 2.4.2-SNAPSHOT\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] ----------------------------[ maven-plugin ]----------------------------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-plugin-plugin:3.9.0:helpmojo (help-goal) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Copying 4 resources\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Changes detected - recompiling the module! :dependency\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Compiling 11 source files with javac [debug target 1.8] to target/classes\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin/src/main/java/com/akathist/maven/plugins/launch4j/Launch4jMojo.java: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin/src/main/java/com/akathist/maven/plugins/launch4j/Launch4jMojo.java uses or overrides a deprecated API.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin/src/main/java/com/akathist/maven/plugins/launch4j/Launch4jMojo.java: Recompile with -Xlint:deprecation for details.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-plugin-plugin:3.9.0:descriptor (default-descriptor) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Using 'UTF-8' encoding to read mojo source files.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] java-annotations mojo extractor found 2 mojo descriptors.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] java-javadoc mojo extractor found 0 mojo descriptor.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] ant mojo extractor found 0 mojo descriptor.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] bsh mojo extractor found 0 mojo descriptor.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-plugin-plugin:3.9.0:helpmojo (help-descriptor) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-plugin-plugin:3.9.0:descriptor (mojo-descriptor) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Using 'UTF-8' encoding to read mojo source files.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] java-annotations mojo extractor found 2 mojo descriptors.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] java-javadoc mojo extractor found 0 mojo descriptor.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] ant mojo extractor found 0 mojo descriptor.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] bsh mojo extractor found 0 mojo descriptor.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Copying 1 resource\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Changes detected - recompiling the module! :dependency\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Compiling 4 source files with javac [debug target 1.8] to target/test-classes\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ launch4j-maven-plugin ---\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Surefire report directory: /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin/target/surefire-reports\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | -------------------------------------------------------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   |  T E S T S\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | -------------------------------------------------------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Running com.akathist.maven.plugins.launch4j.VersionInfoTest\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | SLF4J: Failed to load class \"org.slf4j.impl.StaticLoggerBinder\".\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | SLF4J: Defaulting to no-operation (NOP) logger implementation\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.4 sec\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Running com.akathist.maven.plugins.launch4j.generators.Launch4jFileVersionGeneratorTest\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Running com.akathist.maven.plugins.launch4j.generators.CopyrightGeneratorTest\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Running com.akathist.maven.plugins.launch4j.Launch4jMojoTest\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.447 sec\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Results :\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Tests run: 47, Failures: 0, Errors: 0, Skipped: 0\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | \n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] ------------------------------------------------------------------------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] BUILD SUCCESS\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] ------------------------------------------------------------------------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Total time:  35.392 s\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] Finished at: 2023-06-29T10:01:00Z\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [INFO] ------------------------------------------------------------------------\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2705  Success - Main Build with Maven on Java 8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \u2b50 Run Post Set up JDK 8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2705  Success - Post Set up JDK 8\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \u2b50 Run Post Set up cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3.3.1/dist/save/index.js] user= workdir=\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::1.5.0\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.m2/repository'\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.m2/repository\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Cache Paths:\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.m2/repository\"]\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Archive Path: /tmp/59b1c03b-197d-41ec-90d4-6bfc17d9be5b/cache.tzst\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin --files-from manifest.txt --use-compress-program zstdmt\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::File Size: 39512970\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Reserving Cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34671/_apis/artifactcache/caches\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Upload cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34671/_apis/artifactcache/caches/1\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Awaiting all uploads\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 0 with content range: bytes 0-33554431/*\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Uploading chunk of size 5958538 bytes at offset 33554432 with content range: bytes 33554432-39512969/*\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Commiting cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Cache Size: ~38 MB (39512970 B)\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:34671/_apis/artifactcache/caches/1\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Cache saved successfully\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   | Cache saved with key: Linux-maven-bd192d4dcf388048ce527ce96a29bc6e449c825ab080ba16fc644cd790f59d48\n[59c71f78-8b6d-4e94-9591-39f14a567616/build]   \u2705  Success - Post Set up cache\n[59c71f78-8b6d-4e94-9591-39f14a567616/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/orphan-oss-launch4j-maven-plugin/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 119.5044379234314
+    }
+}

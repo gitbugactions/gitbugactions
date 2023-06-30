@@ -1,0 +1,33 @@
+{
+    "repository": "retest/recheck",
+    "stars": 71,
+    "language": "java",
+    "size": 5406,
+    "clone_url": "https://github.com/retest/recheck.git",
+    "timestamp": "2023-06-29T13:34:31.662361Z",
+    "clone_success": true,
+    "number_of_actions": 7,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven",
+        "maven",
+        "maven",
+        "maven",
+        "maven",
+        "maven",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[68cf70ab-45c7-493f-ba4d-564930c50a03/default] \ud83d\ude80  Start image=crawlergpt:latest\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/retest-recheck] user=0 workdir=\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2601  git clone 'https://github.com/actions/cache' # ref=v2\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2601  git clone 'https://github.com/actions/cache' # ref=v1\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v1\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v2\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default] \u2b50 Run Main actions/checkout@v2\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2705  Success - Main actions/checkout@v2\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default] \u2b50 Run Main Fetch unshallow to enable blame for Sonar\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   | fatal: --unshallow on a complete repository does not make sense\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u274c  Failure - Main Fetch unshallow to enable blame for Sonar\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default] exitcode '128': failure\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default] \u2b50 Run Main Archive recheck tests.report\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker cp src=/tmp/act-cache/87306bac-f5d6-4487-87e2-85b04ef3cf68/act/actions-upload-artifact@v2/ dst=/var/run/act/actions/actions-upload-artifact@v2/\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-upload-artifact@v2/] user=0 workdir=\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-upload-artifact@v2/dist/index.js] user= workdir=\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udcac  ::debug::Search path '/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/retest-recheck/target/test-classes/retest/recheck/tests.report'\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \ud83d\udea7  ::warning::No files were found with the provided path: target/test-classes/retest/recheck/tests.report. No artifacts will be uploaded.\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default]   \u2705  Success - Main Archive recheck tests.report\n[68cf70ab-45c7-493f-ba4d-564930c50a03/default] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'default' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/retest-recheck/.github/workflows/build-project-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 138.48771691322327
+    }
+}

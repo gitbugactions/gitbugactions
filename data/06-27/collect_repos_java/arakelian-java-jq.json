@@ -1,0 +1,4914 @@
+{
+    "repository": "arakelian/java-jq",
+    "stars": 67,
+    "language": "java",
+    "size": 3448,
+    "clone_url": "https://github.com/arakelian/java-jq.git",
+    "timestamp": "2023-06-29T13:20:41.934454Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "gradle"
+    ],
+    "actions_test_build_tools": [
+        "gradle"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "com.arakelian.jq.OptionalTest",
+                "name": "Line 4: [strptime(\"%Y-%m-%dT%H:%M:%SZ\")|(.,mktime)]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OptionalTest",
+                "name": "Line 11: last(range(365 * 67)|(\"1970-03-01T01:02:03Z\"|strptime(\"%Y-%m-%dT%H:%M:%SZ\")|mktime) + (86400 * .)|strftime(\"%Y-%m-%dT%H:%M:%SZ\")|strptime(\"%Y-%m-%dT%H:%M:%SZ\"))",
+                "time": 0.202,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OptionalTest",
+                "name": "Line 16: strftime(\"%A, %B %e, %Y\")",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 8: true",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 12: false",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 16: null",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 20: 1",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 25: -1",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 31: {}",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 35: []",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 39: {x: -1}",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 46: .",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 52: \"Aa\\r\\n\\t\\b\\f\\u03bc\"",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 56: .",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 60: \"inter\\(\"pol\" + \"ation\")\"",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 64: @text,@json,([1,.] | (@csv, @tsv)),@html,@uri,@sh,@base64,(@base64 | @base64d)",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 77: @base64",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 81: @base64d",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 85: @uri",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 89: @html \"<b>\\(.)</b>\"",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 93: [.[]|tojson|fromjson]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 101: {a: 1}",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 105: {a,b,(.d):.a,e:.b}",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 109: {\"a\",b,\"a$\\(1+1)\"}",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 113: {(0):1}",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 117: {non_const:., (0):1}",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 125: .foo",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 129: .foo | .bar",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 133: .foo.bar",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 137: .foo_bar",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 141: .[\"foo\"].bar",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 145: .\"foo\".\"bar\"",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 149: [.[]|.foo?]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 153: [.[]|.foo?.bar?]",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 157: [..]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 161: [.[]|.[]?]",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 165: [.[]|.[1:3]?]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 173: try (.foo[-1] = 0) catch .",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 177: try (.foo[-2] = 0) catch .",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 181: .[-1] = 5",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 185: .[-2] = 5",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 193: .[]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 199: 1,1",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 204: 1,.",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 209: [.]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 213: [[2]]",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 217: [{}]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 221: [.[]]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 225: [(.,1),((.,.[]),(2,3))]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 229: [([5,5][]),.,.[]]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 233: {x: (1,2)},{x:3} | .x",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 239: .[-2]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 243: [range(0;10)]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 247: [range(0,1;3,4)]",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 251: [range(0;10;3)]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 255: [range(0;10;-1)]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 259: [range(0;-5;-1)]",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 263: [range(0,1;4,5;1,2)]",
+                "time": 0.054,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 267: [while(.<100; .*2)]",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 271: [(label $here | .[] | if .>1 then break $here else . end), \"hi!\"]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 275: [(label $here | .[] | if .>1 then break $here else . end), \"hi!\"]",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 279: . as $foo | break $foo",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 283: [.[]|[.,1]|until(.[0] < 1; [.[0] - 1, .[1] * .[0]])|.[1]]",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 287: [label $out | foreach .[] as $item ([3, null]; if .[0] < 1 then break $out else [.[0] -1, $item] end; .[1])]",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 291: [foreach range(5) as $item (0; $item)]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 295: [foreach .[] as [$i, $j] (0; . + $i - $j)]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 299: [foreach .[] as {a:$a} (0; . + $a; -.)]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 303: [limit(3; .[])]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 307: [first(range(.)), last(range(.)), nth(0; range(.)), nth(5; range(.)), try nth(-1; range(.)) catch .]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 312: first(1,error(\"foo\"))",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 322: [limit(5,7; range(9))]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 327: [nth(5,7; range(9;0;-1))]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 332: [range(0,1,2;4,3,2;2,3)]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 337: [range(3,5)]",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 342: [(index(\",\",\"|\"), rindex(\",\",\"|\")), indices(\",\",\"|\")]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 347: join(\",\",\"/\")",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 352: [.[]|join(\"a\")]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 357: flatten(3,2,1)",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 368: [.[3:2], .[-5:4], .[:-2], .[-2:], .[3:3][1:], .[10:]]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 372: [.[3:2], .[-5:4], .[:-2], .[-2:], .[3:3][1:], .[10:]]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 376: del(.[2:4],.[0],.[-2:])",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 380: .[2:4] = ([], [\"a\",\"b\"], [\"a\",\"b\",\"c\"])",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 392: reduce range(65540;65536;-1) as $i ([]; .[$i] = $i)|.[65536:]",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 400: 1 as $x | 2 as $y | [$x,$y,$x]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 404: [1,2,3][] as $x | [[4,5,6,7][$x]]",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 410: 42 as $x | . | . | . + 432 | $x + 1",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 414: 1 as $x | [$x,$x,$x as $x | $x]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 418: [1, {c:3, d:4}] as [$a, {c:$b, b:$c}] | $a, $b, $c",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 424: . as {as: $kw, \"str\": $str, (\"e\"+\"x\"+\"p\"): $exp} | [$kw, $str, $exp]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 428: .[] as [$a, $b] | [$b, $a]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 433: . as $i | . as [$i] | $i",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 437: . as [$i] | . as $i | $i",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 441: . as [] | null",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 445: . as {} | null",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 455: 1+1",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 459: 1+1",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 463: 2-1",
+                "time": 0.079,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 467: 2-(-1)",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 471: 1e+0+0.001e3",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 475: .+4",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 479: .+null",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 483: null+.",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 487: .a+.b",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 491: [1,2,3] + [.]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 495: {\"a\":1} + {\"b\":2} + {\"c\":3}",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 499: \"asdf\" + \"jkl;\" + . + . + .",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 503: \"\\u0000\\u0020\\u0000\" + .",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 507: 42 - .",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 511: [1,2,3,4,1] - [.,3]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 515: [10 * 20, 20 / .]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 519: 1 + 2 * 2 + 10 / 2",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 523: [16 / 4 / 2, 16 / 4 * 2, 16 - 4 - 2, 16 - 4 + 2]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 527: 25 % 7",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 531: 49732 % 472",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 535: 1 + tonumber + (\"10\" | tonumber)",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 539: [{\"a\":42},.object,10,.num,false,true,null,\"b\",[1,4]] | .[] as $x | [$x == .[]]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 551: [.[] | length]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 555: utf8bytelength",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 559: [.[] | try utf8bytelength catch .]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 564: map(keys)",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 568: [1,2,empty,3,empty,4]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 572: map(add)",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 576: map_values(.+1)",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 585: def f: . + 1; def g: def g: . + 100; f | g | f; (f | g), g",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 590: def f: (1000,2000); f",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 595: def f(a;b;c;d;e;f): [a+1,b,c,d,e,f]; f(.[0];.[1];.[0];.[0];.[0];.[0])",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 600: def a: 0; . | a",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 605: def f(a;b;c;d;e;f;g;h;i;j): [j,i,h,g,f,e,d,c,b,a]; f(.[0];.[1];.[2];.[3];.[4];.[5];.[6];.[7];.[8];.[9])",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 609: ([1,2] + [4,5])",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 613: true",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 617: null,1,null",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 623: [1,2,3]",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 627: [.[]|floor]",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 631: [.[]|sqrt]",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 635: (add / length) as $m | map((. - $m) as $d | $d * $d) | add / length | sqrt",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 644: atan * 4 * 1000000|floor / 1000000",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 648: [(3.141592 / 2) * (range(0;20) / 20)|cos * 1000000|floor / 1000000]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 652: [(3.141592 / 2) * (range(0;20) / 20)|sin * 1000000|floor / 1000000]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 657: def f(x): x | x; f([.], . + [42])",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 665: def f: .+1; def g: f; def f: .+100; def f(a):a+.+11; [(g|f(20)), f]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 670: def id(x):x; 2000 as $x | def f(x):1 as $x | id([$x, x, x]); def g(x): 100 as $x | f($x,$x+x); g($x)",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 675: def x(a;b): a as $a | b as $b | $a + $b; def y($a;$b): $a + $b; def check(a;b): [x(a;b)] == [y(a;b)]; check(.[];.[]*2)",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 681: [[20,10][1,0] as $x | def f: (100,200) as $y | def g: [$x + $y, .]; . + $x | g; f[0] | [f][0][1] | f]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 686: def fac: if . == 1 then 1 else . * (. - 1 | fac) end; [.[] | fac]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 696: reduce .[] as $x (0; . + $x)",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 700: reduce .[] as [$i, {j:$j}] (0; . + $i - $j)",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 704: reduce [[1,2,10], [3,4,10]][] as [$i,$j] (0; . + $i * $j)",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 709: reduce . as $n (.; .)",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 714: . as {$a, b: [$c, {$d}]} | [$a, $c, $d]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 718: . as {$a, $b:[$c, $d]}| [$a, $b, $c, $d]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 723: .[] | . as {$a, b: [$c, {$d}]} ?// [$a, {$b}, $e] ?// $f | [$a, $b, $c, $d, $e, $f]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 729: .[] | . as {a:$a} ?// {a:$a} ?// $a | $a",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 736: .[] as {a:$a} ?// {a:$a} ?// $a | $a",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 743: [[3],[4],[5],6][] | . as {a:$a} ?// {a:$a} ?// $a | $a",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 750: [[3],[4],[5],6] | .[] as {a:$a} ?// {a:$a} ?// $a | $a",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 757: .[] | . as {a:$a} ?// $a ?// {a:$a} | $a",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 764: .[] as {a:$a} ?// $a ?// {a:$a} | $a",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 771: [[3],[4],[5],6][] | . as {a:$a} ?// $a ?// {a:$a} | $a",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 778: [[3],[4],[5],6] | .[] as {a:$a} ?// $a ?// {a:$a} | $a",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 785: .[] | . as $a ?// {a:$a} ?// {a:$a} | $a",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 792: .[] as $a ?// {a:$a} ?// {a:$a} | $a",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 799: [[3],[4],[5],6][] | . as $a ?// {a:$a} ?// {a:$a} | $a",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 806: [[3],[4],[5],6] | .[] as $a ?// {a:$a} ?// {a:$a} | $a",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 813: . as $dot|any($dot[];not)",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 817: . as $dot|any($dot[];not)",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 821: . as $dot|all($dot[];.)",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 825: . as $dot|all($dot[];.)",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 833: path(.foo[0,1])",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 838: path(.[] | select(.>3))",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 842: path(.)",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 846: try path(.a | map(select(.b == 0))) catch .",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 850: try path(.a | map(select(.b == 0)) | .[0]) catch .",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 854: try path(.a | map(select(.b == 0)) | .c) catch .",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 858: try path(.a | map(select(.b == 0)) | .[]) catch .",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 862: path(.a[path(.b)[0]])",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 866: [paths]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 870: [leaf_paths]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 874: [\"foo\",1] as $p | getpath($p), setpath($p; 20), delpaths([$p])",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 880: map(getpath([2])), map(setpath([2]; 42)), map(delpaths([[2]]))",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 886: map(delpaths([[0,\"foo\"]]))",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 890: [\"foo\",1] as $p | getpath($p), setpath($p; 20), delpaths([$p])",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 896: delpaths([[-200]])",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 900: try delpaths(0) catch .",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 904: del(.), del(empty), del((.foo,.bar,.baz) | .[2,3,0]), del(.foo[0], .bar[0], .foo, .baz.bar[0].x)",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 911: del(.[1], .[-6], .[2], .[-3:9])",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 918: .message = \"goodbye\"",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 922: .foo = .bar",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 926: .foo |= .+1",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 930: .[] += 2, .[] *= 2, .[] -= 2, .[] /= 2, .[] %=2",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 938: [.[] % 7]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 942: .foo += .foo",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 946: .[0].a |= {\"old\":., \"new\":(.+1)}",
+                "time": 0.07,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 950: def inc(x): x |= .+1; inc(.[].a)",
+                "time": 0.07,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 955: .[] | try (getpath([\"a\",0,\"b\"]) |= 5) catch .",
+                "time": 0.08,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 966: .[2][3] = 1",
+                "time": 0.074,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 970: .foo[2].bar = 1",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 974: try ((map(select(.a == 1))[].b) = 10) catch .",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 978: try ((map(select(.a == 1))[].a) |= .+1) catch .",
+                "time": 0.065,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 982: def x: .[1,2]; x=10",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 986: try (def x: reverse; x=10) catch .",
+                "time": 0.052,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 990: .[] = 1",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 998: [.[] | if .foo then \"yep\" else \"nope\" end]",
+                "time": 0.053,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1002: [.[] | if .baz then \"strange\" elif .foo then \"yep\" else \"nope\" end]",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1006: [if 1,null,2 then 3 else 4 end]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1010: [if empty then 3 else 4 end]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1014: [if 1 then 3,4 else 5 end]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1018: [if null then 3 else 5,6 end]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1022: [.[] | [.foo[] // .bar]]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1026: .[] //= .[0]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1030: .[] | [.[0] and .[1], .[0] or .[1]]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1037: [.[] | not]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1042: [10 > 0, 10 > 10, 10 > 20, 10 < 0, 10 < 10, 10 < 20]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1046: [10 >= 0, 10 >= 10, 10 >= 20, 10 <= 0, 10 <= 10, 10 <= 20]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1051: [ 10 == 10, 10 != 10, 10 != 11, 10 == 11]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1055: [\"hello\" == \"hello\", \"hello\" != \"hello\", \"hello\" == \"world\", \"hello\" != \"world\" ]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1059: [[1,2,3] == [1,2,3], [1,2,3] != [1,2,3], [1,2,3] == [4,5,6], [1,2,3] != [4,5,6]]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1063: [{\"foo\":42} == {\"foo\":42},{\"foo\":42} != {\"foo\":42}, {\"foo\":42} != {\"bar\":42}, {\"foo\":42} == {\"bar\":42}]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1068: [{\"foo\":[1,2,{\"bar\":18},\"world\"]} == {\"foo\":[1,2,{\"bar\":18},\"world\"]},{\"foo\":[1,2,{\"bar\":18},\"world\"]} == {\"foo\":[1,2,{\"bar\":19},\"world\"]}]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1073: [(\"foo\" | contains(\"foo\")), (\"foobar\" | contains(\"foo\")), (\"foo\" | contains(\"foobar\"))]",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1078: [.[]|try if . == 0 then error(\"foo\") elif . == 1 then .a elif . == 2 then empty else . end catch .]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1082: [.[]|(.a, .a)?]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1086: [[.[]|[.a,.a]]?]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1090: try error(\"\\($__loc__)\") catch .",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1095: [.[]|startswith(\"foo\")]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1099: [.[]|endswith(\"foo\")]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1103: [.[] | split(\", \")]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1107: split(\"\")",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1111: [.[]|ltrimstr(\"foo\")]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1115: [.[]|rtrimstr(\"foo\")]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1119: [(index(\",\"), rindex(\",\")), indices(\",\")]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1123: indices(1)",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1127: indices([1,2])",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1131: indices([1,2])",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1135: indices(\", \")",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1139: [.[]|split(\",\")]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1143: [.[]|split(\", \")]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1147: [.[] * 3]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1151: [.[] / \",\"]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1155: [.[] / \", \"]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1159: map(.[1] as $needle | .[0] | contains($needle))",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1163: map(.[1] as $needle | .[0] | contains($needle))",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1167: [({foo: 12, bar:13} | contains({foo: 12})), ({foo: 12} | contains({})), ({foo: 12, bar:13} | contains({baz:14}))]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1171: {foo: {baz: 12, blap: {bar: 13}}, bar: 14} | contains({bar: 14, foo: {blap: {}}})",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1175: {foo: {baz: 12, blap: {bar: 13}}, bar: 14} | contains({bar: 14, foo: {blap: {bar: 14}}})",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1179: sort",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1183: (sort_by(.b) | sort_by(.a)), sort_by(.a, .b), sort_by(.b, .c), group_by(.b), group_by(.a + .b - .c == 2)",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1191: unique",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1195: unique",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1199: [min, max, min_by(.[1]), max_by(.[1]), min_by(.[2]), max_by(.[2])]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1203: [min,max,min_by(.),max_by(.)]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1207: .foo[.baz]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1211: .[] | .error = \"no, it's OK\"",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1215: [{a:1}] | .[] | .a=999",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1219: to_entries",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1223: from_entries",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1227: with_entries(.key |= \"KEY_\" + .)",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1231: map(has(\"foo\"))",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1235: map(has(2))",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1239: keys",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1243: [][.]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1247: map([1,2][0:.])",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1253: {\"k\": {\"a\": 1, \"b\": 2}} * .",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1257: {\"k\": {\"a\": 1, \"b\": 2}, \"hello\": {\"x\": 1}} * .",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1261: {\"k\": {\"a\": 1, \"b\": 2}, \"hello\": 1} * .",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1265: {\"a\": {\"b\": 1}, \"c\": {\"d\": 2}, \"e\": 5} * .",
+                "time": 0.068,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1269: [.[]|arrays]",
+                "time": 0.065,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1273: [.[]|objects]",
+                "time": 0.064,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1277: [.[]|iterables]",
+                "time": 0.066,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1281: [.[]|scalars]",
+                "time": 0.064,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1285: [.[]|values]",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1289: [.[]|booleans]",
+                "time": 0.059,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1293: [.[]|nulls]",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1297: flatten",
+                "time": 0.066,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1301: flatten(0)",
+                "time": 0.061,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1305: flatten(2)",
+                "time": 0.068,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1309: flatten(2)",
+                "time": 0.061,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1313: try flatten(-1) catch .",
+                "time": 0.063,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1317: transpose",
+                "time": 0.066,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1321: ascii_upcase",
+                "time": 0.074,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1325: bsearch(4)",
+                "time": 0.067,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1331: strftime(\"%Y-%m-%dT%H:%M:%SZ\")",
+                "time": 0.086,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1335: strftime(\"%A, %B %d, %Y\")",
+                "time": 0.079,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1339: gmtime",
+                "time": 0.076,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1344: import \"a\" as foo; import \"b\" as bar; def fooa: foo::a; [fooa, bar::a, bar::b, foo::a]",
+                "time": 0.063,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1348: import \"c\" as foo; [foo::a, foo::c]",
+                "time": 0.064,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1352: include \"c\"; [a, c]",
+                "time": 0.064,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1356: module (.+1); 0",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1360: include \"a\" (.+1); 0",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1364: include \"a\" []; 0",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1368: include \"\\ \"; 0",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1372: include \"\\(a)\"; 0",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1376: modulemeta",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1380: import \"syntaxerror\" as e; .",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1384: %::wat",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1388: import \"test_bind_order\" as check; check::check",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1392: try -. catch .",
+                "time": 0.059,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1396: join(\",\")",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1400: .[] | join(\",\")",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1407: .[] | join(\",\")",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1412: try join(\",\") catch .",
+                "time": 0.052,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1416: try join(\",\") catch .",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1420: {if:0,and:1,or:2,then:3,else:4,elif:5,end:6,as:7,def:8,reduce:9,foreach:10,try:11,catch:12,label:13,import:14,include:15,module:16}",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1424: try (1/.) catch .",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1428: try (1%.) catch .",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1432: 1/0",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1437: [range(-52;52;1)] as $powers | [$powers[]|pow(2;.)|log2] == $powers",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1441: [range(-99/2;99/2;1)] as $orig | [$orig[]|pow(2;.)|log2] as $back | ($orig|keys)[]|. as $k | (($orig|.[$k])-($back|.[$k]))|if . < 0 then . * -1 else . end|select(.>.00005)",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1444: }",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1448: (.[{}] = 0)?",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1451: INDEX(range(5)|[., \"foo\\(.)\"]; .[0])",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1455: JOIN({\"0\":[0,\"abc\"],\"1\":[1,\"bcd\"],\"2\":[2,\"def\"],\"3\":[3,\"efg\"],\"4\":[4,\"fgh\"]}; .[0]|tostring)",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1459: range(5;10)|IN(range(10))",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1467: range(10;12)|IN(range(10))",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1472: IN(range(10;20); range(10))",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1476: IN(range(5;20); range(10))",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1481: (.a as $x | .b) = \"b\"",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1486: (.. | select(type == \"object\" and has(\"b\") and (.b | type) == \"array\")|.b) |= .[0]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1490: isempty(empty)",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1494: isempty(range(3))",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.JqTest",
+                "name": "Line 1498: isempty(1,error(\"foo\"))",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 4: @base64",
+                "time": 0.886,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 9: (@base64|@base64d)",
+                "time": 0.052,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 14: @base64",
+                "time": 0.055,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 18: @base64d",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 23: @base64d",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 28: . | try @base64d catch .",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.Base64Test",
+                "name": "Line 33: . | try @base64d catch .",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 2: [match(\"( )*\"; \"g\")]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 6: [match(\"( )*\"; \"gn\")]",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 10: [match(\"a\"; \"gi\")]",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 14: [match([\"(bar)\"])]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 19: [match(\"bar\")]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 24: [match(\"ba\u0304r\")]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 28: [match(\".+?\\\\b\")]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 32: [match([\"foo (?<bar123>bar)? foo\", \"ig\"])]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 37: [test(\"( )*\"; \"gn\")]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 41: [test(\"\u0101\")]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 45: capture(\"(?<a>[a-z]+)-(?<n>[0-9]+)\")",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 54: [.[] | sub(\", \"; \":\")]",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 58: sub(\"^(?<head>.)\"; \"Head=\\(.head) Tail=\")",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 62: [.[] | gsub(\", \"; \":\")]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 66: gsub(\"(?<d>\\\\d)\"; \":\\(.d);\")",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 70: gsub(\"a\";\"b\")",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 74: gsub( \"(.*)\"; \"\";  \"x\")",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 78: [.[] | scan(\", \")]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 82: [.[]|[[sub(\", *\";\":\")], [gsub(\", *\";\":\")], [scan(\", *\")]]]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 86: [.[]|[[sub(\", +\";\":\")], [gsub(\", +\";\":\")], [scan(\", +\")]]]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 91: gsub(\"(?<x>.)[^a]*\"; \"+\\(.x)-\")",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "com.arakelian.jq.OnigurumaTest",
+                "name": "Line 96: sub(\"(?<x>.)\"; \"\\(.x)!\")",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \ud83d\ude80  Start image=crawlergpt:latest\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/arakelian-java-jq] user=0 workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v2\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2601  git clone 'https://github.com/gradle/wrapper-validation-action' # ref=v1\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \ud83e\uddea  Matrix: map[java:11]\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \u2b50 Run Main actions/checkout@v2\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2705  Success - Main actions/checkout@v2\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \u2b50 Run Main Set up JDK 11\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/020a8b1f-b6b0-42b6-a0fb-88301e0b2c88/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udcac  ::debug::isExplicit: 11.0.11-9\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udcac  ::debug::explicit? true\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udcac  ::debug::isExplicit: 8.0.292-1\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udcac  ::debug::explicit? true\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Resolved Java 11.0.11+9 from tool-cache\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Setting Java 11.0.11+9 as the default\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Java configuration:\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   |   Distribution: adopt\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   |   Version: 11.0.11+9\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2753 add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Creating settings.xml with server-id: github\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Writing to /home/runneradmin/.m2/settings.xml\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2705  Success - Main Set up JDK 11\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2699  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2699  ::set-output:: distribution=Adopt-Hotspot\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2699  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2699  ::set-output:: version=11.0.11+9\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.11-9/x64/bin\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \u2b50 Run Main Print Java version\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | openjdk version \"11.0.11\" 2021-04-20\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | OpenJDK Runtime Environment AdoptOpenJDK-11.0.11+9 (build 11.0.11+9)\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | OpenJDK 64-Bit Server VM AdoptOpenJDK-11.0.11+9 (build 11.0.11+9, mixed mode)\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2705  Success - Main Print Java version\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \u2b50 Run Main Gradle wrapper validation\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/020a8b1f-b6b0-42b6-a0fb-88301e0b2c88/act/gradle-wrapper-validation-action@v1/ dst=/var/run/act/actions/gradle-wrapper-validation-action@v1/\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-wrapper-validation-action@v1/] user=0 workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/gradle-wrapper-validation-action@v1/dist/index.js] user= workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \u2713 Found known Gradle Wrapper JAR files:\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   |   33ad4583fd7ee156f533778736fa1b4940bd83b433934d1cc4e9f608e99a6a89 gradle/wrapper/gradle-wrapper.jar\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2705  Success - Main Gradle wrapper validation\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \u2b50 Run Main Run tests\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Downloading https://services.gradle.org/distributions/gradle-7.3.3-bin.zip\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.3.3/userguide/gradle_daemon.html#sec:disabling_the_daemon.\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Daemon will be stopped at the end of the build \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Configure project :\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | ProGuard enabled\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :clean UP-TO-DATE\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :compileJava\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :processResources\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :classes\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :jar\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :shadowJar\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :minify\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | Note: there were 77 duplicate class definitions.\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   |       (https://www.guardsquare.com/proguard/manual/troubleshooting#duplicateclass)\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :assemble\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :compileTestJava\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :processTestResources\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :testClasses\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :test\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :check\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | > Task :build\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | \n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | BUILD SUCCESSFUL in 1m 33s\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   | 9 actionable tasks: 8 executed, 1 up-to-date\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2705  Success - Main Run tests\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \u2b50 Run Post Set up JDK 11\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build]   \u2705  Success - Post Set up JDK 11\n[ca7f9264-8839-4f96-8d1f-92fa582b35f3/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/arakelian-java-jq/.github/workflows/ci-crawler.yml",
+        "build_tool": "gradle",
+        "elapsed_time": 172.76679253578186
+    }
+}

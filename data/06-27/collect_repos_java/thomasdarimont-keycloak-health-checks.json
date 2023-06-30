@@ -1,0 +1,27 @@
+{
+    "repository": "thomasdarimont/keycloak-health-checks",
+    "stars": 134,
+    "language": "java",
+    "size": 53,
+    "clone_url": "https://github.com/thomasdarimont/keycloak-health-checks.git",
+    "timestamp": "2023-06-29T12:52:35.887358Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release] \ud83d\ude80  Start image=crawlergpt:latest\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/thomasdarimont-keycloak-health-checks] user=0 workdir=\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \u2601  git clone 'https://github.com/actions/create-release' # ref=v1\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v1\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release] \u2b50 Run Main Read the tag var\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/create_tag] user= workdir=\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \u2699  ::set-output:: tag=20.0.0.0\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \u2705  Success - Main Read the tag var\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release] \u2b50 Run Main Create Release\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker cp src=/tmp/act-cache/b11ddcaf-d324-4ae0-9bb5-53b473628444/act/actions-create-release@v1/ dst=/var/run/act/actions/actions-create-release@v1/\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-create-release@v1/] user=0 workdir=\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-create-release@v1/dist/index.js] user= workdir=\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \u2757  ##[error]Resource not accessible by personal access token\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release]   \u274c  Failure - Main Create Release\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release] exitcode '1': failure\n[ad45af5d-0588-4ee9-852e-00786b889f28/Create GitHub Release] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Create GitHub Release' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/thomasdarimont-keycloak-health-checks/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 82.69376301765442
+    }
+}

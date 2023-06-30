@@ -1,0 +1,29 @@
+{
+    "repository": "leonchen83/redis-replicator",
+    "stars": 896,
+    "language": "java",
+    "size": 10581,
+    "clone_url": "https://github.com/leonchen83/redis-replicator.git",
+    "timestamp": "2023-06-29T12:32:17.105026Z",
+    "clone_success": true,
+    "number_of_actions": 3,
+    "number_of_test_actions": 1,
+    "actions_successful": false,
+    "actions_build_tools": [
+        "maven",
+        "unknown",
+        "maven"
+    ],
+    "actions_test_build_tools": [
+        "maven"
+    ],
+    "actions_run": {
+        "failed": true,
+        "tests": [],
+        "stdout": "[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build] \ud83d\ude80  Start image=crawlergpt:latest\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/3d783ea4-1661-11ee-8a50-bb14de238602/leonchen83-redis-replicator] user=0 workdir=\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \u2601  git clone 'https://github.com/getong/redis-action' # ref=v1\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \u2601  git clone 'https://github.com/shogo82148/actions-setup-redis' # ref=v1\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \u2601  git clone 'https://github.com/actions/setup-java' # ref=v3\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build] \ud83e\uddea  Matrix: map[java:8]\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build] \u2b50 Run Main actions/checkout@v3\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \u2705  Success - Main actions/checkout@v3\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build] \u2b50 Run Main Setup redis 1\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker build -t act-getong-redis-action-v1-dockeraction:latest /tmp/act-cache/470fd854-c966-4c2e-8aa4-7adb26e9b4e3/act/getong-redis-action@v1/\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker pull image=act-getong-redis-action-v1-dockeraction:latest platform= username= forcePull=false\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker create image=act-getong-redis-action-v1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \ud83d\udc33  docker run image=act-getong-redis-action-v1-dockeraction:latest platform= entrypoint=[] cmd=[]\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied.\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   | See 'docker run --help'.\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build]   \u274c  Failure - Main Setup redis 1\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build] exit with `FAILURE`: 126\n[c654e316-22be-487e-b4ea-3c1567f8b8c3/Build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Build' failed\n",
+        "workflow": "/tmp/3d783ea4-1661-11ee-8a50-bb14de238602/leonchen83-redis-replicator/.github/workflows/maven-crawler.yml",
+        "build_tool": "maven",
+        "elapsed_time": 117.749436378479
+    }
+}
