@@ -110,9 +110,7 @@ class Act:
         # Creates crawler image
         client = docker.from_env()
         if len(client.images.list(name="crawlergpt")) > 0:
-            Act.__ACT_SETUP = True
-            Act.__SETUP_LOCK.release()
-            return
+            client.images.remove(image="crawlergpt")
 
         with open("Dockerfile", "w") as f:
             client = docker.from_env()
