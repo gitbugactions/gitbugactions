@@ -51,7 +51,6 @@ def test_export():
     assert os.path.exists(os.path.join(repo_export_path, previous_commit_hash))
     assert len(os.listdir(os.path.join(repo_export_path, previous_commit_hash))) == 2
 
-    subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
     repo_clone.checkout_tree(commit)
     repo_clone.set_head(commit.oid)
 
