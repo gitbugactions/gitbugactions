@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
 
+
 @dataclass
 class ActTestsRun:
     failed: bool
@@ -27,11 +28,14 @@ class ActTestsRun:
         failed_tests = []
         for test in self.tests:
             # Check if it is failed (not passed, not skipped and without errors)
-            if (not test.is_passed and not test.is_skipped and
-                        not any(map(lambda r: isinstance(r, Error), test.result))):
+            if (
+                not test.is_passed
+                and not test.is_skipped
+                and not any(map(lambda r: isinstance(r, Error), test.result))
+            ):
                 failed_tests.append(test)
         return failed_tests
-    
+
     def asdict(self) -> Dict:
         res = {}
 
@@ -41,26 +45,30 @@ class ActTestsRun:
                 for test in self.tests:
                     results = []
                     for result in test.result:
-                        results.append({
-                            'result': result.__class__.__name__,
-                            'message': result.message,
-                            'type': result.type
-                        })
+                        results.append(
+                            {
+                                "result": result.__class__.__name__,
+                                "message": result.message,
+                                "type": result.type,
+                            }
+                        )
                     if len(results) == 0:
-                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
+                        results.append({"result": "Passed", "message": "", "type": ""})
 
-                    res[k].append({
-                        'classname': test.classname,
-                        'name': test.name,
-                        'time': test.time,
-                        'results': results,
-                        'stdout': test.system_out,
-                        'stderr': test.system_err
-                    })
+                    res[k].append(
+                        {
+                            "classname": test.classname,
+                            "name": test.name,
+                            "time": test.time,
+                            "results": results,
+                            "stdout": test.system_out,
+                            "stderr": test.system_err,
+                        }
+                    )
             elif k == "workflow":
                 res[k] = {
                     "path": self.workflow.path,
-                    "type": self.workflow.get_build_tool()
+                    "type": self.workflow.get_build_tool(),
                 }
             else:
                 res[k] = v
@@ -69,18 +77,19 @@ class ActTestsRun:
 
 
 class Act:
-    __ACT_PATH="act"
-    __ACT_SETUP=False
+    __ACT_PATH = "act"
+    __ACT_SETUP = False
     # The flag -u allows files to be created with the current user
-    __FLAGS=f"--bind --pull=false --cache-server-port 0"
+    __FLAGS = f"--bind --pull=false --cache-server-port 0"
     __SETUP_LOCK = threading.Lock()
-    
-    def __init__(self, reuse, timeout=5, runner: str="crawlergpt:latest", 
-                 offline: bool = False):
-        '''
+
+    def __init__(
+        self, reuse, timeout=5, runner: str = "crawlergpt:latest", offline: bool = False
+    ):
+        """
         Args:
             timeout (int): Timeout in minutes
-        '''
+        """
         Act.__setup_act()
         if reuse:
             self.flags = "--reuse"
@@ -91,7 +100,7 @@ class Act:
         if offline:
             self.flags += " --network none"
         self.flags += "'"
-        
+
         self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
         self.timeout = timeout
 
@@ -102,7 +111,9 @@ class Act:
             Act.__SETUP_LOCK.release()
             return
         # Checks act installation
-        run = subprocess.run(f"{Act.__ACT_PATH} --help", shell=True, capture_output=True)
+        run = subprocess.run(
+            f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
+        )
         if run.returncode != 0:
             logging.error("Act is not correctly installed")
             exit(-1)
@@ -125,8 +136,9 @@ class Act:
         Act.__ACT_SETUP = True
         Act.__SETUP_LOCK.release()
 
-
-    def run_act(self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str) -> ActTestsRun:
+    def run_act(
+        self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
+    ) -> ActTestsRun:
         command = f"cd {repo_path}; "
         command += f"XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         if GithubToken.has_tokens():
@@ -137,11 +149,19 @@ class Act:
         start_time = time.time()
         run = subprocess.run(command, shell=True, capture_output=True)
         end_time = time.time()
-        stdout = run.stdout.decode('utf-8')
-        stderr = run.stderr.decode('utf-8')
+        stdout = run.stdout.decode("utf-8")
+        stderr = run.stderr.decode("utf-8")
         tests = workflow.get_test_results(repo_path)
-        tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
-                stderr=stderr, workflow=workflow, workflow_name=workflow.doc["name"], build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
+        tests_run = ActTestsRun(
+            failed=False,
+            tests=tests,
+            stdout=stdout,
+            stderr=stderr,
+            workflow=workflow,
+            workflow_name=workflow.doc["name"],
+            build_tool=workflow.get_build_tool(),
+            elapsed_time=end_time - start_time,
+        )
 
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
@@ -158,9 +178,15 @@ class GitHubActions:
     """
     Class to handle GitHub Actions
     """
-    
-    def __init__(self, repo_path, language: str, keep_containers: bool=False, 
-                 runner: str="crawlergpt:latest", offline: bool=False):
+
+    def __init__(
+        self,
+        repo_path,
+        language: str,
+        keep_containers: bool = False,
+        runner: str = "crawlergpt:latest",
+        offline: bool = False,
+    ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
         self.language: str = language.strip().lower()
@@ -170,11 +196,18 @@ class GitHubActions:
         self.offline = offline
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
-        for (dirpath, dirnames, filenames) in os.walk(workflows_path):
-            yaml_files = list(filter(lambda file: file.endswith('.yml') or file.endswith('.yaml'), filenames))
+        for dirpath, dirnames, filenames in os.walk(workflows_path):
+            yaml_files = list(
+                filter(
+                    lambda file: file.endswith(".yml") or file.endswith(".yaml"),
+                    filenames,
+                )
+            )
             for file in yaml_files:
                 # Create workflow object according to the language and build system
-                workflow = GitHubWorkflowFactory.create_workflow(os.path.join(dirpath, file), self.language)
+                workflow = GitHubWorkflowFactory.create_workflow(
+                    os.path.join(dirpath, file), self.language
+                )
 
                 self.workflows.append(workflow)
                 if not workflow.has_tests():
@@ -187,12 +220,14 @@ class GitHubActions:
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
-                new_filename = filename.split('.')[0] + "-crawler." + filename.split('.')[1]
+                new_filename = (
+                    filename.split(".")[0] + "-crawler." + filename.split(".")[1]
+                )
                 new_path = os.path.join(dirpath, new_filename)
                 workflow.path = new_path
 
                 self.test_workflows.append(workflow)
-                
+
     def save_workflows(self):
         for workflow in self.test_workflows:
             if not os.path.exists(os.path.dirname(workflow.path)):
@@ -215,13 +250,15 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(self, workflow, act_cache_dir: str) -> ActTestsRun:
-        act = Act(self.keep_containers, timeout=10, runner=self.runner, offline=self.offline)
-        return act.run_act(self.repo_path, workflow, act_cache_dir = act_cache_dir)
-    
+        act = Act(
+            self.keep_containers, timeout=10, runner=self.runner, offline=self.offline
+        )
+        return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)
+
     def remove_containers(self):
         client = docker.from_env()
         ancestors = [
-            "crawlergpt:latest", 
+            "crawlergpt:latest",
         ]
 
         for container in client.containers.list(filters={"ancestor": ancestors}):

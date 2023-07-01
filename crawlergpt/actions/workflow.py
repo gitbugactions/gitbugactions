@@ -5,6 +5,7 @@ from junitparser import TestCase
 from typing import List
 from crawlergpt.github_token import GithubToken
 
+
 class GitHubWorkflow(ABC):
     __UNSUPPORTED_OS = [
         "windows-latest",
@@ -20,9 +21,8 @@ class GitHubWorkflow(ABC):
         "macos-11",
         "ubuntu-22.04",
         "ubuntu-20.04",
-        "ubuntu-18.04"
+        "ubuntu-18.04",
     ]
-
 
     def __init__(self, path: str):
         with open(path, "r") as stream:
@@ -30,21 +30,19 @@ class GitHubWorkflow(ABC):
             self.path = path
             # Solves problem where pyyaml parses 'on' (used in Github actions) as True
             if True in self.doc:
-                self.doc['on'] = self.doc[True]
+                self.doc["on"] = self.doc[True]
                 self.doc.pop(True)
         self.tokens: List[GithubToken] = []
-
 
     @abstractmethod
     def _is_test_command(self, command) -> bool:
         """
         Checks if a given command is a test command
-        
+
         Returns:
             bool: True if the command is a test command
         """
         pass
-
 
     def has_tests(self) -> bool:
         """
@@ -55,21 +53,21 @@ class GitHubWorkflow(ABC):
         """
         try:
             # Check if any run command is a test running command
-            if 'jobs' in self.doc:
-                for _, job in self.doc['jobs'].items():
-                    if 'steps' in job:
-                        for step in job['steps']:
-                            if 'run' in step and self._is_test_command(step['run']):
+            if "jobs" in self.doc:
+                for _, job in self.doc["jobs"].items():
+                    if "steps" in job:
+                        for step in job["steps"]:
+                            if "run" in step and self._is_test_command(step["run"]):
                                 return True
             return False
         except yaml.YAMLError:
             return False
 
-
     def instrument_os(self):
         """
         Instruments the workflow to run only on ubuntu-latest (due to act compatibility).
         """
+
         def walk_doc(doc):
             """
             Walks the document recursively and replaces any unsupported OS with Ubuntu.
@@ -81,74 +79,79 @@ class GitHubWorkflow(ABC):
                     else:
                         walk_doc(value)
             elif isinstance(doc, list):
-                doc[:] = filter(lambda x: str(x).lower() not in GitHubWorkflow.__UNSUPPORTED_OS, doc)
+                doc[:] = filter(
+                    lambda x: str(x).lower() not in GitHubWorkflow.__UNSUPPORTED_OS, doc
+                )
                 for value in doc:
                     walk_doc(value)
                 if len(doc) == 0:
-                    doc.append('ubuntu-latest')
+                    doc.append("ubuntu-latest")
 
         # Replace any unsupported OS with Ubuntu
-        if 'jobs' in self.doc:
-            for _, job in self.doc['jobs'].items():
-                if 'runs-on' in job and str(job['runs-on']).lower() in GitHubWorkflow.__UNSUPPORTED_OS:
-                    job['runs-on'] = 'ubuntu-latest'
-                if 'strategy' in job and 'os' in job['strategy'] and isinstance(job['strategy']['os'], list):
-                    job['strategy']['os'] = ['ubuntu-latest']
-                if 'strategy' in job:
-                    walk_doc(job['strategy'])
-
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if (
+                    "runs-on" in job
+                    and str(job["runs-on"]).lower() in GitHubWorkflow.__UNSUPPORTED_OS
+                ):
+                    job["runs-on"] = "ubuntu-latest"
+                if (
+                    "strategy" in job
+                    and "os" in job["strategy"]
+                    and isinstance(job["strategy"]["os"], list)
+                ):
+                    job["strategy"]["os"] = ["ubuntu-latest"]
+                if "strategy" in job:
+                    walk_doc(job["strategy"])
 
     def instrument_strategy(self):
         """
         Instruments the workflow to run only one configuration (the fisrt one) per job.
         """
-        if 'jobs' in self.doc:
-            for _, job in self.doc['jobs'].items():
-                if 'strategy' in job and 'matrix' in job['strategy']:
-                    for key, value in job['strategy']['matrix'].items():
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "strategy" in job and "matrix" in job["strategy"]:
+                    for key, value in job["strategy"]["matrix"].items():
                         if isinstance(value, list):
-                            job['strategy']['matrix'][key] = [value[0]]
+                            job["strategy"]["matrix"][key] = [value[0]]
 
-    
     def instrument_setup_steps(self):
         if not GithubToken.has_tokens():
             return
         self.tokens = []
 
-        if 'jobs' in self.doc:
-            for _, job in self.doc['jobs'].items():
-                if 'steps' not in job:
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "steps" not in job:
                     continue
 
-                for step in job['steps']:
-                    if 'uses' not in step or 'setup' not in step['uses']:
+                for step in job["steps"]:
+                    if "uses" not in step or "setup" not in step["uses"]:
                         continue
 
-                    if 'with' in step and 'token' not in step['with']:
+                    if "with" in step and "token" not in step["with"]:
                         token = GithubToken.get_token()
-                        step['with']['token'] = token.token
+                        step["with"]["token"] = token.token
                         self.tokens.append(token)
-                    elif 'with' not in step:
+                    elif "with" not in step:
                         token = GithubToken.get_token()
-                        step['with'] = {'token': token.token}
+                        step["with"] = {"token": token.token}
                         self.tokens.append(token)
 
-    
     def instrument_offline_execution(self):
         """
         Instruments the workflow for an offline execution. Only keeps steps
         related to the execution of tests.
         """
-        if 'jobs' in self.doc:
-            for _, job in self.doc['jobs'].items():
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
                 test_steps = []
 
-                if 'steps' in job:
-                    for step in job['steps']:
-                        if 'run' in step and self._is_test_command(step['run']):
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "run" in step and self._is_test_command(step["run"]):
                             test_steps.append(step)
-                    job['steps'] = test_steps
-
+                    job["steps"] = test_steps
 
     @abstractmethod
     def instrument_test_steps(self):
@@ -157,15 +160,13 @@ class GitHubWorkflow(ABC):
         """
         pass
 
-
     @abstractmethod
     def get_test_results(self, repo_path) -> List[TestCase]:
         """
         Gets the test results from the workflow.
         """
         pass
-    
-    
+
     @abstractmethod
     def get_build_tool(self) -> str:
         """
@@ -173,9 +174,8 @@ class GitHubWorkflow(ABC):
         """
         pass
 
-
     def save_yaml(self, new_path):
-        with open(new_path, 'w') as file:
+        with open(new_path, "w") as file:
             yaml.dump(self.doc, file)
 
 
@@ -185,11 +185,11 @@ from crawlergpt.actions.java.gradle_workflow import GradleWorkflow
 from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
 from crawlergpt.actions.python.unittest_workflow import UnittestWorkflow
 
+
 class GitHubWorkflowFactory:
     """
     Factory class for creating workflow objects.
     """
-
 
     @staticmethod
     def _identify_build_tool(path: str):
@@ -198,36 +198,36 @@ class GitHubWorkflowFactory:
         """
         # Build tool keywords
         build_tool_keywords = {
-            'maven': MavenWorkflow.BUILD_TOOL_KEYWORDS,
-            'gradle': GradleWorkflow.BUILD_TOOL_KEYWORDS,
-            'pytest': PytestWorkflow.BUILD_TOOL_KEYWORDS,
-            'unittest': UnittestWorkflow.BUILD_TOOL_KEYWORDS,
+            "maven": MavenWorkflow.BUILD_TOOL_KEYWORDS,
+            "gradle": GradleWorkflow.BUILD_TOOL_KEYWORDS,
+            "pytest": PytestWorkflow.BUILD_TOOL_KEYWORDS,
+            "unittest": UnittestWorkflow.BUILD_TOOL_KEYWORDS,
         }
         aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
         keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
         aggregate_keyword_counts = {build_tool: 0 for build_tool in build_tool_keywords}
-        
+
         def _update_keyword_counts(keyword_counts, phrase):
-            for name in phrase.strip().lower().split(' '):
+            for name in phrase.strip().lower().split(" "):
                 for keyword in aggregate_keywords:
                     if keyword in name:
                         keyword_counts[keyword] += 1
-        
+
         # Load the workflow
         with open(path, "r") as stream:
             doc = yaml.safe_load(stream)
             if True in doc:
-                doc['on'] = doc[True]
+                doc["on"] = doc[True]
                 doc.pop(True)
-                
+
         # Iterate over the workflow to find build tool names in the run commands
-        if 'jobs' in doc:
-            for _, job in doc['jobs'].items():
-                if 'steps' in job:
-                    for step in job['steps']:
-                        if 'run' in step:
-                            _update_keyword_counts(keyword_counts, step['run'])
-                        
+        if "jobs" in doc:
+            for _, job in doc["jobs"].items():
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "run" in step:
+                            _update_keyword_counts(keyword_counts, step["run"])
+
         # Aggregate keyword counts per build tool
         for build_tool in build_tool_keywords:
             for keyword in build_tool_keywords[build_tool]:
@@ -236,8 +236,7 @@ class GitHubWorkflowFactory:
         # Return the build tool with the highest count
         max_build_tool = max(aggregate_keyword_counts, key=aggregate_keyword_counts.get)
         return max_build_tool if aggregate_keyword_counts[max_build_tool] > 0 else None
-        
-        
+
     @staticmethod
     def create_workflow(path: str, language: str):
         """

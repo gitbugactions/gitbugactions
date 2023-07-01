@@ -23,13 +23,16 @@ class CollectionStrategy(Enum):
     PASS_PASS = 1
     FAIL_PASS = 2
 
+
 class BugPatch:
     def __init__(self, repo, commit, previous_commit, bug_patch, test_patch):
         self.repo: Repository = repo
         self.commit: str = commit.hex
         self.commit_message: str = commit.message
         unix_timestamp = int(commit.commit_time)
-        self.commit_timestamp: str = datetime.utcfromtimestamp(unix_timestamp).isoformat() + "Z"
+        self.commit_timestamp: str = (
+            datetime.utcfromtimestamp(unix_timestamp).isoformat() + "Z"
+        )
         self.previous_commit: str = previous_commit.hex
         self.bug_patch: PatchSet = bug_patch
         self.test_patch: PatchSet = test_patch
@@ -40,33 +43,33 @@ class BugPatch:
 
     def get_data(self):
         actions_runs = []
-        
+
         for runs in self.actions_runs:
             if runs is None:
                 actions_runs.append(None)
                 continue
             runs_data = []
-            
+
             for run in runs:
                 runs_data.append(run.asdict())
             actions_runs.append(runs_data)
 
-        return { 
-            'repository': self.repo.full_name,
-            'stars': self.repo.stargazers_count,
-            'language': self.repo.language.strip().lower(),
-            'size': self.repo.size,
-            'clone_url': self.repo.clone_url,
-            'collection_timestamp': datetime.utcnow().isoformat() + "Z",
-            'commit_hash': self.commit,
-            'previous_commit_hash': self.previous_commit,
-            'commit_message': self.commit_message,
-            'commit_timestamp': self.commit_timestamp,
-            'bug_patch': str(self.bug_patch),
-            'test_patch': str(self.test_patch),
-            'actions_runs': actions_runs,
-            'strategy': self.strategy_used.name,
-            'issues': self.issues
+        return {
+            "repository": self.repo.full_name,
+            "stars": self.repo.stargazers_count,
+            "language": self.repo.language.strip().lower(),
+            "size": self.repo.size,
+            "clone_url": self.repo.clone_url,
+            "collection_timestamp": datetime.utcnow().isoformat() + "Z",
+            "commit_hash": self.commit,
+            "previous_commit_hash": self.previous_commit,
+            "commit_message": self.commit_message,
+            "commit_timestamp": self.commit_timestamp,
+            "bug_patch": str(self.bug_patch),
+            "test_patch": str(self.test_patch),
+            "actions_runs": actions_runs,
+            "strategy": self.strategy_used.name,
+            "issues": self.issues,
         }
 
 
@@ -83,36 +86,43 @@ class PatchCollector:
             self.clone_lock.release()
             return
         self.delete_repo()
-        repo_path = os.path.join(tempfile.gettempdir(), 
-                                 self.repo.full_name.replace('/', '-'))
+        repo_path = os.path.join(
+            tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
+        )
         repo_path = os.path.join(repo_path, str(uuid.uuid4()))
         logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
-            self.repo.clone_url, 
-            repo_path
+            self.repo.clone_url, repo_path
         )
         self.cloned = True
         self.clone_lock.release()
-        
+
     def __is_bug_fix(self, commit):
-        return 'fix' in commit.message.lower()
-    
+        return "fix" in commit.message.lower()
+
     def __get_patches(self, repo_clone, commit, previous_commit):
         diff = repo_clone.diff(previous_commit.hex, commit.hex)
         patch = PatchSet(diff.patch)
-        bug_patch = PatchSet('')
-        test_patch = PatchSet('')
+        bug_patch = PatchSet("")
+        test_patch = PatchSet("")
 
         for p in patch:
             # FIXME change keywords according to build tool
-            if any([keyword in p.source_file.split(os.sep) for keyword in ['test', 'tests']]):
+            if any(
+                [
+                    keyword in p.source_file.split(os.sep)
+                    for keyword in ["test", "tests"]
+                ]
+            ):
                 test_patch.append(p)
             else:
                 bug_patch.append(p)
 
         return bug_patch, test_patch
-    
-    def __cleanup_repo(self, repo_clone: pygit2.Repository, repo_path: str, commit: pygit2.Commit):
+
+    def __cleanup_repo(
+        self, repo_clone: pygit2.Repository, repo_path: str, commit: pygit2.Commit
+    ):
         """
         Cleanups up repository dir for any untracked or modified files
         """
@@ -128,7 +138,7 @@ class PatchCollector:
 
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
         executor = TestExecutor(repo_clone, self.language, act_cache_dir)
-        
+
         try:
             first_commit = repo_clone.revparse_single(executor.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
@@ -139,14 +149,20 @@ class PatchCollector:
             # Previous commit
             repo_clone.checkout_tree(previous_commit)
             # Creates ref to avoid "failed to identify reference"
-            repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
+            repo_clone.create_tag(
+                str(uuid.uuid4()),
+                previous_commit.oid,
+                pygit2.GIT_OBJ_COMMIT,
+                previous_commit.author,
+                previous_commit.message,
+            )
             repo_clone.set_head(previous_commit.oid)
-            
+
             act_runs = executor.run_tests()
             test_patch_runs[0] = act_runs
             if all_runs_crashed(act_runs):
                 return test_patch_runs
-            
+
             self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
 
             if len(test_patch) > 0:
@@ -160,7 +176,7 @@ class PatchCollector:
                 test_patch_runs[1] = act_runs
                 if all_runs_crashed(act_runs):
                     return test_patch_runs
-                
+
                 self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
 
             # Current commit
@@ -168,8 +184,13 @@ class PatchCollector:
             self.__cleanup_repo(repo_clone, new_repo_path, commit)
 
             # Creates ref to avoid "failed to identify reference"
-            repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
-                                    commit.author, commit.message)
+            repo_clone.create_tag(
+                str(uuid.uuid4()),
+                commit.oid,
+                pygit2.GIT_OBJ_COMMIT,
+                commit.author,
+                commit.message,
+            )
             repo_clone.set_head(commit.oid)
             act_runs = executor.run_tests()
             test_patch_runs[2] = act_runs
@@ -182,7 +203,7 @@ class PatchCollector:
 
     def __get_related_commit_info(self, commit_hex: str):
         self.__clone_repo()
-        
+
         commit = self.repo_clone.revparse_single(commit_hex)
         matches = re.findall("#[0-9]+", commit.message)
         issues = []
@@ -213,22 +234,26 @@ class PatchCollector:
                     comments.append(comment.body)
 
                 for label in issue.get_labels():
-                    labels.append({'name': label.name, 'description': label.description})
+                    labels.append(
+                        {"name": label.name, "description": label.description}
+                    )
 
-                issues.append({
-                    'id': match_id,
-                    'title': issue.title,
-                    'body': issue.body,
-                    'comments': comments,
-                    'labels': labels,
-                    'is_pull_request': is_pull_request,
-                    'review_comments': review_comments
-                })
+                issues.append(
+                    {
+                        "id": match_id,
+                        "title": issue.title,
+                        "body": issue.body,
+                        "comments": comments,
+                        "labels": labels,
+                        "is_pull_request": is_pull_request,
+                        "review_comments": review_comments,
+                    }
+                )
             except (UnknownObjectException, GithubException):
                 continue
 
         return issues
-    
+
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -245,64 +270,85 @@ class PatchCollector:
                 continue
 
             try:
-                previous_commit = self.repo_clone.revparse_single(commit.hex + '~1')
+                previous_commit = self.repo_clone.revparse_single(commit.hex + "~1")
             except KeyError:
                 # The current commit is the first one
                 continue
 
-            bug_patch, test_patch = self.__get_patches(self.repo_clone, commit, previous_commit)
+            bug_patch, test_patch = self.__get_patches(
+                self.repo_clone, commit, previous_commit
+            )
             if len(bug_patch) == 0:
-                logging.info(f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch")
+                logging.info(
+                    f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
+                )
                 continue
 
-            patches.append(BugPatch(self.repo, commit, previous_commit, bug_patch, test_patch))
-        
+            patches.append(
+                BugPatch(self.repo, commit, previous_commit, bug_patch, test_patch)
+            )
+
         return patches
 
     def test_patch(self, bug_patch: BugPatch):
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
-        
+
         # We need to set a different cache dir for each worker to avoid conflicts
         # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
-        act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
-        
+        act_cache_dir = os.path.join(
+            tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
+        )
+
         try:
-            test_patch_runs = self.__test_patch(bug_patch.commit, 
-                                                bug_patch.previous_commit, 
-                                                bug_patch.test_patch,
-                                                act_cache_dir = act_cache_dir,
-                                                )
+            test_patch_runs = self.__test_patch(
+                bug_patch.commit,
+                bug_patch.previous_commit,
+                bug_patch.test_patch,
+                act_cache_dir=act_cache_dir,
+            )
             bug_patch.actions_runs = test_patch_runs
-            
-            prev_commit_passed = (bug_patch.actions_runs[0] is not None and 
-                                    len(flat_failed_tests(bug_patch.actions_runs[0])) == 0)
-            prev_with_diff_failed = (bug_patch.actions_runs[1] is not None and 
-                                    len(flat_failed_tests(bug_patch.actions_runs[1])) > 0)
-            curr_commit_passed = (bug_patch.actions_runs[2] is not None and 
-                                    len(flat_failed_tests(bug_patch.actions_runs[2])) == 0)
-            
+
+            prev_commit_passed = (
+                bug_patch.actions_runs[0] is not None
+                and len(flat_failed_tests(bug_patch.actions_runs[0])) == 0
+            )
+            prev_with_diff_failed = (
+                bug_patch.actions_runs[1] is not None
+                and len(flat_failed_tests(bug_patch.actions_runs[1])) > 0
+            )
+            curr_commit_passed = (
+                bug_patch.actions_runs[2] is not None
+                and len(flat_failed_tests(bug_patch.actions_runs[2])) == 0
+            )
+
             # PASS_PASS strategy
             if prev_commit_passed and prev_with_diff_failed and curr_commit_passed:
                 bug_patch.strategy_used = CollectionStrategy.PASS_PASS
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
                 return True
 
-            prev_commit_failed = (bug_patch.actions_runs[0] is not None and 
-                                    len(flat_failed_tests(bug_patch.actions_runs[0])) > 0)
-            
+            prev_commit_failed = (
+                bug_patch.actions_runs[0] is not None
+                and len(flat_failed_tests(bug_patch.actions_runs[0])) > 0
+            )
+
             # FAIL_PASS strategy
-            if prev_commit_failed and len(bug_patch.test_patch) == 0 and curr_commit_passed:
+            if (
+                prev_commit_failed
+                and len(bug_patch.test_patch) == 0
+                and curr_commit_passed
+            ):
                 bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
                 return True
 
             return False
-        
+
         finally:
             if os.path.exists(act_cache_dir):
                 shutil.rmtree(act_cache_dir, ignore_errors=True)
-    
+
     def delete_repo(self):
         if self.cloned:
             delete_repo_clone(self.repo_clone)
@@ -312,8 +358,8 @@ class PatchCollector:
 def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
     token = GithubToken.get_token()
     github: Github = Github(
-        login_or_token=token if token is None else token.token, 
-        per_page=100, 
+        login_or_token=token if token is None else token.token,
+        per_page=100,
     )
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
@@ -351,7 +397,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
         if last_collector_bug_patch:
             patch_collectors.pop(0)[0].delete_repo()
         if is_patch:
-            data_path = os.path.join(results_path, bug_patch.repo.full_name.replace('/', '-') + '.json')
+            data_path = os.path.join(
+                results_path, bug_patch.repo.full_name.replace("/", "-") + ".json"
+            )
             with open(data_path, "a") as fp:
                 data = bug_patch.get_data()
                 fp.write((json.dumps(data) + "\n"))
@@ -361,5 +409,5 @@ def main():
     fire.Fire(collect_bugs)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())

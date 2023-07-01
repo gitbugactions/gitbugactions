@@ -10,11 +10,11 @@ from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
 from crawlergpt.actions.actions import GitHubActions
 
+
 class CollectReposStrategy(RepoStrategy):
     def __init__(self, data_path: str):
         self.data_path = data_path
         self.uuid = str(uuid.uuid1())
-
 
     def save_data(self, data: dict, repo):
         """
@@ -25,39 +25,41 @@ class CollectReposStrategy(RepoStrategy):
         with open(data_path, "w") as f:
             json.dump(data, f, indent=4)
 
-
     def handle_repo(self, repo: Repository):
         logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
-        repo_path = os.path.join(tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-"))
-
-        data = {
-            'repository': repo.full_name,
-            'stars': repo.stargazers_count,
-            'language': repo.language.strip().lower(),
-            'size': repo.size,
-            'clone_url': repo.clone_url,
-            'timestamp': datetime.utcnow().isoformat() + "Z",
-            'clone_success': False,
-            'number_of_actions': 0,
-            'number_of_test_actions': 0,
-            'actions_successful': False
-        }
-
-        repo_clone = pygit2.clone_repository(
-            repo.clone_url, 
-            repo_path
+        repo_path = os.path.join(
+            tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-")
         )
 
+        data = {
+            "repository": repo.full_name,
+            "stars": repo.stargazers_count,
+            "language": repo.language.strip().lower(),
+            "size": repo.size,
+            "clone_url": repo.clone_url,
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "clone_success": False,
+            "number_of_actions": 0,
+            "number_of_test_actions": 0,
+            "actions_successful": False,
+        }
+
+        repo_clone = pygit2.clone_repository(repo.clone_url, repo_path)
+
         try:
-            data['clone_success'] = True
+            data["clone_success"] = True
 
             actions = GitHubActions(repo_path, repo.language)
-            data['number_of_actions'] = len(actions.workflows)
-            data['actions_build_tools'] = [x.get_build_tool() for x in actions.workflows]
-            data['number_of_test_actions'] = len(actions.test_workflows)
-            data['actions_test_build_tools'] = [x.get_build_tool() for x in actions.test_workflows]
+            data["number_of_actions"] = len(actions.workflows)
+            data["actions_build_tools"] = [
+                x.get_build_tool() for x in actions.workflows
+            ]
+            data["number_of_test_actions"] = len(actions.test_workflows)
+            data["actions_test_build_tools"] = [
+                x.get_build_tool() for x in actions.test_workflows
+            ]
             actions.save_workflows()
-            
+
             if len(actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
 
@@ -68,25 +70,33 @@ class CollectReposStrategy(RepoStrategy):
 
                 # We need to set a different cache dir for each worker to avoid conflicts
                 # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
-                act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
+                act_cache_dir = os.path.join(
+                    tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
+                )
                 try:
-                    act_run = actions.run_workflow(actions.test_workflows[0], act_cache_dir=act_cache_dir)
+                    act_run = actions.run_workflow(
+                        actions.test_workflows[0], act_cache_dir=act_cache_dir
+                    )
                 finally:
                     if os.path.exists(act_cache_dir):
                         shutil.rmtree(act_cache_dir, ignore_errors=True)
 
-                data['actions_successful'] = not act_run.failed
-                data['actions_run'] = act_run.asdict()
-            
+                data["actions_successful"] = not act_run.failed
+                data["actions_run"] = act_run.asdict()
+
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
-            logging.error(f"Error while processing {repo.full_name}: {traceback.format_exc()}")
+            logging.error(
+                f"Error while processing {repo.full_name}: {traceback.format_exc()}"
+            )
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
-        
 
-def collect_repos(query: str, pagination_freq: str = 'M', n_workers: int = 1, out_path: str = "./out/"):
+
+def collect_repos(
+    query: str, pagination_freq: str = "M", n_workers: int = 1, out_path: str = "./out/"
+):
     crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
     crawler.get_repos(CollectReposStrategy(out_path))
 
@@ -94,5 +104,6 @@ def collect_repos(query: str, pagination_freq: str = 'M', n_workers: int = 1, ou
 def main():
     fire.Fire(collect_repos)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sys.exit(main())
