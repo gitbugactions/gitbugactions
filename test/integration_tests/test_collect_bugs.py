@@ -17,45 +17,56 @@ def get_token_usage():
 def get_test_results(tests):
     passed, failure = 0, 0
     for test in tests:
-        if test["results"][0]['result'] == 'Passed':
+        if test["results"][0]["result"] == "Passed":
             passed += 1
-        elif test["results"][0]['result'] == 'Failure':
+        elif test["results"][0]["result"] == "Failure":
             failure += 1
     return passed, failure
 
 
 def test_get_related_commit_info():
-    collector = PatchCollector(GithubToken.get_token().github.get_repo('ASSERT-KTH/flacoco'))
+    collector = PatchCollector(
+        GithubToken.get_token().github.get_repo("ASSERT-KTH/flacoco")
+    )
     issues = collector._PatchCollector__get_related_commit_info("7bc38df")
     assert len(issues) == 1
-    assert issues[0]['id'] == 100
-    assert issues[0]['title'] == 'Include java 1 to 4 instruction sets in CI'
-    assert issues[0]['body'] == "This PR fixes the gap in CI, where the 4 first major versions of the Java instruction set weren't covered.\r\n\r\nJacoco supports 1 to 16 right now, so we can also claim that we do so."
-    assert len(issues[0]['comments']) == 0
-    assert len(issues[0]['labels']) == 0
-    assert issues[0]['is_pull_request'] == True
-    assert len(issues[0]['review_comments']) == 2
+    assert issues[0]["id"] == 100
+    assert issues[0]["title"] == "Include java 1 to 4 instruction sets in CI"
+    assert (
+        issues[0]["body"]
+        == "This PR fixes the gap in CI, where the 4 first major versions of the Java instruction set weren't covered.\r\n\r\nJacoco supports 1 to 16 right now, so we can also claim that we do so."
+    )
+    assert len(issues[0]["comments"]) == 0
+    assert len(issues[0]["labels"]) == 0
+    assert issues[0]["is_pull_request"] == True
+    assert len(issues[0]["review_comments"]) == 2
     shutil.rmtree(collector.repo_clone.workdir)
 
-    collector = PatchCollector(GithubToken.get_token().github.get_repo('sr-lab/GLITCH'))
+    collector = PatchCollector(GithubToken.get_token().github.get_repo("sr-lab/GLITCH"))
     issues = collector._PatchCollector__get_related_commit_info("98dd01d")
     assert len(issues) == 1
-    assert issues[0]['id'] == 15
-    assert issues[0]['title'] == 'Fix vscode extension for Ansible'
-    assert issues[0]['body'] == 'Since autodetect was removed, the extension has to be updated.'
-    assert issues[0]['is_pull_request'] == False
+    assert issues[0]["id"] == 15
+    assert issues[0]["title"] == "Fix vscode extension for Ansible"
+    assert (
+        issues[0]["body"]
+        == "Since autodetect was removed, the extension has to be updated."
+    )
+    assert issues[0]["is_pull_request"] == False
     shutil.rmtree(collector.repo_clone.workdir)
 
 
-class TestCollectBugs():
-    
+class TestCollectBugs:
     TOKEN_USAGE: int = 0
 
     @classmethod
     def setup_class(cls):
         GithubToken.init_tokens()
         TestCollectBugs.TOKEN_USAGE = get_token_usage()
-        collect_bugs("test/resources/test_collect_bugs", "test/resources/test_collect_bugs_out", 16)
+        collect_bugs(
+            "test/resources/test_collect_bugs",
+            "test/resources/test_collect_bugs_out",
+            16,
+        )
 
     @classmethod
     def teardown_class(cls):
@@ -65,10 +76,13 @@ class TestCollectBugs():
     def test_crawlergpt_test_repo(self):
         """
         Verifies that the maven project bugs have been found
-        
+
         repo: https://github.com/Nfsaavedra/crawlergpt-test-repo
         """
-        with open("test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json", "r") as f:
+        with open(
+            "test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json",
+            "r",
+        ) as f:
             lines = f.readlines()
             assert len(lines) == 2
             data = json.loads(lines[0])
@@ -94,17 +108,23 @@ class TestCollectBugs():
             assert len(data["actions_runs"]) == 3
             assert len(data["actions_runs"][1][0]["tests"]) == 1
             assert len(data["actions_runs"][1][0]["tests"][0]["results"]) == 1
-            assert data["actions_runs"][1][0]["tests"][0]["results"][0]['result'] == 'Failure'
+            assert (
+                data["actions_runs"][1][0]["tests"][0]["results"][0]["result"]
+                == "Failure"
+            )
             assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
 
     @pytest.mark.dependency()
     def test_crawlergpt_pytest_test_repo(self):
         """
         Verifies that the pytest project bugs have been found
-        
+
         repo: https://github.com/andre15silva/crawlergpt-pytest-test-repo
         """
-        with open("test/resources/test_collect_bugs_out/andre15silva-crawlergpt-pytest-test-repo.json", "r") as f:
+        with open(
+            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-pytest-test-repo.json",
+            "r",
+        ) as f:
             lines = f.readlines()
             assert len(lines) == 1
             data = json.loads(lines[0])
@@ -113,24 +133,81 @@ class TestCollectBugs():
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 6 and all pass
             assert len(data["actions_runs"][0][0]["tests"]) == 6
-            assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][0][0]["tests"]] for r in _]])
+            assert all(
+                [
+                    x["result"] == "Passed"
+                    for x in [
+                        r
+                        for _ in [
+                            y["results"] for y in data["actions_runs"][0][0]["tests"]
+                        ]
+                        for r in _
+                    ]
+                ]
+            )
             # assert that number of tests failing before w/ new tests == 12, 6 pass and 6 fail
             assert len(data["actions_runs"][1][0]["tests"]) == 12
-            assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"]) == 6
-            assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"]) == 6
+            assert (
+                len(
+                    [
+                        x
+                        for x in [
+                            r
+                            for _ in [
+                                y["results"]
+                                for y in data["actions_runs"][1][0]["tests"]
+                            ]
+                            for r in _
+                        ]
+                        if x["result"] == "Passed"
+                    ]
+                )
+                == 6
+            )
+            assert (
+                len(
+                    [
+                        x
+                        for x in [
+                            r
+                            for _ in [
+                                y["results"]
+                                for y in data["actions_runs"][1][0]["tests"]
+                            ]
+                            for r in _
+                        ]
+                        if x["result"] == "Failure"
+                    ]
+                )
+                == 6
+            )
             # assert that number of total tests after == 12 and all pass
             assert len(data["actions_runs"][2][0]["tests"]) == 12
-            assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
+            assert all(
+                [
+                    x["result"] == "Passed"
+                    for x in [
+                        r
+                        for _ in [
+                            y["results"] for y in data["actions_runs"][2][0]["tests"]
+                        ]
+                        for r in _
+                    ]
+                ]
+            )
             assert data["commit_timestamp"] == "2023-06-09T20:06:31Z"
 
     @pytest.mark.dependency()
     def test_crawlergpt_gradle_test_repo(self):
         """
         Verifies that the gradle project bugs have been found
-        
+
         repo: https://github.com/andre15silva/crawlergpt-gradle-test-repo
         """
-        with open("test/resources/test_collect_bugs_out/andre15silva-crawlergpt-gradle-test-repo.json", "r") as f:
+        with open(
+            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-gradle-test-repo.json",
+            "r",
+        ) as f:
             lines = f.readlines()
             assert len(lines) == 1
             data = json.loads(lines[0])
@@ -138,24 +215,81 @@ class TestCollectBugs():
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 1 and it passes
             assert len(data["actions_runs"][0][0]["tests"]) == 1
-            assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][0][0]["tests"]] for r in _]])
+            assert all(
+                [
+                    x["result"] == "Passed"
+                    for x in [
+                        r
+                        for _ in [
+                            y["results"] for y in data["actions_runs"][0][0]["tests"]
+                        ]
+                        for r in _
+                    ]
+                ]
+            )
             # assert that number of tests failing before w/ new tests == 1 and it fails
             assert len(data["actions_runs"][1][0]["tests"]) == 1
-            assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"]) == 0
-            assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"]) == 1
+            assert (
+                len(
+                    [
+                        x
+                        for x in [
+                            r
+                            for _ in [
+                                y["results"]
+                                for y in data["actions_runs"][1][0]["tests"]
+                            ]
+                            for r in _
+                        ]
+                        if x["result"] == "Passed"
+                    ]
+                )
+                == 0
+            )
+            assert (
+                len(
+                    [
+                        x
+                        for x in [
+                            r
+                            for _ in [
+                                y["results"]
+                                for y in data["actions_runs"][1][0]["tests"]
+                            ]
+                            for r in _
+                        ]
+                        if x["result"] == "Failure"
+                    ]
+                )
+                == 1
+            )
             # assert that number of total tests after == 1 and it passes
             assert len(data["actions_runs"][2][0]["tests"]) == 1
-            assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
+            assert all(
+                [
+                    x["result"] == "Passed"
+                    for x in [
+                        r
+                        for _ in [
+                            y["results"] for y in data["actions_runs"][2][0]["tests"]
+                        ]
+                        for r in _
+                    ]
+                ]
+            )
             assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"
 
     @pytest.mark.dependency()
     def test_crawlergpt_unittest_test_repo(self):
         """
         Verifies that the unittest project bugs have been found
-        
+
         repo: https://github.com/andre15silva/crawlergpt-unittest-test-repo
         """
-        with open("test/resources/test_collect_bugs_out/andre15silva-crawlergpt-unittest-test-repo.json", "r") as f:
+        with open(
+            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-unittest-test-repo.json",
+            "r",
+        ) as f:
             lines = f.readlines()
             assert len(lines) == 1
             data = json.loads(lines[0])
@@ -164,25 +298,82 @@ class TestCollectBugs():
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 2 and all pass
             assert len(data["actions_runs"][0][0]["tests"]) == 2
-            assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][0][0]["tests"]] for r in _]])
+            assert all(
+                [
+                    x["result"] == "Passed"
+                    for x in [
+                        r
+                        for _ in [
+                            y["results"] for y in data["actions_runs"][0][0]["tests"]
+                        ]
+                        for r in _
+                    ]
+                ]
+            )
             # assert that number of tests failing before w/ new tests == 3, 2 pass and 1 fail
             assert len(data["actions_runs"][1][0]["tests"]) == 3
-            assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Passed"]) == 2
-            assert len([x for x in [r for _ in [y["results"] for y in data["actions_runs"][1][0]["tests"]] for r in _] if x["result"] == "Failure"]) == 1
+            assert (
+                len(
+                    [
+                        x
+                        for x in [
+                            r
+                            for _ in [
+                                y["results"]
+                                for y in data["actions_runs"][1][0]["tests"]
+                            ]
+                            for r in _
+                        ]
+                        if x["result"] == "Passed"
+                    ]
+                )
+                == 2
+            )
+            assert (
+                len(
+                    [
+                        x
+                        for x in [
+                            r
+                            for _ in [
+                                y["results"]
+                                for y in data["actions_runs"][1][0]["tests"]
+                            ]
+                            for r in _
+                        ]
+                        if x["result"] == "Failure"
+                    ]
+                )
+                == 1
+            )
             # assert that number of total tests after == 3 and all pass
             assert len(data["actions_runs"][2][0]["tests"]) == 3
-            assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
+            assert all(
+                [
+                    x["result"] == "Passed"
+                    for x in [
+                        r
+                        for _ in [
+                            y["results"] for y in data["actions_runs"][2][0]["tests"]
+                        ]
+                        for r in _
+                    ]
+                ]
+            )
             assert data["commit_timestamp"] == "2023-06-20T14:54:30Z"
-            
-    
-    @pytest.mark.dependency(depends=[
-        'TestCollectBugs::test_crawlergpt_test_repo',
-        'TestCollectBugs::test_crawlergpt_pytest_test_repo',
-        'TestCollectBugs::test_crawlergpt_gradle_test_repo',
-        'TestCollectBugs::test_crawlergpt_unittest_test_repo',
-        ])
+
+    @pytest.mark.dependency(
+        depends=[
+            "TestCollectBugs::test_crawlergpt_test_repo",
+            "TestCollectBugs::test_crawlergpt_pytest_test_repo",
+            "TestCollectBugs::test_crawlergpt_gradle_test_repo",
+            "TestCollectBugs::test_crawlergpt_unittest_test_repo",
+        ]
+    )
     @pytest.mark.flaky
-    @pytest.mark.skip(reason="flaky due to non-determinism in token usage during this class")
+    @pytest.mark.skip(
+        reason="flaky due to non-determinism in token usage during this class"
+    )
     def test_token_usage(self):
         # FIXME: flaky
         if GithubToken.has_tokens():
