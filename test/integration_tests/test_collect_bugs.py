@@ -61,7 +61,7 @@ class TestCollectBugs():
     def teardown_class(cls):
         shutil.rmtree("test/resources/test_collect_bugs_out")
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_test_repo(self):
         """
         Verifies that the maven project bugs have been found
@@ -97,7 +97,7 @@ class TestCollectBugs():
             assert data["actions_runs"][1][0]["tests"][0]["results"][0]['result'] == 'Failure'
             assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_pytest_test_repo(self):
         """
         Verifies that the pytest project bugs have been found
@@ -123,7 +123,7 @@ class TestCollectBugs():
             assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
             assert data["commit_timestamp"] == "2023-06-09T20:06:31Z"
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_gradle_test_repo(self):
         """
         Verifies that the gradle project bugs have been found
@@ -148,7 +148,7 @@ class TestCollectBugs():
             assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
             assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_unittest_test_repo(self):
         """
         Verifies that the unittest project bugs have been found
@@ -175,11 +175,11 @@ class TestCollectBugs():
             assert data["commit_timestamp"] == "2023-06-20T14:54:30Z"
             
     
-    @pytest.mark.depends(on=[
-        'test_crawlergpt_test_repo',
-        'test_crawlergpt_pytest_test_repo',
-        'test_crawlergpt_gradle_test_repo',
-        'test_crawlergpt_unittest_test_repo',
+    @pytest.mark.dependency(depends=[
+        'TestCollectBugs::test_crawlergpt_test_repo',
+        'TestCollectBugs::test_crawlergpt_pytest_test_repo',
+        'TestCollectBugs::test_crawlergpt_gradle_test_repo',
+        'TestCollectBugs::test_crawlergpt_unittest_test_repo',
         ])
     @pytest.mark.flaky
     @pytest.mark.skip(reason="flaky due to non-determinism in token usage during this class")

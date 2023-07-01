@@ -24,7 +24,7 @@ def teardown_module():
     if os.path.exists(act_cache_dir):
         shutil.rmtree(act_cache_dir)
 
-
+@pytest.mark.dependency()
 def test_export_bug_containers():
     global repo_clone, export_path
 
@@ -49,7 +49,7 @@ def test_export_bug_containers():
     assert len(os.listdir(os.path.join(repo_export_path, previous_commit_hash))) == 2
 
 
-@pytest.mark.depends(on=['test_export_bug_containers'])
+@pytest.mark.dependency(depends=["test_export_bug_containers"])
 def test_run_bug():
     with open("test/resources/test_export/dkpro-dkpro-jwktl.json") as f:
         bug = json.loads(f.readlines()[0])
