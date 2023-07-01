@@ -133,6 +133,22 @@ class GitHubWorkflow(ABC):
                         step['with'] = {'token': token.token}
                         self.tokens.append(token)
 
+    
+    def instrument_offline_execution(self):
+        """
+        Instruments the workflow for an offline execution. Only keeps steps
+        related to the execution of tests.
+        """
+        if 'jobs' in self.doc:
+            for _, job in self.doc['jobs'].items():
+                test_steps = []
+
+                if 'steps' in job:
+                    for step in job['steps']:
+                        if 'run' in step and self._is_test_command(step['run']):
+                            test_steps.append(step)
+                    job['steps'] = test_steps
+
 
     @abstractmethod
     def instrument_test_steps(self):

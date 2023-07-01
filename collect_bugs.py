@@ -4,7 +4,6 @@ import shutil
 import pygit2
 import tempfile
 import logging
-import copy
 import threading
 import fire
 from typing import List, Tuple, Any
@@ -12,11 +11,12 @@ from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
-from dataclasses import asdict
 from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import GitHubActions, ActTestsRun
+from crawlergpt.actions.actions import ActTestsRun
+from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
 from concurrent.futures import ThreadPoolExecutor
+
 
 class CollectionStrategy(Enum):
     UNKNOWN = 0
@@ -48,28 +48,7 @@ class BugPatch:
             runs_data = []
             
             for run in runs:
-                run_data = asdict(run)
-                run_data['tests'] = []
-                for test in run.tests:
-                    results = []
-                    for result in test.result:
-                        results.append({
-                            'result': result.__class__.__name__,
-                            'message': result.message,
-                            'type': result.type
-                        })
-                    if len(results) == 0:
-                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
-
-                    run_data['tests'].append({
-                        'classname': test.classname,
-                        'name': test.name,
-                        'time': test.time,
-                        'results': results,
-                        'stdout': test.system_out,
-                        'stderr': test.system_err
-                    })
-                runs_data.append(run_data)
+                runs_data.append(run.asdict())
             actions_runs.append(runs_data)
 
         return { 
@@ -80,6 +59,7 @@ class BugPatch:
             'clone_url': self.repo.clone_url,
             'collection_timestamp': datetime.utcnow().isoformat() + "Z",
             'commit_hash': self.commit,
+            'previous_commit_hash': self.previous_commit,
             'commit_message': self.commit_message,
             'commit_timestamp': self.commit_timestamp,
             'bug_patch': str(self.bug_patch),
@@ -103,32 +83,16 @@ class PatchCollector:
             self.clone_lock.release()
             return
         self.delete_repo()
-        self.repo_path = os.path.join(tempfile.gettempdir(), self.repo.full_name.replace('/', '-'))
-        self.repo_path = os.path.join(self.repo_path, str(uuid.uuid4()))
+        repo_path = os.path.join(tempfile.gettempdir(), 
+                                 self.repo.full_name.replace('/', '-'))
+        repo_path = os.path.join(repo_path, str(uuid.uuid4()))
         logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, 
-            self.repo_path
+            repo_path
         )
         self.cloned = True
-        self.__get_default_actions()
         self.clone_lock.release()
-
-    def __get_default_actions(self):
-        if len(list(self.repo_clone.references.iterator())) == 0:
-            return
-        self.first_commit = None
-
-        for commit in self.repo_clone.walk(self.repo_clone.head.target):
-            if self.first_commit is None:
-                self.first_commit = commit
-            self.repo_clone.checkout_tree(commit)
-            self.repo_clone.set_head(commit.oid)
-            actions = GitHubActions(self.repo_path, self.language)
-            if len(actions.test_workflows) > 0:
-                self.default_actions = actions
-
-        self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
         
     def __is_bug_fix(self, commit):
         return 'fix' in commit.message.lower()
@@ -148,48 +112,25 @@ class PatchCollector:
 
         return bug_patch, test_patch
     
-    def __run_tests(self, repo_clone, act_cache_dir: str) -> List[ActTestsRun]:
-        act_runs = []
-
-        test_actions = GitHubActions(repo_clone.workdir, self.language)
-        if len(test_actions.test_workflows) == 0:
-            for workflow in self.default_actions.test_workflows:
-                new_workflow = copy.deepcopy(workflow)
-                new_workflow.path = os.path.join(repo_clone.workdir, 
-                    '.github/workflows', os.path.basename(workflow.path))
-                test_actions.test_workflows.append(new_workflow)
-        # Act creates names for the containers by hashing the content of the workflows
-        # To avoid conflicts between threads, we randomize the name
-        for workflow in test_actions.test_workflows:
-            workflow.doc["name"] = str(uuid.uuid4())
-        test_actions.save_workflows()
-
-        for workflow in test_actions.test_workflows:
-            act_runs.append(test_actions.run_workflow(workflow, act_cache_dir))
-
-        test_actions.delete_workflows()
-
-        return act_runs
-    
-    
     def __cleanup_repo(self, repo_clone: pygit2.Repository, repo_path: str, commit: pygit2.Commit):
         """
         Cleanups up repository dir for any untracked or modified files
         """
         repo_clone.reset(commit.oid, pygit2.GIT_RESET_HARD)
         subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
-    
-    
-    def __test_patch(self, commit_hex, previous_commit_hex, test_patch, act_cache_dir: str):
+
+    def __test_patch(self, commit_hex, previous_commit_hex, test_patch, act_cache_dir):
         test_patch_runs = [None, None, None]
         self.__clone_repo()
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-        shutil.copytree(self.repo_path, new_repo_path)
+        shutil.copytree(self.repo_clone.workdir, new_repo_path)
 
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
+        executor = TestExecutor(repo_clone, self.language, act_cache_dir)
+        
         try:
-            first_commit = repo_clone.revparse_single(self.first_commit.hex)
+            first_commit = repo_clone.revparse_single(executor.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
@@ -201,7 +142,7 @@ class PatchCollector:
             repo_clone.create_tag(str(uuid.uuid4()), previous_commit.oid, pygit2.GIT_OBJ_COMMIT, previous_commit.author, previous_commit.message)
             repo_clone.set_head(previous_commit.oid)
             
-            act_runs = self.__run_tests(repo_clone, act_cache_dir = act_cache_dir)
+            act_runs = executor.run_tests()
             test_patch_runs[0] = act_runs
             if all_runs_crashed(act_runs):
                 return test_patch_runs
@@ -215,7 +156,7 @@ class PatchCollector:
                 except pygit2.GitError:
                     # Invalid patches
                     return test_patch_runs
-                act_runs = self.__run_tests(repo_clone, act_cache_dir = act_cache_dir)
+                act_runs = executor.run_tests()
                 test_patch_runs[1] = act_runs
                 if all_runs_crashed(act_runs):
                     return test_patch_runs
@@ -230,7 +171,7 @@ class PatchCollector:
             repo_clone.create_tag(str(uuid.uuid4()), commit.oid, pygit2.GIT_OBJ_COMMIT, \
                                     commit.author, commit.message)
             repo_clone.set_head(commit.oid)
-            act_runs = self.__run_tests(repo_clone, act_cache_dir = act_cache_dir)
+            act_runs = executor.run_tests()
             test_patch_runs[2] = act_runs
             if all_runs_crashed(act_runs):
                 return test_patch_runs
@@ -238,7 +179,6 @@ class PatchCollector:
             delete_repo_clone(repo_clone)
 
         return test_patch_runs
-    
 
     def __get_related_commit_info(self, commit_hex: str):
         self.__clone_repo()
@@ -364,7 +304,7 @@ class PatchCollector:
                 shutil.rmtree(act_cache_dir, ignore_errors=True)
     
     def delete_repo(self):
-        if hasattr(self, "repo_path"):
+        if self.cloned:
             delete_repo_clone(self.repo_clone)
         self.cloned = False
 

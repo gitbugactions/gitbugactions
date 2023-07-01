@@ -35,7 +35,7 @@ def test_get_related_commit_info():
     assert len(issues[0]['labels']) == 0
     assert issues[0]['is_pull_request'] == True
     assert len(issues[0]['review_comments']) == 2
-    shutil.rmtree(collector.repo_path)
+    shutil.rmtree(collector.repo_clone.workdir)
 
     collector = PatchCollector(GithubToken.get_token().github.get_repo('sr-lab/GLITCH'))
     issues = collector._PatchCollector__get_related_commit_info("98dd01d")
@@ -44,7 +44,7 @@ def test_get_related_commit_info():
     assert issues[0]['title'] == 'Fix vscode extension for Ansible'
     assert issues[0]['body'] == 'Since autodetect was removed, the extension has to be updated.'
     assert issues[0]['is_pull_request'] == False
-    shutil.rmtree(collector.repo_path)
+    shutil.rmtree(collector.repo_clone.workdir)
 
 
 class TestCollectBugs():
@@ -61,7 +61,7 @@ class TestCollectBugs():
     def teardown_class(cls):
         shutil.rmtree("test/resources/test_collect_bugs_out")
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_test_repo(self):
         """
         Verifies that the maven project bugs have been found
@@ -97,7 +97,7 @@ class TestCollectBugs():
             assert data["actions_runs"][1][0]["tests"][0]["results"][0]['result'] == 'Failure'
             assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_pytest_test_repo(self):
         """
         Verifies that the pytest project bugs have been found
@@ -123,7 +123,7 @@ class TestCollectBugs():
             assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
             assert data["commit_timestamp"] == "2023-06-09T20:06:31Z"
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_gradle_test_repo(self):
         """
         Verifies that the gradle project bugs have been found
@@ -148,7 +148,7 @@ class TestCollectBugs():
             assert all([x["result"] == "Passed" for x in [r for _ in [y["results"] for y in data["actions_runs"][2][0]["tests"]] for r in _]])
             assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"
 
-
+    @pytest.mark.dependency()
     def test_crawlergpt_unittest_test_repo(self):
         """
         Verifies that the unittest project bugs have been found
@@ -175,11 +175,11 @@ class TestCollectBugs():
             assert data["commit_timestamp"] == "2023-06-20T14:54:30Z"
             
     
-    @pytest.mark.depends(on=[
-        'test_crawlergpt_test_repo',
-        'test_crawlergpt_pytest_test_repo',
-        'test_crawlergpt_gradle_test_repo',
-        'test_crawlergpt_unittest_test_repo',
+    @pytest.mark.dependency(depends=[
+        'TestCollectBugs::test_crawlergpt_test_repo',
+        'TestCollectBugs::test_crawlergpt_pytest_test_repo',
+        'TestCollectBugs::test_crawlergpt_gradle_test_repo',
+        'TestCollectBugs::test_crawlergpt_unittest_test_repo',
         ])
     @pytest.mark.flaky
     @pytest.mark.skip(reason="flaky due to non-determinism in token usage during this class")
