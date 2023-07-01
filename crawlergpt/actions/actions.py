@@ -1,14 +1,11 @@
 import os
 import grp
-import tempfile
-import shutil
 import time
 import docker
 import logging
 import subprocess
 import threading
-import uuid
-from typing import List
+from typing import List, Dict
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
@@ -20,7 +17,8 @@ class ActTestsRun:
     tests: List[TestCase]
     stdout: str
     stderr: str
-    workflow: str
+    workflow: GitHubWorkflow
+    workflow_name: str
     build_tool: str
     elapsed_time: int
 
@@ -33,19 +31,52 @@ class ActTestsRun:
                         not any(map(lambda r: isinstance(r, Error), test.result))):
                 failed_tests.append(test)
         return failed_tests
+    
+    def asdict(self) -> Dict:
+        res = {}
+
+        for k, v in self.__dict__.items():
+            if k == "tests":
+                res[k] = []
+                for test in self.tests:
+                    results = []
+                    for result in test.result:
+                        results.append({
+                            'result': result.__class__.__name__,
+                            'message': result.message,
+                            'type': result.type
+                        })
+                    if len(results) == 0:
+                        results.append({ 'result': 'Passed', 'message': '', 'type': '' })
+
+                    res[k].append({
+                        'classname': test.classname,
+                        'name': test.name,
+                        'time': test.time,
+                        'results': results,
+                        'stdout': test.system_out,
+                        'stderr': test.system_err
+                    })
+            elif k == "workflow":
+                res[k] = {
+                    "path": self.workflow.path,
+                    "type": self.workflow.get_build_tool()
+                }
+            else:
+                res[k] = v
+
+        return res
 
 
 class Act:
     __ACT_PATH="act"
     __ACT_SETUP=False
     # The flag -u allows files to be created with the current user
-    # The flag --cache-server-port 0 sets the cache server to a random port, so that we get one server per worker
-    __FLAGS=f"--bind --pull=false --container-options '-u {os.getuid()}:{os.getgid()}' --cache-server-port 0"
-    __DEFAULT_RUNNERS = "-P ubuntu-latest=crawlergpt:latest"
+    __FLAGS=f"--bind --pull=false --cache-server-port 0"
     __SETUP_LOCK = threading.Lock()
     
-    
-    def __init__(self, reuse, timeout=5):
+    def __init__(self, reuse, timeout=5, runner: str="crawlergpt:latest", 
+                 offline: bool = False):
         '''
         Args:
             timeout (int): Timeout in minutes
@@ -55,7 +86,14 @@ class Act:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
-        self.timeout = timeout 
+
+        self.flags += f" --container-options '-u {os.getuid()}:{os.getgid()}"
+        if offline:
+            self.flags += " --network none"
+        self.flags += "'"
+        
+        self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
+        self.timeout = timeout
 
     @staticmethod
     def __setup_act():
@@ -90,7 +128,7 @@ class Act:
 
     def run_act(self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        command += f"XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {Act.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
@@ -103,7 +141,7 @@ class Act:
         stderr = run.stderr.decode('utf-8')
         tests = workflow.get_test_results(repo_path)
         tests_run = ActTestsRun(failed=False, tests=tests, stdout=stdout, 
-                stderr=stderr, workflow=workflow.path, build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
+                stderr=stderr, workflow=workflow, workflow_name=workflow.doc["name"], build_tool=workflow.get_build_tool(), elapsed_time=end_time - start_time)
 
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
@@ -121,11 +159,15 @@ class GitHubActions:
     Class to handle GitHub Actions
     """
     
-    def __init__(self, repo_path, language: str):
+    def __init__(self, repo_path, language: str, keep_containers: bool=False, 
+                 runner: str="crawlergpt:latest", offline: bool=False):
         self.repo_path = repo_path
+        self.keep_containers = keep_containers
         self.language: str = language.strip().lower()
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
+        self.runner = runner
+        self.offline = offline
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for (dirpath, dirnames, filenames) in os.walk(workflows_path):
@@ -173,7 +215,7 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(self, workflow, act_cache_dir: str) -> ActTestsRun:
-        act = Act(False, timeout=10)
+        act = Act(self.keep_containers, timeout=10, runner=self.runner, offline=self.offline)
         return act.run_act(self.repo_path, workflow, act_cache_dir = act_cache_dir)
     
     def remove_containers(self):
