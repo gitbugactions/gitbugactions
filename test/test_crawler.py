@@ -2,6 +2,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from crawlergpt.crawler import SearchRateLimiter
 
+
 def test_ratelimiter():
     rate_limiter = SearchRateLimiter()
     executor = ThreadPoolExecutor(max_workers=2)
@@ -14,4 +15,3 @@ def test_ratelimiter():
     rate_limiter.lock.release()
     time.sleep(1)
     assert rate_limiter.requests == 2
-

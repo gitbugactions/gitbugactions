@@ -3,6 +3,7 @@ import shutil
 import time
 import pygit2
 
+
 def delete_repo_clone(repo_clone: pygit2.Repository):
     def retry_remove(function, path, excinfo):
         time.sleep(0.5)
