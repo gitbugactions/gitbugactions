@@ -4,11 +4,11 @@
     "language": "python",
     "size": 5774,
     "clone_url": "https://github.com/wangronin/Bayesian-Optimization.git",
-    "timestamp": "2023-06-28T14:26:20.871415Z",
+    "timestamp": "2023-07-01T13:57:04.063589Z",
     "clone_success": true,
     "number_of_actions": 2,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "pytest",
         "unknown"
@@ -17,12 +17,885 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \ud83d\ude80  Start image=crawlergpt:latest\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization] user=0 workdir=\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \ud83e\uddea  Matrix: map[python-version:3.11]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \u2b50 Run Main actions/checkout@v2\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2705  Success - Main actions/checkout@v2\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \u2b50 Run Main Set up Python 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/79a3c191-f238-43b0-8429-3efa23305909/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.11 is 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: \n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? false\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::match not found\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Version 3.11 was not found in the local cache\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::set auth\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-beta.3 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-beta.2 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-beta.1 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.7 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.6 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.5 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.4 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.3 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.2 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.1 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::check 3.11.4 satisfies 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::arm64===x64 && darwin===linux\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::x64===x64 && darwin===linux\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::x64===x64 && linux===linux\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::matched 3.11.4\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Version 3.11 is available for downloading\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Download from \"https://github.com/actions/python-versions/releases/download/3.11.4-5199054971/python-3.11.4-linux-20.04-x64.tar.gz\"\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::Downloading https://github.com/actions/python-versions/releases/download/3.11.4-5199054971/python-3.11.4-linux-20.04-x64.tar.gz\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::Destination /tmp/af02033a-fcd3-45bf-98cf-61e525535cae\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::set auth\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::download complete\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Extract downloaded archive\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::Checking tar --version\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/b5b8e60e-c6c5-4ae8-bf50-f1c7999a353a -f /tmp/af02033a-fcd3-45bf-98cf-61e525535cae\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Execute installation script\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Check if Python hostedtoolcache folder exist...\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Create Python 3.11.4 folder\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Copy Python binaries to hostedtoolcache folder\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Upgrading pip...\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Looking in links: /tmp/tmp_tlhwxy1\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (65.5.0)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (23.1.2)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting pip\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.1/2.1 MB 31.0 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | \n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Installing collected packages: pip\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Successfully installed pip-23.1.2\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Create complete file\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: \n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? false\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.11.4\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::explicit? true\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::evaluating 7 versions\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::matched: 3.11.4\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.11.4/x64\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.11.4 x64\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Successfully setup CPython (3.11.4)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2705  Success - Main Set up Python 3.11\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.11.4/x64\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.11.4/x64/lib\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2699  ::set-output:: python-version=3.11.4\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.11.4/x64\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.11.4/x64/bin\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \u2b50 Run Main Install dependencies\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (23.1.2)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Processing /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting dill>=0.3.3 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading dill-0.3.6-py3-none-any.whl (110 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 110.5/110.5 kB 3.4 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting joblib>=1.0.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading joblib-1.3.0-py3-none-any.whl (301 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 301.9/301.9 kB 16.3 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting numpy>=1.24.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading numpy-1.25.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.6 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 17.6/17.6 MB 20.4 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting pyDOE>=0.3.8 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading pyDOE-0.3.8.zip (22 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting scikit-learn>=1.2.2 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading scikit_learn-1.2.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (9.6 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 9.6/9.6 MB 24.6 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting scipy>=1.5.4 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading scipy-1.11.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (36.2 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 36.2/36.2 MB 8.6 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting sklearn==0.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading sklearn-0.0.tar.gz (1.1 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting tabulate>=0.8.7 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading tabulate-0.9.0-py3-none-any.whl (35 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting threadpoolctl>=2.1.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting requests>=2.25.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.6/62.6 kB 1.8 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting requests-oauthlib>=1.3.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting sobol-seq>=0.2.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading sobol_seq-0.2.0-py3-none-any.whl (9.2 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting py-expression-eval>=0.3.13 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading py_expression_eval-0.3.14-py3-none-any.whl (12 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting torch>=2.0.1 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading torch-2.0.1-cp311-cp311-manylinux1_x86_64.whl (619.9 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 619.9/619.9 MB 2.5 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting pytest>=7.3.2 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 6.8 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting iniconfig (from pytest>=7.3.2->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting packaging (from pytest>=7.3.2->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 4.6 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting pluggy<2.0,>=0.12 (from pytest>=7.3.2->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting charset-normalizer<4,>=2 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading charset_normalizer-3.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (197 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 197.3/197.3 kB 8.7 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting idna<4,>=2.5 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 7.0 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting urllib3<3,>=1.21.1 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading urllib3-2.0.3-py3-none-any.whl (123 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 123.6/123.6 kB 3.5 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting certifi>=2017.4.17 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 157.0/157.0 kB 6.2 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting oauthlib>=3.0.0 (from requests-oauthlib>=1.3.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 151.7/151.7 kB 14.1 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting filelock (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting typing-extensions (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting sympy (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading sympy-1.12-py3-none-any.whl (5.7 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 5.7/5.7 MB 24.1 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting networkx (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading networkx-3.1-py3-none-any.whl (2.1 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.1/2.1 MB 18.8 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting jinja2 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 133.1/133.1 kB 1.9 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cuda-nvrtc-cu11==11.7.99 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 21.0/21.0 MB 15.2 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cuda-runtime-cu11==11.7.99 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 849.3/849.3 kB 7.7 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cuda-cupti-cu11==11.7.101 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cuda_cupti_cu11-11.7.101-py3-none-manylinux1_x86_64.whl (11.8 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.8/11.8 MB 15.8 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cudnn-cu11==8.5.0.96 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 557.1/557.1 MB 3.2 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cublas-cu11==11.10.3.66 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 317.1/317.1 MB 3.0 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cufft-cu11==10.9.0.58 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cufft_cu11-10.9.0.58-py3-none-manylinux1_x86_64.whl (168.4 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 168.4/168.4 MB 6.1 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-curand-cu11==10.2.10.91 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_curand_cu11-10.2.10.91-py3-none-manylinux1_x86_64.whl (54.6 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 54.6/54.6 MB 6.7 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cusolver-cu11==11.4.0.1 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cusolver_cu11-11.4.0.1-2-py3-none-manylinux1_x86_64.whl (102.6 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 MB 5.9 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-cusparse-cu11==11.7.4.91 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_cusparse_cu11-11.7.4.91-py3-none-manylinux1_x86_64.whl (173.2 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 173.2/173.2 MB 4.1 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-nccl-cu11==2.14.3 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_nccl_cu11-2.14.3-py3-none-manylinux1_x86_64.whl (177.1 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 177.1/177.1 MB 3.8 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting nvidia-nvtx-cu11==11.7.91 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading nvidia_nvtx_cu11-11.7.91-py3-none-manylinux1_x86_64.whl (98 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.6/98.6 kB 3.5 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting triton==2.0.0 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading triton-2.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (63.3 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 63.3/63.3 MB 7.3 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1)) (65.5.0)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting wheel (from nvidia-cublas-cu11==11.10.3.66->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Using cached wheel-0.40.0-py3-none-any.whl (64 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting cmake (from triton==2.0.0->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading cmake-3.26.4-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (24.0 MB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 24.0/24.0 MB 7.0 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting lit (from triton==2.0.0->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading lit-16.0.6.tar.gz (153 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 153.7/153.7 kB 2.4 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing build dependencies: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Getting requirements to build wheel: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing backend dependencies: started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Installing backend dependencies: finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting MarkupSafe>=2.0 (from jinja2->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading MarkupSafe-2.1.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Collecting mpmath>=0.19 (from sympy->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 536.2/536.2 kB 1.7 MB/s eta 0:00:00\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Building wheels for collected packages: bayes-optim, sklearn, pyDOE, lit\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for bayes-optim (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for bayes-optim (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Created wheel for bayes-optim: filename=bayes_optim-0.3.0-py3-none-any.whl size=121807 sha256=45a192410ccb7d5067bcebbe28d8a5e736ac9715642ac0c70164dff749f7963b\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/93/da/1e/5c9e33d796c578a6b5f90c4ea5c2c0787f41d0ba36444f9f95\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for sklearn (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for sklearn (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Created wheel for sklearn: filename=sklearn-0.0-py2.py3-none-any.whl size=1302 sha256=cd5d1033d211b0dac80a0002dec81d7368a208a1a43b8774c38ad0337fbfb18a\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/f0/c8/5e/d8ffba9c1c0398e9ab1e97b2b237b46e614033b514b7f7e92a\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for pyDOE (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for pyDOE (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Created wheel for pyDOE: filename=pyDOE-0.3.8-py3-none-any.whl size=18167 sha256=274f2cf778a2c60adb63dea799df0669025ea0af71e4aacbbebf51976df12036\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/84/20/8c/8bd43ba42b0b6d39ace1219d6da1576e0dac81b12265c4762e\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for lit (pyproject.toml): started\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Building wheel for lit (pyproject.toml): finished with status 'done'\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Created wheel for lit: filename=lit-16.0.6-py3-none-any.whl size=93582 sha256=70e9803fefb6ffa24e10c23fec04c21a1d61f8b9e50590f4f8f5f8a3b0c0198e\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/ab/84/e4/5af8c76af9e5bee472e825f1451c18bb3b261d80a7b3ec7f8a\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Successfully built bayes-optim sklearn pyDOE lit\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Installing collected packages: py-expression-eval, mpmath, lit, cmake, wheel, urllib3, typing-extensions, threadpoolctl, tabulate, sympy, pluggy, packaging, oauthlib, nvidia-nccl-cu11, nvidia-cufft-cu11, nvidia-cuda-nvrtc-cu11, numpy, networkx, MarkupSafe, joblib, iniconfig, idna, filelock, dill, charset-normalizer, certifi, scipy, requests, pytest, nvidia-nvtx-cu11, nvidia-cusparse-cu11, nvidia-curand-cu11, nvidia-cuda-runtime-cu11, nvidia-cuda-cupti-cu11, nvidia-cublas-cu11, jinja2, sobol-seq, scikit-learn, requests-oauthlib, pyDOE, nvidia-cusolver-cu11, nvidia-cudnn-cu11, sklearn, triton, torch, bayes-optim\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | Successfully installed MarkupSafe-2.1.3 bayes-optim-0.3.0 certifi-2023.5.7 charset-normalizer-3.1.0 cmake-3.26.4 dill-0.3.6 filelock-3.12.2 idna-3.4 iniconfig-2.0.0 jinja2-3.1.2 joblib-1.3.0 lit-16.0.6 mpmath-1.3.0 networkx-3.1 numpy-1.25.0 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-cupti-cu11-11.7.101 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 nvidia-cufft-cu11-10.9.0.58 nvidia-curand-cu11-10.2.10.91 nvidia-cusolver-cu11-11.4.0.1 nvidia-cusparse-cu11-11.7.4.91 nvidia-nccl-cu11-2.14.3 nvidia-nvtx-cu11-11.7.91 oauthlib-3.2.2 packaging-23.1 pluggy-1.2.0 py-expression-eval-0.3.14 pyDOE-0.3.8 pytest-7.4.0 requests-2.31.0 requests-oauthlib-1.3.1 scikit-learn-1.2.2 scipy-1.11.0 sklearn-0.0 sobol-seq-0.2.0 sympy-1.12 tabulate-0.9.0 threadpoolctl-3.1.0 torch-2.0.1 triton-2.0.0 typing-extensions-4.6.3 urllib3-2.0.3 wheel-0.40.0\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u2705  Success - Main Install dependencies\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \u2b50 Run Main Test with pytest\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | ============================= test session starts ==============================\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | platform linux -- Python 3.11.4, pytest-7.4.0, pluggy-1.2.0 -- /opt/hostedtoolcache/Python/3.11.4/x64/bin/python\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | cachedir: .pytest_cache\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | collecting ... collected 62 items\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | \n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_pickling PASSED                                [  1%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_homogenous[r] PASSED                           [  3%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_homogenous[b] PASSED                           [  4%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_homogenous[c] PASSED                           [  6%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_homogenous[i] PASSED                           [  8%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_homogenous[o] PASSED                           [  9%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_homogenous[s] PASSED                           [ 11%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_fixed_var PASSED                               [ 12%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_flat_continuous PASSED                         [ 14%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_infeasible_constraints PASSED                  [ 16%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_mix_space[list] PASSED                         [ 17%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_BO.py::test_mix_space[dict] PASSED                         [ 19%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_Solution.py::test_1D PASSED                                [ 20%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_Solution.py::test_2D PASSED                                [ 22%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_Solution.py::test_to_dict PASSED                           [ 24%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_Solution.py::test_pickling PASSED                          [ 25%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_Solution.py::test_to_csv PASSED                            [ 27%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_Solution.py::test_from_dict PASSED                         [ 29%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_acq_optim.py::test_OnePlusOne_Cholesky_CMA PASSED          [ 30%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_acq_optim.py::test_OnePlusOne_Cholesky_CMA_constraint PASSED [ 32%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_acq_optim.py::test_MIES PASSED                             [ 33%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_conditional.py::test_conditional PASSED                    [ 35%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_constraint.py::test_BO_equality PASSED                     [ 37%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_constraint.py::test_BO_constraints PASSED                  [ 38%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_constraint.py::test_BO_bad_constraints PASSED              [ 40%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   | unittest/test_fmin.py::test_fmin PASSED                                  [ 41%]\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build]   \u274c  Failure - Main Test with pytest\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/c169af0ecccadfee06a33610e448640c708c96387ec7241e565d6db5f680ca46/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[9384e038-1fda-4f76-9a3b-daf9e39cda26/build] \ud83c\udfc1  Job succeeded\n",
-        "stderr": "Error: context canceled\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization/.github/workflows/ci-crawler.yml",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_pickling",
+                "time": 2.769,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_homogenous[r]",
+                "time": 1.861,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_homogenous[b]",
+                "time": 3.275,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_homogenous[c]",
+                "time": 2.222,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_homogenous[i]",
+                "time": 3.33,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_homogenous[o]",
+                "time": 1.235,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_homogenous[s]",
+                "time": 2.242,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_fixed_var",
+                "time": 1.208,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_flat_continuous",
+                "time": 0.119,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_infeasible_constraints",
+                "time": 13.371,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_mix_space[list]",
+                "time": 0.737,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_BO",
+                "name": "test_mix_space[dict]",
+                "time": 0.723,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_Solution",
+                "name": "test_1D",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_Solution",
+                "name": "test_2D",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_Solution",
+                "name": "test_to_dict",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_Solution",
+                "name": "test_pickling",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_Solution",
+                "name": "test_to_csv",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_Solution",
+                "name": "test_from_dict",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_acq_optim",
+                "name": "test_OnePlusOne_Cholesky_CMA",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_acq_optim",
+                "name": "test_OnePlusOne_Cholesky_CMA_constraint",
+                "time": 0.055,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_acq_optim",
+                "name": "test_MIES",
+                "time": 0.083,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_conditional",
+                "name": "test_conditional",
+                "time": 10.26,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_constraint",
+                "name": "test_BO_equality",
+                "time": 27.851,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_constraint",
+                "name": "test_BO_constraints",
+                "time": 18.932,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_constraint",
+                "name": "test_BO_bad_constraints",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_fmin",
+                "name": "test_fmin",
+                "time": 7.827,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_mobo",
+                "name": "test_3D",
+                "time": 21.32,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_mobo",
+                "name": "test_with_constraints",
+                "time": 36.063,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_mobo",
+                "name": "test_fixed_var",
+                "time": 0.589,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_mobo",
+                "name": "test_recommend",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_mobo",
+                "name": "test_constraint",
+                "time": 3.926,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_sampler",
+                "name": "test_SCMC",
+                "time": 2.267,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_sampler",
+                "name": "test_search_space_sampling",
+                "time": 2.289,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_Variable",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_real_warning",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_var_name",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_eq_ne",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_contains",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_in",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_sample_with_constraints",
+                "time": 0.413,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_remove",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_mul",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_sub",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_concat",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_iadd",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_SearchSpace_slice",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_sample",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_constraints",
+                "time": 2.518,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_scale",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_precision",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_iter",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_from_dict",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_update",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_filter",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_subset",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_node",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_condition",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_search_space",
+                "name": "test_condition2",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_surrogate",
+                "name": "test_pickling",
+                "time": 0.345,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_surrogate",
+                "name": "test_multioutput_gpr",
+                "time": 8.573,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_warmdata",
+                "name": "test_warm_data_with_GPR",
+                "time": 0.468,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "unittest.test_warmdata",
+                "name": "test_warm_data_with_RF",
+                "time": 18.911,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \ud83d\ude80  Start image=crawlergpt:latest\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization] user=0 workdir=\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \ud83e\uddea  Matrix: map[python-version:3.11]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \u2b50 Run Main actions/checkout@v2\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2705  Success - Main actions/checkout@v2\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \u2b50 Run Main Set up Python 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/e91f1571-d7ba-464f-86ac-1fd0f8237bbb/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.11 is 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? false\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::match not found\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Version 3.11 was not found in the local cache\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::set auth\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-beta.3 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-beta.2 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-beta.1 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.7 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.6 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.5 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.4 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.3 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.2 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.12.0-alpha.1 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::check 3.11.4 satisfies 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::arm64===x64 && darwin===linux\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::x64===x64 && darwin===linux\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::x64===x64 && linux===linux\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::matched 3.11.4\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Version 3.11 is available for downloading\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Download from \"https://github.com/actions/python-versions/releases/download/3.11.4-5199054971/python-3.11.4-linux-20.04-x64.tar.gz\"\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::Downloading https://github.com/actions/python-versions/releases/download/3.11.4-5199054971/python-3.11.4-linux-20.04-x64.tar.gz\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::Destination /tmp/ec87a92d-e918-4773-9917-8dc37917f1de\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::set auth\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::download complete\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Extract downloaded archive\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::Checking tar --version\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/91ccef4b-1970-4f17-a8ef-0cfd06d44ffc -f /tmp/ec87a92d-e918-4773-9917-8dc37917f1de\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Execute installation script\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Check if Python hostedtoolcache folder exist...\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Create Python 3.11.4 folder\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Copy Python binaries to hostedtoolcache folder\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Upgrading pip...\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Looking in links: /tmp/tmptkoc71nk\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (65.5.0)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (23.1.2)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting pip\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.1/2.1 MB 25.8 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Installing collected packages: pip\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Successfully installed pip-23.1.2\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Create complete file\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? false\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.11.4\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::explicit? true\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::evaluating 7 versions\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::matched: 3.11.4\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.11.4/x64\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.11.4 x64\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Successfully setup CPython (3.11.4)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2705  Success - Main Set up Python 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.11.4/x64\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.11.4/x64/lib\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2699  ::set-output:: python-version=3.11.4\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.11.4/x64\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.11.4/x64/bin\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \u2b50 Run Main Install dependencies\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (23.1.2)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Processing /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting dill>=0.3.3 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading dill-0.3.6-py3-none-any.whl (110 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 110.5/110.5 kB 10.7 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting joblib>=1.0.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading joblib-1.3.1-py3-none-any.whl (301 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 302.0/302.0 kB 24.1 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting numpy>=1.24.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading numpy-1.25.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.6 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 17.6/17.6 MB 23.7 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting pyDOE>=0.3.8 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading pyDOE-0.3.8.zip (22 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting scikit-learn>=1.2.2 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading scikit_learn-1.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.9 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 10.9/10.9 MB 20.1 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting scipy>=1.5.4 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading scipy-1.11.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (36.2 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 36.2/36.2 MB 17.6 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting sklearn==0.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading sklearn-0.0.tar.gz (1.1 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting tabulate>=0.8.7 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading tabulate-0.9.0-py3-none-any.whl (35 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting threadpoolctl>=2.1.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting requests>=2.25.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.6/62.6 kB 1.5 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting requests-oauthlib>=1.3.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting sobol-seq>=0.2.0 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading sobol_seq-0.2.0-py3-none-any.whl (9.2 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting py-expression-eval>=0.3.13 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading py_expression_eval-0.3.14-py3-none-any.whl (12 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting torch>=2.0.1 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading torch-2.0.1-cp311-cp311-manylinux1_x86_64.whl (619.9 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 619.9/619.9 MB 2.1 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting pytest>=7.3.2 (from bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 2.8 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting iniconfig (from pytest>=7.3.2->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting packaging (from pytest>=7.3.2->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 909.2 kB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting pluggy<2.0,>=0.12 (from pytest>=7.3.2->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting charset-normalizer<4,>=2 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading charset_normalizer-3.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (197 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 197.3/197.3 kB 1.7 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting idna<4,>=2.5 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 212.3 kB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting urllib3<3,>=1.21.1 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading urllib3-2.0.3-py3-none-any.whl (123 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 123.6/123.6 kB 233.1 kB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting certifi>=2017.4.17 (from requests>=2.25.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 157.0/157.0 kB 1.2 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting oauthlib>=3.0.0 (from requests-oauthlib>=1.3.0->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 151.7/151.7 kB 7.8 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting filelock (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting typing-extensions (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading typing_extensions-4.7.0-py3-none-any.whl (33 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting sympy (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading sympy-1.12-py3-none-any.whl (5.7 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 5.7/5.7 MB 14.0 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting networkx (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading networkx-3.1-py3-none-any.whl (2.1 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.1/2.1 MB 25.3 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting jinja2 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 133.1/133.1 kB 14.9 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cuda-nvrtc-cu11==11.7.99 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 21.0/21.0 MB 19.5 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cuda-runtime-cu11==11.7.99 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 849.3/849.3 kB 20.5 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cuda-cupti-cu11==11.7.101 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cuda_cupti_cu11-11.7.101-py3-none-manylinux1_x86_64.whl (11.8 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.8/11.8 MB 45.9 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cudnn-cu11==8.5.0.96 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 557.1/557.1 MB 2.3 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cublas-cu11==11.10.3.66 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 317.1/317.1 MB 3.2 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cufft-cu11==10.9.0.58 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cufft_cu11-10.9.0.58-py3-none-manylinux1_x86_64.whl (168.4 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 168.4/168.4 MB 8.7 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-curand-cu11==10.2.10.91 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_curand_cu11-10.2.10.91-py3-none-manylinux1_x86_64.whl (54.6 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 54.6/54.6 MB 12.9 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cusolver-cu11==11.4.0.1 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cusolver_cu11-11.4.0.1-2-py3-none-manylinux1_x86_64.whl (102.6 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 MB 9.8 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-cusparse-cu11==11.7.4.91 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_cusparse_cu11-11.7.4.91-py3-none-manylinux1_x86_64.whl (173.2 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 173.2/173.2 MB 7.7 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-nccl-cu11==2.14.3 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_nccl_cu11-2.14.3-py3-none-manylinux1_x86_64.whl (177.1 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 177.1/177.1 MB 7.2 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting nvidia-nvtx-cu11==11.7.91 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading nvidia_nvtx_cu11-11.7.91-py3-none-manylinux1_x86_64.whl (98 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.6/98.6 kB 1.3 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting triton==2.0.0 (from torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading triton-2.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (63.3 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 63.3/63.3 MB 13.7 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1)) (65.5.0)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting wheel (from nvidia-cublas-cu11==11.10.3.66->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Using cached wheel-0.40.0-py3-none-any.whl (64 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting cmake (from triton==2.0.0->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading cmake-3.26.4-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (24.0 MB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 24.0/24.0 MB 25.0 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting lit (from triton==2.0.0->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading lit-16.0.6.tar.gz (153 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 153.7/153.7 kB 2.3 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing build dependencies: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Getting requirements to build wheel: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing backend dependencies: started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Installing backend dependencies: finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting MarkupSafe>=2.0 (from jinja2->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading MarkupSafe-2.1.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Collecting mpmath>=0.19 (from sympy->torch>=2.0.1->bayes-optim==0.3.0->-r requirements.txt (line 1))\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 536.2/536.2 kB 3.3 MB/s eta 0:00:00\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Building wheels for collected packages: bayes-optim, sklearn, pyDOE, lit\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for bayes-optim (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for bayes-optim (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Created wheel for bayes-optim: filename=bayes_optim-0.3.0-py3-none-any.whl size=121807 sha256=2e21092669c9cffd826438eaa64243a4fde2ab92f8cf39a4c0a4d5d8c509a548\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/ed/ba/0a/6e29aecf4a0fa3fc8ebfa35dea1f3fc041affbd8fc5846071c\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for sklearn (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for sklearn (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Created wheel for sklearn: filename=sklearn-0.0-py2.py3-none-any.whl size=1302 sha256=619626709980c77b4143e6135b9d1013c1131b5f5a434da69f0f68ad6e6dc873\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/f0/c8/5e/d8ffba9c1c0398e9ab1e97b2b237b46e614033b514b7f7e92a\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for pyDOE (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for pyDOE (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Created wheel for pyDOE: filename=pyDOE-0.3.8-py3-none-any.whl size=18167 sha256=147892600f2831d666ec665177351594be9e35d9220df8eaf5301e5b42ebecbc\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/84/20/8c/8bd43ba42b0b6d39ace1219d6da1576e0dac81b12265c4762e\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for lit (pyproject.toml): started\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Building wheel for lit (pyproject.toml): finished with status 'done'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Created wheel for lit: filename=lit-16.0.6-py3-none-any.whl size=93582 sha256=0a7fe174383bcc0d47fe1f9441602e877a46b3101fbe2b5044785e877bfae859\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/ab/84/e4/5af8c76af9e5bee472e825f1451c18bb3b261d80a7b3ec7f8a\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Successfully built bayes-optim sklearn pyDOE lit\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Installing collected packages: py-expression-eval, mpmath, lit, cmake, wheel, urllib3, typing-extensions, threadpoolctl, tabulate, sympy, pluggy, packaging, oauthlib, nvidia-nccl-cu11, nvidia-cufft-cu11, nvidia-cuda-nvrtc-cu11, numpy, networkx, MarkupSafe, joblib, iniconfig, idna, filelock, dill, charset-normalizer, certifi, scipy, requests, pytest, nvidia-nvtx-cu11, nvidia-cusparse-cu11, nvidia-curand-cu11, nvidia-cuda-runtime-cu11, nvidia-cuda-cupti-cu11, nvidia-cublas-cu11, jinja2, sobol-seq, scikit-learn, requests-oauthlib, pyDOE, nvidia-cusolver-cu11, nvidia-cudnn-cu11, sklearn, triton, torch, bayes-optim\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | Successfully installed MarkupSafe-2.1.3 bayes-optim-0.3.0 certifi-2023.5.7 charset-normalizer-3.1.0 cmake-3.26.4 dill-0.3.6 filelock-3.12.2 idna-3.4 iniconfig-2.0.0 jinja2-3.1.2 joblib-1.3.1 lit-16.0.6 mpmath-1.3.0 networkx-3.1 numpy-1.25.0 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-cupti-cu11-11.7.101 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 nvidia-cufft-cu11-10.9.0.58 nvidia-curand-cu11-10.2.10.91 nvidia-cusolver-cu11-11.4.0.1 nvidia-cusparse-cu11-11.7.4.91 nvidia-nccl-cu11-2.14.3 nvidia-nvtx-cu11-11.7.91 oauthlib-3.2.2 packaging-23.1 pluggy-1.2.0 py-expression-eval-0.3.14 pyDOE-0.3.8 pytest-7.4.0 requests-2.31.0 requests-oauthlib-1.3.1 scikit-learn-1.3.0 scipy-1.11.1 sklearn-0.0 sobol-seq-0.2.0 sympy-1.12 tabulate-0.9.0 threadpoolctl-3.1.0 torch-2.0.1 triton-2.0.0 typing-extensions-4.7.0 urllib3-2.0.3 wheel-0.40.0\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2705  Success - Main Install dependencies\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \u2b50 Run Main Test with pytest\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | ============================= test session starts ==============================\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | platform linux -- Python 3.11.4, pytest-7.4.0, pluggy-1.2.0 -- /opt/hostedtoolcache/Python/3.11.4/x64/bin/python\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | cachedir: .pytest_cache\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | collecting ... collected 62 items\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_pickling PASSED                                [  1%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_homogenous[r] PASSED                           [  3%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_homogenous[b] PASSED                           [  4%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_homogenous[c] PASSED                           [  6%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_homogenous[i] PASSED                           [  8%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_homogenous[o] PASSED                           [  9%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_homogenous[s] PASSED                           [ 11%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_fixed_var PASSED                               [ 12%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_flat_continuous PASSED                         [ 14%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_infeasible_constraints PASSED                  [ 16%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_mix_space[list] PASSED                         [ 17%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py::test_mix_space[dict] PASSED                         [ 19%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_Solution.py::test_1D PASSED                                [ 20%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_Solution.py::test_2D PASSED                                [ 22%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_Solution.py::test_to_dict PASSED                           [ 24%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_Solution.py::test_pickling PASSED                          [ 25%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_Solution.py::test_to_csv PASSED                            [ 27%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_Solution.py::test_from_dict PASSED                         [ 29%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_acq_optim.py::test_OnePlusOne_Cholesky_CMA PASSED          [ 30%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_acq_optim.py::test_OnePlusOne_Cholesky_CMA_constraint PASSED [ 32%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_acq_optim.py::test_MIES PASSED                             [ 33%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_conditional.py::test_conditional PASSED                    [ 35%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_constraint.py::test_BO_equality PASSED                     [ 37%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_constraint.py::test_BO_constraints PASSED                  [ 38%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_constraint.py::test_BO_bad_constraints PASSED              [ 40%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_fmin.py::test_fmin PASSED                                  [ 41%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_3D PASSED                                    [ 43%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_with_constraints PASSED                      [ 45%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_fixed_var PASSED                             [ 46%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_recommend PASSED                             [ 48%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_constraint PASSED                            [ 50%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_sampler.py::test_SCMC PASSED                               [ 51%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_sampler.py::test_search_space_sampling PASSED              [ 53%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_Variable PASSED                      [ 54%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_real_warning PASSED                  [ 56%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_var_name PASSED          [ 58%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_eq_ne PASSED                         [ 59%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_contains PASSED                      [ 61%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_in PASSED                            [ 62%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_sample_with_constraints PASSED       [ 64%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_remove PASSED            [ 66%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_mul PASSED               [ 67%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_sub PASSED               [ 69%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_concat PASSED            [ 70%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_iadd PASSED              [ 72%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_SearchSpace_slice PASSED             [ 74%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_sample PASSED                        [ 75%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_constraints PASSED                   [ 77%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_scale PASSED                         [ 79%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_precision PASSED                     [ 80%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_iter PASSED                          [ 82%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_from_dict PASSED                     [ 83%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_update PASSED                        [ 85%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_filter PASSED                        [ 87%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_subset PASSED                        [ 88%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_node PASSED                          [ 90%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_condition PASSED                     [ 91%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_condition2 PASSED                    [ 93%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_surrogate.py::test_pickling PASSED                         [ 95%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_surrogate.py::test_multioutput_gpr PASSED                  [ 96%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_warmdata.py::test_warm_data_with_GPR PASSED                [ 98%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_warmdata.py::test_warm_data_with_RF PASSED                 [100%]\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | =============================== warnings summary ===============================\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | bayes_optim/acquisition/acquisition_fun.py:109\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization/./bayes_optim/acquisition/acquisition_fun.py:109: DeprecationWarning: invalid escape sequence '\\s'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |     \"\"\"Upper Confidence Bound\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | bayes_optim/acquisition/acquisition_fun.py:239\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization/./bayes_optim/acquisition/acquisition_fun.py:239: DeprecationWarning: invalid escape sequence '\\P'\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |     \"\"\"Moment Generating Function of the Improvement (MGFI)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_BO.py: 2606 warnings\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_conditional.py: 1192 warnings\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py: 276 warnings\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_surrogate.py: 5 warnings\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_warmdata.py: 4830 warnings\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/sklearn/preprocessing/_encoders.py:972: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |     warnings.warn(\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_conditional.py::test_conditional\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_conditional.py::test_conditional\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_conditional.py::test_conditional\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_conditional.py::test_conditional\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_3D\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_mobo.py::test_with_constraints\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   /opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/sklearn/metrics/_regression.py:996: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |     warnings.warn(msg, UndefinedMetricWarning)\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | unittest/test_search_space.py::test_real_warning\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |   /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization/./bayes_optim/search_space/variable.py:230: UserWarning: lower bound 1e-300 not in the working range of the given scale log10 is set to the default value 1e-300\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   |     warnings.warn(\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | \n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization/report.xml -\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   | ================ 62 passed, 8918 warnings in 200.67s (0:03:20) =================\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2705  Success - Main Test with pytest\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \u2b50 Run Post Set up Python 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build]   \u2705  Success - Post Set up Python 3.11\n[d8e88f9d-c815-4a04-818a-b48a682a1a7f/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/wangronin-Bayesian-Optimization/.github/workflows/ci-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "d8e88f9d-c815-4a04-818a-b48a682a1a7f",
         "build_tool": "pytest",
-        "elapsed_time": 617.4526588916779
+        "elapsed_time": 561.0805871486664
     }
 }

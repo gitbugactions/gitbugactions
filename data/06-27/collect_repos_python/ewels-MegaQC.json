@@ -4,11 +4,11 @@
     "language": "python",
     "size": 17838,
     "clone_url": "https://github.com/ewels/MegaQC.git",
-    "timestamp": "2023-06-28T11:53:37.348251Z",
+    "timestamp": "2023-07-01T11:26:19.115417Z",
     "clone_success": true,
     "number_of_actions": 5,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "unknown",
         "unknown",
@@ -20,12 +20,2173 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] \ud83d\ude80  Start image=crawlergpt:latest\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \ud83d\ude80  Start image=crawlergpt:latest\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ewels-MegaQC] user=0 workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ewels-MegaQC] user=0 workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2.1.4\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v2.1.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2601  git clone 'https://github.com/snok/install-poetry' # ref=v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] \ud83e\uddea  Matrix: map[node-version:10.x]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] \u2b50 Run Main actions/checkout@v2\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2705  Success - Main actions/checkout@v2\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] \u2b50 Run Main Use Node.js 10.x\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker cp src=/tmp/act-cache/e95a7560-8b62-41c1-9b90-7ddb91e6226b/act/actions-setup-node@v2.1.3/ dst=/var/run/act/actions/actions-setup-node@v2.1.3/\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-node@v2.1.3/] user=0 workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Pre snok/install-poetry@v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Pre snok/install-poetry@v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \ud83e\uddea  Matrix: map[python-version:3.8]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Main actions/checkout@v2\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Main actions/checkout@v2\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Main Set up Python 3.8\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker cp src=/tmp/act-cache/e95a7560-8b62-41c1-9b90-7ddb91e6226b/act/actions-setup-python@v2.1.4/ dst=/var/run/act/actions/actions-setup-python@v2.1.4/\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2.1.4/] user=0 workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v2.1.3/dist/index.js] user= workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2.1.4/dist/index.js] user= workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? false\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::evaluating 6 versions\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::matched: 3.8.11\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::set-output:: python-version=3.8.11\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Successfully setup CPython (3.8.11)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2.1.4/.github/python.json\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Main Set up Python 3.8\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::isExplicit: \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::explicit? false\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 10.24.1\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 12.22.6\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 14.17.5\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 14.17.6\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::evaluating 3 versions\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::matched: 10.24.1\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/node/10.24.1/x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udcac  ::debug::Found tool in cache node 10.24.1 x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | Found in cache @ /opt/hostedtoolcache/node/10.24.1/x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2753 add-matcher /run/act/actions/actions-setup-node@v2.1.3/.github/tsc.json\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2753 add-matcher /run/act/actions/actions-setup-node@v2.1.3/.github/eslint-stylish.json\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2753 add-matcher /run/act/actions/actions-setup-node@v2.1.3/.github/eslint-compact.json\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2705  Success - Main Use Node.js 10.x\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u2699  ::add-path:: /opt/hostedtoolcache/node/10.24.1/x64/bin\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] \u2b50 Run Main Install dependencies\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Main snok/install-poetry@v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker cp src=/tmp/act-cache/e95a7560-8b62-41c1-9b90-7ddb91e6226b/act/snok-install-poetry@v1.3.3/ dst=/var/run/act/actions/snok-install-poetry@v1.3.3/\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1.3.3/] user=0 workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Main Install and configure Poetry\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2-composite-0.sh] user= workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \u001b[33mSetting Poetry installation path as /home/runneradmin/.local\u001b[0m\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \u001b[33mInstalling Poetry \ud83d\udc77\u001b[0m\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Retrieving Poetry metadata\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | # Welcome to Poetry!\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | This will download and install the latest version of Poetry,\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | a dependency and package manager for Python.\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | It will add the `poetry` command to Poetry's bin directory, located at:\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | /home/runneradmin/.local/bin\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | You can uninstall at any time by executing this script with the --uninstall option,\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | and these changes will be reverted.\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing Poetry (1.5.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing Poetry (1.5.1): Creating environment\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing Poetry (1.5.1): Installing Poetry\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing Poetry (1.5.1): Creating script\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing Poetry (1.5.1): Done\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Poetry (1.5.1) is installed now. Great!\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | To get started you need Poetry's bin directory (/home/runneradmin/.local/bin) in your `PATH`\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | environment variable.\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Add `export PATH=\"/home/runneradmin/.local/bin:$PATH\"` to your shell configuration file.\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Alternatively, you can call Poetry explicitly with `/home/runneradmin/.local/bin/poetry`.\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | You can test that everything is set up by executing:\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | `poetry --version`\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \u001b[33mInstallation completed. Configuring settings \ud83d\udee0\u001b[0m\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \u001b[33mDone \u2705\u001b[0m\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \u001b[33mIf you are creating a venv in your project, you can activate it by running 'source .venv/bin/activate'. If you're running this in an OS matrix, you can use 'source $VENV' instead, as an OS agnostic option\u001b[0m\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Main Install and configure Poetry\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Main snok/install-poetry@v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Main Install all extra features of poetry\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Creating virtualenv megaqc-tCLoIqq1-py3.8 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing dependencies from lock file\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Package operations: 111 installs, 0 updates, 1 removal\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Removing wheel (0.30.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing markupsafe (2.0.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing mdurl (0.1.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing backports-zoneinfo (0.2.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing click (7.1.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing greenlet (2.0.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing itsdangerous (1.1.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing jinja2 (2.11.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing markdown-it-py (2.2.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing networkx (3.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing numpy (1.24.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing packaging (23.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pygments (2.15.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing six (1.16.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing tomli (2.0.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing typing-extensions (4.6.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing werkzeug (1.0.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing zipp (3.15.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing certifi (2023.5.7)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing charset-normalizer (3.1.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing colormath (3.0.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing contourpy (1.0.7)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing distlib (0.3.6)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing filelock (3.12.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask (1.1.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing future (0.18.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing dnspython (2.3.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing cycler (0.11.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing importlib-resources (5.12.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing fonttools (4.39.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing mako (1.2.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing humanfriendly (10.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing idna (3.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pycparser (2.21)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing python-dateutil (2.8.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pytz (2023.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing marshmallow (3.19.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pillow (9.5.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing setuptools-scm (7.1.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing soupsieve (2.4.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing sqlalchemy (1.4.48)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing rich (13.3.5)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pyparsing (3.0.9)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing importlib-metadata (6.6.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing urllib3 (2.0.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing tzlocal (5.0.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing platformdirs (3.5.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing kiwisolver (1.4.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing alembic (1.11.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing aniso8601 (9.0.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing beautifulsoup4 (4.12.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing blinker (1.6.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing apscheduler (3.10.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing cfgv (3.3.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing cachelib (0.10.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing email-validator (2.0.0.post2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing faker (18.9.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing cffi (1.15.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing identify (2.5.24)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing coloredlogs (15.0.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing joblib (1.2.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing lzstring (1.0.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-sqlalchemy (2.5.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing marshmallow-jsonapi (0.23.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing nodeenv (1.8.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing exceptiongroup (1.1.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing python-dotenv (1.0.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pyyaml (5.4.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing requests (2.31.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing retrying (1.3.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing rich-click (1.6.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing simplejson (3.19.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing threadpoolctl (3.1.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing tornado (6.3.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing markdown (3.4.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing webob (1.8.7)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing iniconfig (2.0.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing scipy (1.9.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pluggy (1.0.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing waitress (2.1.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing matplotlib (3.7.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing virtualenv (20.23.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing spectra (0.0.11)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing wtforms (2.3.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing argon2-cffi (20.1.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing environs (9.5.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing factory-boy (3.2.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flapison (0.30.10)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-apscheduler (1.12.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-caching (1.11.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-debugtoolbar (0.11.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-marshmallow (0.10.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-login (0.5.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-uploads (0.2.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-wtf (0.14.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flatten-json (0.1.13)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-restful (0.3.10)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing flask-migrate (2.7.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing marshmallow-sqlalchemy (0.25.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing multiqc (1.13)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing passlib (1.7.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing plotly (4.14.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing marshmallow-jsonschema (0.13.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing marshmallow-polyfield (5.11)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing scikit-learn (1.2.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing webtest (2.0.35)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing livereload (2.6.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pytest (7.3.1)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing webargs (5.5.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing pre-commit (3.3.2)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing outlier-utils (0.0.3)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   |   \u2022 Installing querystring-parser (1.2.4)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | Installing the current project: megaqc (0.3.0)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Main Install all extra features of poetry\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Main Test with pytest\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | ============================= test session starts ==============================\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | platform linux -- Python 3.8.11, pytest-7.3.1, pluggy-1.0.0\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ewels-MegaQC\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | plugins: Faker-18.9.0\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | collected 154 items\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/test_config.py ..                                                  [  1%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/test_docker.py FEE                                                 [  3%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/test_forms.py .......                                              [  7%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/test_functional.py .......                                         [ 12%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/test_models.py ......                                              [ 16%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/api/test_api.py ............................................       [ 44%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/api/test_build_filter.py ..................................        [ 66%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   | tests/api/test_current_user.py ..                                        [ 68%]\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | > es5-ext@0.10.62 postinstall /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ewels-MegaQC/node_modules/es5-ext\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | >  node -e \"try{require('./_postinstall')}catch(e){}\" || exit 0\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN megaqc@1.0.0 No repository field.\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/webpack-dev-server/node_modules/fsevents):\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | added 1360 packages from 848 contributors and audited 1369 packages in 407.615s\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | 90 packages are looking for funding\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   |   run `npm fund` for details\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | \n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   | found 41 vulnerabilities (3 low, 18 moderate, 20 high)\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   |   run `npm audit fix` to fix them, or `npm audit` for details\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ]   \u274c  Failure - Main Install dependencies\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] failed to inspect exec: Error response from daemon: No such exec instance: b59851b82cfd39fd7cffbc101b671849435c6bda69859fd6c0d34b2b1eab51a1\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-node  ] \ud83c\udfc1  Job failed\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u274c  Failure - Main Test with pytest\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/57e2dfbb016f0c2dcd57912be4275b08f3037b38eb7c40525ae65d225629b9d4/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \u2b50 Run Post snok/install-poetry@v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker cp src=/tmp/act-cache/e95a7560-8b62-41c1-9b90-7ddb91e6226b/act/snok-install-poetry@v1.3.3/ dst=/var/run/act/actions/snok-install-poetry@v1.3.3/\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1.3.3/] user=0 workdir=\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python]   \u2705  Success - Post snok/install-poetry@v1.3.3\n[273573ff-72aa-44df-a390-f77d2d66e7d4/build-python] \ud83c\udfc1  Job succeeded\n",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_config",
+                "name": "test_production_config",
+                "time": 0.431,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_config",
+                "name": "test_dev_config",
+                "time": 0.183,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_docker",
+                "name": "test_docker",
+                "time": 2.827,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "subprocess.CalledProcessError: Command '['docker', 'build', '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC']' returned non-zero exit status 1.",
+                        "type": null
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_docker",
+                "name": "test_compose",
+                "time": 1.056,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "failed on setup with \"subprocess.CalledProcessError: Command '['docker-compose', 'up', '--build', '--detach']' returned non-zero exit status 255.\"",
+                        "type": null
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_docker",
+                "name": "test_https_redirects",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Error",
+                        "message": "failed on setup with \"subprocess.CalledProcessError: Command '['docker-compose', 'up', '--build', '--detach']' returned non-zero exit status 255.\"",
+                        "type": null
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestRegisterForm",
+                "name": "test_validate_user_already_registered",
+                "time": 2.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestRegisterForm",
+                "name": "test_validate_email_already_registered",
+                "time": 1.677,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestRegisterForm",
+                "name": "test_validate_success",
+                "time": 1.144,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestLoginForm",
+                "name": "test_validate_success",
+                "time": 1.481,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestLoginForm",
+                "name": "test_validate_unknown_username",
+                "time": 1.732,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestLoginForm",
+                "name": "test_validate_invalid_password",
+                "time": 1.546,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_forms.TestLoginForm",
+                "name": "test_validate_inactive_user",
+                "time": 2.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestLoggingIn",
+                "name": "test_can_log_in_returns_200",
+                "time": 1.8,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestLoggingIn",
+                "name": "test_sees_alert_on_log_out",
+                "time": 1.901,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestLoggingIn",
+                "name": "test_sees_error_message_if_password_is_incorrect",
+                "time": 1.783,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestLoggingIn",
+                "name": "test_sees_error_message_if_username_doesnt_exist",
+                "time": 1.692,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestRegistering",
+                "name": "test_can_register",
+                "time": 1.978,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestRegistering",
+                "name": "test_sees_error_message_if_passwords_dont_match",
+                "time": 1.322,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_functional.TestRegistering",
+                "name": "test_sees_error_message_if_user_already_registered",
+                "time": 2.063,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_models.TestUser",
+                "name": "test_created_at_defaults_to_datetime",
+                "time": 1.417,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_models.TestUser",
+                "name": "test_password_is_nullable",
+                "time": 2.344,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_models.TestUser",
+                "name": "test_factory",
+                "time": 1.753,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_models.TestUser",
+                "name": "test_check_password",
+                "time": 2.069,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_models.TestUser",
+                "name": "test_full_name",
+                "time": 1.303,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_models.TestUser",
+                "name": "test_roles",
+                "time": 1.349,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.uploadlist]",
+                "time": 1.993,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.sampledatalist]",
+                "time": 2.089,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.reportlist]",
+                "time": 2.583,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.reportmetalist]",
+                "time": 3.175,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.samplelist]",
+                "time": 2.525,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.metatypelist]",
+                "time": 3.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.datatypelist]",
+                "time": 1.551,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.userlist]",
+                "time": 1.741,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.filterlist]",
+                "time": 2.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.filtergrouplist]",
+                "time": 2.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.favouriteplotlist]",
+                "time": 1.961,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources[rest_api.dashboardlist]",
+                "time": 1.843,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.user_uploadlist-user_id]",
+                "time": 1.612,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.user_reportlist-user_id]",
+                "time": 3.613,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.report_reportmetalist-report_id]",
+                "time": 3.634,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.report_samplelist-report_id]",
+                "time": 2.765,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.sample_sampledatalist-sample_id]",
+                "time": 2.339,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.user_filterlist-user_id]",
+                "time": 2.426,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.user_favouriteplotlist-user_id]",
+                "time": 3.988,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_many_resources_associated[rest_api.user_dashboardlist-user_id]",
+                "time": 2.232,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.upload]",
+                "time": 2.094,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.sampledata]",
+                "time": 2.138,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.report]",
+                "time": 2.755,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.sample]",
+                "time": 1.842,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.datatype]",
+                "time": 2.068,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.user]",
+                "time": 2.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.filter]",
+                "time": 1.694,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.favouriteplot]",
+                "time": 1.863,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_get_single_resource[rest_api.dashboard]",
+                "time": 1.908,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.upload]",
+                "time": 3.051,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.report]",
+                "time": 2.881,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.sample]",
+                "time": 2.563,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.datatype]",
+                "time": 1.772,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.user]",
+                "time": 2.207,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.filter]",
+                "time": 2.418,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.favouriteplot]",
+                "time": 1.818,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_delete_single_resource[rest_api.dashboard]",
+                "time": 1.53,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.reportlist]",
+                "time": 2.25,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.samplelist]",
+                "time": 1.742,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.datatypelist]",
+                "time": 1.701,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.userlist]",
+                "time": 2.481,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.filterlist]",
+                "time": 1.487,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.favouriteplotlist]",
+                "time": 2.096,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_api",
+                "name": "test_post_resource[rest_api.dashboardlist]",
+                "time": 2.053,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_daterange_in",
+                "time": 2.817,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_daterange_not_in",
+                "time": 3.43,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_timedelta_in",
+                "time": 2.984,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_timedelta_not_in",
+                "time": 2.939,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_reportmeta_equals[key_1-20]",
+                "time": 3.705,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_reportmeta_equals[key_1-21]",
+                "time": 3.404,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_reportmeta_equals[key_2-20]",
+                "time": 3.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_reportmeta_equals[key_2-21]",
+                "time": 2.824,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_reportmeta_not_equals",
+                "time": 3.777,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[eq-2-correct0-0]",
+                "time": 3.744,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[ne-2-correct1-0]",
+                "time": 3.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[le-2-correct2-0]",
+                "time": 2.852,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[lt-2-correct3-0]",
+                "time": 3.35,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[ge-2-correct4-0]",
+                "time": 3.228,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[gt-2-correct5-0]",
+                "time": 3.895,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[gt-2-correct6-0]",
+                "time": 3.218,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[like-%ardv%-correct7-1]",
+                "time": 3.687,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[like-%-correct8-1]",
+                "time": 3.178,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[contains-ardv-correct9-1]",
+                "time": 3.776,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[contains-%ardv%-correct10-1]",
+                "time": 2.644,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[startswith-aard-correct11-1]",
+                "time": 3.076,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[startswith-bad-correct12-1]",
+                "time": 3.731,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[endswith-vark-correct13-1]",
+                "time": 2.803,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[endswith-ger-correct14-1]",
+                "time": 2.84,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notlike-%ardv%-correct15-1]",
+                "time": 2.974,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notlike-%-correct16-1]",
+                "time": 2.652,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notcontains-ardv-correct17-1]",
+                "time": 3.051,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notcontains-%ardv%-correct18-1]",
+                "time": 2.938,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notstartswith-aard-correct19-1]",
+                "time": 2.675,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notstartswith-bad-correct20-1]",
+                "time": 2.784,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notendswith-vark-correct21-1]",
+                "time": 3.602,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_samplemeta_operator[notendswith-ger-correct22-1]",
+                "time": 4.979,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_and_query",
+                "time": 3.398,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_build_filter",
+                "name": "test_or_query",
+                "time": 3.157,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_current_user",
+                "name": "test_current_user_session_working",
+                "time": 1.906,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_current_user",
+                "name": "test_current_user_session_invalid",
+                "time": 1.837,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.sampledata]",
+                "time": 1.707,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.favouriteplot]",
+                "time": 2.307,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.dashboard]",
+                "time": 1.987,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.filter]",
+                "time": 2.027,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.upload]",
+                "time": 1.756,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.user]",
+                "time": 1.841,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.datatype]",
+                "time": 1.879,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[GET-True-rest_api.sample]",
+                "time": 1.933,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.sampledata]",
+                "time": 2.179,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.favouriteplot]",
+                "time": 1.585,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.dashboard]",
+                "time": 1.269,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.filter]",
+                "time": 1.69,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.upload]",
+                "time": 1.416,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.user]",
+                "time": 1.305,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.datatype]",
+                "time": 1.059,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[PATCH-False-rest_api.sample]",
+                "time": 1.764,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.sampledata]",
+                "time": 1.228,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.favouriteplot]",
+                "time": 1.565,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.dashboard]",
+                "time": 1.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.filter]",
+                "time": 1.856,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.upload]",
+                "time": 1.826,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.user]",
+                "time": 1.607,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.datatype]",
+                "time": 2.491,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_single_resource_permissions[DELETE-False-rest_api.sample]",
+                "time": 2.899,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.reportlist]",
+                "time": 1.972,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.reportmetalist]",
+                "time": 1.756,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.dashboardlist]",
+                "time": 1.562,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.sampledatalist]",
+                "time": 1.98,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.filtergrouplist]",
+                "time": 1.951,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.samplelist]",
+                "time": 1.981,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.filterlist]",
+                "time": 1.331,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.metatypelist]",
+                "time": 1.827,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.favouriteplotlist]",
+                "time": 1.615,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[GET-True-rest_api.datatypelist]",
+                "time": 1.201,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.reportlist]",
+                "time": 1.403,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.reportmetalist]",
+                "time": 2.315,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.dashboardlist]",
+                "time": 1.456,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.sampledatalist]",
+                "time": 1.495,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.filtergrouplist]",
+                "time": 1.224,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.samplelist]",
+                "time": 1.624,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.filterlist]",
+                "time": 1.71,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.metatypelist]",
+                "time": 2.061,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.favouriteplotlist]",
+                "time": 1.375,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_many_resources_permissions[POST-False-rest_api.datatypelist]",
+                "time": 1.493,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_active_inactive[True]",
+                "time": 2.251,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_permissions",
+                "name": "test_active_inactive[False]",
+                "time": 2.508,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_plot",
+                "name": "test_trend_data_measurement",
+                "time": 9.207,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_plot",
+                "name": "test_trend_data_iforest",
+                "time": 7.575,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.api.test_upload",
+                "name": "test_post_upload_list",
+                "time": 1.998,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \ud83d\ude80  Start image=crawlergpt:latest\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \ud83d\ude80  Start image=crawlergpt:latest\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC] user=0 workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC] user=0 workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2.1.4\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2601  git clone 'https://github.com/actions/setup-node' # ref=v2.1.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2601  git clone 'https://github.com/snok/install-poetry' # ref=v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \ud83e\uddea  Matrix: map[node-version:10.x]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \u2b50 Run Main actions/checkout@v2\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2705  Success - Main actions/checkout@v2\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \u2b50 Run Main Use Node.js 10.x\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker cp src=/tmp/act-cache/7f4058e4-4f11-4d2b-b8d0-191c2b1e1c78/act/actions-setup-node@v2.1.3/ dst=/var/run/act/actions/actions-setup-node@v2.1.3/\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-node@v2.1.3/] user=0 workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Pre snok/install-poetry@v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Pre snok/install-poetry@v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \ud83e\uddea  Matrix: map[python-version:3.8]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Main actions/checkout@v2\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Main actions/checkout@v2\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Main Set up Python 3.8\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker cp src=/tmp/act-cache/7f4058e4-4f11-4d2b-b8d0-191c2b1e1c78/act/actions-setup-python@v2.1.4/ dst=/var/run/act/actions/actions-setup-python@v2.1.4/\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2.1.4/] user=0 workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v2.1.3/dist/index.js] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2.1.4/dist/index.js] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::isExplicit: \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::explicit? false\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 10.24.1\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 12.22.6\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 14.17.5\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::isExplicit: 14.17.6\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::evaluating 3 versions\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::matched: 10.24.1\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/node/10.24.1/x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udcac  ::debug::Found tool in cache node 10.24.1 x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | Found in cache @ /opt/hostedtoolcache/node/10.24.1/x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2753 add-matcher /run/act/actions/actions-setup-node@v2.1.3/.github/tsc.json\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2753 add-matcher /run/act/actions/actions-setup-node@v2.1.3/.github/eslint-stylish.json\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2753 add-matcher /run/act/actions/actions-setup-node@v2.1.3/.github/eslint-compact.json\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2705  Success - Main Use Node.js 10.x\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2699  ::add-path:: /opt/hostedtoolcache/node/10.24.1/x64/bin\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \u2b50 Run Main Install dependencies\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? false\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::explicit? true\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::evaluating 6 versions\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::matched: 3.8.11\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::set-output:: python-version=3.8.11\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Successfully setup CPython (3.8.11)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2.1.4/.github/python.json\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Main Set up Python 3.8\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Main snok/install-poetry@v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker cp src=/tmp/act-cache/7f4058e4-4f11-4d2b-b8d0-191c2b1e1c78/act/snok-install-poetry@v1.3.3/ dst=/var/run/act/actions/snok-install-poetry@v1.3.3/\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1.3.3/] user=0 workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Main Install and configure Poetry\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2-composite-0.sh] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \u001b[33mSetting Poetry installation path as /home/runneradmin/.local\u001b[0m\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \u001b[33mInstalling Poetry \ud83d\udc77\u001b[0m\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Retrieving Poetry metadata\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | # Welcome to Poetry!\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | This will download and install the latest version of Poetry,\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | a dependency and package manager for Python.\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | It will add the `poetry` command to Poetry's bin directory, located at:\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | /home/runneradmin/.local/bin\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | You can uninstall at any time by executing this script with the --uninstall option,\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | and these changes will be reverted.\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing Poetry (1.5.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing Poetry (1.5.1): Creating environment\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing Poetry (1.5.1): Installing Poetry\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing Poetry (1.5.1): Creating script\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing Poetry (1.5.1): Done\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Poetry (1.5.1) is installed now. Great!\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | To get started you need Poetry's bin directory (/home/runneradmin/.local/bin) in your `PATH`\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | environment variable.\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Add `export PATH=\"/home/runneradmin/.local/bin:$PATH\"` to your shell configuration file.\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Alternatively, you can call Poetry explicitly with `/home/runneradmin/.local/bin/poetry`.\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | You can test that everything is set up by executing:\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | `poetry --version`\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \u001b[33mInstallation completed. Configuring settings \ud83d\udee0\u001b[0m\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \u001b[33mDone \u2705\u001b[0m\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \u001b[33mIf you are creating a venv in your project, you can activate it by running 'source .venv/bin/activate'. If you're running this in an OS matrix, you can use 'source $VENV' instead, as an OS agnostic option\u001b[0m\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Main Install and configure Poetry\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Main snok/install-poetry@v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::set-env:: VENV=.venv/bin/activate\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2699  ::add-path:: /home/runneradmin/.local/bin\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Main Install all extra features of poetry\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Creating virtualenv megaqc-nw9Q_u4J-py3.8 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing dependencies from lock file\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Package operations: 111 installs, 0 updates, 1 removal\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Removing wheel (0.30.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing markupsafe (2.0.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing mdurl (0.1.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing backports-zoneinfo (0.2.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing click (7.1.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing greenlet (2.0.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing itsdangerous (1.1.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing jinja2 (2.11.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing markdown-it-py (2.2.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing networkx (3.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing numpy (1.24.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing packaging (23.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pygments (2.15.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing six (1.16.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing tomli (2.0.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing typing-extensions (4.6.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing werkzeug (1.0.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing zipp (3.15.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing certifi (2023.5.7)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing charset-normalizer (3.1.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing contourpy (1.0.7)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing colormath (3.0.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing distlib (0.3.6)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing cycler (0.11.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask (1.1.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing fonttools (4.39.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing dnspython (2.3.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing importlib-metadata (6.6.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing filelock (3.12.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing future (0.18.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing marshmallow (3.19.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pillow (9.5.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pycparser (2.21)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pyparsing (3.0.9)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing python-dateutil (2.8.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing kiwisolver (1.4.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing rich (13.3.5)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing humanfriendly (10.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing platformdirs (3.5.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing sqlalchemy (1.4.48)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing tzlocal (5.0.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing urllib3 (2.0.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing mako (1.2.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing soupsieve (2.4.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing idna (3.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pytz (2023.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing importlib-resources (5.12.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing setuptools-scm (7.1.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing alembic (1.11.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing aniso8601 (9.0.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing beautifulsoup4 (4.12.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing blinker (1.6.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing cffi (1.15.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing apscheduler (3.10.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing coloredlogs (15.0.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing exceptiongroup (1.1.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing faker (18.9.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing identify (2.5.24)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing joblib (1.2.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing lzstring (1.0.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing marshmallow-jsonapi (0.23.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing email-validator (2.0.0.post2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing cachelib (0.10.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing nodeenv (1.8.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing python-dotenv (1.0.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing iniconfig (2.0.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing retrying (1.3.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing rich-click (1.6.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing markdown (3.4.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing spectra (0.0.11)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing threadpoolctl (3.1.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing tornado (6.3.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-sqlalchemy (2.5.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing webob (1.8.7)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing wtforms (2.3.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing requests (2.31.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing scipy (1.9.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing matplotlib (3.7.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing virtualenv (20.23.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pluggy (1.0.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing cfgv (3.3.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing waitress (2.1.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pyyaml (5.4.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing simplejson (3.19.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing argon2-cffi (20.1.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing environs (9.5.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing factory-boy (3.2.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flapison (0.30.10)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-caching (1.11.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-debugtoolbar (0.11.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-marshmallow (0.10.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-migrate (2.7.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-apscheduler (1.12.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-uploads (0.2.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-wtf (0.14.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flatten-json (0.1.13)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-login (0.5.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing marshmallow-polyfield (5.11)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing marshmallow-sqlalchemy (0.25.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing multiqc (1.13)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing marshmallow-jsonschema (0.13.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing passlib (1.7.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing flask-restful (0.3.10)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pre-commit (3.3.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing pytest (7.3.1)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing querystring-parser (1.2.4)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing plotly (4.14.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing livereload (2.6.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing webtest (2.0.35)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing outlier-utils (0.0.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing scikit-learn (1.2.2)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   |   \u2022 Installing webargs (5.5.3)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | Installing the current project: megaqc (0.3.0)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Main Install all extra features of poetry\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Main Test with pytest\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | ============================= test session starts ==============================\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | platform linux -- Python 3.8.11, pytest-7.3.1, pluggy-1.0.0\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | plugins: Faker-18.9.0\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | collected 154 items\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/test_config.py ..                                                  [  1%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/test_docker.py FEE                                                 [  3%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/test_forms.py .......                                              [  7%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/test_functional.py .......                                         [ 12%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/test_models.py ......                                              [ 16%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/api/test_api.py ............................................       [ 44%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/api/test_build_filter.py ..................................        [ 66%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/api/test_current_user.py ..                                        [ 68%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | > es5-ext@0.10.62 postinstall /tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC/node_modules/es5-ext\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | >  node -e \"try{require('./_postinstall')}catch(e){}\" || exit 0\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN megaqc@1.0.0 No repository field.\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/webpack-dev-server/node_modules/fsevents):\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | added 1360 packages from 848 contributors and audited 1369 packages in 411.45s\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | 90 packages are looking for funding\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   |   run `npm fund` for details\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | found 41 vulnerabilities (3 low, 18 moderate, 20 high)\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   |   run `npm audit fix` to fix them, or `npm audit` for details\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u2705  Success - Main Install dependencies\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \u2b50 Run Main Test build\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | tests/api/test_permissions.py .......................................... [ 95%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   | ....                                                                     [ 98%]\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | > megaqc@1.0.0 build /tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | > webpack --mode production\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   | \n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u274c  Failure - Main Test with pytest\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ]   \u274c  Failure - Main Test build\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/4238d8648542f80291dfdd6d45831d854d4cc311bf80a3f3c43daf29b74f33ad/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/0e91562df121b5fd8c3019db4347db70207e3e8047fd300a68958993aa321a7d/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \u2b50 Run Post snok/install-poetry@v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker cp src=/tmp/act-cache/7f4058e4-4f11-4d2b-b8d0-191c2b1e1c78/act/snok-install-poetry@v1.3.3/ dst=/var/run/act/actions/snok-install-poetry@v1.3.3/\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/snok-install-poetry@v1.3.3/] user=0 workdir=\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-node  ] \ud83c\udfc1  Job succeeded\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python]   \u2705  Success - Post snok/install-poetry@v1.3.3\n[5880f54c-dd34-4a0e-b10b-5a6089970cd5/build-python] \ud83c\udfc1  Job succeeded\n",
         "stderr": "Error: context canceled\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ewels-MegaQC/.github/workflows/build-crawler.yaml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/ewels-MegaQC/.github/workflows/build-crawler.yaml",
+            "type": "pytest"
+        },
+        "workflow_name": "5880f54c-dd34-4a0e-b10b-5a6089970cd5",
         "build_tool": "pytest",
-        "elapsed_time": 623.9652469158173
+        "elapsed_time": 623.9283218383789
     }
 }

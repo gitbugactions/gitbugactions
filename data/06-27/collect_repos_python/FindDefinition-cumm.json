@@ -4,7 +4,7 @@
     "language": "python",
     "size": 1545,
     "clone_url": "https://github.com/FindDefinition/cumm.git",
-    "timestamp": "2023-06-28T17:25:50.197149Z",
+    "timestamp": "2023-07-01T16:55:09.466819Z",
     "clone_success": true,
     "number_of_actions": 1,
     "number_of_test_actions": 1,
@@ -18,10 +18,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows] \ud83d\ude80  Start image=crawlergpt:latest\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/FindDefinition-cumm] user=0 workdir=\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \u2601  git clone 'https://github.com/ilammy/msvc-dev-cmd' # ref=v1\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows] \ud83e\uddea  Matrix: map[cuda-version:10.2 python-version:3.7]\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows] \u2b50 Run Main actions/checkout@master\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \u2705  Success - Main actions/checkout@master\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows] \u2b50 Run Main Install CUDA\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \ud83d\udc33  docker exec cmd=[powershell -command . /var/run/act/workflow/1.ps1] user= workdir=\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"powershell\": executable file not found in $PATH: unknown\r\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows]   \u274c  Failure - Main Install CUDA\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows] exitcode '126': failure\n[14bf9973-c327-4c31-b9a4-154f1ff3a21a/build-windows] \ud83c\udfc1  Job failed\n",
+        "stdout": "[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows] \ud83d\ude80  Start image=crawlergpt:latest\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/FindDefinition-cumm] user=0 workdir=\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \u2601  git clone 'https://github.com/ilammy/msvc-dev-cmd' # ref=v1\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows] \ud83e\uddea  Matrix: map[cuda-version:10.2 python-version:3.7]\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows] \u2b50 Run Main actions/checkout@master\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \u2705  Success - Main actions/checkout@master\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows] \u2b50 Run Main Install CUDA\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \ud83d\udc33  docker exec cmd=[powershell -command . /var/run/act/workflow/1.ps1] user= workdir=\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   | OCI runtime exec failed: exec failed: unable to start container process: exec: \"powershell\": executable file not found in $PATH: unknown\r\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows]   \u274c  Failure - Main Install CUDA\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows] exitcode '126': failure\n[dd49129e-6fb1-4796-96c0-6a3b3337d0a0/build-windows] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'build-windows' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/FindDefinition-cumm/.github/workflows/build-crawler.yaml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/FindDefinition-cumm/.github/workflows/build-crawler.yaml",
+            "type": "pytest"
+        },
+        "workflow_name": "dd49129e-6fb1-4796-96c0-6a3b3337d0a0",
         "build_tool": "pytest",
-        "elapsed_time": 127.79064273834229
+        "elapsed_time": 205.36862111091614
     }
 }

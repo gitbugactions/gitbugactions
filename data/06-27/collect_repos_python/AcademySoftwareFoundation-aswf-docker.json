@@ -4,11 +4,11 @@
     "language": "python",
     "size": 1441,
     "clone_url": "https://github.com/AcademySoftwareFoundation/aswf-docker.git",
-    "timestamp": "2023-06-28T13:59:45.489269Z",
+    "timestamp": "2023-07-01T13:30:10.811547Z",
     "clone_success": true,
     "number_of_actions": 4,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "pytest",
         "unknown",
@@ -19,12 +19,815 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \ud83d\ude80  Start image=crawlergpt:latest\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker] user=0 workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \u2b50 Run Main actions/checkout@v3\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2705  Success - Main actions/checkout@v3\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \u2b50 Run Main Set up Python\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker cp src=/tmp/act-cache/4a872d2c-ffc3-4160-a81d-041d3a9dc8be/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2753  ::group::Installed versions\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? false\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? true\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? true\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? true\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? true\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? true\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::explicit? true\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::evaluating 6 versions\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::matched: 3.9.6\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Successfully set up CPython (3.9.6)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2753  ::endgroup::\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Search path '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/Pipfile.lock\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Found 1 files to hash.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::global cache directory path is /home/runneradmin/.local/share/virtualenvs\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Resolved Keys:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::[\"setup-python-Linux-python-3.9.6-pipenv-199aadc00db3bca57528ead656bd4bcad141fb3233fc20059a0e2694bef9c20f\"]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::1.5.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:44057/_apis/artifactcache/cache?keys=setup-python-Linux-python-3.9.6-pipenv-199aadc00db3bca57528ead656bd4bcad141fb3233fc20059a0e2694bef9c20f&version=1a9427bd70d6ec13caa94a4d12c7f14ef7bab40c5542d318db08bcb22cddc587\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | pipenv cache is not found\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2705  Success - Main Set up Python\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-output:: python-version=3.9.6\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::set-output:: cache-hit=false\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \u2b50 Run Main Install pipenv\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                                  Dload  Upload   Total   Spent    Left  Speed\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100 2110k  100 2110k    0     0  14.0M      0 --:--:-- --:--:-- --:--:-- 14.0M\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting pip\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting wheel\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading wheel-0.40.0-py3-none-any.whl (64 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting pipenv\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading pipenv-2023.6.26-py3-none-any.whl (2.8 MB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting setuptools>=67.0.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading setuptools-68.0.0-py3-none-any.whl (804 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting virtualenv-clone>=0.2.5\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting certifi\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting virtualenv>=20.17.1\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting filelock<4,>=3.12\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting distlib<1,>=0.3.6\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Collecting platformdirs<4,>=3.5.1\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Installing collected packages: platformdirs, filelock, distlib, virtualenv-clone, virtualenv, setuptools, certifi, wheel, pipenv, pip\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Attempting uninstall: setuptools\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     Found existing installation: setuptools 56.0.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     Uninstalling setuptools-56.0.0:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |       Successfully uninstalled setuptools-56.0.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   Attempting uninstall: pip\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     Found existing installation: pip 21.2.4\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     Uninstalling pip-21.2.4:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |       Successfully uninstalled pip-21.2.4\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Successfully installed certifi-2023.5.7 distlib-0.3.6 filelock-3.12.2 pip-23.1.2 pipenv-2023.6.26 platformdirs-3.8.0 setuptools-68.0.0 virtualenv-20.23.1 virtualenv-clone-0.5.7 wheel-0.40.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2705  Success - Main Install pipenv\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \u2b50 Run Main Install aswfdocker and dev dependencies with pipenv\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Creating a virtualenv for this project...\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Pipfile: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/Pipfile\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Using /opt/hostedtoolcache/Python/3.9.6/x64/bin/python3.9 (3.9.6) to create virtualenv...\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | created virtual environment CPython3.9.6.final.0-64 in 1240ms\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   creator CPython3Posix(dest=/home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_, clear=False, no_vcs_ignore=False, global=False)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/runneradmin/.local/share/virtualenv)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     added seed packages: pip==23.1.2, setuptools==67.8.0, wheel==0.40.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Successfully created virtual environment!\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Virtualenv location: /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Installing dependencies from Pipfile.lock (c6ce5c)...\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:running egg_info\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:creating /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/PKG-INFO\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing dependency_links to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/dependency_links.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing entry points to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/entry_points.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing requirements to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/requires.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing top-level names to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/top_level.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing manifest file '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:reading manifest file '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:adding license file 'LICENSE'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing manifest file '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Installing dependencies from Pipfile.lock (c6ce5c)...\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:running egg_info\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/PKG-INFO\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing dependency_links to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/dependency_links.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing entry points to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/entry_points.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing requirements to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/requires.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing top-level names to /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/top_level.txt\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:reading manifest file '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:adding license file 'LICENSE'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | INFO:root:writing manifest file '/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | To activate this project's virtualenv, run pipenv shell.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Alternatively, run a command inside the virtualenv with pipenv run.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2705  Success - Main Install aswfdocker and dev dependencies with pipenv\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \u2b50 Run Main Run mypy\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Success: no issues found in 23 source files\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u2705  Success - Main Run mypy\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \u2b50 Run Main Run pylint linter\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ============================= test session starts ==============================\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | platform linux -- Python 3.9.6, pytest-7.3.1, pluggy-1.0.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | configfile: pyproject.toml\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | plugins: cov-4.0.0, pylint-0.19.0\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | collected 57 items\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | --------------------------------------------------------------------------------\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Linting files\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ..................................................\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | --------------------------------------------------------------------------------\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/__init__.py .                                          [  1%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/aswfinfo.py .                                          [  3%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/builder.py .                                           [  5%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/constants.py .                                         [  7%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/dockergen.py .                                         [  8%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/groupinfo.py .                                         [ 10%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/index.py .                                             [ 12%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/migrater.py .                                          [ 14%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/releaser.py .                                          [ 15%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/settings.py .                                          [ 17%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/utils.py .                                             [ 19%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/versioninfo.py .                                       [ 21%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/cli/__init__.py .                                      [ 22%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/cli/aswfdocker.py .                                    [ 24%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/data/__init__.py .                                     [ 26%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/__init__.py .                                    [ 28%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_builder.py ............                     [ 49%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_dockergen.py ...                            [ 54%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_index.py ......                             [ 64%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_migrater.py .....                           [ 73%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_releaser.py ...                             [ 78%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_settings.py ..                              [ 82%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_utils.py ....F.....                         [100%]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | =================================== FAILURES ===================================\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ________________________ TestUtilsCli.test_cli_download ________________________\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | self = <aswfdocker.tests.test_utils.TestUtilsCli testMethod=test_cli_download>\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     def test_cli_download(self):\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         runner = CliRunner()\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         with tempfile.TemporaryDirectory() as tmpdirname:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | >           result = runner.invoke(\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                 aswfdocker.cli,\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                 [\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     \"--repo-root\",\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     tmpdirname,\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     \"download\",\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     \"--package\",\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     \"tbb\",\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     \"--version\",\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                     \"2019\",\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                 ],\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                 catch_exceptions=False,\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |             )\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/tests/test_utils.py:133: \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/testing.py:408: in invoke\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     return_value = cli.main(args=args or (), prog_name=prog_name, **extra)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/core.py:1055: in main\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     rv = self.invoke(ctx)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/core.py:1657: in invoke\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     return _process_result(sub_ctx.command.invoke(sub_ctx))\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/core.py:1404: in invoke\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     return ctx.invoke(self.callback, **ctx.params)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/core.py:760: in invoke\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     return __callback(*args, **kwargs)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/decorators.py:84: in new_func\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     return ctx.invoke(f, obj, *args, **kwargs)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/click/core.py:760: in invoke\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     return __callback(*args, **kwargs)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/cli/aswfdocker.py:289: in download\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     path = utils.download_package(build_info.repo_root, docker_org, package, version)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | python/aswfdocker/utils.py:70: in download_package\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     subprocess.check_call(\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | popenargs = ('docker pull aswf/ci-package-tbb:2019',), kwargs = {'shell': True}\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | retcode = 1, cmd = 'docker pull aswf/ci-package-tbb:2019'\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     def check_call(*popenargs, **kwargs):\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         \"\"\"Run command with arguments.  Wait for command to complete.  If\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         the exit code was zero then return, otherwise raise\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         CalledProcessError.  The CalledProcessError object will have the\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         return code in the returncode attribute.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         The arguments are the same as for the call function.  Example:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         check_call([\"ls\", \"-l\"])\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         \"\"\"\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         retcode = call(*popenargs, **kwargs)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |         if retcode:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |             cmd = kwargs.get(\"args\")\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |             if cmd is None:\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |                 cmd = popenargs[0]\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | >           raise CalledProcessError(retcode, cmd)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | E           subprocess.CalledProcessError: Command 'docker pull aswf/ci-package-tbb:2019' returned non-zero exit status 1.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/subprocess.py:373: CalledProcessError\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ----------------------------- Captured stderr call -----------------------------\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=aswf%2Fci-package-tbb&tag=2019\": dial unix /var/run/docker.sock: connect: permission denied\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | =============================== warnings summary ===============================\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/pytest_pylint/plugin.py:311: 23 warnings\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/pytest_pylint/plugin.py:311: PytestRemovedIn8Warning: The (fspath: py.path.local) argument to PylintFile is deprecated. Please use the (path: pathlib.Path) argument instead.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   See https://docs.pytest.org/en/latest/deprecations.html#fspath-argument-for-node-constructors-replaced-with-pathlib-path\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     _self = getattr(super(), \"from_parent\", cls)(parent, fspath=fspath)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/requests/__init__.py:102\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/requests/__init__.py:102: RequestsDependencyWarning: urllib3 (1.26.9) or chardet (5.0.0)/charset_normalizer (2.0.12) doesn't match a supported version!\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     warnings.warn(\"urllib3 ({}) or chardet ({})/charset_normalizer ({}) doesn't match a supported \"\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/pytest_pylint/pylint_util.py:16\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/pytest_pylint/pylint_util.py:16: DeprecationWarning: Using the __implements__ inheritance pattern for BaseReporter is no longer supported. Child classes should only inherit BaseReporter\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     BaseReporter.__init__(self, output)\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/pylint/config/deprecation_actions.py:103\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-IO_8x6j_/lib/python3.9/site-packages/pylint/config/deprecation_actions.py:103: DeprecationWarning: --ignore-mixin-members has been deprecated. Please look into using any of the following options: ignore-checks-for-mixin.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |     warnings.warn(\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | pylint: Command line or configuration file:1\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   pylint: Command line or configuration file:1: UserWarning: Specifying exception names in the overgeneral-exceptions option without module name is deprecated and support for it will be removed in pylint 3.0. Use fully qualified name (maybe 'builtins.BaseException' ?) instead.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | pylint: Command line or configuration file:1\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   |   pylint: Command line or configuration file:1: UserWarning: Specifying exception names in the overgeneral-exceptions option without module name is deprecated and support for it will be removed in pylint 3.0. Use fully qualified name (maybe 'builtins.Exception' ?) instead.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/test-pylint-results.xml -\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ----------- coverage: platform linux, python 3.9.6-final-0 -----------\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | Coverage XML written to file coverage.xml\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | \n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | =========================== short test summary info ============================\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | FAILED python/aswfdocker/tests/test_utils.py::TestUtilsCli::test_cli_download - subprocess.CalledProcessError: Command 'docker pull aswf/ci-package-tbb:2019' returned non-zero exit status 1.\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   | ================== 1 failed, 56 passed, 28 warnings in 37.86s ==================\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar]   \u274c  Failure - Main Run pylint linter\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] exitcode '1': failure\n[2a35f7c0-29cb-4578-9a79-5b38db598577/sonar] \ud83c\udfc1  Job failed\n",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "python.aswfdocker.__init__",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.aswfinfo",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.builder",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.constants",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.dockergen",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.groupinfo",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.index",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.migrater",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.releaser",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.settings",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.utils",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.versioninfo",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.cli.__init__",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.cli.aswfdocker",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.data.__init__",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.__init__",
+                "name": "PYLINT",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilder",
+                "name": "test_image_base_2019_2020_dict",
+                "time": 0.446,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilder",
+                "name": "test_image_base_2019_dict",
+                "time": 0.451,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilder",
+                "name": "test_image_base_2019clang_dict",
+                "time": 0.446,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilder",
+                "name": "test_package_baseqt_2019_dict",
+                "time": 0.652,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilder",
+                "name": "test_package_baseqt_2019_dict_conan",
+                "time": 0.637,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilderCli",
+                "name": "test_builder_cli",
+                "time": 0.677,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilderCli",
+                "name": "test_builder_cli_allversions",
+                "time": 0.469,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilderCli",
+                "name": "test_builder_cli_conan",
+                "time": 0.495,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilderCli",
+                "name": "test_builder_cli_fromtag",
+                "time": 0.857,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilderCli",
+                "name": "test_builderlist_cli",
+                "time": 0.875,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_builder.TestBuilderCli",
+                "name": "test_builderlist_cli_conan",
+                "time": 0.966,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_dockergen",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_dockergen.TestDockerGen",
+                "name": "test_dockergen",
+                "time": 0.47,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_dockergen.TestUtilsCli",
+                "name": "test_cli_dockergen",
+                "time": 0.843,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_index",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_index.TestIndex",
+                "name": "test_conan_only",
+                "time": 0.313,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_index.TestIndex",
+                "name": "test_get_versions",
+                "time": 0.317,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_index.TestIndex",
+                "name": "test_group_from_image",
+                "time": 0.302,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_index.TestIndex",
+                "name": "test_iter_images",
+                "time": 0.309,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_index.TestIndex",
+                "name": "test_version_info",
+                "time": 0.201,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_migrater",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_migrater.TestMigrater",
+                "name": "test_migrate_nofilter",
+                "time": 0.176,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_migrater.TestMigrater",
+                "name": "test_migrate_pkgfilter",
+                "time": 0.158,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_migrater.TestMigrater",
+                "name": "test_migrate_versionfilter",
+                "time": 0.463,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_migrater.TestMigraterCli",
+                "name": "test_migrate_cli",
+                "time": 0.31,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_releaser",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_releaser.TestReleaser",
+                "name": "test_package_baseqt_2019_dict",
+                "time": 1.175,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_releaser.TestReleaserCli",
+                "name": "test_migrate_cli",
+                "time": 1.055,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_settings",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_settings.TestSettingsCli",
+                "name": "test_settings_cli",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils",
+                "name": "PYLINT",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtils",
+                "name": "test_get_docker_org",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtils",
+                "name": "test_get_docker_push",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtils",
+                "name": "test_image_def_from_name",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtilsCli",
+                "name": "test_cli_download",
+                "time": 0.083,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "subprocess.CalledProcessError: Command 'docker pull aswf/ci-package-tbb:2019' returned non-zero exit status 1.",
+                        "type": null
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtilsCli",
+                "name": "test_cli_getdockerorg",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtilsCli",
+                "name": "test_cli_getdockerorgforced",
+                "time": 0.027,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtilsCli",
+                "name": "test_cli_getdockerpush",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtilsCli",
+                "name": "test_cli_images",
+                "time": 3.469,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "python.aswfdocker.tests.test_utils.TestUtilsCli",
+                "name": "test_cli_packages",
+                "time": 5.132,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \ud83d\ude80  Start image=crawlergpt:latest\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker] user=0 workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \u2b50 Run Main actions/checkout@v3\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2705  Success - Main actions/checkout@v3\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \u2b50 Run Main Set up Python\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker cp src=/tmp/act-cache/8e146c49-4bfa-43c4-9acd-1c098ee6c32b/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2753  ::group::Installed versions\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? false\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? true\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? true\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? true\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? true\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? true\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::explicit? true\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::evaluating 6 versions\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::matched: 3.9.6\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Successfully set up CPython (3.9.6)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2753  ::endgroup::\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::implicitDescendants 'true'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::matchDirectories 'true'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Search path '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/Pipfile.lock\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Found 1 files to hash.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::global cache directory path is /home/runneradmin/.local/share/virtualenvs\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Resolved Keys:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::[\"setup-python-Linux-python-3.9.6-pipenv-199aadc00db3bca57528ead656bd4bcad141fb3233fc20059a0e2694bef9c20f\"]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::1.5.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:37933/_apis/artifactcache/cache?keys=setup-python-Linux-python-3.9.6-pipenv-199aadc00db3bca57528ead656bd4bcad141fb3233fc20059a0e2694bef9c20f&version=1a9427bd70d6ec13caa94a4d12c7f14ef7bab40c5542d318db08bcb22cddc587\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | pipenv cache is not found\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2705  Success - Main Set up Python\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-output:: python-version=3.9.6\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::set-output:: cache-hit=false\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \u2b50 Run Main Install pipenv\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                                  Dload  Upload   Total   Spent    Left  Speed\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r 86 2110k   86 1824k    0     0  3770k      0 --:--:-- --:--:-- --:--:-- 3770k\r100 2110k  100 2110k    0     0  4089k      0 --:--:-- --:--:-- --:--:-- 4082k\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting pip\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting wheel\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading wheel-0.40.0-py3-none-any.whl (64 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting pipenv\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading pipenv-2023.6.26-py3-none-any.whl (2.8 MB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting setuptools>=67.0.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading setuptools-68.0.0-py3-none-any.whl (804 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting virtualenv-clone>=0.2.5\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting certifi\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting virtualenv>=20.17.1\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting distlib<1,>=0.3.6\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting filelock<4,>=3.12\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Collecting platformdirs<4,>=3.5.1\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Installing collected packages: platformdirs, filelock, distlib, virtualenv-clone, virtualenv, setuptools, certifi, wheel, pipenv, pip\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Attempting uninstall: setuptools\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     Found existing installation: setuptools 56.0.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     Uninstalling setuptools-56.0.0:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |       Successfully uninstalled setuptools-56.0.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   Attempting uninstall: pip\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     Found existing installation: pip 21.2.4\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     Uninstalling pip-21.2.4:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |       Successfully uninstalled pip-21.2.4\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Successfully installed certifi-2023.5.7 distlib-0.3.6 filelock-3.12.2 pip-23.1.2 pipenv-2023.6.26 platformdirs-3.8.0 setuptools-68.0.0 virtualenv-20.23.1 virtualenv-clone-0.5.7 wheel-0.40.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2705  Success - Main Install pipenv\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \u2b50 Run Main Install aswfdocker and dev dependencies with pipenv\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Creating a virtualenv for this project...\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Pipfile: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/Pipfile\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Using /opt/hostedtoolcache/Python/3.9.6/x64/bin/python3.9 (3.9.6) to create virtualenv...\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | created virtual environment CPython3.9.6.final.0-64 in 951ms\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   creator CPython3Posix(dest=/home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps, clear=False, no_vcs_ignore=False, global=False)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/runneradmin/.local/share/virtualenv)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     added seed packages: pip==23.1.2, setuptools==67.8.0, wheel==0.40.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Successfully created virtual environment!\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Virtualenv location: /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Installing dependencies from Pipfile.lock (c6ce5c)...\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:running egg_info\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:creating /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/PKG-INFO\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing dependency_links to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/dependency_links.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing entry points to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/entry_points.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing requirements to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/requires.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing top-level names to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/top_level.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing manifest file '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:reading manifest file '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:adding license file 'LICENSE'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing manifest file '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Installing dependencies from Pipfile.lock (c6ce5c)...\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:running egg_info\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/PKG-INFO\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing dependency_links to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/dependency_links.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing entry points to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/entry_points.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing requirements to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/requires.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing top-level names to /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/top_level.txt\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:reading manifest file '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:adding license file 'LICENSE'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | INFO:root:writing manifest file '/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/reqlib-metadata/aswfdocker.egg-info/SOURCES.txt'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | To activate this project's virtualenv, run pipenv shell.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Alternatively, run a command inside the virtualenv with pipenv run.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2705  Success - Main Install aswfdocker and dev dependencies with pipenv\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \u2b50 Run Main Run mypy\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Success: no issues found in 23 source files\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u2705  Success - Main Run mypy\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \u2b50 Run Main Run pylint linter\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ============================= test session starts ==============================\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | platform linux -- Python 3.9.6, pytest-7.3.1, pluggy-1.0.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | configfile: pyproject.toml\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | plugins: cov-4.0.0, pylint-0.19.0\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | collected 57 items\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | --------------------------------------------------------------------------------\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Linting files\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ..................................................\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | --------------------------------------------------------------------------------\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/__init__.py .                                          [  1%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/aswfinfo.py .                                          [  3%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/builder.py .                                           [  5%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/constants.py .                                         [  7%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/dockergen.py .                                         [  8%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/groupinfo.py .                                         [ 10%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/index.py .                                             [ 12%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/migrater.py .                                          [ 14%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/releaser.py .                                          [ 15%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/settings.py .                                          [ 17%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/utils.py .                                             [ 19%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/versioninfo.py .                                       [ 21%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/cli/__init__.py .                                      [ 22%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/cli/aswfdocker.py .                                    [ 24%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/data/__init__.py .                                     [ 26%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/__init__.py .                                    [ 28%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_builder.py ............                     [ 49%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_dockergen.py ...                            [ 54%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_index.py ......                             [ 64%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_migrater.py .....                           [ 73%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_releaser.py ...                             [ 78%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_settings.py ..                              [ 82%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_utils.py ....F.....                         [100%]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | =================================== FAILURES ===================================\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ________________________ TestUtilsCli.test_cli_download ________________________\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | self = <aswfdocker.tests.test_utils.TestUtilsCli testMethod=test_cli_download>\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     def test_cli_download(self):\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         runner = CliRunner()\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         with tempfile.TemporaryDirectory() as tmpdirname:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | >           result = runner.invoke(\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                 aswfdocker.cli,\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                 [\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     \"--repo-root\",\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     tmpdirname,\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     \"download\",\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     \"--package\",\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     \"tbb\",\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     \"--version\",\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                     \"2019\",\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                 ],\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                 catch_exceptions=False,\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |             )\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/tests/test_utils.py:133: \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/testing.py:408: in invoke\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     return_value = cli.main(args=args or (), prog_name=prog_name, **extra)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/core.py:1055: in main\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     rv = self.invoke(ctx)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/core.py:1657: in invoke\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     return _process_result(sub_ctx.command.invoke(sub_ctx))\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/core.py:1404: in invoke\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     return ctx.invoke(self.callback, **ctx.params)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/core.py:760: in invoke\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     return __callback(*args, **kwargs)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/decorators.py:84: in new_func\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     return ctx.invoke(f, obj, *args, **kwargs)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/click/core.py:760: in invoke\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     return __callback(*args, **kwargs)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/cli/aswfdocker.py:289: in download\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     path = utils.download_package(build_info.repo_root, docker_org, package, version)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | python/aswfdocker/utils.py:70: in download_package\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     subprocess.check_call(\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | popenargs = ('docker pull aswf/ci-package-tbb:2019',), kwargs = {'shell': True}\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | retcode = 1, cmd = 'docker pull aswf/ci-package-tbb:2019'\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     def check_call(*popenargs, **kwargs):\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         \"\"\"Run command with arguments.  Wait for command to complete.  If\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         the exit code was zero then return, otherwise raise\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         CalledProcessError.  The CalledProcessError object will have the\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         return code in the returncode attribute.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         The arguments are the same as for the call function.  Example:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         check_call([\"ls\", \"-l\"])\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         \"\"\"\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         retcode = call(*popenargs, **kwargs)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |         if retcode:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |             cmd = kwargs.get(\"args\")\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |             if cmd is None:\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |                 cmd = popenargs[0]\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | >           raise CalledProcessError(retcode, cmd)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | E           subprocess.CalledProcessError: Command 'docker pull aswf/ci-package-tbb:2019' returned non-zero exit status 1.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/subprocess.py:373: CalledProcessError\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ----------------------------- Captured stderr call -----------------------------\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=aswf%2Fci-package-tbb&tag=2019\": dial unix /var/run/docker.sock: connect: permission denied\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | =============================== warnings summary ===============================\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/pytest_pylint/plugin.py:311: 23 warnings\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/pytest_pylint/plugin.py:311: PytestRemovedIn8Warning: The (fspath: py.path.local) argument to PylintFile is deprecated. Please use the (path: pathlib.Path) argument instead.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   See https://docs.pytest.org/en/latest/deprecations.html#fspath-argument-for-node-constructors-replaced-with-pathlib-path\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     _self = getattr(super(), \"from_parent\", cls)(parent, fspath=fspath)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/requests/__init__.py:102\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/requests/__init__.py:102: RequestsDependencyWarning: urllib3 (1.26.9) or chardet (5.0.0)/charset_normalizer (2.0.12) doesn't match a supported version!\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     warnings.warn(\"urllib3 ({}) or chardet ({})/charset_normalizer ({}) doesn't match a supported \"\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/pytest_pylint/pylint_util.py:16\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/pytest_pylint/pylint_util.py:16: DeprecationWarning: Using the __implements__ inheritance pattern for BaseReporter is no longer supported. Child classes should only inherit BaseReporter\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     BaseReporter.__init__(self, output)\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ../../../home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/pylint/config/deprecation_actions.py:103\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   /home/runneradmin/.local/share/virtualenvs/AcademySoftwareFoundation-aswf-docker-G6fceqps/lib/python3.9/site-packages/pylint/config/deprecation_actions.py:103: DeprecationWarning: --ignore-mixin-members has been deprecated. Please look into using any of the following options: ignore-checks-for-mixin.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |     warnings.warn(\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | pylint: Command line or configuration file:1\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   pylint: Command line or configuration file:1: UserWarning: Specifying exception names in the overgeneral-exceptions option without module name is deprecated and support for it will be removed in pylint 3.0. Use fully qualified name (maybe 'builtins.BaseException' ?) instead.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | pylint: Command line or configuration file:1\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   |   pylint: Command line or configuration file:1: UserWarning: Specifying exception names in the overgeneral-exceptions option without module name is deprecated and support for it will be removed in pylint 3.0. Use fully qualified name (maybe 'builtins.Exception' ?) instead.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/report.xml -\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ----------- coverage: platform linux, python 3.9.6-final-0 -----------\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | Coverage XML written to file coverage.xml\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | \n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | =========================== short test summary info ============================\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | FAILED python/aswfdocker/tests/test_utils.py::TestUtilsCli::test_cli_download - subprocess.CalledProcessError: Command 'docker pull aswf/ci-package-tbb:2019' returned non-zero exit status 1.\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   | ================== 1 failed, 56 passed, 28 warnings in 35.61s ==================\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar]   \u274c  Failure - Main Run pylint linter\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] exitcode '1': failure\n[086e61a5-71f4-460a-a492-9431b8d695bf/sonar] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'sonar' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/.github/workflows/python-sonar-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/AcademySoftwareFoundation-aswf-docker/.github/workflows/python-sonar-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "086e61a5-71f4-460a-a492-9431b8d695bf",
         "build_tool": "pytest",
-        "elapsed_time": 266.39760851860046
+        "elapsed_time": 202.2458519935608
     }
 }

@@ -4,11 +4,11 @@
     "language": "python",
     "size": 9508,
     "clone_url": "https://github.com/tensorflow/model-card-toolkit.git",
-    "timestamp": "2023-06-28T15:46:10.118030Z",
+    "timestamp": "2023-07-01T15:16:24.332018Z",
     "clone_success": true,
     "number_of_actions": 4,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "unknown",
         "unknown",
@@ -19,12 +19,871 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[b01dfb16-ec63-4256-8276-106b532409a7/ci] \ud83d\ude80  Start image=crawlergpt:latest\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit] user=0 workdir=\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] \ud83e\uddea  Matrix: map[dependencies:test name:base tests:model_card_toolkit --ignore-requires-optional-deps]\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] \u2b50 Run Main actions/checkout@v3\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2705  Success - Main actions/checkout@v3\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] \u2b50 Run Main Set up Python 3.7\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker cp src=/tmp/act-cache/0453cacb-2c9f-4de3-af20-5a0d9667f727/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2753  ::group::Installed versions\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: \n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? false\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? true\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? true\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? true\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? true\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? true\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::explicit? true\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::evaluating 6 versions\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::matched: 3.7.11\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Successfully set up CPython (3.7.11)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2753  ::endgroup::\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2705  Success - Main Set up Python 3.7\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::set-output:: python-version=3.7.11\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] \u2b50 Run Main Cache python environment\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker cp src=/tmp/act-cache/0453cacb-2c9f-4de3-af20-5a0d9667f727/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v3/] user=0 workdir=\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Resolved Keys:\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::[\"Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b\",\"Linux-pip\"]\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::1.5.0\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:38183/_apis/artifactcache/cache?keys=Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b%252CLinux-pip&version=2a50607a47f0c27aad98b33e03fa13615fdc9c33dc4fff3945d2d5078a8f7664\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Cache not found for input keys: Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b, Linux-pip\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u2705  Success - Main Cache python environment\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] \u2b50 Run Main Install dependencies\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pip\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting wheel\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading wheel-0.40.0-py3-none-any.whl (64 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Installing collected packages: wheel, pip\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Attempting uninstall: pip\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |     Found existing installation: pip 21.2.4\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |     Uninstalling pip-21.2.4:\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |       Successfully uninstalled pip-21.2.4\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Successfully installed pip-23.1.2 wheel-0.40.0\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Obtaining file:///tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Installing build dependencies: started\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Installing build dependencies: finished with status 'done'\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Checking if build backend supports build_editable: started\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Checking if build backend supports build_editable: finished with status 'done'\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Getting requirements to build editable: started\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Getting requirements to build editable: finished with status 'done'\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Preparing editable metadata (pyproject.toml): started\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Preparing editable metadata (pyproject.toml): finished with status 'done'\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting jinja2<3.2,>=3.1 (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 133.1/133.1 kB 9.9 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting jsonschema<4,>=3.2.0 (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 56.3/56.3 kB 865.1 kB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting matplotlib<4,>=3.2.0 (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.2/11.2 MB 25.5 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting protobuf<4,>=3.19.0 (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading protobuf-3.20.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.0/1.0 MB 12.8 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting importlib-resources>=1.3.0 (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading importlib_resources-5.12.0-py3-none-any.whl (36 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting absl-py<1.1,>=0.9 (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading absl_py-1.0.0-py3-none-any.whl (126 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 126.7/126.7 kB 3.2 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting isort (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading isort-5.11.5-py3-none-any.whl (104 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 104.1/104.1 kB 2.9 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pre-commit (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pre_commit-2.21.0-py2.py3-none-any.whl (201 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 201.9/201.9 kB 2.1 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pylint (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pylint-2.17.4-py3-none-any.whl (536 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 536.6/536.6 kB 15.0 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pytest (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 12.1 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting yapf (from model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading yapf-0.40.1-py3-none-any.whl (250 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 250.3/250.3 kB 19.2 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting six (from absl-py<1.1,>=0.9->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting zipp>=3.1.0 (from importlib-resources>=1.3.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting MarkupSafe>=2.0 (from jinja2<3.2,>=3.1->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading MarkupSafe-2.1.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting attrs>=17.4.0 (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.2/61.2 kB 2.7 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pyrsistent>=0.14.0 (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.5/57.5 kB 1.2 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0) (47.1.0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting importlib-metadata (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting cycler>=0.10 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting fonttools>=4.22.0 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 965.4/965.4 kB 10.8 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting kiwisolver>=1.0.1 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading kiwisolver-1.4.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.1/1.1 MB 14.3 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting numpy>=1.17 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 15.7/15.7 MB 29.8 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting packaging>=20.0 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 3.5 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pillow>=6.2.0 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading Pillow-9.5.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.4 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.4/3.4 MB 36.2 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pyparsing>=2.2.1 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 kB 1.6 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting python-dateutil>=2.7 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 247.7/247.7 kB 3.1 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting cfgv>=2.0.0 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting identify>=1.0.0 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.8/98.8 kB 3.1 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting nodeenv>=0.11.1 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading nodeenv-1.8.0-py2.py3-none-any.whl (22 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pyyaml>=5.1 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 596.3/596.3 kB 31.0 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting virtualenv>=20.10.0 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.3/3.3 MB 25.9 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting platformdirs>=2.2.0 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting astroid<=2.17.0-dev0,>=2.15.4 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading astroid-2.15.5-py3-none-any.whl (278 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 278.1/278.1 kB 7.0 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting mccabe<0.8,>=0.6 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting tomlkit>=0.10.1 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading tomlkit-0.11.8-py3-none-any.whl (35 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting typing-extensions>=3.10.0 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting dill>=0.2 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading dill-0.3.6-py3-none-any.whl (110 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 110.5/110.5 kB 710.8 kB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting tomli>=1.1.0 (from pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting iniconfig (from pytest->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting pluggy<2.0,>=0.12 (from pytest->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting lazy-object-proxy>=1.4.0 (from astroid<=2.17.0-dev0,>=2.15.4->pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading lazy_object_proxy-1.9.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (58 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 58.5/58.5 kB 3.0 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting typed-ast<2.0,>=1.4.0 (from astroid<=2.17.0-dev0,>=2.15.4->pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading typed_ast-1.5.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (843 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 843.7/843.7 kB 24.0 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting wrapt<2,>=1.11 (from astroid<=2.17.0-dev0,>=2.15.4->pylint->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading wrapt-1.15.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (75 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 75.7/75.7 kB 459.7 kB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting distlib<1,>=0.3.6 (from virtualenv>=20.10.0->pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 468.5/468.5 kB 11.4 MB/s eta 0:00:00\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Collecting filelock<4,>=3.12 (from virtualenv>=20.10.0->pre-commit->model-card-toolkit==3.0.0.dev0)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Building wheels for collected packages: model-card-toolkit\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Building editable for model-card-toolkit (pyproject.toml): started\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Building editable for model-card-toolkit (pyproject.toml): finished with status 'done'\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Created wheel for model-card-toolkit: filename=model_card_toolkit-3.0.0.dev0-0.editable-py3-none-any.whl size=8987 sha256=7fe620a2efaa197b0c4d4bf72aed54ab2d949d4adda64f1f422719b2bc00fd30\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   |   Stored in directory: /tmp/pip-ephem-wheel-cache-uxc32qbg/wheels/58/f3/07/47e2d245f7bb8f6fc5331c6c86a89f7f9300083410e0628207\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Successfully built model-card-toolkit\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Installing collected packages: distlib, zipp, wrapt, typing-extensions, typed-ast, tomlkit, tomli, six, pyyaml, pyrsistent, pyparsing, protobuf, pillow, packaging, numpy, nodeenv, mccabe, MarkupSafe, lazy-object-proxy, isort, iniconfig, identify, fonttools, filelock, exceptiongroup, dill, cycler, cfgv, python-dateutil, platformdirs, kiwisolver, jinja2, importlib-resources, importlib-metadata, astroid, absl-py, yapf, virtualenv, pylint, pluggy, matplotlib, attrs, pytest, pre-commit, jsonschema, model-card-toolkit\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | Successfully installed MarkupSafe-2.1.3 absl-py-1.0.0 astroid-2.15.5 attrs-23.1.0 cfgv-3.3.1 cycler-0.11.0 dill-0.3.6 distlib-0.3.6 exceptiongroup-1.1.1 filelock-3.12.2 fonttools-4.38.0 identify-2.5.24 importlib-metadata-6.7.0 importlib-resources-5.12.0 iniconfig-2.0.0 isort-5.11.5 jinja2-3.1.2 jsonschema-3.2.0 kiwisolver-1.4.4 lazy-object-proxy-1.9.0 matplotlib-3.5.3 mccabe-0.7.0 model-card-toolkit-3.0.0.dev0 nodeenv-1.8.0 numpy-1.21.6 packaging-23.1 pillow-9.5.0 platformdirs-3.8.0 pluggy-1.2.0 pre-commit-2.21.0 protobuf-3.20.3 pylint-2.17.4 pyparsing-3.1.0 pyrsistent-0.19.3 pytest-7.4.0 python-dateutil-2.8.2 pyyaml-6.0 six-1.16.0 tomli-2.0.1 tomlkit-0.11.8 typed-ast-1.5.4 typing-extensions-4.6.3 virtualenv-20.23.1 wrapt-1.15.0 yapf-0.40.1 zipp-3.15.0\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | \n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   | [notice] To update, run: pip install --upgrade pip\n[b01dfb16-ec63-4256-8276-106b532409a7/ci]   \u274c  Failure - Main Install dependencies\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] failed to inspect exec: Error response from daemon: No such exec instance: e20edfabe1a2a6d690d4f52c10399dda89cadac2505f37817ecd49d3741e4bd4\n[b01dfb16-ec63-4256-8276-106b532409a7/ci] \ud83c\udfc1  Job failed\n",
-        "stderr": "Error: Job 'ci' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit/.github/workflows/ci-crawler.yml",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_export_format",
+                "time": 0.121,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_export_format_before_scaffold_assets",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_export_format_with_customized_template_and_output_name",
+                "time": 0.167,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_scaffold_assets",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_scaffold_assets_with_json",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_update_model_card_with_valid_model_card",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_test.CoreTest",
+                "name": "test_update_model_card_with_valid_model_card_as_proto",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_init_with_source_and_missing_tensorflow_extra_deps",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_init_with_store_and_missing_tensorflow_extra_deps",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_init_with_store_model_uri_not_found",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_empty_source",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_invalid_tfdv_source",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_invalid_tfma_source",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_source0",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_source1",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_source2",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_source3",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.core_tf_test.TfCoreTest",
+                "name": "test_scaffold_assets_with_store",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.dependencies_test.DependenciesTest",
+                "name": "test_ensure_tensorflow_extra_deps_installed",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.dependencies_test.DependenciesTest",
+                "name": "test_ensure_tensorflow_extra_deps_installed_fails",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.dependencies_test.DependenciesTest",
+                "name": "test_has_tensorflow_extra_deps",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.dependencies_test.DependenciesTest",
+                "name": "test_has_tensorflow_extra_deps_with_missing_dep",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_copy_from_proto_shows_deprecation_warning",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_invalid_json",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_invalid_json_vesion",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_json_and_to_json_with_all_fields",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_json_to_proto",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_proto_and_to_proto_with_all_fields",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_proto_success",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_proto_to_json",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_from_proto_with_invalid_proto",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_merge_from_json_dict_and_str",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_merge_from_json_does_not_overwrite_all_fields",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_merge_from_proto_and_to_proto_with_all_fields",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_merge_from_proto_success",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_merge_from_proto_with_invalid_proto",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_render",
+                "time": 0.088,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_save_and_load_model_card",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_save_model_card_with_overwrite",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_to_proto_success",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.model_card_test.ModelCardTest",
+                "name": "test_to_proto_with_invalid_field",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.documentation.examples.cats_vs_dogs_test.CatsVsDogsTest",
+                "name": "test_get_data",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Missing optional dependencies.",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.graphics_test.GraphicsTest",
+                "name": "test_stringify_slice_key0",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.graphics_test.GraphicsTest",
+                "name": "test_stringify_slice_key1",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.graphics_test.GraphicsTest",
+                "name": "test_stringify_slice_key2",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.graphics_test.GraphicsTest",
+                "name": "test_stringify_slice_key3",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.graphics_test.GraphicsTest",
+                "name": "test_stringify_slice_key4",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.io_utils_test.IoUtilsTest",
+                "name": "test_suffix",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.io_utils_test.IoUtilsTest",
+                "name": "test_write_and_parse_proto",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.io_utils_test.IoUtilsTest",
+                "name": "test_write_and_read_file",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_json_update_latest_version_should_be_identity_function",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_json_update_succeeds",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_json_update_validation_error",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_template_test_files_cats_vs_dogs",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_template_test_files_considerations",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_template_test_files_full",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_template_test_files_train_data",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_validate_json_schema",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_validate_json_schema_invalid_dict",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.json_utils_test.JsonUtilsTest",
+                "name": "test_validate_json_schema_invalid_version",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "model_card_toolkit.utils.template_utils_test.TemplateUtilsTest",
+                "name": "test_render",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \ud83d\ude80  Start image=crawlergpt:latest\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit] user=0 workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \ud83e\uddea  Matrix: map[dependencies:test name:base tests:model_card_toolkit --ignore-requires-optional-deps]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Main actions/checkout@v3\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Main actions/checkout@v3\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Main Set up Python 3.7\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker cp src=/tmp/act-cache/25d08552-f2da-4b9c-8ebb-d8d6dc4dbd97/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2753  ::group::Installed versions\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: \n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? false\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? true\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? true\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? true\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? true\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? true\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::explicit? true\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::evaluating 6 versions\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::matched: 3.7.11\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Successfully set up CPython (3.7.11)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2753  ::endgroup::\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Main Set up Python 3.7\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-output:: python-version=3.7.11\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Main Cache python environment\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker cp src=/tmp/act-cache/25d08552-f2da-4b9c-8ebb-d8d6dc4dbd97/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v3/] user=0 workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Resolved Keys:\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::[\"Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b\",\"Linux-pip\"]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::1.5.0\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:40371/_apis/artifactcache/cache?keys=Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b%252CLinux-pip&version=2a50607a47f0c27aad98b33e03fa13615fdc9c33dc4fff3945d2d5078a8f7664\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Cache not found for input keys: Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b, Linux-pip\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Main Cache python environment\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Main Install dependencies\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pip\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting wheel\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading wheel-0.40.0-py3-none-any.whl (64 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Installing collected packages: wheel, pip\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Attempting uninstall: pip\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |     Found existing installation: pip 21.2.4\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |     Uninstalling pip-21.2.4:\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |       Successfully uninstalled pip-21.2.4\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Successfully installed pip-23.1.2 wheel-0.40.0\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Obtaining file:///tmp/558156d8-17ed-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Installing build dependencies: started\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Installing build dependencies: finished with status 'done'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Checking if build backend supports build_editable: started\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Checking if build backend supports build_editable: finished with status 'done'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Getting requirements to build editable: started\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Getting requirements to build editable: finished with status 'done'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Preparing editable metadata (pyproject.toml): started\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Preparing editable metadata (pyproject.toml): finished with status 'done'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting jinja2<3.2,>=3.1 (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 133.1/133.1 kB 4.5 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting jsonschema<4,>=3.2.0 (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 56.3/56.3 kB 3.0 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting matplotlib<4,>=3.2.0 (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.2/11.2 MB 14.4 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting protobuf<4,>=3.19.0 (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading protobuf-3.20.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.0/1.0 MB 13.3 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting importlib-resources>=1.3.0 (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading importlib_resources-5.12.0-py3-none-any.whl (36 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting absl-py<1.1,>=0.9 (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading absl_py-1.0.0-py3-none-any.whl (126 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 126.7/126.7 kB 2.2 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting isort (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading isort-5.11.5-py3-none-any.whl (104 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 104.1/104.1 kB 7.6 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pre-commit (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pre_commit-2.21.0-py2.py3-none-any.whl (201 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 201.9/201.9 kB 9.1 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pylint (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pylint-2.17.4-py3-none-any.whl (536 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 536.6/536.6 kB 12.7 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pytest (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 5.3 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting yapf (from model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading yapf-0.40.1-py3-none-any.whl (250 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 250.3/250.3 kB 6.2 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting six (from absl-py<1.1,>=0.9->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting zipp>=3.1.0 (from importlib-resources>=1.3.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting MarkupSafe>=2.0 (from jinja2<3.2,>=3.1->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading MarkupSafe-2.1.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting attrs>=17.4.0 (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.2/61.2 kB 7.9 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pyrsistent>=0.14.0 (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.5/57.5 kB 4.1 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0) (47.1.0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting importlib-metadata (from jsonschema<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting cycler>=0.10 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting fonttools>=4.22.0 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 965.4/965.4 kB 13.7 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting kiwisolver>=1.0.1 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading kiwisolver-1.4.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.1/1.1 MB 8.9 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting numpy>=1.17 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 15.7/15.7 MB 20.9 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting packaging>=20.0 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 1.4 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pillow>=6.2.0 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading Pillow-9.5.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.4 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.4/3.4 MB 11.7 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pyparsing>=2.2.1 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 kB 3.0 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting python-dateutil>=2.7 (from matplotlib<4,>=3.2.0->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 247.7/247.7 kB 4.6 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting cfgv>=2.0.0 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting identify>=1.0.0 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.8/98.8 kB 975.3 kB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting nodeenv>=0.11.1 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading nodeenv-1.8.0-py2.py3-none-any.whl (22 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pyyaml>=5.1 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 596.3/596.3 kB 18.1 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting virtualenv>=20.10.0 (from pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.3/3.3 MB 14.2 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting platformdirs>=2.2.0 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting astroid<=2.17.0-dev0,>=2.15.4 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading astroid-2.15.5-py3-none-any.whl (278 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 278.1/278.1 kB 13.3 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting mccabe<0.8,>=0.6 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting tomlkit>=0.10.1 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading tomlkit-0.11.8-py3-none-any.whl (35 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting typing-extensions>=3.10.0 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading typing_extensions-4.7.0-py3-none-any.whl (33 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting dill>=0.2 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading dill-0.3.6-py3-none-any.whl (110 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 110.5/110.5 kB 1.3 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting tomli>=1.1.0 (from pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting iniconfig (from pytest->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting pluggy<2.0,>=0.12 (from pytest->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting lazy-object-proxy>=1.4.0 (from astroid<=2.17.0-dev0,>=2.15.4->pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading lazy_object_proxy-1.9.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (58 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 58.5/58.5 kB 1.2 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting typed-ast<2.0,>=1.4.0 (from astroid<=2.17.0-dev0,>=2.15.4->pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading typed_ast-1.5.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (843 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 843.7/843.7 kB 6.0 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting wrapt<2,>=1.11 (from astroid<=2.17.0-dev0,>=2.15.4->pylint->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading wrapt-1.15.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (75 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 75.7/75.7 kB 1.2 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting distlib<1,>=0.3.6 (from virtualenv>=20.10.0->pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 468.5/468.5 kB 23.5 MB/s eta 0:00:00\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Collecting filelock<4,>=3.12 (from virtualenv>=20.10.0->pre-commit->model-card-toolkit==3.0.0.dev0)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Building wheels for collected packages: model-card-toolkit\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Building editable for model-card-toolkit (pyproject.toml): started\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Building editable for model-card-toolkit (pyproject.toml): finished with status 'done'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Created wheel for model-card-toolkit: filename=model_card_toolkit-3.0.0.dev0-0.editable-py3-none-any.whl size=8986 sha256=43f69ae15e3f22d553c6193bd54ee7645487a493cce0c7a7125781aa4b765162\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   |   Stored in directory: /tmp/pip-ephem-wheel-cache-v8omorn3/wheels/af/f4/59/5d840d7031e92f299179ea90eb832f8d6be0cb805c7a9690b3\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Successfully built model-card-toolkit\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Installing collected packages: distlib, zipp, wrapt, typing-extensions, typed-ast, tomlkit, tomli, six, pyyaml, pyrsistent, pyparsing, protobuf, pillow, packaging, numpy, nodeenv, mccabe, MarkupSafe, lazy-object-proxy, isort, iniconfig, identify, fonttools, filelock, exceptiongroup, dill, cycler, cfgv, python-dateutil, platformdirs, kiwisolver, jinja2, importlib-resources, importlib-metadata, astroid, absl-py, yapf, virtualenv, pylint, pluggy, matplotlib, attrs, pytest, pre-commit, jsonschema, model-card-toolkit\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Successfully installed MarkupSafe-2.1.3 absl-py-1.0.0 astroid-2.15.5 attrs-23.1.0 cfgv-3.3.1 cycler-0.11.0 dill-0.3.6 distlib-0.3.6 exceptiongroup-1.1.1 filelock-3.12.2 fonttools-4.38.0 identify-2.5.24 importlib-metadata-6.7.0 importlib-resources-5.12.0 iniconfig-2.0.0 isort-5.11.5 jinja2-3.1.2 jsonschema-3.2.0 kiwisolver-1.4.4 lazy-object-proxy-1.9.0 matplotlib-3.5.3 mccabe-0.7.0 model-card-toolkit-3.0.0.dev0 nodeenv-1.8.0 numpy-1.21.6 packaging-23.1 pillow-9.5.0 platformdirs-3.8.0 pluggy-1.2.0 pre-commit-2.21.0 protobuf-3.20.3 pylint-2.17.4 pyparsing-3.1.0 pyrsistent-0.19.3 pytest-7.4.0 python-dateutil-2.8.2 pyyaml-6.0 six-1.16.0 tomli-2.0.1 tomlkit-0.11.8 typed-ast-1.5.4 typing-extensions-4.7.0 virtualenv-20.23.1 wrapt-1.15.0 yapf-0.40.1 zipp-3.15.0\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | \n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | [notice] To update, run: pip install --upgrade pip\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Main Install dependencies\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Main Run tests\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | ============================= test session starts ==============================\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0 -- /opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | cachedir: .pytest_cache\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | configfile: pyproject.toml\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | collecting ... collected 61 items\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | \n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_export_format PASSED     [  1%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_export_format_before_scaffold_assets PASSED [  3%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_export_format_with_customized_template_and_output_name PASSED [  4%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_scaffold_assets PASSED   [  6%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_scaffold_assets_with_json PASSED [  8%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_update_model_card_with_valid_model_card PASSED [  9%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_test.py::CoreTest::test_update_model_card_with_valid_model_card_as_proto PASSED [ 11%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_init_with_source_and_missing_tensorflow_extra_deps SKIPPED [ 13%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_init_with_store_and_missing_tensorflow_extra_deps SKIPPED [ 14%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_init_with_store_model_uri_not_found SKIPPED [ 16%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_empty_source SKIPPED [ 18%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_invalid_tfdv_source SKIPPED [ 19%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_invalid_tfma_source SKIPPED [ 21%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_source0 SKIPPED [ 22%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_source1 SKIPPED [ 24%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_source2 SKIPPED [ 26%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_source3 SKIPPED [ 27%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/core_tf_test.py::TfCoreTest::test_scaffold_assets_with_store SKIPPED [ 29%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/dependencies_test.py::DependenciesTest::test_ensure_tensorflow_extra_deps_installed PASSED [ 31%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/dependencies_test.py::DependenciesTest::test_ensure_tensorflow_extra_deps_installed_fails PASSED [ 32%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/dependencies_test.py::DependenciesTest::test_has_tensorflow_extra_deps PASSED [ 34%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/dependencies_test.py::DependenciesTest::test_has_tensorflow_extra_deps_with_missing_dep PASSED [ 36%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_copy_from_proto_shows_deprecation_warning PASSED [ 37%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_invalid_json PASSED [ 39%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_invalid_json_vesion PASSED [ 40%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_json_and_to_json_with_all_fields PASSED [ 42%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_json_to_proto PASSED [ 44%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_proto_and_to_proto_with_all_fields PASSED [ 45%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_proto_success PASSED [ 47%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_proto_to_json PASSED [ 49%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_from_proto_with_invalid_proto PASSED [ 50%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_merge_from_json_dict_and_str PASSED [ 52%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_merge_from_json_does_not_overwrite_all_fields PASSED [ 54%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_merge_from_proto_and_to_proto_with_all_fields PASSED [ 55%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_merge_from_proto_success PASSED [ 57%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_merge_from_proto_with_invalid_proto PASSED [ 59%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_render PASSED [ 60%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_save_and_load_model_card PASSED [ 62%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_save_model_card_with_overwrite PASSED [ 63%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_to_proto_success PASSED [ 65%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/model_card_test.py::ModelCardTest::test_to_proto_with_invalid_field PASSED [ 67%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/documentation/examples/cats_vs_dogs_test.py::CatsVsDogsTest::test_get_data SKIPPED [ 68%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/graphics_test.py::GraphicsTest::test_stringify_slice_key0 PASSED [ 70%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/graphics_test.py::GraphicsTest::test_stringify_slice_key1 PASSED [ 72%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/graphics_test.py::GraphicsTest::test_stringify_slice_key2 PASSED [ 73%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/graphics_test.py::GraphicsTest::test_stringify_slice_key3 PASSED [ 75%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/graphics_test.py::GraphicsTest::test_stringify_slice_key4 PASSED [ 77%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/io_utils_test.py::IoUtilsTest::test_suffix PASSED [ 78%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/io_utils_test.py::IoUtilsTest::test_write_and_parse_proto PASSED [ 80%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/io_utils_test.py::IoUtilsTest::test_write_and_read_file PASSED [ 81%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_json_update_latest_version_should_be_identity_function PASSED [ 83%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_json_update_succeeds PASSED [ 85%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_json_update_validation_error PASSED [ 86%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_template_test_files_cats_vs_dogs PASSED [ 88%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_template_test_files_considerations PASSED [ 90%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_template_test_files_full PASSED [ 91%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_template_test_files_train_data PASSED [ 93%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_validate_json_schema PASSED [ 95%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_validate_json_schema_invalid_dict PASSED [ 96%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/json_utils_test.py::JsonUtilsTest::test_validate_json_schema_invalid_version PASSED [ 98%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | model_card_toolkit/utils/template_utils_test.py::TemplateUtilsTest::test_render PASSED [100%]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | \n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit/report.xml -\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | ======================== 49 passed, 12 skipped in 3.87s ========================\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Main Run tests\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Post Cache python environment\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/save/index.js] user= workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::1.5.0\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::followSymbolicLinks 'true'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::implicitDescendants 'false'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::omitBrokenSymbolicLinks 'true'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Search path '/home/runneradmin/.cache/pip'\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Matched: ../../../home/runneradmin/.cache/pip\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Cache Paths:\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::[\"../../../home/runneradmin/.cache/pip\"]\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Archive Path: /tmp/75806fd0-476b-46ca-ac99-233954186d9b/cache.tzst\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /tmp/558156d8-17ed-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit --files-from manifest.txt --use-compress-program zstdmt\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::File Size: 46294597\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Reserving Cache\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:40371/_apis/artifactcache/caches\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Saving Cache (ID: 1)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Upload cache\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:40371/_apis/artifactcache/caches/1\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Upload concurrency: 4\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Upload chunk size: 33554432\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Awaiting all uploads\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Uploading chunk of size 33554432 bytes at offset 0 with content range: bytes 0-33554431/*\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Uploading chunk of size 12740165 bytes at offset 33554432 with content range: bytes 33554432-46294596/*\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Commiting cache\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Cache Size: ~44 MB (46294597 B)\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:40371/_apis/artifactcache/caches/1\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Cache saved successfully\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   | Cache saved with key: Linux-pip-base-dcca23ea10ccf47164c85be6fb98ef22335c8e5618b4fc1f9e74a90ec87c0e1b\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Post Cache python environment\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \u2b50 Run Post Set up Python 3.7\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci]   \u2705  Success - Post Set up Python 3.7\n[ee012113-ad48-4aaf-9c99-f44b0074cddd/ci] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/tensorflow-model-card-toolkit/.github/workflows/ci-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "ee012113-ad48-4aaf-9c99-f44b0074cddd",
         "build_tool": "pytest",
-        "elapsed_time": 593.361070394516
+        "elapsed_time": 547.3466682434082
     }
 }

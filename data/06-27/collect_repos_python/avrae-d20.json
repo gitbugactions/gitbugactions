@@ -1,14 +1,14 @@
 {
     "repository": "avrae/d20",
-    "stars": 92,
+    "stars": 93,
     "language": "python",
     "size": 101,
     "clone_url": "https://github.com/avrae/d20.git",
-    "timestamp": "2023-06-28T14:46:37.193180Z",
+    "timestamp": "2023-07-01T14:17:44.105266Z",
     "clone_success": true,
     "number_of_actions": 3,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "unknown",
         "pytest",
@@ -18,12 +18,633 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \ud83d\ude80  Start image=crawlergpt:latest\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/avrae-d20] user=0 workdir=\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \u2b50 Run Main actions/checkout@v1\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2705  Success - Main actions/checkout@v1\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \u2b50 Run Main Set up Python 3.6\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/6325c0f6-b7c3-4f45-825c-4e74b38a0235/act/actions-setup-python@v1/ dst=/var/run/act/actions/actions-setup-python@v1/\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v1/] user=0 workdir=\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v1/dist/index.js] user= workdir=\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: \n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? false\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? true\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? true\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? true\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? true\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? true\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::explicit? true\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Successfully setup CPython (3.6.14)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v1/.github/python.json\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2705  Success - Main Set up Python 3.6\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2699  ::set-output:: python-version=3.6.14\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \u2b50 Run Main Install dependencies\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pip\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Installing collected packages: pip\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Attempting uninstall: pip\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |     Found existing installation: pip 21.2.4\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |     Uninstalling pip-21.2.4:\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |       Successfully uninstalled pip-21.2.4\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Successfully installed pip-21.3.1\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting cachetools<5.0.0,>=3.1.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading cachetools-4.2.4-py3-none-any.whl (10 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting lark<2.0.0,>=0.9.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading lark-1.1.5-py3-none-any.whl (107 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting flake8\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting hypothesis\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading hypothesis-6.31.6-py3-none-any.whl (377 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pytest\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pytest-cov\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pycodestyle<2.10.0,>=2.9.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pyflakes<2.6.0,>=2.5.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting importlib-metadata<4.3,>=1.1.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting sortedcontainers<3.0.0,>=2.1.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting attrs>=19.2.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting packaging\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pluggy<2.0,>=0.12\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting tomli>=1.0.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading tomli-1.2.3-py3-none-any.whl (12 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting py>=1.8.2\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting iniconfig\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting coverage[toml]>=5.2.1\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting zipp>=0.5\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting typing-extensions>=3.6.4\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Installing collected packages: zipp, typing-extensions, pyparsing, importlib-metadata, tomli, py, pluggy, packaging, iniconfig, coverage, attrs, sortedcontainers, pytest, pyflakes, pycodestyle, mccabe, pytest-cov, lark, hypothesis, flake8, cachetools\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Successfully installed attrs-22.2.0 cachetools-4.2.4 coverage-6.2 flake8-5.0.4 hypothesis-6.31.6 importlib-metadata-4.2.0 iniconfig-1.1.1 lark-1.1.5 mccabe-0.7.0 packaging-21.3 pluggy-1.0.0 py-1.11.0 pycodestyle-2.9.1 pyflakes-2.5.0 pyparsing-3.1.0 pytest-7.0.1 pytest-cov-4.0.0 sortedcontainers-2.4.0 tomli-1.2.3 typing-extensions-4.1.1 zipp-3.6.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2705  Success - Main Install dependencies\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \u2b50 Run Main Lint with flake8\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: flake8 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (5.0.4)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: pycodestyle<2.10.0,>=2.9.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (2.9.1)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: importlib-metadata<4.3,>=1.1.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (4.2.0)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: pyflakes<2.6.0,>=2.5.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (2.5.0)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (0.7.0)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: zipp>=0.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata<4.3,>=1.1.0->flake8) (3.6.0)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | Requirement already satisfied: typing-extensions>=3.6.4 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata<4.3,>=1.1.0->flake8) (4.1.1)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./docs/conf.py:16:1: F401 'sphinx_rtd_theme' imported but unused\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:4:1: F403 'from .expression import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:8:50: F405 'Number' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:19:13: F405 'Expression' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:20:13: F405 'Literal' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:21:13: F405 'UnOp' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:22:13: F405 'BinOp' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:23:13: F405 'Parenthetical' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:24:13: F405 'Set' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:25:13: F405 'Dice' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:26:13: F405 'Die' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:53:37: F405 'Expression' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:61:34: F405 'Literal' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:69:31: F405 'UnOp' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:77:32: F405 'BinOp' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:85:40: F405 'Parenthetical' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:93:30: F405 'Set' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:101:31: F405 'Dice' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:109:30: F405 'Die' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/stringifiers.py:118:39: F405 'SetOperator' may be undefined, or defined from star imports: .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/utils.py:4:1: F401 'd20' imported but unused\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/utils.py:68:1: C901 'simplify_expr_annotations' is too complex (13)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:1:1: F401 '.diceast as ast' imported but unused\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:2:1: F401 '.utils' imported but unused\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:3:1: F403 'from .dice import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:4:1: F403 'from .errors import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:5:1: F403 'from .expression import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:6:1: F403 'from .stringifiers import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/__init__.py:9:11: F405 'Roller' may be undefined, or defined from star imports: .dice, .errors, .expression, .stringifiers\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:8:1: F403 'from .errors import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:9:1: F403 'from .expression import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:20:50: F405 'Number' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:68:19: F405 'TooManyRolls' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:76:52: F405 'Expression' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:110:33: F405 'Dice' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:209:19: F405 'RollSyntaxError' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:211:19: F405 'RollSyntaxError' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:231:66: E203 whitespace before ':'\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:247:57: F405 'Expression' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:248:16: F405 'Expression' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:255:51: F405 'Literal' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:256:16: F405 'Literal' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:258:63: F405 'Parenthetical' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:259:16: F405 'Parenthetical' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:261:45: F405 'UnOp' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:262:16: F405 'UnOp' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:264:47: F405 'BinOp' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:265:16: F405 'BinOp' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:270:22: F405 'SetOperator' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:275:55: F405 'Set' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:276:16: F405 'Set' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:281:45: F405 'Dice' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./d20/dice.py:282:16: F405 'Dice' may be undefined, or defined from star imports: .errors, .expression\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:3:1: F403 'from d20 import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:8:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:12:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:13:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:18:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:22:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:23:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:25:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:29:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:30:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:32:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:36:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:37:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:39:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:43:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:44:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:48:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:48:32: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:52:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:52:32: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:56:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:56:32: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:61:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:61:31: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:65:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:65:31: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:71:15: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_arguments.py:72:9: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:3:1: F403 'from d20 import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:20:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:26:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:31:18: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:32:35: F405 'RollResult' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:35:39: F405 'ast' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:36:40: F405 'Expression' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:60:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:62:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:64:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:76:14: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:78:18: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:79:27: F405 'CritType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:82:18: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:83:27: F405 'CritType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:86:18: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:87:27: F405 'CritType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:143:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:145:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:147:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:193:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:195:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:211:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:213:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:231:14: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:234:24: F405 'BinOp' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_dice.py:234:53: F405 'Literal' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:4:1: F403 'from d20 import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:10:20: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:13:24: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:13:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:17:24: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:17:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:21:24: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:21:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:27:20: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:30:24: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:30:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:35:20: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:36:24: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:36:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:40:24: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:45:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:46:9: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:47:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:49:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:50:9: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:51:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:53:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:54:9: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:55:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:57:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:58:9: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:59:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:62:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:63:9: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:64:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:68:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:69:5: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:70:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:72:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:73:5: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:74:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:76:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:77:5: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:78:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:80:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:81:5: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:82:36: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:84:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:85:5: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:86:44: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:91:16: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:94:33: F405 'ast' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:98:18: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:105:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:108:33: F405 'Literal' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:114:18: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:116:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:119:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:122:16: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:125:33: F405 'ast' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:126:24: F405 'ast' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:129:18: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:136:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:139:33: F405 'Literal' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:145:18: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:147:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:150:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:153:16: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:156:33: F405 'Set' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:157:24: F405 'Literal' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:160:18: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:162:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:165:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:169:12: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:170:16: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:172:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:173:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:173:42: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:177:12: F405 'parse' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:178:16: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:180:12: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:181:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:181:42: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:185:13: F405 'roll' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:186:14: F405 'utils' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:186:66: F405 'Dice' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ./tests/test_utils.py:188:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 1     C901 'simplify_expr_annotations' is too complex (13)\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 1     E203 whitespace before ':'\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 4     F401 '.diceast as ast' imported but unused\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 10    F403 'from .dice import *' used; unable to detect undefined names\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 174   F405 'Roller' may be undefined, or defined from star imports: .dice, .errors, .expression, .stringifiers\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | 190\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u2705  Success - Main Lint with flake8\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \u2b50 Run Main Test with pytest\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | ============================= test session starts ==============================\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | platform linux -- Python 3.6.14, pytest-7.0.1, pluggy-1.0.0\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/avrae-d20\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | plugins: cov-4.0.0, hypothesis-6.31.6\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | collected 44 items\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | \n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | tests/test_arguments.py ....                                             [  9%]\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   | tests/test_dice.py .........................                             [ 65%]\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build]   \u274c  Failure - Main Test with pytest\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/d125efccea9ce4b72bb784ecbb47c22b37c3d5cd30a3fdfea22b71922f316af7/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[6d5c19b9-75ab-430d-814c-b84fbbfe2c2f/build] \ud83c\udfc1  Job succeeded\n",
-        "stderr": "Error: context canceled\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/avrae-d20/.github/workflows/pytest-crawler.yml",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_arguments",
+                "name": "test_comments",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_arguments",
+                "name": "test_conflicting_comments",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_arguments",
+                "name": "test_advantage",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_arguments",
+                "name": "test_rolling_ast",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_rolls_dont_error",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_roll_types",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_sane_totals",
+                "time": 1.395,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_pemdas",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_invalid_rolls",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_chaining_operators",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_crit",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_literal",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_dice",
+                "time": 0.27,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_set",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_unop",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_binop",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_binop_dice",
+                "time": 0.251,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_div_zero",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_comparison",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_selectors",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_k_op",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_p_op",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_rr_op",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_ro_op",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_ra_op",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_e_op",
+                "time": 2.231,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_mi_op",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_ma_op",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_dice",
+                "name": "test_correct_results",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_hypothesis",
+                "name": "test_any_valid_roll",
+                "time": 1.089,
+                "results": [
+                    {
+                        "result": "Failure",
+                        "message": "hypothesis.errors.FailedHealthCheck: Data generation is extremely slow: Only produced 7 valid examples in 1.01 seconds (0 invalid ones and 6 exceeded maximum size). Try decreasing size of the data you're generating (with e.g. max_size or max_leaves parameters).\nSee https://hypothesis.readthedocs.io/en/latest/healthchecks.html for more information about this. If you want to disable just this health check, add HealthCheck.too_slow to the suppress_health_check settings for this test.",
+                        "type": null
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestAstAdvCopy",
+                "name": "test_adv",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestAstAdvCopy",
+                "name": "test_not_applicable",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestAstAdvCopy",
+                "name": "test_copy",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestAnnotationSimplify",
+                "name": "test_annotation_simplify",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestAnnotationSimplify",
+                "name": "test_parenthetical_annotation",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_simplify",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestTreeMap",
+                "name": "test_ast_map",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestTreeMap",
+                "name": "test_expr_map",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestTreeMap",
+                "name": "test_ast_map_set_copy",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestTreeMap",
+                "name": "test_expr_map_set_copy",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils.TestTreeMap",
+                "name": "test_expr_map_types",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_leftmost",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_rightmost",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_dfs",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[62396416-f411-4c21-9b59-fae86b484805/build] \ud83d\ude80  Start image=crawlergpt:latest\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/avrae-d20] user=0 workdir=\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v1\n[62396416-f411-4c21-9b59-fae86b484805/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[62396416-f411-4c21-9b59-fae86b484805/build] \u2b50 Run Main actions/checkout@v1\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2705  Success - Main actions/checkout@v1\n[62396416-f411-4c21-9b59-fae86b484805/build] \u2b50 Run Main Set up Python 3.6\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/c2ff07a3-a7aa-4c54-ab97-6226096c4f5e/act/actions-setup-python@v1/ dst=/var/run/act/actions/actions-setup-python@v1/\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v1/] user=0 workdir=\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v1/dist/index.js] user= workdir=\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: \n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? false\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? true\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? true\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? true\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? true\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? true\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::explicit? true\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Successfully setup CPython (3.6.14)\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v1/.github/python.json\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2705  Success - Main Set up Python 3.6\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2699  ::set-output:: python-version=3.6.14\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[62396416-f411-4c21-9b59-fae86b484805/build] \u2b50 Run Main Install dependencies\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pip\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Installing collected packages: pip\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Attempting uninstall: pip\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     Found existing installation: pip 21.2.4\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     Uninstalling pip-21.2.4:\n[62396416-f411-4c21-9b59-fae86b484805/build]   |       Successfully uninstalled pip-21.2.4\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Successfully installed pip-21.3.1\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting cachetools<5.0.0,>=3.1.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading cachetools-4.2.4-py3-none-any.whl (10 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting lark<2.0.0,>=0.9.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading lark-1.1.5-py3-none-any.whl (107 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting flake8\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting hypothesis\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading hypothesis-6.31.6-py3-none-any.whl (377 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pytest\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pytest-cov\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting importlib-metadata<4.3,>=1.1.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pycodestyle<2.10.0,>=2.9.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pyflakes<2.6.0,>=2.5.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting attrs>=19.2.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting sortedcontainers<3.0.0,>=2.1.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting iniconfig\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pluggy<2.0,>=0.12\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting tomli>=1.0.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading tomli-1.2.3-py3-none-any.whl (12 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting packaging\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting py>=1.8.2\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting coverage[toml]>=5.2.1\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting typing-extensions>=3.6.4\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting zipp>=0.5\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[62396416-f411-4c21-9b59-fae86b484805/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Installing collected packages: zipp, typing-extensions, pyparsing, importlib-metadata, tomli, py, pluggy, packaging, iniconfig, coverage, attrs, sortedcontainers, pytest, pyflakes, pycodestyle, mccabe, pytest-cov, lark, hypothesis, flake8, cachetools\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Successfully installed attrs-22.2.0 cachetools-4.2.4 coverage-6.2 flake8-5.0.4 hypothesis-6.31.6 importlib-metadata-4.2.0 iniconfig-1.1.1 lark-1.1.5 mccabe-0.7.0 packaging-21.3 pluggy-1.0.0 py-1.11.0 pycodestyle-2.9.1 pyflakes-2.5.0 pyparsing-3.1.0 pytest-7.0.1 pytest-cov-4.0.0 sortedcontainers-2.4.0 tomli-1.2.3 typing-extensions-4.1.1 zipp-3.6.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2705  Success - Main Install dependencies\n[62396416-f411-4c21-9b59-fae86b484805/build] \u2b50 Run Main Lint with flake8\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: flake8 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (5.0.4)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (0.7.0)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: pycodestyle<2.10.0,>=2.9.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (2.9.1)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: pyflakes<2.6.0,>=2.5.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (2.5.0)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: importlib-metadata<4.3,>=1.1.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from flake8) (4.2.0)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: zipp>=0.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata<4.3,>=1.1.0->flake8) (3.6.0)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Requirement already satisfied: typing-extensions>=3.6.4 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata<4.3,>=1.1.0->flake8) (4.1.1)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 0\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./docs/conf.py:16:1: F401 'sphinx_rtd_theme' imported but unused\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:4:1: F403 'from .expression import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:8:50: F405 'Number' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:19:13: F405 'Expression' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:20:13: F405 'Literal' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:21:13: F405 'UnOp' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:22:13: F405 'BinOp' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:23:13: F405 'Parenthetical' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:24:13: F405 'Set' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:25:13: F405 'Dice' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:26:13: F405 'Die' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:53:37: F405 'Expression' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:61:34: F405 'Literal' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:69:31: F405 'UnOp' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:77:32: F405 'BinOp' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:85:40: F405 'Parenthetical' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:93:30: F405 'Set' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:101:31: F405 'Dice' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:109:30: F405 'Die' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/stringifiers.py:118:39: F405 'SetOperator' may be undefined, or defined from star imports: .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/utils.py:4:1: F401 'd20' imported but unused\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/utils.py:68:1: C901 'simplify_expr_annotations' is too complex (13)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:1:1: F401 '.diceast as ast' imported but unused\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:2:1: F401 '.utils' imported but unused\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:3:1: F403 'from .dice import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:4:1: F403 'from .errors import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:5:1: F403 'from .expression import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:6:1: F403 'from .stringifiers import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/__init__.py:9:11: F405 'Roller' may be undefined, or defined from star imports: .dice, .errors, .expression, .stringifiers\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:8:1: F403 'from .errors import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:9:1: F403 'from .expression import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:20:50: F405 'Number' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:68:19: F405 'TooManyRolls' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:76:52: F405 'Expression' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:110:33: F405 'Dice' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:209:19: F405 'RollSyntaxError' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:211:19: F405 'RollSyntaxError' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:231:66: E203 whitespace before ':'\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:247:57: F405 'Expression' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:248:16: F405 'Expression' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:255:51: F405 'Literal' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:256:16: F405 'Literal' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:258:63: F405 'Parenthetical' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:259:16: F405 'Parenthetical' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:261:45: F405 'UnOp' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:262:16: F405 'UnOp' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:264:47: F405 'BinOp' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:265:16: F405 'BinOp' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:270:22: F405 'SetOperator' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:275:55: F405 'Set' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:276:16: F405 'Set' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:281:45: F405 'Dice' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./d20/dice.py:282:16: F405 'Dice' may be undefined, or defined from star imports: .errors, .expression\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:3:1: F403 'from d20 import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:8:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:12:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:13:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:18:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:22:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:23:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:25:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:29:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:30:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:32:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:36:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:37:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:39:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:43:24: F405 'RollSyntaxError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:44:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:48:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:48:32: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:52:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:52:32: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:56:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:56:32: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:61:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:61:31: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:65:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:65:31: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:71:15: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_arguments.py:72:9: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:3:1: F403 'from d20 import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:20:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:26:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:31:18: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:32:35: F405 'RollResult' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:35:39: F405 'ast' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:36:40: F405 'Expression' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:60:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:62:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:64:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:76:14: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:78:18: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:79:27: F405 'CritType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:82:18: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:83:27: F405 'CritType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:86:18: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:87:27: F405 'CritType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:143:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:145:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:147:24: F405 'RollValueError' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:193:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:195:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:211:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:213:24: F405 'TooManyRolls' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:231:14: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:234:24: F405 'BinOp' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_dice.py:234:53: F405 'Literal' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:4:1: F403 'from d20 import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:10:20: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:13:24: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:13:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:17:24: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:17:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:21:24: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:21:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:27:20: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:30:24: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:30:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:35:20: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:36:24: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:36:49: F405 'AdvType' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:40:24: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:45:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:46:9: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:47:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:49:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:50:9: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:51:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:53:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:54:9: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:55:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:57:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:58:9: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:59:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:62:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:63:9: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:64:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:68:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:69:5: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:70:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:72:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:73:5: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:74:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:76:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:77:5: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:78:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:80:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:81:5: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:82:36: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:84:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:85:5: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:86:44: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:91:16: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:94:33: F405 'ast' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:98:18: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:105:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:108:33: F405 'Literal' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:114:18: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:116:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:119:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:122:16: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:125:33: F405 'ast' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:126:24: F405 'ast' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:129:18: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:136:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:139:33: F405 'Literal' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:145:18: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:147:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:150:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:153:16: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:156:33: F405 'Set' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:157:24: F405 'Literal' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:160:18: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:162:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:165:16: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:169:12: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:170:16: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:172:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:173:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:173:42: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:177:12: F405 'parse' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:178:16: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:180:12: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:181:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:181:42: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:185:13: F405 'roll' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:186:14: F405 'utils' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:186:66: F405 'Dice' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ./tests/test_utils.py:188:12: F405 'SimpleStringifier' may be undefined, or defined from star imports: d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 1     C901 'simplify_expr_annotations' is too complex (13)\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 1     E203 whitespace before ':'\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 4     F401 '.diceast as ast' imported but unused\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 10    F403 'from .dice import *' used; unable to detect undefined names\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 174   F405 'Roller' may be undefined, or defined from star imports: .dice, .errors, .expression, .stringifiers\n[62396416-f411-4c21-9b59-fae86b484805/build]   | 190\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u2705  Success - Main Lint with flake8\n[62396416-f411-4c21-9b59-fae86b484805/build] \u2b50 Run Main Test with pytest\n[62396416-f411-4c21-9b59-fae86b484805/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ============================= test session starts ==============================\n[62396416-f411-4c21-9b59-fae86b484805/build]   | platform linux -- Python 3.6.14, pytest-7.0.1, pluggy-1.0.0\n[62396416-f411-4c21-9b59-fae86b484805/build]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/avrae-d20\n[62396416-f411-4c21-9b59-fae86b484805/build]   | plugins: cov-4.0.0, hypothesis-6.31.6\n[62396416-f411-4c21-9b59-fae86b484805/build]   | collected 44 items\n[62396416-f411-4c21-9b59-fae86b484805/build]   | \n[62396416-f411-4c21-9b59-fae86b484805/build]   | tests/test_arguments.py ....                                             [  9%]\n[62396416-f411-4c21-9b59-fae86b484805/build]   | tests/test_dice.py .........................                             [ 65%]\n[62396416-f411-4c21-9b59-fae86b484805/build]   | tests/test_hypothesis.py F                                               [ 68%]\n[62396416-f411-4c21-9b59-fae86b484805/build]   | tests/test_utils.py ..............                                       [100%]\n[62396416-f411-4c21-9b59-fae86b484805/build]   | \n[62396416-f411-4c21-9b59-fae86b484805/build]   | =================================== FAILURES ===================================\n[62396416-f411-4c21-9b59-fae86b484805/build]   | _____________________________ test_any_valid_roll ______________________________\n[62396416-f411-4c21-9b59-fae86b484805/build]   | \n[62396416-f411-4c21-9b59-fae86b484805/build]   |     @given(cst.expr())\n[62396416-f411-4c21-9b59-fae86b484805/build]   | >   @settings(verbosity=Verbosity.verbose, max_examples=1000, deadline=3000)\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     def test_any_valid_roll(expr):\n[62396416-f411-4c21-9b59-fae86b484805/build]   | E   hypothesis.errors.FailedHealthCheck: Data generation is extremely slow: Only produced 7 valid examples in 1.01 seconds (0 invalid ones and 6 exceeded maximum size). Try decreasing size of the data you're generating (with e.g. max_size or max_leaves parameters).\n[62396416-f411-4c21-9b59-fae86b484805/build]   | E   See https://hypothesis.readthedocs.io/en/latest/healthchecks.html for more information about this. If you want to disable just this health check, add HealthCheck.too_slow to the suppress_health_check settings for this test.\n[62396416-f411-4c21-9b59-fae86b484805/build]   | \n[62396416-f411-4c21-9b59-fae86b484805/build]   | tests/test_hypothesis.py:8: FailedHealthCheck\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ---------------------------------- Hypothesis ----------------------------------\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='+d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='+d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='-+d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='+d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='+d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='-++d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Trying example: test_any_valid_roll(\n[62396416-f411-4c21-9b59-fae86b484805/build]   |     expr='-d1',\n[62396416-f411-4c21-9b59-fae86b484805/build]   | )\n[62396416-f411-4c21-9b59-fae86b484805/build]   | You can add @seed(38241907024001063641146333901086308208) to this test or run pytest with --hypothesis-seed=38241907024001063641146333901086308208 to reproduce this failure.\n[62396416-f411-4c21-9b59-fae86b484805/build]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/avrae-d20/report.xml -\n[62396416-f411-4c21-9b59-fae86b484805/build]   | \n[62396416-f411-4c21-9b59-fae86b484805/build]   | ---------- coverage: platform linux, python 3.6.14-final-0 -----------\n[62396416-f411-4c21-9b59-fae86b484805/build]   | Coverage XML written to file coverage.xml\n[62396416-f411-4c21-9b59-fae86b484805/build]   | \n[62396416-f411-4c21-9b59-fae86b484805/build]   | =========================== short test summary info ============================\n[62396416-f411-4c21-9b59-fae86b484805/build]   | FAILED tests/test_hypothesis.py::test_any_valid_roll - hypothesis.errors.Fail...\n[62396416-f411-4c21-9b59-fae86b484805/build]   | ========================= 1 failed, 43 passed in 8.50s =========================\n[62396416-f411-4c21-9b59-fae86b484805/build]   \u274c  Failure - Main Test with pytest\n[62396416-f411-4c21-9b59-fae86b484805/build] exitcode '1': failure\n[62396416-f411-4c21-9b59-fae86b484805/build] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'build' failed\n",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/avrae-d20/.github/workflows/pytest-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "62396416-f411-4c21-9b59-fae86b484805",
         "build_tool": "pytest",
-        "elapsed_time": 605.1626365184784
+        "elapsed_time": 181.25356483459473
     }
 }

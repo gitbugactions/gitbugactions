@@ -1,10 +1,10 @@
 {
     "repository": "jdholtz/auto-southwest-check-in",
-    "stars": 185,
+    "stars": 187,
     "language": "python",
     "size": 408,
     "clone_url": "https://github.com/jdholtz/auto-southwest-check-in.git",
-    "timestamp": "2023-06-28T17:18:47.823421Z",
+    "timestamp": "2023-07-01T16:48:40.766243Z",
     "clone_success": true,
     "number_of_actions": 3,
     "number_of_test_actions": 1,
@@ -23,7 +23,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_schedule_check_in_starts_a_process",
-                "time": 0.015,
+                "time": 0.008,
                 "results": [
                     {
                         "result": "Passed",
@@ -37,7 +37,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_set_check_in_correctly_sets_up_check_in_process",
-                "time": 0.008,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -51,7 +51,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_wait_for_check_in_exits_immediately_if_checkin_time_has_passed",
-                "time": 0.004,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -65,7 +65,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_wait_for_check_in_sleeps_once_when_check_in_is_less_than_ten_minutes_away",
-                "time": 0.021,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -79,7 +79,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_wait_for_check_in_refreshes_headers_ten_minutes_before_check_in",
-                "time": 0.008,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -135,7 +135,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_check_in_sends_error_notification_when_check_in_fails",
-                "time": 0.03,
+                "time": 0.008,
                 "results": [
                     {
                         "result": "Passed",
@@ -149,7 +149,7 @@
             {
                 "classname": "tests.test_checkin_handler",
                 "name": "test_check_in_sends_success_notification_on_successful_check_in",
-                "time": 0.006,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -163,20 +163,6 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_schedule_refreshes_headers_when_empty",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_checkin_scheduler",
-                "name": "test_schedule_does_not_refresh_headers_when_populated",
                 "time": 0.004,
                 "results": [
                     {
@@ -190,8 +176,22 @@
             },
             {
                 "classname": "tests.test_checkin_scheduler",
+                "name": "test_schedule_does_not_refresh_headers_when_populated",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_checkin_scheduler",
                 "name": "test_schedule_schedules_all_reservations",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -205,7 +205,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_refresh_headers_sets_new_headers",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -233,7 +233,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_remove_departed_flights_removes_only_departed_flights[flight_time1-0]",
-                "time": 0.005,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -247,7 +247,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_schedule_flights_schedules_all_flights_under_reservation",
-                "time": 0.004,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -261,7 +261,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_schedule_flights_does_not_schedule_already_scheduled_flights",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -275,7 +275,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_schedule_flights_does_not_schedule_departed_flights",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -303,7 +303,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_get_reservation_info_sends_error_notification_when_reservation_retrieval_fails",
-                "time": 0.011,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -317,7 +317,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_flight_is_scheduled_returns_true_if_flight_is_already_scheduled",
-                "time": 0.004,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -331,7 +331,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_flight_is_scheduled_returns_false_if_flight_is_not_scheduled[flight_info0-flight_time0]",
-                "time": 0.006,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -359,7 +359,7 @@
             {
                 "classname": "tests.test_checkin_scheduler",
                 "name": "test_flight_is_scheduled_returns_false_if_flight_is_not_scheduled[flight_info2-flight_time2]",
-                "time": 0.004,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -401,7 +401,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_read_config_reads_the_config_file_correctly",
-                "time": 0.049,
+                "time": 0.068,
                 "results": [
                     {
                         "result": "Passed",
@@ -415,7 +415,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_read_config_returns_empty_config_when_file_is_not_found",
-                "time": 0.004,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -429,7 +429,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content0]",
-                "time": 0.047,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -443,7 +443,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content1]",
-                "time": 0.006,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -457,7 +457,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content2]",
-                "time": 0.005,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -471,7 +471,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content3]",
-                "time": 0.007,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -485,7 +485,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content4]",
-                "time": 0.008,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -499,7 +499,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content5]",
-                "time": 0.005,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -513,7 +513,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content6]",
-                "time": 0.006,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -527,7 +527,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_raises_exception_with_invalid_entries[config_content7]",
-                "time": 0.005,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -541,7 +541,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_sets_the_correct_config_values",
-                "time": 0.011,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -555,7 +555,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_does_not_set_values_when_a_config_value_is_empty",
-                "time": 0.006,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -569,7 +569,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_sets_retrieval_interval_to_a_minimum",
-                "time": 0.006,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -583,7 +583,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_parses_accounts",
-                "time": 0.006,
+                "time": 0.023,
                 "results": [
                     {
                         "result": "Passed",
@@ -597,7 +597,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_config_parses_flights",
-                "time": 0.007,
+                "time": 0.033,
                 "results": [
                     {
                         "result": "Passed",
@@ -611,7 +611,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_accounts_parses_objects_correctly",
-                "time": 0.005,
+                "time": 0.034,
                 "results": [
                     {
                         "result": "Passed",
@@ -625,7 +625,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_flights_parses_objects_correctly",
-                "time": 0.005,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -639,7 +639,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_objects_raises_exception_with_invalid_types[objects0]",
-                "time": 0.005,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -667,7 +667,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_objects_raises_exception_with_invalid_types[objects2]",
-                "time": 0.005,
+                "time": 0.008,
                 "results": [
                     {
                         "result": "Passed",
@@ -681,7 +681,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_objects_parses_every_object",
-                "time": 0.016,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -695,7 +695,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_object_raises_excpetion_when_key_is_not_in_object[object_config0]",
-                "time": 0.004,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -709,7 +709,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_object_raises_excpetion_when_key_is_not_in_object[object_config1]",
-                "time": 0.006,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -737,7 +737,7 @@
             {
                 "classname": "tests.test_config",
                 "name": "test_parse_object_parses_an_object_correctly",
-                "time": 0.005,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -751,7 +751,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_check_flight_price_sends_notification_on_lower_fares",
-                "time": 0.006,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -765,7 +765,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_check_flight_price_does_not_send_notifications_when_fares_are_higher",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -793,7 +793,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_flight_price_returns_nothing_when_no_matching_flights_appear",
-                "time": 0.004,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -807,7 +807,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_matching_flights_retrieves_correct_bound_page[outbound]",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -821,7 +821,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_matching_flights_retrieves_correct_bound_page[inbound]",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -835,7 +835,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_change_flight_page_retrieves_change_flight_page",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -849,7 +849,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_change_flight_page_raises_exception_when_flight_cannot_be_changed",
-                "time": 0.003,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -863,7 +863,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_search_query_returns_the_correct_query_for_one_way",
-                "time": 0.019,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -877,7 +877,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_search_query_returns_the_correct_query_for_round_trip",
-                "time": 0.005,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -891,7 +891,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_check_for_companion_raises_exception_when_a_companion_is_detected",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -947,7 +947,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_matching_fare_returns_the_correct_fare",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -961,7 +961,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_matching_fare_returns_default_price_when_price_is_not_available[None]",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -975,7 +975,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_get_matching_fare_returns_default_price_when_price_is_not_available[fares1]",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1003,7 +1003,7 @@
             {
                 "classname": "tests.test_fare_checker",
                 "name": "test_unavailable_fare_returns_default_price",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1017,7 +1017,7 @@
             {
                 "classname": "tests.test_flight",
                 "name": "test_get_flight_time_returns_the_correct_time",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1031,7 +1031,7 @@
             {
                 "classname": "tests.test_flight",
                 "name": "test_get_airport_timezone_returns_the_correct_timezone",
-                "time": 0.038,
+                "time": 0.061,
                 "results": [
                     {
                         "result": "Passed",
@@ -1045,7 +1045,7 @@
             {
                 "classname": "tests.test_flight",
                 "name": "test_convert_to_utc_converts_local_time_to_utc",
-                "time": 0.007,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -1059,7 +1059,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_monitors_flights_continuously",
-                "time": 0.008,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1073,7 +1073,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_stops_monitoring_when_no_flights_are_scheduled",
-                "time": 0.008,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -1087,7 +1087,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_monitors_flights_once_if_retrieval_interval_is_zero",
-                "time": 0.02,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1101,7 +1101,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_schedules_reservations_correctly",
-                "time": 0.012,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1115,7 +1115,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_does_not_check_fares_if_configuration_is_false",
-                "time": 0.004,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1129,7 +1129,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_checks_fares_on_all_flights",
-                "time": 0.004,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1143,7 +1143,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_flight_retriever_catches_error_when_checking_fares[RequestError]",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1199,7 +1199,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_account_FR_monitors_the_account_continuously",
-                "time": 0.004,
+                "time": 0.011,
                 "results": [
                     {
                         "result": "Passed",
@@ -1213,7 +1213,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_account_FR_checks_flights_once_if_retrieval_interval_is_zero",
-                "time": 0.004,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1227,7 +1227,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_get_flights_skips_retrieval_on_bad_request",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1241,7 +1241,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_get_flights_exits_on_login_error",
-                "time": 0.004,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1255,7 +1255,7 @@
             {
                 "classname": "tests.test_flight_retriever",
                 "name": "test_get_flights_returns_the_correct_flights",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1269,7 +1269,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_init_main_logging_initializes_the_logging_correctly",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1283,7 +1283,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_init_logging_sets_verbosity_level_correctly[-20]",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1297,7 +1297,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_init_logging_sets_verbosity_level_correctly[-v-10]",
-                "time": 0.003,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1311,7 +1311,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_init_logging_sets_verbosity_level_correctly[--verbose-10]",
-                "time": 0.005,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -1325,7 +1325,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_get_logger_does_not_initialize_logger_with_fork_start_method",
-                "time": 0.008,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1339,7 +1339,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_get_logger_does_not_initialize_logger_in_main_process",
-                "time": 0.04,
+                "time": 0.058,
                 "results": [
                     {
                         "result": "Passed",
@@ -1353,7 +1353,7 @@
             {
                 "classname": "tests.test_log",
                 "name": "test_get_logger_initializes_logger_with_spawn_start_method",
-                "time": 0.005,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1367,7 +1367,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_print_version_prints_script_version",
-                "time": 0.016,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1381,7 +1381,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_print_usage_prints_script_usage",
-                "time": 0.004,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -1409,7 +1409,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_check_flags_prints_version_when_version_flag_is_passed[--version]",
-                "time": 0.002,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1423,7 +1423,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_check_flags_prints_usage_when_help_flag_is_passed[arguments0]",
-                "time": 0.025,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1437,7 +1437,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_check_flags_prints_usage_when_help_flag_is_passed[arguments1]",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1451,7 +1451,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_check_flags_does_not_exit_when_flags_are_not_matched",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1465,7 +1465,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_set_up_accounts_starts_all_accounts_in_proceses",
-                "time": 0.004,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -1479,7 +1479,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_set_up_flights_starts_all_flights_in_proceses",
-                "time": 0.004,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1493,7 +1493,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_set_up_check_in_sends_test_notifications_when_flag_is_passed",
-                "time": 0.031,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1521,7 +1521,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_set_up_check_in_sets_up_account_and_flight_with_arguments[arguments1-1-0]",
-                "time": 0.005,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1535,7 +1535,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_set_up_check_in_sets_up_account_and_flight_with_arguments[arguments2-0-1]",
-                "time": 0.005,
+                "time": 0.008,
                 "results": [
                     {
                         "result": "Passed",
@@ -1549,7 +1549,7 @@
             {
                 "classname": "tests.test_main",
                 "name": "test_set_up_check_in_sends_error_message_when_arguments_are_invalid",
-                "time": 0.006,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1577,7 +1577,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_get_account_name_returns_the_correct_name",
-                "time": 0.004,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1591,7 +1591,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_send_nofication_does_not_send_notifications_if_level_is_too_low",
-                "time": 0.004,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1605,7 +1605,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_send_notification_sends_notifications_with_the_correct_content[2]",
-                "time": 0.016,
+                "time": 0.012,
                 "results": [
                     {
                         "result": "Passed",
@@ -1619,7 +1619,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_send_notification_sends_notifications_with_the_correct_content[None]",
-                "time": 0.006,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1633,7 +1633,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_new_flights_sends_no_notification_if_no_flights_exist",
-                "time": 0.004,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -1647,20 +1647,6 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_new_flights_sends_notifications_for_new_flights",
-                "time": 0.01,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_notification_handler",
-                "name": "test_failed_reservation_retrieval_sends_error_notification",
                 "time": 0.006,
                 "results": [
                     {
@@ -1674,8 +1660,22 @@
             },
             {
                 "classname": "tests.test_notification_handler",
+                "name": "test_failed_reservation_retrieval_sends_error_notification",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_notification_handler",
                 "name": "test_failed_login_sends_error_notification",
-                "time": 0.014,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1689,7 +1689,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_successful_checkin_sends_notification_for_check_in",
-                "time": 0.009,
+                "time": 0.008,
                 "results": [
                     {
                         "result": "Passed",
@@ -1703,7 +1703,7 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_failed_checkin_sends_error_notification",
-                "time": 0.009,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -1717,34 +1717,6 @@
             {
                 "classname": "tests.test_notification_handler",
                 "name": "test_lower_fare_sends_lower_fare_notification",
-                "time": 0.007,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_utils",
-                "name": "test_make_request_raises_exception_on_failure",
-                "time": 0.022,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_utils",
-                "name": "test_make_request_correctly_posts_data",
                 "time": 0.005,
                 "results": [
                     {
@@ -1758,8 +1730,36 @@
             },
             {
                 "classname": "tests.test_utils",
-                "name": "test_make_request_correctly_gets_data",
+                "name": "test_make_request_raises_exception_on_failure",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_make_request_correctly_posts_data",
                 "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_make_request_correctly_gets_data",
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1787,34 +1787,6 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_set_headers_correctly_sets_needed_headers",
-                "time": 0.01,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_webdriver",
-                "name": "test_get_flights_raises_exception_on_failed_login",
-                "time": 0.009,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_webdriver",
-                "name": "test_get_flights_sets_account_name_when_it_is_not_set",
                 "time": 0.012,
                 "results": [
                     {
@@ -1828,7 +1800,7 @@
             },
             {
                 "classname": "tests.test_webdriver",
-                "name": "test_get_flights_does_not_set_account_name_when_it_is_already_set",
+                "name": "test_get_flights_raises_exception_on_failed_login",
                 "time": 0.01,
                 "results": [
                     {
@@ -1842,35 +1814,35 @@
             },
             {
                 "classname": "tests.test_webdriver",
+                "name": "test_get_flights_sets_account_name_when_it_is_not_set",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_webdriver",
+                "name": "test_get_flights_does_not_set_account_name_when_it_is_already_set",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_webdriver",
                 "name": "test_get_flights_only_returns_flight_trip_type",
-                "time": 0.008,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_webdriver",
-                "name": "test_get_driver_returns_a_webdriver_with_one_request",
-                "time": 0.018,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_webdriver",
-                "name": "test_init_driver_initializes_the_webdriver_correctly",
                 "time": 0.007,
                 "results": [
                     {
@@ -1884,8 +1856,8 @@
             },
             {
                 "classname": "tests.test_webdriver",
-                "name": "test_init_driver_raises_error_when_webdriver_fails_to_initialize",
-                "time": 0.021,
+                "name": "test_get_driver_returns_a_webdriver_with_one_request",
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1898,7 +1870,21 @@
             },
             {
                 "classname": "tests.test_webdriver",
-                "name": "test_wait_for_response_waits_continuously_for_response[None-0]",
+                "name": "test_init_driver_initializes_the_webdriver_correctly",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_webdriver",
+                "name": "test_init_driver_raises_error_when_webdriver_fails_to_initialize",
                 "time": 0.005,
                 "results": [
                     {
@@ -1912,8 +1898,22 @@
             },
             {
                 "classname": "tests.test_webdriver",
+                "name": "test_wait_for_response_waits_continuously_for_response[None-0]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_webdriver",
                 "name": "test_wait_for_response_waits_continuously_for_response[driver_requests1-1]",
-                "time": 0.025,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1927,7 +1927,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_wait_for_response_waits_continuously_for_response[driver_requests2-1]",
-                "time": 0.009,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1955,7 +1955,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_set_headers_from_request_sets_the_correct_headers",
-                "time": 0.009,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1969,7 +1969,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_get_options_adds_the_correct_headless_option[None-new]",
-                "time": 0.016,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -1983,7 +1983,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_get_options_adds_the_correct_headless_option[109-new]",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1997,7 +1997,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_get_options_adds_the_correct_headless_option[108-chrome]",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -2039,7 +2039,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_get_needed_headers_returns_matching_headers[original_headers0-expected_headers0]",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -2081,7 +2081,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_get_needed_headers_returns_matching_headers[original_headers3-expected_headers3]",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -2109,7 +2109,7 @@
             {
                 "classname": "tests.test_webdriver",
                 "name": "test_set_account_name_sets_the_correct_values_for_the_name",
-                "time": 0.009,
+                "time": 0.013,
                 "results": [
                     {
                         "result": "Passed",
@@ -2121,10 +2121,14 @@
                 "stderr": null
             }
         ],
-        "stdout": "[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in] user=0 workdir=\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \ud83e\uddea  Matrix: map[python-version:3.7]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \u2b50 Run Main actions/checkout@v3\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2705  Success - Main actions/checkout@v3\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \u2b50 Run Main Set up Python 3.7\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker cp src=/tmp/act-cache/57cff88d-7110-4ab4-aced-1942ed55ffc3/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2753  ::group::Installed versions\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: \n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? false\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? true\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? true\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? true\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? true\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? true\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::explicit? true\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::evaluating 6 versions\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::matched: 3.7.11\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Successfully set up CPython (3.7.11)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2753  ::endgroup::\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2705  Success - Main Set up Python 3.7\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-output:: python-version=3.7.11\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \u2b50 Run Main Install dependencies\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pip\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Installing collected packages: pip\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Attempting uninstall: pip\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |     Found existing installation: pip 21.2.4\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |     Uninstalling pip-21.2.4:\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |       Successfully uninstalled pip-21.2.4\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Successfully installed pip-23.1.2\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting apprise==1.3.0 (from -r requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading apprise-1.3.0-py2.py3-none-any.whl (1.1 MB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.1/1.1 MB 9.8 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting certifi==2022.12.7 (from -r requirements.txt (line 2))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 155.3/155.3 kB 7.1 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pytz==2023.3 (from -r requirements.txt (line 3))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 502.3/502.3 kB 6.8 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting requests==2.30.0 (from -r requirements.txt (line 4))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading requests-2.30.0-py3-none-any.whl (62 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.5/62.5 kB 2.4 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting selenium==4.9.0 (from -r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading selenium-4.9.0-py3-none-any.whl (6.5 MB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 6.5/6.5 MB 9.0 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting selenium_wire==5.1.0 (from -r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading selenium_wire-5.1.0-py3-none-any.whl (239 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 239.6/239.6 kB 1.5 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting undetected_chromedriver==3.1.7 (from -r requirements.txt (line 7))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading undetected-chromedriver-3.1.7.tar.gz (58 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 58.1/58.1 kB 574.2 kB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Installing build dependencies: started\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Installing build dependencies: finished with status 'done'\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Getting requirements to build wheel: started\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Getting requirements to build wheel: finished with status 'done'\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Preparing metadata (pyproject.toml): started\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pytest (from -r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 5.3 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pytest-cov (from -r tests/requirements.txt (line 2))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pytest_cov-4.1.0-py3-none-any.whl (21 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pytest-mock (from -r tests/requirements.txt (line 3))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pytest_mock-3.11.1-py3-none-any.whl (9.6 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting requests_mock (from -r tests/requirements.txt (line 4))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading requests_mock-1.11.0-py2.py3-none-any.whl (28 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting requests-oauthlib (from apprise==1.3.0->-r requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting click>=5.0 (from apprise==1.3.0->-r requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading click-8.1.3-py3-none-any.whl (96 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 96.6/96.6 kB 2.9 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting markdown (from apprise==1.3.0->-r requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading Markdown-3.4.3-py3-none-any.whl (93 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 93.9/93.9 kB 2.1 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting PyYAML (from apprise==1.3.0->-r requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 596.3/596.3 kB 6.3 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting charset-normalizer<4,>=2 (from requests==2.30.0->-r requirements.txt (line 4))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading charset_normalizer-3.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (171 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 171.0/171.0 kB 3.1 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting idna<4,>=2.5 (from requests==2.30.0->-r requirements.txt (line 4))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 2.5 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting urllib3<3,>=1.21.1 (from requests==2.30.0->-r requirements.txt (line 4))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading urllib3-2.0.3-py3-none-any.whl (123 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 123.6/123.6 kB 3.2 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting urllib3[socks]~=1.26 (from selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 143.1/143.1 kB 903.9 kB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting trio~=0.17 (from selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading trio-0.22.0-py3-none-any.whl (384 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 384.9/384.9 kB 15.8 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting trio-websocket~=0.9 (from selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading trio_websocket-0.10.3-py3-none-any.whl (17 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting blinker>=1.4 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading blinker-1.6.2-py3-none-any.whl (13 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting brotli>=1.0.9 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading Brotli-1.0.9-cp37-cp37m-manylinux1_x86_64.whl (357 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 357.2/357.2 kB 9.7 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting kaitaistruct>=0.7 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading kaitaistruct-0.10-py2.py3-none-any.whl (7.0 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pyasn1>=0.3.1 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pyasn1-0.5.0-py2.py3-none-any.whl (83 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 83.9/83.9 kB 937.4 kB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pyOpenSSL>=22.0.0 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pyOpenSSL-23.2.0-py3-none-any.whl (59 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 59.0/59.0 kB 6.1 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pyparsing>=2.4.2 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 kB 695.2 kB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pysocks>=1.7.1 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting wsproto>=0.14 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading wsproto-1.2.0-py3-none-any.whl (24 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting zstandard>=0.14.1 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading zstandard-0.21.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.7 MB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.7/2.7 MB 9.3 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting h2>=4.0 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading h2-4.1.0-py3-none-any.whl (57 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.5/57.5 kB 1.2 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting hyperframe>=6.0 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading hyperframe-6.0.1-py3-none-any.whl (12 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting websockets (from undetected_chromedriver==3.1.7->-r requirements.txt (line 7))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading websockets-11.0.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 129.9/129.9 kB 1.6 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting iniconfig (from pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting packaging (from pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 7.6 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pluggy<2.0,>=0.12 (from pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting tomli>=1.0.0 (from pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting importlib-metadata>=0.12 (from pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting coverage[toml]>=5.2.1 (from pytest-cov->-r tests/requirements.txt (line 2))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading coverage-7.2.7-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (225 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 225.6/225.6 kB 2.8 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting six (from requests_mock->-r tests/requirements.txt (line 4))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting hpack<5,>=4.0 (from h2>=4.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading hpack-4.0.0-py3-none-any.whl (32 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting zipp>=0.5 (from importlib-metadata>=0.12->pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting typing-extensions>=3.6.4 (from importlib-metadata>=0.12->pytest->-r tests/requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting cryptography!=40.0.0,!=40.0.1,<42,>=38.0.0 (from pyOpenSSL>=22.0.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.3/4.3 MB 8.5 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting attrs>=19.2.0 (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.2/61.2 kB 846.0 kB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting sortedcontainers (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting async-generator>=1.9 (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading async_generator-1.10-py3-none-any.whl (18 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting outcome (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading outcome-1.2.0-py2.py3-none-any.whl (9.7 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting sniffio (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting h11<1,>=0.9.0 (from wsproto>=0.14->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading h11-0.14.0-py3-none-any.whl (58 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 58.3/58.3 kB 1.4 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting oauthlib>=3.0.0 (from requests-oauthlib->apprise==1.3.0->-r requirements.txt (line 1))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 151.7/151.7 kB 4.9 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting cffi>=1.12 (from cryptography!=40.0.0,!=40.0.1,<42,>=38.0.0->pyOpenSSL>=22.0.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading cffi-1.15.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (427 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 427.9/427.9 kB 10.0 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Collecting pycparser (from cffi>=1.12->cryptography!=40.0.0,!=40.0.1,<42,>=38.0.0->pyOpenSSL>=22.0.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 118.7/118.7 kB 6.6 MB/s eta 0:00:00\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Building wheels for collected packages: undetected_chromedriver\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Building wheel for undetected_chromedriver (pyproject.toml): started\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Building wheel for undetected_chromedriver (pyproject.toml): finished with status 'done'\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Created wheel for undetected_chromedriver: filename=undetected_chromedriver-3.1.7-py3-none-any.whl size=45427 sha256=3b5f286be893addfc2a989715d0ac136d36bdfb8d6ae034f868ba4051956dda4\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/4c/c7/2b/519c4aae209325e4a44c5b5bc31b2d9bbefb46b587378fd603\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Successfully built undetected_chromedriver\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Installing collected packages: sortedcontainers, pytz, brotli, zstandard, zipp, websockets, urllib3, typing-extensions, tomli, sniffio, six, PyYAML, pysocks, pyparsing, pycparser, pyasn1, packaging, oauthlib, kaitaistruct, iniconfig, idna, hyperframe, hpack, exceptiongroup, coverage, charset-normalizer, certifi, blinker, async-generator, requests, importlib-metadata, h2, h11, cffi, wsproto, requests-oauthlib, requests_mock, pluggy, markdown, cryptography, click, attrs, pytest, pyOpenSSL, outcome, apprise, trio, pytest-mock, pytest-cov, trio-websocket, selenium, undetected_chromedriver, selenium_wire\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Successfully installed PyYAML-6.0 apprise-1.3.0 async-generator-1.10 attrs-23.1.0 blinker-1.6.2 brotli-1.0.9 certifi-2022.12.7 cffi-1.15.1 charset-normalizer-3.1.0 click-8.1.3 coverage-7.2.7 cryptography-41.0.1 exceptiongroup-1.1.1 h11-0.14.0 h2-4.1.0 hpack-4.0.0 hyperframe-6.0.1 idna-3.4 importlib-metadata-6.7.0 iniconfig-2.0.0 kaitaistruct-0.10 markdown-3.4.3 oauthlib-3.2.2 outcome-1.2.0 packaging-23.1 pluggy-1.2.0 pyOpenSSL-23.2.0 pyasn1-0.5.0 pycparser-2.21 pyparsing-3.1.0 pysocks-1.7.1 pytest-7.4.0 pytest-cov-4.1.0 pytest-mock-3.11.1 pytz-2023.3 requests-2.30.0 requests-oauthlib-1.3.1 requests_mock-1.11.0 selenium-4.9.0 selenium_wire-5.1.0 six-1.16.0 sniffio-1.3.0 sortedcontainers-2.4.0 tomli-2.0.1 trio-0.22.0 trio-websocket-0.10.3 typing-extensions-4.6.3 undetected_chromedriver-3.1.7 urllib3-1.26.16 websockets-11.0.3 wsproto-1.2.0 zipp-3.15.0 zstandard-0.21.0\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | \n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | [notice] To update, run: pip install --upgrade pip\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2705  Success - Main Install dependencies\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \u2b50 Run Main Run unit tests\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | ============================= test session starts ==============================\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | configfile: pyproject.toml\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | plugins: mock-3.11.1, cov-4.1.0, requests-mock-1.11.0\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | collected 150 items\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | \n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_checkin_handler.py ..........                                 [  6%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_checkin_scheduler.py ...............                          [ 16%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_config.py ...........................                         [ 34%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_fare_checker.py ...................                           [ 47%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_flight.py ...                                                 [ 49%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_flight_retriever.py ...............                           [ 59%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_log.py .......                                                [ 64%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_main.py ...............                                       [ 74%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_notification_handler.py ...........                           [ 81%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_utils.py ....                                                 [ 84%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_webdriver.py ........................                         [100%]\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | \n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in/report.xml -\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | \n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | ---------- coverage: platform linux, python 3.7.11-final-0 -----------\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Name                                 Stmts   Miss Branch BrPart  Cover   Missing\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | --------------------------------------------------------------------------------\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/__init__.py                          0      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/checkin_handler.py                  66      0      6      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/checkin_scheduler.py                63      0     16      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/config.py                          111      0     44      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/fare_checker.py                     76      0     20      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/flight.py                           32      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/flight_retriever.py                 91      0     18      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/log.py                              32      0      4      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/main.py                             61      0     18      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/notification_handler.py             54      0     10      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/utils.py                            34      0      6      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | lib/webdriver.py                       117      0     18      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/__init__.py                        0      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_checkin_handler.py           63      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_checkin_scheduler.py        115      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_config.py                   107      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_fare_checker.py             124      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_flight.py                    29      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_flight_retriever.py         133      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_log.py                       41      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_main.py                      80      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_notification_handler.py      57      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_utils.py                     32      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | tests/test_webdriver.py                168      0      0      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | --------------------------------------------------------------------------------\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | TOTAL                                 1686      0    160      0   100%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | \n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | Required test coverage of 100% reached. Total coverage: 100.00%\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   | ============================= 150 passed in 3.23s ==============================\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2705  Success - Main Run unit tests\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \u2b50 Run Post Set up Python 3.7\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests]   \u2705  Success - Post Set up Python 3.7\n[489d864d-7951-404e-a1e3-bea4b76c398d/tests] \ud83c\udfc1  Job succeeded\n",
+        "stdout": "[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \ud83d\ude80  Start image=crawlergpt:latest\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in] user=0 workdir=\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \ud83e\uddea  Matrix: map[python-version:3.7]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \u2b50 Run Main actions/checkout@v3\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2705  Success - Main actions/checkout@v3\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \u2b50 Run Main Set up Python 3.7\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker cp src=/tmp/act-cache/f19f6a32-7e21-46c2-8874-76505f5a9c1d/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2753  ::group::Installed versions\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: \n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? false\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? true\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? true\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? true\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? true\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? true\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::explicit? true\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::evaluating 6 versions\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::matched: 3.7.11\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Successfully set up CPython (3.7.11)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2753  ::endgroup::\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2705  Success - Main Set up Python 3.7\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-output:: python-version=3.7.11\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \u2b50 Run Main Install dependencies\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pip\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Installing collected packages: pip\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Attempting uninstall: pip\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |     Found existing installation: pip 21.2.4\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |     Uninstalling pip-21.2.4:\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |       Successfully uninstalled pip-21.2.4\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Successfully installed pip-23.1.2\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting apprise==1.3.0 (from -r requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading apprise-1.3.0-py2.py3-none-any.whl (1.1 MB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.1/1.1 MB 12.4 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting certifi==2022.12.7 (from -r requirements.txt (line 2))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 155.3/155.3 kB 1.5 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pytz==2023.3 (from -r requirements.txt (line 3))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 502.3/502.3 kB 8.8 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting requests==2.30.0 (from -r requirements.txt (line 4))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading requests-2.30.0-py3-none-any.whl (62 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.5/62.5 kB 858.7 kB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting selenium==4.9.0 (from -r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading selenium-4.9.0-py3-none-any.whl (6.5 MB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 6.5/6.5 MB 23.4 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting selenium_wire==5.1.0 (from -r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading selenium_wire-5.1.0-py3-none-any.whl (239 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 239.6/239.6 kB 1.8 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting undetected_chromedriver==3.1.7 (from -r requirements.txt (line 7))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading undetected-chromedriver-3.1.7.tar.gz (58 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 58.1/58.1 kB 559.5 kB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Installing build dependencies: started\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Installing build dependencies: finished with status 'done'\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Getting requirements to build wheel: started\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Getting requirements to build wheel: finished with status 'done'\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Preparing metadata (pyproject.toml): started\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pytest (from -r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 6.1 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pytest-cov (from -r tests/requirements.txt (line 2))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pytest_cov-4.1.0-py3-none-any.whl (21 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pytest-mock (from -r tests/requirements.txt (line 3))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pytest_mock-3.11.1-py3-none-any.whl (9.6 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting requests_mock (from -r tests/requirements.txt (line 4))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading requests_mock-1.11.0-py2.py3-none-any.whl (28 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting requests-oauthlib (from apprise==1.3.0->-r requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting click>=5.0 (from apprise==1.3.0->-r requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading click-8.1.3-py3-none-any.whl (96 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 96.6/96.6 kB 1.4 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting markdown (from apprise==1.3.0->-r requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading Markdown-3.4.3-py3-none-any.whl (93 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 93.9/93.9 kB 602.6 kB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting PyYAML (from apprise==1.3.0->-r requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 596.3/596.3 kB 11.1 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting charset-normalizer<4,>=2 (from requests==2.30.0->-r requirements.txt (line 4))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading charset_normalizer-3.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (171 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 171.0/171.0 kB 2.3 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting idna<4,>=2.5 (from requests==2.30.0->-r requirements.txt (line 4))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 1.1 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting urllib3<3,>=1.21.1 (from requests==2.30.0->-r requirements.txt (line 4))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading urllib3-2.0.3-py3-none-any.whl (123 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 123.6/123.6 kB 1.2 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting urllib3[socks]~=1.26 (from selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 143.1/143.1 kB 12.3 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting trio~=0.17 (from selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading trio-0.22.0-py3-none-any.whl (384 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 384.9/384.9 kB 5.7 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting trio-websocket~=0.9 (from selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading trio_websocket-0.10.3-py3-none-any.whl (17 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting blinker>=1.4 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading blinker-1.6.2-py3-none-any.whl (13 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting brotli>=1.0.9 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading Brotli-1.0.9-cp37-cp37m-manylinux1_x86_64.whl (357 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 357.2/357.2 kB 3.7 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting kaitaistruct>=0.7 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading kaitaistruct-0.10-py2.py3-none-any.whl (7.0 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pyasn1>=0.3.1 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pyasn1-0.5.0-py2.py3-none-any.whl (83 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 83.9/83.9 kB 2.9 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pyOpenSSL>=22.0.0 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pyOpenSSL-23.2.0-py3-none-any.whl (59 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 59.0/59.0 kB 1.4 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pyparsing>=2.4.2 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 kB 1.6 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pysocks>=1.7.1 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting wsproto>=0.14 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading wsproto-1.2.0-py3-none-any.whl (24 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting zstandard>=0.14.1 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading zstandard-0.21.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.7 MB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.7/2.7 MB 23.9 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting h2>=4.0 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading h2-4.1.0-py3-none-any.whl (57 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.5/57.5 kB 804.9 kB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting hyperframe>=6.0 (from selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading hyperframe-6.0.1-py3-none-any.whl (12 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting websockets (from undetected_chromedriver==3.1.7->-r requirements.txt (line 7))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading websockets-11.0.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 129.9/129.9 kB 7.9 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting iniconfig (from pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting packaging (from pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 1.3 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pluggy<2.0,>=0.12 (from pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting tomli>=1.0.0 (from pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting importlib-metadata>=0.12 (from pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting coverage[toml]>=5.2.1 (from pytest-cov->-r tests/requirements.txt (line 2))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading coverage-7.2.7-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (225 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 225.6/225.6 kB 3.1 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting six (from requests_mock->-r tests/requirements.txt (line 4))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting hpack<5,>=4.0 (from h2>=4.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading hpack-4.0.0-py3-none-any.whl (32 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting zipp>=0.5 (from importlib-metadata>=0.12->pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting typing-extensions>=3.6.4 (from importlib-metadata>=0.12->pytest->-r tests/requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading typing_extensions-4.7.0-py3-none-any.whl (33 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting cryptography!=40.0.0,!=40.0.1,<42,>=38.0.0 (from pyOpenSSL>=22.0.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.3/4.3 MB 16.5 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting attrs>=19.2.0 (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.2/61.2 kB 538.1 kB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting sortedcontainers (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting async-generator>=1.9 (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading async_generator-1.10-py3-none-any.whl (18 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting outcome (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading outcome-1.2.0-py2.py3-none-any.whl (9.7 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting sniffio (from trio~=0.17->selenium==4.9.0->-r requirements.txt (line 5))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting h11<1,>=0.9.0 (from wsproto>=0.14->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading h11-0.14.0-py3-none-any.whl (58 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 58.3/58.3 kB 1.2 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting oauthlib>=3.0.0 (from requests-oauthlib->apprise==1.3.0->-r requirements.txt (line 1))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 151.7/151.7 kB 1.7 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting cffi>=1.12 (from cryptography!=40.0.0,!=40.0.1,<42,>=38.0.0->pyOpenSSL>=22.0.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading cffi-1.15.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (427 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 427.9/427.9 kB 7.3 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Collecting pycparser (from cffi>=1.12->cryptography!=40.0.0,!=40.0.1,<42,>=38.0.0->pyOpenSSL>=22.0.0->selenium_wire==5.1.0->-r requirements.txt (line 6))\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 118.7/118.7 kB 3.1 MB/s eta 0:00:00\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Building wheels for collected packages: undetected_chromedriver\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Building wheel for undetected_chromedriver (pyproject.toml): started\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Building wheel for undetected_chromedriver (pyproject.toml): finished with status 'done'\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Created wheel for undetected_chromedriver: filename=undetected_chromedriver-3.1.7-py3-none-any.whl size=45427 sha256=7cdf5c9c135281587520a40c3eb39baac8f857785f96dcaa3a62575470e650be\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/4c/c7/2b/519c4aae209325e4a44c5b5bc31b2d9bbefb46b587378fd603\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Successfully built undetected_chromedriver\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Installing collected packages: sortedcontainers, pytz, brotli, zstandard, zipp, websockets, urllib3, typing-extensions, tomli, sniffio, six, PyYAML, pysocks, pyparsing, pycparser, pyasn1, packaging, oauthlib, kaitaistruct, iniconfig, idna, hyperframe, hpack, exceptiongroup, coverage, charset-normalizer, certifi, blinker, async-generator, requests, importlib-metadata, h2, h11, cffi, wsproto, requests-oauthlib, requests_mock, pluggy, markdown, cryptography, click, attrs, pytest, pyOpenSSL, outcome, apprise, trio, pytest-mock, pytest-cov, trio-websocket, selenium, undetected_chromedriver, selenium_wire\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Successfully installed PyYAML-6.0 apprise-1.3.0 async-generator-1.10 attrs-23.1.0 blinker-1.6.2 brotli-1.0.9 certifi-2022.12.7 cffi-1.15.1 charset-normalizer-3.1.0 click-8.1.3 coverage-7.2.7 cryptography-41.0.1 exceptiongroup-1.1.1 h11-0.14.0 h2-4.1.0 hpack-4.0.0 hyperframe-6.0.1 idna-3.4 importlib-metadata-6.7.0 iniconfig-2.0.0 kaitaistruct-0.10 markdown-3.4.3 oauthlib-3.2.2 outcome-1.2.0 packaging-23.1 pluggy-1.2.0 pyOpenSSL-23.2.0 pyasn1-0.5.0 pycparser-2.21 pyparsing-3.1.0 pysocks-1.7.1 pytest-7.4.0 pytest-cov-4.1.0 pytest-mock-3.11.1 pytz-2023.3 requests-2.30.0 requests-oauthlib-1.3.1 requests_mock-1.11.0 selenium-4.9.0 selenium_wire-5.1.0 six-1.16.0 sniffio-1.3.0 sortedcontainers-2.4.0 tomli-2.0.1 trio-0.22.0 trio-websocket-0.10.3 typing-extensions-4.7.0 undetected_chromedriver-3.1.7 urllib3-1.26.16 websockets-11.0.3 wsproto-1.2.0 zipp-3.15.0 zstandard-0.21.0\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | \n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | [notice] To update, run: pip install --upgrade pip\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2705  Success - Main Install dependencies\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \u2b50 Run Main Run unit tests\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | ============================= test session starts ==============================\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | configfile: pyproject.toml\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | plugins: mock-3.11.1, cov-4.1.0, requests-mock-1.11.0\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | collected 150 items\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | \n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_checkin_handler.py ..........                                 [  6%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_checkin_scheduler.py ...............                          [ 16%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_config.py ...........................                         [ 34%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_fare_checker.py ...................                           [ 47%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_flight.py ...                                                 [ 49%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_flight_retriever.py ...............                           [ 59%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_log.py .......                                                [ 64%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_main.py ...............                                       [ 74%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_notification_handler.py ...........                           [ 81%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_utils.py ....                                                 [ 84%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_webdriver.py ........................                         [100%]\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | \n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in/report.xml -\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | \n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | ---------- coverage: platform linux, python 3.7.11-final-0 -----------\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Name                                 Stmts   Miss Branch BrPart  Cover   Missing\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | --------------------------------------------------------------------------------\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/__init__.py                          0      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/checkin_handler.py                  66      0      6      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/checkin_scheduler.py                63      0     16      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/config.py                          111      0     44      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/fare_checker.py                     76      0     20      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/flight.py                           32      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/flight_retriever.py                 91      0     18      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/log.py                              32      0      4      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/main.py                             61      0     18      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/notification_handler.py             54      0     10      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/utils.py                            34      0      6      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | lib/webdriver.py                       117      0     18      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/__init__.py                        0      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_checkin_handler.py           63      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_checkin_scheduler.py        115      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_config.py                   107      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_fare_checker.py             124      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_flight.py                    29      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_flight_retriever.py         133      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_log.py                       41      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_main.py                      80      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_notification_handler.py      57      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_utils.py                     32      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | tests/test_webdriver.py                168      0      0      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | --------------------------------------------------------------------------------\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | TOTAL                                 1686      0    160      0   100%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | \n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | Required test coverage of 100% reached. Total coverage: 100.00%\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   | ============================= 150 passed in 3.24s ==============================\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2705  Success - Main Run unit tests\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \u2b50 Run Post Set up Python 3.7\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests]   \u2705  Success - Post Set up Python 3.7\n[93bcea99-981c-4b86-9df3-77e15af0e223/tests] \ud83c\udfc1  Job succeeded\n",
         "stderr": "",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in/.github/workflows/tests-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/jdholtz-auto-southwest-check-in/.github/workflows/tests-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "93bcea99-981c-4b86-9df3-77e15af0e223",
         "build_tool": "pytest",
-        "elapsed_time": 438.18631982803345
+        "elapsed_time": 352.0224621295929
     }
 }

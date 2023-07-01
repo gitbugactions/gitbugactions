@@ -4,7 +4,7 @@
     "language": "python",
     "size": 995,
     "clone_url": "https://github.com/joowani/dtags.git",
-    "timestamp": "2023-06-28T11:11:14.400880Z",
+    "timestamp": "2023-07-01T10:41:02.185397Z",
     "clone_success": true,
     "number_of_actions": 3,
     "number_of_test_actions": 1,
@@ -20,10 +20,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[b664db08-8690-449d-a385-55bdde382072/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[b664db08-8690-449d-a385-55bdde382072/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b664db08-8690-449d-a385-55bdde382072/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b664db08-8690-449d-a385-55bdde382072/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b664db08-8690-449d-a385-55bdde382072/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/joowani-dtags] user=0 workdir=\n[b664db08-8690-449d-a385-55bdde382072/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[b664db08-8690-449d-a385-55bdde382072/Test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[b664db08-8690-449d-a385-55bdde382072/Test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[b664db08-8690-449d-a385-55bdde382072/Test] \u2b50 Run Main actions/checkout@v2\n[b664db08-8690-449d-a385-55bdde382072/Test]   \u2705  Success - Main actions/checkout@v2\n[b664db08-8690-449d-a385-55bdde382072/Test] \u2b50 Run Main Fetch complete history for all tags and branches\n[b664db08-8690-449d-a385-55bdde382072/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[b664db08-8690-449d-a385-55bdde382072/Test]   | fatal: --unshallow on a complete repository does not make sense\n[b664db08-8690-449d-a385-55bdde382072/Test]   \u274c  Failure - Main Fetch complete history for all tags and branches\n[b664db08-8690-449d-a385-55bdde382072/Test] exitcode '128': failure\n[b664db08-8690-449d-a385-55bdde382072/Test] \ud83c\udfc1  Job failed\n",
+        "stdout": "[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/joowani-dtags] user=0 workdir=\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test] \u2b50 Run Main actions/checkout@v2\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \u2705  Success - Main actions/checkout@v2\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test] \u2b50 Run Main Fetch complete history for all tags and branches\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   | fatal: --unshallow on a complete repository does not make sense\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test]   \u274c  Failure - Main Fetch complete history for all tags and branches\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test] exitcode '128': failure\n[ed71ad0b-0b01-4e31-9a39-69a0cc308749/Test] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'Test' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/joowani-dtags/.github/workflows/build-crawler.yaml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/joowani-dtags/.github/workflows/build-crawler.yaml",
+            "type": "pytest"
+        },
+        "workflow_name": "ed71ad0b-0b01-4e31-9a39-69a0cc308749",
         "build_tool": "pytest",
-        "elapsed_time": 114.7786636352539
+        "elapsed_time": 102.81109285354614
     }
 }

@@ -1,10 +1,10 @@
 {
     "repository": "grillazz/fastapi-sqlalchemy-asyncpg",
-    "stars": 203,
+    "stars": 205,
     "language": "python",
     "size": 6891,
     "clone_url": "https://github.com/grillazz/fastapi-sqlalchemy-asyncpg.git",
-    "timestamp": "2023-06-28T16:46:51.959443Z",
+    "timestamp": "2023-07-01T16:17:10.743801Z",
     "clone_success": true,
     "number_of_actions": 1,
     "number_of_test_actions": 1,
@@ -18,10 +18,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] \ud83d\ude80  Start image=crawlergpt:latest\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/grillazz-fastapi-sqlalchemy-asyncpg] user=0 workdir=\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \u2601  git clone 'https://github.com/abatilo/actions-poetry' # ref=v2\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] \u2b50 Run Pre Install Poetry\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \u2705  Success - Pre Install Poetry\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] \ud83e\uddea  Matrix: map[poetry-version:1.4.0 python-version:3.11]\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] \u2b50 Run Main actions/checkout@v3\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \u2705  Success - Main actions/checkout@v3\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] \u2b50 Run Main Create database schema\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   | psql: error: could not connect to server: Connection refused\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   | \tIs the server running on host \"127.0.0.1\" and accepting\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   | \tTCP/IP connections on port 5432?\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test]   \u274c  Failure - Main Create database schema\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] exitcode '2': failure\n[23cdfa5d-1767-4386-b0a9-37ecbe01c68c/test] \ud83c\udfc1  Job failed\n",
+        "stdout": "[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] \ud83d\ude80  Start image=crawlergpt:latest\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/grillazz-fastapi-sqlalchemy-asyncpg] user=0 workdir=\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \u2601  git clone 'https://github.com/abatilo/actions-poetry' # ref=v2\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] \u2b50 Run Pre Install Poetry\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \u2705  Success - Pre Install Poetry\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] \ud83e\uddea  Matrix: map[poetry-version:1.4.0 python-version:3.11]\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] \u2b50 Run Main actions/checkout@v3\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \u2705  Success - Main actions/checkout@v3\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] \u2b50 Run Main Create database schema\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   | psql: error: could not connect to server: Connection refused\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   | \tIs the server running on host \"127.0.0.1\" and accepting\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   | \tTCP/IP connections on port 5432?\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test]   \u274c  Failure - Main Create database schema\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] exitcode '2': failure\n[ee397ea0-ab6e-432c-9d24-d3ec4763ffc9/test] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'test' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/grillazz-fastapi-sqlalchemy-asyncpg/.github/workflows/build-and-test-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/grillazz-fastapi-sqlalchemy-asyncpg/.github/workflows/build-and-test-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "ee397ea0-ab6e-432c-9d24-d3ec4763ffc9",
         "build_tool": "pytest",
-        "elapsed_time": 216.93167734146118
+        "elapsed_time": 100.7065281867981
     }
 }

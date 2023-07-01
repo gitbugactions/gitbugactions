@@ -4,11 +4,11 @@
     "language": "python",
     "size": 969,
     "clone_url": "https://github.com/balta2ar/brotab.git",
-    "timestamp": "2023-06-28T12:13:38.422214Z",
+    "timestamp": "2023-07-01T11:45:20.047601Z",
     "clone_success": true,
     "number_of_actions": 4,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "unknown",
         "unknown",
@@ -19,12 +19,563 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \ud83d\ude80  Start image=crawlergpt:latest\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/balta2ar-brotab] user=0 workdir=\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \u2b50 Run Main actions/checkout@v2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2705  Success - Main actions/checkout@v2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \u2b50 Run Main Set up Python 3.6\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/9396628c-f3cb-4b2f-9881-149d9157b16a/act/actions-setup-python@v1/ dst=/var/run/act/actions/actions-setup-python@v1/\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v1/] user=0 workdir=\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v1/dist/index.js] user= workdir=\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: \n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? false\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? true\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? true\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? true\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? true\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? true\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::explicit? true\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Successfully setup CPython (3.6.14)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v1/.github/python.json\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2705  Success - Main Set up Python 3.6\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2699  ::set-output:: python-version=3.6.14\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \u2b50 Run Main Install dependencies\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting pip\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Installing collected packages: pip\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Attempting uninstall: pip\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |     Found existing installation: pip 21.2.4\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |     Uninstalling pip-21.2.4:\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |       Successfully uninstalled pip-21.2.4\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Successfully installed pip-21.3.1\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting Flask==2.0.2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading Flask-2.0.2-py3-none-any.whl (95 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting requests==2.24.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading requests-2.24.0-py2.py3-none-any.whl (61 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting psutil==5.8.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading psutil-5.8.0-cp36-cp36m-manylinux2010_x86_64.whl (291 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting pytest\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting pytest-cov\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting Werkzeug>=2.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading Werkzeug-2.0.3-py3-none-any.whl (289 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting itsdangerous>=2.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading itsdangerous-2.0.1-py3-none-any.whl (18 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting click>=7.1.2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading click-8.0.4-py3-none-any.whl (97 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting Jinja2>=3.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading Jinja2-3.0.3-py3-none-any.whl (133 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting idna<3,>=2.5\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading idna-2.10-py2.py3-none-any.whl (58 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting chardet<4,>=3.0.2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading urllib3-1.25.11-py2.py3-none-any.whl (127 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting certifi>=2017.4.17\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting packaging\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting iniconfig\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting attrs>=19.2.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting py>=1.8.2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting tomli>=1.0.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading tomli-1.2.3-py3-none-any.whl (12 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting importlib-metadata>=0.12\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading importlib_metadata-4.8.3-py3-none-any.whl (17 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting pluggy<2.0,>=0.12\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting coverage[toml]>=5.2.1\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting zipp>=0.5\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting typing-extensions>=3.6.4\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting MarkupSafe>=2.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting dataclasses\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading dataclasses-0.8-py3-none-any.whl (19 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Installing collected packages: zipp, typing-extensions, pyparsing, importlib-metadata, tomli, py, pluggy, packaging, MarkupSafe, iniconfig, dataclasses, coverage, attrs, Werkzeug, urllib3, pytest, Jinja2, itsdangerous, idna, click, chardet, certifi, requests, pytest-cov, psutil, Flask\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Successfully installed Flask-2.0.2 Jinja2-3.0.3 MarkupSafe-2.0.1 Werkzeug-2.0.3 attrs-22.2.0 certifi-2023.5.7 chardet-3.0.4 click-8.0.4 coverage-6.2 dataclasses-0.8 idna-2.10 importlib-metadata-4.8.3 iniconfig-1.1.1 itsdangerous-2.0.1 packaging-21.3 pluggy-1.0.0 psutil-5.8.0 py-1.11.0 pyparsing-3.1.0 pytest-7.0.1 pytest-cov-4.0.0 requests-2.24.0 tomli-1.2.3 typing-extensions-4.1.1 urllib3-1.25.11 zipp-3.6.0\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2705  Success - Main Install dependencies\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \u2b50 Run Main Display Python version\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | 3.6.14 (default, Jul  5 2021, 20:52:02) \n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | [GCC 9.3.0]\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u2705  Success - Main Display Python version\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \u2b50 Run Main Test with pytest\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | \n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | Usage:   \n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   pip install [options] <requirement specifier> [package-index-options] ...\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   pip install [options] -r <requirements file> [package-index-options] ...\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   pip install [options] [-e] <vcs project url> ...\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   pip install [options] [-e] <local project path> ...\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   |   pip install [options] <archive url/path> ...\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | \n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   | no such option: --junitxml\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build]   \u274c  Failure - Main Test with pytest\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] exitcode '2': failure\n[37a39241-b07d-4ad9-a219-4e86cbd6b2df/build] \ud83c\udfc1  Job failed\n",
-        "stderr": "Error: Job 'build' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/balta2ar-brotab/.github/workflows/pythonapp-crawler.yml",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_crossings",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_decreasing_ids_from_start_to_end",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_from_end_to_start",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_from_start_to_center",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_from_start_to_end",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_to_another_existing_window_above",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_to_another_existing_window_above_2",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_to_another_existing_window_below",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_to_another_existing_window_same_index",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_one_to_another_existing_window_several_mix",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_pair_from_end_to_start",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_pair_from_start_to_end",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_several_downwards",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestReconstruct",
+                "name": "test_move_several_upwards",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestInferDeleteMoveUpdateCommands",
+                "name": "test_only_deletes",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestInferDeleteMoveUpdateCommands",
+                "name": "test_only_moves",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_brotab.TestUpdate",
+                "name": "test_update_only_url",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_inout.TestEditor",
+                "name": "test_run_editor_linux",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_inout.TestEditor",
+                "name": "test_run_editor_windows",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_inout.TestEditor",
+                "name": "test_run_editor_windows_custom",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_integration.TestIntegration",
+                "name": "test_active_tabs",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Skipped because INTEGRATION_TEST=1 is not set",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_integration.TestIntegration",
+                "name": "test_navigate_single",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Skipped because INTEGRATION_TEST=1 is not set",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_integration.TestIntegration",
+                "name": "test_open_single",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Skipped because INTEGRATION_TEST=1 is not set",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_integration.TestIntegration",
+                "name": "test_update_three",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "Skipped because INTEGRATION_TEST=1 is not set",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_integration.TestChromium",
+                "name": "test_active_tabs",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "unconditional skip",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_integration.TestChromium",
+                "name": "test_open_single",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "unconditional skip",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestCreateClients",
+                "name": "test_default_target_hosts",
+                "time": 0.114,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestCreateClients",
+                "name": "test_one_custom_target_hosts",
+                "time": 0.1,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestCreateClients",
+                "name": "test_two_custom_target_hosts",
+                "time": 0.114,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestActivate",
+                "name": "test_activate_focused_ok",
+                "time": 0.143,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestActivate",
+                "name": "test_activate_ok",
+                "time": 0.126,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestText",
+                "name": "test_text_no_arguments_ok",
+                "time": 0.123,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestText",
+                "name": "test_text_with_tab_id_ok",
+                "time": 0.121,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestHtml",
+                "name": "test_html_no_arguments_ok",
+                "time": 0.125,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestHtml",
+                "name": "test_html_with_tab_id_ok",
+                "time": 0.12,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestIndex",
+                "name": "test_index_custom_filename",
+                "time": 0.298,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestIndex",
+                "name": "test_index_no_arguments_ok",
+                "time": 0.186,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_main.TestOpen",
+                "name": "test_three_urls_ok",
+                "time": 0.127,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "brotab.tests.test_utils.TestUtils",
+                "name": "test_split_tab_ids",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[b82ed60b-b510-4839-8301-576c862b81c7/build] \ud83d\ude80  Start image=crawlergpt:latest\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/balta2ar-brotab] user=0 workdir=\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v1\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \u2b50 Run Main actions/checkout@v2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2705  Success - Main actions/checkout@v2\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \u2b50 Run Main Set up Python 3.6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/ee5d6abe-bccb-4eb6-92d1-a7bfadc50da1/act/actions-setup-python@v1/ dst=/var/run/act/actions/actions-setup-python@v1/\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v1/] user=0 workdir=\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v1/dist/index.js] user= workdir=\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? false\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? true\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? true\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? true\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? true\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? true\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::explicit? true\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Successfully setup CPython (3.6.14)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v1/.github/python.json\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2705  Success - Main Set up Python 3.6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2699  ::set-output:: python-version=3.6.14\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \u2b50 Run Main Install dependencies\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting pip\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Installing collected packages: pip\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Attempting uninstall: pip\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |     Found existing installation: pip 21.2.4\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |     Uninstalling pip-21.2.4:\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |       Successfully uninstalled pip-21.2.4\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Successfully installed pip-21.3.1\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting Flask==2.0.2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading Flask-2.0.2-py3-none-any.whl (95 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting requests==2.24.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading requests-2.24.0-py2.py3-none-any.whl (61 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting psutil==5.8.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading psutil-5.8.0-cp36-cp36m-manylinux2010_x86_64.whl (291 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting pytest\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting pytest-cov\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting itsdangerous>=2.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading itsdangerous-2.0.1-py3-none-any.whl (18 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting Werkzeug>=2.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading Werkzeug-2.0.3-py3-none-any.whl (289 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting Jinja2>=3.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading Jinja2-3.0.3-py3-none-any.whl (133 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting click>=7.1.2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading click-8.0.4-py3-none-any.whl (97 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting idna<3,>=2.5\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading idna-2.10-py2.py3-none-any.whl (58 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading urllib3-1.25.11-py2.py3-none-any.whl (127 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting chardet<4,>=3.0.2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting certifi>=2017.4.17\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting attrs>=19.2.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting importlib-metadata>=0.12\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading importlib_metadata-4.8.3-py3-none-any.whl (17 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting py>=1.8.2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting packaging\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting iniconfig\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting pluggy<2.0,>=0.12\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting tomli>=1.0.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading tomli-1.2.3-py3-none-any.whl (12 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting coverage[toml]>=5.2.1\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting typing-extensions>=3.6.4\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting zipp>=0.5\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting MarkupSafe>=2.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting dataclasses\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading dataclasses-0.8-py3-none-any.whl (19 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Installing collected packages: zipp, typing-extensions, pyparsing, importlib-metadata, tomli, py, pluggy, packaging, MarkupSafe, iniconfig, dataclasses, coverage, attrs, Werkzeug, urllib3, pytest, Jinja2, itsdangerous, idna, click, chardet, certifi, requests, pytest-cov, psutil, Flask\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Successfully installed Flask-2.0.2 Jinja2-3.0.3 MarkupSafe-2.0.1 Werkzeug-2.0.3 attrs-22.2.0 certifi-2023.5.7 chardet-3.0.4 click-8.0.4 coverage-6.2 dataclasses-0.8 idna-2.10 importlib-metadata-4.8.3 iniconfig-1.1.1 itsdangerous-2.0.1 packaging-21.3 pluggy-1.0.0 psutil-5.8.0 py-1.11.0 pyparsing-3.1.0 pytest-7.0.1 pytest-cov-4.0.0 requests-2.24.0 tomli-1.2.3 typing-extensions-4.1.1 urllib3-1.25.11 zipp-3.6.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2705  Success - Main Install dependencies\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \u2b50 Run Main Display Python version\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 3.6.14 (default, Jul  5 2021, 20:52:02) \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | [GCC 9.3.0]\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2705  Success - Main Display Python version\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \u2b50 Run Main Test with pytest\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pytest in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (7.0.1)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (1.0.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (21.3)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: iniconfig in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (1.1.1)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: importlib-metadata>=0.12 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (4.8.3)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: py>=1.8.2 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (1.11.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: tomli>=1.0.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (1.2.3)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: attrs>=19.2.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest) (22.2.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: zipp>=0.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata>=0.12->pytest) (3.6.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: typing-extensions>=3.6.4 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata>=0.12->pytest) (4.1.1)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from packaging->pytest) (3.1.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pytest-cov in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (4.0.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: coverage[toml]>=5.2.1 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest-cov) (6.2)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pytest>=4.6 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest-cov) (7.0.1)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: tomli in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from coverage[toml]>=5.2.1->pytest-cov) (1.2.3)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: attrs>=19.2.0 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov) (22.2.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov) (1.0.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: iniconfig in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov) (1.1.1)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: py>=1.8.2 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov) (1.11.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: importlib-metadata>=0.12 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov) (4.8.3)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov) (21.3)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: zipp>=0.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata>=0.12->pytest>=4.6->pytest-cov) (3.6.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: typing-extensions>=3.6.4 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from importlib-metadata>=0.12->pytest>=4.6->pytest-cov) (4.1.1)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from packaging->pytest>=4.6->pytest-cov) (3.1.0)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | ============================= test session starts ==============================\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | platform linux -- Python 3.6.14, pytest-7.0.1, pluggy-1.0.0 -- /opt/hostedtoolcache/Python/3.6.14/x64/bin/python\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | cachedir: .pytest_cache\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/balta2ar-brotab\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | plugins: cov-4.0.0\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | collecting ... collected 39 items\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_crossings PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_decreasing_ids_from_start_to_end PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_from_end_to_start PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_from_start_to_center PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_from_start_to_end PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_to_another_existing_window_above PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_to_another_existing_window_above_2 PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_to_another_existing_window_below PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_to_another_existing_window_same_index PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_one_to_another_existing_window_several_mix PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_pair_from_end_to_start PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_pair_from_start_to_end PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_several_downwards PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestReconstruct::test_move_several_upwards PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestInferDeleteMoveUpdateCommands::test_only_deletes PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestInferDeleteMoveUpdateCommands::test_only_moves PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_brotab.py::TestUpdate::test_update_only_url PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_inout.py::TestEditor::test_run_editor_linux PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_inout.py::TestEditor::test_run_editor_windows PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_inout.py::TestEditor::test_run_editor_windows_custom PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_integration.py::TestIntegration::test_active_tabs SKIPPED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_integration.py::TestIntegration::test_navigate_single SKIPPED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_integration.py::TestIntegration::test_open_single SKIPPED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_integration.py::TestIntegration::test_update_three SKIPPED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_integration.py::TestChromium::test_active_tabs SKIPPED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_integration.py::TestChromium::test_open_single SKIPPED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestCreateClients::test_default_target_hosts PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestCreateClients::test_one_custom_target_hosts PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestCreateClients::test_two_custom_target_hosts PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestActivate::test_activate_focused_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestActivate::test_activate_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestText::test_text_no_arguments_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestText::test_text_with_tab_id_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestHtml::test_html_no_arguments_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestHtml::test_html_with_tab_id_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestIndex::test_index_custom_filename PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestIndex::test_index_no_arguments_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_main.py::TestOpen::test_three_urls_ok PASSED\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | brotab/tests/test_utils.py::TestUtils::test_split_tab_ids PASSEDWARNING: Failed to generate report: No data to report.\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/balta2ar-brotab/report.xml -\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | ---------- coverage: platform linux, python 3.6.14-final-0 -----------\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | ======================== 33 passed, 6 skipped in 2.91s =========================\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 500 290\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 500 290\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 500 290\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 500 290\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 500 290\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /activate_tab/2?focused=1 HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 500 290\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /activate_tab/2 HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:07] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_text?delimiter_regex=L1xufFxyfFx0L2c=&replace_with=IiAi HTTP/1.1\" 200 18\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_text?delimiter_regex=L1xufFxyfFx0L2c=&replace_with=IiAi HTTP/1.1\" 200 56\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_html?delimiter_regex=L1xufFxyfFx0L2c=&replace_with=IiAi HTTP/1.1\" 200 18\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_html?delimiter_regex=L1xufFxyfFx0L2c=&replace_with=IiAi HTTP/1.1\" 200 56\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_text?delimiter_regex=L1xufFxyfFx0L2c=&replace_with=IiAi HTTP/1.1\" 200 18\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:08] \"GET /get_pid HTTP/1.1\" 200 2\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:09] \"GET /get_browser HTTP/1.1\" 200 6\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | 127.0.0.1 - - [01/Jul/2023 11:49:09] \"POST /open_urls/1 HTTP/1.1\" 200 11\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/coverage/inorout.py:520: CoverageWarning: Module com was never imported. (module-not-imported)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   self.warn(f\"Module {pkg} was never imported.\", slug=\"module-not-imported\")\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/coverage/control.py:768: CoverageWarning: No data was collected. (no-data-collected)\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/pytest_cov/plugin.py:297: CovReportWarning: Failed to generate report: No data to report.\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   | \n[b82ed60b-b510-4839-8301-576c862b81c7/build]   |   self.cov_controller.finish()\n[b82ed60b-b510-4839-8301-576c862b81c7/build]   \u2705  Success - Main Test with pytest\n[b82ed60b-b510-4839-8301-576c862b81c7/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/balta2ar-brotab/.github/workflows/pythonapp-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "b82ed60b-b510-4839-8301-576c862b81c7",
         "build_tool": "pytest",
-        "elapsed_time": 132.9514763355255
+        "elapsed_time": 227.98008704185486
     }
 }

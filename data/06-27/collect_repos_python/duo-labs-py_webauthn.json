@@ -1,10 +1,10 @@
 {
     "repository": "duo-labs/py_webauthn",
-    "stars": 640,
+    "stars": 642,
     "language": "python",
     "size": 462,
     "clone_url": "https://github.com/duo-labs/py_webauthn.git",
-    "timestamp": "2023-06-28T12:25:26.273185Z",
+    "timestamp": "2023-07-01T11:57:07.147601Z",
     "clone_success": true,
     "number_of_actions": 2,
     "number_of_test_actions": 1,
@@ -19,6 +19,34 @@
     "actions_run": {
         "failed": false,
         "tests": [
+            {
+                "classname": "tests.test_tpm_parse_pub_area.TestWebAuthnTPMParsePubArea",
+                "name": "test_properly_parses_pub_area_bytes",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_apple.TestVerifyRegistrationResponseApple",
+                "name": "test_verify_attestation_apple_passkey",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
             {
                 "classname": "tests.test_generate_user_handle.TestWebAuthnGenerateUserHandle",
                 "name": "test_generates_byte_sequence",
@@ -36,7 +64,7 @@
             {
                 "classname": "tests.test_generate_user_handle.TestWebAuthnGenerateUserHandle",
                 "name": "test_generates_unique_value_each_time",
-                "time": 0.001,
+                "time": 0.0,
                 "results": [
                     {
                         "result": "Passed",
@@ -48,8 +76,36 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_options_to_json.TestWebAuthnOptionsToJSON",
-                "name": "test_converts_options_to_JSON",
+                "classname": "tests.test_verify_registration_response_android_safetynet.TestVerifyRegistrationResponseAndroidSafetyNet",
+                "name": "test_verify_attestation_android_safetynet",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
+                "name": "test_verify_attestation_dell_xps_13",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
+                "name": "test_verify_attestation_lenovo_carbon_x1",
                 "time": 0.003,
                 "results": [
                     {
@@ -62,22 +118,8 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_options_to_json.TestWebAuthnOptionsToJSON",
-                "name": "test_includes_optional_value_when_set",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parse_attestation_object.TestParseAttestationObject",
-                "name": "test_can_parse_good_none_attestation_object",
+                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
+                "name": "test_verify_attestation_surface_pro_4",
                 "time": 0.003,
                 "results": [
                     {
@@ -90,79 +132,9 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_parse_attestation_object.TestParseAttestationObject",
-                "name": "test_can_parse_good_packed_attestation_object",
+                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
+                "name": "test_verify_tpm_with_ecc_public_area_type",
                 "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
-                "name": "test_does_not_raise_on_last_possible_millisecond",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
-                "name": "test_does_not_raise_on_timestamp_slightly_in_future",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
-                "name": "test_does_not_raise_on_timestamp_slightly_in_past",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
-                "name": "test_raises_on_timestamp_too_far_in_future",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
-                "name": "test_raises_on_timestamp_too_far_in_past",
-                "time": 0.001,
                 "results": [
                     {
                         "result": "Passed",
@@ -356,22 +328,8 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_bytes_subclass_support.TestWebAuthnBytesSubclassSupport",
-                "name": "test_handles_bytes_subclasses",
-                "time": 0.014,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_bytes_subclass_support.TestWebAuthnBytesSubclassSupport",
-                "name": "test_handles_memoryviews",
+                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
+                "name": "test_raises_exception_on_unsupported_attestation_type",
                 "time": 0.003,
                 "results": [
                     {
@@ -384,9 +342,121 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_bytes_subclass_support.TestWebAuthnBytesSubclassSupport",
-                "name": "test_supports_strings_for_bytes",
+                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
+                "name": "test_raises_when_root_cert_invalid_for_response",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
+                "name": "test_supports_multiple_expected_origins",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
+                "name": "test_verifies_none_attestation_response",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
+                "name": "test_verifies_registration_over_cable",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bytes_to_base64url.TestWebAuthnBytesToBase64URL",
+                "name": "test_converts_buffer_to_base64url_string",
                 "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_tpm_parse_cert_info.TestWebAuthnTPMParseCertInfo",
+                "name": "test_properly_parses_cert_info_bytes",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_challenge.TestWebAuthnGenerateChallenge",
+                "name": "test_generates_byte_sequence",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_challenge.TestWebAuthnGenerateChallenge",
+                "name": "test_generates_unique_value_each_time",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_challenge.TestWebAuthnGenerateChallenge",
+                "name": "test_supports_custom_lengths",
+                "time": 0.0,
                 "results": [
                     {
                         "result": "Passed",
@@ -440,6 +510,62 @@
                 "stderr": null
             },
             {
+                "classname": "tests.test_generate_registration_options.TestGenerateRegistrationOptions",
+                "name": "test_generates_options_with_custom_values",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_generate_registration_options.TestGenerateRegistrationOptions",
+                "name": "test_generates_options_with_defaults",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parse_attestation_object.TestParseAttestationObject",
+                "name": "test_can_parse_good_none_attestation_object",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parse_attestation_object.TestParseAttestationObject",
+                "name": "test_can_parse_good_packed_attestation_object",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
                 "classname": "tests.test_structs.TestStructsRegistrationCredential",
                 "name": "test_registration_credential_parse_raw",
                 "time": 0.001,
@@ -454,8 +580,22 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_tpm_parse_pub_area.TestWebAuthnTPMParsePubArea",
-                "name": "test_properly_parses_pub_area_bytes",
+                "classname": "tests.test_bytes_subclass_support.TestWebAuthnBytesSubclassSupport",
+                "name": "test_handles_bytes_subclasses",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_bytes_subclass_support.TestWebAuthnBytesSubclassSupport",
+                "name": "test_handles_memoryviews",
                 "time": 0.003,
                 "results": [
                     {
@@ -468,23 +608,9 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_tpm_parse_cert_info.TestWebAuthnTPMParseCertInfo",
-                "name": "test_properly_parses_cert_info_bytes",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_android_key.TestVerifyRegistrationResponseAndroidKey",
-                "name": "test_verify_attestation_android_key",
-                "time": 0.009,
+                "classname": "tests.test_bytes_subclass_support.TestWebAuthnBytesSubclassSupport",
+                "name": "test_supports_strings_for_bytes",
+                "time": 0.001,
                 "results": [
                     {
                         "result": "Passed",
@@ -580,261 +706,9 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_bytes_to_base64url.TestWebAuthnBytesToBase64URL",
-                "name": "test_converts_buffer_to_base64url_string",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_generate_challenge.TestWebAuthnGenerateChallenge",
-                "name": "test_generates_byte_sequence",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_generate_challenge.TestWebAuthnGenerateChallenge",
-                "name": "test_generates_unique_value_each_time",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_generate_challenge.TestWebAuthnGenerateChallenge",
-                "name": "test_supports_custom_lengths",
-                "time": 0.0,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_packed.TestVerifyRegistrationResponsePacked",
-                "name": "test_verify_attestation_from_yubikey_firefox",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_packed.TestVerifyRegistrationResponsePacked",
-                "name": "test_verify_attestation_with_okp_public_key",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_apple.TestVerifyRegistrationResponseApple",
-                "name": "test_verify_attestation_apple_passkey",
-                "time": 0.006,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
-                "name": "test_raises_exception_on_unsupported_attestation_type",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
-                "name": "test_raises_when_root_cert_invalid_for_response",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
-                "name": "test_supports_multiple_expected_origins",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
-                "name": "test_verifies_none_attestation_response",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response.TestVerifyRegistrationResponse",
-                "name": "test_verifies_registration_over_cable",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_android_safetynet.TestVerifyRegistrationResponseAndroidSafetyNet",
-                "name": "test_verify_attestation_android_safetynet",
-                "time": 0.007,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
-                "name": "test_raises_on_invalid_backup_state_flags",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
-                "name": "test_returns_multi_device_backed_up",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
-                "name": "test_returns_multi_device_not_backed_up",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
-                "name": "test_returns_single_device_not_backed_up",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_aaguid_to_string.TestAAGUIDToString",
-                "name": "test_converts_bytes_to_uuid_format",
-                "time": 0.014,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
                 "classname": "tests.test_parse_authenticator_data.TestWebAuthnParseAuthenticatorData",
                 "name": "test_correctly_parses_attested_credential_data",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -848,7 +722,7 @@
             {
                 "classname": "tests.test_parse_authenticator_data.TestWebAuthnParseAuthenticatorData",
                 "name": "test_correctly_parses_simple",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -862,7 +736,7 @@
             {
                 "classname": "tests.test_parse_authenticator_data.TestWebAuthnParseAuthenticatorData",
                 "name": "test_parses_attested_credential_data_and_extension_data",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -916,8 +790,8 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
-                "name": "test_verify_attestation_from_fido_conformance",
+                "classname": "tests.test_options_to_json.TestWebAuthnOptionsToJSON",
+                "name": "test_converts_options_to_JSON",
                 "time": 0.003,
                 "results": [
                     {
@@ -930,121 +804,9 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
-                "name": "test_verify_attestation_from_yubikey_firefox",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
-                "name": "test_verify_attestation_with_unsupported_token_binding",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
-                "name": "test_verify_attestation_with_unsupported_token_binding_status",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
-                "name": "test_verify_attestation_dell_xps_13",
-                "time": 0.005,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
-                "name": "test_verify_attestation_lenovo_carbon_x1",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
-                "name": "test_verify_attestation_surface_pro_4",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_verify_registration_response_tpm.TestVerifyRegistrationResponseTPM",
-                "name": "test_verify_tpm_with_ecc_public_area_type",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_snake_case_to_camel_case.TestWebAuthnSnakeCaseToCamelCase",
-                "name": "test_converts_client_data_json",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_snake_case_to_camel_case.TestWebAuthnSnakeCaseToCamelCase",
-                "name": "test_converts_snake_case_to_camel_case",
-                "time": 0.0,
+                "classname": "tests.test_options_to_json.TestWebAuthnOptionsToJSON",
+                "name": "test_includes_optional_value_when_set",
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -1112,8 +874,22 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_generate_registration_options.TestGenerateRegistrationOptions",
-                "name": "test_generates_options_with_custom_values",
+                "classname": "tests.test_aaguid_to_string.TestAAGUIDToString",
+                "name": "test_converts_bytes_to_uuid_format",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_packed.TestVerifyRegistrationResponsePacked",
+                "name": "test_verify_attestation_from_yubikey_firefox",
                 "time": 0.003,
                 "results": [
                     {
@@ -1126,9 +902,233 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_generate_registration_options.TestGenerateRegistrationOptions",
-                "name": "test_generates_options_with_defaults",
+                "classname": "tests.test_verify_registration_response_packed.TestVerifyRegistrationResponsePacked",
+                "name": "test_verify_attestation_with_okp_public_key",
                 "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
+                "name": "test_verify_attestation_from_fido_conformance",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
+                "name": "test_verify_attestation_from_yubikey_firefox",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
+                "name": "test_verify_attestation_with_unsupported_token_binding",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_fido_u2f.TestVerifyRegistrationResponseFIDOU2F",
+                "name": "test_verify_attestation_with_unsupported_token_binding_status",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
+                "name": "test_does_not_raise_on_last_possible_millisecond",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
+                "name": "test_does_not_raise_on_timestamp_slightly_in_future",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
+                "name": "test_does_not_raise_on_timestamp_slightly_in_past",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
+                "name": "test_raises_on_timestamp_too_far_in_future",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_safetynet_timestamp.TestVerifySafetyNetTimestamp",
+                "name": "test_raises_on_timestamp_too_far_in_past",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snake_case_to_camel_case.TestWebAuthnSnakeCaseToCamelCase",
+                "name": "test_converts_client_data_json",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_snake_case_to_camel_case.TestWebAuthnSnakeCaseToCamelCase",
+                "name": "test_converts_snake_case_to_camel_case",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_verify_registration_response_android_key.TestVerifyRegistrationResponseAndroidKey",
+                "name": "test_verify_attestation_android_key",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
+                "name": "test_raises_on_invalid_backup_state_flags",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
+                "name": "test_returns_multi_device_backed_up",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
+                "name": "test_returns_multi_device_not_backed_up",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parse_backup_flags.TestParseBackupFlags",
+                "name": "test_returns_single_device_not_backed_up",
+                "time": 0.001,
                 "results": [
                     {
                         "result": "Passed",
@@ -1140,10 +1140,14 @@
                 "stderr": null
             }
         ],
-        "stdout": "[0a1ca848-3436-43d3-816b-414550e0f470/build] \ud83d\ude80  Start image=crawlergpt:latest\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/duo-labs-py_webauthn] user=0 workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \ud83e\uddea  Matrix: map[python-version:3.8]\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \u2b50 Run Main actions/checkout@v3\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2705  Success - Main actions/checkout@v3\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \u2b50 Run Main Set up Python 3.8\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/a2028361-171d-43e4-b5bf-bd4177e6e2af/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2753  ::group::Installed versions\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: \n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? false\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? true\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? true\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? true\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? true\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? true\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::explicit? true\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::matched: 3.8.11\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Successfully set up CPython (3.8.11)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2753  ::endgroup::\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2705  Success - Main Set up Python 3.8\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.8.11/x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib/pkgconfig\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.8.11/x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.8.11/x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.8.11/x64/bin/python\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::set-output:: python-version=3.8.11\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \u2b50 Run Main Install dependencies\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages (21.2.4)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pip\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Installing collected packages: pip\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Attempting uninstall: pip\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |     Found existing installation: pip 21.2.4\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |     Uninstalling pip-21.2.4:\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |       Successfully uninstalled pip-21.2.4\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Successfully installed pip-23.1.2\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting asn1crypto==1.4.0 (from -r requirements.txt (line 1))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading asn1crypto-1.4.0-py2.py3-none-any.whl (104 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 104.0/104.0 kB 2.5 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting black==21.9b0 (from -r requirements.txt (line 2))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading black-21.9b0-py3-none-any.whl (148 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 148.2/148.2 kB 2.1 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting cbor2==5.4.2.post1 (from -r requirements.txt (line 3))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading cbor2-5.4.2.post1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (235 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 235.9/235.9 kB 14.8 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting cffi==1.15.0 (from -r requirements.txt (line 4))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading cffi-1.15.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (446 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 446.7/446.7 kB 23.3 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting click==8.0.3 (from -r requirements.txt (line 5))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading click-8.0.3-py3-none-any.whl (97 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 97.5/97.5 kB 4.2 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting cryptography==39.0.1 (from -r requirements.txt (line 6))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading cryptography-39.0.1-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.2/4.2 MB 22.6 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting mccabe==0.6.1 (from -r requirements.txt (line 7))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting mypy==0.910 (from -r requirements.txt (line 8))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading mypy-0.910-cp38-cp38-manylinux2010_x86_64.whl (22.8 MB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 22.8/22.8 MB 6.2 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting mypy-extensions==0.4.3 (from -r requirements.txt (line 9))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pathspec==0.9.0 (from -r requirements.txt (line 10))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pathspec-0.9.0-py2.py3-none-any.whl (31 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting platformdirs==2.4.0 (from -r requirements.txt (line 11))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pycodestyle==2.8.0 (from -r requirements.txt (line 12))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pycodestyle-2.8.0-py2.py3-none-any.whl (42 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 42.1/42.1 kB 1.8 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pycparser==2.20 (from -r requirements.txt (line 13))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pycparser-2.20-py2.py3-none-any.whl (112 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 112.0/112.0 kB 5.3 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pydantic==1.9.0 (from -r requirements.txt (line 14))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pydantic-1.9.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.6 MB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 12.6/12.6 MB 13.2 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pyflakes==2.4.0 (from -r requirements.txt (line 15))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pyflakes-2.4.0-py2.py3-none-any.whl (69 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 69.7/69.7 kB 4.8 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting pyOpenSSL==23.0.0 (from -r requirements.txt (line 16))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading pyOpenSSL-23.0.0-py3-none-any.whl (57 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.3/57.3 kB 987.3 kB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting regex==2021.10.8 (from -r requirements.txt (line 17))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading regex-2021.10.8-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (764 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 764.3/764.3 kB 5.2 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting six==1.16.0 (from -r requirements.txt (line 18))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting toml==0.10.2 (from -r requirements.txt (line 19))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting tomli==1.2.1 (from -r requirements.txt (line 20))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading tomli-1.2.1-py3-none-any.whl (11 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting typing-extensions==3.10.0.2 (from -r requirements.txt (line 21))\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading typing_extensions-3.10.0.2-py3-none-any.whl (26 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Installing collected packages: typing-extensions, regex, mypy-extensions, mccabe, asn1crypto, tomli, toml, six, pyflakes, pydantic, pycparser, pycodestyle, platformdirs, pathspec, click, cbor2, mypy, cffi, black, cryptography, pyOpenSSL\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Successfully installed asn1crypto-1.4.0 black-21.9b0 cbor2-5.4.2.post1 cffi-1.15.0 click-8.0.3 cryptography-39.0.1 mccabe-0.6.1 mypy-0.910 mypy-extensions-0.4.3 pathspec-0.9.0 platformdirs-2.4.0 pyOpenSSL-23.0.0 pycodestyle-2.8.0 pycparser-2.20 pydantic-1.9.0 pyflakes-2.4.0 regex-2021.10.8 six-1.16.0 toml-0.10.2 tomli-1.2.1 typing-extensions-3.10.0.2\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | \n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | [notice] A new release of pip is available: 21.1.1 -> 23.1.2\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | [notice] To update, run: pip install --upgrade pip\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2705  Success - Main Install dependencies\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \u2b50 Run Main Test with unittest\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting unittest-xml-reporting\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Collecting lxml (from unittest-xml-reporting)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |   Downloading lxml-4.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (7.1 MB)\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 7.1/7.1 MB 27.2 MB/s eta 0:00:00\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | \n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | [notice] A new release of pip is available: 21.1.1 -> 23.1.2\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | [notice] To update, run: pip install --upgrade pip\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | \n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Running tests...\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | ----------------------------------------------------------------------\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | ................................................................................\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | ----------------------------------------------------------------------\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Ran 80 tests in 0.191s\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | \n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | OK\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | \n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Generating XML reports...\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2705  Success - Main Test with unittest\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \u2b50 Run Main Run mypy\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   | Success: no issues found in 46 source files\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2705  Success - Main Run mypy\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \u2b50 Run Post Set up Python 3.8\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[0a1ca848-3436-43d3-816b-414550e0f470/build]   \u2705  Success - Post Set up Python 3.8\n[0a1ca848-3436-43d3-816b-414550e0f470/build] \ud83c\udfc1  Job succeeded\n",
+        "stdout": "[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \ud83d\ude80  Start image=crawlergpt:latest\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/duo-labs-py_webauthn] user=0 workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \ud83e\uddea  Matrix: map[python-version:3.8]\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \u2b50 Run Main actions/checkout@v3\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2705  Success - Main actions/checkout@v3\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \u2b50 Run Main Set up Python 3.8\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/2a8ec7ba-30aa-4450-9940-0ae217d768d5/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2753  ::group::Installed versions\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: \n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? false\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? true\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? true\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? true\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? true\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? true\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::explicit? true\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::matched: 3.8.11\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Successfully set up CPython (3.8.11)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2753  ::endgroup::\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2705  Success - Main Set up Python 3.8\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib/pkgconfig\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.8.11/x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.8.11/x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.8.11/x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-output:: python-version=3.8.11\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.8.11/x64/bin/python\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \u2b50 Run Main Install dependencies\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/site-packages (21.2.4)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pip\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Installing collected packages: pip\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Attempting uninstall: pip\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |     Found existing installation: pip 21.2.4\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |     Uninstalling pip-21.2.4:\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |       Successfully uninstalled pip-21.2.4\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Successfully installed pip-23.1.2\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting asn1crypto==1.4.0 (from -r requirements.txt (line 1))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading asn1crypto-1.4.0-py2.py3-none-any.whl (104 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 104.0/104.0 kB 1.7 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting black==21.9b0 (from -r requirements.txt (line 2))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading black-21.9b0-py3-none-any.whl (148 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 148.2/148.2 kB 7.4 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting cbor2==5.4.2.post1 (from -r requirements.txt (line 3))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading cbor2-5.4.2.post1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (235 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 235.9/235.9 kB 2.1 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting cffi==1.15.0 (from -r requirements.txt (line 4))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading cffi-1.15.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (446 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 446.7/446.7 kB 30.5 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting click==8.0.3 (from -r requirements.txt (line 5))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading click-8.0.3-py3-none-any.whl (97 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 97.5/97.5 kB 12.1 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting cryptography==39.0.1 (from -r requirements.txt (line 6))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading cryptography-39.0.1-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.2/4.2 MB 22.8 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting mccabe==0.6.1 (from -r requirements.txt (line 7))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting mypy==0.910 (from -r requirements.txt (line 8))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading mypy-0.910-cp38-cp38-manylinux2010_x86_64.whl (22.8 MB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 22.8/22.8 MB 9.3 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting mypy-extensions==0.4.3 (from -r requirements.txt (line 9))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pathspec==0.9.0 (from -r requirements.txt (line 10))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pathspec-0.9.0-py2.py3-none-any.whl (31 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting platformdirs==2.4.0 (from -r requirements.txt (line 11))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pycodestyle==2.8.0 (from -r requirements.txt (line 12))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pycodestyle-2.8.0-py2.py3-none-any.whl (42 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 42.1/42.1 kB 2.4 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pycparser==2.20 (from -r requirements.txt (line 13))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pycparser-2.20-py2.py3-none-any.whl (112 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 112.0/112.0 kB 1.3 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pydantic==1.9.0 (from -r requirements.txt (line 14))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pydantic-1.9.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.6 MB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 12.6/12.6 MB 20.8 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pyflakes==2.4.0 (from -r requirements.txt (line 15))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pyflakes-2.4.0-py2.py3-none-any.whl (69 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 69.7/69.7 kB 2.1 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting pyOpenSSL==23.0.0 (from -r requirements.txt (line 16))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading pyOpenSSL-23.0.0-py3-none-any.whl (57 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.3/57.3 kB 889.2 kB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting regex==2021.10.8 (from -r requirements.txt (line 17))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading regex-2021.10.8-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (764 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 764.3/764.3 kB 27.8 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting six==1.16.0 (from -r requirements.txt (line 18))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting toml==0.10.2 (from -r requirements.txt (line 19))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting tomli==1.2.1 (from -r requirements.txt (line 20))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading tomli-1.2.1-py3-none-any.whl (11 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting typing-extensions==3.10.0.2 (from -r requirements.txt (line 21))\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading typing_extensions-3.10.0.2-py3-none-any.whl (26 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Installing collected packages: typing-extensions, regex, mypy-extensions, mccabe, asn1crypto, tomli, toml, six, pyflakes, pydantic, pycparser, pycodestyle, platformdirs, pathspec, click, cbor2, mypy, cffi, black, cryptography, pyOpenSSL\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Successfully installed asn1crypto-1.4.0 black-21.9b0 cbor2-5.4.2.post1 cffi-1.15.0 click-8.0.3 cryptography-39.0.1 mccabe-0.6.1 mypy-0.910 mypy-extensions-0.4.3 pathspec-0.9.0 platformdirs-2.4.0 pyOpenSSL-23.0.0 pycodestyle-2.8.0 pycparser-2.20 pydantic-1.9.0 pyflakes-2.4.0 regex-2021.10.8 six-1.16.0 toml-0.10.2 tomli-1.2.1 typing-extensions-3.10.0.2\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | \n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | [notice] A new release of pip is available: 21.1.1 -> 23.1.2\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | [notice] To update, run: pip install --upgrade pip\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2705  Success - Main Install dependencies\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \u2b50 Run Main Test with unittest\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting unittest-xml-reporting\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Collecting lxml (from unittest-xml-reporting)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |   Downloading lxml-4.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (7.1 MB)\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 7.1/7.1 MB 27.3 MB/s eta 0:00:00\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | \n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | [notice] A new release of pip is available: 21.1.1 -> 23.1.2\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | [notice] To update, run: pip install --upgrade pip\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | \n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Running tests...\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | ----------------------------------------------------------------------\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | ................................................................................\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | ----------------------------------------------------------------------\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Ran 80 tests in 0.180s\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | \n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | OK\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | \n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Generating XML reports...\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2705  Success - Main Test with unittest\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \u2b50 Run Main Run mypy\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   | Success: no issues found in 46 source files\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2705  Success - Main Run mypy\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \u2b50 Run Post Set up Python 3.8\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build]   \u2705  Success - Post Set up Python 3.8\n[f9637e98-eb14-4891-a1ed-c5d02c6d86e8/build] \ud83c\udfc1  Job succeeded\n",
         "stderr": "",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/duo-labs-py_webauthn/.github/workflows/build_and_test-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/duo-labs-py_webauthn/.github/workflows/build_and_test-crawler.yml",
+            "type": "unittest"
+        },
+        "workflow_name": "f9637e98-eb14-4891-a1ed-c5d02c6d86e8",
         "build_tool": "unittest",
-        "elapsed_time": 146.30718159675598
+        "elapsed_time": 149.25146198272705
     }
 }

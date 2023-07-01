@@ -4,7 +4,7 @@
     "language": "python",
     "size": 679,
     "clone_url": "https://github.com/TheAlgorithms/algorithms-keeper.git",
-    "timestamp": "2023-06-28T16:11:58.146472Z",
+    "timestamp": "2023-07-01T15:42:48.734546Z",
     "clone_success": true,
     "number_of_actions": 1,
     "number_of_test_actions": 1,
@@ -17,11 +17,2662 @@
     ],
     "actions_run": {
         "failed": true,
-        "tests": [],
-        "stdout": "[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] \ud83d\ude80  Start image=crawlergpt:latest\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TheAlgorithms-algorithms-keeper] user=0 workdir=\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] \u2b50 Run Main actions/checkout@v3\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2705  Success - Main actions/checkout@v3\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] \u2b50 Run Main actions/setup-python@v4\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/ccf3da02-a9dd-499b-9cb9-8d1fafb90273/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2753  ::group::Installed versions\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.x is 3.x\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: \n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? false\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? true\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? true\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? true\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? true\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? true\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::explicit? true\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::matched: 3.9.6\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Successfully set up CPython (3.9.6)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2753  ::endgroup::\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2705  Success - Main actions/setup-python@v4\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-output:: python-version=3.9.6\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] \u2b50 Run Main actions/cache@v3\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/ccf3da02-a9dd-499b-9cb9-8d1fafb90273/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v3/] user=0 workdir=\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Resolved Keys:\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::[\"pip-ca3c7acdc6f1bb2036816531d4b576a4e84dd7cbc4b73649151cae95cfca8dda-51d6f879f42a3748e7e6bcad866424deb8dc4fe2fd13a2aaa1fd832ac9ffced9-7f6b074ae94183335befeb8c8bdd560b5cca3a36c5a8fcda49c3f5b08276f168\"]\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::1.5.0\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:38317/_apis/artifactcache/cache?keys=pip-ca3c7acdc6f1bb2036816531d4b576a4e84dd7cbc4b73649151cae95cfca8dda-51d6f879f42a3748e7e6bcad866424deb8dc4fe2fd13a2aaa1fd832ac9ffced9-7f6b074ae94183335befeb8c8bdd560b5cca3a36c5a8fcda49c3f5b08276f168&version=e41bb8ceae13abf403533935f868b4d89889d1765a02f85006dafe0e6335cdca\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Cache not found for input keys: pip-ca3c7acdc6f1bb2036816531d4b576a4e84dd7cbc4b73649151cae95cfca8dda-51d6f879f42a3748e7e6bcad866424deb8dc4fe2fd13a2aaa1fd832ac9ffced9-7f6b074ae94183335befeb8c8bdd560b5cca3a36c5a8fcda49c3f5b08276f168\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u2705  Success - Main actions/cache@v3\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] \u2b50 Run Main Install dependencies\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (21.2.4)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting pip\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Installing collected packages: pip\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Attempting uninstall: pip\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |     Found existing installation: pip 21.2.4\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |     Uninstalling pip-21.2.4:\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |       Successfully uninstalled pip-21.2.4\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Successfully installed pip-23.1.2\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting pre-commit\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading pre_commit-3.3.3-py2.py3-none-any.whl (202 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 202.8/202.8 kB 2.7 MB/s eta 0:00:00\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting mypy\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading mypy-1.4.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 12.0/12.0 MB 19.5 MB/s eta 0:00:00\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting cfgv>=2.0.0 (from pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting identify>=1.0.0 (from pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.8/98.8 kB 1.7 MB/s eta 0:00:00\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting nodeenv>=0.11.1 (from pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading nodeenv-1.8.0-py2.py3-none-any.whl (22 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting pyyaml>=5.1 (from pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading PyYAML-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (661 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 661.8/661.8 kB 3.0 MB/s eta 0:00:00\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting virtualenv>=20.10.0 (from pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.3/3.3 MB 9.7 MB/s eta 0:00:00\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting typing-extensions>=4.1.0 (from mypy)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting mypy-extensions>=1.0.0 (from mypy)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting tomli>=1.1.0 (from mypy)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from nodeenv>=0.11.1->pre-commit) (56.0.0)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting distlib<1,>=0.3.6 (from virtualenv>=20.10.0->pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 468.5/468.5 kB 8.3 MB/s eta 0:00:00\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting filelock<4,>=3.12 (from virtualenv>=20.10.0->pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Collecting platformdirs<4,>=3.5.1 (from virtualenv>=20.10.0->pre-commit)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Installing collected packages: distlib, typing-extensions, tomli, pyyaml, platformdirs, nodeenv, mypy-extensions, identify, filelock, cfgv, virtualenv, mypy, pre-commit\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | Successfully installed cfgv-3.3.1 distlib-0.3.6 filelock-3.12.2 identify-2.5.24 mypy-1.4.1 mypy-extensions-1.0.0 nodeenv-1.8.0 platformdirs-3.8.0 pre-commit-3.3.3 pyyaml-6.0 tomli-2.0.1 typing-extensions-4.6.3 virtualenv-20.23.1\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | \n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   | [notice] To update, run: pip install --upgrade pip\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test]   \u274c  Failure - Main Install dependencies\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/a6569d837b0844d159f71d000a3706c43f4da44961c519120eb36b10b6e4d608/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[0e4d8177-f4eb-4fe3-a226-a4cdb6538a03/test] \ud83c\udfc1  Job succeeded\n",
-        "stderr": "Error: context canceled\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/TheAlgorithms-algorithms-keeper/.github/workflows/main-crawler.yml",
+        "tests": [
+            {
+                "classname": "tests.test_api",
+                "name": "test_initialization",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_access_token",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_headers_and_log",
+                "time": 0.207,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_check_runs",
+                "name": "test_check_run[commit_not_from_pr--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_check_runs",
+                "name": "test_check_run[completed_some_in_progress--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_check_runs",
+                "name": "test_check_run[completed_passing_no_label--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_check_runs",
+                "name": "test_check_run[completed_passing_with_label--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_check_runs",
+                "name": "test_check_run[completed_failing_no_label--]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_check_runs",
+                "name": "test_check_run[completed_failing_with_label--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_no_match[algorithms-keeper test]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_no_match[@algorithm-keeper test]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_no_match[@algorithms_keeper test]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_no_match[@algorithms-keepertest test]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_no_match[@algorithms_keeper test-all]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[@algorithms-keeper test-test]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[@algorithms-keeper review-review]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[@algorithms-keeper      review     -review]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[random @algorithms-keeper     review   random-review]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[@Algorithms-Keeper   REVIEW  -REVIEW]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[@algorithms-keeper review-all-review-all]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command_regex_match[@algorithms-keeper     random-test   -random-test]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command[non_member_commented--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command[comment_came_from_issue--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command[random_command--]",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command[review_command--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_commands",
+                "name": "test_command[review_all_command--]",
+                "time": 0.232,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_installations",
+                "name": "test_installations[installation_created--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_installations",
+                "name": "test_installations[installation_added--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_ping",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_failure",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_success",
+                "time": 1.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_index",
+                "time": 0.098,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_main",
+                "name": "test_health",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_contains_testfile[parser0-5]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_contains_testfile[parser1-4]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_contains_testfile[parser2-5]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_validate_extension[parser0-]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_validate_extension[parser1-test/.gitignore]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_validate_extension[parser2-extensionless]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_validate_extension[parser3-test/CODEOWNERS]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_validate_extension[parser4-test/test.html, test/test.cpp]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser0-documentation]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser1-documentation]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser2-documentation]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser3-enhancement]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser4-enhancement]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser5-enhancement]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser6-]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_type_label[parser7-]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser0-True-0]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser1-True-1]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser2-True-1]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser3-True-0]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser4-False-2]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser5-False-2]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser6-False-2]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_files_to_check[parser7-False-2]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_record_error",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_lineno_exist[annotation.py-5]",
+                "time": 0.187,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_lineno_exist[descriptive_name.py-8]",
+                "time": 0.227,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_lineno_exist_multiple_types",
+                "time": 0.097,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_same_lineno_multiple_source",
+                "time": 0.138,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_combinations[doctest.py-4-labels0-0-0]",
+                "time": 0.207,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_combinations[return_annotation.py-3-labels1-1-2]",
+                "time": 0.134,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_combinations[descriptive_name.py-16-labels2-1-0]",
+                "time": 0.171,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_combinations[annotation.py-7-labels3-0-2]",
+                "time": 0.139,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_combinations[doctest.py, return_annotation.py-7-labels4-1-0]",
+                "time": 0.274,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parser",
+                "name": "test_combinations[doctest.py, test_file.py-0-labels5-0-3]",
+                "time": 0.113,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_max_pr_by_user[max_pr_number_enabled--]",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_max_pr_by_user[max_pr_number_disabled--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[non_draft_empty_pr_body--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[non_draft_empty_checklist--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[draft_empty_pr_body--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[invalid_extension_file--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[opened_in_draft_mode--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[synchronize_in_draft_mode--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[pr_opened_by_member--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[pr_opened_by_bot--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[pr_synchronized_by_bot--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[add_require_label--]",
+                "time": 0.103,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[add_type_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[label_on_ready_for_review--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[review_comment_by_non_member--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[review_comment_by_member--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[changes_requested_by_non_member--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[changes_requested_by_member_no_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[changes_requested_with_change_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[changes_requested_with_review_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[approved_with_review_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[approved_with_change_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[no_label_in_draft_mode--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[review_label_after_changes_made--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[remove_labels_on_pr_closed--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[remove_labels_on_invalid_pr_closed--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[mergeable_value_is_none--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[mergeable_value_is_true_no_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[mergeable_value_is_true_with_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[mergeable_value_is_false_no_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pull_requests",
+                "name": "test_pull_request[mergeable_value_is_false_with_label--]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--INVALID_0]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--INVALID_1]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--INVALID_2]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--INVALID_3]",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--VALID_0]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--VALID_1]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--VALID_2]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDescriptiveNameRule--VALID_3]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_0]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_1]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_2]",
+                "time": 0.029,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_3]",
+                "time": 0.029,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_4]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_5]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_6]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_7]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_8]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_9]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_10]",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_11]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_12]",
+                "time": 0.02,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_13]",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_14]",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--INVALID_15]",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_0]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_1]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_2]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_3]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_4]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_5]",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_6]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_7]",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_8]",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_9]",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_10]",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_11]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_12]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_13]",
+                "time": 0.02,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_14]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[NamingConventionRule--VALID_15]",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--INVALID_0]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--INVALID_1]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--INVALID_2]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--VALID_0]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--VALID_1]",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--VALID_2]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[UseFstringRule--VALID_3]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--INVALID_0]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--INVALID_1]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--INVALID_2]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--INVALID_3]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--INVALID_4]",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--INVALID_5]",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_0]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_1]",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_2]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_3]",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_4]",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_5]",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireTypeHintRule--VALID_6]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--INVALID_0]",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--INVALID_1]",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--INVALID_2]",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_0]",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_1]",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_2]",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_3]",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_4]",
+                "time": 0.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_5]",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_rules",
+                "name": "test_rules[RequireDoctestRule--VALID_6]",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_issue_for_commit",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_issue_for_commit_not_found",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_check_runs_for_commit",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_add_label_to_pr_or_issue[pr_or_issue0]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_add_label_to_pr_or_issue[pr_or_issue1]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_add_multiple_labels",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_remove_label_from_pr_or_issue[pr_or_issue0]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_remove_label_from_pr_or_issue[pr_or_issue1]",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_remove_multiple_labels",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_user_open_pr_numbers",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_add_comment_to_pr_or_issue",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_close_pr_no_reviewers",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_close_pr_with_reviewers",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_close_issue",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_close_pr_or_issue_with_label",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_pr_files",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_file_content",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_create_pr_review",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_add_reaction",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_utils",
+                "name": "test_get_pr_for_issue",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \ud83d\ude80  Start image=crawlergpt:latest\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/TheAlgorithms-algorithms-keeper] user=0 workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2601  git clone 'https://github.com/actions/cache' # ref=v3\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v3\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main actions/checkout@v3\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2705  Success - Main actions/checkout@v3\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main actions/setup-python@v4\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/ce51eee0-916e-4c30-9437-ed0314b395e0/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2753  ::group::Installed versions\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.x is 3.x\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? false\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? true\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? true\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? true\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? true\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? true\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::explicit? true\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::matched: 3.9.6\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Successfully set up CPython (3.9.6)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2753  ::endgroup::\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2705  Success - Main actions/setup-python@v4\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-output:: python-version=3.9.6\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main actions/cache@v3\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/ce51eee0-916e-4c30-9437-ed0314b395e0/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v3/] user=0 workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Resolved Keys:\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::[\"pip-ca3c7acdc6f1bb2036816531d4b576a4e84dd7cbc4b73649151cae95cfca8dda-51d6f879f42a3748e7e6bcad866424deb8dc4fe2fd13a2aaa1fd832ac9ffced9-7f6b074ae94183335befeb8c8bdd560b5cca3a36c5a8fcda49c3f5b08276f168\"]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Checking zstd --quiet --version\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::1.5.0\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::zstd version: 1.5.0\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Resource Url: http://130.242.72.40:39645/_apis/artifactcache/cache?keys=pip-ca3c7acdc6f1bb2036816531d4b576a4e84dd7cbc4b73649151cae95cfca8dda-51d6f879f42a3748e7e6bcad866424deb8dc4fe2fd13a2aaa1fd832ac9ffced9-7f6b074ae94183335befeb8c8bdd560b5cca3a36c5a8fcda49c3f5b08276f168&version=e41bb8ceae13abf403533935f868b4d89889d1765a02f85006dafe0e6335cdca\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udcac  ::debug::Failed to delete archive: Error: ENOENT: no such file or directory, unlink ''\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Cache not found for input keys: pip-ca3c7acdc6f1bb2036816531d4b576a4e84dd7cbc4b73649151cae95cfca8dda-51d6f879f42a3748e7e6bcad866424deb8dc4fe2fd13a2aaa1fd832ac9ffced9-7f6b074ae94183335befeb8c8bdd560b5cca3a36c5a8fcda49c3f5b08276f168\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2705  Success - Main actions/cache@v3\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main Install dependencies\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (21.2.4)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pip\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Installing collected packages: pip\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Attempting uninstall: pip\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |     Found existing installation: pip 21.2.4\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |     Uninstalling pip-21.2.4:\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |       Successfully uninstalled pip-21.2.4\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Successfully installed pip-23.1.2\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pre-commit\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pre_commit-3.3.3-py2.py3-none-any.whl (202 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 202.8/202.8 kB 1.7 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting mypy\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading mypy-1.4.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 12.0/12.0 MB 15.0 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting cfgv>=2.0.0 (from pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting identify>=1.0.0 (from pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading identify-2.5.24-py2.py3-none-any.whl (98 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 98.8/98.8 kB 7.0 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting nodeenv>=0.11.1 (from pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading nodeenv-1.8.0-py2.py3-none-any.whl (22 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pyyaml>=5.1 (from pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading PyYAML-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (661 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 661.8/661.8 kB 4.8 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting virtualenv>=20.10.0 (from pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.3/3.3 MB 27.2 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting typing-extensions>=4.1.0 (from mypy)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading typing_extensions-4.7.0-py3-none-any.whl (33 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting mypy-extensions>=1.0.0 (from mypy)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting tomli>=1.1.0 (from mypy)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from nodeenv>=0.11.1->pre-commit) (56.0.0)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting distlib<1,>=0.3.6 (from virtualenv>=20.10.0->pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 468.5/468.5 kB 11.4 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting filelock<4,>=3.12 (from virtualenv>=20.10.0->pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting platformdirs<4,>=3.5.1 (from virtualenv>=20.10.0->pre-commit)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Installing collected packages: distlib, typing-extensions, tomli, pyyaml, platformdirs, nodeenv, mypy-extensions, identify, filelock, cfgv, virtualenv, mypy, pre-commit\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Successfully installed cfgv-3.3.1 distlib-0.3.6 filelock-3.12.2 identify-2.5.24 mypy-1.4.1 mypy-extensions-1.0.0 nodeenv-1.8.0 platformdirs-3.8.0 pre-commit-3.3.3 pyyaml-6.0 tomli-2.0.1 typing-extensions-4.7.0 virtualenv-20.23.1\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [notice] To update, run: pip install --upgrade pip\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting aiohttp==3.8.4 (from -r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading aiohttp-3.8.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.0/1.0 MB 1.5 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting cachetools==5.3.1 (from -r requirements.txt (line 2))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading cachetools-5.3.1-py3-none-any.whl (9.3 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting fixit==0.1.4 (from -r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading fixit-0.1.4-py3-none-any.whl (144 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 144.2/144.2 kB 636.9 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting gidgethub==5.3.0 (from -r requirements.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading gidgethub-5.3.0-py3-none-any.whl (21 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting libcst==1.0.1 (from -r requirements.txt (line 5))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading libcst-1.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.9 MB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.9/2.9 MB 2.5 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting sentry-sdk==1.26.0 (from -r requirements.txt (line 6))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading sentry_sdk-1.26.0-py2.py3-none-any.whl (209 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 209.4/209.4 kB 1.4 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pytest==7.4.0 (from -r requirements-dev.txt (line 2))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 1.7 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pytest-aiohttp==1.0.4 (from -r requirements-dev.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pytest_aiohttp-1.0.4-py3-none-any.whl (8.6 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pytest-asyncio==0.21.0 (from -r requirements-dev.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pytest_asyncio-0.21.0-py3-none-any.whl (13 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pytest-cov==4.1.0 (from -r requirements-dev.txt (line 5))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pytest_cov-4.1.0-py3-none-any.whl (21 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting attrs>=17.3.0 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.2/61.2 kB 205.8 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting charset-normalizer<4.0,>=2.0 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (199 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 199.2/199.2 kB 1.4 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting multidict<7.0,>=4.5 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading multidict-6.0.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (114 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 114.2/114.2 kB 696.4 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting async-timeout<5.0,>=4.0.0a3 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting yarl<2.0,>=1.0 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading yarl-1.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (269 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 269.4/269.4 kB 2.0 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting frozenlist>=1.1.1 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading frozenlist-1.3.3-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (158 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 158.8/158.8 kB 661.0 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting aiosignal>=1.1.2 (from aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting flake8>=3.8.1 (from fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading flake8-6.0.0-py2.py3-none-any.whl (57 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.8/57.8 kB 219.6 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Requirement already satisfied: pyyaml>=5.2 in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from fixit==0.1.4->-r requirements.txt (line 3)) (6.0)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting jsonschema>=3.2.0 (from fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 90.4/90.4 kB 263.3 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting importlib-resources>=5.1.2 (from fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading importlib_resources-5.12.0-py3-none-any.whl (36 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting uritemplate>=3.0.1 (from gidgethub==5.3.0->-r requirements.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading uritemplate-4.1.1-py2.py3-none-any.whl (10 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting PyJWT[crypto]>=2.4.0 (from gidgethub==5.3.0->-r requirements.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading PyJWT-2.7.0-py3-none-any.whl (22 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Requirement already satisfied: typing-extensions>=3.7.4.2 in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from libcst==1.0.1->-r requirements.txt (line 5)) (4.7.0)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting typing-inspect>=0.4.0 (from libcst==1.0.1->-r requirements.txt (line 5))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting certifi (from sentry-sdk==1.26.0->-r requirements.txt (line 6))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 157.0/157.0 kB 1.1 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting urllib3>=1.26.11 (from sentry-sdk==1.26.0->-r requirements.txt (line 6))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading urllib3-2.0.3-py3-none-any.whl (123 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 123.6/123.6 kB 202.7 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting iniconfig (from pytest==7.4.0->-r requirements-dev.txt (line 2))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting packaging (from pytest==7.4.0->-r requirements-dev.txt (line 2))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 39.0 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pluggy<2.0,>=0.12 (from pytest==7.4.0->-r requirements-dev.txt (line 2))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest==7.4.0->-r requirements-dev.txt (line 2))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Requirement already satisfied: tomli>=1.0.0 in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from pytest==7.4.0->-r requirements-dev.txt (line 2)) (2.0.1)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting coverage[toml]>=5.2.1 (from pytest-cov==4.1.0->-r requirements-dev.txt (line 5))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading coverage-7.2.7-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (228 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 228.3/228.3 kB 2.3 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=3.8.1->fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pycodestyle<2.11.0,>=2.10.0 (from flake8>=3.8.1->fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pycodestyle-2.10.0-py2.py3-none-any.whl (41 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 41.3/41.3 kB 552.3 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pyflakes<3.1.0,>=3.0.0 (from flake8>=3.8.1->fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pyflakes-3.0.1-py2.py3-none-any.whl (62 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.8/62.8 kB 786.7 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting zipp>=3.1.0 (from importlib-resources>=5.1.2->fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 (from jsonschema>=3.2.0->fixit==0.1.4->-r requirements.txt (line 3))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.5/57.5 kB 252.7 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting cryptography>=3.4.0 (from PyJWT[crypto]>=2.4.0->gidgethub==5.3.0->-r requirements.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.3/4.3 MB 2.8 MB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Requirement already satisfied: mypy-extensions>=0.3.0 in /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages (from typing-inspect>=0.4.0->libcst==1.0.1->-r requirements.txt (line 5)) (1.0.0)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting idna>=2.0 (from yarl<2.0,>=1.0->aiohttp==3.8.4->-r requirements.txt (line 1))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 52.7 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting cffi>=1.12 (from cryptography>=3.4.0->PyJWT[crypto]>=2.4.0->gidgethub==5.3.0->-r requirements.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (441 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 441.2/441.2 kB 600.5 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Collecting pycparser (from cffi>=1.12->cryptography>=3.4.0->PyJWT[crypto]>=2.4.0->gidgethub==5.3.0->-r requirements.txt (line 4))\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 118.7/118.7 kB 351.8 kB/s eta 0:00:00\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Installing collected packages: zipp, urllib3, uritemplate, typing-inspect, pyrsistent, PyJWT, pyflakes, pycparser, pycodestyle, pluggy, packaging, multidict, mccabe, iniconfig, idna, frozenlist, exceptiongroup, coverage, charset-normalizer, certifi, cachetools, attrs, async-timeout, yarl, sentry-sdk, pytest, libcst, jsonschema, importlib-resources, flake8, cffi, aiosignal, pytest-cov, pytest-asyncio, fixit, cryptography, aiohttp, pytest-aiohttp, gidgethub\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Successfully installed PyJWT-2.7.0 aiohttp-3.8.4 aiosignal-1.3.1 async-timeout-4.0.2 attrs-23.1.0 cachetools-5.3.1 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-3.1.0 coverage-7.2.7 cryptography-41.0.1 exceptiongroup-1.1.1 fixit-0.1.4 flake8-6.0.0 frozenlist-1.3.3 gidgethub-5.3.0 idna-3.4 importlib-resources-5.12.0 iniconfig-2.0.0 jsonschema-4.17.3 libcst-1.0.1 mccabe-0.7.0 multidict-6.0.4 packaging-23.1 pluggy-1.2.0 pycodestyle-2.10.0 pycparser-2.21 pyflakes-3.0.1 pyrsistent-0.19.3 pytest-7.4.0 pytest-aiohttp-1.0.4 pytest-asyncio-0.21.0 pytest-cov-4.1.0 sentry-sdk-1.26.0 typing-inspect-0.9.0 uritemplate-4.1.1 urllib3-2.0.3 yarl-1.9.2 zipp-3.15.0\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [notice] A new release of pip is available: 21.1.3 -> 23.1.2\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [notice] To update, run: pip install --upgrade pip\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2705  Success - Main Install dependencies\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main Run tests\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | ============================= test session starts ==============================\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | platform linux -- Python 3.9.6, pytest-7.4.0, pluggy-1.2.0\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/TheAlgorithms-algorithms-keeper\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | configfile: pyproject.toml\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | testpaths: tests\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | plugins: aiohttp-1.0.4, cov-4.1.0, asyncio-0.21.0\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | asyncio: mode=strict\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | collected 189 items\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_api.py ...                                                    [  1%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_check_runs.py ......                                          [  4%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_commands.py .................                                 [ 13%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_installations.py ..                                           [ 14%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_main.py .....                                                 [ 17%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_parser.py ...................................                 [ 35%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_pull_requests.py ...............................              [ 52%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_rules.py .................................................... [ 79%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | ..................                                                       [ 89%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_utils.py ....................                                 [100%]\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | =============================== warnings summary ===============================\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_main.py::test_ping\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_main.py::test_failure\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_main.py::test_success\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_main.py::test_index\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | tests/test_main.py::test_health\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |   /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/pytest_aiohttp/plugin.py:33: DeprecationWarning: 'loop' fixture is deprecated and scheduled for removal, please use 'event_loop' instead\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   |     warnings.warn(\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/TheAlgorithms-algorithms-keeper/report.xml -\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | ----------- coverage: platform linux, python 3.9.6-final-0 -----------\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Name                                                         Stmts   Miss  Cover   Missing\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | ------------------------------------------------------------------------------------------\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/__init__.py                                    0      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/__main__.py                                   55      4    93%   21, 57, 86-87\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/api.py                                        38      5    87%   31-40\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/constants.py                                  19      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/event/__init__.py                              7      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/event/check_run.py                            31      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/event/commands.py                             31      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/event/installation.py                         21      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/event/pull_request.py                        130      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/__init__.py                             2      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/files_parser.py                        42      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/python_parser.py                       66      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/record.py                              53      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/rules/__init__.py                       6      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/rules/naming_convention.py             72      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/rules/require_descriptive_name.py      19      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/rules/require_doctest.py               40      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/rules/require_type_hint.py             25      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/parser/rules/use_fstring.py                   15      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | algorithms_keeper/utils.py                                      65      0   100%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | ------------------------------------------------------------------------------------------\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | TOTAL                                                          737      9    99%\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | Coverage XML written to file coverage.xml\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | ======================= 189 passed, 5 warnings in 7.80s ========================\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2705  Success - Main Run tests\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main Run pre-commit\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Initializing environment for https://github.com/psf/black.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Initializing environment for https://github.com/PyCQA/isort.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Initializing environment for https://github.com/PyCQA/flake8.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Once installed this environment will be reused.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] This may take a few minutes...\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Installing environment for https://github.com/psf/black.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Once installed this environment will be reused.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] This may take a few minutes...\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Installing environment for https://github.com/PyCQA/isort.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Once installed this environment will be reused.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] This may take a few minutes...\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Installing environment for https://github.com/PyCQA/flake8.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] Once installed this environment will be reused.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | [INFO] This may take a few minutes...\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | check yaml...............................................................Passed\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - hook id: check-yaml\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - duration: 0.18s\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | fix end of files.........................................................Passed\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - hook id: end-of-file-fixer\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - duration: 0.11s\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | trim trailing whitespace.................................................Passed\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - hook id: trailing-whitespace\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - duration: 0.11s\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | black....................................................................Passed\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - hook id: black\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - duration: 1.86s\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | All done! \u2728 \ud83c\udf70 \u2728\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | 37 files left unchanged.\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | \n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | isort....................................................................Passed\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - hook id: isort\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - duration: 0.49s\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | flake8...................................................................Passed\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - hook id: flake8\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   | - duration: 0.8s\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \u2705  Success - Main Run pre-commit\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] \u2b50 Run Main Upload coverage to Codecov\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/ce51eee0-916e-4c30-9437-ed0314b395e0/act/codecov-codecov-action@v3/ dst=/var/run/act/actions/codecov-codecov-action@v3/\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v3/] user=0 workdir=\n[d23e5903-2c8f-4fb0-96c6-dbc951e4f40b/test] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/images/crawlergpt:latest/json\": context canceled\n",
+        "stderr": "panic: runtime error: invalid memory address or nil pointer dereference\n[signal SIGSEGV: segmentation violation code=0x1 addr=0x48 pc=0xaae2e2]\n\ngoroutine 305 [running]:\ngithub.com/nektos/act/pkg/container.(*containerReference).extractFromImageEnv.func1({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/container/docker_run.go:471 +0x1e2\ngithub.com/nektos/act/pkg/common.Executor.IfNot.func1({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/common/executor.go:159 +0x56\ngithub.com/nektos/act/pkg/runner.(*RunContext).ApplyExtraPath(0xc000558000, {0xe09450, 0xc00b5029c0}, 0xc0007a8128)\n\t/home/runner/work/act/act/pkg/runner/run_context.go:333 +0x209\ngithub.com/nektos/act/pkg/runner.runActionImpl.func1({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/runner/action.go:159 +0x71d\ngithub.com/nektos/act/pkg/runner.(*stepActionRemote).main.func1({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/runner/step_action_remote.go:126 +0x3cf\ngithub.com/nektos/act/pkg/runner.runStepExecutor.func1({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/runner/step.go:141 +0xd89\ngithub.com/nektos/act/pkg/common.Executor.Then.func1({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/common/executor.go:141 +0x15b\ngithub.com/nektos/act/pkg/runner.newJobExecutor.func4({0xe09450, 0xc00b5029c0})\n\t/home/runner/work/act/act/pkg/runner/job_executor.go:77 +0x5a\ngithub.com/nektos/act/pkg/runner.useStepLogger.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/runner/job_executor.go:191 +0x39e\ngithub.com/nektos/act/pkg/common.Executor.Then.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/common/executor.go:141 +0x15b\ngithub.com/nektos/act/pkg/common.Executor.Finally.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/common/executor.go:175 +0x34\ngithub.com/nektos/act/pkg/common.Executor.Finally.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/common/executor.go:175 +0x34\ngithub.com/nektos/act/pkg/common.Executor.Finally.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/common/executor.go:175 +0x34\ngithub.com/nektos/act/pkg/common.Executor.Then.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/common/executor.go:141 +0x15b\ngithub.com/nektos/act/pkg/runner.(*RunContext).Executor.func1({0xe09450, 0xc0007aa990})\n\t/home/runner/work/act/act/pkg/runner/run_context.go:472 +0x58\ngithub.com/nektos/act/pkg/runner.(*runnerImpl).NewPlanExecutor.func1.1({0xe09450, 0xc00051e4e0})\n\t/home/runner/work/act/act/pkg/runner/runner.go:150 +0x193\ngithub.com/nektos/act/pkg/common.NewParallelExecutor.func1.1(0x0?, 0x0?)\n\t/home/runner/work/act/act/pkg/common/executor.go:100 +0x5c\ncreated by github.com/nektos/act/pkg/common.NewParallelExecutor.func1\n\t/home/runner/work/act/act/pkg/common/executor.go:98 +0x89\n",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/TheAlgorithms-algorithms-keeper/.github/workflows/main-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "d23e5903-2c8f-4fb0-96c6-dbc951e4f40b",
         "build_tool": "pytest",
-        "elapsed_time": 600.8132286071777
+        "elapsed_time": 600.0147392749786
     }
 }

@@ -1,10 +1,10 @@
 {
     "repository": "Netcracker/KubeMarine",
-    "stars": 79,
+    "stars": 80,
     "language": "python",
-    "size": 2660,
+    "size": 2773,
     "clone_url": "https://github.com/Netcracker/KubeMarine.git",
-    "timestamp": "2023-06-28T17:11:15.933832Z",
+    "timestamp": "2023-07-01T16:41:26.245662Z",
     "clone_success": true,
     "number_of_actions": 6,
     "number_of_test_actions": 1,
@@ -23,10 +23,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package] \ud83d\ude80  Start image=crawlergpt:latest\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Netcracker-KubeMarine] user=0 workdir=\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package] \u2b50 Run Main Checkout Repo\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \u2705  Success - Main Checkout Repo\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package] \u2b50 Run Main Build Package via Docker\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%22BUILD_TYPE%22%3A%22package%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&nocache=1&rm=1&shmsize=0&t=kubemarine&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package]   \u274c  Failure - Main Build Package via Docker\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package] exitcode '1': failure\n[538c2050-8d9e-4b6a-aba0-acec5818fd00/build-package] \ud83c\udfc1  Job failed\n",
+        "stdout": "[f882969d-158b-4ea6-8438-a764def99683/build-package] \ud83d\ude80  Start image=crawlergpt:latest\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/Netcracker-KubeMarine] user=0 workdir=\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \u2601  git clone 'https://github.com/actions/upload-artifact' # ref=v3\n[f882969d-158b-4ea6-8438-a764def99683/build-package] \u2b50 Run Main Checkout Repo\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \u2705  Success - Main Checkout Repo\n[f882969d-158b-4ea6-8438-a764def99683/build-package] \u2b50 Run Main Build Package via Docker\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   | Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%22BUILD_TYPE%22%3A%22package%22%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&nocache=1&rm=1&shmsize=0&t=kubemarine&target=&ulimits=null&version=1\": dial unix /var/run/docker.sock: connect: permission denied\n[f882969d-158b-4ea6-8438-a764def99683/build-package]   \u274c  Failure - Main Build Package via Docker\n[f882969d-158b-4ea6-8438-a764def99683/build-package] exitcode '1': failure\n[f882969d-158b-4ea6-8438-a764def99683/build-package] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'build-package' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/Netcracker-KubeMarine/.github/workflows/ci-crawler.yaml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/Netcracker-KubeMarine/.github/workflows/ci-crawler.yaml",
+            "type": "unittest"
+        },
+        "workflow_name": "f882969d-158b-4ea6-8438-a764def99683",
         "build_tool": "unittest",
-        "elapsed_time": 161.08270072937012
+        "elapsed_time": 39.086755990982056
     }
 }

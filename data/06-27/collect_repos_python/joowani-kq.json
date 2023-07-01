@@ -4,7 +4,7 @@
     "language": "python",
     "size": 111,
     "clone_url": "https://github.com/joowani/kq.git",
-    "timestamp": "2023-06-28T11:35:58.674307Z",
+    "timestamp": "2023-07-01T11:08:16.787047Z",
     "clone_success": true,
     "number_of_actions": 3,
     "number_of_test_actions": 1,
@@ -20,10 +20,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/joowani-kq] user=0 workdir=\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test] \ud83e\uddea  Matrix: map[python-version:3.6]\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test] \u2b50 Run Main Start Kafka docker\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create\": dial unix /var/run/docker.sock: connect: permission denied.\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   | See 'docker run --help'.\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test]   \u274c  Failure - Main Start Kafka docker\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test] exitcode '126': failure\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/a26faa499b45f526362b6cdd628d89049cbedd8b4e0925cf1203c9466034a5be?force=1&v=1\": context deadline exceeded\n[65d6fb32-f9b2-4d0b-ad14-09535a3e1fb9/Test] \ud83c\udfc1  Job failed\n",
-        "stderr": "Error: Error occurred running finally: Error occurred running finally: context deadline exceeded (original error: <nil>) (original error: <nil>)\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/joowani-kq/.github/workflows/build-crawler.yaml",
+        "stdout": "[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/joowani-kq] user=0 workdir=\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test] \ud83e\uddea  Matrix: map[python-version:3.6]\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test] \u2b50 Run Main Start Kafka docker\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   | docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post \"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create\": dial unix /var/run/docker.sock: connect: permission denied.\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   | See 'docker run --help'.\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test]   \u274c  Failure - Main Start Kafka docker\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test] exitcode '126': failure\n[4b888b68-882c-464c-b3b2-3fb51efd2b32/Test] \ud83c\udfc1  Job failed\n",
+        "stderr": "Error: Job 'Test' failed\n",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/joowani-kq/.github/workflows/build-crawler.yaml",
+            "type": "pytest"
+        },
+        "workflow_name": "4b888b68-882c-464c-b3b2-3fb51efd2b32",
         "build_tool": "pytest",
-        "elapsed_time": 252.85987043380737
+        "elapsed_time": 164.96778655052185
     }
 }

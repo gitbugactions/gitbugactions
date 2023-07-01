@@ -4,7 +4,7 @@
     "language": "python",
     "size": 1658,
     "clone_url": "https://github.com/harlowja/fasteners.git",
-    "timestamp": "2023-06-28T10:48:58.844043Z",
+    "timestamp": "2023-07-01T10:17:43.322329Z",
     "clone_success": true,
     "number_of_actions": 2,
     "number_of_test_actions": 1,
@@ -22,7 +22,7 @@
             {
                 "classname": "tests.test_decorators",
                 "name": "test_locked",
-                "time": 0.004,
+                "time": 0.011,
                 "results": [
                     {
                         "result": "Passed",
@@ -36,7 +36,7 @@
             {
                 "classname": "tests.test_decorators",
                 "name": "test_many_locked",
-                "time": 0.001,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -64,7 +64,7 @@
             {
                 "classname": "tests.test_eventlet",
                 "name": "test_eventlet_spawn_n_bug",
-                "time": 1.185,
+                "time": 1.262,
                 "results": [
                     {
                         "result": "Passed",
@@ -78,7 +78,7 @@
             {
                 "classname": "tests.test_eventlet",
                 "name": "test_eventlet_spawn_n_bugfix",
-                "time": 1.998,
+                "time": 1.902,
                 "results": [
                     {
                         "result": "Passed",
@@ -106,7 +106,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_no_double_writers",
-                "time": 5.11,
+                "time": 5.077,
                 "results": [
                     {
                         "result": "Passed",
@@ -120,7 +120,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_no_concurrent_readers_writers",
-                "time": 5.025,
+                "time": 5.064,
                 "results": [
                     {
                         "result": "Passed",
@@ -134,20 +134,6 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_writer_abort",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lock",
-                "name": "test_reader_abort",
                 "time": 0.001,
                 "results": [
                     {
@@ -161,8 +147,22 @@
             },
             {
                 "classname": "tests.test_lock",
+                "name": "test_reader_abort",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lock",
                 "name": "test_double_reader_abort",
-                "time": 0.016,
+                "time": 0.013,
                 "results": [
                     {
                         "result": "Passed",
@@ -176,7 +176,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_double_reader_writer",
-                "time": 0.009,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -190,7 +190,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_reader_chaotic",
-                "time": 0.011,
+                "time": 0.009,
                 "results": [
                     {
                         "result": "Passed",
@@ -204,7 +204,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_writer_chaotic",
-                "time": 0.011,
+                "time": 0.01,
                 "results": [
                     {
                         "result": "Passed",
@@ -302,7 +302,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_multi_reader_multi_writer",
-                "time": 0.913,
+                "time": 0.911,
                 "results": [
                     {
                         "result": "Passed",
@@ -344,7 +344,7 @@
             {
                 "classname": "tests.test_lock",
                 "name": "test_deadlock_reproducer",
-                "time": 0.302,
+                "time": 0.4,
                 "results": [
                     {
                         "result": "Passed",
@@ -358,7 +358,7 @@
             {
                 "classname": "tests.test_process_lock",
                 "name": "test_lock_acquire_release_file_lock",
-                "time": 0.11,
+                "time": 0.101,
                 "results": [
                     {
                         "result": "Passed",
@@ -372,48 +372,6 @@
             {
                 "classname": "tests.test_process_lock",
                 "name": "test_nested_synchronized_external_works",
-                "time": 0.011,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_process_lock",
-                "name": "test_lock_externally",
-                "time": 0.621,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_process_lock",
-                "name": "test_lock_externally_lock_dir_not_exist",
-                "time": 0.538,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_process_lock",
-                "name": "test_lock_file_exists",
                 "time": 0.002,
                 "results": [
                     {
@@ -427,8 +385,50 @@
             },
             {
                 "classname": "tests.test_process_lock",
+                "name": "test_lock_externally",
+                "time": 0.996,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_process_lock",
+                "name": "test_lock_externally_lock_dir_not_exist",
+                "time": 0.621,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_process_lock",
+                "name": "test_lock_file_exists",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_process_lock",
                 "name": "test_bad_release",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -442,7 +442,7 @@
             {
                 "classname": "tests.test_process_lock",
                 "name": "test_interprocess_lock",
-                "time": 0.009,
+                "time": 0.036,
                 "results": [
                     {
                         "result": "Passed",
@@ -484,7 +484,7 @@
             {
                 "classname": "tests.test_process_lock",
                 "name": "test_lock_twice",
-                "time": 0.027,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -512,7 +512,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_no_concurrent_writers",
-                "time": 1.185,
+                "time": 0.764,
                 "results": [
                     {
                         "result": "Passed",
@@ -526,7 +526,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_no_concurrent_readers_writers",
-                "time": 1.05,
+                "time": 0.822,
                 "results": [
                     {
                         "result": "Passed",
@@ -540,7 +540,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_reader_releases_lock_upon_crash",
-                "time": 0.169,
+                "time": 0.176,
                 "results": [
                     {
                         "result": "Passed",
@@ -554,7 +554,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_writer_releases_lock_upon_crash",
-                "time": 0.252,
+                "time": 0.25,
                 "results": [
                     {
                         "result": "Passed",
@@ -568,7 +568,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_multi_reader_multi_writer",
-                "time": 0.743,
+                "time": 1.126,
                 "results": [
                     {
                         "result": "Passed",
@@ -582,7 +582,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_multi_reader_single_writer",
-                "time": 0.264,
+                "time": 0.294,
                 "results": [
                     {
                         "result": "Passed",
@@ -596,7 +596,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_multi_writer",
-                "time": 0.801,
+                "time": 0.921,
                 "results": [
                     {
                         "result": "Passed",
@@ -610,7 +610,7 @@
             {
                 "classname": "tests.test_reader_writer_lock",
                 "name": "test_lock_writer_twice",
-                "time": 0.005,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -636,10 +636,14 @@
                 "stderr": null
             }
         ],
-        "stdout": "[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \ud83d\ude80  Start image=crawlergpt:latest\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/harlowja-fasteners] user=0 workdir=\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \u2b50 Run Main actions/checkout@v2\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2705  Success - Main actions/checkout@v2\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \u2b50 Run Main Set up Python 3.7\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/f32f5869-5175-4aca-8f5a-99647f08e330/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2753  ::group::Installed versions\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: \n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? false\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? true\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? true\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? true\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? true\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? true\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::explicit? true\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Successfully set up CPython (3.7.11)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2753  ::endgroup::\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2705  Success - Main Set up Python 3.7\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-output:: python-version=3.7.11\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \u2b50 Run Main Install dependencies\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting pip\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Installing collected packages: pip\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Attempting uninstall: pip\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |     Found existing installation: pip 21.2.4\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |     Uninstalling pip-21.2.4:\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |       Successfully uninstalled pip-21.2.4\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Successfully installed pip-23.1.2\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Processing /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/harlowja-fasteners\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Installing build dependencies: started\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Installing build dependencies: finished with status 'done'\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Getting requirements to build wheel: started\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Getting requirements to build wheel: finished with status 'done'\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Preparing metadata (pyproject.toml): started\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Building wheels for collected packages: fasteners\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Building wheel for fasteners (pyproject.toml): started\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Building wheel for fasteners (pyproject.toml): finished with status 'done'\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Created wheel for fasteners: filename=fasteners-0.18-py3-none-any.whl size=18479 sha256=d6e4eb9bf2c381eaf7221d571f78e73f1d10e47972d1e47ac19f3c14eaea46ff\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/56/fb/35/77eb0c955d4df81aae9188ae04b278f7a827caa433d99f8cc9\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Successfully built fasteners\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Installing collected packages: fasteners\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Successfully installed fasteners-0.18\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | \n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | [notice] To update, run: pip install --upgrade pip\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting diskcache (from -r requirements-test.txt (line 1))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading diskcache-5.6.1-py3-none-any.whl (45 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 45.6/45.6 kB 1.4 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting eventlet (from -r requirements-test.txt (line 2))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading eventlet-0.33.3-py2.py3-none-any.whl (226 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 226.8/226.8 kB 24.9 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting more_itertools (from -r requirements-test.txt (line 3))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading more_itertools-9.1.0-py3-none-any.whl (54 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 54.2/54.2 kB 2.1 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting pytest (from -r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 4.0 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting dnspython>=1.15.0 (from eventlet->-r requirements-test.txt (line 2))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading dnspython-2.3.0-py3-none-any.whl (283 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 283.7/283.7 kB 12.7 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting greenlet>=0.3 (from eventlet->-r requirements-test.txt (line 2))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading greenlet-2.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (566 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 566.1/566.1 kB 18.0 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting six>=1.10.0 (from eventlet->-r requirements-test.txt (line 2))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting iniconfig (from pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting packaging (from pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 1.8 MB/s eta 0:00:00\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting pluggy<2.0,>=0.12 (from pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting tomli>=1.0.0 (from pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting importlib-metadata>=0.12 (from pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting zipp>=0.5 (from importlib-metadata>=0.12->pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Collecting typing-extensions>=3.6.4 (from importlib-metadata>=0.12->pytest->-r requirements-test.txt (line 4))\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   |   Downloading typing_extensions-4.6.3-py3-none-any.whl (31 kB)\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Installing collected packages: zipp, typing-extensions, tomli, six, packaging, more_itertools, iniconfig, greenlet, exceptiongroup, dnspython, diskcache, importlib-metadata, eventlet, pluggy, pytest\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | Successfully installed diskcache-5.6.1 dnspython-2.3.0 eventlet-0.33.3 exceptiongroup-1.1.1 greenlet-2.0.2 importlib-metadata-6.7.0 iniconfig-2.0.0 more_itertools-9.1.0 packaging-23.1 pluggy-1.2.0 pytest-7.4.0 six-1.16.0 tomli-2.0.1 typing-extensions-4.6.3 zipp-3.15.0\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | \n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | [notice] To update, run: pip install --upgrade pip\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2705  Success - Main Install dependencies\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \u2b50 Run Main Test with pytest\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | ============================= test session starts ==============================\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/harlowja-fasteners\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | collected 44 items\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | \n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | tests/test_decorators.py ...                                             [  6%]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | tests/test_eventlet.py ..                                                [ 11%]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | tests/test_helpers.py .                                                  [ 13%]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | tests/test_lock.py ..................                                    [ 54%]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | tests/test_process_lock.py ..........                                    [ 77%]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | tests/test_reader_writer_lock.py .........s                              [100%]\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | \n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/harlowja-fasteners/report.xml -\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   | ======================== 43 passed, 1 skipped in 21.80s ========================\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2705  Success - Main Test with pytest\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \u2b50 Run Post Set up Python 3.7\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build]   \u2705  Success - Post Set up Python 3.7\n[6d48cd3c-7388-4f9a-94ec-103a6ca2033b/build] \ud83c\udfc1  Job succeeded\n",
+        "stdout": "[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \ud83d\ude80  Start image=crawlergpt:latest\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/harlowja-fasteners] user=0 workdir=\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.7]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \u2b50 Run Main actions/checkout@v2\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2705  Success - Main actions/checkout@v2\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \u2b50 Run Main Set up Python 3.7\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/c4cdb786-ba7e-42a7-a06b-79b6a754a631/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2753  ::group::Installed versions\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: \n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? false\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? true\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? true\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? true\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? true\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? true\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::explicit? true\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Successfully set up CPython (3.7.11)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2753  ::endgroup::\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2705  Success - Main Set up Python 3.7\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib/pkgconfig\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.7.11/x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-output:: python-version=3.7.11\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \u2b50 Run Main Install dependencies\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting pip\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Installing collected packages: pip\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Attempting uninstall: pip\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |     Found existing installation: pip 21.2.4\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |     Uninstalling pip-21.2.4:\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |       Successfully uninstalled pip-21.2.4\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Successfully installed pip-23.1.2\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Processing /tmp/558156d8-17ed-11ee-8a50-bb14de238602/harlowja-fasteners\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Installing build dependencies: started\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Installing build dependencies: finished with status 'done'\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Getting requirements to build wheel: started\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Getting requirements to build wheel: finished with status 'done'\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Preparing metadata (pyproject.toml): started\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Building wheels for collected packages: fasteners\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Building wheel for fasteners (pyproject.toml): started\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Building wheel for fasteners (pyproject.toml): finished with status 'done'\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Created wheel for fasteners: filename=fasteners-0.18-py3-none-any.whl size=18479 sha256=c90bf1b563b84fde00a6ea0ec4d1a23efc91bbbf0962b299af17b4826c310831\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/9f/04/ee/bfb4dbdde2ee9066f7e07ca35b619de69e930809cbfe0e1e04\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Successfully built fasteners\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Installing collected packages: fasteners\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Successfully installed fasteners-0.18\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | \n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | [notice] To update, run: pip install --upgrade pip\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting diskcache (from -r requirements-test.txt (line 1))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading diskcache-5.6.1-py3-none-any.whl (45 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 45.6/45.6 kB 2.1 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting eventlet (from -r requirements-test.txt (line 2))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading eventlet-0.33.3-py2.py3-none-any.whl (226 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 226.8/226.8 kB 12.9 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting more_itertools (from -r requirements-test.txt (line 3))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading more_itertools-9.1.0-py3-none-any.whl (54 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 54.2/54.2 kB 1.7 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting pytest (from -r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 7.4 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting dnspython>=1.15.0 (from eventlet->-r requirements-test.txt (line 2))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading dnspython-2.3.0-py3-none-any.whl (283 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 283.7/283.7 kB 3.9 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting greenlet>=0.3 (from eventlet->-r requirements-test.txt (line 2))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading greenlet-2.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (566 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 566.1/566.1 kB 11.5 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting six>=1.10.0 (from eventlet->-r requirements-test.txt (line 2))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting iniconfig (from pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting packaging (from pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 2.4 MB/s eta 0:00:00\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting pluggy<2.0,>=0.12 (from pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting tomli>=1.0.0 (from pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting importlib-metadata>=0.12 (from pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting zipp>=0.5 (from importlib-metadata>=0.12->pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Collecting typing-extensions>=3.6.4 (from importlib-metadata>=0.12->pytest->-r requirements-test.txt (line 4))\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   |   Downloading typing_extensions-4.7.0-py3-none-any.whl (33 kB)\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Installing collected packages: zipp, typing-extensions, tomli, six, packaging, more_itertools, iniconfig, greenlet, exceptiongroup, dnspython, diskcache, importlib-metadata, eventlet, pluggy, pytest\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | Successfully installed diskcache-5.6.1 dnspython-2.3.0 eventlet-0.33.3 exceptiongroup-1.1.1 greenlet-2.0.2 importlib-metadata-6.7.0 iniconfig-2.0.0 more_itertools-9.1.0 packaging-23.1 pluggy-1.2.0 pytest-7.4.0 six-1.16.0 tomli-2.0.1 typing-extensions-4.7.0 zipp-3.15.0\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | \n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | [notice] To update, run: pip install --upgrade pip\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2705  Success - Main Install dependencies\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \u2b50 Run Main Test with pytest\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | ============================= test session starts ==============================\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/harlowja-fasteners\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | collected 44 items\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | \n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | tests/test_decorators.py ...                                             [  6%]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | tests/test_eventlet.py ..                                                [ 11%]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | tests/test_helpers.py .                                                  [ 13%]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | tests/test_lock.py ..................                                    [ 54%]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | tests/test_process_lock.py ..........                                    [ 77%]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | tests/test_reader_writer_lock.py .........s                              [100%]\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | \n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/harlowja-fasteners/report.xml -\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   | ======================== 43 passed, 1 skipped in 22.19s ========================\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2705  Success - Main Test with pytest\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \u2b50 Run Post Set up Python 3.7\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build]   \u2705  Success - Post Set up Python 3.7\n[bd477e84-7dc9-4300-a540-9946b7f5e577/build] \ud83c\udfc1  Job succeeded\n",
         "stderr": "",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/harlowja-fasteners/.github/workflows/run_tests-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/harlowja-fasteners/.github/workflows/run_tests-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "bd477e84-7dc9-4300-a540-9946b7f5e577",
         "build_tool": "pytest",
-        "elapsed_time": 126.94016718864441
+        "elapsed_time": 146.6103630065918
     }
 }

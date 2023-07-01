@@ -1,10 +1,10 @@
 {
     "repository": "gaogaotiantian/watchpoints",
-    "stars": 428,
+    "stars": 429,
     "language": "python",
     "size": 99,
     "clone_url": "https://github.com/gaogaotiantian/watchpoints.git",
-    "timestamp": "2023-06-28T16:22:47.544639Z",
+    "timestamp": "2023-07-01T15:52:28.967499Z",
     "clone_success": true,
     "number_of_actions": 3,
     "number_of_test_actions": 1,
@@ -21,9 +21,331 @@
         "failed": false,
         "tests": [
             {
+                "classname": "tests.test_trace_func.TestTraceFunc",
+                "name": "test_not_exist",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_trace_func.TestTraceFunc",
+                "name": "test_pdb",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "\n> /tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py(99)test_pdb()\n-> watch.tracefunc(inspect.currentframe(), \"line\", None)\n\t\t",
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_trace_func.TestTraceFunc",
+                "name": "test_trace_func",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": "\n====== Watchpoints Triggered ======\nCall Stack (most recent call last):\n  __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n>   return self.run(*args, **kwds)\n  run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n>   test(result)\n  __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n>   return self.run(*args, **kwds)\n  run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n>   testMethod()\n  test_trace_func (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:39):\n>   watch.tracefunc(inspect.currentframe(), \"line\", None)\na:\n0\n->\n1\n\n\t\t"
+            },
+            {
+                "classname": "tests.test_trace_func.TestTraceFunc",
+                "name": "test_unwatch",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_attr",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_basic",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_custom_cmp",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_custom_copy",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_custom_printer",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_deepcopy",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_element_callback",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_install",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_printer",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_stack_limit_global",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_stack_limit_local",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_subscr",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_track",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_when",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_write_to_file",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch.TestWatch",
+                "name": "test_write_to_file_stream",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pandas.TestPandas",
+                "name": "test_dataframe",
+                "time": 0.221,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pandas.TestPandas",
+                "name": "test_dataframe_cmp",
+                "time": 0.207,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_pandas.TestPandas",
+                "name": "test_series",
+                "time": 0.072,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
                 "classname": "tests.test_util.TestUtil",
                 "name": "test_getargnodes",
-                "time": 0.002,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -65,49 +387,7 @@
             {
                 "classname": "tests.test_util.TestUtil",
                 "name": "test_getline_with_ipython",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_pandas.TestPandas",
-                "name": "test_dataframe",
-                "time": 0.135,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_pandas.TestPandas",
-                "name": "test_dataframe_cmp",
-                "time": 0.12,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_pandas.TestPandas",
-                "name": "test_series",
-                "time": 0.049,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -121,7 +401,7 @@
             {
                 "classname": "tests.test_multithread.TestMultiThraed",
                 "name": "test_basic",
-                "time": 0.015,
+                "time": 0.021,
                 "results": [
                     {
                         "result": "Passed",
@@ -147,345 +427,9 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_trace_func.TestTraceFunc",
-                "name": "test_not_exist",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_trace_func.TestTraceFunc",
-                "name": "test_pdb",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": "\n> /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py(99)test_pdb()\n-> watch.tracefunc(inspect.currentframe(), \"line\", None)\n\t\t",
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_trace_func.TestTraceFunc",
-                "name": "test_trace_func",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": "\n====== Watchpoints Triggered ======\nCall Stack (most recent call last):\n  __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n>   return self.run(*args, **kwds)\n  run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n>   test(result)\n  __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n>   return self.run(*args, **kwds)\n  run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n>   testMethod()\n  test_trace_func (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:39):\n>   watch.tracefunc(inspect.currentframe(), \"line\", None)\na:\n0\n->\n1\n\n\t\t"
-            },
-            {
-                "classname": "tests.test_trace_func.TestTraceFunc",
-                "name": "test_unwatch",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_attr",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_basic",
-                "time": 0.034,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_custom_cmp",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_custom_copy",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_custom_printer",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_deepcopy",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_element_callback",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_install",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_printer",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_stack_limit_global",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_stack_limit_local",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_subscr",
-                "time": 0.006,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_track",
-                "time": 0.044,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_when",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_write_to_file",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch.TestWatch",
-                "name": "test_write_to_file_stream",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch_print.TestWatchPrint",
-                "name": "test_basic",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch_print.TestWatchPrint",
-                "name": "test_custom_printer",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch_print.TestWatchPrint",
-                "name": "test_getsourceline",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_watch_print.TestWatchPrint",
-                "name": "test_print_to_file",
-                "time": 0.02,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
                 "classname": "tests.test_unwatch.TestUnwatch",
                 "name": "test_alias",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -499,7 +443,7 @@
             {
                 "classname": "tests.test_unwatch.TestUnwatch",
                 "name": "test_basic",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -513,7 +457,7 @@
             {
                 "classname": "tests.test_unwatch.TestUnwatch",
                 "name": "test_long",
-                "time": 0.003,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -527,7 +471,7 @@
             {
                 "classname": "tests.test_unwatch.TestUnwatch",
                 "name": "test_noargs",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -541,7 +485,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_basic",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -555,7 +499,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_changed",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -583,7 +527,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_custom_copy",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -597,7 +541,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_dataframe",
-                "time": 0.019,
+                "time": 0.011,
                 "results": [
                     {
                         "result": "Passed",
@@ -639,7 +583,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_invalid",
-                "time": 0.002,
+                "time": 0.003,
                 "results": [
                     {
                         "result": "Passed",
@@ -653,7 +597,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_object",
-                "time": 0.002,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -667,7 +611,7 @@
             {
                 "classname": "tests.test_watch_element.TestWatchElement",
                 "name": "test_same",
-                "time": 0.001,
+                "time": 0.002,
                 "results": [
                     {
                         "result": "Passed",
@@ -705,12 +649,72 @@
                 ],
                 "stdout": null,
                 "stderr": null
+            },
+            {
+                "classname": "tests.test_watch_print.TestWatchPrint",
+                "name": "test_basic",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch_print.TestWatchPrint",
+                "name": "test_custom_printer",
+                "time": 0.006,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch_print.TestWatchPrint",
+                "name": "test_getsourceline",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_watch_print.TestWatchPrint",
+                "name": "test_print_to_file",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
             }
         ],
-        "stdout": "[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \ud83d\ude80  Start image=crawlergpt:latest\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints] user=0 workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main actions/checkout@v2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main actions/checkout@v2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main Set up Python 3.6\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/407206b8-e406-4dac-9d78-ed68fdb0eed8/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? false\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? true\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? true\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? true\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? true\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? true\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::explicit? true\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Successfully setup CPython (3.6.14)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main Set up Python 3.6\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.6.14/x64/lib\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2699  ::set-output:: python-version=3.6.14\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main Install dependencies\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pip\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Installing collected packages: pip\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Attempting uninstall: pip\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |     Found existing installation: pip 21.2.4\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |     Uninstalling pip-21.2.4:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |       Successfully uninstalled pip-21.2.4\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Successfully installed pip-21.3.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting flake8\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (40.6.2)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting wheel\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading wheel-0.37.1-py2.py3-none-any.whl (35 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting twine\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading twine-3.8.0-py3-none-any.whl (36 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting coverage\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting importlib-metadata<4.3,>=1.1.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pyflakes<2.6.0,>=2.5.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pycodestyle<2.10.0,>=2.9.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting rfc3986>=1.4.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading rfc3986-1.5.0-py2.py3-none-any.whl (31 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pkginfo>=1.8.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pkginfo-1.9.6-py3-none-any.whl (30 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting tqdm>=4.14\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting urllib3>=1.26.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting keyring>=15.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading keyring-23.4.1-py3-none-any.whl (33 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting requests-toolbelt!=0.9.0,>=0.8.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting colorama>=0.4.3\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading colorama-0.4.5-py2.py3-none-any.whl (16 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting readme-renderer>=21.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading readme_renderer-34.0-py3-none-any.whl (16 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting requests>=2.20\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting zipp>=0.5\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting typing-extensions>=3.6.4\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting jeepney>=0.4.2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading jeepney-0.7.1-py3-none-any.whl (54 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting SecretStorage>=3.2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting Pygments>=2.5.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading Pygments-2.14.0-py3-none-any.whl (1.1 MB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting docutils>=0.13.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading docutils-0.18.1-py2.py3-none-any.whl (570 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting bleach>=2.1.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading bleach-4.1.0-py2.py3-none-any.whl (157 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting certifi>=2017.4.17\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting idna<4,>=2.5\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting charset-normalizer~=2.0.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting importlib-resources\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading importlib_resources-5.4.0-py3-none-any.whl (28 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting webencodings\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting packaging\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting six>=1.9.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting cryptography>=2.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading cryptography-40.0.2-cp36-abi3-manylinux_2_28_x86_64.whl (3.7 MB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting cffi>=1.12\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading cffi-1.15.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (402 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pycparser\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Installing collected packages: pycparser, pyparsing, cffi, zipp, webencodings, urllib3, typing-extensions, six, packaging, jeepney, idna, cryptography, charset-normalizer, certifi, SecretStorage, requests, Pygments, importlib-resources, importlib-metadata, docutils, bleach, tqdm, rfc3986, requests-toolbelt, readme-renderer, pyflakes, pycodestyle, pkginfo, mccabe, keyring, colorama, wheel, twine, flake8, coverage\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Successfully installed Pygments-2.14.0 SecretStorage-3.3.3 bleach-4.1.0 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-2.0.12 colorama-0.4.5 coverage-6.2 cryptography-40.0.2 docutils-0.18.1 flake8-5.0.4 idna-3.4 importlib-metadata-4.2.0 importlib-resources-5.4.0 jeepney-0.7.1 keyring-23.4.1 mccabe-0.7.0 packaging-21.3 pkginfo-1.9.6 pycodestyle-2.9.1 pycparser-2.21 pyflakes-2.5.0 pyparsing-3.1.0 readme-renderer-34.0 requests-2.27.1 requests-toolbelt-1.0.0 rfc3986-1.5.0 six-1.16.0 tqdm-4.64.1 twine-3.8.0 typing-extensions-4.1.1 urllib3-1.26.16 webencodings-0.5.1 wheel-0.37.1 zipp-3.6.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main Install dependencies\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main Lint with flake8\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main Lint with flake8\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main Build dist and test with unittest\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting unittest-xml-reporting\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading unittest_xml_reporting-3.1.0-py2.py3-none-any.whl (20 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting lxml\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading lxml-4.9.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.6 MB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.1.0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running sdist\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running egg_info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | writing src/watchpoints.egg-info/PKG-INFO\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | writing dependency_links to src/watchpoints.egg-info/dependency_links.txt\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | writing requirements to src/watchpoints.egg-info/requires.txt\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | writing top-level names to src/watchpoints.egg-info/top_level.txt\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | writing manifest file 'src/watchpoints.egg-info/SOURCES.txt'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | reading manifest file 'src/watchpoints.egg-info/SOURCES.txt'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | writing manifest file 'src/watchpoints.egg-info/SOURCES.txt'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running check\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating watchpoints-0.2.5\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating watchpoints-0.2.5/src\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating watchpoints-0.2.5/src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying files to watchpoints-0.2.5...\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying README.md -> watchpoints-0.2.5\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying setup.py -> watchpoints-0.2.5\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/__init__.py -> watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/ast_monkey.py -> watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/util.py -> watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/watch.py -> watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/watch_element.py -> watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/watch_print.py -> watchpoints-0.2.5/src/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints.egg-info/PKG-INFO -> watchpoints-0.2.5/src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints.egg-info/SOURCES.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints.egg-info/dependency_links.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints.egg-info/requires.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints.egg-info/top_level.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Writing watchpoints-0.2.5/setup.cfg\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating dist\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Creating tar archive\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | removing 'watchpoints-0.2.5' (and everything under it)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running bdist_wheel\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running build\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running build_py\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build/lib\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/watch.py -> build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/ast_monkey.py -> build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/util.py -> build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/watch_element.py -> build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/__init__.py -> build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying src/watchpoints/watch_print.py -> build/lib/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | installing to build/bdist.linux-x86_64/wheel\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running install\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running install_lib\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build/bdist.linux-x86_64\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build/bdist.linux-x86_64/wheel\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying build/lib/watchpoints/watch.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying build/lib/watchpoints/ast_monkey.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying build/lib/watchpoints/util.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying build/lib/watchpoints/watch_element.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying build/lib/watchpoints/__init__.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | copying build/lib/watchpoints/watch_print.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running install_egg_info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Copying src/watchpoints.egg-info to build/bdist.linux-x86_64/wheel/watchpoints-0.2.5-py3.6.egg-info\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | running install_scripts\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding license file \"LICENSE\" (matched pattern \"LICEN[CS]E*\")\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding license file \"NOTICE.txt\" (matched pattern \"NOTICE*\")\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating build/bdist.linux-x86_64/wheel/watchpoints-0.2.5.dist-info/WHEEL\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | creating 'dist/watchpoints-0.2.5-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints/__init__.py'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints/ast_monkey.py'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints/util.py'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints/watch.py'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints/watch_element.py'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints/watch_print.py'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints-0.2.5.dist-info/LICENSE'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints-0.2.5.dist-info/METADATA'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints-0.2.5.dist-info/NOTICE.txt'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints-0.2.5.dist-info/WHEEL'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints-0.2.5.dist-info/top_level.txt'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | adding 'watchpoints-0.2.5.dist-info/RECORD'\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | removing build/bdist.linux-x86_64/wheel\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pandas\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting numpy>=1.15.4\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting pytz>=2017.2\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting python-dateutil>=2.7.3\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Requirement already satisfied: six>=1.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from python-dateutil>=2.7.3->pandas->-r requirements-test.txt (line 1)) (1.16.0)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Installing collected packages: pytz, python-dateutil, numpy, pandas\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Successfully installed numpy-1.19.5 pandas-1.1.5 python-dateutil-2.8.2 pytz-2023.3\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Processing ./dist/watchpoints-0.2.5-py3-none-any.whl\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Collecting objprint>=0.1.3\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Downloading objprint-0.2.2-py3-none-any.whl (25 kB)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Installing collected packages: objprint, watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Successfully installed objprint-0.2.2 watchpoints-0.2.5\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Running tests...\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ----------------------------------------------------------------------\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | .....====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_not_exist (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:69):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a[\"a\"]:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_not_exist (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:72):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | {}\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | {}\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_not_exist (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:77):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | obj.a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | .> /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py(99)test_pdb()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | -> watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   patched (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/mock.py:1183):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return func(*args, **keywargs)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_pdb (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:97):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | .====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_trace_func (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:39):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ..........................................\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ----------------------------------------------------------------------\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Ran 49 tests in 0.525s\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | OK\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Generating XML reports...\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main Build dist and test with unittest\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main Generate coverage report\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/7] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | .....====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_not_exist (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:69):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a[\"a\"]:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_not_exist (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:72):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | {}\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | {}\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_not_exist (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:77):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | obj.a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | .====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   patched (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/mock.py:1183):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return func(*args, **keywargs)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_pdb (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:97):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | .====== Watchpoints Triggered ======\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Call Stack (most recent call last):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   test(result)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   return self.run(*args, **kwds)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   testMethod()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   test_trace_func (/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:39):\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | a:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 0\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ->\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | 1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ..........................................\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ----------------------------------------------------------------------\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Ran 49 tests in 0.484s\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | OK\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | > /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py(99)test_pdb()\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | -> watch.tracefunc(inspect.currentframe(), \"line\", None)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Combined data file .coverage.croaker.440.808007\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | Wrote XML report to coverage.xml\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main Generate coverage report\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Main Upload report to Codecov\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/407206b8-e406-4dac-9d78-ed68fdb0eed8/act/codecov-codecov-action@v2/ dst=/var/run/act/actions/codecov-codecov-action@v2/\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v2/] user=0 workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v2/dist/index.js] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ==> linux OS detected\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | https://uploader.codecov.io/latest/linux/codecov.SHA256SUM\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ==> SHASUM file signed by key id 806bb28aed779869\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ==> Uploader SHASUM verified (0c9b79119b0d8dbe7aaf460dc3bd7c3094ceda06e5ae32b0d11a8ff56e2cc5c5  codecov)\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ==> Running version latest\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | ==> Running version v0.6.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [command]/run/act/actions/codecov-codecov-action@v2/dist/codecov -n  -Q github-action-2.1.0 -f ./coverage.xml\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:20.746Z] ['info'] \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |      _____          _\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |     / ____|        | |\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |    | |     ___   __| | ___  ___ _____   __\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |    | |    / _ \\ / _` |/ _ \\/ __/ _ \\ \\ / /\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |    | |___| (_) | (_| |  __/ (_| (_) \\ V /\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |     \\_____\\___/ \\__,_|\\___|\\___\\___/ \\_/\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | \n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   Codecov report uploader 0.6.1\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:20.785Z] ['info'] => Project root located at: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:20.787Z] ['info'] -> No token specified or token is empty\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:20.943Z] ['info'] Searching for coverage files...\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:20.998Z] ['info'] => Found 1 possible coverage files:\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   |   ./coverage.xml\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:20.998Z] ['info'] Processing ./coverage.xml...\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:21.006Z] ['info'] Detected GitHub Actions as the CI provider.\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:21.387Z] ['info'] Pinging Codecov: https://codecov.io/upload/v4?package=github-action-2.1.0-uploader-0.6.1&token=*******&branch=master&build=1&build_url=https%3A%2F%2Fgithub.com%2Fgaogaotiantian%2Fwatchpoints%2Factions%2Fruns%2F1&commit=934d7a36633487b38d18c8348176c29b6e3c4b9a&job=bd10d9b3-2244-4037-8ef3-3c8727f405d7&pr=&service=github-actions&slug=gaogaotiantian%2Fwatchpoints&name=&tag=&flags=&parent=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   | [2023-06-28T16:27:21.668Z] ['error'] There was an error running the uploader: Error uploading to https://codecov.io: Error: There was an error fetching the storage URL during POST: 404 - {'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Main Upload report to Codecov\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \u2b50 Run Post Set up Python 3.6\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build]   \u2705  Success - Post Set up Python 3.6\n[bd10d9b3-2244-4037-8ef3-3c8727f405d7/build] \ud83c\udfc1  Job succeeded\n",
+        "stdout": "[664601b2-37e2-4348-8288-7894d6ba6317/build] \ud83d\ude80  Start image=crawlergpt:latest\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints] user=0 workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2601  git clone 'https://github.com/codecov/codecov-action' # ref=v2\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \ud83e\uddea  Matrix: map[os:ubuntu-latest python-version:3.6]\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main actions/checkout@v2\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main actions/checkout@v2\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main Set up Python 3.6\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/2643a8d1-30d4-46c2-b4aa-31b10f02c5d2/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? false\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? true\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? true\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? true\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? true\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? true\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::explicit? true\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Successfully setup CPython (3.6.14)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main Set up Python 3.6\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.6.14/x64/lib\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2699  ::set-output:: python-version=3.6.14\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main Install dependencies\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pip\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Installing collected packages: pip\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Attempting uninstall: pip\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |     Found existing installation: pip 21.2.4\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |     Uninstalling pip-21.2.4:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |       Successfully uninstalled pip-21.2.4\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Successfully installed pip-21.3.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting flake8\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (40.6.2)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting wheel\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading wheel-0.37.1-py2.py3-none-any.whl (35 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting twine\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading twine-3.8.0-py3-none-any.whl (36 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting coverage\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pycodestyle<2.10.0,>=2.9.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pyflakes<2.6.0,>=2.5.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting importlib-metadata<4.3,>=1.1.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting requests>=2.20\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting keyring>=15.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading keyring-23.4.1-py3-none-any.whl (33 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting requests-toolbelt!=0.9.0,>=0.8.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting readme-renderer>=21.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading readme_renderer-34.0-py3-none-any.whl (16 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pkginfo>=1.8.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pkginfo-1.9.6-py3-none-any.whl (30 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting urllib3>=1.26.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting rfc3986>=1.4.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading rfc3986-1.5.0-py2.py3-none-any.whl (31 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting colorama>=0.4.3\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading colorama-0.4.5-py2.py3-none-any.whl (16 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting tqdm>=4.14\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting typing-extensions>=3.6.4\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting zipp>=0.5\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting SecretStorage>=3.2\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting jeepney>=0.4.2\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading jeepney-0.7.1-py3-none-any.whl (54 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting bleach>=2.1.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading bleach-4.1.0-py2.py3-none-any.whl (157 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting docutils>=0.13.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading docutils-0.18.1-py2.py3-none-any.whl (570 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting Pygments>=2.5.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading Pygments-2.14.0-py3-none-any.whl (1.1 MB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting idna<4,>=2.5\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting charset-normalizer~=2.0.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting certifi>=2017.4.17\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting importlib-resources\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading importlib_resources-5.4.0-py3-none-any.whl (28 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting webencodings\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting packaging\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading packaging-21.3-py3-none-any.whl (40 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting six>=1.9.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting cryptography>=2.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading cryptography-40.0.2-cp36-abi3-manylinux_2_28_x86_64.whl (3.7 MB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting cffi>=1.12\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading cffi-1.15.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (402 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pycparser\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Installing collected packages: pycparser, pyparsing, cffi, zipp, webencodings, urllib3, typing-extensions, six, packaging, jeepney, idna, cryptography, charset-normalizer, certifi, SecretStorage, requests, Pygments, importlib-resources, importlib-metadata, docutils, bleach, tqdm, rfc3986, requests-toolbelt, readme-renderer, pyflakes, pycodestyle, pkginfo, mccabe, keyring, colorama, wheel, twine, flake8, coverage\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Successfully installed Pygments-2.14.0 SecretStorage-3.3.3 bleach-4.1.0 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-2.0.12 colorama-0.4.5 coverage-6.2 cryptography-40.0.2 docutils-0.18.1 flake8-5.0.4 idna-3.4 importlib-metadata-4.2.0 importlib-resources-5.4.0 jeepney-0.7.1 keyring-23.4.1 mccabe-0.7.0 packaging-21.3 pkginfo-1.9.6 pycodestyle-2.9.1 pycparser-2.21 pyflakes-2.5.0 pyparsing-3.1.0 readme-renderer-34.0 requests-2.27.1 requests-toolbelt-1.0.0 rfc3986-1.5.0 six-1.16.0 tqdm-4.64.1 twine-3.8.0 typing-extensions-4.1.1 urllib3-1.26.16 webencodings-0.5.1 wheel-0.37.1 zipp-3.6.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main Install dependencies\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main Lint with flake8\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main Lint with flake8\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main Build dist and test with unittest\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting unittest-xml-reporting\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading unittest_xml_reporting-3.1.0-py2.py3-none-any.whl (20 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting lxml\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading lxml-4.9.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.6 MB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.1.0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running sdist\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running egg_info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | writing src/watchpoints.egg-info/PKG-INFO\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | writing dependency_links to src/watchpoints.egg-info/dependency_links.txt\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | writing requirements to src/watchpoints.egg-info/requires.txt\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | writing top-level names to src/watchpoints.egg-info/top_level.txt\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | writing manifest file 'src/watchpoints.egg-info/SOURCES.txt'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | reading manifest file 'src/watchpoints.egg-info/SOURCES.txt'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | writing manifest file 'src/watchpoints.egg-info/SOURCES.txt'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running check\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating watchpoints-0.2.5\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating watchpoints-0.2.5/src\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating watchpoints-0.2.5/src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying files to watchpoints-0.2.5...\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying README.md -> watchpoints-0.2.5\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying setup.py -> watchpoints-0.2.5\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/__init__.py -> watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/ast_monkey.py -> watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/util.py -> watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/watch.py -> watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/watch_element.py -> watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/watch_print.py -> watchpoints-0.2.5/src/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints.egg-info/PKG-INFO -> watchpoints-0.2.5/src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints.egg-info/SOURCES.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints.egg-info/dependency_links.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints.egg-info/requires.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints.egg-info/top_level.txt -> watchpoints-0.2.5/src/watchpoints.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Writing watchpoints-0.2.5/setup.cfg\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating dist\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Creating tar archive\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | removing 'watchpoints-0.2.5' (and everything under it)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running bdist_wheel\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running build\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running build_py\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build/lib\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/watch.py -> build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/ast_monkey.py -> build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/util.py -> build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/watch_element.py -> build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/__init__.py -> build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying src/watchpoints/watch_print.py -> build/lib/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | installing to build/bdist.linux-x86_64/wheel\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running install\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running install_lib\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build/bdist.linux-x86_64\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build/bdist.linux-x86_64/wheel\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying build/lib/watchpoints/watch.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying build/lib/watchpoints/ast_monkey.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying build/lib/watchpoints/util.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying build/lib/watchpoints/watch_element.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying build/lib/watchpoints/__init__.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | copying build/lib/watchpoints/watch_print.py -> build/bdist.linux-x86_64/wheel/watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running install_egg_info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Copying src/watchpoints.egg-info to build/bdist.linux-x86_64/wheel/watchpoints-0.2.5-py3.6.egg-info\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | running install_scripts\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding license file \"LICENSE\" (matched pattern \"LICEN[CS]E*\")\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding license file \"NOTICE.txt\" (matched pattern \"NOTICE*\")\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating build/bdist.linux-x86_64/wheel/watchpoints-0.2.5.dist-info/WHEEL\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | creating 'dist/watchpoints-0.2.5-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints/__init__.py'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints/ast_monkey.py'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints/util.py'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints/watch.py'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints/watch_element.py'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints/watch_print.py'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints-0.2.5.dist-info/LICENSE'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints-0.2.5.dist-info/METADATA'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints-0.2.5.dist-info/NOTICE.txt'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints-0.2.5.dist-info/WHEEL'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints-0.2.5.dist-info/top_level.txt'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | adding 'watchpoints-0.2.5.dist-info/RECORD'\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | removing build/bdist.linux-x86_64/wheel\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pandas\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting pytz>=2017.2\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting numpy>=1.15.4\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting python-dateutil>=2.7.3\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Requirement already satisfied: six>=1.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from python-dateutil>=2.7.3->pandas->-r requirements-test.txt (line 1)) (1.16.0)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Installing collected packages: pytz, python-dateutil, numpy, pandas\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Successfully installed numpy-1.19.5 pandas-1.1.5 python-dateutil-2.8.2 pytz-2023.3\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Processing ./dist/watchpoints-0.2.5-py3-none-any.whl\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Collecting objprint>=0.1.3\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Downloading objprint-0.2.2-py3-none-any.whl (25 kB)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Installing collected packages: objprint, watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Successfully installed objprint-0.2.2 watchpoints-0.2.5\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Running tests...\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ----------------------------------------------------------------------\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | .....====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_not_exist (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:69):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a[\"a\"]:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_not_exist (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:72):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | {}\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | {}\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_not_exist (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:77):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | obj.a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | .> /tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py(99)test_pdb()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | -> watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   patched (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/mock.py:1183):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return func(*args, **keywargs)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_pdb (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:97):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | .====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_trace_func (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:39):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ..........................................\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ----------------------------------------------------------------------\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Ran 49 tests in 0.815s\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | OK\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Generating XML reports...\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main Build dist and test with unittest\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main Generate coverage report\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/7] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | .....====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_not_exist (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:69):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a[\"a\"]:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_not_exist (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:72):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | {}\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | {}\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_not_exist (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:77):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | obj.a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | .====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   patched (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/mock.py:1183):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return func(*args, **keywargs)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_pdb (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:97):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | .====== Watchpoints Triggered ======\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Call Stack (most recent call last):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:84):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/suite.py:122):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   test(result)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   __call__ (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:653):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   return self.run(*args, **kwds)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   run (/opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/unittest/case.py:605):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   testMethod()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   test_trace_func (/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py:39):\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | >   watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | a:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 0\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ->\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | 1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ..........................................> /tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/tests/test_trace_func.py(99)test_pdb()\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | -> watch.tracefunc(inspect.currentframe(), \"line\", None)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ----------------------------------------------------------------------\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Ran 49 tests in 0.707s\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | OK\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Combined data file .coverage.croaker.443.258020\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | Wrote XML report to coverage.xml\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main Generate coverage report\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Main Upload report to Codecov\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/2643a8d1-30d4-46c2-b4aa-31b10f02c5d2/act/codecov-codecov-action@v2/ dst=/var/run/act/actions/codecov-codecov-action@v2/\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v2/] user=0 workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v2/dist/index.js] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ==> linux OS detected\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | https://uploader.codecov.io/latest/linux/codecov.SHA256SUM\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ==> SHASUM file signed by key id 806bb28aed779869\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ==> Uploader SHASUM verified (0c9b79119b0d8dbe7aaf460dc3bd7c3094ceda06e5ae32b0d11a8ff56e2cc5c5  codecov)\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ==> Running version latest\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | ==> Running version v0.6.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [command]/run/act/actions/codecov-codecov-action@v2/dist/codecov -n  -Q github-action-2.1.0 -f ./coverage.xml\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.295Z] ['info'] \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |      _____          _\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |     / ____|        | |\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |    | |     ___   __| | ___  ___ _____   __\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |    | |    / _ \\ / _` |/ _ \\/ __/ _ \\ \\ / /\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |    | |___| (_) | (_| |  __/ (_| (_) \\ V /\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |     \\_____\\___/ \\__,_|\\___|\\___\\___/ \\_/\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | \n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   Codecov report uploader 0.6.1\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.303Z] ['info'] => Project root located at: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.306Z] ['info'] -> No token specified or token is empty\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.417Z] ['info'] Searching for coverage files...\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.476Z] ['info'] => Found 1 possible coverage files:\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   |   ./coverage.xml\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.476Z] ['info'] Processing ./coverage.xml...\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.485Z] ['info'] Detected GitHub Actions as the CI provider.\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:08.876Z] ['info'] Pinging Codecov: https://codecov.io/upload/v4?package=github-action-2.1.0-uploader-0.6.1&token=*******&branch=master&build=1&build_url=https%3A%2F%2Fgithub.com%2Fgaogaotiantian%2Fwatchpoints%2Factions%2Fruns%2F1&commit=934d7a36633487b38d18c8348176c29b6e3c4b9a&job=664601b2-37e2-4348-8288-7894d6ba6317&pr=&service=github-actions&slug=gaogaotiantian%2Fwatchpoints&name=&tag=&flags=&parent=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   | [2023-07-01T15:58:09.507Z] ['error'] There was an error running the uploader: Error uploading to https://codecov.io: Error: There was an error fetching the storage URL during POST: 404 - {'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Main Upload report to Codecov\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \u2b50 Run Post Set up Python 3.6\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[664601b2-37e2-4348-8288-7894d6ba6317/build]   \u2705  Success - Post Set up Python 3.6\n[664601b2-37e2-4348-8288-7894d6ba6317/build] \ud83c\udfc1  Job succeeded\n",
         "stderr": "",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/.github/workflows/build_test-crawler.yaml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/gaogaotiantian-watchpoints/.github/workflows/build_test-crawler.yaml",
+            "type": "unittest"
+        },
+        "workflow_name": "664601b2-37e2-4348-8288-7894d6ba6317",
         "build_tool": "unittest",
-        "elapsed_time": 288.90788102149963
+        "elapsed_time": 359.962783575058
     }
 }

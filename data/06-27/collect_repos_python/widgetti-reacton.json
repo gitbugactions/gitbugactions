@@ -4,11 +4,11 @@
     "language": "python",
     "size": 862,
     "clone_url": "https://github.com/widgetti/reacton.git",
-    "timestamp": "2023-06-28T17:50:25.232526Z",
+    "timestamp": "2023-07-01T17:19:43.016448Z",
     "clone_success": true,
     "number_of_actions": 4,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "unknown",
         "pytest",
@@ -19,12 +19,2285 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \ud83d\ude80  Start image=crawlergpt:latest\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/widgetti-reacton] user=0 workdir=\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \u2b50 Run Main actions/checkout@v2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2705  Success - Main actions/checkout@v2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \u2b50 Run Main Set up Python 3.6\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/62182b4c-8380-408f-9572-41d427ce0335/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: \n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? false\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? true\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? true\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? true\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? true\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? true\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::explicit? true\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Successfully setup CPython (3.6.14)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2705  Success - Main Set up Python 3.6\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.6.14/x64/lib\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2699  ::set-output:: python-version=3.6.14\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \u2b50 Run Main Downgrade pip\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Requirement already satisfied: pip<22 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.6.14/x64/bin/python -m pip install --upgrade pip' command.\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u2705  Success - Main Downgrade pip\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \u2b50 Run Main Install\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Processing /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/widgetti-reacton\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   DEPRECATION: A future pip version will change local packages to be built in-place without first copying to a temporary directory. We recommend you use --use-feature=in-tree-build to test your packages with this new behavior before it becomes the default.\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |    pip 21.3 will remove support for this functionality. You can find discussion regarding this at https://github.com/pypa/pip/issues/7555.\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Installing build dependencies: started\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Installing build dependencies: finished with status 'done'\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Getting requirements to build wheel: started\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Getting requirements to build wheel: finished with status 'done'\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |     Preparing wheel metadata: started\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |     Preparing wheel metadata: finished with status 'done'\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting black<23\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading black-22.8.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.4 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ipywidgets\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ipywidgets-7.7.5-py2.py3-none-any.whl (123 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting typing-extensions>=4.1.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ipykernel\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ipykernel-5.5.6-py3-none-any.whl (121 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting coverage\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ipyvuetify\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ipyvuetify-1.8.10-py2.py3-none-any.whl (11.7 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting numpy\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pytest\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting flake8\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pandas\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting mypy\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading mypy-0.971-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (14.9 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pytest-cov\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting bump2version\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading bump2version-1.0.1-py2.py3-none-any.whl (22 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jinja2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading Jinja2-3.0.3-py3-none-any.whl (133 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pre-commit\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pre_commit-2.17.0-py2.py3-none-any.whl (195 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting bqplot\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading bqplot-0.12.39-py2.py3-none-any.whl (1.2 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting mypy-extensions>=0.4.3\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting typed-ast>=1.4.2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading typed_ast-1.5.4-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (831 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting platformdirs>=2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting click>=8.0.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading click-8.0.4-py3-none-any.whl (97 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting dataclasses>=0.6\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading dataclasses-0.8-py3-none-any.whl (19 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pathspec>=0.9.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached pathspec-0.9.0-py2.py3-none-any.whl (31 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting tomli>=1.1.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached tomli-1.2.3-py3-none-any.whl (12 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting importlib-metadata\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached importlib_metadata-4.8.3-py3-none-any.whl (17 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting traitlets>=4.3.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading traitlets-4.3.3-py2.py3-none-any.whl (75 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting traittypes>=0.0.6\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading traittypes-0.2.1-py2.py3-none-any.whl (8.6 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ipython>=4.0.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ipython-7.16.3-py3-none-any.whl (783 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ipython-genutils~=0.2.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jupyterlab-widgets<3,>=1.0.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading jupyterlab_widgets-1.1.4-py3-none-any.whl (246 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting widgetsnbextension~=3.6.4\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading widgetsnbextension-3.6.4-py2.py3-none-any.whl (1.6 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jupyter-client\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading jupyter_client-7.1.2-py3-none-any.whl (130 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting tornado>=4.2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading tornado-6.1-cp36-cp36m-manylinux2010_x86_64.whl (427 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jedi<=0.17.2,>=0.10\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading jedi-0.17.2-py2.py3-none-any.whl (1.4 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting backcall\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pickleshare\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Requirement already satisfied: setuptools>=18.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from ipython>=4.0.0->ipywidgets->reacton==1.7.1) (40.6.2)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pexpect\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pygments\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading Pygments-2.14.0-py3-none-any.whl (1.1 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading prompt_toolkit-3.0.36-py3-none-any.whl (386 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting decorator\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting parso<0.8.0,>=0.7.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading parso-0.7.1-py2.py3-none-any.whl (109 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pytz>=2017.2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting python-dateutil>=2.7.3\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting wcwidth\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading wcwidth-0.2.6-py2.py3-none-any.whl (29 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting six>=1.5\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting notebook>=4.4.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading notebook-6.4.10-py3-none-any.whl (9.9 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pyzmq>=17\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pyzmq-25.1.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting prometheus-client\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading prometheus_client-0.17.0-py3-none-any.whl (60 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting terminado>=0.8.3\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading terminado-0.12.1-py3-none-any.whl (15 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting nbconvert>=5\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading nbconvert-6.0.7-py3-none-any.whl (552 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting Send2Trash>=1.8.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading Send2Trash-1.8.2-py3-none-any.whl (18 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting nest-asyncio>=1.5\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading nest_asyncio-1.5.6-py3-none-any.whl (5.2 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting nbformat\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading nbformat-5.1.3-py3-none-any.whl (178 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jupyter-core>=4.6.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading jupyter_core-4.9.2-py3-none-any.whl (86 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting argon2-cffi\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading argon2_cffi-21.3.0-py3-none-any.whl (14 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting entrypoints\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting testpath\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading testpath-0.6.0-py3-none-any.whl (83 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pandocfilters>=1.4.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pandocfilters-1.5.0-py2.py3-none-any.whl (8.7 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting nbclient<0.6.0,>=0.5.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading nbclient-0.5.9-py3-none-any.whl (69 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting mistune<2,>=0.8.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading mistune-0.8.4-py2.py3-none-any.whl (16 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jupyterlab-pygments\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading jupyterlab_pygments-0.1.2-py2.py3-none-any.whl (4.6 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting defusedxml\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting bleach\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading bleach-4.1.0-py2.py3-none-any.whl (157 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting MarkupSafe>=2.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting async-generator\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading async_generator-1.10-py3-none-any.whl (18 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting jsonschema!=2.5.0,>=2.4\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting attrs>=17.4.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pyrsistent>=0.14.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pyrsistent-0.18.0-cp36-cp36m-manylinux1_x86_64.whl (117 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ptyprocess\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting argon2-cffi-bindings\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting cffi>=1.0.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading cffi-1.15.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (402 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pycparser\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting packaging\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached packaging-21.3-py3-none-any.whl (40 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting webencodings\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pyflakes<2.6.0,>=2.5.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pycodestyle<2.10.0,>=2.9.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting importlib-metadata\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting zipp>=0.5\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting ipyvue<2,>=1.7\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading ipyvue-1.9.2-py2.py3-none-any.whl (2.7 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting toml\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting identify>=1.0.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading identify-2.4.4-py2.py3-none-any.whl (98 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting importlib-resources<5.3\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading importlib_resources-5.2.3-py3-none-any.whl (27 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting virtualenv>=20.0.8\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.17.1-py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pyyaml>=5.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading PyYAML-6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (603 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting cfgv>=2.0.0\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting nodeenv>=0.11.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading nodeenv-1.6.0-py2.py3-none-any.whl (21 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting filelock<4,>=3.4.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading filelock-3.4.1-py3-none-any.whl (9.9 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting virtualenv>=20.0.8\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.17.0-py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.16.7-py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.16.6-py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.16.5-py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.16.4-py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.16.3-py2.py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading virtualenv-20.16.2-py2.py3-none-any.whl (8.8 MB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting distlib<1,>=0.3.1\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting iniconfig\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting pluggy<2.0,>=0.12\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Using cached pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Collecting py>=1.8.2\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Building wheels for collected packages: reacton\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Building wheel for reacton (PEP 517): started\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Building wheel for reacton (PEP 517): finished with status 'done'\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Created wheel for reacton: filename=reacton-1.7.1-py2.py3-none-any.whl size=106600 sha256=5b2d16adea68dc0328ad7e208353e9899571f8186bf736b69ec2a6ac33f8cfdd\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/69/5d/00/ad6af57dfea42a2bfe94c49875cb36a717a998f8e93a40bc8e\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Successfully built reacton\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   | Installing collected packages: zipp, typing-extensions, six, ipython-genutils, decorator, traitlets, pyrsistent, importlib-metadata, attrs, wcwidth, tornado, pyzmq, python-dateutil, pyparsing, pycparser, ptyprocess, parso, nest-asyncio, jupyter-core, jsonschema, entrypoints, webencodings, pygments, prompt-toolkit, pickleshare, pexpect, packaging, nbformat, MarkupSafe, jupyter-client, jedi, cffi, backcall, async-generator, testpath, pandocfilters, nbclient, mistune, jupyterlab-pygments, jinja2, ipython, defusedxml, dataclasses, bleach, argon2-cffi-bindings, terminado, Send2Trash, prometheus-client, nbconvert, ipykernel, argon2-cffi, notebook, widgetsnbextension, jupyterlab-widgets, tomli, pytz, py, pluggy, platformdirs, numpy, ipywidgets, iniconfig, importlib-resources, filelock, distlib, coverage, virtualenv, typed-ast, traittypes, toml, pyyaml, pytest, pyflakes, pycodestyle, pathspec, pandas, nodeenv, mypy-extensions, mccabe, ipyvue, identify, click, cfgv, reacton, pytest-cov, pre-commit, mypy, ipyvuetify, flake8, bump2version, bqplot, black\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build]   \u274c  Failure - Main Install\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/90c8614a2314e0afa00eb259e1163e74f501e5cd21864ee29498afbf5387e5a4/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[27e5ceb3-db75-4f8a-a609-961a87ba4d94/build] \ud83c\udfc1  Job succeeded\n",
-        "stderr": "Error: context canceled\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/widgetti-reacton/.github/workflows/unittest-crawler.yml",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "",
+                "name": "reacton.test_rx",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "collection skipped",
+                        "type": null
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_internals",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_create_element",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_no_on_value_on_write",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_element_twice[ButtonComponentWidget-ContainerWidget]",
+                "time": 0.077,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_element_twice[ButtonComponentWidget-ContainerFunction]",
+                "time": 0.051,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_element_twice[ButtonComponentFunction-ContainerWidget]",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_element_twice[ButtonComponentFunction-ContainerFunction]",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_twice[ButtonComponentWidget-ContainerWidget]",
+                "time": 0.134,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_twice[ButtonComponentWidget-ContainerFunction]",
+                "time": 0.131,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_twice[ButtonComponentFunction-ContainerWidget]",
+                "time": 0.135,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_twice[ButtonComponentFunction-ContainerFunction]",
+                "time": 0.119,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_repeated[ButtonComponentWidget-ContainerWidget]",
+                "time": 0.131,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_repeated[ButtonComponentWidget-ContainerFunction]",
+                "time": 0.122,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_repeated[ButtonComponentFunction-ContainerWidget]",
+                "time": 0.118,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_remove_element_repeated[ButtonComponentFunction-ContainerFunction]",
+                "time": 0.113,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_replace_parent[ButtonComponentWidget]",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_replace_parent[ButtonComponentFunction]",
+                "time": 0.049,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerWidget-ButtonComponentWidget-False]",
+                "time": 0.052,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerWidget-ButtonComponentWidget-True]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerWidget-ButtonComponentFunction-False]",
+                "time": 0.078,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerWidget-ButtonComponentFunction-True]",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerFunction-ButtonComponentWidget-False]",
+                "time": 0.079,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerFunction-ButtonComponentWidget-True]",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerFunction-ButtonComponentFunction-False]",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_count_element[ContainerFunction-ButtonComponentFunction-True]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_monkey_patch",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_component_function",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_replace",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_conditional_child",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_conditional_replace_component_with_element",
+                "time": 0.028,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_many_flip_flop_component",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_state_simple",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_restore_default",
+                "time": 0.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_state_complicated",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_state_outside",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_children_collect",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_children",
+                "time": 0.057,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_display",
+                "time": 0.011,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_box",
+                "time": 0.051,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_widget_element[ButtonComponentWidget-ContainerWidget]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_widget_element[ButtonComponentWidget-ContainerFunction]",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_widget_element[ButtonComponentFunction-ContainerWidget]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_widget_element[ButtonComponentFunction-ContainerFunction]",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentWidget-ContainerWidget-False]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentWidget-ContainerWidget-True]",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentWidget-ContainerFunction-False]",
+                "time": 0.071,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentWidget-ContainerFunction-True]",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentFunction-ContainerWidget-False]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentFunction-ContainerWidget-True]",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentFunction-ContainerFunction-False]",
+                "time": 0.07,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_shared_instance_via_component[ButtonComponentFunction-ContainerFunction-True]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_bqplot",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_effect",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_effect_no_deps",
+                "time": 0.029,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_effect_once",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_effect_deps",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_button",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_key_widget",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_key_root",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_key_component_function",
+                "time": 0.095,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_key_collision",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_vue",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_interactive",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_reducer",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_context",
+                "time": 0.034,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_context_with_precreated_element[False]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_memo",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_memo_auto_closure",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_memo_like_react",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_container_context_simple",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_container_context_bqplot",
+                "time": 0.027,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_get_widget",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_get_widget_multi_render",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_on_argument",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_on_trait",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_other_event_handlers",
+                "time": 0.01,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_state_leak_different_components",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exceptions",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "only works in debug mode",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exceptions_debug_in_render_function",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "only works in debug mode",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exceptions_debug_in_consolidate",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "only works in debug mode",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_mime_bundle",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_state_with_function",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_ref",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_many_consolidate_once",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exception_recover_in_render",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exception_handler_in_render",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exception_handler_exception",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exception_handler_in_event_widget",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exception_handler_in_event_widget_vue",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_exception_handler_due_to_use_memo",
+                "time": 0.027,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_reconcilliate",
+                "time": 0.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_cleanup_child[ContainerWidget-ContainerWidget]",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_cleanup_child[ContainerWidget-ContainerFunction]",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_cleanup_child[ContainerFunction-ContainerWidget]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_cleanup_child[ContainerFunction-ContainerFunction]",
+                "time": 0.027,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_cleanup",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_recover_exception_in_widget_update",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_state_get",
+                "time": 0.058,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_cleanup",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_insert_no_key",
+                "time": 0.39,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_insert_with_key",
+                "time": 0.368,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_vue_orphan_not_close",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_component[ContainerWidget-False]",
+                "time": 0.156,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_component[ContainerWidget-True]",
+                "time": 0.192,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_component[ContainerFunction-False]",
+                "time": 0.169,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_component[ContainerFunction-True]",
+                "time": 0.168,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_simple[ContainerWidget]",
+                "time": 0.067,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_simple[ContainerFunction]",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_widget_and_component[ContainerWidget]",
+                "time": 0.07,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_widget_and_component[ContainerFunction]",
+                "time": 0.054,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_component_key[ContainerWidget]",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_switch_component_key[ContainerFunction]",
+                "time": 0.069,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_twice_different_element",
+                "time": 0.073,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_multithreaded_support",
+                "time": 1.718,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_nested_render",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_none_as_callback",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_mutate_warning",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_set_state_with_dataframe",
+                "time": 0.091,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_memo_dataframe",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_use_effect_dataframe",
+                "time": 0.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_rerender_component_switch[ContainerWidget]",
+                "time": 0.059,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_rerender_component_switch[ContainerFunction]",
+                "time": 0.059,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_rerender_component_switch_memo[ContainerWidget]",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_rerender_component_switch_memo[ContainerFunction]",
+                "time": 0.045,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_set_state_during_close",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_value_element",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_value_component",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_jupyter_decorator",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_implicit_component",
+                "time": 0.068,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_create_widget",
+                "time": 0.093,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_display_element",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_display_dataframe",
+                "time": 0.058,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_component_context_manager",
+                "time": 0.048,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_close_when_overridden",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_perf_child_only",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_repeated[ButtonComponentWidget]",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_render_repeated[ButtonComponentFunction]",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_debug_set_state",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "requires python3.7 or higher",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_debug_infinite_loop",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_batch_update",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_batch_update_from_render",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.core_test",
+                "name": "test_event_multiple",
+                "time": 0.1,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_by_class",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_non_existing_attr",
+                "time": 0.02,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_by_class_and_attr",
+                "time": 0.054,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_nested",
+                "time": 0.05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_assert_matches_wait",
+                "time": 0.134,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_assert_wait",
+                "time": 0.139,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_by_class_and_attr_nested",
+                "time": 0.1,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_by_meta_widget",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_by_meta_component",
+                "time": 0.051,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_find_count",
+                "time": 0.041,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.find_test",
+                "name": "test_wait_for",
+                "time": 0.365,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.generate_test",
+                "name": "test_basic",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.generate_test",
+                "name": "test_value",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.generate_test",
+                "name": "test_instance_non_widget",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.generate_test",
+                "name": "test_instance_widget",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.generate_test",
+                "name": "test_skip_defaults",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.utils_test",
+                "name": "test_equals",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.utils_test",
+                "name": "test_import_item",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "reacton.utils_test",
+                "name": "test_isinstance_lazy",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Skipped",
+                        "message": "requires python3.7 or higher",
+                        "type": "pytest.skip"
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \ud83d\ude80  Start image=crawlergpt:latest\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/widgetti-reacton] user=0 workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \ud83e\uddea  Matrix: map[python-version:3.6]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \u2b50 Run Main actions/checkout@v2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2705  Success - Main actions/checkout@v2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \u2b50 Run Main Set up Python 3.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/460ea6ad-05ef-4e76-b2bb-540bede4ecb5/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.6 is 3.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? false\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? true\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? true\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? true\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? true\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? true\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::explicit? true\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::matched: 3.6.14\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.6.14/x64\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.6.14 x64\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Successfully setup CPython (3.6.14)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2705  Success - Main Set up Python 3.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.6.14/x64\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.6.14/x64/lib\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2699  ::set-output:: python-version=3.6.14\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.6.14/x64/bin\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \u2b50 Run Main Downgrade pip\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Requirement already satisfied: pip<22 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (21.2.4)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.6.14/x64/bin/python -m pip install --upgrade pip' command.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2705  Success - Main Downgrade pip\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \u2b50 Run Main Install\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Processing /tmp/558156d8-17ed-11ee-8a50-bb14de238602/widgetti-reacton\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   DEPRECATION: A future pip version will change local packages to be built in-place without first copying to a temporary directory. We recommend you use --use-feature=in-tree-build to test your packages with this new behavior before it becomes the default.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |    pip 21.3 will remove support for this functionality. You can find discussion regarding this at https://github.com/pypa/pip/issues/7555.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Installing build dependencies: started\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Installing build dependencies: finished with status 'done'\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Getting requirements to build wheel: started\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Getting requirements to build wheel: finished with status 'done'\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     Preparing wheel metadata: started\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     Preparing wheel metadata: finished with status 'done'\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting black<23\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading black-22.8.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.4 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ipywidgets\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ipywidgets-7.7.5-py2.py3-none-any.whl (123 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting typing-extensions>=4.1.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached typing_extensions-4.1.1-py3-none-any.whl (26 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pandas\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pytest-cov\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pytest\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pytest-7.0.1-py3-none-any.whl (296 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting bump2version\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading bump2version-1.0.1-py2.py3-none-any.whl (22 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting bqplot\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading bqplot-0.12.39-py2.py3-none-any.whl (1.2 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting mypy\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading mypy-0.971-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (14.9 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pre-commit\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pre_commit-2.17.0-py2.py3-none-any.whl (195 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ipyvuetify\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ipyvuetify-1.8.10-py2.py3-none-any.whl (11.7 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jinja2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading Jinja2-3.0.3-py3-none-any.whl (133 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting coverage\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading coverage-6.2-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (212 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting flake8\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting numpy\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ipykernel\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ipykernel-5.5.6-py3-none-any.whl (121 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting dataclasses>=0.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading dataclasses-0.8-py3-none-any.whl (19 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting platformdirs>=2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting typed-ast>=1.4.2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading typed_ast-1.5.4-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (831 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pathspec>=0.9.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached pathspec-0.9.0-py2.py3-none-any.whl (31 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting click>=8.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading click-8.0.4-py3-none-any.whl (97 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting mypy-extensions>=0.4.3\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting tomli>=1.1.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached tomli-1.2.3-py3-none-any.whl (12 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting importlib-metadata\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached importlib_metadata-4.8.3-py3-none-any.whl (17 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting traitlets>=4.3.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading traitlets-4.3.3-py2.py3-none-any.whl (75 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting traittypes>=0.0.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading traittypes-0.2.1-py2.py3-none-any.whl (8.6 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jupyterlab-widgets<3,>=1.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading jupyterlab_widgets-1.1.4-py3-none-any.whl (246 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ipython>=4.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ipython-7.16.3-py3-none-any.whl (783 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ipython-genutils~=0.2.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting widgetsnbextension~=3.6.4\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading widgetsnbextension-3.6.4-py2.py3-none-any.whl (1.6 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jupyter-client\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading jupyter_client-7.1.2-py3-none-any.whl (130 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting tornado>=4.2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading tornado-6.1-cp36-cp36m-manylinux2010_x86_64.whl (427 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Requirement already satisfied: setuptools>=18.5 in /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages (from ipython>=4.0.0->ipywidgets->reacton==1.7.1) (40.6.2)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pygments\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading Pygments-2.14.0-py3-none-any.whl (1.1 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading prompt_toolkit-3.0.36-py3-none-any.whl (386 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting backcall\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting decorator\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pexpect\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pickleshare\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jedi<=0.17.2,>=0.10\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading jedi-0.17.2-py2.py3-none-any.whl (1.4 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting parso<0.8.0,>=0.7.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading parso-0.7.1-py2.py3-none-any.whl (109 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting python-dateutil>=2.7.3\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pytz>=2017.2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting wcwidth\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading wcwidth-0.2.6-py2.py3-none-any.whl (29 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting six>=1.5\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting notebook>=4.4.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading notebook-6.4.10-py3-none-any.whl (9.9 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting terminado>=0.8.3\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading terminado-0.12.1-py3-none-any.whl (15 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting nbconvert>=5\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading nbconvert-6.0.7-py3-none-any.whl (552 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting Send2Trash>=1.8.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading Send2Trash-1.8.2-py3-none-any.whl (18 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pyzmq>=17\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pyzmq-25.1.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting argon2-cffi\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading argon2_cffi-21.3.0-py3-none-any.whl (14 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting nest-asyncio>=1.5\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading nest_asyncio-1.5.6-py3-none-any.whl (5.2 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting nbformat\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading nbformat-5.1.3-py3-none-any.whl (178 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting prometheus-client\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading prometheus_client-0.17.0-py3-none-any.whl (60 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jupyter-core>=4.6.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading jupyter_core-4.9.2-py3-none-any.whl (86 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting entrypoints\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting testpath\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading testpath-0.6.0-py3-none-any.whl (83 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting nbclient<0.6.0,>=0.5.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading nbclient-0.5.9-py3-none-any.whl (69 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting defusedxml\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting bleach\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading bleach-4.1.0-py2.py3-none-any.whl (157 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pandocfilters>=1.4.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pandocfilters-1.5.0-py2.py3-none-any.whl (8.7 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting mistune<2,>=0.8.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading mistune-0.8.4-py2.py3-none-any.whl (16 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jupyterlab-pygments\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading jupyterlab_pygments-0.1.2-py2.py3-none-any.whl (4.6 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting MarkupSafe>=2.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting async-generator\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading async_generator-1.10-py3-none-any.whl (18 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting jsonschema!=2.5.0,>=2.4\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pyrsistent>=0.14.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pyrsistent-0.18.0-cp36-cp36m-manylinux1_x86_64.whl (117 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting attrs>=17.4.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ptyprocess\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting argon2-cffi-bindings\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting cffi>=1.0.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading cffi-1.15.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (402 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pycparser\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting webencodings\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting packaging\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached packaging-21.3-py3-none-any.whl (40 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pyflakes<2.6.0,>=2.5.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting importlib-metadata\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading importlib_metadata-4.2.0-py3-none-any.whl (16 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting mccabe<0.8.0,>=0.7.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pycodestyle<2.10.0,>=2.9.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting zipp>=0.5\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached zipp-3.6.0-py3-none-any.whl (5.3 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting ipyvue<2,>=1.7\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading ipyvue-1.9.2-py2.py3-none-any.whl (2.7 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pyparsing!=3.0.5,>=2.0.2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting importlib-resources<5.3\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading importlib_resources-5.2.3-py3-none-any.whl (27 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting cfgv>=2.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting identify>=1.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading identify-2.4.4-py2.py3-none-any.whl (98 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting toml\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting nodeenv>=0.11.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading nodeenv-1.6.0-py2.py3-none-any.whl (21 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pyyaml>=5.1\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading PyYAML-6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (603 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting virtualenv>=20.0.8\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.17.1-py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.17.0-py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.16.7-py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.16.6-py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.16.5-py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting distlib<1,>=0.3.5\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting virtualenv>=20.0.8\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.16.4-py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.16.3-py2.py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading virtualenv-20.16.2-py2.py3-none-any.whl (8.8 MB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting filelock<4,>=3.2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading filelock-3.4.1-py3-none-any.whl (9.9 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting pluggy<2.0,>=0.12\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Using cached pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting py>=1.8.2\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Collecting iniconfig\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Building wheels for collected packages: reacton\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Building wheel for reacton (PEP 517): started\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Building wheel for reacton (PEP 517): finished with status 'done'\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Created wheel for reacton: filename=reacton-1.7.1-py2.py3-none-any.whl size=106600 sha256=5b2d16adea68dc0328ad7e208353e9899571f8186bf736b69ec2a6ac33f8cfdd\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/7a/7f/6a/3d60b75f1bbfe240558fe2f88adc87e41b0ad44612f355a76c\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Successfully built reacton\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Installing collected packages: zipp, typing-extensions, six, ipython-genutils, decorator, traitlets, pyrsistent, importlib-metadata, attrs, wcwidth, tornado, pyzmq, python-dateutil, pyparsing, pycparser, ptyprocess, parso, nest-asyncio, jupyter-core, jsonschema, entrypoints, webencodings, pygments, prompt-toolkit, pickleshare, pexpect, packaging, nbformat, MarkupSafe, jupyter-client, jedi, cffi, backcall, async-generator, testpath, pandocfilters, nbclient, mistune, jupyterlab-pygments, jinja2, ipython, defusedxml, dataclasses, bleach, argon2-cffi-bindings, terminado, Send2Trash, prometheus-client, nbconvert, ipykernel, argon2-cffi, notebook, widgetsnbextension, jupyterlab-widgets, tomli, pytz, py, pluggy, platformdirs, numpy, ipywidgets, iniconfig, importlib-resources, filelock, distlib, coverage, virtualenv, typed-ast, traittypes, toml, pyyaml, pytest, pyflakes, pycodestyle, pathspec, pandas, nodeenv, mypy-extensions, mccabe, ipyvue, identify, click, cfgv, reacton, pytest-cov, pre-commit, mypy, ipyvuetify, flake8, bump2version, bqplot, black\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Successfully installed MarkupSafe-2.0.1 Send2Trash-1.8.2 argon2-cffi-21.3.0 argon2-cffi-bindings-21.2.0 async-generator-1.10 attrs-22.2.0 backcall-0.2.0 black-22.8.0 bleach-4.1.0 bqplot-0.12.39 bump2version-1.0.1 cffi-1.15.1 cfgv-3.3.1 click-8.0.4 coverage-6.2 dataclasses-0.8 decorator-5.1.1 defusedxml-0.7.1 distlib-0.3.6 entrypoints-0.4 filelock-3.4.1 flake8-5.0.4 identify-2.4.4 importlib-metadata-4.2.0 importlib-resources-5.2.3 iniconfig-1.1.1 ipykernel-5.5.6 ipython-7.16.3 ipython-genutils-0.2.0 ipyvue-1.9.2 ipyvuetify-1.8.10 ipywidgets-7.7.5 jedi-0.17.2 jinja2-3.0.3 jsonschema-3.2.0 jupyter-client-7.1.2 jupyter-core-4.9.2 jupyterlab-pygments-0.1.2 jupyterlab-widgets-1.1.4 mccabe-0.7.0 mistune-0.8.4 mypy-0.971 mypy-extensions-1.0.0 nbclient-0.5.9 nbconvert-6.0.7 nbformat-5.1.3 nest-asyncio-1.5.6 nodeenv-1.6.0 notebook-6.4.10 numpy-1.19.5 packaging-21.3 pandas-1.1.5 pandocfilters-1.5.0 parso-0.7.1 pathspec-0.9.0 pexpect-4.8.0 pickleshare-0.7.5 platformdirs-2.4.0 pluggy-1.0.0 pre-commit-2.17.0 prometheus-client-0.17.0 prompt-toolkit-3.0.36 ptyprocess-0.7.0 py-1.11.0 pycodestyle-2.9.1 pycparser-2.21 pyflakes-2.5.0 pygments-2.14.0 pyparsing-3.1.0 pyrsistent-0.18.0 pytest-7.0.1 pytest-cov-4.0.0 python-dateutil-2.8.2 pytz-2023.3 pyyaml-6.0 pyzmq-25.1.0 reacton-1.7.1 six-1.16.0 terminado-0.12.1 testpath-0.6.0 toml-0.10.2 tomli-1.2.3 tornado-6.1 traitlets-4.3.3 traittypes-0.2.1 typed-ast-1.5.4 typing-extensions-4.1.1 virtualenv-20.16.2 wcwidth-0.2.6 webencodings-0.5.1 widgetsnbextension-3.6.4 zipp-3.6.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.6.14/x64/bin/python -m pip install --upgrade pip' command.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2705  Success - Main Install\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \u2b50 Run Main test\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ============================= test session starts ==============================\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | platform linux -- Python 3.6.14, pytest-7.0.1, pluggy-1.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/widgetti-reacton\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | plugins: cov-4.0.0\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | collected 161 items / 1 skipped / 160 selected\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core_test.py ................................................... [ 31%]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ..........................sss........................................... [ 76%]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ..............s....                                                      [ 88%]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/find_test.py ...........                                         [ 95%]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/generate_test.py .....                                           [ 98%]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/utils_test.py ..s                                                [100%]\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | =============================== warnings summary ===============================\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ../../../opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/jupyter_client/session.py:47\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/jupyter_client/session.py:47: DeprecationWarning: zmq.eventloop.ioloop is deprecated in pyzmq 17. pyzmq now works with default tornado and asyncio eventloops.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     from zmq.eventloop.ioloop import IOLoop\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ../../../opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/bqplot/marks.py:167\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/bqplot/marks.py:167: DeprecationWarning: metadata {'value_trait': <traitlets.traitlets.Instance object at 0x7f077270feb8>} was set from the constructor. With traitlets 4.1, metadata should be set using the .tag() method, e.g., Int().tag(key1='value1', key2='value2')\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     scales = Dict(value_trait=Instance(Scale)).tag(sync=True, **widget_serialization)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ../../../opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/bqplot/plotting_widgets.py:30\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/bqplot/plotting_widgets.py:30: DeprecationWarning: metadata {'dtype': None} was set from the constructor. With traitlets 4.1, metadata should be set using the .tag() method, e.g., Int().tag(key1='value1', key2='value2')\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     data = DataFrame()\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core_test.py::test_create_widget\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/ipywidgets/widgets/widget.py:477: DeprecationWarning: Passing unrecoginized arguments to super(Container).__init__(a=1).\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   object.__init__() takes no parameters\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   This is deprecated in traitlets 4.2.This error will be raised in a future release of traitlets.\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     super(Widget, self).__init__(**kwargs)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core_test.py::test_create_widget\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core_test.py::test_create_widget\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core_test.py::test_create_widget\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |   /opt/hostedtoolcache/Python/3.6.14/x64/lib/python3.6/site-packages/ipywidgets/widgets/widget.py:680: DeprecationWarning: Deprecated in traitlets 4.1, use the instance .metadata dictionary directly, like x.metadata[key] or x.metadata.get(key, default)\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   |     if trait.get_metadata('sync'):\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/widgetti-reacton/report.xml -\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ---------- coverage: platform linux, python 3.6.14-final-0 -----------\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | Name                       Stmts   Miss  Cover\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ----------------------------------------------\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/__init__.py            4      0   100%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/_version.py            1      0   100%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/bqplot.py            330    176    47%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core.py             1491    189    87%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/core_test.py        2153     67    97%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/find.py              190     36    81%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/find_test.py         135      0   100%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/generate.py          232    106    54%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/generate_test.py      46      2    96%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/ipycanvas.py          54     54     0%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/ipyvue.py             24      0   100%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/ipyvuetify.py       1489    981    34%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/ipywidgets.py        701    412    41%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/logging.py            43     23    47%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/patch.py              18      2    89%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/patch_display.py      35      2    94%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/rx.py                  9      9     0%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/test_rx.py            18     16    11%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/utils.py             136     41    70%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/utils_test.py        116     14    88%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | reacton/work.py                8      8     0%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ----------------------------------------------\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | TOTAL                       7233   2138    70%\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | \n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   | ================= 156 passed, 6 skipped, 7 warnings in 16.68s ==================\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2705  Success - Main test\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \u2b50 Run Post Set up Python 3.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build]   \u2705  Success - Post Set up Python 3.6\n[f7f0dcdb-7e34-4d21-beaa-2018aefcc94e/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/widgetti-reacton/.github/workflows/unittest-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "f7f0dcdb-7e34-4d21-beaa-2018aefcc94e",
         "build_tool": "pytest",
-        "elapsed_time": 614.1862490177155
+        "elapsed_time": 349.3644073009491
     }
 }

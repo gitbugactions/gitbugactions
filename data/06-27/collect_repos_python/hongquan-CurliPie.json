@@ -1,10 +1,10 @@
 {
     "repository": "hongquan/CurliPie",
-    "stars": 55,
+    "stars": 56,
     "language": "python",
     "size": 1158,
     "clone_url": "https://github.com/hongquan/CurliPie.git",
-    "timestamp": "2023-06-28T14:50:04.356611Z",
+    "timestamp": "2023-07-01T14:21:19.186003Z",
     "clone_success": true,
     "number_of_actions": 1,
     "number_of_test_actions": 1,
@@ -21,7 +21,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -d 'name=admin&shoesize=12' http://quan.hoabinh.vn-http -f quan.hoabinh.vn name=admin shoesize=12]",
-                "time": 0.178,
+                "time": 0.228,
                 "results": [
                     {
                         "result": "Passed",
@@ -35,7 +35,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -d name=admin -d shoesize=12 https://quan.hoabinh.vn-http -f https://quan.hoabinh.vn name=admin shoesize=12]",
-                "time": 0.183,
+                "time": 0.182,
                 "results": [
                     {
                         "result": "Passed",
@@ -49,7 +49,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -d name=admin -d shoesize=12 -d color=green&food=wet quan.hoabinh.vn-http -f quan.hoabinh.vn name=admin shoesize=12 color=green food=wet]",
-                "time": 0.126,
+                "time": 0.102,
                 "results": [
                     {
                         "result": "Passed",
@@ -63,7 +63,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -I http://quan.hoabinh.vn-http HEAD quan.hoabinh.vn]",
-                "time": 0.13,
+                "time": 0.111,
                 "results": [
                     {
                         "result": "Passed",
@@ -77,7 +77,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl http://quan.hoabinh.vn --user username:password-http -a username:password quan.hoabinh.vn]",
-                "time": 0.13,
+                "time": 0.096,
                 "results": [
                     {
                         "result": "Passed",
@@ -91,7 +91,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl --header 'Content-Type: application/json' --header 'Host: quan.hoabinh.vn' http://103.92.28.225-http 103.92.28.225 Host:quan.hoabinh.vn Content-Type:application/json]",
-                "time": 0.099,
+                "time": 0.113,
                 "results": [
                     {
                         "result": "Passed",
@@ -105,7 +105,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl --request DELETE http://quan.hoabinh.vn/users/1-http DELETE quan.hoabinh.vn/users/1]",
-                "time": 0.097,
+                "time": 0.101,
                 "results": [
                     {
                         "result": "Passed",
@@ -119,7 +119,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -X POST http://quan.hoabinh.vn -d 'username=yourusername&password=yourpassword'-http -f quan.hoabinh.vn username=yourusername password=yourpassword]",
-                "time": 0.094,
+                "time": 0.105,
                 "results": [
                     {
                         "result": "Passed",
@@ -133,7 +133,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -X POST http://quan.hoabinh.vn/api/users --user admin:xxx -d name=meow-http -fa admin:xxx quan.hoabinh.vn/api/users name=meow]",
-                "time": 0.112,
+                "time": 0.119,
                 "results": [
                     {
                         "result": "Passed",
@@ -147,7 +147,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -sL \"https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823\"-http -F https://keyserver.ubuntu.com/pks/lookup op==get search==0x2EE0EA64E40A89B84B2DF73499E82A75642AC823]",
-                "time": 0.135,
+                "time": 0.101,
                 "results": [
                     {
                         "result": "Passed",
@@ -161,7 +161,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -u \"$USER:$PASS\" \"https://analysiscenter.veracode.com/api/5.0/uploadlargefile.do?app_id=$APP_ID&filename=file.bca\" --cacert ~/Desktop/cert.pem-http -a '$USER:$PASS' --verify ~/Desktop/cert.pem https://analysiscenter.veracode.com/api/5.0/uploadlargefile.do app_id=='$APP_ID' filename==file.bca]",
-                "time": 0.114,
+                "time": 0.111,
                 "results": [
                     {
                         "result": "Passed",
@@ -175,7 +175,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl --data-binary \"@build/veracode.bca\" -H \"Content-Type: binary/octet-stream\" https://analysiscenter.veracode.com/api/5.0/uploadlargefile.do-http https://analysiscenter.veracode.com/api/5.0/uploadlargefile.do Content-Type:binary/octet-stream @build/veracode.bca]",
-                "time": 0.098,
+                "time": 0.128,
                 "results": [
                     {
                         "result": "Passed",
@@ -189,48 +189,6 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_converting[curl -F file=@~/path/image.png http://quan.hoabinh.vn-http -f quan.hoabinh.vn file@'~/path/image.png']",
-                "time": 0.092,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_curlipie",
-                "name": "test_json_form",
-                "time": 0.147,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_curlipie",
-                "name": "test_json_value_not_primitive",
-                "time": 0.174,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_curlipie",
-                "name": "test_curl_postman_generated",
                 "time": 0.107,
                 "results": [
                     {
@@ -244,8 +202,50 @@
             },
             {
                 "classname": "tests.test_curlipie",
+                "name": "test_json_form",
+                "time": 0.109,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_curlipie",
+                "name": "test_json_value_not_primitive",
+                "time": 0.291,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_curlipie",
+                "name": "test_curl_postman_generated",
+                "time": 0.196,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_curlipie",
                 "name": "test_multi_line",
-                "time": 0.112,
+                "time": 0.209,
                 "results": [
                     {
                         "result": "Passed",
@@ -259,7 +259,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_escaped_linebreak",
-                "time": 0.11,
+                "time": 0.189,
                 "results": [
                     {
                         "result": "Passed",
@@ -273,7 +273,7 @@
             {
                 "classname": "tests.test_curlipie",
                 "name": "test_json_with_quote_escape",
-                "time": 0.175,
+                "time": 0.221,
                 "results": [
                     {
                         "result": "Passed",
@@ -287,7 +287,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_curl_form_data_single_urlencoded",
-                "time": 0.144,
+                "time": 0.164,
                 "results": [
                     {
                         "result": "Passed",
@@ -301,7 +301,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_curl_form_data_multi",
-                "time": 0.116,
+                "time": 0.15,
                 "results": [
                     {
                         "result": "Passed",
@@ -315,7 +315,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_curl_form_data_multi_mixed",
-                "time": 0.277,
+                "time": 0.158,
                 "results": [
                     {
                         "result": "Passed",
@@ -329,7 +329,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_head",
-                "time": 0.128,
+                "time": 0.122,
                 "results": [
                     {
                         "result": "Passed",
@@ -343,7 +343,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_basic_auth",
-                "time": 0.108,
+                "time": 0.184,
                 "results": [
                     {
                         "result": "Passed",
@@ -357,7 +357,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_headers",
-                "time": 0.179,
+                "time": 0.214,
                 "results": [
                     {
                         "result": "Passed",
@@ -371,7 +371,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_method",
-                "time": 0.193,
+                "time": 0.186,
                 "results": [
                     {
                         "result": "Passed",
@@ -385,7 +385,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_post_data",
-                "time": 0.173,
+                "time": 0.185,
                 "results": [
                     {
                         "result": "Passed",
@@ -399,7 +399,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_query_params",
-                "time": 0.18,
+                "time": 0.194,
                 "results": [
                     {
                         "result": "Passed",
@@ -413,7 +413,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_upload",
-                "time": 0.136,
+                "time": 0.15,
                 "results": [
                     {
                         "result": "Passed",
@@ -427,7 +427,7 @@
             {
                 "classname": "tests.test_parse_curl",
                 "name": "test_data_raw",
-                "time": 0.123,
+                "time": 0.14,
                 "results": [
                     {
                         "result": "Passed",
@@ -439,10 +439,14 @@
                 "stderr": null
             }
         ],
-        "stdout": "[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/hongquan-CurliPie] user=0 workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2601  git clone 'https://github.com/abatilo/actions-poetry' # ref=v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Pre abatilo/actions-poetry@v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Pre abatilo/actions-poetry@v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Main actions/checkout@master\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Main actions/checkout@master\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Main actions/setup-python@v4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/33da43c5-b9e7-4bd8-9b6f-a27088d48b23/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2753  ::group::Installed versions\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: \n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? false\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? true\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? true\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? true\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? true\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? true\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::explicit? true\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::matched: 3.9.6\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Successfully set up CPython (3.9.6)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2753  ::endgroup::\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Main actions/setup-python@v4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-output:: python-version=3.9.6\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Main abatilo/actions-poetry@v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/33da43c5-b9e7-4bd8-9b6f-a27088d48b23/act/abatilo-actions-poetry@v2/ dst=/var/run/act/actions/abatilo-actions-poetry@v2/\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/abatilo-actions-poetry@v2/] user=0 workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Main pip install -U poetry\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2-composite-0.sh] user= workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting poetry\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading poetry-1.5.1-py3-none-any.whl (225 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting build<0.11.0,>=0.10.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading build-0.10.0-py3-none-any.whl (17 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting cachecontrol[filecache]<0.13.0,>=0.12.9\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading CacheControl-0.12.14-py2.py3-none-any.whl (21 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting virtualenv<21.0.0,>=20.22.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting filelock<4.0.0,>=3.8.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting platformdirs<4.0.0,>=3.0.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting importlib-metadata>=4.4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting tomli<3.0.0,>=2.0.1\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting trove-classifiers>=2022.5.19\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading trove_classifiers-2023.5.24-py3-none-any.whl (13 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting tomlkit<1.0.0,>=0.11.4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading tomlkit-0.11.8-py3-none-any.whl (35 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting crashtest<0.5.0,>=0.4.1\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading crashtest-0.4.1-py3-none-any.whl (7.6 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting jsonschema<5.0.0,>=4.10.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting urllib3<2.0.0,>=1.26.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting keyring<24.0.0,>=23.9.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading keyring-23.13.1-py3-none-any.whl (37 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting installer<0.8.0,>=0.7.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading installer-0.7.0-py3-none-any.whl (453 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting dulwich<0.22.0,>=0.21.2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading dulwich-0.21.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (509 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting cleo<3.0.0,>=2.0.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading cleo-2.0.1-py3-none-any.whl (77 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting packaging>=20.4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting poetry-core==1.6.1\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading poetry_core-1.6.1-py3-none-any.whl (450 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting pyproject-hooks<2.0.0,>=1.0.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading pyproject_hooks-1.0.0-py3-none-any.whl (9.3 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting lockfile<0.13.0,>=0.12.2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading lockfile-0.12.2-py2.py3-none-any.whl (13 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting poetry-plugin-export<2.0.0,>=1.4.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading poetry_plugin_export-1.4.0-py3-none-any.whl (10 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting requests<3.0,>=2.18\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting shellingham<2.0,>=1.5\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading shellingham-1.5.0.post1-py2.py3-none-any.whl (9.4 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting html5lib<2.0,>=1.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting requests-toolbelt<2,>=0.9.1\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting pkginfo<2.0.0,>=1.9.4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading pkginfo-1.9.6-py3-none-any.whl (30 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting pexpect<5.0.0,>=4.7.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting msgpack>=0.5.2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading msgpack-1.0.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (322 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting rapidfuzz<3.0.0,>=2.2.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading rapidfuzz-2.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting webencodings\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting six>=1.9\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting zipp>=0.5\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting attrs>=17.4.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting jeepney>=0.4.2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading jeepney-0.8.0-py3-none-any.whl (48 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting SecretStorage>=3.2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting jaraco.classes\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading jaraco.classes-3.2.3-py3-none-any.whl (6.0 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting ptyprocess>=0.5\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting idna<4,>=2.5\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting charset-normalizer<4,>=2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (199 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting certifi>=2017.4.17\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting cryptography>=2.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting cffi>=1.12\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (441 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting pycparser\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting distlib<1,>=0.3.6\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Collecting more-itertools\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   Downloading more_itertools-9.1.0-py3-none-any.whl (54 kB)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Installing collected packages: pycparser, urllib3, idna, charset-normalizer, cffi, certifi, zipp, tomli, requests, msgpack, more-itertools, jeepney, cryptography, webencodings, six, SecretStorage, rapidfuzz, pyrsistent, pyproject-hooks, ptyprocess, poetry-core, platformdirs, packaging, lockfile, jaraco.classes, importlib-metadata, filelock, distlib, crashtest, cachecontrol, attrs, virtualenv, trove-classifiers, tomlkit, shellingham, requests-toolbelt, poetry-plugin-export, pkginfo, pexpect, keyring, jsonschema, installer, html5lib, dulwich, cleo, build, poetry\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Successfully installed SecretStorage-3.3.3 attrs-23.1.0 build-0.10.0 cachecontrol-0.12.14 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-3.1.0 cleo-2.0.1 crashtest-0.4.1 cryptography-41.0.1 distlib-0.3.6 dulwich-0.21.5 filelock-3.12.2 html5lib-1.1 idna-3.4 importlib-metadata-6.7.0 installer-0.7.0 jaraco.classes-3.2.3 jeepney-0.8.0 jsonschema-4.17.3 keyring-23.13.1 lockfile-0.12.2 more-itertools-9.1.0 msgpack-1.0.5 packaging-23.1 pexpect-4.8.0 pkginfo-1.9.6 platformdirs-3.8.0 poetry-1.5.1 poetry-core-1.6.1 poetry-plugin-export-1.4.0 ptyprocess-0.7.0 pycparser-2.21 pyproject-hooks-1.0.0 pyrsistent-0.19.3 rapidfuzz-2.15.1 requests-2.31.0 requests-toolbelt-1.0.0 shellingham-1.5.0.post1 six-1.16.0 tomli-2.0.1 tomlkit-0.11.8 trove-classifiers-2023.5.24 urllib3-1.26.16 virtualenv-20.23.1 webencodings-0.5.1 zipp-3.15.0\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Main pip install -U poetry\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Main abatilo/actions-poetry@v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Main poetry install --no-root\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Creating virtualenv curlipie-2Vz-zm9L-py3.9 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Installing dependencies from lock file\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | \n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Package operations: 38 installs, 0 updates, 0 removals\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | \n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing idna (3.2)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing sniffio (1.3.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing anyio (3.6.2)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing mypy-extensions (0.4.3)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing pyparsing (2.4.7)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing six (1.16.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing typing-extensions (4.5.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing asttokens (2.2.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing attrs (21.2.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing exceptiongroup (1.1.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing click (8.0.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing h11 (0.12.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing markupsafe (2.0.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing iniconfig (2.0.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing multidict (6.0.4)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing packaging (21.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing executing (1.2.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing pydantic (1.10.4)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing pluggy (0.13.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing starlette (0.25.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing tomli (2.0.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing typing-inspect (0.7.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing aiofiles (23.1.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing devtools (0.10.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing first (2.0.2)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing http-constants (0.5.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing fastapi (0.92.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing jinja2 (3.1.2)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing kiss-headers (2.3.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing logbook (1.5.3)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing orjson (3.8.6)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing python-rapidjson (1.9)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing ruff (0.0.246)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing pytest (7.2.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing typed-argument-parser (1.7.2)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing uvicorn (0.20.0)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing single-version (1.5.1)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   |   \u2022 Installing yarl (1.8.2)\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Main poetry install --no-root\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Main poetry run pytest --junitxml=report.xml\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | ============================= test session starts ==============================\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | platform linux -- Python 3.9.6, pytest-7.2.1, pluggy-0.13.1\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | rootdir: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/hongquan-CurliPie, configfile: pyproject.toml, testpaths: tests, curlipie\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | plugins: anyio-3.6.2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | collected 30 items\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | \n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | tests/test_curlipie.py ...................                               [ 63%]\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | tests/test_parse_curl.py ...........                                     [100%]\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | \n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | - generated xml file: /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/hongquan-CurliPie/report.xml -\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   | ============================== 30 passed in 4.75s ==============================\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Main poetry run pytest --junitxml=report.xml\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Post abatilo/actions-poetry@v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/33da43c5-b9e7-4bd8-9b6f-a27088d48b23/act/abatilo-actions-poetry@v2/ dst=/var/run/act/actions/abatilo-actions-poetry@v2/\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/abatilo-actions-poetry@v2/] user=0 workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Post abatilo/actions-poetry@v2\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \u2b50 Run Post actions/setup-python@v4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test]   \u2705  Success - Post actions/setup-python@v4\n[4ca0698e-9693-4560-b470-94dcb0d4b024/Test] \ud83c\udfc1  Job succeeded\n",
+        "stdout": "[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \ud83d\ude80  Start image=crawlergpt:latest\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/hongquan-CurliPie] user=0 workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2601  git clone 'https://github.com/abatilo/actions-poetry' # ref=v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Pre abatilo/actions-poetry@v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Pre abatilo/actions-poetry@v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Main actions/checkout@master\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Main actions/checkout@master\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Main actions/setup-python@v4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/34c1dcf8-9548-4d28-a2ea-4facc8dbdc17/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2753  ::group::Installed versions\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: \n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? false\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? true\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? true\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? true\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? true\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? true\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::explicit? true\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::matched: 3.9.6\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Successfully set up CPython (3.9.6)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2753  ::endgroup::\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Main actions/setup-python@v4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.9.6/x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib/pkgconfig\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-output:: python-version=3.9.6\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.9.6/x64/bin/python\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Main abatilo/actions-poetry@v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/34c1dcf8-9548-4d28-a2ea-4facc8dbdc17/act/abatilo-actions-poetry@v2/ dst=/var/run/act/actions/abatilo-actions-poetry@v2/\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/abatilo-actions-poetry@v2/] user=0 workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Main pip install -U poetry\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2-composite-0.sh] user= workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting poetry\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading poetry-1.5.1-py3-none-any.whl (225 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting filelock<4.0.0,>=3.8.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading filelock-3.12.2-py3-none-any.whl (10 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting build<0.11.0,>=0.10.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading build-0.10.0-py3-none-any.whl (17 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting crashtest<0.5.0,>=0.4.1\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading crashtest-0.4.1-py3-none-any.whl (7.6 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting poetry-plugin-export<2.0.0,>=1.4.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading poetry_plugin_export-1.4.0-py3-none-any.whl (10 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting pexpect<5.0.0,>=4.7.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting requests-toolbelt<2,>=0.9.1\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting trove-classifiers>=2022.5.19\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading trove_classifiers-2023.5.24-py3-none-any.whl (13 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting keyring<24.0.0,>=23.9.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading keyring-23.13.1-py3-none-any.whl (37 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting cachecontrol[filecache]<0.13.0,>=0.12.9\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading CacheControl-0.12.14-py2.py3-none-any.whl (21 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting requests<3.0,>=2.18\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting jsonschema<5.0.0,>=4.10.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting packaging>=20.4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting shellingham<2.0,>=1.5\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading shellingham-1.5.0.post1-py2.py3-none-any.whl (9.4 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting urllib3<2.0.0,>=1.26.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting virtualenv<21.0.0,>=20.22.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading virtualenv-20.23.1-py3-none-any.whl (3.3 MB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting lockfile<0.13.0,>=0.12.2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading lockfile-0.12.2-py2.py3-none-any.whl (13 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting pyproject-hooks<2.0.0,>=1.0.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading pyproject_hooks-1.0.0-py3-none-any.whl (9.3 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting tomlkit<1.0.0,>=0.11.4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading tomlkit-0.11.8-py3-none-any.whl (35 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting importlib-metadata>=4.4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting dulwich<0.22.0,>=0.21.2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading dulwich-0.21.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (509 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting platformdirs<4.0.0,>=3.0.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting pkginfo<2.0.0,>=1.9.4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading pkginfo-1.9.6-py3-none-any.whl (30 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting tomli<3.0.0,>=2.0.1\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting cleo<3.0.0,>=2.0.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading cleo-2.0.1-py3-none-any.whl (77 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting installer<0.8.0,>=0.7.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading installer-0.7.0-py3-none-any.whl (453 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting html5lib<2.0,>=1.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting poetry-core==1.6.1\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading poetry_core-1.6.1-py3-none-any.whl (450 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting msgpack>=0.5.2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading msgpack-1.0.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (322 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting rapidfuzz<3.0.0,>=2.2.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading rapidfuzz-2.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting webencodings\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting six>=1.9\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting zipp>=0.5\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting attrs>=17.4.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting jaraco.classes\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading jaraco.classes-3.2.3-py3-none-any.whl (6.0 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting jeepney>=0.4.2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading jeepney-0.8.0-py3-none-any.whl (48 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting SecretStorage>=3.2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting ptyprocess>=0.5\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting charset-normalizer<4,>=2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (199 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting certifi>=2017.4.17\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting idna<4,>=2.5\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting cryptography>=2.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting cffi>=1.12\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (441 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting pycparser\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting distlib<1,>=0.3.6\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Collecting more-itertools\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   Downloading more_itertools-9.1.0-py3-none-any.whl (54 kB)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Installing collected packages: pycparser, urllib3, idna, charset-normalizer, cffi, certifi, zipp, tomli, requests, msgpack, more-itertools, jeepney, cryptography, webencodings, six, SecretStorage, rapidfuzz, pyrsistent, pyproject-hooks, ptyprocess, poetry-core, platformdirs, packaging, lockfile, jaraco.classes, importlib-metadata, filelock, distlib, crashtest, cachecontrol, attrs, virtualenv, trove-classifiers, tomlkit, shellingham, requests-toolbelt, poetry-plugin-export, pkginfo, pexpect, keyring, jsonschema, installer, html5lib, dulwich, cleo, build, poetry\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Successfully installed SecretStorage-3.3.3 attrs-23.1.0 build-0.10.0 cachecontrol-0.12.14 certifi-2023.5.7 cffi-1.15.1 charset-normalizer-3.1.0 cleo-2.0.1 crashtest-0.4.1 cryptography-41.0.1 distlib-0.3.6 dulwich-0.21.5 filelock-3.12.2 html5lib-1.1 idna-3.4 importlib-metadata-6.7.0 installer-0.7.0 jaraco.classes-3.2.3 jeepney-0.8.0 jsonschema-4.17.3 keyring-23.13.1 lockfile-0.12.2 more-itertools-9.1.0 msgpack-1.0.5 packaging-23.1 pexpect-4.8.0 pkginfo-1.9.6 platformdirs-3.8.0 poetry-1.5.1 poetry-core-1.6.1 poetry-plugin-export-1.4.0 ptyprocess-0.7.0 pycparser-2.21 pyproject-hooks-1.0.0 pyrsistent-0.19.3 rapidfuzz-2.15.1 requests-2.31.0 requests-toolbelt-1.0.0 shellingham-1.5.0.post1 six-1.16.0 tomli-2.0.1 tomlkit-0.11.8 trove-classifiers-2023.5.24 urllib3-1.26.16 virtualenv-20.23.1 webencodings-0.5.1 zipp-3.15.0\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Main pip install -U poetry\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Main abatilo/actions-poetry@v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Main poetry install --no-root\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Creating virtualenv curlipie-SeNzrHte-py3.9 in /home/runneradmin/.cache/pypoetry/virtualenvs\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Installing dependencies from lock file\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | \n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Package operations: 38 installs, 0 updates, 0 removals\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | \n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing idna (3.2)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing sniffio (1.3.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing anyio (3.6.2)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing mypy-extensions (0.4.3)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing six (1.16.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing pyparsing (2.4.7)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing typing-extensions (4.5.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing asttokens (2.2.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing attrs (21.2.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing exceptiongroup (1.1.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing executing (1.2.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing click (8.0.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing markupsafe (2.0.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing h11 (0.12.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing tomli (2.0.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing multidict (6.0.4)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing typing-inspect (0.7.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing pluggy (0.13.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing starlette (0.25.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing packaging (21.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing iniconfig (2.0.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing pydantic (1.10.4)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing aiofiles (23.1.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing devtools (0.10.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing first (2.0.2)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing http-constants (0.5.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing kiss-headers (2.3.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing logbook (1.5.3)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing fastapi (0.92.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing python-rapidjson (1.9)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing ruff (0.0.246)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing single-version (1.5.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing pytest (7.2.1)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing uvicorn (0.20.0)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing yarl (1.8.2)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing orjson (3.8.6)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing jinja2 (3.1.2)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   |   \u2022 Installing typed-argument-parser (1.7.2)\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | Connection pool is full, discarding connection: pypi.org. Connection pool size: 10\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Main poetry install --no-root\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Main poetry run pytest --junitxml=report.xml\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | ============================= test session starts ==============================\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | platform linux -- Python 3.9.6, pytest-7.2.1, pluggy-0.13.1\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/hongquan-CurliPie, configfile: pyproject.toml, testpaths: tests, curlipie\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | plugins: anyio-3.6.2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | collected 30 items\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | \n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | tests/test_curlipie.py ...................                               [ 63%]\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | tests/test_parse_curl.py ...........                                     [100%]\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | \n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/hongquan-CurliPie/report.xml -\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   | ============================== 30 passed in 5.39s ==============================\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Main poetry run pytest --junitxml=report.xml\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Post abatilo/actions-poetry@v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker cp src=/tmp/act-cache/34c1dcf8-9548-4d28-a2ea-4facc8dbdc17/act/abatilo-actions-poetry@v2/ dst=/var/run/act/actions/abatilo-actions-poetry@v2/\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/abatilo-actions-poetry@v2/] user=0 workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Post abatilo/actions-poetry@v2\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \u2b50 Run Post actions/setup-python@v4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test]   \u2705  Success - Post actions/setup-python@v4\n[b9d8bd13-61bf-44da-8d5d-0c05f1927b04/Test] \ud83c\udfc1  Job succeeded\n",
         "stderr": "",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/hongquan-CurliPie/.github/workflows/test-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/hongquan-CurliPie/.github/workflows/test-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "b9d8bd13-61bf-44da-8d5d-0c05f1927b04",
         "build_tool": "pytest",
-        "elapsed_time": 381.171443939209
+        "elapsed_time": 526.0998075008392
     }
 }

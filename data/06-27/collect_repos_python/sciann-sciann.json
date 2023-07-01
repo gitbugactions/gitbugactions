@@ -1,14 +1,14 @@
 {
     "repository": "sciann/sciann",
-    "stars": 227,
+    "stars": 229,
     "language": "python",
     "size": 567,
     "clone_url": "https://github.com/sciann/sciann.git",
-    "timestamp": "2023-06-28T14:07:04.045426Z",
+    "timestamp": "2023-07-01T13:37:22.940891Z",
     "clone_success": true,
     "number_of_actions": 1,
     "number_of_test_actions": 1,
-    "actions_successful": false,
+    "actions_successful": true,
     "actions_build_tools": [
         "pytest"
     ],
@@ -16,12 +16,479 @@
         "pytest"
     ],
     "actions_run": {
-        "failed": true,
-        "tests": [],
-        "stdout": "[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] \ud83d\ude80  Start image=crawlergpt:latest\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sciann-sciann] user=0 workdir=\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] \u2b50 Run Main actions/checkout@v2\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2705  Success - Main actions/checkout@v2\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] \u2b50 Run Main Set up Python 3.7\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/1984023c-4594-4b46-be63-422217a7393c/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? false\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? true\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? true\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? true\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? true\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? true\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::explicit? true\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Successfully setup CPython (3.7.11)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2705  Success - Main Set up Python 3.7\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2699  ::set-output:: python-version=3.7.11\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] \u2b50 Run Main Install dependencies\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting pip\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Installing collected packages: pip\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Attempting uninstall: pip\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |     Found existing installation: pip 21.2.4\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |     Uninstalling pip-21.2.4:\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       Successfully uninstalled pip-21.2.4\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Successfully installed pip-23.1.2\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting protobuf==3.20.1 (from -r requirements.txt (line 1))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading protobuf-3.20.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.0/1.0 MB 11.8 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting tensorflow==2.8.1 (from -r requirements.txt (line 2))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading tensorflow-2.8.1-cp37-cp37m-manylinux2010_x86_64.whl (497.9 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 497.9/497.9 MB 1.8 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting keras (from -r requirements.txt (line 3))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading keras-2.11.0-py2.py3-none-any.whl (1.7 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.7/1.7 MB 12.4 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting numpy (from -r requirements.txt (line 4))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 15.7/15.7 MB 10.7 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting scipy (from -r requirements.txt (line 5))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 38.1/38.1 MB 13.4 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting pandas (from -r requirements.txt (line 6))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.3/11.3 MB 5.0 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting matplotlib (from -r requirements.txt (line 7))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.2/11.2 MB 15.9 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting scikit_learn (from -r requirements.txt (line 8))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 24.8/24.8 MB 13.8 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting tqdm (from -r requirements.txt (line 9))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading tqdm-4.65.0-py3-none-any.whl (77 kB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 77.1/77.1 kB 4.7 MB/s eta 0:00:00\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | Collecting sklearn (from -r requirements.txt (line 10))\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Downloading sklearn-0.0.post5.tar.gz (3.7 kB)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Installing build dependencies: started\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Installing build dependencies: finished with status 'done'\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Getting requirements to build wheel: started\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   Getting requirements to build wheel: finished with status 'error'\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   error: subprocess-exited-with-error\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   \u00d7 Getting requirements to build wheel did not run successfully.\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   \u2502 exit code: 1\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   \u2570\u2500> [18 lines of output]\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       The 'sklearn' PyPI package is deprecated, use 'scikit-learn'\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       rather than 'sklearn' for pip commands.\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       Here is how to fix this error in the main use cases:\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       - use 'pip install scikit-learn' rather than 'pip install sklearn'\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       - replace 'sklearn' by 'scikit-learn' in your pip requirements files\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |         (requirements.txt, setup.py, setup.cfg, Pipfile, etc ...)\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       - if the 'sklearn' package is used by one of your dependencies,\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |         it would be great if you take some time to track which package uses\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |         'sklearn' instead of 'scikit-learn' and report it to their issue tracker\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       - as a last resort, set the environment variable\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |         SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True to avoid this error\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       More information is available at\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       https://github.com/scikit-learn/sklearn-pypi-package\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       If the previous advice does not cover your use case, feel free to report it at\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       https://github.com/scikit-learn/sklearn-pypi-package/issues/new\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |       [end of output]\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   |   note: This error originates from a subprocess, and is likely not a problem with pip.\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | error: subprocess-exited-with-error\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | \u00d7 Getting requirements to build wheel did not run successfully.\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | \u2502 exit code: 1\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | \u2570\u2500> See above for output.\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | note: This error originates from a subprocess, and is likely not a problem with pip.\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | \n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   | [notice] To update, run: pip install --upgrade pip\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build]   \u274c  Failure - Main Install dependencies\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] exitcode '1': failure\n[25a81b98-82f3-4613-8406-b2e9ed50db4c/build] \ud83c\udfc1  Job failed\n",
-        "stderr": "Error: Job 'build' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/sciann-sciann/.github/workflows/build-crawler.yml",
+        "failed": false,
+        "tests": [
+            {
+                "classname": "tests.test_api",
+                "name": "test_variable",
+                "time": 0.012,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_variable_exception",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_functional",
+                "time": 0.153,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_functional_exceptions",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_activation_function_exceptions",
+                "time": 0.504,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_variable_operators",
+                "time": 0.042,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_variable_operator_exceptions",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_functional_operations",
+                "time": 0.269,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_functional_operation_exceptions",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_diff",
+                "time": 0.151,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel",
+                "time": 0.694,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel_exceptions",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel_optimizers",
+                "time": 0.41,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel_optimizer_exceptions",
+                "time": 0.013,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel_keras_optimizers",
+                "time": 0.208,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel_lossfuncs",
+                "time": 0.658,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_scimodel_lossfunc_exceptions",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_eval_functional",
+                "time": 0.743,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_eval_functional_from_dict",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_eval_functional_from_dict_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_eval_diff",
+                "time": 0.796,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_eval_scimodel",
+                "time": 0.234,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train",
+                "time": 1.818,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_learning_rate",
+                "time": 1.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_learning_rate_expscheduler",
+                "time": 1.07,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_learning_rate_sinescheduler",
+                "time": 1.044,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_save_weights",
+                "time": 2.167,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_log_functionals",
+                "time": 1.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_log_loss_landscape",
+                "time": 1.564,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_adaptive_weights",
+                "time": 3.473,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_adaptive_weights_gradient_pathology",
+                "time": 1.579,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_adaptive_weights_grad_norm",
+                "time": 1.53,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_api",
+                "name": "test_train_adaptive_weights_neural_tangent_kernel",
+                "time": 1.644,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \ud83d\ude80  Start image=crawlergpt:latest\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/sciann-sciann] user=0 workdir=\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \u2b50 Run Main actions/checkout@v2\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2705  Success - Main actions/checkout@v2\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \u2b50 Run Main Set up Python 3.7\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/6c6615f7-4ca8-4596-a13a-61c44c583ba3/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: \n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? false\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? true\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? true\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? true\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? true\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? true\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::explicit? true\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Successfully setup CPython (3.7.11)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2705  Success - Main Set up Python 3.7\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2699  ::set-output:: python-version=3.7.11\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \u2b50 Run Main Install dependencies\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (21.2.4)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pip\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Installing collected packages: pip\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Attempting uninstall: pip\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |     Found existing installation: pip 21.2.4\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |     Uninstalling pip-21.2.4:\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |       Successfully uninstalled pip-21.2.4\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Successfully installed pip-23.1.2\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting protobuf==3.20.1 (from -r requirements.txt (line 1))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading protobuf-3.20.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.0/1.0 MB 15.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tensorflow==2.8.1 (from -r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tensorflow-2.8.1-cp37-cp37m-manylinux2010_x86_64.whl (497.9 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 497.9/497.9 MB 2.5 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting keras (from -r requirements.txt (line 3))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading keras-2.11.0-py2.py3-none-any.whl (1.7 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.7/1.7 MB 6.5 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting numpy (from -r requirements.txt (line 4))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 15.7/15.7 MB 12.3 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting scipy (from -r requirements.txt (line 5))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 38.1/38.1 MB 13.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pandas (from -r requirements.txt (line 6))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.3/11.3 MB 12.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting matplotlib (from -r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11.2/11.2 MB 13.0 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting scikit_learn (from -r requirements.txt (line 8))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 24.8/24.8 MB 22.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tqdm (from -r requirements.txt (line 9))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tqdm-4.65.0-py3-none-any.whl (77 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 77.1/77.1 kB 1.5 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting sklearn (from -r requirements.txt (line 10))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading sklearn-0.0.post5.tar.gz (3.7 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Installing build dependencies: started\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Installing build dependencies: finished with status 'done'\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Getting requirements to build wheel: started\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Getting requirements to build wheel: finished with status 'done'\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Preparing metadata (pyproject.toml): started\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Preparing metadata (pyproject.toml): finished with status 'done'\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pybtex (from -r requirements.txt (line 11))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pybtex-0.24.0-py2.py3-none-any.whl (561 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 561.4/561.4 kB 7.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting h5py (from -r requirements.txt (line 12))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading h5py-3.8.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.3/4.3 MB 12.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pydot (from -r requirements.txt (line 13))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pydot-1.4.2-py2.py3-none-any.whl (21 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting graphviz (from -r requirements.txt (line 14))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading graphviz-0.20.1-py3-none-any.whl (47 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 47.0/47.0 kB 923.9 kB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pytest (from -r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pytest-7.4.0-py3-none-any.whl (323 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 323.6/323.6 kB 3.9 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting mkdocs (from -r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading mkdocs-1.4.3-py3-none-any.whl (3.7 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.7/3.7 MB 11.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting absl-py>=0.4.0 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading absl_py-1.4.0-py3-none-any.whl (126 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 126.5/126.5 kB 2.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting astunparse>=1.6.0 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting flatbuffers>=1.12 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading flatbuffers-23.5.26-py2.py3-none-any.whl (26 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting gast>=0.2.1 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading gast-0.5.4-py3-none-any.whl (19 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting google-pasta>=0.1.1 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 57.5/57.5 kB 1.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting keras-preprocessing>=1.1.1 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 42.6/42.6 kB 1.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting libclang>=9.0.1 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading libclang-16.0.0-py2.py3-none-manylinux2010_x86_64.whl (22.9 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 22.9/22.9 MB 15.1 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting opt-einsum>=2.3.2 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading opt_einsum-3.3.0-py3-none-any.whl (65 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 65.5/65.5 kB 1.0 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from tensorflow==2.8.1->-r requirements.txt (line 2)) (47.1.0)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting six>=1.12.0 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting termcolor>=1.1.0 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading termcolor-2.3.0-py3-none-any.whl (6.9 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting typing-extensions>=3.6.6 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading typing_extensions-4.7.0-py3-none-any.whl (33 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting wrapt>=1.11.0 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading wrapt-1.15.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (75 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 75.7/75.7 kB 5.3 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tensorboard<2.9,>=2.8 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tensorboard-2.8.0-py3-none-any.whl (5.8 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 5.8/5.8 MB 22.1 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tensorflow-estimator<2.9,>=2.8 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tensorflow_estimator-2.8.0-py2.py3-none-any.whl (462 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 462.3/462.3 kB 7.1 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting keras (from -r requirements.txt (line 3))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading keras-2.8.0-py2.py3-none-any.whl (1.4 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.4/1.4 MB 10.9 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tensorflow-io-gcs-filesystem>=0.23.1 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tensorflow_io_gcs_filesystem-0.32.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (2.4 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.4/2.4 MB 22.5 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting grpcio<2.0,>=1.24.3 (from tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading grpcio-1.56.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.2 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 5.2/5.2 MB 21.8 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting python-dateutil>=2.7.3 (from pandas->-r requirements.txt (line 6))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 247.7/247.7 kB 7.1 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pytz>=2017.3 (from pandas->-r requirements.txt (line 6))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 502.3/502.3 kB 13.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting fonttools>=4.22.0 (from matplotlib->-r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 965.4/965.4 kB 3.0 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting kiwisolver>=1.0.1 (from matplotlib->-r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading kiwisolver-1.4.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.1/1.1 MB 19.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting packaging>=20.0 (from matplotlib->-r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading packaging-23.1-py3-none-any.whl (48 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 48.9/48.9 kB 1.8 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pillow>=6.2.0 (from matplotlib->-r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading Pillow-9.5.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.4 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3.4/3.4 MB 20.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pyparsing>=2.2.1 (from matplotlib->-r requirements.txt (line 7))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pyparsing-3.1.0-py3-none-any.whl (102 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 102.6/102.6 kB 11.8 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting joblib>=0.11 (from scikit_learn->-r requirements.txt (line 8))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading joblib-1.3.1-py3-none-any.whl (301 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 302.0/302.0 kB 6.3 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting threadpoolctl>=2.0.0 (from scikit_learn->-r requirements.txt (line 8))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting PyYAML>=3.01 (from pybtex->-r requirements.txt (line 11))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 596.3/596.3 kB 4.8 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting latexcodec>=1.0.4 (from pybtex->-r requirements.txt (line 11))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading latexcodec-2.0.1-py2.py3-none-any.whl (18 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting iniconfig (from pytest->-r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pluggy<2.0,>=0.12 (from pytest->-r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pluggy-1.2.0-py3-none-any.whl (17 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting exceptiongroup>=1.0.0rc8 (from pytest->-r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tomli>=1.0.0 (from pytest->-r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting importlib-metadata>=0.12 (from pytest->-r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting click>=7.0 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading click-8.1.3-py3-none-any.whl (96 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 96.6/96.6 kB 6.3 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting ghp-import>=1.0 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting jinja2>=2.11.1 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 133.1/133.1 kB 4.2 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting markdown<3.4,>=3.2.1 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading Markdown-3.3.7-py3-none-any.whl (97 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 97.8/97.8 kB 4.0 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting mergedeep>=1.3.4 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pyyaml-env-tag>=0.1 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pyyaml_env_tag-0.1-py3-none-any.whl (3.9 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting watchdog>=2.0 (from mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading watchdog-3.0.0-py3-none-manylinux2014_x86_64.whl (82 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 82.1/82.1 kB 766.6 kB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting wheel<1.0,>=0.23.0 (from astunparse>=1.6.0->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Using cached wheel-0.40.0-py3-none-any.whl (64 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting zipp>=0.5 (from importlib-metadata>=0.12->pytest->-r requirements.txt (line 15))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting MarkupSafe>=2.0 (from jinja2>=2.11.1->mkdocs->-r requirements.txt (line 16))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading MarkupSafe-2.1.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting google-auth<3,>=1.6.3 (from tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading google_auth-2.21.0-py2.py3-none-any.whl (182 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 182.1/182.1 kB 2.7 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting google-auth-oauthlib<0.5,>=0.4.1 (from tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting requests<3,>=2.21.0 (from tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading requests-2.31.0-py3-none-any.whl (62 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.6/62.6 kB 1.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tensorboard-data-server<0.7.0,>=0.6.0 (from tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tensorboard_data_server-0.6.1-py3-none-manylinux2010_x86_64.whl (4.9 MB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.9/4.9 MB 12.2 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting tensorboard-plugin-wit>=1.6.0 (from tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 781.3/781.3 kB 9.1 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting werkzeug>=0.11.15 (from tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading Werkzeug-2.2.3-py3-none-any.whl (233 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 233.6/233.6 kB 11.6 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting cachetools<6.0,>=2.0.0 (from google-auth<3,>=1.6.3->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading cachetools-5.3.1-py3-none-any.whl (9.3 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pyasn1-modules>=0.2.1 (from google-auth<3,>=1.6.3->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pyasn1_modules-0.3.0-py2.py3-none-any.whl (181 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 181.3/181.3 kB 2.8 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting rsa<5,>=3.1.4 (from google-auth<3,>=1.6.3->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading rsa-4.9-py3-none-any.whl (34 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting urllib3<2.0 (from google-auth<3,>=1.6.3->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 143.1/143.1 kB 15.1 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting charset-normalizer<4,>=2 (from requests<3,>=2.21.0->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading charset_normalizer-3.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (171 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 171.0/171.0 kB 8.8 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting idna<4,>=2.5 (from requests<3,>=2.21.0->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 61.5/61.5 kB 3.4 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting certifi>=2017.4.17 (from requests<3,>=2.21.0->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 157.0/157.0 kB 13.5 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting pyasn1<0.6.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading pyasn1-0.5.0-py2.py3-none-any.whl (83 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 83.9/83.9 kB 14.3 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.9,>=2.8->tensorflow==2.8.1->-r requirements.txt (line 2))\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 151.7/151.7 kB 23.7 MB/s eta 0:00:00\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Building wheels for collected packages: sklearn\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Building wheel for sklearn (pyproject.toml): started\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Building wheel for sklearn (pyproject.toml): finished with status 'done'\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Created wheel for sklearn: filename=sklearn-0.0.post5-py3-none-any.whl size=2950 sha256=cd5ff128a1752823df8ebdfa85e6375db3f3a8c73c7f823ac0230c09d2e2486c\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/d7/16/66/2658c4919dbc6cdf8b4642da29d3bbf83de902fc01e2c9a999\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Successfully built sklearn\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Installing collected packages: tensorflow-estimator, tensorboard-plugin-wit, sklearn, pytz, libclang, keras, flatbuffers, zipp, wrapt, wheel, watchdog, urllib3, typing-extensions, tqdm, tomli, threadpoolctl, termcolor, tensorflow-io-gcs-filesystem, tensorboard-data-server, six, PyYAML, pyparsing, pyasn1, protobuf, pillow, packaging, oauthlib, numpy, mergedeep, MarkupSafe, joblib, iniconfig, idna, grpcio, graphviz, gast, fonttools, exceptiongroup, cycler, charset-normalizer, certifi, cachetools, absl-py, werkzeug, scipy, rsa, requests, pyyaml-env-tag, python-dateutil, pydot, pyasn1-modules, opt-einsum, latexcodec, kiwisolver, keras-preprocessing, jinja2, importlib-metadata, h5py, google-pasta, astunparse, scikit_learn, requests-oauthlib, pybtex, pluggy, pandas, matplotlib, markdown, google-auth, ghp-import, click, pytest, mkdocs, google-auth-oauthlib, tensorboard, tensorflow\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Successfully installed MarkupSafe-2.1.3 PyYAML-6.0 absl-py-1.4.0 astunparse-1.6.3 cachetools-5.3.1 certifi-2023.5.7 charset-normalizer-3.1.0 click-8.1.3 cycler-0.11.0 exceptiongroup-1.1.1 flatbuffers-23.5.26 fonttools-4.38.0 gast-0.5.4 ghp-import-2.1.0 google-auth-2.21.0 google-auth-oauthlib-0.4.6 google-pasta-0.2.0 graphviz-0.20.1 grpcio-1.56.0 h5py-3.8.0 idna-3.4 importlib-metadata-6.7.0 iniconfig-2.0.0 jinja2-3.1.2 joblib-1.3.1 keras-2.8.0 keras-preprocessing-1.1.2 kiwisolver-1.4.4 latexcodec-2.0.1 libclang-16.0.0 markdown-3.3.7 matplotlib-3.5.3 mergedeep-1.3.4 mkdocs-1.4.3 numpy-1.21.6 oauthlib-3.2.2 opt-einsum-3.3.0 packaging-23.1 pandas-1.3.5 pillow-9.5.0 pluggy-1.2.0 protobuf-3.20.1 pyasn1-0.5.0 pyasn1-modules-0.3.0 pybtex-0.24.0 pydot-1.4.2 pyparsing-3.1.0 pytest-7.4.0 python-dateutil-2.8.2 pytz-2023.3 pyyaml-env-tag-0.1 requests-2.31.0 requests-oauthlib-1.3.1 rsa-4.9 scikit_learn-1.0.2 scipy-1.7.3 six-1.16.0 sklearn-0.0.post5 tensorboard-2.8.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.1 tensorflow-2.8.1 tensorflow-estimator-2.8.0 tensorflow-io-gcs-filesystem-0.32.0 termcolor-2.3.0 threadpoolctl-3.1.0 tomli-2.0.1 tqdm-4.65.0 typing-extensions-4.7.0 urllib3-1.26.16 watchdog-3.0.0 werkzeug-2.2.3 wheel-0.40.0 wrapt-1.15.0 zipp-3.15.0\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | \n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | [notice] To update, run: pip install --upgrade pip\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Processing /tmp/558156d8-17ed-11ee-8a50-bb14de238602/sciann-sciann\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Preparing metadata (setup.py): started\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Preparing metadata (setup.py): finished with status 'done'\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (1.21.6)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (1.7.3)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (1.16.0)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: pyyaml in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (6.0)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: h5py in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (3.8.0)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: scikit-learn in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (1.0.2)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: pybtex in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from SciANN==0.7.0.1) (0.24.0)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: latexcodec>=1.0.4 in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from pybtex->SciANN==0.7.0.1) (2.0.1)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: joblib>=0.11 in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from scikit-learn->SciANN==0.7.0.1) (1.3.1)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Requirement already satisfied: threadpoolctl>=2.0.0 in /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages (from scikit-learn->SciANN==0.7.0.1) (3.1.0)\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Building wheels for collected packages: SciANN\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Building wheel for SciANN (setup.py): started\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Building wheel for SciANN (setup.py): finished with status 'done'\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Created wheel for SciANN: filename=SciANN-0.7.0.1-py3-none-any.whl size=166117 sha256=ac11c6a6738ed1a94c292a461dd0a0579202c96d362ee47dfeab8e901bfa5631\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   |   Stored in directory: /home/runneradmin/.cache/pip/wheels/a3/f2/2d/7f263daed072980934deace4d30828da2eae032acb084077ac\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Successfully built SciANN\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Installing collected packages: SciANN\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | Successfully installed SciANN-0.7.0.1\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | \n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | [notice] A new release of pip is available: 20.1.1 -> 23.1.2\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | [notice] To update, run: pip install --upgrade pip\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2705  Success - Main Install dependencies\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \u2b50 Run Main Test with pytest\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | ============================= test session starts ==============================\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | platform linux -- Python 3.7.11, pytest-7.4.0, pluggy-1.2.0 -- /opt/hostedtoolcache/Python/3.7.11/x64/bin/python\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | cachedir: .pytest_cache\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/sciann-sciann\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | collecting ... collected 33 items\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | \n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_variable PASSED                                  [  3%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_variable_exception PASSED                        [  6%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_functional PASSED                                [  9%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_functional_exceptions PASSED                     [ 12%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_activation_function_exceptions PASSED            [ 15%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_variable_operators PASSED                        [ 18%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_variable_operator_exceptions PASSED              [ 21%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_functional_operations PASSED                     [ 24%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_functional_operation_exceptions PASSED           [ 27%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_diff PASSED                                      [ 30%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel PASSED                                  [ 33%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel_exceptions PASSED                       [ 36%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel_optimizers PASSED                       [ 39%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel_optimizer_exceptions PASSED             [ 42%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel_keras_optimizers PASSED                 [ 45%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel_lossfuncs PASSED                        [ 48%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_scimodel_lossfunc_exceptions PASSED              [ 51%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_eval_functional PASSED                           [ 54%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_eval_functional_from_dict PASSED                 [ 57%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_eval_functional_from_dict_exception PASSED       [ 60%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_eval_diff PASSED                                 [ 63%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_eval_scimodel PASSED                             [ 66%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train PASSED                                     [ 69%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_learning_rate PASSED                       [ 72%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_learning_rate_expscheduler PASSED          [ 75%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_learning_rate_sinescheduler PASSED         [ 78%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_save_weights PASSED                        [ 81%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_log_functionals PASSED                     [ 84%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_log_loss_landscape PASSED                  [ 87%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_adaptive_weights PASSED                    [ 90%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_adaptive_weights_gradient_pathology PASSED [ 93%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_adaptive_weights_grad_norm PASSED          [ 96%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | tests/test_api.py::test_train_adaptive_weights_neural_tangent_kernel PASSED [100%]\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | \n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/sciann-sciann/report.xml -\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   | ============================= 33 passed in 29.82s ==============================\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2705  Success - Main Test with pytest\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \u2b50 Run Post Set up Python 3.7\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build]   \u2705  Success - Post Set up Python 3.7\n[0a6474f4-8793-467d-933a-dfe429dfbaee/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/sciann-sciann/.github/workflows/build-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "0a6474f4-8793-467d-933a-dfe429dfbaee",
         "build_tool": "pytest",
-        "elapsed_time": 166.75305938720703
+        "elapsed_time": 345.1628186702728
     }
 }

@@ -1,10 +1,10 @@
 {
     "repository": "openandroidinstaller-dev/openandroidinstaller",
-    "stars": 277,
+    "stars": 279,
     "language": "python",
-    "size": 1931,
+    "size": 1937,
     "clone_url": "https://github.com/openandroidinstaller-dev/openandroidinstaller.git",
-    "timestamp": "2023-06-28T18:11:05.897560Z",
+    "timestamp": "2023-07-01T17:38:40.924710Z",
     "clone_success": true,
     "number_of_actions": 2,
     "number_of_test_actions": 1,
@@ -18,11 +18,1066 @@
     ],
     "actions_run": {
         "failed": true,
-        "tests": [],
-        "stdout": "[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \ud83d\ude80  Start image=crawlergpt:latest\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller] user=0 workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \u2b50 Run Main actions/checkout@v2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2705  Success - Main actions/checkout@v2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \u2b50 Run Main actions/setup-python@v2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker cp src=/tmp/act-cache/cc948150-a5e9-4123-a7ef-ca963800cb82/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: \n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? false\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? true\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? true\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? true\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? true\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? true\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::explicit? true\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::evaluating 6 versions\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::matched: 3.9.6\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Successfully setup CPython (3.9.6)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2705  Success - Main actions/setup-python@v2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2699  ::set-output:: python-version=3.9.6\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \u2b50 Run Main pip install -r requirements.txt\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring brotlicffi: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_python_implementation == \"PyPy\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring cffi: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_python_implementation == \"PyPy\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring colorama: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_system == \"Windows\" or python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring future: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring macholib: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"darwin\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring pefile: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring pycparser: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_python_implementation == \"PyPy\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring pywin32-ctypes: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Ignoring win32-setctime: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting altgraph==0.17.3\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading altgraph-0.17.3-py2.py3-none-any.whl (21 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting attrs==22.2.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting bandit==1.7.4\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading bandit-1.7.4-py3-none-any.whl (118 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting beartype==0.12.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading beartype-0.12.0-py3-none-any.whl (754 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting black==22.12.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading black-22.12.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting brotli==1.0.9\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading Brotli-1.0.9-cp39-cp39-manylinux1_x86_64.whl (357 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting certifi==2022.12.7\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting charset-normalizer==3.0.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading charset_normalizer-3.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (198 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting click==8.1.3\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading click-8.1.3-py3-none-any.whl (96 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting contextlib2==21.6.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting coverage[toml]==7.1.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading coverage-7.1.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (226 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting exceptiongroup==1.1.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading exceptiongroup-1.1.0-py3-none-any.whl (14 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting flet==0.3.2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading flet-0.3.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.4 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting gitdb==4.0.10\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading gitdb-4.0.10-py3-none-any.whl (62 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting gitpython==3.1.30\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading GitPython-3.1.30-py3-none-any.whl (184 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting idna==3.4\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting inflate64==0.3.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading inflate64-0.3.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (92 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting iniconfig==2.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting isort==5.12.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading isort-5.12.0-py3-none-any.whl (91 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting loguru==0.6.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading loguru-0.6.0-py3-none-any.whl (58 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting multivolumefile==0.2.3\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading multivolumefile-0.2.3-py3-none-any.whl (17 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting mypy-extensions==0.4.3\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting mypy==1.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading mypy-1.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.5 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting oauthlib==3.2.2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting packaging==23.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading packaging-23.0-py3-none-any.whl (42 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pathspec==0.11.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pathspec-0.11.0-py3-none-any.whl (29 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pbr==5.11.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pbr-5.11.1-py2.py3-none-any.whl (112 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pillow==9.4.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading Pillow-9.4.0-cp39-cp39-manylinux_2_28_x86_64.whl (3.4 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting platformdirs==2.6.2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading platformdirs-2.6.2-py3-none-any.whl (14 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pluggy==1.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting psutil==5.9.4\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading psutil-5.9.4-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting py7zr==0.20.2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading py7zr-0.20.2-py3-none-any.whl (65 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pybcj==1.0.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pybcj-1.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pycryptodomex==3.17\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pycryptodomex-3.17-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pyinstaller-hooks-contrib==2022.15\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pyinstaller_hooks_contrib-2022.15-py2.py3-none-any.whl (253 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pyinstaller==5.7.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pyinstaller-5.7.0-py3-none-manylinux2014_x86_64.whl (649 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pyppmd==1.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pyppmd-1.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (138 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pytest-cov==4.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pytest-mock==3.10.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pytest_mock-3.10.0-py3-none-any.whl (9.3 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pytest-subprocess==1.5.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pytest_subprocess-1.5.0-py3-none-any.whl (20 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pytest==7.2.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pytest-7.2.1-py3-none-any.whl (317 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pyyaml==6.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading PyYAML-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (661 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting pyzstd==0.15.3\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading pyzstd-0.15.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (379 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting regex==2022.10.31\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading regex-2022.10.31-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (769 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting repath==0.9.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading repath-0.9.0-py3-none-any.whl (4.7 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting requests==2.28.2\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading requests-2.28.2-py3-none-any.whl (62 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting ruff==0.0.25\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading ruff-0.0.25-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.8 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting schema==0.7.5\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading schema-0.7.5-py2.py3-none-any.whl (17 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting setuptools==67.1.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading setuptools-67.1.0-py3-none-any.whl (1.1 MB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting six==1.16.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting smmap==5.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading smmap-5.0.0-py3-none-any.whl (24 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting stevedore==4.1.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading stevedore-4.1.1-py3-none-any.whl (50 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting texttable==1.6.7\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading texttable-1.6.7-py2.py3-none-any.whl (10 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting tomli==2.0.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting typing-extensions==4.4.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting urllib3==1.26.14\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading urllib3-1.26.14-py2.py3-none-any.whl (140 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting watchdog==2.2.1\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading watchdog-2.2.1-py3-none-manylinux2014_x86_64.whl (78 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Collecting websocket-client==1.5.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Downloading websocket_client-1.5.0-py3-none-any.whl (55 kB)\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Installing collected packages: smmap, urllib3, tomli, six, pluggy, pbr, packaging, iniconfig, idna, gitdb, exceptiongroup, coverage, charset-normalizer, certifi, attrs, websocket-client, watchdog, typing-extensions, texttable, stevedore, setuptools, requests, repath, pyzstd, pyyaml, pytest, pyppmd, pyinstaller-hooks-contrib, pycryptodomex, pybcj, psutil, platformdirs, pathspec, oauthlib, mypy-extensions, multivolumefile, inflate64, gitpython, contextlib2, click, brotli, beartype, altgraph, schema, ruff, regex, pytest-subprocess, pytest-mock, pytest-cov, pyinstaller, py7zr, pillow, mypy, loguru, isort, flet, black, bandit\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |   Attempting uninstall: setuptools\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |     Found existing installation: setuptools 56.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |     Uninstalling setuptools-56.0.0:\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   |       Successfully uninstalled setuptools-56.0.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | Successfully installed altgraph-0.17.3 attrs-22.2.0 bandit-1.7.4 beartype-0.12.0 black-22.12.0 brotli-1.0.9 certifi-2022.12.7 charset-normalizer-3.0.1 click-8.1.3 contextlib2-21.6.0 coverage-7.1.0 exceptiongroup-1.1.0 flet-0.3.2 gitdb-4.0.10 gitpython-3.1.30 idna-3.4 inflate64-0.3.1 iniconfig-2.0.0 isort-5.12.0 loguru-0.6.0 multivolumefile-0.2.3 mypy-1.0.0 mypy-extensions-0.4.3 oauthlib-3.2.2 packaging-23.0 pathspec-0.11.0 pbr-5.11.1 pillow-9.4.0 platformdirs-2.6.2 pluggy-1.0.0 psutil-5.9.4 py7zr-0.20.2 pybcj-1.0.1 pycryptodomex-3.17 pyinstaller-5.7.0 pyinstaller-hooks-contrib-2022.15 pyppmd-1.0.0 pytest-7.2.1 pytest-cov-4.0.0 pytest-mock-3.10.0 pytest-subprocess-1.5.0 pyyaml-6.0 pyzstd-0.15.3 regex-2022.10.31 repath-0.9.0 requests-2.28.2 ruff-0.0.25 schema-0.7.5 setuptools-67.1.0 six-1.16.0 smmap-5.0.0 stevedore-4.1.1 texttable-1.6.7 tomli-2.0.1 typing-extensions-4.4.0 urllib3-1.26.14 watchdog-2.2.1 websocket-client-1.5.0\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2705  Success - Main pip install -r requirements.txt\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \u2b50 Run Main python scripts/download-tools.py\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:03.332 | INFO     | __main__:main:148 - Run downloads for linux ...\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:03.332 | INFO     | __main__:download_adb_fastboot:34 - Download adb and fastboot for linux...\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:03.832 | INFO     | __main__:download_adb_fastboot:43 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/scripts/tools\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:04.095 | INFO     | __main__:download_adb_fastboot:46 - DONE.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:04.097 | INFO     | __main__:download_heimdall:51 - Download heimdall for linux...\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:04.449 | INFO     | __main__:download_heimdall:58 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/scripts/heimdall\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:04.453 | INFO     | __main__:download_heimdall:61 - DONE.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:04.453 | INFO     | __main__:download_libusb:66 - Download libusb-1.0 for linux...\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:05.221 | INFO     | __main__:download_libusb:73 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/scripts/libusb-windows\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.124 | INFO     | __main__:download_libusb:76 - DONE.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.124 | INFO     | __main__:move_files_to_lib:82 - Move executables to openandroidinstaller/bin...\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.125 | INFO     | __main__:move_files_to_lib:89 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/tools/platform-tools\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.125 | INFO     | __main__:move_files_to_lib:95 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/openandroidinstaller/bin\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.248 | INFO     | __main__:move_files_to_lib:126 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/libusb-windows/MinGW32/dll/libusb-1.0.dll\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.249 | INFO     | __main__:move_files_to_lib:134 - /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/openandroidinstaller/bin/libusb-1.0.dll\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.249 | INFO     | __main__:move_files_to_lib:136 - DONE.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.249 | INFO     | __main__:move_files_to_lib:138 - Allow the executables to be executed.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 2023-06-28 18:19:06.250 | INFO     | __main__:move_files_to_lib:144 - DONE.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2705  Success - Main python scripts/download-tools.py\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \u2b50 Run Main black .\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | All done! \u2728 \ud83c\udf70 \u2728\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   | 34 files left unchanged.\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u2705  Success - Main black .\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \u2b50 Run Main ruff openandroidinstaller/ --ignore E501\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci]   \u274c  Failure - Main ruff openandroidinstaller/ --ignore E501\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] Get \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/784ab276dbde9313c36e88d8249d215b911c9a989fbeb394696804cb1941202d/archive?path=%2Fvar%2Frun%2Fact%2Fworkflow%2Fpathcmd.txt\": context canceled\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/784ab276dbde9313c36e88d8249d215b911c9a989fbeb394696804cb1941202d?force=1&v=1\": context deadline exceeded\n[0e81c471-26ba-4e45-823d-119b4ae0f00e/ci] \ud83c\udfc1  Job succeeded\n",
+        "tests": [
+            {
+                "classname": "tests.test_app",
+                "name": "test_app_sargo",
+                "time": 0.857,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_app",
+                "name": "test_app_beyond2lte",
+                "time": 0.924,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path0-True]",
+                "time": 0.062,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path1-True]",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path2-True]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path3-True]",
+                "time": 0.038,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path4-True]",
+                "time": 0.017,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path5-True]",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path6-True]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path7-True]",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path8-True]",
+                "time": 0.028,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path9-True]",
+                "time": 0.046,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path10-True]",
+                "time": 0.026,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path11-True]",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path12-True]",
+                "time": 0.037,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path13-True]",
+                "time": 0.043,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path14-True]",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path15-True]",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path16-True]",
+                "time": 0.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path17-True]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path18-True]",
+                "time": 0.039,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path19-True]",
+                "time": 0.021,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path20-True]",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path21-True]",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path22-True]",
+                "time": 0.06,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path23-True]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path24-True]",
+                "time": 0.019,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path25-True]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path26-True]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path27-True]",
+                "time": 0.084,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path28-True]",
+                "time": 0.014,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path29-True]",
+                "time": 0.1,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path30-True]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path31-True]",
+                "time": 0.022,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path32-True]",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path33-True]",
+                "time": 0.052,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path34-True]",
+                "time": 0.033,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path35-True]",
+                "time": 0.052,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path36-True]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path37-True]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path38-True]",
+                "time": 0.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path39-True]",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path40-True]",
+                "time": 0.02,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path41-True]",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path42-True]",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path43-True]",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path44-True]",
+                "time": 0.023,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path45-True]",
+                "time": 0.036,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path46-True]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path47-True]",
+                "time": 0.018,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path48-True]",
+                "time": 0.088,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path49-True]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path50-True]",
+                "time": 0.04,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path51-True]",
+                "time": 0.056,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path52-True]",
+                "time": 0.024,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path53-True]",
+                "time": 0.03,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path54-True]",
+                "time": 0.032,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path55-True]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path56-True]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path57-True]",
+                "time": 0.035,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path58-True]",
+                "time": 0.031,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path59-True]",
+                "time": 0.025,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_config[config_path60-True]",
+                "time": 0.076,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_load_config_valid",
+                "time": 0.267,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_configs",
+                "name": "test_load_config_notfound",
+                "time": 1.047,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_progress_bar",
+                "name": "test_init",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_progress_bar",
+                "name": "test_update_progress_bar",
+                "time": 0.005,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_terminal_box",
+                "name": "test_init_box",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_terminal_box",
+                "name": "test_write_lines",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_terminal_box",
+                "name": "test_toggle_visibility",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_terminal_box",
+                "name": "test_clear_terminal",
+                "time": 0.009,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_tooling",
+                "name": "test_adb_reboot_success",
+                "time": 0.004,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_tooling",
+                "name": "test_adb_reboot_failure",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_tooling",
+                "name": "test_search_device_success",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_tooling",
+                "name": "test_search_device_failure",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \ud83d\ude80  Start image=crawlergpt:latest\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller] user=0 workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \ud83e\uddea  Matrix: map[os:ubuntu-latest]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main actions/checkout@v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main actions/checkout@v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main actions/setup-python@v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker cp src=/tmp/act-cache/1703ea5f-14f7-49be-af86-39ee5ba81e29/act/actions-setup-python@v2/ dst=/var/run/act/actions/actions-setup-python@v2/\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v2/] user=0 workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/setup/index.js] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::Semantic version spec of 3.9 is 3.9\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: \n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? false\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? true\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? true\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? true\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? true\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? true\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::explicit? true\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::evaluating 6 versions\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::matched: 3.9.6\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.9.6/x64\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udcac  ::debug::Found tool in cache Python 3.9.6 x64\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Successfully setup CPython (3.9.6)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2753 add-matcher /run/act/actions/actions-setup-python@v2/.github/python.json\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main actions/setup-python@v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.9.6/x64\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.9.6/x64/lib\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2699  ::set-output:: python-version=3.9.6\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.9.6/x64/bin\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main pip install -r requirements.txt\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring brotlicffi: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_python_implementation == \"PyPy\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring cffi: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_python_implementation == \"PyPy\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring colorama: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_system == \"Windows\" or python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring future: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring macholib: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"darwin\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring pefile: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring pycparser: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and platform_python_implementation == \"PyPy\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring pywin32-ctypes: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Ignoring win32-setctime: markers 'python_version >= \"3.9\" and python_version < \"3.11\" and sys_platform == \"win32\"' don't match your environment\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting altgraph==0.17.3\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading altgraph-0.17.3-py2.py3-none-any.whl (21 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting attrs==22.2.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting bandit==1.7.4\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading bandit-1.7.4-py3-none-any.whl (118 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting beartype==0.12.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading beartype-0.12.0-py3-none-any.whl (754 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting black==22.12.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading black-22.12.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting brotli==1.0.9\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading Brotli-1.0.9-cp39-cp39-manylinux1_x86_64.whl (357 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting certifi==2022.12.7\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting charset-normalizer==3.0.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading charset_normalizer-3.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (198 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting click==8.1.3\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading click-8.1.3-py3-none-any.whl (96 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting contextlib2==21.6.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting coverage[toml]==7.1.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading coverage-7.1.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (226 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting exceptiongroup==1.1.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading exceptiongroup-1.1.0-py3-none-any.whl (14 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting flet==0.3.2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading flet-0.3.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.4 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting gitdb==4.0.10\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading gitdb-4.0.10-py3-none-any.whl (62 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting gitpython==3.1.30\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading GitPython-3.1.30-py3-none-any.whl (184 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting idna==3.4\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading idna-3.4-py3-none-any.whl (61 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting inflate64==0.3.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading inflate64-0.3.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (92 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting iniconfig==2.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting isort==5.12.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading isort-5.12.0-py3-none-any.whl (91 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting loguru==0.6.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading loguru-0.6.0-py3-none-any.whl (58 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting multivolumefile==0.2.3\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading multivolumefile-0.2.3-py3-none-any.whl (17 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting mypy-extensions==0.4.3\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting mypy==1.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading mypy-1.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.5 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting oauthlib==3.2.2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting packaging==23.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading packaging-23.0-py3-none-any.whl (42 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pathspec==0.11.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pathspec-0.11.0-py3-none-any.whl (29 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pbr==5.11.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pbr-5.11.1-py2.py3-none-any.whl (112 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pillow==9.4.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading Pillow-9.4.0-cp39-cp39-manylinux_2_28_x86_64.whl (3.4 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting platformdirs==2.6.2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading platformdirs-2.6.2-py3-none-any.whl (14 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pluggy==1.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting psutil==5.9.4\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading psutil-5.9.4-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting py7zr==0.20.2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading py7zr-0.20.2-py3-none-any.whl (65 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pybcj==1.0.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pybcj-1.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pycryptodomex==3.17\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pycryptodomex-3.17-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pyinstaller-hooks-contrib==2022.15\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pyinstaller_hooks_contrib-2022.15-py2.py3-none-any.whl (253 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pyinstaller==5.7.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pyinstaller-5.7.0-py3-none-manylinux2014_x86_64.whl (649 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pyppmd==1.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pyppmd-1.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (138 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pytest-cov==4.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pytest_cov-4.0.0-py3-none-any.whl (21 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pytest-mock==3.10.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pytest_mock-3.10.0-py3-none-any.whl (9.3 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pytest-subprocess==1.5.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pytest_subprocess-1.5.0-py3-none-any.whl (20 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pytest==7.2.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pytest-7.2.1-py3-none-any.whl (317 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pyyaml==6.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading PyYAML-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (661 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting pyzstd==0.15.3\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading pyzstd-0.15.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (379 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting regex==2022.10.31\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading regex-2022.10.31-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (769 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting repath==0.9.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading repath-0.9.0-py3-none-any.whl (4.7 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting requests==2.28.2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading requests-2.28.2-py3-none-any.whl (62 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting ruff==0.0.25\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading ruff-0.0.25-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.8 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting schema==0.7.5\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading schema-0.7.5-py2.py3-none-any.whl (17 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting setuptools==67.1.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading setuptools-67.1.0-py3-none-any.whl (1.1 MB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting six==1.16.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting smmap==5.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading smmap-5.0.0-py3-none-any.whl (24 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting stevedore==4.1.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading stevedore-4.1.1-py3-none-any.whl (50 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting texttable==1.6.7\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading texttable-1.6.7-py2.py3-none-any.whl (10 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting tomli==2.0.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting typing-extensions==4.4.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting urllib3==1.26.14\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading urllib3-1.26.14-py2.py3-none-any.whl (140 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting watchdog==2.2.1\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading watchdog-2.2.1-py3-none-manylinux2014_x86_64.whl (78 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Collecting websocket-client==1.5.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Downloading websocket_client-1.5.0-py3-none-any.whl (55 kB)\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Installing collected packages: smmap, urllib3, tomli, six, pluggy, pbr, packaging, iniconfig, idna, gitdb, exceptiongroup, coverage, charset-normalizer, certifi, attrs, websocket-client, watchdog, typing-extensions, texttable, stevedore, setuptools, requests, repath, pyzstd, pyyaml, pytest, pyppmd, pyinstaller-hooks-contrib, pycryptodomex, pybcj, psutil, platformdirs, pathspec, oauthlib, mypy-extensions, multivolumefile, inflate64, gitpython, contextlib2, click, brotli, beartype, altgraph, schema, ruff, regex, pytest-subprocess, pytest-mock, pytest-cov, pyinstaller, py7zr, pillow, mypy, loguru, isort, flet, black, bandit\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |   Attempting uninstall: setuptools\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |     Found existing installation: setuptools 56.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |     Uninstalling setuptools-56.0.0:\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   |       Successfully uninstalled setuptools-56.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Successfully installed altgraph-0.17.3 attrs-22.2.0 bandit-1.7.4 beartype-0.12.0 black-22.12.0 brotli-1.0.9 certifi-2022.12.7 charset-normalizer-3.0.1 click-8.1.3 contextlib2-21.6.0 coverage-7.1.0 exceptiongroup-1.1.0 flet-0.3.2 gitdb-4.0.10 gitpython-3.1.30 idna-3.4 inflate64-0.3.1 iniconfig-2.0.0 isort-5.12.0 loguru-0.6.0 multivolumefile-0.2.3 mypy-1.0.0 mypy-extensions-0.4.3 oauthlib-3.2.2 packaging-23.0 pathspec-0.11.0 pbr-5.11.1 pillow-9.4.0 platformdirs-2.6.2 pluggy-1.0.0 psutil-5.9.4 py7zr-0.20.2 pybcj-1.0.1 pycryptodomex-3.17 pyinstaller-5.7.0 pyinstaller-hooks-contrib-2022.15 pyppmd-1.0.0 pytest-7.2.1 pytest-cov-4.0.0 pytest-mock-3.10.0 pytest-subprocess-1.5.0 pyyaml-6.0 pyzstd-0.15.3 regex-2022.10.31 repath-0.9.0 requests-2.28.2 ruff-0.0.25 schema-0.7.5 setuptools-67.1.0 six-1.16.0 smmap-5.0.0 stevedore-4.1.1 texttable-1.6.7 tomli-2.0.1 typing-extensions-4.4.0 urllib3-1.26.14 watchdog-2.2.1 websocket-client-1.5.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.9.6/x64/bin/python -m pip install --upgrade pip' command.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main pip install -r requirements.txt\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main python scripts/download-tools.py\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:55.249 | INFO     | __main__:main:148 - Run downloads for linux ...\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:55.250 | INFO     | __main__:download_adb_fastboot:34 - Download adb and fastboot for linux...\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:55.974 | INFO     | __main__:download_adb_fastboot:43 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/scripts/tools\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:56.206 | INFO     | __main__:download_adb_fastboot:46 - DONE.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:56.207 | INFO     | __main__:download_heimdall:51 - Download heimdall for linux...\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:56.400 | INFO     | __main__:download_heimdall:58 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/scripts/heimdall\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:56.403 | INFO     | __main__:download_heimdall:61 - DONE.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:56.404 | INFO     | __main__:download_libusb:66 - Download libusb-1.0 for linux...\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:57.384 | INFO     | __main__:download_libusb:73 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/scripts/libusb-windows\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.101 | INFO     | __main__:download_libusb:76 - DONE.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.101 | INFO     | __main__:move_files_to_lib:82 - Move executables to openandroidinstaller/bin...\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.101 | INFO     | __main__:move_files_to_lib:89 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/tools/platform-tools\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.102 | INFO     | __main__:move_files_to_lib:95 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/openandroidinstaller/bin\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.102 | INFO     | __main__:move_files_to_lib:126 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/libusb-windows/MinGW32/dll/libusb-1.0.dll\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.103 | INFO     | __main__:move_files_to_lib:134 - /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/openandroidinstaller/bin/libusb-1.0.dll\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.103 | INFO     | __main__:move_files_to_lib:136 - DONE.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.103 | INFO     | __main__:move_files_to_lib:138 - Allow the executables to be executed.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 2023-07-01 17:46:58.103 | INFO     | __main__:move_files_to_lib:144 - DONE.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main python scripts/download-tools.py\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main black .\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | All done! \u2728 \ud83c\udf70 \u2728\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | 34 files left unchanged.\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main black .\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main ruff openandroidinstaller/ --ignore E501\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Found 0 error(s).\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main ruff openandroidinstaller/ --ignore E501\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Main PYTHONPATH=openandroidinstaller:$(PYTHONPATH) pytest --junitxml=report.xml --cov=openandroidinstaller tests/\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/6] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | /var/run/act/workflow/6: line 2: PYTHONPATH: command not found\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | ============================= test session starts ==============================\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | platform linux -- Python 3.9.6, pytest-7.2.1, pluggy-1.0.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | rootdir: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | plugins: cov-4.0.0, mock-3.10.0, subprocess-1.5.0\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | collected 75 items\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | \n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | tests/test_app.py ..                                                     [  2%]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | tests/test_configs.py .................................................. [ 69%]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | .............                                                            [ 86%]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | tests/test_progress_bar.py ..                                            [ 89%]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | tests/test_terminal_box.py ....                                          [ 94%]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | tests/test_tooling.py ....                                               [100%]\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | \n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | - generated xml file: /tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/report.xml -\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | \n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | ----------- coverage: platform linux, python 3.9.6-final-0 -----------\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | Name                                                Stmts   Miss  Cover\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | -----------------------------------------------------------------------\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/__init__.py                        0      0   100%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/app_state.py                      30      0   100%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/installer_config.py               83     15    82%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/openandroidinstaller.py           98     12    88%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/styles.py                          7      0   100%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/tooling.py                       264    168    36%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/utils.py                          36     21    42%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/__init__.py                 10      0   100%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/addon_view.py               42     13    69%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/base.py                     14      0   100%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/install_addons_view.py      70     38    46%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/install_view.py             67     35    48%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/requirements_view.py        71     16    77%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/select_view.py              89     43    52%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/start_view.py               71     39    45%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/step_view.py                80     42    48%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/success_view.py             17      2    88%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/views/welcome_view.py             18      0   100%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | openandroidinstaller/widgets.py                        77     11    86%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | -----------------------------------------------------------------------\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | TOTAL                                                1144    455    60%\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | \n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   | ============================== 75 passed in 7.13s ==============================\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u2705  Success - Main PYTHONPATH=openandroidinstaller:$(PYTHONPATH) pytest --junitxml=report.xml --cov=openandroidinstaller tests/\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \u2b50 Run Post actions/setup-python@v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v2/dist/cache-save/index.js] user= workdir=\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci]   \u274c  Failure - Post actions/setup-python@v2\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] failed to remove container: Delete \"http://%2Fvar%2Frun%2Fdocker.sock/v1.41/containers/5cf2a0239b49a50e9d541eb160f7fb751a645fe6087b928f216139ef8b7e0c51?force=1&v=1\": context deadline exceeded\n[2ca8fd70-acb3-4f67-b8d7-88512ecca1f7/ci] \ud83c\udfc1  Job succeeded\n",
         "stderr": "Error: context canceled\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/.github/workflows/build-release-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/openandroidinstaller-dev-openandroidinstaller/.github/workflows/build-release-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "2ca8fd70-acb3-4f67-b8d7-88512ecca1f7",
         "build_tool": "pytest",
-        "elapsed_time": 660.1566805839539
+        "elapsed_time": 660.0473370552063
     }
 }

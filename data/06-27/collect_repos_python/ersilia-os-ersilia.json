@@ -1,15 +1,17 @@
 {
     "repository": "ersilia-os/ersilia",
-    "stars": 120,
+    "stars": 121,
     "language": "python",
-    "size": 42968,
+    "size": 42660,
     "clone_url": "https://github.com/ersilia-os/ersilia.git",
-    "timestamp": "2023-06-28T15:40:25.045019Z",
+    "timestamp": "2023-07-01T15:10:46.536943Z",
     "clone_success": true,
-    "number_of_actions": 14,
+    "number_of_actions": 16,
     "number_of_test_actions": 1,
     "actions_successful": false,
     "actions_build_tools": [
+        "unknown",
+        "unknown",
         "unknown",
         "unknown",
         "unknown",
@@ -31,10 +33,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test] \ud83d\ude80  Start image=crawlergpt:latest\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ersilia-os-ersilia] user=0 workdir=\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test] \u2b50 Run Main actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \u2705  Success - Main actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test] \u2b50 Run Main Add conda to system path\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \u2705  Success - Main Add conda to system path\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \u2699  ::add-path:: /bin\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test] \u2b50 Run Main Source conda\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   | /var/run/act/workflow/2: line 2: /etc/profile.d/conda.sh: No such file or directory\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test]   \u274c  Failure - Main Source conda\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test] exitcode '1': failure\n[b5c34ece-ab39-4a14-8994-ac1b05ae2806/test] \ud83c\udfc1  Job failed\n",
+        "stdout": "[640d9939-ede2-4d71-bafa-06dcb308a7f9/test] \ud83d\ude80  Start image=crawlergpt:latest\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/ersilia-os-ersilia] user=0 workdir=\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test] \u2b50 Run Main actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \u2705  Success - Main actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test] \u2b50 Run Main Add conda to system path\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \u2705  Success - Main Add conda to system path\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \u2699  ::add-path:: /bin\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test] \u2b50 Run Main Source conda\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   | /var/run/act/workflow/2: line 2: /etc/profile.d/conda.sh: No such file or directory\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test]   \u274c  Failure - Main Source conda\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test] exitcode '1': failure\n[640d9939-ede2-4d71-bafa-06dcb308a7f9/test] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'test' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/ersilia-os-ersilia/.github/workflows/test-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/ersilia-os-ersilia/.github/workflows/test-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "640d9939-ede2-4d71-bafa-06dcb308a7f9",
         "build_tool": "pytest",
-        "elapsed_time": 40.14170813560486
+        "elapsed_time": 119.57346200942993
     }
 }

@@ -2,9 +2,9 @@
     "repository": "DataDog/datadog-serverless-functions",
     "stars": 317,
     "language": "python",
-    "size": 1893,
+    "size": 1837,
     "clone_url": "https://github.com/DataDog/datadog-serverless-functions.git",
-    "timestamp": "2023-06-28T11:10:07.392718Z",
+    "timestamp": "2023-07-01T10:39:57.910762Z",
     "clone_success": true,
     "number_of_actions": 6,
     "number_of_test_actions": 1,
@@ -23,6 +23,34 @@
     "actions_run": {
         "failed": false,
         "tests": [
+            {
+                "classname": "tests.test_parsing.TestAWSLogsHandler",
+                "name": "test_awslogs_handler_rds_postgresql",
+                "time": 0.007,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestAWSLogsHandler",
+                "name": "test_awslogs_handler_step_functions_tags_added_properly",
+                "time": 0.008,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
             {
                 "classname": "tests.test_lambda_function.TestExtractMetric",
                 "name": "test_empty_event",
@@ -94,216 +122,6 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_lambda_function.TestLambdaFunctionEndToEnd",
-                "name": "test_datadog_forwarder",
-                "time": 0.009,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestParseServiceArn",
-                "name": "test_elb_s3_key_invalid",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestParseServiceArn",
-                "name": "test_elb_s3_key_multi_prefix",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestParseServiceArn",
-                "name": "test_elb_s3_key_multi_prefix_gov",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestParseServiceArn",
-                "name": "test_elb_s3_key_no_prefix",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestParseServiceArn",
-                "name": "test_elb_s3_key_single_prefix",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestGetServiceFromTags",
-                "name": "test_get_service_from_tags",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestGetServiceFromTags",
-                "name": "test_get_service_from_tags_default_to_source",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_logs.TestScrubLogs",
-                "name": "test_non_ascii",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_logs.TestScrubLogs",
-                "name": "test_scrubbing_rule_config",
-                "time": 0.002,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_cloudtrail_s3.TestS3CloudwatchParsing",
-                "name": "test_s3_cloudtrail_pasing_and_enrichment",
-                "time": 0.014,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
-                "name": "test_extract_trace_payload_none_exception",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
-                "name": "test_extract_trace_payload_none_no_trace",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
-                "name": "test_extract_trace_payload_unrelated_datadog_trace",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
-                "name": "test_extract_trace_payload_valid_trace",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
                 "classname": "tests.test_logs.TestFilterLogs",
                 "name": "test_exclude_at_match",
                 "time": 0.001,
@@ -348,6 +166,20 @@
             {
                 "classname": "tests.test_logs.TestFilterLogs",
                 "name": "test_no_filtering_rules",
+                "time": 0.0,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestGetServiceFromTags",
+                "name": "test_get_service_from_tags",
                 "time": 0.001,
                 "results": [
                     {
@@ -360,8 +192,8 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_lambda_function.TestExtractHostFromLogEvents",
-                "name": "test_parse_source_cloudtrail",
+                "classname": "tests.test_parsing.TestGetServiceFromTags",
+                "name": "test_get_service_from_tags_default_to_source",
                 "time": 0.001,
                 "results": [
                     {
@@ -372,90 +204,6 @@
                 ],
                 "stdout": null,
                 "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestExtractHostFromLogEvents",
-                "name": "test_parse_source_guardduty",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestExtractHostFromLogEvents",
-                "name": "test_parse_source_route53",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestAWSLogsHandler",
-                "name": "test_awslogs_handler_rds_postgresql",
-                "time": 0.007,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestAWSLogsHandler",
-                "name": "test_awslogs_handler_step_functions_tags_added_properly",
-                "time": 0.006,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestInvokeAdditionalTargetLambdas",
-                "name": "test_additional_lambda",
-                "time": 0.003,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_lambda_function.TestInvokeAdditionalTargetLambdas",
-                "name": "test_lambda_invocation_exception",
-                "time": 0.004,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": "\nFailed to invoke additional target lambda ironmaiden due to An error occurred (403) when calling the Invoke operation: Unauthorized\nTraceback (most recent call last):\n  File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 118, in invoke_additional_target_lambdas\n    Payload=lambda_payload,\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n    return _mock_self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n    raise effect\nbotocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\nFailed to invoke additional target lambda megadeth due to An error occurred (403) when calling the Invoke operation: Unauthorized\nTraceback (most recent call last):\n  File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 118, in invoke_additional_target_lambdas\n    Payload=lambda_payload,\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n    return _mock_self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n    raise effect\n  File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 118, in invoke_additional_target_lambdas\n    Payload=lambda_payload,\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n    return _mock_self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n    raise effect\nbotocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\n\t\t"
             },
             {
                 "classname": "tests.test_parsing.TestParseEventSource",
@@ -586,7 +334,7 @@
             {
                 "classname": "tests.test_parsing.TestParseEventSource",
                 "name": "test_cloudwatch_source_if_none_found",
-                "time": 0.001,
+                "time": 0.0,
                 "results": [
                     {
                         "result": "Passed",
@@ -782,7 +530,7 @@
             {
                 "classname": "tests.test_parsing.TestParseEventSource",
                 "name": "test_rds_event",
-                "time": 0.001,
+                "time": 0.0,
                 "results": [
                     {
                         "result": "Passed",
@@ -838,7 +586,7 @@
             {
                 "classname": "tests.test_parsing.TestParseEventSource",
                 "name": "test_s3_source_if_none_found",
-                "time": 0.001,
+                "time": 0.0,
                 "results": [
                     {
                         "result": "Passed",
@@ -920,6 +668,90 @@
                 "stderr": null
             },
             {
+                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
+                "name": "test_security_hub_multiple_findings_multiple_resources",
+                "time": 0.003,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
+                "name": "test_security_hub_no_findings",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
+                "name": "test_security_hub_one_finding_no_resources",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
+                "name": "test_security_hub_two_findings_one_resource_each",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_logs.TestScrubLogs",
+                "name": "test_non_ascii",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_logs.TestScrubLogs",
+                "name": "test_scrubbing_rule_config",
+                "time": 0.002,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
                 "name": "test_create_out_of_memory_enhanced_metric",
                 "time": 0.002,
@@ -964,7 +796,7 @@
             {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
                 "name": "test_generate_enhanced_lambda_metrics_client_error",
-                "time": 0.007,
+                "time": 0.011,
                 "results": [
                     {
                         "result": "Passed",
@@ -973,7 +805,7 @@
                     }
                 ],
                 "stdout": null,
-                "stderr": "\nEncountered a ClientError when trying to fetch tags. You may need to give this Lambda's role the 'tag:GetResources' permission\nTraceback (most recent call last):\n  File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_cache.py\", line 39, in build_tags_cache\n    page_tags_by_arn = parse_get_resources_response_for_tags_by_arn(page)\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n    return _mock_self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n    raise effect\nbotocore.exceptions.ClientError: An error occurred (Unknown) when calling the Client Error operation: Unknown\n\t\t"
+                "stderr": "Encountered a ClientError when trying to fetch tags. You may need to give this Lambda's role the 'tag:GetResources' permission\nTraceback (most recent call last):\n  File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_cache.py\", line 39, in build_tags_cache\n    page_tags_by_arn = parse_get_resources_response_for_tags_by_arn(page)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n    return self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n    raise effect\nbotocore.exceptions.ClientError: An error occurred (Unknown) when calling the Client Error operation: Unknown\n"
             },
             {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
@@ -1006,7 +838,7 @@
             {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
                 "name": "test_generate_enhanced_lambda_metrics_refresh_on_new_arn",
-                "time": 0.003,
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1020,7 +852,7 @@
             {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
                 "name": "test_generate_enhanced_lambda_metrics_refresh_s3_cache",
-                "time": 0.005,
+                "time": 0.007,
                 "results": [
                     {
                         "result": "Passed",
@@ -1034,7 +866,7 @@
             {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
                 "name": "test_generate_enhanced_lambda_metrics_timeout",
-                "time": 0.003,
+                "time": 0.004,
                 "results": [
                     {
                         "result": "Passed",
@@ -1048,7 +880,7 @@
             {
                 "classname": "tests.test_enhanced_lambda_metrics.TestEnhancedLambdaMetrics",
                 "name": "test_generate_enhanced_lambda_metrics_with_tags",
-                "time": 0.005,
+                "time": 0.006,
                 "results": [
                     {
                         "result": "Passed",
@@ -1228,8 +1060,204 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
-                "name": "test_security_hub_multiple_findings_multiple_resources",
+                "classname": "tests.test_cloudtrail_s3.TestS3CloudwatchParsing",
+                "name": "test_s3_cloudtrail_pasing_and_enrichment",
+                "time": 0.016,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseServiceArn",
+                "name": "test_elb_s3_key_invalid",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseServiceArn",
+                "name": "test_elb_s3_key_multi_prefix",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseServiceArn",
+                "name": "test_elb_s3_key_multi_prefix_gov",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseServiceArn",
+                "name": "test_elb_s3_key_no_prefix",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_parsing.TestParseServiceArn",
+                "name": "test_elb_s3_key_single_prefix",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestLambdaFunctionEndToEnd",
+                "name": "test_datadog_forwarder",
+                "time": 0.015,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
+                "name": "test_extract_trace_payload_none_exception",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
+                "name": "test_extract_trace_payload_none_no_trace",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
+                "name": "test_extract_trace_payload_unrelated_datadog_trace",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestLambdaFunctionExtractTracePayload",
+                "name": "test_extract_trace_payload_valid_trace",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestExtractHostFromLogEvents",
+                "name": "test_parse_source_cloudtrail",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestExtractHostFromLogEvents",
+                "name": "test_parse_source_guardduty",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestExtractHostFromLogEvents",
+                "name": "test_parse_source_route53",
+                "time": 0.001,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "tests.test_lambda_function.TestInvokeAdditionalTargetLambdas",
+                "name": "test_additional_lambda",
                 "time": 0.004,
                 "results": [
                     {
@@ -1242,9 +1270,9 @@
                 "stderr": null
             },
             {
-                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
-                "name": "test_security_hub_no_findings",
-                "time": 0.001,
+                "classname": "tests.test_lambda_function.TestInvokeAdditionalTargetLambdas",
+                "name": "test_lambda_invocation_exception",
+                "time": 0.005,
                 "results": [
                     {
                         "result": "Passed",
@@ -1253,26 +1281,12 @@
                     }
                 ],
                 "stdout": null,
-                "stderr": null
+                "stderr": "Failed to invoke additional target lambda ironmaiden due to An error occurred (403) when calling the Invoke operation: Unauthorized\nTraceback (most recent call last):\n  File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 115, in invoke_additional_target_lambdas\n    lambda_client.invoke(\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n    return self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n    raise effect\nbotocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\nFailed to invoke additional target lambda megadeth due to An error occurred (403) when calling the Invoke operation: Unauthorized\nTraceback (most recent call last):\n  File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 115, in invoke_additional_target_lambdas\n    lambda_client.invoke(\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n    return self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n    raise effect\n  File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 115, in invoke_additional_target_lambdas\n    lambda_client.invoke(\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n    return self._mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n  File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n    raise effect\nbotocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\n"
             },
             {
-                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
-                "name": "test_security_hub_one_finding_no_resources",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "tests.test_parsing.TestParseSecurityHubEvents",
-                "name": "test_security_hub_two_findings_one_resource_each",
-                "time": 0.002,
+                "classname": "tests.test_rds_metrics.TestRDSEnhancedMetrics",
+                "name": "test_extract_json_objects",
+                "time": 0.014,
                 "results": [
                     {
                         "result": "Passed",
@@ -1284,10 +1298,14 @@
                 "stderr": null
             }
         ],
-        "stdout": "[2535d621-1da1-4da0-b177-2a861407a665/build] \ud83d\ude80  Start image=crawlergpt:latest\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions] user=0 workdir=\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[2535d621-1da1-4da0-b177-2a861407a665/build] \ud83e\uddea  Matrix: map[python-version:3.7]\n[2535d621-1da1-4da0-b177-2a861407a665/build] \u2b50 Run Main Checkout source\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2705  Success - Main Checkout source\n[2535d621-1da1-4da0-b177-2a861407a665/build] \u2b50 Run Main Setup Python 3.7\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/61f4534c-ab84-41c2-a684-c83e6342097c/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.7 is 3.7\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: \n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? false\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? true\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? true\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? true\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? true\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? true\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::explicit? true\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::matched: 3.7.11\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.7.11/x64\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.7.11 x64\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Successfully setup CPython (3.7.11)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v3/.github/python.json\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2705  Success - Main Setup Python 3.7\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.7.11/x64\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.7.11/x64/lib\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2699  ::set-output:: python-version=3.7.11\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.7.11/x64/bin\n[2535d621-1da1-4da0-b177-2a861407a665/build] \u2b50 Run Main Run Python unit tests\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting unittest-xml-reporting\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting lxml\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading lxml-4.9.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.6 MB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting boto3\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading boto3-1.26.162-py3-none-any.whl (135 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting mock\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading mock-5.0.2-py3-none-any.whl (30 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting jmespath<2.0.0,>=0.7.1\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting botocore<1.30.0,>=1.29.162\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading botocore-1.29.162-py3-none-any.whl (11.0 MB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting s3transfer<0.7.0,>=0.6.0\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading s3transfer-0.6.1-py3-none-any.whl (79 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting python-dateutil<3.0.0,>=2.1\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting urllib3<1.27,>=1.25.4\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Collecting six>=1.5\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Installing collected packages: six, urllib3, python-dateutil, jmespath, botocore, s3transfer, mock, boto3\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Successfully installed boto3-1.26.162 botocore-1.29.162 jmespath-1.0.1 mock-5.0.2 python-dateutil-2.8.2 s3transfer-0.6.1 six-1.16.0 urllib3-1.26.16\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.7.11/x64/bin/python -m pip install --upgrade pip' command.\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | \n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Running tests...\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | ----------------------------------------------------------------------\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | ....Encountered a ClientError when trying to fetch tags. You may need to give this Lambda's role the 'tag:GetResources' permission\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Traceback (most recent call last):\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_cache.py\", line 39, in build_tags_cache\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     page_tags_by_arn = parse_get_resources_response_for_tags_by_arn(page)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     return _mock_self._mock_call(*args, **kwargs)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     raise effect\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | botocore.exceptions.ClientError: An error occurred (Unknown) when calling the Client Error operation: Unknown\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | ....................Failed to invoke additional target lambda ironmaiden due to An error occurred (403) when calling the Invoke operation: Unauthorized\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Traceback (most recent call last):\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 118, in invoke_additional_target_lambdas\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     Payload=lambda_payload,\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     return _mock_self._mock_call(*args, **kwargs)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     raise effect\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | botocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Failed to invoke additional target lambda megadeth due to An error occurred (403) when calling the Invoke operation: Unauthorized\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Traceback (most recent call last):\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 118, in invoke_additional_target_lambdas\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     Payload=lambda_payload,\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     return _mock_self._mock_call(*args, **kwargs)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     raise effect\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 118, in invoke_additional_target_lambdas\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     Payload=lambda_payload,\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1016, in __call__\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     return _mock_self._mock_call(*args, **kwargs)\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |   File \"/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/unittest/mock.py\", line 1076, in _mock_call\n[2535d621-1da1-4da0-b177-2a861407a665/build]   |     raise effect\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | botocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | ..................................................................\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | ----------------------------------------------------------------------\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Ran 90 tests in 0.162s\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | \n[2535d621-1da1-4da0-b177-2a861407a665/build]   | OK\n[2535d621-1da1-4da0-b177-2a861407a665/build]   | \n[2535d621-1da1-4da0-b177-2a861407a665/build]   | Generating XML reports...\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2705  Success - Main Run Python unit tests\n[2535d621-1da1-4da0-b177-2a861407a665/build] \u2b50 Run Post Setup Python 3.7\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/cache-save/index.js] user= workdir=\n[2535d621-1da1-4da0-b177-2a861407a665/build]   \u2705  Success - Post Setup Python 3.7\n[2535d621-1da1-4da0-b177-2a861407a665/build] \ud83c\udfc1  Job succeeded\n",
+        "stdout": "[5712dab9-d293-4069-94df-26ff6010ac41/build] \ud83d\ude80  Start image=crawlergpt:latest\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions] user=0 workdir=\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v3\n[5712dab9-d293-4069-94df-26ff6010ac41/build] \ud83e\uddea  Matrix: map[python-version:3.8]\n[5712dab9-d293-4069-94df-26ff6010ac41/build] \u2b50 Run Main Checkout source\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2705  Success - Main Checkout source\n[5712dab9-d293-4069-94df-26ff6010ac41/build] \u2b50 Run Main Setup Python 3.8\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/9a2e8763-76b2-45e7-9bc6-6e7a8e642319/act/actions-setup-python@v3/ dst=/var/run/act/actions/actions-setup-python@v3/\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-python@v3/] user=0 workdir=\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/setup/index.js] user= workdir=\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::Semantic version spec of 3.8 is 3.8\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? false\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: 2.7.18\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? true\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: 3.5.10\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? true\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: 3.6.14\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? true\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: 3.7.11\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? true\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: 3.8.11\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? true\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::isExplicit: 3.9.6\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::explicit? true\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::evaluating 6 versions\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::matched: 3.8.11\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.8.11/x64\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udcac  ::debug::Found tool in cache Python 3.8.11 x64\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Successfully setup CPython (3.8.11)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2753 add-matcher /run/act/actions/actions-setup-python@v3/.github/python.json\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2705  Success - Main Setup Python 3.8\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.8.11/x64\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.8.11/x64/lib\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2699  ::set-output:: python-version=3.8.11\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.8.11/x64/bin\n[5712dab9-d293-4069-94df-26ff6010ac41/build] \u2b50 Run Main Run Python unit tests\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting unittest-xml-reporting\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting lxml\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading lxml-4.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (7.1 MB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Installing collected packages: lxml, unittest-xml-reporting\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Successfully installed lxml-4.9.2 unittest-xml-reporting-3.2.0\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.8.11/x64/bin/python -m pip install --upgrade pip' command.\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting boto3\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading boto3-1.26.165-py3-none-any.whl (135 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting mock\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading mock-5.0.2-py3-none-any.whl (30 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting jmespath<2.0.0,>=0.7.1\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting s3transfer<0.7.0,>=0.6.0\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading s3transfer-0.6.1-py3-none-any.whl (79 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting botocore<1.30.0,>=1.29.165\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading botocore-1.29.165-py3-none-any.whl (11.0 MB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting urllib3<1.27,>=1.25.4\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting python-dateutil<3.0.0,>=2.1\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Collecting six>=1.5\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Installing collected packages: six, urllib3, python-dateutil, jmespath, botocore, s3transfer, mock, boto3\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Successfully installed boto3-1.26.165 botocore-1.29.165 jmespath-1.0.1 mock-5.0.2 python-dateutil-2.8.2 s3transfer-0.6.1 six-1.16.0 urllib3-1.26.16\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | WARNING: You are using pip version 21.2.4; however, version 23.1.2 is available.\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | You should consider upgrading via the '/opt/hostedtoolcache/Python/3.8.11/x64/bin/python -m pip install --upgrade pip' command.\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Running tests...\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ----------------------------------------------------------------------\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ....Encountered a ClientError when trying to fetch tags. You may need to give this Lambda's role the 'tag:GetResources' permission\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Traceback (most recent call last):\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_cache.py\", line 39, in build_tags_cache\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     page_tags_by_arn = parse_get_resources_response_for_tags_by_arn(page)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._execute_mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     raise effect\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | botocore.exceptions.ClientError: An error occurred (Unknown) when calling the Client Error operation: Unknown\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ....................Failed to invoke additional target lambda ironmaiden due to An error occurred (403) when calling the Invoke operation: Unauthorized\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Traceback (most recent call last):\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 115, in invoke_additional_target_lambdas\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     lambda_client.invoke(\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._execute_mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     raise effect\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | botocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Failed to invoke additional target lambda megadeth due to An error occurred (403) when calling the Invoke operation: Unauthorized\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Traceback (most recent call last):\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 115, in invoke_additional_target_lambdas\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     lambda_client.invoke(\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._execute_mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     raise effect\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/aws/logs_monitoring/lambda_function.py\", line 115, in invoke_additional_target_lambdas\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     lambda_client.invoke(\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1081, in __call__\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1085, in _mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     return self._execute_mock_call(*args, **kwargs)\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |   File \"/opt/hostedtoolcache/Python/3.8.11/x64/lib/python3.8/unittest/mock.py\", line 1140, in _execute_mock_call\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   |     raise effect\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | botocore.exceptions.ClientError: An error occurred (403) when calling the Invoke operation: Unauthorized\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ..................................................................\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ----------------------------------------------------------------------\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Ran 90 tests in 0.175s\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | OK\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Generating XML reports...\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Running tests...\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ----------------------------------------------------------------------\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | INFO Lambda function initialized, ready to send metrics\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | .\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | ----------------------------------------------------------------------\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Ran 1 test in 0.015s\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | OK\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | \n[5712dab9-d293-4069-94df-26ff6010ac41/build]   | Generating XML reports...\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2705  Success - Main Run Python unit tests\n[5712dab9-d293-4069-94df-26ff6010ac41/build] \u2b50 Run Post Setup Python 3.8\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v3/dist/cache-save/index.js] user= workdir=\n[5712dab9-d293-4069-94df-26ff6010ac41/build]   \u2705  Success - Post Setup Python 3.8\n[5712dab9-d293-4069-94df-26ff6010ac41/build] \ud83c\udfc1  Job succeeded\n",
         "stderr": "",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/.github/workflows/test-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/DataDog-datadog-serverless-functions/.github/workflows/test-crawler.yml",
+            "type": "unittest"
+        },
+        "workflow_name": "5712dab9-d293-4069-94df-26ff6010ac41",
         "build_tool": "unittest",
-        "elapsed_time": 130.63449025154114
+        "elapsed_time": 155.19136762619019
     }
 }

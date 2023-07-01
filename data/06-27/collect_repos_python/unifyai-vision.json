@@ -4,7 +4,7 @@
     "language": "python",
     "size": 26654,
     "clone_url": "https://github.com/unifyai/vision.git",
-    "timestamp": "2023-06-28T16:30:42.700696Z",
+    "timestamp": "2023-07-01T16:01:55.768276Z",
     "clone_success": true,
     "number_of_actions": 7,
     "number_of_test_actions": 1,
@@ -24,10 +24,14 @@
     "actions_run": {
         "failed": true,
         "tests": [],
-        "stdout": "[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests] \ud83d\ude80  Start image=crawlergpt:latest\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/unifyai-vision] user=0 workdir=\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests] \u2b50 Run Main Checkout \ud83d\udece\ufe0fIvy Vision\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \u2705  Success - Main Checkout \ud83d\udece\ufe0fIvy Vision\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests] \u2b50 Run Main Run Tests\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   | /var/run/act/workflow/1: line 2: cd: vision: No such file or directory\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests]   \u274c  Failure - Main Run Tests\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests] exitcode '1': failure\n[1bf46456-7326-4f63-857b-f1f59bde88c0/run-nightly-tests] \ud83c\udfc1  Job failed\n",
+        "stdout": "[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests] \ud83d\ude80  Start image=crawlergpt:latest\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \ud83d\udc33  docker pull image=crawlergpt:latest platform= username= forcePull=false\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \ud83d\udc33  docker create image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \ud83d\udc33  docker run image=crawlergpt:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[]\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \ud83d\udc33  docker exec cmd=[chown -R 1012:1013 /tmp/558156d8-17ed-11ee-8a50-bb14de238602/unifyai-vision] user=0 workdir=\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests] \u2b50 Run Main Checkout \ud83d\udece\ufe0fIvy Vision\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \u2705  Success - Main Checkout \ud83d\udece\ufe0fIvy Vision\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests] \u2b50 Run Main Run Tests\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   | /var/run/act/workflow/1: line 2: cd: vision: No such file or directory\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests]   \u274c  Failure - Main Run Tests\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests] exitcode '1': failure\n[1324c478-4585-4730-afe0-83d3b1080b5a/run-nightly-tests] \ud83c\udfc1  Job failed\n",
         "stderr": "Error: Job 'run-nightly-tests' failed\n",
-        "workflow": "/tmp/ad9c0f7e-1596-11ee-8a50-bb14de238602/unifyai-vision/.github/workflows/nightly-tests-crawler.yml",
+        "workflow": {
+            "path": "/tmp/558156d8-17ed-11ee-8a50-bb14de238602/unifyai-vision/.github/workflows/nightly-tests-crawler.yml",
+            "type": "pytest"
+        },
+        "workflow_name": "1324c478-4585-4730-afe0-83d3b1080b5a",
         "build_tool": "pytest",
-        "elapsed_time": 53.15969443321228
+        "elapsed_time": 29.89897060394287
     }
 }
