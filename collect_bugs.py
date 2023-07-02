@@ -386,7 +386,13 @@ class PatchCollector:
             )
 
             # PASS_PASS strategy
-            if prev_commit_passed and prev_with_diff_failed and curr_commit_passed:
+            if (
+                prev_commit_passed
+                and prev_with_diff_failed
+                and curr_commit_passed
+                and len(bug_patch.bug_patch) > 0
+                and len(bug_patch.test_patch) > 0
+            ):
                 bug_patch.strategy_used = CollectionStrategy.PASS_PASS
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
                 return True
