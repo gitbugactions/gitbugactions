@@ -88,7 +88,7 @@ class BugPatch:
             "time_to_patch": self.time_to_patch,
             "bug_patch": str(self.bug_patch),
             "test_patch": str(self.test_patch),
-            "bug_patch_files_type": str(self.bug_patch_files_type),
+            "bug_patch_files_type": self.bug_patch_files_type.name,
             "actions_runs": actions_runs,
             "strategy": self.strategy_used.name,
             "issues": self.issues,
@@ -102,8 +102,7 @@ class BugPatch:
         file_extensions = {
             x.source_file.split(".")[-1] if "." in x.source_file else None
             for x in patch
-        }
-        file_extensions.update(
+        }.union(
             {
                 x.target_file.split(".")[-1] if "." in x.target_file else None
                 for x in patch
