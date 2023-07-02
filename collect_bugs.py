@@ -368,16 +368,17 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
 
     dir_list = os.listdir(data_path)
     for file in dir_list:
-        with open(os.path.join(data_path, file), "r") as f:
-            run = json.loads(f.read())
-            if not os.path.exists(results_path):
-                os.mkdir(results_path)
+        if file.endswith(".json"):
+            with open(os.path.join(data_path, file), "r") as f:
+                run = json.loads(f.read())
+                if not os.path.exists(results_path):
+                    os.mkdir(results_path)
 
-            if run["actions_successful"] and run["number_of_test_actions"] == 1:
-                repo = github.get_repo(run["repository"])
-                patch_collector = PatchCollector(repo)
-                future = executor.submit(patch_collector.get_possible_patches)
-                collectors_futures.append((patch_collector, future))
+                if run["actions_successful"] and run["number_of_test_actions"] == 1:
+                    repo = github.get_repo(run["repository"])
+                    patch_collector = PatchCollector(repo)
+                    future = executor.submit(patch_collector.get_possible_patches)
+                    collectors_futures.append((patch_collector, future))
 
     for patch_collector, future in collectors_futures:
         patch_collectors.append((patch_collector, future.result()))
