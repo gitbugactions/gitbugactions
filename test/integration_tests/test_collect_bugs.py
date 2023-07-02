@@ -65,21 +65,23 @@ def test_get_possible_patches():
     commits = list(map(lambda patch: patch.commit, patches))
 
     # The diffs are equal, at least one of the commits should be in the list, but not both
-    assert (('c5a7737cea8d078efbb3d8d3c78c6ec7e32d1861' in commits) ^ 
-            ('04fdd485697ed82232b5097d22ddb46ff234bb3b' in commits))
-    assert (('b12cc483dc6f2205c901d5caeb91e0658b913c6b' in commits) ^ 
-            ('c15bfc7cc066b85585831a8770a6d00daf8272aa' in commits))
-    
+    assert ("c5a7737cea8d078efbb3d8d3c78c6ec7e32d1861" in commits) ^ (
+        "04fdd485697ed82232b5097d22ddb46ff234bb3b" in commits
+    )
+    assert ("b12cc483dc6f2205c901d5caeb91e0658b913c6b" in commits) ^ (
+        "c15bfc7cc066b85585831a8770a6d00daf8272aa" in commits
+    )
+
     # 8a316 is a merge commit and 38eeb is a fix before the merge
-    assert '38eeb1f660cd6b28dcce925d64dc9112c31745d6' in commits
-    assert '8a316e3e7043f7663256b039d73696a5363cbcb8' not in commits
+    assert "38eeb1f660cd6b28dcce925d64dc9112c31745d6" in commits
+    assert "8a316e3e7043f7663256b039d73696a5363cbcb8" not in commits
 
     # Two commits with different fixes which point to the same previous commit
-    assert '23e97170add0cb770dea4f70c93c19de394525c9' in commits
-    assert 'c58e65e0ab421fba2987e2efec18f49e87a294a6' in commits
+    assert "23e97170add0cb770dea4f70c93c19de394525c9" in commits
+    assert "c58e65e0ab421fba2987e2efec18f49e87a294a6" in commits
     # Merge commit equal to 23e97 but with different previous commit
     # The patch is discarded because it is oldest than 23e97
-    assert '0d8347de05e969cb2fc836bb0f5e343643b2e7ad' not in commits
+    assert "0d8347de05e969cb2fc836bb0f5e343643b2e7ad" not in commits
 
     delete_repo_clone(collector.repo_clone)
 
@@ -160,7 +162,6 @@ class TestCollectBugs:
             passed, failure = get_test_results(data["actions_runs"][0][0]["tests"])
             assert passed == 1
             assert failure == 1
-
 
     @pytest.mark.dependency()
     def test_crawlergpt_pytest_test_repo(self):

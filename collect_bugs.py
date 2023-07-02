@@ -82,20 +82,27 @@ class BugPatch:
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
-    
+
     def __remove_patch_index(self, patch: PatchSet):
-        lines = str(patch).split('\n')
-        return '\n'.join(list(filter(lambda line: not line.startswith('index'), lines)))
+        lines = str(patch).split("\n")
+        return "\n".join(list(filter(lambda line: not line.startswith("index"), lines)))
 
     def __hash__(self):
-        return hash((self.__remove_patch_index(self.bug_patch), 
-                    self.__remove_patch_index(self.test_patch)))
-    
+        return hash(
+            (
+                self.__remove_patch_index(self.bug_patch),
+                self.__remove_patch_index(self.test_patch),
+            )
+        )
+
     def __eq__(self, __value: object) -> bool:
         if not isinstance(__value, BugPatch):
             return False
-        return (self.__remove_patch_index(self.bug_patch) == self.__remove_patch_index(__value.bug_patch) and
-                self.__remove_patch_index(self.test_patch) == self.__remove_patch_index(__value.test_patch))
+        return self.__remove_patch_index(self.bug_patch) == self.__remove_patch_index(
+            __value.bug_patch
+        ) and self.__remove_patch_index(self.test_patch) == self.__remove_patch_index(
+            __value.test_patch
+        )
 
     def __ne__(self, __value: object) -> bool:
         return not self.__eq__(__value)
@@ -281,7 +288,7 @@ class PatchCollector:
                 continue
 
         return issues
-    
+
     def __equal_patches(patch1: PatchSet, patch2: PatchSet):
         pass
 
@@ -330,8 +337,12 @@ class PatchCollector:
         # https://github.com/Nfsaavedra/crawlergpt/issues/40
         for previous_commit, grouped_patches in patches.items():
             if len(grouped_patches) > 1:
-                patches[previous_commit] = list(filter(lambda patch: not patch.commit_message.startswith('Merge '), 
-                                                       grouped_patches))
+                patches[previous_commit] = list(
+                    filter(
+                        lambda patch: not patch.commit_message.startswith("Merge "),
+                        grouped_patches,
+                    )
+                )
 
         patches: List[BugPatch] = sum(patches.values(), [])
         patches.sort(key=lambda x: x.commit_timestamp)
