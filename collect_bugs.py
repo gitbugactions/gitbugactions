@@ -29,11 +29,19 @@ class BugPatch:
         self.repo: Repository = repo
         self.commit: str = commit.hex
         self.commit_message: str = commit.message
-        unix_timestamp = int(commit.commit_time)
         self.commit_timestamp: str = (
-            datetime.utcfromtimestamp(unix_timestamp).isoformat() + "Z"
+            datetime.utcfromtimestamp(int(commit.commit_time)).isoformat() + "Z"
         )
         self.previous_commit: str = previous_commit.hex
+        self.previous_commit_message: str = previous_commit.message
+        self.previous_commit_timestamp: str = (
+            datetime.utcfromtimestamp(int(previous_commit.commit_time)).isoformat()
+            + "Z"
+        )
+        self.time_to_patch: str = str(
+            datetime.utcfromtimestamp(int(commit.commit_time))
+            - datetime.utcfromtimestamp(int(previous_commit.commit_time))
+        )
         self.bug_patch: PatchSet = bug_patch
         self.test_patch: PatchSet = test_patch
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
@@ -62,9 +70,12 @@ class BugPatch:
             "clone_url": self.repo.clone_url,
             "collection_timestamp": datetime.utcnow().isoformat() + "Z",
             "commit_hash": self.commit,
-            "previous_commit_hash": self.previous_commit,
             "commit_message": self.commit_message,
             "commit_timestamp": self.commit_timestamp,
+            "previous_commit_hash": self.previous_commit,
+            "previous_commit_message": self.previous_commit_message,
+            "previous_commit_timestamp": self.previous_commit_timestamp,
+            "time_to_patch": self.time_to_patch,
             "bug_patch": str(self.bug_patch),
             "test_patch": str(self.test_patch),
             "actions_runs": actions_runs,
