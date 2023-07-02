@@ -24,9 +24,16 @@ class CollectionStrategy(Enum):
     FAIL_PASS = 2
 
 
+class ChangeType(Enum):
+    SOURCE_ONLY = 0
+    MIXED = 1
+    NON_SOURCE_ONLY = 2
+
+
 class BugPatch:
     def __init__(self, repo, commit, previous_commit, bug_patch, test_patch):
         self.repo: Repository = repo
+        self.language: str = repo.language.lower().strip()
         self.commit: str = commit.hex
         self.commit_message: str = commit.message
         self.commit_timestamp: str = (
@@ -44,6 +51,9 @@ class BugPatch:
         )
         self.bug_patch: PatchSet = bug_patch
         self.test_patch: PatchSet = test_patch
+        self.bug_patch_files_type: ChangeType = self.__compute_change_type(
+            self.language, self.bug_patch
+        )
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
         self.issues = None
         # The actions are grouped by each phase of the strategy used
@@ -65,7 +75,7 @@ class BugPatch:
         return {
             "repository": self.repo.full_name,
             "stars": self.repo.stargazers_count,
-            "language": self.repo.language.strip().lower(),
+            "language": self.language,
             "size": self.repo.size,
             "clone_url": self.repo.clone_url,
             "collection_timestamp": datetime.utcnow().isoformat() + "Z",
@@ -78,12 +88,36 @@ class BugPatch:
             "time_to_patch": self.time_to_patch,
             "bug_patch": str(self.bug_patch),
             "test_patch": str(self.test_patch),
+            "bug_patch_files_type": str(self.bug_patch_files_type),
             "actions_runs": actions_runs,
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
 
-    def __remove_patch_index(self, patch: PatchSet):
+    def __compute_change_type(self, language: str, patch: PatchSet) -> ChangeType:
+        language_extensions = {
+            "java": {"java"},
+            "python": {"py"},
+        }
+        file_extensions = {
+            x.source_file.split(".")[-1] if "." in x.source_file else None
+            for x in patch
+        }
+        file_extensions.update(
+            {
+                x.target_file.split(".")[-1] if "." in x.target_file else None
+                for x in patch
+            }
+        )
+
+        if all([ext in language_extensions[language] for ext in file_extensions]):
+            return ChangeType.SOURCE_ONLY
+        elif any([ext in language_extensions[language] for ext in file_extensions]):
+            return ChangeType.MIXED
+        else:
+            return ChangeType.NON_SOURCE_ONLY
+
+    def __remove_patch_index(self, patch: PatchSet) -> str:
         lines = str(patch).split("\n")
         return "\n".join(list(filter(lambda line: not line.startswith("index"), lines)))
 

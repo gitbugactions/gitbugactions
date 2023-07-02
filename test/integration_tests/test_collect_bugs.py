@@ -128,6 +128,7 @@ class TestCollectBugs:
             assert data["previous_commit_timestamp"] == "2023-06-05T13:19:12Z"
             assert data["time_to_patch"] == "0:00:09"
             assert data["strategy"] == "PASS_PASS"
+            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
             assert len(data["actions_runs"]) == 3
             assert len(data["actions_runs"][1][0]["tests"]) == 1
             assert len(data["actions_runs"][1][0]["tests"][0]["results"]) == 1
@@ -149,6 +150,7 @@ class TestCollectBugs:
             assert data["previous_commit_timestamp"] == "2023-06-10T15:22:49Z"
             assert data["time_to_patch"] == "5 days, 22:53:38"
             assert data["strategy"] == "FAIL_PASS"
+            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
             assert len(data["actions_runs"]) == 3
             assert len(data["actions_runs"][0][0]["tests"]) == 2
             assert data["actions_runs"][1] is None
@@ -188,6 +190,7 @@ class TestCollectBugs:
             assert data["previous_commit_timestamp"] == "2023-06-09T20:05:56Z"
             assert data["time_to_patch"] == "0:00:35"
             assert data["strategy"] == "PASS_PASS"
+            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 6 and all pass
             assert len(data["actions_runs"][0][0]["tests"]) == 6
@@ -278,6 +281,8 @@ class TestCollectBugs:
             assert data["previous_commit_message"] == "initial implementation\n"
             assert data["previous_commit_timestamp"] == "2023-06-10T15:07:10Z"
             assert data["time_to_patch"] == "0:00:26"
+            assert data["strategy"] == "PASS_PASS"
+            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 1 and it passes
             assert len(data["actions_runs"][0][0]["tests"]) == 1
@@ -369,6 +374,7 @@ class TestCollectBugs:
             assert data["previous_commit_timestamp"] == "2023-06-20T14:54:25Z"
             assert data["time_to_patch"] == "0:00:05"
             assert data["strategy"] == "PASS_PASS"
+            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 2 and all pass
             assert len(data["actions_runs"][0][0]["tests"]) == 2
