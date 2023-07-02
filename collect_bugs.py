@@ -386,7 +386,20 @@ class PatchCollector:
             )
 
             # PASS_PASS strategy
-            if prev_commit_passed and prev_with_diff_failed and curr_commit_passed:
+            if (
+                # previous commit passed
+                prev_commit_passed
+                # previous commit with new tests failed
+                and prev_with_diff_failed
+                # current commit passed
+                and curr_commit_passed
+                # test patch is not empty
+                and len(bug_patch.test_patch) > 0
+                # test patch is not removals only
+                and not (
+                    bug_patch.test_patch.removed > 0 and bug_patch.test_patch.added == 0
+                )
+            ):
                 bug_patch.strategy_used = CollectionStrategy.PASS_PASS
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
                 return True
@@ -398,8 +411,11 @@ class PatchCollector:
 
             # FAIL_PASS strategy
             if (
+                # previous commit failed
                 prev_commit_failed
+                # no changes have been made in the tests
                 and len(bug_patch.test_patch) == 0
+                # current commit passed
                 and curr_commit_passed
             ):
                 bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
