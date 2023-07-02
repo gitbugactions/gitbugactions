@@ -6,7 +6,7 @@ import tempfile
 import logging
 import threading
 import fire
-from typing import List, Tuple, Any
+from typing import List, Tuple, Any, Dict
 from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
@@ -71,6 +71,23 @@ class BugPatch:
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
+    
+    def __remove_patch_index(self, patch: PatchSet):
+        lines = str(patch).split('\n')
+        return '\n'.join(list(filter(lambda line: not line.startswith('index'), lines)))
+
+    def __hash__(self):
+        return hash((self.__remove_patch_index(self.bug_patch), 
+                    self.__remove_patch_index(self.test_patch)))
+    
+    def __eq__(self, __value: object) -> bool:
+        if not isinstance(__value, BugPatch):
+            return False
+        return (self.__remove_patch_index(self.bug_patch) == self.__remove_patch_index(__value.bug_patch) and
+                self.__remove_patch_index(self.test_patch) == self.__remove_patch_index(__value.test_patch))
+
+    def __ne__(self, __value: object) -> bool:
+        return not self.__eq__(__value)
 
 
 class PatchCollector:
@@ -253,13 +270,16 @@ class PatchCollector:
                 continue
 
         return issues
+    
+    def __equal_patches(patch1: PatchSet, patch2: PatchSet):
+        pass
 
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
             return
 
-        patches = []
+        patches: Dict[str, List[BugPatch]] = {}
         first_commit = None
 
         for commit in self.repo_clone.walk(self.repo_clone.head.target):
@@ -284,11 +304,29 @@ class PatchCollector:
                 )
                 continue
 
-            patches.append(
-                BugPatch(self.repo, commit, previous_commit, bug_patch, test_patch)
-            )
+            if previous_commit.hex in patches:
+                patches[previous_commit.hex].append(
+                    BugPatch(self.repo, commit, previous_commit, bug_patch, test_patch)
+                )
+            else:
+                patches[previous_commit.hex] = [
+                    BugPatch(self.repo, commit, previous_commit, bug_patch, test_patch)
+                ]
 
-        return patches
+        # We remove the merges since when multiple bug patches point to the same
+        # previous commit, merges tend to only add useless diffs to another commit
+        # that already fixes the bug.
+        # https://github.com/Nfsaavedra/crawlergpt/issues/40
+        for previous_commit, grouped_patches in patches.items():
+            if len(grouped_patches) > 1:
+                patches[previous_commit] = list(filter(lambda patch: not patch.commit_message.startswith('Merge '), 
+                                                       grouped_patches))
+
+        patches: List[BugPatch] = sum(patches.values(), [])
+        patches.sort(key=lambda x: x.commit_timestamp)
+        # Creates list without duplicates. Duplicates are patches with the same diff
+        # We sort the list in order to keep the oldest patch
+        return list(set(patches))
 
     def test_patch(self, bug_patch: BugPatch):
         def flat_failed_tests(runs):
