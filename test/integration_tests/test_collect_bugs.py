@@ -267,7 +267,7 @@ class TestCollectBugs:
                 == "3b1fba52bb74343dfd2466446cbfd94f1f1700f9"
             )
             assert data["previous_commit_message"] == "implement pi\n"
-            assert data["previous_commit_timestamp"] == "2023-07-03T09:32:44Z2"
+            assert data["previous_commit_timestamp"] == "2023-07-03T09:32:44Z"
             assert data["time_to_patch"] == "0:00:51"
             assert data["strategy"] == "FAIL_PASS"
             assert data["bug_patch_files_type"] == "NON_SOURCE_ONLY"
