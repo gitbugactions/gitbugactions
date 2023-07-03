@@ -177,7 +177,8 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 1
+            assert len(lines) == 3
+
             data = json.loads(lines[0])
             assert data["commit_hash"] == "0e1907f75fcd3936b6d64292bc278250f2ee9ca3"
             assert data["commit_message"] == "fix sum\n"
@@ -256,6 +257,40 @@ class TestCollectBugs:
                     ]
                 ]
             )
+
+            data = json.loads(lines[1])
+            assert data["commit_hash"] == "fc7ce580d4ea1a8af029b31f14aba881a4c02368"
+            assert data["commit_message"] == "fix pi\n"
+            assert data["commit_timestamp"] == "2023-07-03T09:33:35Z"
+            assert (
+                data["previous_commit_hash"]
+                == "3b1fba52bb74343dfd2466446cbfd94f1f1700f9"
+            )
+            assert data["previous_commit_message"] == "implement pi\n"
+            assert data["previous_commit_timestamp"] == "2023-07-03T09:32:44Z2"
+            assert data["time_to_patch"] == "0:00:51"
+            assert data["strategy"] == "FAIL_PASS"
+            assert data["bug_patch_files_type"] == "NON_SOURCE_ONLY"
+            assert len(data["actions_runs"]) == 3
+            assert len(data["actions_runs"][0][0]["tests"]) == 13
+            assert len(data["actions_runs"][2][0]["tests"]) == 13
+
+            data = json.loads(lines[2])
+            assert data["commit_hash"] == "05e841e86b09a60324dd77aa6d247bfa6331ad9e"
+            assert data["commit_message"] == "fix golden\n"
+            assert data["commit_timestamp"] == "2023-07-03T09:39:47Z"
+            assert (
+                data["previous_commit_hash"]
+                == "cb83f8851cc1a4f30bef7e096c22caba10cb450f"
+            )
+            assert data["previous_commit_message"] == "implement golden\n"
+            assert data["previous_commit_timestamp"] == "2023-07-03T09:39:24Z"
+            assert data["time_to_patch"] == "0:00:23"
+            assert data["strategy"] == "FAIL_PASS"
+            assert data["bug_patch_files_type"] == "MIXED"
+            assert len(data["actions_runs"]) == 3
+            assert len(data["actions_runs"][0][0]["tests"]) == 15
+            assert len(data["actions_runs"][2][0]["tests"]) == 15
 
     @pytest.mark.dependency()
     def test_crawlergpt_gradle_test_repo(self):
