@@ -15,7 +15,7 @@ from crawlergpt.util import delete_repo_clone
 from crawlergpt.actions.actions import ActTestsRun
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
 class CollectionStrategy(Enum):
@@ -158,9 +158,7 @@ class PatchCollector:
             tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
         )
         repo_path = os.path.join(repo_path, str(uuid.uuid4()))
-        print(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-        sys.stdout.flush()
-        sys.stderr.flush()
+        logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, repo_path
         )
@@ -352,11 +350,9 @@ class PatchCollector:
                 self.repo_clone, commit, previous_commit
             )
             if len(bug_patch) == 0:
-                print(
+                logging.info(
                     f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
                 )
-                sys.stdout.flush()
-                sys.stderr.flush()
                 continue
 
             if previous_commit.hex in patches:
@@ -480,7 +476,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
     )
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
-    collectors_futures = []
+    future_to_collector: Dict[Future, PatchCollector] = {}
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
 
     dir_list = os.listdir(data_path)
@@ -494,31 +490,39 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 if run["actions_successful"] and run["number_of_test_actions"] == 1:
                     repo = github.get_repo(run["repository"])
                     patch_collector = PatchCollector(repo)
-                    future = executor.submit(patch_collector.get_possible_patches)
-                    collectors_futures.append((patch_collector, future))
+                    future_to_collector[
+                        executor.submit(patch_collector.get_possible_patches)
+                    ] = patch_collector
 
-    for patch_collector, future in collectors_futures:
+    for future in as_completed(future_to_collector):
         try:
+            patch_collector = future_to_collector[future]
             result = future.result()
-        except Exception as e:
-            logging.error(f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}")
+        except Exception:
+            logging.error(
+                f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}"
+            )
         else:
             patch_collectors.append((patch_collector, result))
             patch_collector.delete_repo()
 
-    patches_futures = []
+    future_to_patches: Dict[Future, Tuple[BugPatch, bool]] = {}
     for patch_collector, bug_patches in patch_collectors:
         bug_patches_len = len(bug_patches)
 
         for i, bug_patch in enumerate(bug_patches):
-            future = executor.submit(patch_collector.test_patch, bug_patch)
-            patches_futures.append((bug_patch, future, i == bug_patches_len - 1))
+            future_to_patches[
+                executor.submit(patch_collector.test_patch, bug_patch)
+            ] = (bug_patch, i == bug_patches_len - 1)
 
-    for bug_patch, future, last_collector_bug_patch in patches_futures:
+    for future in future_to_patches:
         try:
+            bug_patch, last_collector_bug_patch = future_to_patches[future]
             is_patch = future.result()
-        except Exception as e:
-            logging.error(f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}")
+        except Exception:
+            logging.error(
+                f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
+            )
         else:
             # Last bug patch for this patch collector deletes the repo
             if last_collector_bug_patch:
