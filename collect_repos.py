@@ -26,7 +26,9 @@ class CollectReposStrategy(RepoStrategy):
             json.dump(data, f, indent=4)
 
     def handle_repo(self, repo: Repository):
-        logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
+        print(f"Cloning {repo.full_name} - {repo.clone_url}")
+        sys.stdout.flush()
+        sys.stderr.flush()
         repo_path = os.path.join(
             tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-")
         )
@@ -61,7 +63,9 @@ class CollectReposStrategy(RepoStrategy):
             actions.save_workflows()
 
             if len(actions.test_workflows) == 1:
-                logging.info(f"Running actions for {repo.full_name}")
+                print(f"Running actions for {repo.full_name}")
+                sys.stdout.flush()
+                sys.stderr.flush()
 
                 # Act creates names for the containers by hashing the content of the workflows
                 # To avoid conflicts between threads, we randomize the name
@@ -87,9 +91,12 @@ class CollectReposStrategy(RepoStrategy):
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
-            logging.error(
+            print(
                 f"Error while processing {repo.full_name}: {traceback.format_exc()}"
             )
+            sys.stdout.flush()
+            sys.stderr.flush()
+
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
 

@@ -1,4 +1,4 @@
-import os
+import os, sys
 import grp
 import time
 import docker
@@ -115,7 +115,9 @@ class Act:
             f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
         )
         if run.returncode != 0:
-            logging.error("Act is not correctly installed")
+            print("Act is not correctly installed")
+            sys.stdout.flush()
+            sys.stderr.flush()
             exit(-1)
 
         # Creates crawler image

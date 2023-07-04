@@ -1,4 +1,4 @@
-import os
+import os, sys
 import time
 import logging
 from datetime import datetime
@@ -32,7 +32,10 @@ class GithubToken:
             for token in tokens:
                 GithubToken(token)
         else:
-            logging.warning("No GITHUB_ACCESS_TOKEN provided.")
+            print("No GITHUB_ACCESS_TOKEN provided.")
+            sys.stdout.flush()
+            sys.stderr.flush()
+
 
     @staticmethod
     def __wait_for_tokens():

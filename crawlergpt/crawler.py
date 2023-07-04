@@ -1,4 +1,4 @@
-import os
+import os, sys
 import time
 import math
 import logging
@@ -49,7 +49,9 @@ class SearchRateLimiter:
                 return fn(*args, **kwargs)
             except RateLimitExceededException as exc:
                 self.lock.acquire()
-                logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
+                print(f"Github Rate Limit Exceeded: {exc.headers}")
+                sys.stdout.flush()
+                sys.stderr.flush()
                 reset_time = datetime.fromtimestamp(
                     int(exc.headers["x-ratelimit-reset"])
                 )
@@ -146,16 +148,22 @@ class RepoCrawler:
         return (start_date.isoformat(), end_date.isoformat())
 
     def __search_repos(self, query: str, repo_strategy: RepoStrategy):
-        logging.info(f"Searching repos with query: {query}")
+        print(f"Searching repos with query: {query}")
+        sys.stdout.flush()
+        sys.stderr.flush()
         page_list = self.rate_lim.request(self.github.search_repositories, query)
         totalCount = self.rate_lim.request(getattr, page_list, "totalCount")
         if totalCount is None:
-            logging.error(f'Search "{query}" failed')
+            print(f'Search "{query}" failed')
+            sys.stdout.flush()
+            sys.stderr.flush()
             return
         elif totalCount == 1000:
-            logging.warning(
+            print(
                 f"1000 results limit of the GitHub API was reached.\nQuery: {query}"
             )
+            sys.stdout.flush()
+            sys.stderr.flush()
         n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
             repos = self.rate_lim.request(page_list.get_page, p)
