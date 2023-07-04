@@ -142,6 +142,8 @@ class BugPatch:
 
 
 class PatchCollector:
+    CLONE_SEM = threading.Semaphore(8)
+    
     def __init__(self, repo: Repository):
         self.repo: Repository = repo
         self.language = repo.language.strip().lower()
@@ -161,9 +163,10 @@ class PatchCollector:
         print(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
         sys.stdout.flush()
         sys.stderr.flush()
-        self.repo_clone: pygit2.Repository = pygit2.clone_repository(
-            self.repo.clone_url, repo_path
-        )
+        with PatchCollector.CLONE_SEM:
+            self.repo_clone: pygit2.Repository = pygit2.clone_repository(
+                self.repo.clone_url, repo_path
+            )
         self.cloned = True
         self.clone_lock.release()
 
