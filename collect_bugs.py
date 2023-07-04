@@ -1,7 +1,7 @@
-import os, sys, re, subprocess
+import os, sys, re, subprocess, traceback
 import uuid, json
 import shutil
-import pygit2
+import pygit2, urllib3
 import tempfile
 import logging
 import threading
@@ -158,7 +158,9 @@ class PatchCollector:
             tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
         )
         repo_path = os.path.join(repo_path, str(uuid.uuid4()))
-        logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
+        print(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
+        sys.stdout.flush()
+        sys.stderr.flush()
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, repo_path
         )
@@ -350,9 +352,11 @@ class PatchCollector:
                 self.repo_clone, commit, previous_commit
             )
             if len(bug_patch) == 0:
-                logging.info(
+                print(
                     f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
                 )
+                sys.stdout.flush()
+                sys.stderr.flush()
                 continue
 
             if previous_commit.hex in patches:
@@ -472,6 +476,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
     github: Github = Github(
         login_or_token=token if token is None else token.token,
         per_page=100,
+        pool_size=n_workers,
     )
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
@@ -493,8 +498,13 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                     collectors_futures.append((patch_collector, future))
 
     for patch_collector, future in collectors_futures:
-        patch_collectors.append((patch_collector, future.result()))
-        patch_collector.delete_repo()
+        try:
+            result = future.result()
+        except Exception as e:
+            logging.error(f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}")
+        else:
+            patch_collectors.append((patch_collector, result))
+            patch_collector.delete_repo()
 
     patches_futures = []
     for patch_collector, bug_patches in patch_collectors:
@@ -505,17 +515,21 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
             patches_futures.append((bug_patch, future, i == bug_patches_len - 1))
 
     for bug_patch, future, last_collector_bug_patch in patches_futures:
-        is_patch = future.result()
-        # Last bug patch for this patch collector deletes the repo
-        if last_collector_bug_patch:
-            patch_collectors.pop(0)[0].delete_repo()
-        if is_patch:
-            data_path = os.path.join(
-                results_path, bug_patch.repo.full_name.replace("/", "-") + ".json"
-            )
-            with open(data_path, "a") as fp:
-                data = bug_patch.get_data()
-                fp.write((json.dumps(data) + "\n"))
+        try:
+            is_patch = future.result()
+        except Exception as e:
+            logging.error(f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}")
+        else:
+            # Last bug patch for this patch collector deletes the repo
+            if last_collector_bug_patch:
+                patch_collectors.pop(0)[0].delete_repo()
+            if is_patch:
+                data_path = os.path.join(
+                    results_path, bug_patch.repo.full_name.replace("/", "-") + ".json"
+                )
+                with open(data_path, "a") as fp:
+                    data = bug_patch.get_data()
+                    fp.write((json.dumps(data) + "\n"))
 
 
 def main():
