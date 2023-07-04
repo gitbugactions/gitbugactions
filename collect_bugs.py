@@ -521,7 +521,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 executor.submit(patch_collector.test_patch, bug_patch)
             ] = (bug_patch, i == bug_patches_len - 1)
 
-    for future in future_to_patches:
+    for future in as_completed(future_to_patches):
         try:
             bug_patch, last_collector_bug_patch = future_to_patches[future]
             is_patch = future.result()
