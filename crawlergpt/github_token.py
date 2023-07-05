@@ -36,7 +36,6 @@ class GithubToken:
             sys.stdout.flush()
             sys.stderr.flush()
 
-
     @staticmethod
     def __wait_for_tokens():
         if len(GithubToken.__TOKENS) == 0:

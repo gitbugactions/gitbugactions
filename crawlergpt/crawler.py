@@ -159,9 +159,7 @@ class RepoCrawler:
             sys.stderr.flush()
             return
         elif totalCount == 1000:
-            print(
-                f"1000 results limit of the GitHub API was reached.\nQuery: {query}"
-            )
+            print(f"1000 results limit of the GitHub API was reached.\nQuery: {query}")
             sys.stdout.flush()
             sys.stderr.flush()
         n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)

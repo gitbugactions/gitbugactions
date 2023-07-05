@@ -17,6 +17,7 @@ from crawlergpt.test_executor import TestExecutor
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.docker.export import extract_diff
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from crawlergpt.actions.actions import ActCacheDirManager
 
 diff_file_lock = threading.Lock()
 
@@ -32,9 +33,7 @@ def export_bug_containers(bug: Dict, export_path: str):
         f"https://github.com/{repo_full_name}", temp_path
     )
     main_commit = repo_clone.revparse_single(str(repo_clone.head.target))
-    # We need to set a different cache dir for each worker to avoid conflicts
-    # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
-    act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
+    act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     executor = TestExecutor(repo_clone, bug["language"], act_cache_dir)
     commit: pygit2.Commit = repo_clone.revparse_single(commit_hash)
     previous_commit: pygit2.Commit = repo_clone.revparse_single(commit_hash + "~1")
@@ -98,11 +97,11 @@ def export_bug_containers(bug: Dict, export_path: str):
             )
     finally:
         delete_repo_clone(repo_clone)
-        if os.path.exists(act_cache_dir):
-            shutil.rmtree(act_cache_dir, ignore_errors=True)
+        ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
 
 def export_bugs(dataset_path, output_folder_path, n_workers=1):
+    ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
     futures = []
 

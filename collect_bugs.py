@@ -1,7 +1,7 @@
 import os, sys, re, subprocess, traceback
 import uuid, json
 import shutil
-import pygit2, urllib3
+import pygit2
 import tempfile
 import logging
 import threading
@@ -12,7 +12,7 @@ from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
 from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import ActTestsRun
+from crawlergpt.actions.actions import ActTestsRun, ActCacheDirManager
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
@@ -143,7 +143,7 @@ class BugPatch:
 
 class PatchCollector:
     CLONE_SEM = threading.Semaphore(8)
-    
+
     def __init__(self, repo: Repository):
         self.repo: Repository = repo
         self.language = repo.language.strip().lower()
@@ -327,7 +327,7 @@ class PatchCollector:
 
         return issues
 
-    def __equal_patches(patch1: PatchSet, patch2: PatchSet):
+    def __equal_patches(self, patch1: PatchSet, patch2: PatchSet):
         pass
 
     def get_possible_patches(self):
@@ -397,11 +397,7 @@ class PatchCollector:
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
 
-        # We need to set a different cache dir for each worker to avoid conflicts
-        # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
-        act_cache_dir = os.path.join(
-            tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
-        )
+        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
 
         try:
             test_patch_runs = self.__test_patch(
@@ -465,8 +461,7 @@ class PatchCollector:
             return False
 
         finally:
-            if os.path.exists(act_cache_dir):
-                shutil.rmtree(act_cache_dir, ignore_errors=True)
+            ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
     def delete_repo(self):
         if self.cloned:
@@ -481,6 +476,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
         per_page=100,
         pool_size=n_workers,
     )
+    ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
     future_to_collector: Dict[Future, PatchCollector] = {}
@@ -531,7 +527,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
         except Exception:
             print(
                 f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
-            )        
+            )
             sys.stdout.flush()
             sys.stderr.flush()
         else:

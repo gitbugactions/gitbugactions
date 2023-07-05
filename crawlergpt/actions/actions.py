@@ -1,5 +1,6 @@
-import os, sys
+import os, sys, tempfile, shutil
 import grp
+import uuid
 import time
 import docker
 import logging
@@ -10,6 +11,76 @@ from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
+
+
+class ActCacheDirManager:
+    # We need to set a different cache dir for each worker to avoid conflicts
+    # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
+
+    __ACT_CACHE_DIR_LOCK: threading.Lock = threading.Lock()
+    __ACT_CACHE_DIRS: Dict[str, bool] = dict()
+    __DEFAULT_CACHE_DIR: str = os.path.join(
+        tempfile.gettempdir(), "act-cache", "default"
+    )
+
+    @classmethod
+    def init_act_cache_dirs(cls, n_dirs: int):
+        cls.__ACT_CACHE_DIR_LOCK.acquire()
+        cls.__ACT_CACHE_DIRS = {
+            os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4())): True
+            for _ in range(n_dirs)
+        }
+        cls.__ACT_CACHE_DIR_LOCK.release()
+
+    @classmethod
+    def acquire_act_cache_dir(cls) -> str:
+        """
+        A thread calls this method to acquire a free act cache dir from the queue
+        """
+        cls.__ACT_CACHE_DIR_LOCK.acquire()
+
+        try:
+            if len(cls.__ACT_CACHE_DIRS) == 0:
+                # TODO: logging.warn
+                print(
+                    f"Using a default act cache dir. If running multiple threads you must use different act caches for each thread."
+                )
+                return cls.__DEFAULT_CACHE_DIR
+
+            for cache_dir in cls.__ACT_CACHE_DIRS:
+                if cls.__ACT_CACHE_DIRS[cache_dir]:
+                    cls.__ACT_CACHE_DIRS[cache_dir] = False
+                    return cache_dir
+
+            # TODO: logging.warn
+            print(f"No act cache dir is available. Using a random one...")
+
+            return os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
+        finally:
+            sys.stdout.flush()
+            cls.__ACT_CACHE_DIR_LOCK.release()
+
+    @classmethod
+    def return_act_cache_dir(cls, act_cache_dir: str):
+        """
+        A thread calls this method to return and free up the acquired act cache dir
+        """
+        cls.__ACT_CACHE_DIR_LOCK.acquire()
+
+        try:
+            # If the default cache dir, do nothing
+            if act_cache_dir == cls.__DEFAULT_CACHE_DIR:
+                return
+            # If a managed one, make it free
+            elif act_cache_dir in cls.__ACT_CACHE_DIRS:
+                cls.__ACT_CACHE_DIRS[act_cache_dir] = True
+                return
+            # If a random one delete it
+            elif os.path.exists(act_cache_dir):
+                shutil.rmtree(act_cache_dir, ignore_errors=True)
+                return
+        finally:
+            cls.__ACT_CACHE_DIR_LOCK.release()
 
 
 @dataclass

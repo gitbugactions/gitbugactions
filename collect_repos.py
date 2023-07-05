@@ -8,7 +8,7 @@ from datetime import datetime
 from github import Repository
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
-from crawlergpt.actions.actions import GitHubActions
+from crawlergpt.actions.actions import GitHubActions, ActCacheDirManager
 
 
 class CollectReposStrategy(RepoStrategy):
@@ -72,18 +72,13 @@ class CollectReposStrategy(RepoStrategy):
                 actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
                 actions.save_workflows()
 
-                # We need to set a different cache dir for each worker to avoid conflicts
-                # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
-                act_cache_dir = os.path.join(
-                    tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
-                )
+                act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
                 try:
                     act_run = actions.run_workflow(
                         actions.test_workflows[0], act_cache_dir=act_cache_dir
                     )
                 finally:
-                    if os.path.exists(act_cache_dir):
-                        shutil.rmtree(act_cache_dir, ignore_errors=True)
+                    ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
                 data["actions_successful"] = not act_run.failed
                 data["actions_run"] = act_run.asdict()
@@ -91,9 +86,7 @@ class CollectReposStrategy(RepoStrategy):
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
-            print(
-                f"Error while processing {repo.full_name}: {traceback.format_exc()}"
-            )
+            print(f"Error while processing {repo.full_name}: {traceback.format_exc()}")
             sys.stdout.flush()
             sys.stderr.flush()
 
