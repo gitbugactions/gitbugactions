@@ -153,6 +153,9 @@ class Act:
         end_time = time.time()
         stdout = run.stdout.decode("utf-8")
         stderr = run.stderr.decode("utf-8")
+        print(stdout)
+        print(stderr)
+        sys.stdout.flush()
         tests = workflow.get_test_results(repo_path)
         tests_run = ActTestsRun(
             failed=False,
