@@ -80,7 +80,7 @@ class Act:
     __ACT_PATH = "act"
     __ACT_SETUP = False
     # The flag -u allows files to be created with the current user
-    __FLAGS = f"--bind --pull=false --cache-server-port 0"
+    __FLAGS = f"--bind --pull=false --no-cache-server"
     __SETUP_LOCK = threading.Lock()
 
     def __init__(
