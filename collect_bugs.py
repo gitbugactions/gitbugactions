@@ -1,9 +1,10 @@
-import os, sys, re, subprocess
+import os, sys, re, subprocess, traceback
 import uuid, json
 import shutil
 import pygit2
 import tempfile
 import logging
+import tqdm
 import threading
 import fire
 from typing import List, Tuple, Any, Dict
@@ -12,10 +13,10 @@ from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
 from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import ActTestsRun
+from crawlergpt.actions.actions import ActTestsRun, ActCacheDirManager
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
 class CollectionStrategy(Enum):
@@ -162,6 +163,10 @@ class PatchCollector:
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, repo_path
         )
+        # Set gc.auto to 0 to avoid "too many open files" bug
+        subprocess.run(
+            f"git config gc.auto 0", cwd=repo_path, shell=True, capture_output=True
+        )
         self.cloned = True
         self.clone_lock.release()
 
@@ -203,11 +208,10 @@ class PatchCollector:
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
         shutil.copytree(self.repo_clone.workdir, new_repo_path)
-
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
-        executor = TestExecutor(repo_clone, self.language, act_cache_dir)
 
         try:
+            executor = TestExecutor(repo_clone, self.language, act_cache_dir)
             first_commit = repo_clone.revparse_single(executor.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
@@ -322,9 +326,6 @@ class PatchCollector:
 
         return issues
 
-    def __equal_patches(patch1: PatchSet, patch2: PatchSet):
-        pass
-
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -390,11 +391,7 @@ class PatchCollector:
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
 
-        # We need to set a different cache dir for each worker to avoid conflicts
-        # See https://github.com/nektos/act/issues/1885 -> "act's git actions download cache isn't process / thread safe"
-        act_cache_dir = os.path.join(
-            tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
-        )
+        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
 
         try:
             test_patch_runs = self.__test_patch(
@@ -458,8 +455,7 @@ class PatchCollector:
             return False
 
         finally:
-            if os.path.exists(act_cache_dir):
-                shutil.rmtree(act_cache_dir, ignore_errors=True)
+            ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
     def delete_repo(self):
         if self.cloned:
@@ -472,10 +468,12 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
     github: Github = Github(
         login_or_token=token if token is None else token.token,
         per_page=100,
+        pool_size=n_workers,
     )
+    ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
 
     executor = ThreadPoolExecutor(max_workers=n_workers)
-    collectors_futures = []
+    future_to_collector: Dict[Future, PatchCollector] = {}
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
 
     dir_list = os.listdir(data_path)
@@ -486,36 +484,63 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 if not os.path.exists(results_path):
                     os.mkdir(results_path)
 
-                if run["actions_successful"] and run["number_of_test_actions"] == 1:
+                if (
+                    run["number_of_test_actions"] == 1
+                    and "actions_run" in run
+                    and len(run["actions_run"]["tests"]) > 0
+                ):
                     repo = github.get_repo(run["repository"])
                     patch_collector = PatchCollector(repo)
-                    future = executor.submit(patch_collector.get_possible_patches)
-                    collectors_futures.append((patch_collector, future))
+                    future_to_collector[
+                        executor.submit(patch_collector.get_possible_patches)
+                    ] = patch_collector
 
-    for patch_collector, future in collectors_futures:
-        patch_collectors.append((patch_collector, future.result()))
-        patch_collector.delete_repo()
+    for future in tqdm.tqdm(
+        as_completed(future_to_collector), total=len(future_to_collector)
+    ):
+        try:
+            patch_collector = future_to_collector[future]
+            result = future.result()
+        except Exception:
+            logging.error(
+                f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}"
+            )
+        else:
+            patch_collectors.append((patch_collector, result))
+            patch_collector.delete_repo()
 
-    patches_futures = []
+    future_to_patches: Dict[Future, Tuple[BugPatch, bool]] = {}
     for patch_collector, bug_patches in patch_collectors:
         bug_patches_len = len(bug_patches)
 
         for i, bug_patch in enumerate(bug_patches):
-            future = executor.submit(patch_collector.test_patch, bug_patch)
-            patches_futures.append((bug_patch, future, i == bug_patches_len - 1))
+            future_to_patches[
+                executor.submit(patch_collector.test_patch, bug_patch)
+            ] = (bug_patch, i == bug_patches_len - 1)
 
-    for bug_patch, future, last_collector_bug_patch in patches_futures:
-        is_patch = future.result()
-        # Last bug patch for this patch collector deletes the repo
-        if last_collector_bug_patch:
-            patch_collectors.pop(0)[0].delete_repo()
-        if is_patch:
-            data_path = os.path.join(
-                results_path, bug_patch.repo.full_name.replace("/", "-") + ".json"
+    for future in tqdm.tqdm(
+        as_completed(future_to_patches), total=len(future_to_patches)
+    ):
+        try:
+            bug_patch, last_collector_bug_patch = future_to_patches[future]
+            is_patch = future.result()
+        except Exception:
+            logging.info(
+                f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
             )
-            with open(data_path, "a") as fp:
-                data = bug_patch.get_data()
-                fp.write((json.dumps(data) + "\n"))
+        else:
+            # Last bug patch for this patch collector deletes the repo
+            if last_collector_bug_patch:
+                patch_collectors.pop(0)[0].delete_repo()
+            if is_patch:
+                data_path = os.path.join(
+                    results_path, bug_patch.repo.full_name.replace("/", "-") + ".json"
+                )
+                with open(data_path, "a") as fp:
+                    data = bug_patch.get_data()
+                    fp.write((json.dumps(data) + "\n"))
+
+    executor.shutdown()
 
 
 def main():

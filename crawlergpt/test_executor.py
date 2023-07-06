@@ -1,5 +1,5 @@
-import os, copy, uuid
-import pygit2
+import os, copy, uuid, logging, traceback
+import pygit2, yaml
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
 from crawlergpt.actions.workflow import GitHubWorkflow
 from pygit2 import Repository
@@ -30,14 +30,24 @@ class TestExecutor:
             str(self.repo_clone.head.target)
         )
 
-        for commit in self.repo_clone.walk(self.repo_clone.head.target):
+        for commit in self.repo_clone.walk(
+            self.repo_clone.head.target,
+            pygit2.GIT_SORT_TOPOLOGICAL | pygit2.GIT_SORT_REVERSE,
+        ):
             self.repo_clone.checkout_tree(commit)
             self.repo_clone.set_head(commit.oid)
-            actions = GitHubActions(
-                self.repo_clone.workdir, self.language, runner=self.runner
-            )
-            if len(actions.test_workflows) > 0:
-                self.default_actions = actions
+            try:
+                actions = GitHubActions(
+                    self.repo_clone.workdir, self.language, runner=self.runner
+                )
+                if len(actions.test_workflows) > 0:
+                    self.default_actions = actions
+                    break
+            except yaml.YAMLError:
+                logging.warning(
+                    f"YAML error while parsing workflow (repo={self.repo_clone}, commit={commit.oid}): {traceback.format_exc()})"
+                )
+                continue
 
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
 
@@ -58,7 +68,7 @@ class TestExecutor:
         else:
             if len(test_actions.test_workflows) == 0:
                 for workflow in self.default_actions.test_workflows:
-                    new_workflow = copy.deepcopy(workflow)
+                    new_workflow = copy.copy(workflow)
                     new_workflow.path = os.path.join(
                         self.repo_clone.workdir,
                         ".github/workflows",

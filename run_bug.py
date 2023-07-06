@@ -11,6 +11,7 @@ import tempfile
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.docker.export import create_diff_image
 from crawlergpt.actions.workflow import GitHubWorkflowFactory
+from crawlergpt.actions.actions import ActCacheDirManager
 
 
 def get_bug_from_metadata(metadata_path, repo_name, commit):
@@ -55,9 +56,7 @@ def run_bug(
             create_diff_image(
                 "crawlergpt:latest", image_name, os.path.join(diff_folder_path, path)
             )
-            act_cache_dir = os.path.join(
-                tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
-            )
+            act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
             workflow_dir_path = os.path.join(diff_folder_path, "workflow")
             workflow_name = os.listdir(workflow_dir_path)[0]
             workflow_path = os.path.join(workflow_dir_path, workflow_name)
