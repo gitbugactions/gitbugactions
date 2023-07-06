@@ -551,6 +551,8 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                     data = bug_patch.get_data()
                     fp.write((json.dumps(data) + "\n"))
 
+    executor.shutdown()
+
 
 def main():
     fire.Fire(collect_bugs)

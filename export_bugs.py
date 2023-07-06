@@ -117,6 +117,8 @@ def export_bugs(dataset_path, output_folder_path, n_workers=1):
     for future in as_completed(futures):
         future.result()
 
+    executor.shutdown()
+
 
 def main():
     fire.Fire(export_bugs)
