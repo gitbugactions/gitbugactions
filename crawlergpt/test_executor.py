@@ -30,7 +30,10 @@ class TestExecutor:
             str(self.repo_clone.head.target)
         )
 
-        for commit in self.repo_clone.walk(self.repo_clone.head.target):
+        for commit in self.repo_clone.walk(
+            self.repo_clone.head.target,
+            sort_mode=pygit2.GIT_SORT_TOPOLOGICAL | pygit2.GIT_SORT_REVERSE,
+        ):
             self.repo_clone.checkout_tree(commit)
             self.repo_clone.set_head(commit.oid)
             try:
@@ -39,6 +42,7 @@ class TestExecutor:
                 )
                 if len(actions.test_workflows) > 0:
                     self.default_actions = actions
+                    break
             except yaml.YAMLError:
                 # TODO: logging.warn
                 print(
