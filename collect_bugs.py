@@ -164,7 +164,9 @@ class PatchCollector:
             self.repo.clone_url, repo_path
         )
         # Set gc.auto to 0 to avoid "too many open files" bug
-        subprocess.run(f"git config gc.auto 0", cwd=repo_path, shell=True, capture_output=True)
+        subprocess.run(
+            f"git config gc.auto 0", cwd=repo_path, shell=True, capture_output=True
+        )
         self.cloned = True
         self.clone_lock.release()
 
