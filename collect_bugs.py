@@ -163,6 +163,8 @@ class PatchCollector:
         self.repo_clone: pygit2.Repository = pygit2.clone_repository(
             self.repo.clone_url, repo_path
         )
+        # Set gc.auto to 0 to avoid "too many open files" bug
+        subprocess.run(f"cd {repo_path} && git config gc.auto 0", capture_output=True)
         self.cloned = True
         self.clone_lock.release()
 
