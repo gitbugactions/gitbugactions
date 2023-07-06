@@ -239,10 +239,10 @@ class Act:
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
 
-        if GithubToken.has_tokens():
-            token.update_rate_limit()
-            for token in workflow.tokens:
-                token.update_rate_limit()
+        #if GithubToken.has_tokens():
+        #    token.update_rate_limit()
+        #    for token in workflow.tokens:
+        #        token.update_rate_limit()
 
         return tests_run
 
