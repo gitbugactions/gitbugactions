@@ -9,6 +9,7 @@ from typing import List
 
 class GithubToken:
     __TOKENS: List["GithubToken"] = None
+    __TOKENS_LOCK: threading.Lock = threading.Lock()
     __CURRENT_TOKEN = 0
     __OFFSET = 200
     __UPDATE_RATE_INTERVAL = 5  # in seconds
@@ -56,20 +57,25 @@ class GithubToken:
 
     @staticmethod
     def get_token() -> "GithubToken":
-        if GithubToken.__TOKENS is None:
-            GithubToken.init_tokens()
+        with GithubToken.__TOKENS_LOCK:
+            if GithubToken.__TOKENS is None:
+                GithubToken.init_tokens()
 
-        len_tokens = 0 if not GithubToken.has_tokens() else len(GithubToken.__TOKENS)
-        if len_tokens == 0:
-            return None
+            len_tokens = (
+                0 if not GithubToken.has_tokens() else len(GithubToken.__TOKENS)
+            )
+            if len_tokens == 0:
+                return None
 
-        next_tokens = (
-            GithubToken.__TOKENS[GithubToken.__CURRENT_TOKEN :]
-            + GithubToken.__TOKENS[: GithubToken.__CURRENT_TOKEN]
-        )
-        for token in next_tokens:
-            GithubToken.__CURRENT_TOKEN = (GithubToken.__CURRENT_TOKEN + 1) % len_tokens
-            if token.remaining >= GithubToken.__OFFSET:
-                return token
+            next_tokens = (
+                GithubToken.__TOKENS[GithubToken.__CURRENT_TOKEN :]
+                + GithubToken.__TOKENS[: GithubToken.__CURRENT_TOKEN]
+            )
+            for token in next_tokens:
+                GithubToken.__CURRENT_TOKEN = (
+                    GithubToken.__CURRENT_TOKEN + 1
+                ) % len_tokens
+                if token.remaining >= GithubToken.__OFFSET:
+                    return token
 
-        GithubToken.__wait_for_tokens()
+            GithubToken.__wait_for_tokens()
