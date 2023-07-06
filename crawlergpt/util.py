@@ -12,7 +12,6 @@ def delete_repo_clone(repo_clone: pygit2.Repository):
     #     elif os.path.exists(path) and os.path.isfile(path):
     #         os.remove(path)
 
-    # repo_clone.free()
+    repo_clone.free()
     # if os.path.exists(repo_clone.workdir):
     #     shutil.rmtree(repo_clone.workdir, onerror=retry_remove)
-    pass
