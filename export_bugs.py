@@ -25,9 +25,7 @@ diff_file_lock = threading.Lock()
 def export_bug_containers(bug: Dict, export_path: str):
     repo_full_name = bug["repository"]
     commit_hash = bug["commit_hash"]
-    print(f"Exporting {commit_hash} from {repo_full_name}...")
-    sys.stdout.flush()
-    sys.stderr.flush()
+    logging.info(f"Exporting {commit_hash} from {repo_full_name}...")
     temp_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
     repo_clone = pygit2.clone_repository(
         f"https://github.com/{repo_full_name}", temp_path
@@ -53,7 +51,7 @@ def export_bug_containers(bug: Dict, export_path: str):
                     filters=filters
                 )
                 if run.failed:
-                    print(
+                    logging.warning(
                         f"Run failed. Can't export container {c.hex} from {repo_full_name} ({run.workflow})."
                     )
                     sys.stdout.flush()

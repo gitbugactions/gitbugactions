@@ -41,8 +41,7 @@ class ActCacheDirManager:
 
         try:
             if len(cls.__ACT_CACHE_DIRS) == 0:
-                # TODO: logging.warn
-                print(
+                logging.warning(
                     f"Using a default act cache dir. If running multiple threads you must use different act caches for each thread."
                 )
                 return cls.__DEFAULT_CACHE_DIR
@@ -52,8 +51,7 @@ class ActCacheDirManager:
                     cls.__ACT_CACHE_DIRS[cache_dir] = False
                     return cache_dir
 
-            # TODO: logging.warn
-            print(f"No act cache dir is available. Using a random one...")
+            logging.warning(f"No act cache dir is available. Using a random one...")
 
             return os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
         finally:
@@ -186,9 +184,7 @@ class Act:
             f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
         )
         if run.returncode != 0:
-            print("Act is not correctly installed")
-            sys.stdout.flush()
-            sys.stderr.flush()
+            logging.error("Act is not correctly installed")
             exit(-1)
 
         # Creates crawler image

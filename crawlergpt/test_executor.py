@@ -1,4 +1,4 @@
-import os, copy, uuid, sys, traceback
+import os, copy, uuid, logging, traceback
 import pygit2, yaml
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
 from crawlergpt.actions.workflow import GitHubWorkflow
@@ -44,11 +44,9 @@ class TestExecutor:
                     self.default_actions = actions
                     break
             except yaml.YAMLError:
-                # TODO: logging.warn
-                print(
+                logging.warning(
                     f"YAML error while parsing workflow (repo={self.repo_clone}, commit={commit.oid}): {traceback.format_exc()})"
                 )
-                sys.stdout.flush()
                 continue
 
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)

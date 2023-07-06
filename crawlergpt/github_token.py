@@ -32,9 +32,7 @@ class GithubToken:
             for token in tokens:
                 GithubToken(token)
         else:
-            print("No GITHUB_ACCESS_TOKEN provided.")
-            sys.stdout.flush()
-            sys.stderr.flush()
+            logging.warning("No GITHUB_ACCESS_TOKEN provided.")
 
     @staticmethod
     def __wait_for_tokens():

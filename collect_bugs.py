@@ -161,7 +161,7 @@ class PatchCollector:
             tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
         )
         repo_path = os.path.join(repo_path, str(uuid.uuid4()))
-        print(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
+        logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
         sys.stdout.flush()
         sys.stderr.flush()
         with PatchCollector.CLONE_SEM:
@@ -355,11 +355,9 @@ class PatchCollector:
                 self.repo_clone, commit, previous_commit
             )
             if len(bug_patch) == 0:
-                print(
+                logging.info(
                     f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
                 )
-                sys.stdout.flush()
-                sys.stderr.flush()
                 continue
 
             if previous_commit.hex in patches:
@@ -508,11 +506,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
             patch_collector = future_to_collector[future]
             result = future.result()
         except Exception:
-            print(
+            logging.error(
                 f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}"
             )
-            sys.stdout.flush()
-            sys.stderr.flush()
         else:
             patch_collectors.append((patch_collector, result))
             patch_collector.delete_repo()
@@ -533,11 +529,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
             bug_patch, last_collector_bug_patch = future_to_patches[future]
             is_patch = future.result()
         except Exception:
-            print(
+            logging.info(
                 f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
             )
-            sys.stdout.flush()
-            sys.stderr.flush()
         else:
             # Last bug patch for this patch collector deletes the repo
             if last_collector_bug_patch:

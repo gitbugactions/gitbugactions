@@ -41,7 +41,7 @@ def run_bug(
     repo_name = repo_name.replace("/", "-")
     bug = get_bug_from_metadata(metadata_path, repo_name, commit)
     if bug is None:
-        print(f"{repo_name}@{commit} not found on the metadata folder.")
+        logging.info(f"{repo_name}@{commit} not found on the metadata folder.")
         sys.stdout.flush()
         sys.stderr.flush()
         exit(-1)
@@ -91,9 +91,7 @@ def run_bug(
 
             return runs
 
-    print(f"{repo_name}@{commit} was not able to run.")
-    sys.stdout.flush()
-    sys.stderr.flush()
+    logging.error(f"{repo_name}@{commit} was not able to run.")
     exit(-1)
 
 
