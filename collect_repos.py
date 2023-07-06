@@ -82,7 +82,7 @@ class CollectReposStrategy(RepoStrategy):
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
         except Exception as e:
-            logging.info(
+            logging.error(
                 f"Error while processing {repo.full_name}: {traceback.format_exc()}"
             )
 
