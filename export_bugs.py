@@ -51,7 +51,7 @@ def export_bug_containers(bug: Dict, export_path: str):
                     filters=filters
                 )
                 if run.failed:
-                    logging.warning(
+                    logging.error(
                         f"Run failed. Can't export container {c.hex} from {repo_full_name} ({run.workflow})."
                     )
 
