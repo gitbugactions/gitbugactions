@@ -234,10 +234,10 @@ class Act:
         if len(tests_run.failed_tests) == 0 and run.returncode != 0:
             tests_run.failed = True
 
-        updated_tokens = []
+        updated_tokens = set()
         if GithubToken.has_tokens():
             token.update_rate_limit()
-            updated_tokens.append(token.token)
+            updated_tokens.add(token.token)
             for token in workflow.tokens:
                 if token.token not in updated_tokens:
                     token.update_rate_limit()
