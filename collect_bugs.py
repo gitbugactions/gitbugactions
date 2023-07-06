@@ -4,6 +4,7 @@ import shutil
 import pygit2
 import tempfile
 import logging
+import tqdm
 import threading
 import fire
 from typing import List, Tuple, Any, Dict
@@ -501,7 +502,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                         executor.submit(patch_collector.get_possible_patches)
                     ] = patch_collector
 
-    for future in as_completed(future_to_collector):
+    for future in tqdm.tqdm(
+        as_completed(future_to_collector), total=len(future_to_collector)
+    ):
         try:
             patch_collector = future_to_collector[future]
             result = future.result()
@@ -524,7 +527,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 executor.submit(patch_collector.test_patch, bug_patch)
             ] = (bug_patch, i == bug_patches_len - 1)
 
-    for future in as_completed(future_to_patches):
+    for future in tqdm.tqdm(
+        as_completed(future_to_patches), total=len(future_to_patches)
+    ):
         try:
             bug_patch, last_collector_bug_patch = future_to_patches[future]
             is_patch = future.result()
