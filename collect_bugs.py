@@ -326,9 +326,6 @@ class PatchCollector:
 
         return issues
 
-    def __equal_patches(self, patch1: PatchSet, patch2: PatchSet):
-        pass
-
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
