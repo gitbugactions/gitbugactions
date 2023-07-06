@@ -490,7 +490,11 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 if not os.path.exists(results_path):
                     os.mkdir(results_path)
 
-                if run["number_of_test_actions"] == 1 and "actions_run" in run and len(run["actions_run"]["tests"]) > 0:
+                if (
+                    run["number_of_test_actions"] == 1
+                    and "actions_run" in run
+                    and len(run["actions_run"]["tests"]) > 0
+                ):
                     repo = github.get_repo(run["repository"])
                     patch_collector = PatchCollector(repo)
                     future_to_collector[
