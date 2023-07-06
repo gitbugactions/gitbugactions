@@ -30,7 +30,7 @@ class GithubToken:
                 self.last_update = time.time()
 
     @staticmethod
-    def has_tokens():
+    def has_tokens() -> bool:
         return "GITHUB_ACCESS_TOKEN" in os.environ
 
     @staticmethod
@@ -56,7 +56,7 @@ class GithubToken:
         time.sleep((datetime.now() - soonest_reset).total_seconds())
 
     @staticmethod
-    def get_token() -> "GithubToken":
+    def get_token() -> GithubToken:
         with GithubToken.__TOKENS_LOCK:
             if GithubToken.__TOKENS is None:
                 GithubToken.init_tokens()
