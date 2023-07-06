@@ -1,4 +1,5 @@
 import os, sys
+import threading
 import time
 import logging
 from datetime import datetime
@@ -10,15 +11,21 @@ class GithubToken:
     __TOKENS: List["GithubToken"] = None
     __CURRENT_TOKEN = 0
     __OFFSET = 200
+    __UPDATE_RATE_INTERVAL = 5 # in seconds
 
-    def __init__(self, token):
-        self.token = token
+    def __init__(self, token: str):
+        self.lock_rate = threading.Lock()
+        self.last_update = time.time()
+        self.token: str = token
         self.github = Github(login_or_token=token)
         self.update_rate_limit()
         GithubToken.__TOKENS.append(self)
 
     def update_rate_limit(self):
-        self.remaining = self.github.get_rate_limit().core.remaining
+        with self.lock_rate:
+            if (time.time() - self.last_update > GithubToken.__UPDATE_RATE_INTERVAL):
+                self.remaining = self.github.get_rate_limit().core.remaining
+                self.last_update = time.time()
 
     @staticmethod
     def has_tokens():
