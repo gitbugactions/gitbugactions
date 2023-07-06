@@ -54,8 +54,6 @@ def export_bug_containers(bug: Dict, export_path: str):
                     logging.warning(
                         f"Run failed. Can't export container {c.hex} from {repo_full_name} ({run.workflow})."
                     )
-                    sys.stdout.flush()
-                    sys.stderr.flush()
 
                     for container in containers:
                         container.stop()

@@ -42,8 +42,6 @@ def run_bug(
     bug = get_bug_from_metadata(metadata_path, repo_name, commit)
     if bug is None:
         logging.info(f"{repo_name}@{commit} not found on the metadata folder.")
-        sys.stdout.flush()
-        sys.stderr.flush()
         exit(-1)
     if previous_commit:
         commit = bug["previous_commit_hash"]

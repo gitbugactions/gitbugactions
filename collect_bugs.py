@@ -162,8 +162,6 @@ class PatchCollector:
         )
         repo_path = os.path.join(repo_path, str(uuid.uuid4()))
         logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-        sys.stdout.flush()
-        sys.stderr.flush()
         with PatchCollector.CLONE_SEM:
             self.repo_clone: pygit2.Repository = pygit2.clone_repository(
                 self.repo.clone_url, repo_path

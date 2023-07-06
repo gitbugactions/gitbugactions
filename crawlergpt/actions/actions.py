@@ -55,7 +55,6 @@ class ActCacheDirManager:
 
             return os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
         finally:
-            sys.stdout.flush()
             cls.__ACT_CACHE_DIR_LOCK.release()
 
     @classmethod
