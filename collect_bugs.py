@@ -209,11 +209,10 @@ class PatchCollector:
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
         shutil.copytree(self.repo_clone.workdir, new_repo_path)
-
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
-        executor = TestExecutor(repo_clone, self.language, act_cache_dir)
 
         try:
+            executor = TestExecutor(repo_clone, self.language, act_cache_dir)
             first_commit = repo_clone.revparse_single(executor.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)

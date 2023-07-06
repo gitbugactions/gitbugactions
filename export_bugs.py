@@ -32,13 +32,14 @@ def export_bug_containers(bug: Dict, export_path: str):
     repo_clone = pygit2.clone_repository(
         f"https://github.com/{repo_full_name}", temp_path
     )
-    main_commit = repo_clone.revparse_single(str(repo_clone.head.target))
-    act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-    executor = TestExecutor(repo_clone, bug["language"], act_cache_dir)
-    commit: pygit2.Commit = repo_clone.revparse_single(commit_hash)
-    previous_commit: pygit2.Commit = repo_clone.revparse_single(commit_hash + "~1")
 
     try:
+        main_commit = repo_clone.revparse_single(str(repo_clone.head.target))
+        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+        executor = TestExecutor(repo_clone, bug["language"], act_cache_dir)
+        commit: pygit2.Commit = repo_clone.revparse_single(commit_hash)
+        previous_commit: pygit2.Commit = repo_clone.revparse_single(commit_hash + "~1")
+
         for c in [commit, previous_commit]:
             repo_clone.checkout_tree(c)
             repo_clone.set_head(c.oid)
