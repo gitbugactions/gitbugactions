@@ -14,10 +14,11 @@ class GithubToken:
     __UPDATE_RATE_INTERVAL = 5  # in seconds
 
     def __init__(self, token: str):
-        self.lock_rate = threading.Lock()
-        self.last_update = time.time()
+        self.lock_rate: threading.Lock = threading.Lock()
+        self.last_update: float = 0
+        self.remaining: int = 0
         self.token: str = token
-        self.github = Github(login_or_token=token)
+        self.github: Github = Github(login_or_token=token)
         self.update_rate_limit()
         GithubToken.__TOKENS.append(self)
 
