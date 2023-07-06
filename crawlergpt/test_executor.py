@@ -68,7 +68,7 @@ class TestExecutor:
         else:
             if len(test_actions.test_workflows) == 0:
                 for workflow in self.default_actions.test_workflows:
-                    new_workflow = copy.deepcopy(workflow)
+                    new_workflow = copy.copy(workflow)
                     new_workflow.path = os.path.join(
                         self.repo_clone.workdir,
                         ".github/workflows",
