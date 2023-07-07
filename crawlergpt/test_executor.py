@@ -21,9 +21,8 @@ class TestExecutor:
         self.runner = runner
         self.language = language
         self.workflows = workflows
-        # FIXME: these default_actions have a different "repo_path"
+        # Note: these default actions may have different configuration options such as paths, runners, etc.
         self.default_actions = default_actions
-        self.default_actions.runner = runner
 
     def run_tests(
         self, keep_containers: bool = False, offline: bool = False

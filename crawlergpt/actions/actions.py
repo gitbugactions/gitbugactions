@@ -1,5 +1,4 @@
 import os, tempfile, shutil, traceback
-import pygit2
 import grp
 import uuid
 import time
@@ -7,61 +6,13 @@ import docker
 import logging
 import subprocess
 import threading
-from typing import List, Dict
+
+from typing import List, Dict, Set
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
-
-
-class Action:
-    # Class to represent a GitHub Action
-    # Note: We consider only the major version of the action, thus we ignore the minor and patch versions
-
-    def __init__(self, declaration: str):
-        self.declaration = declaration
-        self.name = self.__get_name()
-        self.version = self.__get_version()
-
-    def __get_name(self) -> str:
-        return self.declaration.split("@")[0].strip()
-
-    def __get_version(self) -> str:
-        return self.declaration.split("@")[1].split(".")[0].strip()
-
-    def download(self, cache_dir: str):
-        # Download the action to the cache dir
-        # The name of the diretory is in the format <espaced_action_name>@<action_version>
-        action_dir = os.path.join(
-            cache_dir, self.name.replace("/", "-") + "@" + self.version
-        )
-
-        # If the action is already in the cache, raise an exception
-        if os.path.exists(action_dir):
-            raise Exception(
-                f"Action {self.name}@{self.version} is already in the cache"
-            )
-
-        try:
-            # Clone the action to the action dir using pygit2
-            repo = pygit2.clone_repository(
-                f"https://github.com/{self.name}.git", action_dir
-            )
-
-            # Checkout the action version
-            repo.checkout(f"refs/tags/{self.version}")
-        except Exception:
-            # If something goes wrong, delete the action dir
-            shutil.rmtree(action_dir, ignore_errors=True)
-            raise Exception(
-                f"Error while downloading action {self.name}@{self.version}: {traceback.format_exc()}"
-            )
-
-    def __hash__(self) -> int:
-        return hash((self.name, self.version))
-
-    def __eq__(self, other):
-        return self.name == other.name and self.version == other.version
+from crawlergpt.actions.action import Action
 
 
 class ActCacheDirManager:
@@ -77,10 +28,19 @@ class ActCacheDirManager:
     @classmethod
     def init_act_cache_dirs(cls, n_dirs: int):
         cls.__ACT_CACHE_DIR_LOCK.acquire()
+        # Generate the directories
         cls.__ACT_CACHE_DIRS = {
             os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4())): True
             for _ in range(n_dirs)
         }
+
+        # Create the directories
+        for cache_dir in cls.__ACT_CACHE_DIRS:
+            if not os.path.exists(cache_dir):
+                os.makedirs(os.path.join(cache_dir, "act"))
+        if not os.path.exists(cls.__DEFAULT_CACHE_DIR):
+            os.makedirs(cls.__DEFAULT_CACHE_DIR)
+
         cls.__ACT_CACHE_DIR_LOCK.release()
 
     @classmethod
@@ -129,6 +89,27 @@ class ActCacheDirManager:
                 return
         finally:
             cls.__ACT_CACHE_DIR_LOCK.release()
+
+    @classmethod
+    def cache_action(cls, action: Action):
+        """
+        Downloads an action to the base cache dir and creates a symlink to it in every act cache dir
+        Note: because every action is unique, we do not need locks here
+        """
+        try:
+            # Download the action to the base cache dir
+            # The name of the diretory is in the format <escaped_name>@<version>
+            action_dir_name = action.name.replace("/", "-") + "@" + action.version
+            action_dir = os.path.join(cls.__DEFAULT_CACHE_DIR, action_dir_name)
+            action.download(action_dir)
+
+            # Create a symlink to the action in every act cache dir
+            for cache_dir in cls.__ACT_CACHE_DIRS:
+                os.symlink(action_dir, os.path.join(cache_dir, "act", action_dir_name))
+        except Exception:
+            logging.error(
+                f"Error while caching action {action.declaration}: {traceback.format_exc()}"
+            )
 
 
 @dataclass
@@ -327,7 +308,7 @@ class GitHubActions:
             )
             for file in yaml_files:
                 # Create workflow object according to the language and build system
-                workflow = GitHubWorkflowFactory.create_workflow(
+                workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
                     os.path.join(dirpath, file), self.language
                 )
 
@@ -339,6 +320,7 @@ class GitHubActions:
                 workflow.instrument_strategy()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()
+                workflow.instrument_actions()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
@@ -349,6 +331,12 @@ class GitHubActions:
                 workflow.path = new_path
 
                 self.test_workflows.append(workflow)
+
+    def get_actions(self) -> Set[Action]:
+        actions: Set[Action] = set()
+        for workflow in self.test_workflows:
+            actions.update(workflow.get_actions())
+        return actions
 
     def save_workflows(self):
         for workflow in self.test_workflows:

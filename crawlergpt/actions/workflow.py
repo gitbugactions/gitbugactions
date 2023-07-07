@@ -2,8 +2,9 @@ import yaml
 import os
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from typing import List
+from typing import List, Set
 from crawlergpt.github_token import GithubToken
+from crawlergpt.actions.action import Action
 
 
 class GitHubWorkflow(ABC):
@@ -62,6 +63,18 @@ class GitHubWorkflow(ABC):
             return False
         except yaml.YAMLError:
             return False
+
+    def get_actions(self) -> Set[Action]:
+        actions: Set[Action] = set()
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "uses" in step:
+                            action = Action(step["uses"])
+                            actions.add(action)
+
+        return actions
 
     def instrument_os(self):
         """
@@ -152,6 +165,20 @@ class GitHubWorkflow(ABC):
                         if "run" in step and self._is_test_command(step["run"]):
                             test_steps.append(step)
                     job["steps"] = test_steps
+
+    def instrument_actions(self):
+        """
+        Instruments the workflow to always use the major version of the used actions.
+        """
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "uses" in step:
+                            action = Action(step["uses"])
+                            # If the version is a semantic version, use only the major version
+                            if action.is_semantic_version():
+                                step["uses"] = action.name + "@" + action.version
 
     @abstractmethod
     def instrument_test_steps(self):
