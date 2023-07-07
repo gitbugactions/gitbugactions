@@ -1,4 +1,5 @@
-import os, sys, tempfile, shutil
+import os, tempfile, shutil, traceback
+import pygit2
 import grp
 import uuid
 import time
@@ -11,6 +12,56 @@ from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
+
+
+class Action:
+    # Class to represent a GitHub Action
+    # Note: We consider only the major version of the action, thus we ignore the minor and patch versions
+
+    def __init__(self, declaration: str):
+        self.declaration = declaration
+        self.name = self.__get_name()
+        self.version = self.__get_version()
+
+    def __get_name(self) -> str:
+        return self.declaration.split("@")[0].strip()
+
+    def __get_version(self) -> str:
+        return self.declaration.split("@")[1].split(".")[0].strip()
+
+    def download(self, cache_dir: str):
+        # Download the action to the cache dir
+        # The name of the diretory is in the format <espaced_action_name>@<action_version>
+        action_dir = os.path.join(
+            cache_dir, self.name.replace("/", "-") + "@" + self.version
+        )
+
+        # If the action is already in the cache, raise an exception
+        if os.path.exists(action_dir):
+            raise Exception(
+                f"Action {self.name}@{self.version} is already in the cache"
+            )
+
+        try:
+            # Clone the action to the action dir using pygit2
+            repo = pygit2.clone_repository(
+                f"https://github.com/{self.name}.git", action_dir
+            )
+
+            # Checkout the action version
+            repo.checkout(f"refs/tags/{self.version}")
+        except Exception:
+            # If something goes wrong, delete the action dir
+            shutil.rmtree(action_dir, ignore_errors=True)
+            raise Exception(
+                f"Error while downloading action {self.name}@{self.version}: {traceback.format_exc()}"
+            )
+
+    def __hash__(self) -> int:
+        return hash((self.name, self.version))
+
+    def __eq__(self, other):
+        return self.name == other.name and self.version == other.version
 
 
 class ActCacheDirManager:

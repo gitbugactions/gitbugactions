@@ -14,42 +14,16 @@ class TestExecutor:
         act_cache_dir: str,
         runner: str = "crawlergpt:latest",
         workflows: List[GitHubWorkflow] = None,
+        default_actions: GitHubActions = None,
     ):
         self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
         self.runner = runner
         self.language = language
         self.workflows = workflows
-        if self.workflows is None:
-            self.__get_default_actions()
-
-    def __get_default_actions(self):
-        if len(list(self.repo_clone.references.iterator())) == 0:
-            return
-        self.first_commit = self.repo_clone.revparse_single(
-            str(self.repo_clone.head.target)
-        )
-
-        for commit in self.repo_clone.walk(
-            self.repo_clone.head.target,
-            pygit2.GIT_SORT_TOPOLOGICAL | pygit2.GIT_SORT_REVERSE,
-        ):
-            self.repo_clone.checkout_tree(commit)
-            self.repo_clone.set_head(commit.oid)
-            try:
-                actions = GitHubActions(
-                    self.repo_clone.workdir, self.language, runner=self.runner
-                )
-                if len(actions.test_workflows) > 0:
-                    self.default_actions = actions
-                    break
-            except yaml.YAMLError:
-                logging.warning(
-                    f"YAML error while parsing workflow (repo={self.repo_clone}, commit={commit.oid}): {traceback.format_exc()})"
-                )
-                continue
-
-        self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
+        # FIXME: these default_actions have a different "repo_path"
+        self.default_actions = default_actions
+        self.default_actions.runner = runner
 
     def run_tests(
         self, keep_containers: bool = False, offline: bool = False
