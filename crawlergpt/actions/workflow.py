@@ -263,10 +263,7 @@ class GitHubWorkflowFactory:
             return (
                 max_build_tool if aggregate_keyword_counts[max_build_tool] > 0 else None
             )
-        except Exception:
-            logging.error(
-                f"Error while parsing workflow {path}: {traceback.format_exc()}"
-            )
+        except yaml.YAMLError:
             return None
 
     @staticmethod
