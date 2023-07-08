@@ -1,5 +1,5 @@
 import yaml
-import os
+import logging
 from abc import ABC, abstractmethod
 from junitparser import TestCase
 from typing import List, Set
@@ -71,7 +71,13 @@ class GitHubWorkflow(ABC):
                 if "steps" in job:
                     for step in job["steps"]:
                         if "uses" in step:
-                            action = Action(step["uses"])
+                            try:
+                                action = Action(step["uses"])
+                            except Exception:
+                                logging.warning(
+                                    f"Failed to parse action {step['uses']}"
+                                )
+                                continue
                             actions.add(action)
 
         return actions
