@@ -359,9 +359,6 @@ class PatchCollector:
                     if len(actions.test_workflows) > 0:
                         return actions
                 except yaml.YAMLError:
-                    logging.warning(
-                        f"YAML error while parsing workflow (repo={self.repo_clone}, commit={commit.oid}): {traceback.format_exc()})"
-                    )
                     continue
         finally:
             self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
