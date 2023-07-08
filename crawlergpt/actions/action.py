@@ -3,6 +3,7 @@ import re
 import shutil
 import os
 import pygit2
+import traceback
 
 
 class Action:

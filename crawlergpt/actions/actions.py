@@ -30,7 +30,9 @@ class ActCacheDirManager:
         with cls.__ACT_CACHE_DIR_LOCK:
             # Generate the directories
             cls.__ACT_CACHE_DIRS = {
-                os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4())): True
+                os.path.join(
+                    tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
+                ): True
                 for _ in range(n_dirs)
             }
 
