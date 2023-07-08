@@ -57,6 +57,11 @@ class Action:
 
             # Checkout the action version
             repo.checkout(f"refs/tags/{self.version}")
+
+            # Remove gitignore so that act doesn't have to
+            gitignore_path = os.path.join(action_dir, ".gitignore")
+            if os.path.exists(gitignore_path):
+                os.remove(gitignore_path)
         except Exception:
             # If something goes wrong, delete the action dir
             shutil.rmtree(action_dir, ignore_errors=True)
