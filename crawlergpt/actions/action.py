@@ -1,7 +1,7 @@
 import logging
 import re
 import shutil
-import os, subprocess
+import os, subprocess, threading
 import pygit2
 import traceback
 
@@ -9,6 +9,7 @@ import traceback
 class Action:
     # Class to represent a GitHub Action
     # Note: We consider only the major version of the action, thus we ignore the minor and patch versions
+    CLONE_SEM = threading.Semaphore(8)
 
     def __init__(self, declaration: str):
         self.declaration = declaration
@@ -31,24 +32,25 @@ class Action:
             return
 
         try:
-            # Clone the action to the action dir using pygit2
-            repo = pygit2.clone_repository(
-                f"https://github.com/{self.org}/{self.repo}.git", action_dir
-            )
+            with Action.CLONE_SEM:
+                # Clone the action to the action dir using pygit2
+                pygit2.clone_repository(
+                    f"https://github.com/{self.org}/{self.repo}.git", action_dir
+                )
 
-            # Checkout the action version
-            run = subprocess.run(
-                f"git checkout {self.ref}",
-                cwd=action_dir,
-                shell=True,
-                capture_output=True,
-            )
-            assert run.returncode == 0
+                # Checkout the action version
+                run = subprocess.run(
+                    f"git checkout {self.ref}",
+                    cwd=action_dir,
+                    shell=True,
+                    capture_output=True,
+                )
+                assert run.returncode == 0
 
-            # Remove gitignore so that act doesn't have to
-            gitignore_path = os.path.join(action_dir, ".gitignore")
-            if os.path.exists(gitignore_path):
-                os.remove(gitignore_path)
+                # Remove gitignore so that act doesn't have to
+                gitignore_path = os.path.join(action_dir, ".gitignore")
+                if os.path.exists(gitignore_path):
+                    os.remove(gitignore_path)
         except Exception:
             # If something goes wrong, delete the action dir
             shutil.rmtree(action_dir, ignore_errors=True)
