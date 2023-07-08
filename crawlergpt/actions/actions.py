@@ -27,21 +27,19 @@ class ActCacheDirManager:
 
     @classmethod
     def init_act_cache_dirs(cls, n_dirs: int):
-        cls.__ACT_CACHE_DIR_LOCK.acquire()
-        # Generate the directories
-        cls.__ACT_CACHE_DIRS = {
-            os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4())): True
-            for _ in range(n_dirs)
-        }
+        with cls.__ACT_CACHE_DIR_LOCK:
+            # Generate the directories
+            cls.__ACT_CACHE_DIRS = {
+                os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4())): True
+                for _ in range(n_dirs)
+            }
 
-        # Create the directories
-        for cache_dir in cls.__ACT_CACHE_DIRS:
-            if not os.path.exists(cache_dir):
-                os.makedirs(os.path.join(cache_dir, "act"))
-        if not os.path.exists(cls.__DEFAULT_CACHE_DIR):
-            os.makedirs(cls.__DEFAULT_CACHE_DIR)
-
-        cls.__ACT_CACHE_DIR_LOCK.release()
+            # Create the directories
+            for cache_dir in cls.__ACT_CACHE_DIRS:
+                if not os.path.exists(cache_dir):
+                    os.makedirs(os.path.join(cache_dir, "act"))
+            if not os.path.exists(cls.__DEFAULT_CACHE_DIR):
+                os.makedirs(cls.__DEFAULT_CACHE_DIR)
 
     @classmethod
     def acquire_act_cache_dir(cls) -> str:
@@ -206,35 +204,33 @@ class Act:
 
     @staticmethod
     def __setup_act():
-        Act.__SETUP_LOCK.acquire()
-        if Act.__ACT_SETUP:
-            Act.__SETUP_LOCK.release()
-            return
-        # Checks act installation
-        run = subprocess.run(
-            f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
-        )
-        if run.returncode != 0:
-            logging.error("Act is not correctly installed")
-            exit(-1)
+        with Act.__SETUP_LOCK:
+            if Act.__ACT_SETUP:
+                return
+            # Checks act installation
+            run = subprocess.run(
+                f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
+            )
+            if run.returncode != 0:
+                logging.error("Act is not correctly installed")
+                exit(-1)
 
-        # Creates crawler image
-        client = docker.from_env()
-        if len(client.images.list(name="crawlergpt")) > 0:
-            client.images.remove(image="crawlergpt")
-
-        with open("Dockerfile", "w") as f:
+            # Creates crawler image
             client = docker.from_env()
-            dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
-            dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
-            dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
-            f.write(dockerfile)
+            if len(client.images.list(name="crawlergpt")) > 0:
+                client.images.remove(image="crawlergpt")
 
-        client.images.build(path="./", tag="crawlergpt", forcerm=True)
-        os.remove("Dockerfile")
-        Act.__ACT_SETUP = True
-        Act.__SETUP_LOCK.release()
+            with open("Dockerfile", "w") as f:
+                client = docker.from_env()
+                dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
+                dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
+                dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
+                dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
+                f.write(dockerfile)
+
+            client.images.build(path="./", tag="crawlergpt", forcerm=True)
+            os.remove("Dockerfile")
+            Act.__ACT_SETUP = True
 
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str

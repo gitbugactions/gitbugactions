@@ -1,5 +1,4 @@
-import os, copy, uuid, logging, traceback
-import pygit2, yaml
+import os, copy, uuid
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
 from crawlergpt.actions.workflow import GitHubWorkflow
 from pygit2 import Repository

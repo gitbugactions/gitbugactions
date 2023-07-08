@@ -165,25 +165,23 @@ class PatchCollector:
         self.clone_lock = threading.Lock()
 
     def __clone_repo(self):
-        self.clone_lock.acquire()
-        if self.cloned:
-            self.clone_lock.release()
-            return
-        self.delete_repo()
-        repo_path = os.path.join(
-            tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
-        )
-        repo_path = os.path.join(repo_path, str(uuid.uuid4()))
-        logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-        self.repo_clone: pygit2.Repository = pygit2.clone_repository(
-            self.repo.clone_url, repo_path
-        )
-        # Set gc.auto to 0 to avoid "too many open files" bug
-        subprocess.run(
-            f"git config gc.auto 0", cwd=repo_path, shell=True, capture_output=True
-        )
-        self.cloned = True
-        self.clone_lock.release()
+        with self.clone_lock:
+            if self.cloned:
+                return
+            self.delete_repo()
+            repo_path = os.path.join(
+                tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
+            )
+            repo_path = os.path.join(repo_path, str(uuid.uuid4()))
+            logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
+            self.repo_clone: pygit2.Repository = pygit2.clone_repository(
+                self.repo.clone_url, repo_path
+            )
+            # Set gc.auto to 0 to avoid "too many open files" bug
+            subprocess.run(
+                f"git config gc.auto 0", cwd=repo_path, shell=True, capture_output=True
+            )
+            self.cloned = True
 
     def __is_bug_fix(self, commit):
         return "fix" in commit.message.lower()
