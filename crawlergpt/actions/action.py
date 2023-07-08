@@ -1,7 +1,7 @@
 import logging
 import re
 import shutil
-import os
+import os, subprocess
 import pygit2
 import traceback
 
@@ -37,8 +37,12 @@ class Action:
             )
 
             # Checkout the action version
-            reference = repo.lookup_reference(self.ref)
-            repo.checkout(refname=reference)
+            subprocess.run(
+                f"git checkout {self.ref}",
+                cwd=action_dir,
+                shell=True,
+                capture_output=True,
+            )
 
             # Remove gitignore so that act doesn't have to
             gitignore_path = os.path.join(action_dir, ".gitignore")
