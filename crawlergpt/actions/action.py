@@ -37,7 +37,8 @@ class Action:
             )
 
             # Checkout the action version
-            repo.checkout(self.ref)
+            reference = repo.lookup_reference(self.ref)
+            repo.checkout(refname=reference)
 
             # Remove gitignore so that act doesn't have to
             gitignore_path = os.path.join(action_dir, ".gitignore")
@@ -46,6 +47,7 @@ class Action:
         except Exception:
             # If something goes wrong, delete the action dir
             shutil.rmtree(action_dir, ignore_errors=True)
+            print(traceback.format_exc())
             raise Exception(
                 f"Error while downloading action {self.declaration}: {traceback.format_exc()}"
             )
