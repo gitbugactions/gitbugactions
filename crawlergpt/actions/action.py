@@ -54,4 +54,6 @@ class Action:
         return hash((self.org, self.repo, self.ref))
 
     def __eq__(self, other):
-        return self.org == other.repo and self.ref == other.ref
+        return (
+            self.org == other.org and self.repo == self.repo and self.ref == other.ref
+        )
