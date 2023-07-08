@@ -1,5 +1,6 @@
 import yaml
 import logging
+import traceback
 from abc import ABC, abstractmethod
 from junitparser import TestCase
 from typing import List, Set
@@ -216,45 +217,57 @@ class GitHubWorkflowFactory:
         Identifies the build tool used by the workflow.
         """
         # Build tool keywords
-        build_tool_keywords = {
-            "maven": MavenWorkflow.BUILD_TOOL_KEYWORDS,
-            "gradle": GradleWorkflow.BUILD_TOOL_KEYWORDS,
-            "pytest": PytestWorkflow.BUILD_TOOL_KEYWORDS,
-            "unittest": UnittestWorkflow.BUILD_TOOL_KEYWORDS,
-        }
-        aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
-        keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
-        aggregate_keyword_counts = {build_tool: 0 for build_tool in build_tool_keywords}
+        try:
+            build_tool_keywords = {
+                "maven": MavenWorkflow.BUILD_TOOL_KEYWORDS,
+                "gradle": GradleWorkflow.BUILD_TOOL_KEYWORDS,
+                "pytest": PytestWorkflow.BUILD_TOOL_KEYWORDS,
+                "unittest": UnittestWorkflow.BUILD_TOOL_KEYWORDS,
+            }
+            aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
+            keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
+            aggregate_keyword_counts = {
+                build_tool: 0 for build_tool in build_tool_keywords
+            }
 
-        def _update_keyword_counts(keyword_counts, phrase):
-            for name in phrase.strip().lower().split(" "):
-                for keyword in aggregate_keywords:
-                    if keyword in name:
-                        keyword_counts[keyword] += 1
+            def _update_keyword_counts(keyword_counts, phrase):
+                for name in phrase.strip().lower().split(" "):
+                    for keyword in aggregate_keywords:
+                        if keyword in name:
+                            keyword_counts[keyword] += 1
 
-        # Load the workflow
-        with open(path, "r") as stream:
-            doc = yaml.safe_load(stream)
-            if True in doc:
-                doc["on"] = doc[True]
-                doc.pop(True)
+            # Load the workflow
+            with open(path, "r") as stream:
+                doc = yaml.safe_load(stream)
+                if True in doc:
+                    doc["on"] = doc[True]
+                    doc.pop(True)
 
-        # Iterate over the workflow to find build tool names in the run commands
-        if "jobs" in doc:
-            for _, job in doc["jobs"].items():
-                if "steps" in job:
-                    for step in job["steps"]:
-                        if "run" in step:
-                            _update_keyword_counts(keyword_counts, step["run"])
+            # Iterate over the workflow to find build tool names in the run commands
+            if "jobs" in doc:
+                for _, job in doc["jobs"].items():
+                    if "steps" in job:
+                        for step in job["steps"]:
+                            if "run" in step:
+                                _update_keyword_counts(keyword_counts, step["run"])
 
-        # Aggregate keyword counts per build tool
-        for build_tool in build_tool_keywords:
-            for keyword in build_tool_keywords[build_tool]:
-                aggregate_keyword_counts[build_tool] += keyword_counts[keyword]
+            # Aggregate keyword counts per build tool
+            for build_tool in build_tool_keywords:
+                for keyword in build_tool_keywords[build_tool]:
+                    aggregate_keyword_counts[build_tool] += keyword_counts[keyword]
 
-        # Return the build tool with the highest count
-        max_build_tool = max(aggregate_keyword_counts, key=aggregate_keyword_counts.get)
-        return max_build_tool if aggregate_keyword_counts[max_build_tool] > 0 else None
+            # Return the build tool with the highest count
+            max_build_tool = max(
+                aggregate_keyword_counts, key=aggregate_keyword_counts.get
+            )
+            return (
+                max_build_tool if aggregate_keyword_counts[max_build_tool] > 0 else None
+            )
+        except Exception:
+            logging.error(
+                f"Error while parsing workflow {path}: {traceback.format_exc()}"
+            )
+            return None
 
     @staticmethod
     def create_workflow(path: str, language: str):
