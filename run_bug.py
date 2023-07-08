@@ -7,11 +7,10 @@ import pygit2
 import uuid
 import docker
 import logging
-import tempfile
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.docker.export import create_diff_image
 from crawlergpt.actions.workflow import GitHubWorkflowFactory
-from crawlergpt.actions.actions import ActCacheDirManager
+from crawlergpt.actions.actions import ActCacheDirManager, GitHubActions
 
 
 def get_bug_from_metadata(metadata_path, repo_name, commit):
@@ -76,12 +75,14 @@ def run_bug(
             ]
             workflows[0].instrument_offline_execution()
             workflows[0].save_yaml(new_workflow_path)
+            default_actions = GitHubActions(repo_clone.workdir, bug["language"])
+            default_actions.test_workflows = workflows
             executor = TestExecutor(
                 repo_clone,
                 bug["language"],
                 act_cache_dir,
+                default_actions,
                 runner=image_name,
-                workflows=workflows,
             )
             runs = executor.run_tests(offline=offline)
             os.remove(new_workflow_path)

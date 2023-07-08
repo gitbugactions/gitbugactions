@@ -30,36 +30,34 @@ class SearchRateLimiter:
         self.lock = threading.Lock()
 
     def request(self, fn, *args, **kwargs):
-        self.lock.acquire()
-        time_after_reset = (datetime.now() - self.first_request).total_seconds()
-        retries = 3
-        if self.requests == 0:
-            self.first_request = datetime.now()
-        elif time_after_reset > SearchRateLimiter.__GITHUB_RESET_SECONDS:
-            self.requests = 0
-            self.first_request = datetime.now()
-        if self.requests == SearchRateLimiter.__GITHUB_REQUESTS_LIMIT:
-            time.sleep(SearchRateLimiter.__GITHUB_RESET_SECONDS - time_after_reset)
-            self.requests = 0
-        self.requests += 1
-        self.lock.release()
+        with self.lock:
+            time_after_reset = (datetime.now() - self.first_request).total_seconds()
+            retries = 3
+            if self.requests == 0:
+                self.first_request = datetime.now()
+            elif time_after_reset > SearchRateLimiter.__GITHUB_RESET_SECONDS:
+                self.requests = 0
+                self.first_request = datetime.now()
+            if self.requests == SearchRateLimiter.__GITHUB_REQUESTS_LIMIT:
+                time.sleep(SearchRateLimiter.__GITHUB_RESET_SECONDS - time_after_reset)
+                self.requests = 0
+            self.requests += 1
 
         while retries > 0:
             try:
                 return fn(*args, **kwargs)
             except RateLimitExceededException as exc:
-                self.lock.acquire()
-                logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
-                reset_time = datetime.fromtimestamp(
-                    int(exc.headers["x-ratelimit-reset"])
-                )
-                retry_after = (reset_time - datetime.now()).total_seconds() + 1
-                retry_after = max(
-                    retry_after, 0
-                )  # In case we hit a negative total_seconds
-                time.sleep(retry_after)
-                retries -= 1
-                self.lock.release()
+                with self.lock:
+                    logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
+                    reset_time = datetime.fromtimestamp(
+                        int(exc.headers["x-ratelimit-reset"])
+                    )
+                    retry_after = (reset_time - datetime.now()).total_seconds() + 1
+                    retry_after = max(
+                        retry_after, 0
+                    )  # In case we hit a negative total_seconds
+                    time.sleep(retry_after)
+                    retries -= 1
                 if retries == 0:
                     raise exc
 

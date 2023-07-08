@@ -1,7 +1,6 @@
 import os
 import sys
 import yaml
-import shutil
 import fire
 import uuid
 import json
@@ -14,7 +13,7 @@ import tempfile
 from docker.models.containers import Container
 from typing import List, Dict
 from crawlergpt.test_executor import TestExecutor
-from crawlergpt.util import delete_repo_clone
+from crawlergpt.util import delete_repo_clone, get_default_github_actions
 from crawlergpt.docker.export import extract_diff
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from crawlergpt.actions.actions import ActCacheDirManager
@@ -30,11 +29,17 @@ def export_bug_containers(bug: Dict, export_path: str):
     repo_clone = pygit2.clone_repository(
         f"https://github.com/{repo_full_name}", temp_path
     )
+    first_commit = repo_clone.revparse_single(str(repo_clone.head.target))
+    default_actions = get_default_github_actions(
+        repo_clone, first_commit, bug["language"]
+    )
 
     try:
         main_commit = repo_clone.revparse_single(str(repo_clone.head.target))
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-        executor = TestExecutor(repo_clone, bug["language"], act_cache_dir)
+        executor = TestExecutor(
+            repo_clone, bug["language"], act_cache_dir, default_actions
+        )
         commit: pygit2.Commit = repo_clone.revparse_single(commit_hash)
         previous_commit: pygit2.Commit = repo_clone.revparse_single(commit_hash + "~1")
 

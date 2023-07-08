@@ -1,4 +1,4 @@
-import os, sys, tempfile, shutil
+import os, tempfile, shutil, traceback
 import grp
 import uuid
 import time
@@ -6,11 +6,13 @@ import docker
 import logging
 import subprocess
 import threading
-from typing import List, Dict
+
+from typing import List, Dict, Set
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
+from crawlergpt.actions.action import Action
 
 
 class ActCacheDirManager:
@@ -25,12 +27,21 @@ class ActCacheDirManager:
 
     @classmethod
     def init_act_cache_dirs(cls, n_dirs: int):
-        cls.__ACT_CACHE_DIR_LOCK.acquire()
-        cls.__ACT_CACHE_DIRS = {
-            os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4())): True
-            for _ in range(n_dirs)
-        }
-        cls.__ACT_CACHE_DIR_LOCK.release()
+        with cls.__ACT_CACHE_DIR_LOCK:
+            # Generate the directories
+            cls.__ACT_CACHE_DIRS = {
+                os.path.join(
+                    tempfile.gettempdir(), "act-cache", str(uuid.uuid4())
+                ): True
+                for _ in range(n_dirs)
+            }
+
+            # Create the directories
+            for cache_dir in cls.__ACT_CACHE_DIRS:
+                if not os.path.exists(cache_dir):
+                    os.makedirs(os.path.join(cache_dir, "act"))
+            if not os.path.exists(cls.__DEFAULT_CACHE_DIR):
+                os.makedirs(cls.__DEFAULT_CACHE_DIR)
 
     @classmethod
     def acquire_act_cache_dir(cls) -> str:
@@ -78,6 +89,27 @@ class ActCacheDirManager:
                 return
         finally:
             cls.__ACT_CACHE_DIR_LOCK.release()
+
+    @classmethod
+    def cache_action(cls, action: Action):
+        """
+        Downloads an action to the base cache dir and creates a symlink to it in every act cache dir
+        Note: because every action is unique, we do not need locks here
+        """
+        try:
+            # Download the action to the base cache dir
+            # The name of the diretory is in the format <org>-<repo>@<ref>
+            action_dir_name = f"{action.org}-{action.repo}@{action.ref}"
+            action_dir = os.path.join(cls.__DEFAULT_CACHE_DIR, action_dir_name)
+            action.download(action_dir)
+
+            # Create a symlink to the action in every act cache dir
+            for cache_dir in cls.__ACT_CACHE_DIRS:
+                os.symlink(action_dir, os.path.join(cache_dir, "act", action_dir_name))
+        except Exception:
+            logging.error(
+                f"Error while caching action {action.declaration}: {traceback.format_exc()}"
+            )
 
 
 @dataclass
@@ -174,41 +206,39 @@ class Act:
 
     @staticmethod
     def __setup_act():
-        Act.__SETUP_LOCK.acquire()
-        if Act.__ACT_SETUP:
-            Act.__SETUP_LOCK.release()
-            return
-        # Checks act installation
-        run = subprocess.run(
-            f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
-        )
-        if run.returncode != 0:
-            logging.error("Act is not correctly installed")
-            exit(-1)
+        with Act.__SETUP_LOCK:
+            if Act.__ACT_SETUP:
+                return
+            # Checks act installation
+            run = subprocess.run(
+                f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
+            )
+            if run.returncode != 0:
+                logging.error("Act is not correctly installed")
+                exit(-1)
 
-        # Creates crawler image
-        client = docker.from_env()
-        if len(client.images.list(name="crawlergpt")) > 0:
-            client.images.remove(image="crawlergpt")
-
-        with open("Dockerfile", "w") as f:
+            # Creates crawler image
             client = docker.from_env()
-            dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-            dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
-            dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
-            dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
-            f.write(dockerfile)
+            if len(client.images.list(name="crawlergpt")) > 0:
+                client.images.remove(image="crawlergpt")
 
-        client.images.build(path="./", tag="crawlergpt", forcerm=True)
-        os.remove("Dockerfile")
-        Act.__ACT_SETUP = True
-        Act.__SETUP_LOCK.release()
+            with open("Dockerfile", "w") as f:
+                client = docker.from_env()
+                dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
+                dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
+                dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
+                dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
+                f.write(dockerfile)
+
+            client.images.build(path="./", tag="crawlergpt", forcerm=True)
+            os.remove("Dockerfile")
+            Act.__ACT_SETUP = True
 
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
     ) -> ActTestsRun:
         command = f"cd {repo_path}; "
-        command += f"XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
+        command += f"ACT_DISABLE_VERSION_CHECK=1 XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         if GithubToken.has_tokens():
             token: GithubToken = GithubToken.get_token()
             command += f" -s GITHUB_TOKEN={token.token}"
@@ -276,7 +306,7 @@ class GitHubActions:
             )
             for file in yaml_files:
                 # Create workflow object according to the language and build system
-                workflow = GitHubWorkflowFactory.create_workflow(
+                workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
                     os.path.join(dirpath, file), self.language
                 )
 
@@ -298,6 +328,12 @@ class GitHubActions:
                 workflow.path = new_path
 
                 self.test_workflows.append(workflow)
+
+    def get_actions(self) -> Set[Action]:
+        actions: Set[Action] = set()
+        for workflow in self.test_workflows:
+            actions.update(workflow.get_actions())
+        return actions
 
     def save_workflows(self):
         for workflow in self.test_workflows:

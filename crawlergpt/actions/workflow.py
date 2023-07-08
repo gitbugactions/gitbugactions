@@ -1,9 +1,10 @@
 import yaml
-import os
+import logging
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from typing import List
+from typing import List, Set
 from crawlergpt.github_token import GithubToken
+from crawlergpt.actions.action import Action
 
 
 class GitHubWorkflow(ABC):
@@ -62,6 +63,24 @@ class GitHubWorkflow(ABC):
             return False
         except yaml.YAMLError:
             return False
+
+    def get_actions(self) -> Set[Action]:
+        actions: Set[Action] = set()
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "uses" in step:
+                            try:
+                                action = Action(step["uses"])
+                            except Exception:
+                                logging.warning(
+                                    f"Failed to parse action {step['uses']}"
+                                )
+                                continue
+                            actions.add(action)
+
+        return actions
 
     def instrument_os(self):
         """
