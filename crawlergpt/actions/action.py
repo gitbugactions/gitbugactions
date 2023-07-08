@@ -37,12 +37,13 @@ class Action:
             )
 
             # Checkout the action version
-            subprocess.run(
+            run = subprocess.run(
                 f"git checkout {self.ref}",
                 cwd=action_dir,
                 shell=True,
                 capture_output=True,
             )
+            assert run.returncode == 0
 
             # Remove gitignore so that act doesn't have to
             gitignore_path = os.path.join(action_dir, ".gitignore")
