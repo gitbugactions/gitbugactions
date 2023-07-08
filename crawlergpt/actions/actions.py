@@ -98,8 +98,8 @@ class ActCacheDirManager:
         """
         try:
             # Download the action to the base cache dir
-            # The name of the diretory is in the format <escaped_name>@<version>
-            action_dir_name = action.name.replace("/", "-") + "@" + action.version
+            # The name of the diretory is in the format <org>-<repo>@<ref>
+            action_dir_name = f"{action.org}-{action.repo}@{action.ref}"
             action_dir = os.path.join(cls.__DEFAULT_CACHE_DIR, action_dir_name)
             action.download(action_dir)
 
@@ -318,7 +318,6 @@ class GitHubActions:
                 workflow.instrument_strategy()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()
-                workflow.instrument_actions()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)

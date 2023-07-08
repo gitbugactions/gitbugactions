@@ -581,11 +581,6 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
             for bug_patch in bug_patches:
                 actions_to_download.update(bug_patch.actions)
 
-        # Only download if semantic version
-        actions_to_download = {
-            action for action in actions_to_download if action.is_semantic_version()
-        }
-
         for action in actions_to_download:
             futures_to_actions[
                 executor.submit(ActCacheDirManager.cache_action, action)
