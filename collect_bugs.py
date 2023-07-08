@@ -5,10 +5,9 @@ import pygit2
 import tempfile
 import logging
 import tqdm
-import yaml
 import threading
 import fire
-from typing import List, Tuple, Any, Dict, Set, Optional
+from typing import List, Tuple, Any, Dict, Set
 from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
@@ -22,6 +21,7 @@ from crawlergpt.actions.actions import (
 from crawlergpt.actions.action import Action
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
+from crawlergpt.util import get_default_github_actions
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
@@ -228,7 +228,7 @@ class PatchCollector:
                 repo_clone,
                 self.language,
                 act_cache_dir,
-                default_actions=self.default_github_actions,
+                self.default_github_actions,
             )
             first_commit = repo_clone.revparse_single(self.first_commit.hex)
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
@@ -344,23 +344,6 @@ class PatchCollector:
 
         return issues
 
-    def __get_default_github_actions(self) -> Optional[GitHubActions]:
-        try:
-            for commit in self.repo_clone.walk(
-                self.repo_clone.head.target,
-                pygit2.GIT_SORT_TOPOLOGICAL | pygit2.GIT_SORT_REVERSE,
-            ):
-                self.repo_clone.checkout_tree(commit)
-                self.repo_clone.set_head(commit.oid)
-                try:
-                    actions = GitHubActions(self.repo_clone.workdir, self.language)
-                    if len(actions.test_workflows) > 0:
-                        return actions
-                except yaml.YAMLError:
-                    continue
-        finally:
-            self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
-
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -369,7 +352,9 @@ class PatchCollector:
         self.first_commit = self.repo_clone.revparse_single(
             str(self.repo_clone.head.target)
         )
-        self.default_github_actions = self.__get_default_github_actions()
+        self.default_github_actions = get_default_github_actions(
+            self.repo_clone, self.first_commit, self.language
+        )
 
         commit_to_patches: Dict[str, List[BugPatch]] = {}
         try:
