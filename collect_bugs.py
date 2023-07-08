@@ -158,6 +158,8 @@ class BugPatch:
 
 
 class PatchCollector:
+    CLONE_SEM = threading.Semaphore(8)
+
     def __init__(self, repo: Repository):
         self.repo: Repository = repo
         self.language = repo.language.strip().lower()
@@ -165,23 +167,28 @@ class PatchCollector:
         self.clone_lock = threading.Lock()
 
     def __clone_repo(self):
-        with self.clone_lock:
-            if self.cloned:
-                return
-            self.delete_repo()
-            repo_path = os.path.join(
-                tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
-            )
-            repo_path = os.path.join(repo_path, str(uuid.uuid4()))
-            logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-            self.repo_clone: pygit2.Repository = pygit2.clone_repository(
-                self.repo.clone_url, repo_path
-            )
-            # Set gc.auto to 0 to avoid "too many open files" bug
-            subprocess.run(
-                f"git config gc.auto 0", cwd=repo_path, shell=True, capture_output=True
-            )
-            self.cloned = True
+        # Too many repos cloning at the same time lead to errors
+        with PatchCollector.CLONE_SEM:
+            with self.clone_lock:
+                if self.cloned:
+                    return
+                self.delete_repo()
+                repo_path = os.path.join(
+                    tempfile.gettempdir(), self.repo.full_name.replace("/", "-")
+                )
+                repo_path = os.path.join(repo_path, str(uuid.uuid4()))
+                logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
+                self.repo_clone: pygit2.Repository = pygit2.clone_repository(
+                    self.repo.clone_url, repo_path
+                )
+                # Set gc.auto to 0 to avoid "too many open files" bug
+                subprocess.run(
+                    f"git config gc.auto 0",
+                    cwd=repo_path,
+                    shell=True,
+                    capture_output=True,
+                )
+                self.cloned = True
 
     def __is_bug_fix(self, commit):
         return "fix" in commit.message.lower()
@@ -383,6 +390,9 @@ class PatchCollector:
                 actions.update(
                     GitHubActions(self.repo_clone.workdir, self.language).get_actions()
                 )
+                self.__cleanup_repo(
+                    self.repo_clone, self.repo_clone.workdir, self.first_commit
+                )
                 self.repo_clone.checkout_tree(previous_commit)
                 self.repo_clone.set_head(previous_commit.oid)
                 actions.update(
@@ -411,6 +421,9 @@ class PatchCollector:
                             actions,
                         )
                     ]
+                self.__cleanup_repo(
+                    self.repo_clone, self.repo_clone.workdir, self.first_commit
+                )
         finally:
             self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
 
