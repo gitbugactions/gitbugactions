@@ -437,8 +437,8 @@ class PatchCollector:
                     continue
 
                 actions: Set[Action] = set()
-                actions.update(self.__get_used_actions(commit))
-                actions.update(self.__get_used_actions(previous_commit))
+                actions.update(self.__get_used_actions(commit.oid.hex))
+                actions.update(self.__get_used_actions(previous_commit.oid.hex))
 
                 if previous_commit.hex in commit_to_patches:
                     commit_to_patches[previous_commit.hex].append(
