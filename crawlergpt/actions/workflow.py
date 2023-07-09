@@ -179,6 +179,47 @@ class GitHubWorkflow(ABC):
                             test_steps.append(step)
                     job["steps"] = test_steps
 
+    def instrument_jobs(self):
+        """
+        Instruments the workflow to keep only the jobs containing test commands.
+        If the job has dependencies (needs), then keep those jobs too.
+        """
+
+        def get_needs(job_name: str) -> List[str]:
+            if (
+                job_name not in self.doc["jobs"]
+                or "needs" not in self.doc["jobs"][job_name]
+            ):
+                return []
+
+            needed_jobs = self.doc["jobs"][job_name]["needs"]
+            if isinstance(needed_jobs, list):
+                for needed_job in needed_jobs:
+                    needed_jobs += get_needs(needed_job)
+            else:
+                needed_jobs = [needed_jobs] + get_needs(needed_jobs)
+
+            return needed_jobs
+
+        if "jobs" in self.doc:
+            required_jobs = set()
+            for job_name, job in self.doc["jobs"].items():
+                has_test = False
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "run" in step and self._is_test_command(step["run"]):
+                            has_test = True
+
+                if has_test:
+                    required_jobs.add(job_name)
+                    required_jobs.update(get_needs(job_name))
+
+            self.doc["jobs"] = {
+                job_name: job
+                for job_name, job in self.doc["jobs"].items()
+                if job_name in required_jobs
+            }
+
     @abstractmethod
     def instrument_test_steps(self):
         """
