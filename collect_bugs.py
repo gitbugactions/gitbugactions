@@ -376,7 +376,7 @@ class PatchCollector:
 
         # Get the actions used by each workflow
         for workflow_path in workflow_paths:
-            # Skip empty lines an non yaml files
+            # Skip empty lines and non yaml files
             if workflow_path == "" or not (
                 workflow_path.endswith(".yml") or workflow_path.endswith(".yaml")
             ):
