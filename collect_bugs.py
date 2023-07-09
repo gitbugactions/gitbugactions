@@ -490,9 +490,12 @@ class PatchCollector:
         patches.sort(key=lambda x: x.commit_timestamp)
         return patches
 
-    def __check_tests_were_fixed(self, run_failed: List[ActTestsRun], 
-                                 run_passed: List[ActTestsRun]):
-        flat_failed_tests = sum(map(lambda act_run: act_run.failed_tests, run_failed), [])
+    def __check_tests_were_fixed(
+        self, run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
+    ):
+        flat_failed_tests = sum(
+            map(lambda act_run: act_run.failed_tests, run_failed), []
+        )
         flat_tests = sum(map(lambda act_run: act_run.tests, run_passed), [])
 
         for failed_test in flat_failed_tests:
@@ -550,8 +553,9 @@ class PatchCollector:
                     bug_patch.test_patch.removed > 0 and bug_patch.test_patch.added == 0
                 )
                 # check if tests from previous commit w/diff were fixed
-                and self.__check_tests_were_fixed(bug_patch.actions_runs[1], 
-                                                  bug_patch.actions_runs[2])
+                and self.__check_tests_were_fixed(
+                    bug_patch.actions_runs[1], bug_patch.actions_runs[2]
+                )
             ):
                 bug_patch.strategy_used = CollectionStrategy.PASS_PASS
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
@@ -571,8 +575,9 @@ class PatchCollector:
                 # current commit passed
                 and curr_commit_passed
                 # check if tests from previous commit were fixed
-                and self.__check_tests_were_fixed(bug_patch.actions_runs[0], 
-                                                  bug_patch.actions_runs[2])
+                and self.__check_tests_were_fixed(
+                    bug_patch.actions_runs[0], bug_patch.actions_runs[2]
+                )
             ):
                 bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)

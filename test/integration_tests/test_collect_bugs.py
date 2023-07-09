@@ -87,6 +87,7 @@ def test_get_possible_patches():
 
     delete_repo_clone(collector.repo_clone)
 
+
 @pytest.mark.skip(
     reason="""this test doesn't add much, but it is a good sanity test. 
               skipping to avoid overloading the tests"""
@@ -99,16 +100,16 @@ def test_get_possible_patches():
         bug_patch = collector.get_possible_patches()[0]
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
         runs = collector._PatchCollector__test_patch(
-            bug_patch.commit, 
-            bug_patch.previous_commit, 
+            bug_patch.commit,
+            bug_patch.previous_commit,
             bug_patch.test_patch,
-            act_cache_dir
+            act_cache_dir,
         )
         assert collector._PatchCollector__check_tests_were_fixed(runs[1], runs[2])
         assert not collector._PatchCollector__check_tests_were_fixed(runs[1], runs[1])
     finally:
         collector.delete_repo()
-    
+
 
 class TestCollectBugs:
     TOKEN_USAGE: int = 0
