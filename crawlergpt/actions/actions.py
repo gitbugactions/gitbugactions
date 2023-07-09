@@ -261,7 +261,8 @@ class Act:
             elapsed_time=end_time - start_time,
         )
 
-        if len(tests_run.failed_tests) == 0 and run.returncode != 0:
+        # 124 is the return code for the timeout
+        if (run.returncode == 124) or (len(tests_run.failed_tests) == 0 and run.returncode != 0):
             tests_run.failed = True
 
         updated_tokens = set()
