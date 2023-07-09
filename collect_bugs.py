@@ -18,6 +18,7 @@ from crawlergpt.actions.actions import (
     ActCacheDirManager,
     GitHubActions,
 )
+from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.actions.action import Action
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
@@ -351,6 +352,57 @@ class PatchCollector:
 
         return issues
 
+    def __get_used_actions(self, commit: str) -> Set[Action]:
+        """
+        Get the actions used by the workflows declared in the commit version.
+        Use git show to avoid checking out the whole version
+        """
+        actions: Set[Action] = set()
+
+        # Search for workflows in the commit version
+        run = subprocess.run(
+            f"git show {commit}:.github/workflows",
+            cwd=self.repo_clone.workdir,
+            shell=True,
+            capture_output=True,
+        )
+
+        # If the folder does not exist, there are no workflows
+        if run.returncode != 0:
+            return actions
+
+        # Get the workflows paths
+        workflow_paths = run.stdout.decode("utf-8").split("\n")
+
+        # Get the actions used by each workflow
+        for workflow_path in workflow_paths:
+            # Skip empty lines an non yaml files
+            if workflow_path == "" or not (
+                workflow_path.endswith(".yml") or workflow_path.endswith(".yaml")
+            ):
+                continue
+
+            # Read the workflow file
+            run = subprocess.run(
+                f"git show {commit}:.github/workflows/{workflow_path}",
+                cwd=self.repo_clone.workdir,
+                shell=True,
+                capture_output=True,
+            )
+            if run.returncode != 0:
+                continue
+
+            # Get the actions used by the workflow
+            try:
+                workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
+                    "", self.language, content=run.stdout.decode("utf-8")
+                )
+                actions.update(workflow.get_actions())
+            except Exception:
+                continue
+
+        return actions
+
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -385,19 +437,8 @@ class PatchCollector:
                     continue
 
                 actions: Set[Action] = set()
-                self.repo_clone.checkout_tree(commit)
-                self.repo_clone.set_head(commit.oid)
-                actions.update(
-                    GitHubActions(self.repo_clone.workdir, self.language).get_actions()
-                )
-                self.__cleanup_repo(
-                    self.repo_clone, self.repo_clone.workdir, self.first_commit
-                )
-                self.repo_clone.checkout_tree(previous_commit)
-                self.repo_clone.set_head(previous_commit.oid)
-                actions.update(
-                    GitHubActions(self.repo_clone.workdir, self.language).get_actions()
-                )
+                actions.update(self.__get_used_actions(commit))
+                actions.update(self.__get_used_actions(previous_commit))
 
                 if previous_commit.hex in commit_to_patches:
                     commit_to_patches[previous_commit.hex].append(
@@ -600,7 +641,7 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
             for bug_patch in bug_patches:
                 future_to_patches[
                     executor.submit(patch_collector.test_patch, bug_patch)
-                ] = (bug_patch)
+                ] = bug_patch
 
         for future in tqdm.tqdm(
             as_completed(future_to_patches), total=len(future_to_patches)

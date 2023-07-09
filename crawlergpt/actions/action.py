@@ -24,6 +24,7 @@ class Action:
         Download the action to the action dir
         """
         from crawlergpt.util import clone_repo
+
         logging.info(f"Downloading action {self.declaration} to {action_dir}")
 
         # If the action is already in the cache, raise an exception
@@ -34,9 +35,7 @@ class Action:
         try:
             with Action.CLONE_SEM:
                 # Clone the action to the action dir using pygit2
-                clone_repo(
-                    f"https://github.com/{self.org}/{self.repo}.git", action_dir
-                )
+                clone_repo(f"https://github.com/{self.org}/{self.repo}.git", action_dir)
 
                 # Checkout the action version
                 run = subprocess.run(

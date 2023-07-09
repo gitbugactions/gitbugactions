@@ -26,14 +26,17 @@ class GitHubWorkflow(ABC):
         "ubuntu-18.04",
     ]
 
-    def __init__(self, path: str):
+    def __init__(self, path: str, workflow: str = ""):
         try:
-            with open(path, "r") as stream:
-                self.doc = yaml.safe_load(stream)
-                # Solves problem where pyyaml parses 'on' (used in Github actions) as True
-                if True in self.doc:
-                    self.doc["on"] = self.doc[True]
-                    self.doc.pop(True)
+            if workflow == "":
+                with open(path, "r") as stream:
+                    self.doc = yaml.safe_load(stream)
+            else:
+                self.doc = yaml.safe_load(workflow)
+            # Solves problem where pyyaml parses 'on' (used in Github actions) as True
+            if True in self.doc:
+                self.doc["on"] = self.doc[True]
+                self.doc.pop(True)
         except Exception:
             self.doc = []
         self.path = path
@@ -215,7 +218,7 @@ class GitHubWorkflowFactory:
     """
 
     @staticmethod
-    def _identify_build_tool(path: str):
+    def _identify_build_tool(path: str, content: str = ""):
         """
         Identifies the build tool used by the workflow.
         """
@@ -240,11 +243,16 @@ class GitHubWorkflowFactory:
                             keyword_counts[keyword] += 1
 
             # Load the workflow
-            with open(path, "r") as stream:
-                doc = yaml.safe_load(stream)
-                if True in doc:
-                    doc["on"] = doc[True]
-                    doc.pop(True)
+            doc = None
+            if content == "":
+                with open(path, "r") as stream:
+                    doc = yaml.safe_load(stream)
+            else:
+                doc = yaml.safe_load(content)
+
+            if True in doc:
+                doc["on"] = doc[True]
+                doc.pop(True)
 
             # Iterate over the workflow to find build tool names in the run commands
             if "jobs" in doc:
@@ -270,20 +278,20 @@ class GitHubWorkflowFactory:
             return None
 
     @staticmethod
-    def create_workflow(path: str, language: str):
+    def create_workflow(path: str, language: str, content: str = "") -> GitHubWorkflow:
         """
         Creates a workflow object according to the language and build system.
         """
-        build_tool = GitHubWorkflowFactory._identify_build_tool(path)
+        build_tool = GitHubWorkflowFactory._identify_build_tool(path, content=content)
 
         match (language, build_tool):
             case ("java", "maven"):
-                return MavenWorkflow(path)
+                return MavenWorkflow(path, content)
             case ("java", "gradle"):
-                return GradleWorkflow(path)
+                return GradleWorkflow(path, content)
             case ("python", "pytest"):
-                return PytestWorkflow(path)
+                return PytestWorkflow(path, content)
             case ("python", "unittest"):
-                return UnittestWorkflow(path)
+                return UnittestWorkflow(path, content)
             case (_, _):
-                return UnknownWorkflow(path)
+                return UnknownWorkflow(path, content)

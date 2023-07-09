@@ -26,9 +26,7 @@ def export_bug_containers(bug: Dict, export_path: str):
     commit_hash = bug["commit_hash"]
     logging.info(f"Exporting {commit_hash} from {repo_full_name}...")
     temp_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-    repo_clone = clone_repo(
-        f"https://github.com/{repo_full_name}", temp_path
-    )
+    repo_clone = clone_repo(f"https://github.com/{repo_full_name}", temp_path)
     first_commit = repo_clone.revparse_single(str(repo_clone.head.target))
     default_actions = get_default_github_actions(
         repo_clone, first_commit, bug["language"]
