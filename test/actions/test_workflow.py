@@ -30,6 +30,7 @@ def test_maven(yml_file):
     [
         ("test/resources/test_workflows/python/pytest_crawlergpt.yml"),
         ("test/resources/test_workflows/python/pytest_crawlergpt_needs.yml"),
+        ("test/resources/test_workflows/python/pytest_crawlergpt_no_needs.yml"),
     ],
 )
 def test_pytest(yml_file):
@@ -49,6 +50,20 @@ def test_pytest_needs(yml_file):
     workflow.instrument_jobs()
     assert "jobs" in workflow.doc
     assert "setup" in workflow.doc["jobs"]
+    assert "test" in workflow.doc["jobs"]
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/python/pytest_crawlergpt_no_needs.yml")],
+)
+def test_pytest_no_needs(yml_file):
+    """Test that the workflow is created and only the tests job is kept."""
+    workflow = create_workflow(yml_file, "python")
+    assert isinstance(workflow, PytestWorkflow)
+    workflow.instrument_jobs()
+    assert "jobs" in workflow.doc
+    assert "setup" not in workflow.doc["jobs"]
     assert "test" in workflow.doc["jobs"]
 
 
