@@ -27,13 +27,16 @@ class GitHubWorkflow(ABC):
     ]
 
     def __init__(self, path: str):
-        with open(path, "r") as stream:
-            self.doc = yaml.safe_load(stream)
-            self.path = path
-            # Solves problem where pyyaml parses 'on' (used in Github actions) as True
-            if True in self.doc:
-                self.doc["on"] = self.doc[True]
-                self.doc.pop(True)
+        try:
+            with open(path, "r") as stream:
+                self.doc = yaml.safe_load(stream)
+                # Solves problem where pyyaml parses 'on' (used in Github actions) as True
+                if True in self.doc:
+                    self.doc["on"] = self.doc[True]
+                    self.doc.pop(True)
+        except Exception:
+            self.doc = []
+        self.path = path
         self.tokens: List[GithubToken] = []
 
     @abstractmethod
