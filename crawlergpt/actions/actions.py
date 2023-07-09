@@ -124,7 +124,7 @@ class ActTestsRun:
     elapsed_time: int
 
     @property
-    def failed_tests(self):
+    def failed_tests(self) -> List[TestCase]:
         failed_tests = []
         for test in self.tests:
             # Check if it is failed (not passed, not skipped and without errors)
