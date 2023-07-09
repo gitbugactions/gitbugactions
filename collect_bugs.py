@@ -18,10 +18,11 @@ from crawlergpt.actions.actions import (
     ActCacheDirManager,
     GitHubActions,
 )
+from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.actions.action import Action
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
-from crawlergpt.util import get_default_github_actions
+from crawlergpt.util import get_default_github_actions, clone_repo
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
@@ -158,7 +159,7 @@ class BugPatch:
 
 
 class PatchCollector:
-    CLONE_SEM = threading.Semaphore(8)
+    CLONE_SEM = threading.Semaphore(16)
 
     def __init__(self, repo: Repository):
         self.repo: Repository = repo
@@ -178,7 +179,7 @@ class PatchCollector:
                 )
                 repo_path = os.path.join(repo_path, str(uuid.uuid4()))
                 logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-                self.repo_clone: pygit2.Repository = pygit2.clone_repository(
+                self.repo_clone: pygit2.Repository = clone_repo(
                     self.repo.clone_url, repo_path
                 )
                 # Set gc.auto to 0 to avoid "too many open files" bug
@@ -351,6 +352,57 @@ class PatchCollector:
 
         return issues
 
+    def __get_used_actions(self, commit: str) -> Set[Action]:
+        """
+        Get the actions used by the workflows declared in the commit version.
+        Use git show to avoid checking out the whole version
+        """
+        actions: Set[Action] = set()
+
+        # Search for workflows in the commit version
+        run = subprocess.run(
+            f"git show {commit}:.github/workflows",
+            cwd=self.repo_clone.workdir,
+            shell=True,
+            capture_output=True,
+        )
+
+        # If the folder does not exist, there are no workflows
+        if run.returncode != 0:
+            return actions
+
+        # Get the workflows paths
+        workflow_paths = run.stdout.decode("utf-8").split("\n")
+
+        # Get the actions used by each workflow
+        for workflow_path in workflow_paths:
+            # Skip empty lines and non yaml files
+            if workflow_path == "" or not (
+                workflow_path.endswith(".yml") or workflow_path.endswith(".yaml")
+            ):
+                continue
+
+            # Read the workflow file
+            run = subprocess.run(
+                f"git show {commit}:.github/workflows/{workflow_path}",
+                cwd=self.repo_clone.workdir,
+                shell=True,
+                capture_output=True,
+            )
+            if run.returncode != 0:
+                continue
+
+            # Get the actions used by the workflow
+            try:
+                workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
+                    "", self.language, content=run.stdout.decode("utf-8")
+                )
+                actions.update(workflow.get_actions())
+            except Exception:
+                continue
+
+        return actions
+
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -385,19 +437,8 @@ class PatchCollector:
                     continue
 
                 actions: Set[Action] = set()
-                self.repo_clone.checkout_tree(commit)
-                self.repo_clone.set_head(commit.oid)
-                actions.update(
-                    GitHubActions(self.repo_clone.workdir, self.language).get_actions()
-                )
-                self.__cleanup_repo(
-                    self.repo_clone, self.repo_clone.workdir, self.first_commit
-                )
-                self.repo_clone.checkout_tree(previous_commit)
-                self.repo_clone.set_head(previous_commit.oid)
-                actions.update(
-                    GitHubActions(self.repo_clone.workdir, self.language).get_actions()
-                )
+                actions.update(self.__get_used_actions(commit.oid.hex))
+                actions.update(self.__get_used_actions(previous_commit.oid.hex))
 
                 if previous_commit.hex in commit_to_patches:
                     commit_to_patches[previous_commit.hex].append(
@@ -569,7 +610,6 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 )
             else:
                 patch_collectors.append((patch_collector, result))
-                patch_collector.delete_repo()
 
     # Populate the base cache dir with required actions
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
@@ -596,29 +636,24 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 continue
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        future_to_patches: Dict[Future, Tuple[BugPatch, bool]] = {}
+        future_to_patches: Dict[Future, Tuple[BugPatch]] = {}
         for patch_collector, bug_patches in patch_collectors:
-            bug_patches_len = len(bug_patches)
-
-            for i, bug_patch in enumerate(bug_patches):
+            for bug_patch in bug_patches:
                 future_to_patches[
                     executor.submit(patch_collector.test_patch, bug_patch)
-                ] = (bug_patch, i == bug_patches_len - 1)
+                ] = bug_patch
 
         for future in tqdm.tqdm(
             as_completed(future_to_patches), total=len(future_to_patches)
         ):
             try:
-                bug_patch, last_collector_bug_patch = future_to_patches[future]
+                bug_patch = future_to_patches[future]
                 is_patch = future.result()
             except Exception:
                 logging.error(
                     f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
                 )
             else:
-                # Last bug patch for this patch collector deletes the repo
-                if last_collector_bug_patch:
-                    patch_collectors.pop(0)[0].delete_repo()
                 if is_patch:
                     data_path = os.path.join(
                         results_path,
@@ -627,6 +662,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                     with open(data_path, "a") as fp:
                         data = bug_patch.get_data()
                         fp.write((json.dumps(data) + "\n"))
+
+    for patch_collector, _ in patch_collectors:
+        patch_collector.delete_repo()
 
 
 def main():

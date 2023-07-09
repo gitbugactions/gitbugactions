@@ -2,14 +2,13 @@ import logging
 import re
 import shutil
 import os, subprocess, threading
-import pygit2
 import traceback
 
 
 class Action:
     # Class to represent a GitHub Action
     # Note: We consider only the major version of the action, thus we ignore the minor and patch versions
-    CLONE_SEM = threading.Semaphore(8)
+    CLONE_SEM = threading.Semaphore(16)
 
     def __init__(self, declaration: str):
         self.declaration = declaration
@@ -24,6 +23,8 @@ class Action:
         """
         Download the action to the action dir
         """
+        from crawlergpt.util import clone_repo
+
         logging.info(f"Downloading action {self.declaration} to {action_dir}")
 
         # If the action is already in the cache, raise an exception
@@ -34,9 +35,7 @@ class Action:
         try:
             with Action.CLONE_SEM:
                 # Clone the action to the action dir using pygit2
-                pygit2.clone_repository(
-                    f"https://github.com/{self.org}/{self.repo}.git", action_dir
-                )
+                clone_repo(f"https://github.com/{self.org}/{self.repo}.git", action_dir)
 
                 # Checkout the action version
                 run = subprocess.run(

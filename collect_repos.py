@@ -1,12 +1,11 @@
 import tempfile
-import pygit2
-import os, logging, sys, shutil, traceback
+import os, logging, sys, traceback
 import json
 import uuid
 import fire
 from datetime import datetime
 from github import Repository
-from crawlergpt.util import delete_repo_clone
+from crawlergpt.util import delete_repo_clone, clone_repo
 from crawlergpt.crawler import RepoStrategy, RepoCrawler
 from crawlergpt.actions.actions import GitHubActions, ActCacheDirManager
 
@@ -44,7 +43,7 @@ class CollectReposStrategy(RepoStrategy):
             "actions_successful": False,
         }
 
-        repo_clone = pygit2.clone_repository(repo.clone_url, repo_path)
+        repo_clone = clone_repo(repo.clone_url, repo_path)
 
         try:
             data["clone_success"] = True
