@@ -1,4 +1,6 @@
 import os
+import logging
+import traceback
 import yaml
 import shutil
 import time
@@ -19,6 +21,20 @@ def delete_repo_clone(repo_clone: pygit2.Repository):
     repo_clone.free()
     if os.path.exists(repo_clone.workdir):
         shutil.rmtree(repo_clone.workdir, onerror=retry_remove)
+
+
+def clone_repo(clone_url: str, path: str) -> pygit2.Repository:
+    retries = 3
+    for r in range(retries):
+        try:
+            repo_clone: pygit2.Repository = pygit2.clone_repository(
+                clone_url, path
+            )
+            return repo_clone
+        except pygit2.GitError as e:
+            if r == retries - 1:
+                logging.error(f"Error while cloning {clone_url}: {traceback.format_exc()}")
+                raise e
 
 
 def get_default_github_actions(

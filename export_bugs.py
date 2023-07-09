@@ -13,7 +13,7 @@ import tempfile
 from docker.models.containers import Container
 from typing import List, Dict
 from crawlergpt.test_executor import TestExecutor
-from crawlergpt.util import delete_repo_clone, get_default_github_actions
+from crawlergpt.util import delete_repo_clone, get_default_github_actions, clone_repo
 from crawlergpt.docker.export import extract_diff
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from crawlergpt.actions.actions import ActCacheDirManager
@@ -26,7 +26,7 @@ def export_bug_containers(bug: Dict, export_path: str):
     commit_hash = bug["commit_hash"]
     logging.info(f"Exporting {commit_hash} from {repo_full_name}...")
     temp_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-    repo_clone = pygit2.clone_repository(
+    repo_clone = clone_repo(
         f"https://github.com/{repo_full_name}", temp_path
     )
     first_commit = repo_clone.revparse_single(str(repo_clone.head.target))

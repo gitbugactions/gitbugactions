@@ -21,7 +21,7 @@ from crawlergpt.actions.actions import (
 from crawlergpt.actions.action import Action
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
-from crawlergpt.util import get_default_github_actions
+from crawlergpt.util import get_default_github_actions, clone_repo
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
@@ -158,7 +158,7 @@ class BugPatch:
 
 
 class PatchCollector:
-    CLONE_SEM = threading.Semaphore(8)
+    CLONE_SEM = threading.Semaphore(16)
 
     def __init__(self, repo: Repository):
         self.repo: Repository = repo
@@ -178,7 +178,7 @@ class PatchCollector:
                 )
                 repo_path = os.path.join(repo_path, str(uuid.uuid4()))
                 logging.info(f"Cloning {self.repo.full_name} - {self.repo.clone_url}")
-                self.repo_clone: pygit2.Repository = pygit2.clone_repository(
+                self.repo_clone: pygit2.Repository = clone_repo(
                     self.repo.clone_url, repo_path
                 )
                 # Set gc.auto to 0 to avoid "too many open files" bug
