@@ -569,7 +569,6 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 )
             else:
                 patch_collectors.append((patch_collector, result))
-                patch_collector.delete_repo()
 
     # Populate the base cache dir with required actions
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
@@ -596,29 +595,24 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 continue
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        future_to_patches: Dict[Future, Tuple[BugPatch, bool]] = {}
+        future_to_patches: Dict[Future, Tuple[BugPatch]] = {}
         for patch_collector, bug_patches in patch_collectors:
-            bug_patches_len = len(bug_patches)
-
-            for i, bug_patch in enumerate(bug_patches):
+            for bug_patch in bug_patches:
                 future_to_patches[
                     executor.submit(patch_collector.test_patch, bug_patch)
-                ] = (bug_patch, i == bug_patches_len - 1)
+                ] = (bug_patch)
 
         for future in tqdm.tqdm(
             as_completed(future_to_patches), total=len(future_to_patches)
         ):
             try:
-                bug_patch, last_collector_bug_patch = future_to_patches[future]
+                bug_patch = future_to_patches[future]
                 is_patch = future.result()
             except Exception:
                 logging.error(
                     f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
                 )
             else:
-                # Last bug patch for this patch collector deletes the repo
-                if last_collector_bug_patch:
-                    patch_collectors.pop(0)[0].delete_repo()
                 if is_patch:
                     data_path = os.path.join(
                         results_path,
@@ -627,6 +621,9 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                     with open(data_path, "a") as fp:
                         data = bug_patch.get_data()
                         fp.write((json.dumps(data) + "\n"))
+
+    for patch_collector, _ in patch_collectors:
+        patch_collector.delete_repo()
 
 
 def main():
