@@ -51,6 +51,7 @@ def test_pytest_needs(yml_file):
     assert "jobs" in workflow.doc
     assert "setup" in workflow.doc["jobs"]
     assert "test" in workflow.doc["jobs"]
+    assert "checkout" in workflow.doc["jobs"]
 
 
 @pytest.mark.parametrize(
@@ -64,6 +65,7 @@ def test_pytest_no_needs(yml_file):
     workflow.instrument_jobs()
     assert "jobs" in workflow.doc
     assert "setup" not in workflow.doc["jobs"]
+    assert "checkout" not in workflow.doc["jobs"]
     assert "test" in workflow.doc["jobs"]
 
 

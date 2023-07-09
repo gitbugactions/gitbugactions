@@ -3,7 +3,7 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-  setup:
+  checkout:
 
     runs-on: ubuntu-latest
 
@@ -11,6 +11,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3.5.2
 
+  setup:
+
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Set up Python
       uses: actions/setup-python@v4.6.1
       with:
