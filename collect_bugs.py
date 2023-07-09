@@ -257,9 +257,9 @@ class PatchCollector:
             repo_clone.set_head(previous_commit.oid)
 
             act_runs = executor.run_tests()
-            test_patch_runs[0] = act_runs
             if all_runs_crashed(act_runs):
                 return test_patch_runs
+            test_patch_runs[0] = act_runs
 
             self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
 
@@ -271,9 +271,9 @@ class PatchCollector:
                     # Invalid patches
                     return test_patch_runs
                 act_runs = executor.run_tests()
-                test_patch_runs[1] = act_runs
                 if all_runs_crashed(act_runs):
                     return test_patch_runs
+                test_patch_runs[1] = act_runs
 
                 self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
 
@@ -291,9 +291,9 @@ class PatchCollector:
             )
             repo_clone.set_head(commit.oid)
             act_runs = executor.run_tests()
-            test_patch_runs[2] = act_runs
             if all_runs_crashed(act_runs):
                 return test_patch_runs
+            test_patch_runs[2] = act_runs
         finally:
             delete_repo_clone(repo_clone)
 
