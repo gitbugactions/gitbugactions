@@ -136,6 +136,15 @@ class ActTestsRun:
                 failed_tests.append(test)
         return failed_tests
 
+    @property
+    def erroring_tests(self) -> List[TestCase]:
+        erroring_tests = []
+        for test in self.tests:
+            # Check if it is erroring (not passed, not skipped, and with erorrs)
+            if any(map(lambda r: isinstance(r, Error), test.result)):
+                erroring_tests.append(test)
+        return erroring_tests
+
     def asdict(self) -> Dict:
         res = {}
 
@@ -262,8 +271,10 @@ class Act:
         )
 
         # 124 is the return code for the timeout
-        if (run.returncode == 124) or (
-            len(tests_run.failed_tests) == 0 and run.returncode != 0
+        if (
+            (run.returncode == 124)
+            or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
+            or len(tests_run.erroring_tests) > 0
         ):
             tests_run.failed = True
 
