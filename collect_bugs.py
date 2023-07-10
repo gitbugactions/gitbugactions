@@ -91,9 +91,7 @@ class BugPatch:
 
         return {
             "repository": self.repo.full_name,
-            "stars": self.repo.stargazers_count,
             "language": self.language,
-            "size": self.repo.size,
             "clone_url": self.repo.clone_url,
             "collection_timestamp": datetime.utcnow().isoformat() + "Z",
             "commit_hash": self.commit,
@@ -594,7 +592,17 @@ class PatchCollector:
         self.cloned = False
 
 
-def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
+def collect_bugs(data_path: str, results_path="data/out_bugs", n_workers=1):
+    """Collects bugs from the repos listed in `data_path`. The result is saved
+    on `results_path`. A file `data.json` is also created with information about
+    the repos.
+
+    Args:
+        data_path (str): Folder where the result of collect_repos is.
+        results_path (str, optional): Folder on which the results will be saved.
+                                      Defaults to "data/out_bugs".
+        n_workers (int, optional): Number of parallel workers. Defaults to 1.
+    """
     token = GithubToken.get_token()
     github: Github = Github(
         login_or_token=token if token is None else token.token,
@@ -638,6 +646,19 @@ def collect_bugs(data_path, results_path="data/out_bugs", n_workers=1):
                 )
             else:
                 patch_collectors.append((patch_collector, result))
+
+    data_path = os.path.join(results_path, "data.json")
+    repos = {}
+    with open(data_path, "w") as fp:
+        for patch_collector, bug_patches in patch_collectors:
+            repos[patch_collector.repo.full_name] = {
+                "clone_url": patch_collector.repo.clone_url,
+                "commits": patch_collector.repo.get_commits().totalCount,
+                "possible_bug_patches": len(bug_patches),
+                "stars": patch_collector.repo.stargazers_count,
+                "size": patch_collector.repo.size,
+            }
+        fp.write(json.dumps(repos))
 
     # Populate the base cache dir with required actions
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
