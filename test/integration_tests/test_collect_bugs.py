@@ -523,14 +523,25 @@ class TestCollectBugs:
         ) as f:
             data = json.loads(f.read())
             assert len(data.keys()) == 4
-            assert data['Nfsaavedra/crawlergpt-test-repo']['commits'] == 6
-            assert data['andre15silva/crawlergpt-pytest-test-repo']['commits'] == 6
-            assert data['andre15silva/crawlergpt-gradle-test-repo']['commits'] == 2
-            assert data['andre15silva/crawlergpt-unittest-test-repo']['commits'] == 2
-            assert data['Nfsaavedra/crawlergpt-test-repo']['possible_bug_patches'] == 2
-            assert data['andre15silva/crawlergpt-pytest-test-repo']['possible_bug_patches'] == 3
-            assert data['andre15silva/crawlergpt-gradle-test-repo']['possible_bug_patches'] == 1
-            assert data['andre15silva/crawlergpt-unittest-test-repo']['possible_bug_patches'] == 1
+            assert data["Nfsaavedra/crawlergpt-test-repo"]["commits"] == 6
+            assert data["andre15silva/crawlergpt-pytest-test-repo"]["commits"] == 6
+            assert data["andre15silva/crawlergpt-gradle-test-repo"]["commits"] == 2
+            assert data["andre15silva/crawlergpt-unittest-test-repo"]["commits"] == 2
+            assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 2
+            assert (
+                data["andre15silva/crawlergpt-pytest-test-repo"]["possible_bug_patches"]
+                == 3
+            )
+            assert (
+                data["andre15silva/crawlergpt-gradle-test-repo"]["possible_bug_patches"]
+                == 1
+            )
+            assert (
+                data["andre15silva/crawlergpt-unittest-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 1
+            )
 
     @pytest.mark.dependency(
         depends=[

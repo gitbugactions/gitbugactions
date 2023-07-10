@@ -599,7 +599,7 @@ def collect_bugs(data_path: str, results_path="data/out_bugs", n_workers=1):
 
     Args:
         data_path (str): Folder where the result of collect_repos is.
-        results_path (str, optional): Folder on which the results will be saved. 
+        results_path (str, optional): Folder on which the results will be saved.
                                       Defaults to "data/out_bugs".
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
     """
