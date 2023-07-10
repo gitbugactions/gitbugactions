@@ -2,9 +2,11 @@ import json
 import shutil
 import pytest
 from typing import List
+from unidiff import PatchSet
 from collect_bugs import collect_bugs, PatchCollector, BugPatch
 from crawlergpt.github_token import GithubToken
 from crawlergpt.util import delete_repo_clone
+from crawlergpt.actions.actions import ActCacheDirManager
 
 
 def get_token_usage():
@@ -84,6 +86,29 @@ def test_get_possible_patches():
     assert "0d8347de05e969cb2fc836bb0f5e343643b2e7ad" not in commits
 
     delete_repo_clone(collector.repo_clone)
+
+
+@pytest.mark.skip(
+    reason="""this test doesn't add much, but it is a good sanity test. 
+              skipping to avoid overloading the tests"""
+)
+def test_get_possible_patches():
+    try:
+        collector = PatchCollector(
+            GithubToken.get_token().github.get_repo("Nfsaavedra/crawlergpt-test-repo")
+        )
+        bug_patch = collector.get_possible_patches()[0]
+        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+        runs = collector._PatchCollector__test_patch(
+            bug_patch.commit,
+            bug_patch.previous_commit,
+            bug_patch.test_patch,
+            act_cache_dir,
+        )
+        assert collector._PatchCollector__check_tests_were_fixed(runs[1], runs[2])
+        assert not collector._PatchCollector__check_tests_were_fixed(runs[1], runs[1])
+    finally:
+        collector.delete_repo()
 
 
 class TestCollectBugs:
