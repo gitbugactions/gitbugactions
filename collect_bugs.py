@@ -16,7 +16,7 @@ from crawlergpt.util import delete_repo_clone
 from crawlergpt.actions.actions import (
     ActTestsRun,
     ActCacheDirManager,
-    GitHubActions,
+    Act,
 )
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.actions.action import Action
@@ -592,7 +592,9 @@ class PatchCollector:
         self.cloned = False
 
 
-def collect_bugs(data_path: str, results_path="data/out_bugs", n_workers=1):
+def collect_bugs(
+    data_path: str, results_path="data/out_bugs", n_workers=1, memory_limit="7g"
+):
     """Collects bugs from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
     the repos.
@@ -602,7 +604,10 @@ def collect_bugs(data_path: str, results_path="data/out_bugs", n_workers=1):
         results_path (str, optional): Folder on which the results will be saved.
                                       Defaults to "data/out_bugs".
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
+        memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
+                                      Defaults to '7g'.
     """
+    Act.set_memory_limit(memory_limit)
     token = GithubToken.get_token()
     github: Github = Github(
         login_or_token=token if token is None else token.token,

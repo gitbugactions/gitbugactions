@@ -191,6 +191,7 @@ class Act:
     # The flag -u allows files to be created with the current user
     __FLAGS = f"--bind --pull=false --no-cache-server"
     __SETUP_LOCK = threading.Lock()
+    __MEMORY_LIMIT = "7g"
 
     def __init__(
         self, reuse, timeout=5, runner: str = "crawlergpt:latest", offline: bool = False
@@ -208,6 +209,7 @@ class Act:
         self.flags += f" --container-options '-u {os.getuid()}:{os.getgid()}"
         if offline:
             self.flags += " --network none"
+        self.flags += f" --memory={Act.__MEMORY_LIMIT}"
         self.flags += "'"
 
         self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
@@ -243,6 +245,10 @@ class Act:
             os.remove("Dockerfile")
             Act.__ACT_SETUP = True
 
+    @staticmethod
+    def set_memory_limit(limit: str):
+        Act.__MEMORY_LIMIT = limit
+
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
     ) -> ActTestsRun:
@@ -270,8 +276,15 @@ class Act:
             elapsed_time=end_time - start_time,
         )
 
-        # 124 is the return code for the timeout
         if (
+            # Failed run with failed tests but with memory limit exceed should not
+            # be considered. We do not check the return code because act does not
+            # pass the code from the container.
+            run.returncode == 1  # Increase performance by avoiding
+            and len(tests_run.failed_tests) != 0  # to check the output in every run
+            and ("exitcode '137'" in stderr or "exitcode '137': failure" in stdout)
+        ) or (
+            # 124 is the return code for the timeout
             (run.returncode == 124)
             or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
             or len(tests_run.erroring_tests) > 0
