@@ -194,17 +194,17 @@ class PatchCollector:
 
     def __get_patches(self, repo_clone, commit, previous_commit):
         diff = repo_clone.diff(previous_commit.hex, commit.hex)
-        patch = PatchSet(diff.patch)
-        bug_patch = PatchSet("")
-        test_patch = PatchSet("")
+        patch: PatchSet = PatchSet(diff.patch)
+        bug_patch: PatchSet = PatchSet("")
+        test_patch: PatchSet = PatchSet("")
 
         for p in patch:
             # FIXME change keywords according to build tool
+            test_keywords = {"test", "tests"}
             if any(
-                [
-                    keyword in p.source_file.split(os.sep)
-                    for keyword in ["test", "tests"]
-                ]
+                [keyword in p.source_file.split(os.sep) for keyword in test_keywords]
+            ) or any(
+                [keyword in p.target_file.split(os.sep) for keyword in test_keywords]
             ):
                 test_patch.append(p)
             else:

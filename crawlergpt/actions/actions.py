@@ -186,7 +186,7 @@ class ActTestsRun:
 
 
 class Act:
-    __ACT_PATH = "act"
+    __ACT_PATH = "~/bin/act"
     __ACT_SETUP = False
     # The flag -u allows files to be created with the current user
     __FLAGS = f"--bind --pull=false --no-cache-server"
