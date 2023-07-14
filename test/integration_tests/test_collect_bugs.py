@@ -161,6 +161,8 @@ class TestCollectBugs:
                     assert data["time_to_patch"] == "0:00:09"
                     assert data["strategy"] == "PASS_PASS"
                     assert data["bug_patch_files_type"] == "SOURCE_ONLY"
+                    assert len(data["bug_patch_files_extensions"]) == 1
+                    assert data["bug_patch_files_extensions"][0] == ".java"
                     assert len(data["actions_runs"]) == 3
                     assert len(data["actions_runs"][1][0]["tests"]) == 1
                     assert len(data["actions_runs"][1][0]["tests"][0]["results"]) == 1
@@ -182,6 +184,8 @@ class TestCollectBugs:
                     assert data["time_to_patch"] == "5 days, 22:53:38"
                     assert data["strategy"] == "FAIL_PASS"
                     assert data["bug_patch_files_type"] == "SOURCE_ONLY"
+                    assert len(data["bug_patch_files_extensions"]) == 1
+                    assert data["bug_patch_files_extensions"][0] == ".java"
                     assert len(data["actions_runs"]) == 3
                     assert len(data["actions_runs"][0][0]["tests"]) == 2
                     assert data["actions_runs"][1] is None
@@ -232,6 +236,8 @@ class TestCollectBugs:
                     assert data["time_to_patch"] == "0:00:35"
                     assert data["strategy"] == "PASS_PASS"
                     assert data["bug_patch_files_type"] == "SOURCE_ONLY"
+                    assert len(data["bug_patch_files_extensions"]) == 1
+                    assert data["bug_patch_files_extensions"][0] == ".py"
                     assert len(data["actions_runs"]) == 3
                     # assert that number of total tests before == 6 and all pass
                     assert len(data["actions_runs"][0][0]["tests"]) == 6
@@ -312,6 +318,8 @@ class TestCollectBugs:
                     assert data["time_to_patch"] == "0:00:51"
                     assert data["strategy"] == "FAIL_PASS"
                     assert data["bug_patch_files_type"] == "NON_SOURCE_ONLY"
+                    assert len(data["bug_patch_files_extensions"]) == 1
+                    assert ".txt" in data["bug_patch_files_extensions"]
                     assert len(data["actions_runs"]) == 3
                     assert len(data["actions_runs"][0][0]["tests"]) == 13
                     assert len(data["actions_runs"][2][0]["tests"]) == 13
@@ -328,6 +336,9 @@ class TestCollectBugs:
                     assert data["time_to_patch"] == "0:00:23"
                     assert data["strategy"] == "FAIL_PASS"
                     assert data["bug_patch_files_type"] == "MIXED"
+                    assert len(data["bug_patch_files_extensions"]) == 2
+                    assert ".txt" in data["bug_patch_files_extensions"]
+                    assert ".py" in data["bug_patch_files_extensions"]
                     assert len(data["actions_runs"]) == 3
                     assert len(data["actions_runs"][0][0]["tests"]) == 15
                     assert len(data["actions_runs"][2][0]["tests"]) == 15
@@ -358,6 +369,8 @@ class TestCollectBugs:
             assert data["time_to_patch"] == "0:00:26"
             assert data["strategy"] == "PASS_PASS"
             assert data["bug_patch_files_type"] == "SOURCE_ONLY"
+            assert len(data["bug_patch_files_extensions"]) == 1
+            assert data["bug_patch_files_extensions"][0] == ".java"
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 1 and it passes
             assert len(data["actions_runs"][0][0]["tests"]) == 1
@@ -450,6 +463,8 @@ class TestCollectBugs:
             assert data["time_to_patch"] == "0:00:05"
             assert data["strategy"] == "PASS_PASS"
             assert data["bug_patch_files_type"] == "SOURCE_ONLY"
+            assert len(data["bug_patch_files_extensions"]) == 1
+            assert data["bug_patch_files_extensions"][0] == ".py"
             assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 2 and all pass
             assert len(data["actions_runs"][0][0]["tests"]) == 2

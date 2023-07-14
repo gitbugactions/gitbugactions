@@ -67,9 +67,11 @@ class BugPatch:
         )
         self.bug_patch: PatchSet = bug_patch
         self.test_patch: PatchSet = test_patch
-        self.bug_patch_files_type: ChangeType = self.__compute_change_type(
+        change_type, file_extensions = self.__compute_change_type(
             self.language, self.bug_patch
         )
+        self.bug_patch_files_type: ChangeType = change_type
+        self.bug_patch_files_extensions: List[str] = list(file_extensions)
         self.actions: Set[Action] = actions
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
         self.issues = None
@@ -104,32 +106,39 @@ class BugPatch:
             "bug_patch": str(self.bug_patch),
             "test_patch": str(self.test_patch),
             "bug_patch_files_type": self.bug_patch_files_type.name,
+            "bug_patch_files_extensions": self.bug_patch_files_extensions,
             "actions_runs": actions_runs,
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
 
-    def __compute_change_type(self, language: str, patch: PatchSet) -> ChangeType:
+    def __compute_change_type(
+        self, language: str, patch: PatchSet
+    ) -> Tuple[ChangeType, Set[str]]:
         language_extensions = {
             "java": {"java"},
             "python": {"py"},
         }
         file_extensions = {
-            x.source_file.split(".")[-1] if "." in x.source_file else None
+            x.source_file.split(".")[-1]
+            if "." in x.source_file
+            else x.source_file.split(os.sep)[-1]
             for x in patch
         }.union(
             {
-                x.target_file.split(".")[-1] if "." in x.target_file else None
+                x.target_file.split(".")[-1]
+                if "." in x.target_file
+                else x.target_file.split(os.sep)[-1]
                 for x in patch
             }
         )
 
         if all([ext in language_extensions[language] for ext in file_extensions]):
-            return ChangeType.SOURCE_ONLY
+            return ChangeType.SOURCE_ONLY, file_extensions
         elif any([ext in language_extensions[language] for ext in file_extensions]):
-            return ChangeType.MIXED
+            return ChangeType.MIXED, file_extensions
         else:
-            return ChangeType.NON_SOURCE_ONLY
+            return ChangeType.NON_SOURCE_ONLY, file_extensions
 
     def __remove_patch_index(self, patch: PatchSet) -> str:
         lines = str(patch).split("\n")
