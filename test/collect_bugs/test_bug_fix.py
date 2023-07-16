@@ -1,6 +1,7 @@
 from collect_bugs import PatchCollector
 from unittest.mock import Mock
 
+
 def test_is_bug_fix():
     repo = Mock()
     repo.language.return_value = "java"
