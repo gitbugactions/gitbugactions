@@ -1,4 +1,4 @@
-import os, sys
+import os
 import threading
 import time
 import logging

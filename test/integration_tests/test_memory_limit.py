@@ -3,18 +3,24 @@ from collect_bugs import PatchCollector
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.actions import Act
 
-collector = PatchCollector(
-    GithubToken.get_token().github.get_repo("Nfsaavedra/crawlergpt-test-repo")
-)
+
+@pytest.fixture
+def setup():
+    global collector
+    collector = PatchCollector(
+        GithubToken.get_token().github.get_repo("Nfsaavedra/crawlergpt-test-repo")
+    )
+    yield
 
 
 @pytest.fixture
 def teardown():
     yield
     collector.delete_repo()
+    Act.set_memory_limit("7g")
 
 
-def test_memory_limit(teardown):
+def test_memory_limit(setup, teardown):
     patches = collector.get_possible_patches()
 
     for patch in patches:

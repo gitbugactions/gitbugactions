@@ -7,6 +7,8 @@ import logging
 import tqdm
 import threading
 import fire
+from nltk.tokenize import wordpunct_tokenize
+from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set
 from enum import Enum
 from datetime import datetime
@@ -198,8 +200,11 @@ class PatchCollector:
                 )
                 self.cloned = True
 
-    def __is_bug_fix(self, commit):
-        return "fix" in commit.message.lower()
+    def __is_bug_fix(self, commit: pygit2.Commit):
+        tokens = wordpunct_tokenize(commit.message)
+        stemmer = PorterStemmer()
+        tokens = [stemmer.stem(token) for token in tokens]
+        return "fix" in tokens
 
     def __get_patches(self, repo_clone, commit, previous_commit):
         diff = repo_clone.diff(previous_commit.hex, commit.hex)
