@@ -24,7 +24,13 @@ from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.actions.action import Action
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.github_token import GithubToken
-from crawlergpt.util import get_default_github_actions, clone_repo
+from crawlergpt.util import (
+    get_default_github_actions,
+    clone_repo,
+    get_file_type,
+    get_patch_file_extensions,
+    FileType,
+)
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
@@ -37,7 +43,16 @@ class CollectionStrategy(Enum):
 class ChangeType(Enum):
     SOURCE_ONLY = 0
     MIXED = 1
-    NON_SOURCE_ONLY = 2
+    NON_CODE_ONLY = 2
+
+    @staticmethod
+    def get_change_type(bug_patch: PatchSet, non_code_patch: PatchSet) -> "ChangeType":
+        if len(bug_patch) > 0 and len(non_code_patch) > 0:
+            return ChangeType.MIXED
+        elif len(bug_patch) > 0:
+            return ChangeType.SOURCE_ONLY
+        else:
+            return ChangeType.NON_CODE_ONLY
 
 
 class BugPatch:
@@ -48,6 +63,7 @@ class BugPatch:
         previous_commit: pygit2.Commit,
         bug_patch: PatchSet,
         test_patch: PatchSet,
+        non_code_patch: PatchSet,
         actions: Set[Action],
     ):
         self.repo: Repository = repo
@@ -68,12 +84,18 @@ class BugPatch:
             - datetime.utcfromtimestamp(int(previous_commit.commit_time))
         )
         self.bug_patch: PatchSet = bug_patch
+        self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(bug_patch)
         self.test_patch: PatchSet = test_patch
-        change_type, file_extensions = self.__compute_change_type(
-            self.language, self.bug_patch
+        self.test_patch_file_extensions: List[str] = get_patch_file_extensions(
+            test_patch
         )
-        self.bug_patch_files_type: ChangeType = change_type
-        self.bug_patch_files_extensions: List[str] = list(file_extensions)
+        self.non_code_patch: PatchSet = non_code_patch
+        self.non_code_patch_file_extensions: List[str] = get_patch_file_extensions(
+            non_code_patch
+        )
+        self.change_type: ChangeType = ChangeType.get_change_type(
+            bug_patch, non_code_patch
+        )
         self.actions: Set[Action] = actions
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
         self.issues = None
@@ -106,41 +128,16 @@ class BugPatch:
             "previous_commit_timestamp": self.previous_commit_timestamp,
             "time_to_patch": self.time_to_patch,
             "bug_patch": str(self.bug_patch),
+            "bug_patch_file_extensions": self.bug_patch_file_extensions,
             "test_patch": str(self.test_patch),
-            "bug_patch_files_type": self.bug_patch_files_type.name,
-            "bug_patch_files_extensions": self.bug_patch_files_extensions,
+            "test_patch_file_extensions": self.test_patch_file_extensions,
+            "non_code_patch": str(self.non_code_patch),
+            "non_code_patch_file_extensions": self.non_code_patch_file_extensions,
+            "change_type": self.change_type.name,
             "actions_runs": actions_runs,
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
-
-    def __compute_change_type(
-        self, language: str, patch: PatchSet
-    ) -> Tuple[ChangeType, Set[str]]:
-        language_extensions = {
-            "java": {"java"},
-            "python": {"py"},
-        }
-        file_extensions = {
-            x.source_file.split(".")[-1]
-            if "." in x.source_file
-            else x.source_file.split(os.sep)[-1]
-            for x in patch
-        }.union(
-            {
-                x.target_file.split(".")[-1]
-                if "." in x.target_file
-                else x.target_file.split(os.sep)[-1]
-                for x in patch
-            }
-        )
-
-        if all([ext in language_extensions[language] for ext in file_extensions]):
-            return ChangeType.SOURCE_ONLY, file_extensions
-        elif any([ext in language_extensions[language] for ext in file_extensions]):
-            return ChangeType.MIXED, file_extensions
-        else:
-            return ChangeType.NON_SOURCE_ONLY, file_extensions
 
     def __remove_patch_index(self, patch: PatchSet) -> str:
         lines = str(patch).split("\n")
@@ -151,16 +148,20 @@ class BugPatch:
             (
                 self.__remove_patch_index(self.bug_patch),
                 self.__remove_patch_index(self.test_patch),
+                self.__remove_patch_index(self.non_code_patch),
             )
         )
 
     def __eq__(self, __value: object) -> bool:
         if not isinstance(__value, BugPatch):
             return False
-        return self.__remove_patch_index(self.bug_patch) == self.__remove_patch_index(
-            __value.bug_patch
-        ) and self.__remove_patch_index(self.test_patch) == self.__remove_patch_index(
-            __value.test_patch
+        return (
+            self.__remove_patch_index(self.bug_patch)
+            == self.__remove_patch_index(__value.bug_patch)
+            and self.__remove_patch_index(self.test_patch)
+            == self.__remove_patch_index(__value.test_patch)
+            and self.__remove_patch_index(self.non_code_patch)
+            == self.__remove_patch_index(__value.non_code_patch)
         )
 
     def __ne__(self, __value: object) -> bool:
@@ -211,20 +212,24 @@ class PatchCollector:
         patch: PatchSet = PatchSet(diff.patch)
         bug_patch: PatchSet = PatchSet("")
         test_patch: PatchSet = PatchSet("")
+        non_code_patch: PatchSet = PatchSet("")
 
+        # FIXME change keywords according to build tool
         for p in patch:
-            # FIXME change keywords according to build tool
-            test_keywords = {"test", "tests"}
-            if any(
-                [keyword in p.source_file.split(os.sep) for keyword in test_keywords]
-            ) or any(
-                [keyword in p.target_file.split(os.sep) for keyword in test_keywords]
+            if (
+                get_file_type(self.language, p.source_file) == FileType.TESTS
+                or get_file_type(self.language, p.target_file) == FileType.TESTS
             ):
                 test_patch.append(p)
-            else:
+            elif (
+                get_file_type(self.language, p.source_file) == FileType.SOURCE
+                or get_file_type(self.language, p.target_file) == FileType.SOURCE
+            ):
                 bug_patch.append(p)
+            else:
+                non_code_patch.append(p)
 
-        return bug_patch, test_patch
+        return bug_patch, test_patch, non_code_patch
 
     def __cleanup_repo(
         self, repo_clone: pygit2.Repository, repo_path: str, commit: pygit2.Commit
@@ -235,7 +240,15 @@ class PatchCollector:
         repo_clone.reset(commit.oid, pygit2.GIT_RESET_HARD)
         subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
 
-    def __test_patch(self, commit_hex, previous_commit_hex, test_patch, act_cache_dir):
+    def __test_patch(
+        self,
+        commit_hex,
+        previous_commit_hex,
+        bug_patch,
+        test_patch,
+        non_code_patch,
+        act_cache_dir,
+    ):
         test_patch_runs = [None, None, None]
         self.__clone_repo()
 
@@ -268,6 +281,14 @@ class PatchCollector:
             )
             repo_clone.set_head(previous_commit.oid)
 
+            # We only apply the non code patch when the bug patch is non-empty
+            # Otherwise, we are testing the non code patch alone
+            if len(non_code_patch) > 0 and len(bug_patch) > 0:
+                try:
+                    repo_clone.apply(pygit2.Diff.parse_diff(str(non_code_patch)))
+                except pygit2.GitError:
+                    # Invalid patches
+                    return test_patch_runs
             act_runs = executor.run_tests()
             if all_runs_crashed(act_runs):
                 return test_patch_runs
@@ -279,6 +300,8 @@ class PatchCollector:
                 # Apply diff and run tests
                 try:
                     repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
+                    if len(non_code_patch) > 0 and len(bug_patch) > 0:
+                        repo_clone.apply(pygit2.Diff.parse_diff(str(non_code_patch)))
                 except pygit2.GitError:
                     # Invalid patches
                     return test_patch_runs
@@ -439,10 +462,10 @@ class PatchCollector:
                     # The current commit is the first one
                     continue
 
-                bug_patch, test_patch = self.__get_patches(
+                bug_patch, test_patch, non_code_patch = self.__get_patches(
                     self.repo_clone, commit, previous_commit
                 )
-                if len(bug_patch) == 0:
+                if len(bug_patch) == 0 and len(non_code_patch) == 0:
                     logging.info(
                         f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
                     )
@@ -460,6 +483,7 @@ class PatchCollector:
                             previous_commit,
                             bug_patch,
                             test_patch,
+                            non_code_patch,
                             actions,
                         )
                     )
@@ -471,6 +495,7 @@ class PatchCollector:
                             previous_commit,
                             bug_patch,
                             test_patch,
+                            non_code_patch,
                             actions,
                         )
                     ]
@@ -532,7 +557,9 @@ class PatchCollector:
             test_patch_runs = self.__test_patch(
                 bug_patch.commit,
                 bug_patch.previous_commit,
+                bug_patch.bug_patch,
                 bug_patch.test_patch,
+                bug_patch.non_code_patch,
                 act_cache_dir=act_cache_dir,
             )
             bug_patch.actions_runs = test_patch_runs
