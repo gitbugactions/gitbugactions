@@ -122,6 +122,7 @@ class ActTestsRun:
     workflow_name: str
     build_tool: str
     elapsed_time: int
+    default_actions: bool
 
     @property
     def failed_tests(self) -> List[TestCase]:
@@ -274,6 +275,7 @@ class Act:
             workflow_name=workflow.doc["name"],
             build_tool=workflow.get_build_tool(),
             elapsed_time=end_time - start_time,
+            default_actions=False,
         )
 
         if (
