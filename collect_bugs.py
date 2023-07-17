@@ -38,6 +38,7 @@ class CollectionStrategy(Enum):
     UNKNOWN = 0
     PASS_PASS = 1
     FAIL_PASS = 2
+    FAIL_FAIL = 3
 
 
 class ChangeType(Enum):
@@ -527,13 +528,14 @@ class PatchCollector:
         patches.sort(key=lambda x: x.commit_timestamp)
         return patches
 
-    def __check_tests_were_fixed(
+    def __diff_tests(
         self, run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
     ):
         flat_failed_tests = sum(
             map(lambda act_run: act_run.failed_tests, run_failed), []
         )
         flat_tests = sum(map(lambda act_run: act_run.tests, run_passed), [])
+        fixed, not_fixed = [], []
 
         for failed_test in flat_failed_tests:
             for test in flat_tests:
@@ -542,10 +544,18 @@ class PatchCollector:
                     and failed_test.name == test.name
                     and test.is_passed
                 ):
+                    fixed.append(failed_test)
                     break
             else:
-                return False
-        return True
+                not_fixed.append(failed_test)
+
+        return fixed, not_fixed
+
+    def __check_tests_were_fixed(
+        self, run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
+    ):
+        _, not_fixed = self.__diff_tests(run_failed, run_passed)
+        return len(not_fixed) == 0
 
     def test_patch(self, bug_patch: BugPatch):
         def flat_failed_tests(runs):
@@ -619,6 +629,41 @@ class PatchCollector:
                 )
             ):
                 bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
+                bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
+                return True
+
+            curr_commit_failed = (
+                bug_patch.actions_runs[2] is not None
+                and len(flat_failed_tests(bug_patch.actions_runs[2])) > 0
+            )
+
+            # FAIL_FAIL strategy
+            if (
+                # previous commit failed
+                prev_commit_failed
+                # current commit failed
+                and curr_commit_failed
+                # at least one test was fixed
+                and len(
+                    self.__diff_tests(
+                        bug_patch.actions_runs[0], bug_patch.actions_runs[2]
+                    )[0]
+                )
+                > 0
+            ) or (
+                # previous commit with diff failed
+                prev_with_diff_failed
+                # current commit failed
+                and curr_commit_failed
+                # at least one test was fixed
+                and len(
+                    self.__diff_tests(
+                        bug_patch.actions_runs[1], bug_patch.actions_runs[2]
+                    )[0]
+                )
+                > 0
+            ):
+                bug_patch.strategy_used = CollectionStrategy.FAIL_FAIL
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
                 return True
 

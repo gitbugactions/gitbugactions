@@ -121,7 +121,7 @@ class TestCollectBugs:
         collect_bugs(
             "test/resources/test_collect_bugs",
             "test/resources/test_collect_bugs_out",
-            16,
+            4,
         )
 
     @classmethod
@@ -140,13 +140,15 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 2
+            assert len(lines) == 4
 
             for line in lines:
                 data = json.loads(line)
                 assert data["commit_hash"] in [
                     "ef34d133079591972a5ce9442cbcc7603003d938",
                     "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
+                    "629f67ebc0efeeb8868a13ad173f18ec572a8729",
+                    "37113cf952bd6d3db563d0d15beae07daefd953e",
                 ]
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
@@ -211,6 +213,41 @@ class TestCollectBugs:
                     )
                     assert passed == 1
                     assert failure == 1
+
+                elif data["commit_hash"] == "629f67ebc0efeeb8868a13ad173f18ec572a8729":
+                    assert data["strategy"] == "FAIL_FAIL"
+                    assert data["commit_message"] == "Fix multiply\n"
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    assert len(data["test_patch"]) == 0
+                    passed, failure = get_test_results(
+                        data["actions_runs"][0][0]["tests"]
+                    )
+                    assert passed == 3
+                    assert failure == 1
+
+                    passed, failure = get_test_results(
+                        data["actions_runs"][2][0]["tests"]
+                    )
+                    assert passed == 2
+                    assert failure == 2
+
+                elif data["commit_hash"] == "37113cf952bd6d3db563d0d15beae07daefd953e":
+                    assert data["strategy"] == "FAIL_FAIL"
+                    assert data["commit_message"] == "Fix subtract twice\n"
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    assert len(data["test_patch"]) > 0
+                    passed, failure = get_test_results(
+                        data["actions_runs"][1][0]["tests"]
+                    )
+                    assert passed == 3
+                    assert failure == 2
+
+                    passed, failure = get_test_results(
+                        data["actions_runs"][2][0]["tests"]
+                    )
+                    assert passed == 4
+                    assert failure == 1
+
 
     @pytest.mark.dependency()
     def test_crawlergpt_pytest_test_repo(self):
