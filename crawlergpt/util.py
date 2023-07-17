@@ -52,8 +52,7 @@ def get_default_github_actions(
             shell=True,
         )
         stdout = run.stdout.decode("utf-8")
-        # FIXME more restrict
-        commits = re.findall("commit ([a-z0-9]*)", stdout)
+        commits = re.findall("^commit ([a-z0-9]*)", stdout, flags=re.MULTILINE)
 
         # Run commits to get first valid workflow
         for commit in commits:
