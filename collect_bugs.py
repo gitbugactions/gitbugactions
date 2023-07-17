@@ -211,7 +211,13 @@ class PatchCollector:
         subprocess.run(["git", "clean", "-f", "-d"], cwd=repo_path, capture_output=True)
 
     def __test_patch(
-        self, commit_hex, previous_commit_hex, test_patch, non_code_patch, act_cache_dir
+        self,
+        commit_hex,
+        previous_commit_hex,
+        bug_patch,
+        test_patch,
+        non_code_patch,
+        act_cache_dir,
     ):
         test_patch_runs = [None, None, None]
         self.__clone_repo()
@@ -245,7 +251,9 @@ class PatchCollector:
             )
             repo_clone.set_head(previous_commit.oid)
 
-            if len(non_code_patch) > 0:
+            # We only apply the non code patch when the bug patch is non-empty
+            # Otherwise, we are testing the non code patch alone
+            if len(non_code_patch) > 0 and len(bug_patch) > 0:
                 try:
                     repo_clone.apply(pygit2.Diff.parse_diff(str(non_code_patch)))
                 except pygit2.GitError:
@@ -262,7 +270,7 @@ class PatchCollector:
                 # Apply diff and run tests
                 try:
                     repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
-                    if len(non_code_patch) > 0:
+                    if len(non_code_patch) > 0 and len(bug_patch) > 0:
                         repo_clone.apply(pygit2.Diff.parse_diff(str(non_code_patch)))
                 except pygit2.GitError:
                     # Invalid patches
@@ -427,7 +435,7 @@ class PatchCollector:
                 bug_patch, test_patch, non_code_patch = self.__get_patches(
                     self.repo_clone, commit, previous_commit
                 )
-                if len(bug_patch) == 0:
+                if len(bug_patch) == 0 and len(non_code_patch) == 0:
                     logging.info(
                         f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
                     )
@@ -519,6 +527,7 @@ class PatchCollector:
             test_patch_runs = self.__test_patch(
                 bug_patch.commit,
                 bug_patch.previous_commit,
+                bug_patch.bug_patch,
                 bug_patch.test_patch,
                 bug_patch.non_code_patch,
                 act_cache_dir=act_cache_dir,

@@ -213,12 +213,13 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 2
+            assert len(lines) == 3
 
             for line in lines:
                 data = json.loads(line)
                 assert data["commit_hash"] in [
                     "0e1907f75fcd3936b6d64292bc278250f2ee9ca3",
+                    "fc7ce580d4ea1a8af029b31f14aba881a4c02368",
                     "05e841e86b09a60324dd77aa6d247bfa6331ad9e",
                 ]
 
@@ -301,6 +302,23 @@ class TestCollectBugs:
                             ]
                         ]
                     )
+
+                elif data["commit_hash"] == "fc7ce580d4ea1a8af029b31f14aba881a4c02368":
+                    assert len(PatchSet(data["non_code_patch"])) > 0
+                    assert len(PatchSet(data["bug_patch"])) == 0
+                    assert data["commit_message"] == "fix pi\n"
+                    assert data["commit_timestamp"] == "2023-07-03T09:33:35Z"
+                    assert (
+                        data["previous_commit_hash"]
+                        == "3b1fba52bb74343dfd2466446cbfd94f1f1700f9"
+                    )
+                    assert data["previous_commit_message"] == "implement pi\n"
+                    assert data["previous_commit_timestamp"] == "2023-07-03T09:32:44Z"
+                    assert data["time_to_patch"] == "0:00:51"
+                    assert data["strategy"] == "FAIL_PASS"
+                    assert len(data["actions_runs"]) == 3
+                    assert len(data["actions_runs"][0][0]["tests"]) == 13
+                    assert len(data["actions_runs"][2][0]["tests"]) == 13
 
                 elif data["commit_hash"] == "05e841e86b09a60324dd77aa6d247bfa6331ad9e":
                     assert len(PatchSet(data["non_code_patch"])) > 0
@@ -512,7 +530,7 @@ class TestCollectBugs:
             assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 2
             assert (
                 data["andre15silva/crawlergpt-pytest-test-repo"]["possible_bug_patches"]
-                == 2
+                == 3
             )
             assert (
                 data["andre15silva/crawlergpt-gradle-test-repo"]["possible_bug_patches"]
