@@ -1,4 +1,4 @@
-import os
+import os, re
 import logging
 import traceback
 import yaml
@@ -8,6 +8,8 @@ import pygit2
 import subprocess
 from typing import Optional
 from crawlergpt.actions.actions import GitHubActions
+from crawlergpt.actions.actions import ActCacheDirManager
+from crawlergpt.test_executor import TestExecutor
 
 
 def delete_repo_clone(repo_clone: pygit2.Repository):
@@ -41,7 +43,8 @@ def get_default_github_actions(
     repo_clone: pygit2.Repository, first_commit: pygit2.Commit, language: str
 ) -> Optional[GitHubActions]:
     try:
-        # Get first commit where workflows were added
+        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+        # Get commits where workflows were changed by reverse order
         run = subprocess.run(
             f"git log --reverse --diff-filter=A -- .github/workflows",
             cwd=repo_clone.workdir,
@@ -49,30 +52,27 @@ def get_default_github_actions(
             shell=True,
         )
         stdout = run.stdout.decode("utf-8")
-        first_workflow_commit = stdout.split("\n")[0].split(" ")[1].strip()
-        first_workflow_commit = repo_clone.revparse_single(first_workflow_commit)
-        # Get all commits starting on the first commit where workflows were added
-        commits = [
-            commit
-            for commit in repo_clone.walk(
-                repo_clone.head.target,
-                pygit2.GIT_SORT_TOPOLOGICAL | pygit2.GIT_SORT_REVERSE,
-            )
-        ]
-        for i, commit in enumerate(commits):
-            if commit.hex == first_workflow_commit.hex:
-                break
-        commits = commits[i:]
+        # FIXME more restrict
+        commits = re.findall("commit ([a-z0-9]*)", stdout)
 
         # Run commits to get first valid workflow
         for commit in commits:
+            commit = repo_clone.revparse_single(commit)
             repo_clone.checkout_tree(commit)
             repo_clone.set_head(commit.oid)
             try:
                 actions = GitHubActions(repo_clone.workdir, language)
-                if len(actions.test_workflows) > 0:
-                    return actions
+                if len(actions.test_workflows) == 1:
+                    executor = TestExecutor(
+                        repo_clone, language, act_cache_dir, actions
+                    )
+                    runs = executor.run_tests()
+                    if not runs[0].failed:
+                        return actions
             except yaml.YAMLError:
                 continue
+
+        raise RuntimeError(f"{repo_clone.workdir} has no valid default actions.")
     finally:
         repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+        ActCacheDirManager.return_act_cache_dir(act_cache_dir)
