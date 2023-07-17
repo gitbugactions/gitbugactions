@@ -275,7 +275,7 @@ class Act:
             workflow_name=workflow.doc["name"],
             build_tool=workflow.get_build_tool(),
             elapsed_time=end_time - start_time,
-            default_actions=False
+            default_actions=False,
         )
 
         if (
