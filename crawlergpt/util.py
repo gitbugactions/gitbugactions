@@ -8,6 +8,7 @@ import pygit2
 import subprocess
 from typing import Optional
 from crawlergpt.actions.actions import GitHubActions
+from enum import Enum
 
 
 def delete_repo_clone(repo_clone: pygit2.Repository):
@@ -76,3 +77,28 @@ def get_default_github_actions(
                 continue
     finally:
         repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+
+
+class FileType(Enum):
+    SOURCE = 0
+    TESTS = 1
+    NON_SOURCE = 2
+
+
+def get_file_type(language: str, file_path: str) -> FileType:
+    language_extensions = {
+        "java": {"java"},
+        "python": {"py"},
+    }
+    test_keywords = {"test", "tests"}
+
+    if any([keyword in file_path.split(os.sep) for keyword in test_keywords]):
+        return FileType.TESTS
+
+    extension = (
+        file_path.split(".")[-1] if "." in file_path else file_path.split(os.sep)[-1]
+    )
+    if extension in language_extensions[language]:
+        return FileType.SOURCE
+    else:
+        return FileType.NON_SOURCE

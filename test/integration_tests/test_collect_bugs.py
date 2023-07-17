@@ -160,9 +160,6 @@ class TestCollectBugs:
                     assert data["previous_commit_timestamp"] == "2023-06-05T13:19:12Z"
                     assert data["time_to_patch"] == "0:00:09"
                     assert data["strategy"] == "PASS_PASS"
-                    assert data["bug_patch_files_type"] == "SOURCE_ONLY"
-                    assert len(data["bug_patch_files_extensions"]) == 1
-                    assert data["bug_patch_files_extensions"][0] == "java"
                     assert len(data["actions_runs"]) == 3
                     assert data["actions_runs"][0][0]["default_actions"]
                     assert data["actions_runs"][1][0]["default_actions"]
@@ -186,9 +183,6 @@ class TestCollectBugs:
                     assert data["previous_commit_timestamp"] == "2023-06-10T15:22:49Z"
                     assert data["time_to_patch"] == "5 days, 22:53:38"
                     assert data["strategy"] == "FAIL_PASS"
-                    assert data["bug_patch_files_type"] == "SOURCE_ONLY"
-                    assert len(data["bug_patch_files_extensions"]) == 1
-                    assert data["bug_patch_files_extensions"][0] == "java"
                     assert len(data["actions_runs"]) == 3
                     assert not data["actions_runs"][0][0]["default_actions"]
                     assert len(data["actions_runs"][0][0]["tests"]) == 2
@@ -219,17 +213,17 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 3
+            assert len(lines) == 2
 
             for line in lines:
                 data = json.loads(line)
                 assert data["commit_hash"] in [
                     "0e1907f75fcd3936b6d64292bc278250f2ee9ca3",
-                    "fc7ce580d4ea1a8af029b31f14aba881a4c02368",
                     "05e841e86b09a60324dd77aa6d247bfa6331ad9e",
                 ]
 
                 if data["commit_hash"] == "0e1907f75fcd3936b6d64292bc278250f2ee9ca3":
+                    assert len(PatchSet(data["non_code_patch"])) == 0
                     assert data["commit_message"] == "fix sum\n"
                     assert data["commit_timestamp"] == "2023-06-09T20:06:31Z"
                     assert (
@@ -240,9 +234,6 @@ class TestCollectBugs:
                     assert data["previous_commit_timestamp"] == "2023-06-09T20:05:56Z"
                     assert data["time_to_patch"] == "0:00:35"
                     assert data["strategy"] == "PASS_PASS"
-                    assert data["bug_patch_files_type"] == "SOURCE_ONLY"
-                    assert len(data["bug_patch_files_extensions"]) == 1
-                    assert data["bug_patch_files_extensions"][0] == "py"
                     assert len(data["actions_runs"]) == 3
                     # assert that number of total tests before == 6 and all pass
                     assert len(data["actions_runs"][0][0]["tests"]) == 6
@@ -311,25 +302,8 @@ class TestCollectBugs:
                         ]
                     )
 
-                elif data["commit_hash"] == "fc7ce580d4ea1a8af029b31f14aba881a4c02368":
-                    assert data["commit_message"] == "fix pi\n"
-                    assert data["commit_timestamp"] == "2023-07-03T09:33:35Z"
-                    assert (
-                        data["previous_commit_hash"]
-                        == "3b1fba52bb74343dfd2466446cbfd94f1f1700f9"
-                    )
-                    assert data["previous_commit_message"] == "implement pi\n"
-                    assert data["previous_commit_timestamp"] == "2023-07-03T09:32:44Z"
-                    assert data["time_to_patch"] == "0:00:51"
-                    assert data["strategy"] == "FAIL_PASS"
-                    assert data["bug_patch_files_type"] == "NON_SOURCE_ONLY"
-                    assert len(data["bug_patch_files_extensions"]) == 1
-                    assert "txt" in data["bug_patch_files_extensions"]
-                    assert len(data["actions_runs"]) == 3
-                    assert len(data["actions_runs"][0][0]["tests"]) == 13
-                    assert len(data["actions_runs"][2][0]["tests"]) == 13
-
                 elif data["commit_hash"] == "05e841e86b09a60324dd77aa6d247bfa6331ad9e":
+                    assert len(PatchSet(data["non_code_patch"])) > 0
                     assert data["commit_message"] == "fix golden\n"
                     assert data["commit_timestamp"] == "2023-07-03T09:39:47Z"
                     assert (
@@ -340,10 +314,6 @@ class TestCollectBugs:
                     assert data["previous_commit_timestamp"] == "2023-07-03T09:39:24Z"
                     assert data["time_to_patch"] == "0:00:23"
                     assert data["strategy"] == "FAIL_PASS"
-                    assert data["bug_patch_files_type"] == "MIXED"
-                    assert len(data["bug_patch_files_extensions"]) == 2
-                    assert "txt" in data["bug_patch_files_extensions"]
-                    assert "py" in data["bug_patch_files_extensions"]
                     assert len(data["actions_runs"]) == 3
                     assert len(data["actions_runs"][0][0]["tests"]) == 15
                     assert len(data["actions_runs"][2][0]["tests"]) == 15
@@ -373,10 +343,6 @@ class TestCollectBugs:
             assert data["previous_commit_timestamp"] == "2023-06-10T15:07:10Z"
             assert data["time_to_patch"] == "0:00:26"
             assert data["strategy"] == "PASS_PASS"
-            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
-            assert len(data["bug_patch_files_extensions"]) == 1
-            assert data["bug_patch_files_extensions"][0] == "java"
-            assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 1 and it passes
             assert len(data["actions_runs"][0][0]["tests"]) == 1
             assert all(
@@ -467,10 +433,6 @@ class TestCollectBugs:
             assert data["previous_commit_timestamp"] == "2023-06-20T14:54:25Z"
             assert data["time_to_patch"] == "0:00:05"
             assert data["strategy"] == "PASS_PASS"
-            assert data["bug_patch_files_type"] == "SOURCE_ONLY"
-            assert len(data["bug_patch_files_extensions"]) == 1
-            assert data["bug_patch_files_extensions"][0] == "py"
-            assert len(data["actions_runs"]) == 3
             # assert that number of total tests before == 2 and all pass
             assert len(data["actions_runs"][0][0]["tests"]) == 2
             assert all(
@@ -550,7 +512,7 @@ class TestCollectBugs:
             assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 2
             assert (
                 data["andre15silva/crawlergpt-pytest-test-repo"]["possible_bug_patches"]
-                == 3
+                == 2
             )
             assert (
                 data["andre15silva/crawlergpt-gradle-test-repo"]["possible_bug_patches"]
