@@ -222,14 +222,14 @@ class TestCollectBugs:
                     passed, failure = get_test_results(
                         data["actions_runs"][0][0]["tests"]
                     )
-                    assert passed == 3
-                    assert failure == 1
+                    assert passed == 2
+                    assert failure == 2
 
                     passed, failure = get_test_results(
                         data["actions_runs"][2][0]["tests"]
                     )
-                    assert passed == 2
-                    assert failure == 2
+                    assert passed == 3
+                    assert failure == 1
 
                 elif data["commit_hash"] == "37113cf952bd6d3db563d0d15beae07daefd953e":
                     assert data["strategy"] == "FAIL_FAIL"
@@ -600,11 +600,11 @@ class TestCollectBugs:
         ) as f:
             data = json.loads(f.read())
             assert len(data.keys()) == 4
-            assert data["Nfsaavedra/crawlergpt-test-repo"]["commits"] == 6
+            assert data["Nfsaavedra/crawlergpt-test-repo"]["commits"] == 10
             assert data["andre15silva/crawlergpt-pytest-test-repo"]["commits"] == 6
             assert data["andre15silva/crawlergpt-gradle-test-repo"]["commits"] == 2
             assert data["andre15silva/crawlergpt-unittest-test-repo"]["commits"] == 2
-            assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 2
+            assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 4
             assert (
                 data["andre15silva/crawlergpt-pytest-test-repo"]["possible_bug_patches"]
                 == 3
