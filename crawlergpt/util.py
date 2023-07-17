@@ -6,7 +6,8 @@ import shutil
 import time
 import pygit2
 import subprocess
-from typing import Optional
+from unidiff import PatchSet
+from typing import Optional, List
 from crawlergpt.actions.actions import GitHubActions
 from enum import Enum
 
@@ -85,6 +86,18 @@ class FileType(Enum):
     NON_SOURCE = 2
 
 
+def get_file_extension(file_path: str) -> str:
+    return file_path.split(".")[-1] if "." in file_path else file_path.split(os.sep)[-1]
+
+
+def get_patch_file_extensions(patch: PatchSet) -> List[str]:
+    return list(
+        {get_file_extension(p.source_file) for p in patch}.union(
+            {get_file_extension(p.target_file) for p in patch}
+        )
+    )
+
+
 def get_file_type(language: str, file_path: str) -> FileType:
     language_extensions = {
         "java": {"java"},
@@ -95,10 +108,7 @@ def get_file_type(language: str, file_path: str) -> FileType:
     if any([keyword in file_path.split(os.sep) for keyword in test_keywords]):
         return FileType.TESTS
 
-    extension = (
-        file_path.split(".")[-1] if "." in file_path else file_path.split(os.sep)[-1]
-    )
-    if extension in language_extensions[language]:
+    if get_file_extension(file_path) in language_extensions[language]:
         return FileType.SOURCE
     else:
         return FileType.NON_SOURCE

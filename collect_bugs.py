@@ -28,6 +28,7 @@ from crawlergpt.util import (
     get_default_github_actions,
     clone_repo,
     get_file_type,
+    get_patch_file_extensions,
     FileType,
 )
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
@@ -37,6 +38,21 @@ class CollectionStrategy(Enum):
     UNKNOWN = 0
     PASS_PASS = 1
     FAIL_PASS = 2
+
+
+class ChangeType(Enum):
+    SOURCE_ONLY = 0
+    MIXED = 1
+    NON_CODE_ONLY = 2
+
+    @staticmethod
+    def get_change_type(bug_patch: PatchSet, non_code_patch: PatchSet) -> "ChangeType":
+        if len(bug_patch) > 0 and len(non_code_patch) > 0:
+            return ChangeType.MIXED
+        elif len(bug_patch) > 0:
+            return ChangeType.SOURCE_ONLY
+        else:
+            return ChangeType.NON_CODE_ONLY
 
 
 class BugPatch:
@@ -68,8 +84,18 @@ class BugPatch:
             - datetime.utcfromtimestamp(int(previous_commit.commit_time))
         )
         self.bug_patch: PatchSet = bug_patch
+        self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(bug_patch)
         self.test_patch: PatchSet = test_patch
+        self.test_patch_file_extensions: List[str] = get_patch_file_extensions(
+            test_patch
+        )
         self.non_code_patch: PatchSet = non_code_patch
+        self.non_code_patch_file_extensions: List[str] = get_patch_file_extensions(
+            non_code_patch
+        )
+        self.change_type: ChangeType = ChangeType.get_change_type(
+            bug_patch, non_code_patch
+        )
         self.actions: Set[Action] = actions
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
         self.issues = None
@@ -102,8 +128,12 @@ class BugPatch:
             "previous_commit_timestamp": self.previous_commit_timestamp,
             "time_to_patch": self.time_to_patch,
             "bug_patch": str(self.bug_patch),
+            "bug_patch_file_extensions": self.bug_patch_file_extensions,
             "test_patch": str(self.test_patch),
+            "test_patch_file_extensions": self.test_patch_file_extensions,
             "non_code_patch": str(self.non_code_patch),
+            "non_code_patch_file_extensions": self.non_code_patch_file_extensions,
+            "change_type": self.change_type.name,
             "actions_runs": actions_runs,
             "strategy": self.strategy_used.name,
             "issues": self.issues,
