@@ -248,7 +248,6 @@ class TestCollectBugs:
                     assert passed == 4
                     assert failure == 1
 
-
     @pytest.mark.dependency()
     def test_crawlergpt_pytest_test_repo(self):
         """
