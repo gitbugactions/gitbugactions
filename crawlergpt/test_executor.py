@@ -24,7 +24,8 @@ class TestExecutor:
     def run_tests(
         self, keep_containers: bool = False, offline: bool = False
     ) -> List[ActTestsRun]:
-        act_runs = []
+        act_runs: List[ActTestsRun] = []
+        default_actions = False
 
         test_actions = GitHubActions(
             self.repo_clone.workdir,
@@ -34,6 +35,7 @@ class TestExecutor:
             offline=offline,
         )
         if len(test_actions.test_workflows) == 0:
+            default_actions = True
             for workflow in self.default_actions.test_workflows:
                 new_workflow = copy.copy(workflow)
                 new_workflow.path = os.path.join(
@@ -52,5 +54,8 @@ class TestExecutor:
             act_runs.append(test_actions.run_workflow(workflow, self.act_cache_dir))
 
         test_actions.delete_workflows()
+
+        for act_run in act_runs:
+            act_run.default_actions = default_actions
 
         return act_runs

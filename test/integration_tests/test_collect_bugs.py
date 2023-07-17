@@ -164,12 +164,15 @@ class TestCollectBugs:
                     assert len(data["bug_patch_files_extensions"]) == 1
                     assert data["bug_patch_files_extensions"][0] == "java"
                     assert len(data["actions_runs"]) == 3
+                    assert data["actions_runs"][0][0]["default_actions"]
+                    assert data["actions_runs"][1][0]["default_actions"]
                     assert len(data["actions_runs"][1][0]["tests"]) == 1
                     assert len(data["actions_runs"][1][0]["tests"][0]["results"]) == 1
                     assert (
                         data["actions_runs"][1][0]["tests"][0]["results"][0]["result"]
                         == "Failure"
                     )
+                    assert data["actions_runs"][2][0]["default_actions"]
                     assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
 
                 elif data["commit_hash"] == "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80":
@@ -187,9 +190,11 @@ class TestCollectBugs:
                     assert len(data["bug_patch_files_extensions"]) == 1
                     assert data["bug_patch_files_extensions"][0] == "java"
                     assert len(data["actions_runs"]) == 3
+                    assert not data["actions_runs"][0][0]["default_actions"]
                     assert len(data["actions_runs"][0][0]["tests"]) == 2
                     assert data["actions_runs"][1] is None
                     assert len(data["actions_runs"][2][0]["tests"]) == 2
+                    assert not data["actions_runs"][2][0]["default_actions"]
                     assert len(data["issues"]) == 1
                     assert data["issues"][0]["title"] == "Subtract is not working"
                     assert data["issues"][0]["body"] == "Test"
