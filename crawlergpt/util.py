@@ -48,7 +48,7 @@ def get_default_github_actions(
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
         # Get commits where workflows were changed by reverse order
         run = subprocess.run(
-            f"git log --reverse --diff-filter=A -- .github/workflows",
+            f"git log --reverse --diff-filter=AM -- .github/workflows",
             cwd=repo_clone.workdir,
             capture_output=True,
             shell=True,
