@@ -177,6 +177,7 @@ class PatchCollector:
         self.language = repo.language.strip().lower()
         self.cloned = False
         self.clone_lock = threading.Lock()
+        self.default_github_actions = None
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -271,7 +272,7 @@ class PatchCollector:
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
-            all_runs_crashed = lambda x: all(map(lambda act_run: act_run.failed, x))
+            all_runs_crashed = lambda x: x is None or all(map(lambda act_run: act_run.failed, x))
 
             # Previous commit
             repo_clone.checkout_tree(previous_commit)

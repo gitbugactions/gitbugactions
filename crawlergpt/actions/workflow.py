@@ -308,6 +308,9 @@ class GitHubWorkflowFactory:
                     doc = yaml.safe_load(stream)
             else:
                 doc = yaml.safe_load(content)
+            
+            if doc is None:
+                return None
 
             if True in doc:
                 doc["on"] = doc[True]

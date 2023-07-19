@@ -1,4 +1,4 @@
-import os, re
+import os, re, xml
 import logging
 import traceback
 import yaml
@@ -11,6 +11,7 @@ from typing import Optional, List
 from crawlergpt.actions.actions import GitHubActions
 from crawlergpt.actions.actions import ActCacheDirManager
 from crawlergpt.test_executor import TestExecutor
+from junitparser.junitparser import JUnitXmlError
 from enum import Enum
 
 
@@ -62,9 +63,11 @@ def get_default_github_actions(
 
         # Run commits to get first valid workflow
         for commit in commits:
-            commit = repo_clone.revparse_single(commit)
-            repo_clone.checkout_tree(commit)
-            repo_clone.set_head(commit.oid)
+            subprocess.run(
+                ["git", "checkout", "-f", commit],
+                cwd=repo_clone.workdir,
+                capture_output=True
+            )
             try:
                 actions = GitHubActions(repo_clone.workdir, language)
                 if len(actions.test_workflows) == 1:
@@ -76,7 +79,7 @@ def get_default_github_actions(
                     # to choose the repos that we will run
                     if len(runs[0].tests) > 0:
                         return actions
-            except yaml.YAMLError:
+            except (yaml.YAMLError, JUnitXmlError, xml.etree.ElementTree.ParseError):
                 continue
             finally:
                 repo_clone.reset(head.oid, pygit2.GIT_RESET_HARD)
