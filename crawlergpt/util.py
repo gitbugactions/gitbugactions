@@ -46,6 +46,7 @@ def get_default_github_actions(
 ) -> Optional[GitHubActions]:
     try:
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+        head = repo_clone.revparse_single("HEAD")
         # Get commits where workflows were changed by reverse order
         run = subprocess.run(
             f"git log --reverse --diff-filter=AM -- .github/workflows",
@@ -55,6 +56,9 @@ def get_default_github_actions(
         )
         stdout = run.stdout.decode("utf-8")
         commits = re.findall("^commit ([a-z0-9]*)", stdout, flags=re.MULTILINE)
+        # We add the latest commit because it was the commit used to test
+        # the actions in the collect_repos phase
+        commits.append(head.hex)
 
         # Run commits to get first valid workflow
         for commit in commits:
@@ -68,10 +72,19 @@ def get_default_github_actions(
                         repo_clone, language, act_cache_dir, actions
                     )
                     runs = executor.run_tests()
-                    if not runs[0].failed:
+                    # We check for the tests because it is the metric used
+                    # to choose the repos that we will run
+                    if len(runs[0].tests) > 0:
                         return actions
             except yaml.YAMLError:
                 continue
+            finally:
+                repo_clone.reset(head.oid, pygit2.GIT_RESET_HARD)
+                subprocess.run(
+                    ["git", "clean", "-f", "-d"],
+                    cwd=repo_clone.workdir,
+                    capture_output=True,
+                )
 
         raise RuntimeError(f"{repo_clone.workdir} has no valid default actions.")
     finally:

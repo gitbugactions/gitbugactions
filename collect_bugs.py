@@ -200,6 +200,9 @@ class PatchCollector:
                     shell=True,
                     capture_output=True,
                 )
+                self.first_commit = self.repo_clone.revparse_single(
+                    str(self.repo_clone.head.target)
+                )
                 self.cloned = True
 
     def __is_bug_fix(self, commit: pygit2.Commit):
@@ -444,13 +447,6 @@ class PatchCollector:
         if len(list(self.repo_clone.references.iterator())) == 0:
             return
 
-        self.first_commit = self.repo_clone.revparse_single(
-            str(self.repo_clone.head.target)
-        )
-        self.default_github_actions = get_default_github_actions(
-            self.repo_clone, self.first_commit, self.language
-        )
-
         commit_to_patches: Dict[str, List[BugPatch]] = {}
         try:
             for commit in self.repo_clone.walk(self.repo_clone.head.target):
@@ -527,6 +523,13 @@ class PatchCollector:
         # We sort again to return the patches in chronological order
         patches.sort(key=lambda x: x.commit_timestamp)
         return patches
+
+    def set_default_github_actions(self):
+        if not self.cloned:
+            self.__clone_repo()
+        self.default_github_actions = get_default_github_actions(
+            self.repo_clone, self.first_commit, self.language
+        )
 
     def __diff_tests(
         self, run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
@@ -772,6 +775,20 @@ def collect_bugs(
             except Exception:
                 logging.error(
                     f"Error while downloading action: {traceback.format_exc()}"
+                )
+                continue
+
+    with ThreadPoolExecutor(max_workers=n_workers) as executor:
+        futures = []
+        for patch_collector, _ in patch_collectors:
+            futures.append(executor.submit(patch_collector.set_default_github_actions))
+
+        for future in tqdm.tqdm(as_completed(futures), total=len(futures)):
+            try:
+                future.result()
+            except Exception:
+                logging.error(
+                    f"Error while setting default github actions from {patch_collector.repo}: {traceback.format_exc()}"
                 )
                 continue
 

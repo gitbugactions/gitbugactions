@@ -10,6 +10,7 @@ def setup():
     collector = PatchCollector(
         GithubToken.get_token().github.get_repo("Nfsaavedra/crawlergpt-test-repo")
     )
+    collector.set_default_github_actions()
     yield
 
 
