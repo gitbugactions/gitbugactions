@@ -179,6 +179,24 @@ class GitHubWorkflow(ABC):
                             test_steps.append(step)
                     job["steps"] = test_steps
 
+    def instrument_cache_steps(self):
+        """
+        Act has a problem with the actions/cache and so we must disable the
+        usage of this action.
+        https://github.com/nektos/act/issues/285
+        """
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "steps" in job:
+                    filtered_steps = []
+                    for step in job["steps"]:
+                        if "uses" in step and step["uses"].startswith("actions/cache"):
+                            continue
+                        if "with" in step and "cache" in step["with"]:
+                            del(step["with"]["cache"])
+                        filtered_steps.append(step)
+                    job["steps"] = filtered_steps
+
     def instrument_jobs(self):
         """
         Instruments the workflow to keep only the jobs containing test commands.

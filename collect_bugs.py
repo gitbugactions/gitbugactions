@@ -779,12 +779,13 @@ def collect_bugs(
                 continue
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        futures = []
+        future_to_collector: Dict[Future, PatchCollector] = {}
         for patch_collector, _ in patch_collectors:
-            futures.append(executor.submit(patch_collector.set_default_github_actions))
+            future_to_collector[executor.submit(patch_collector.set_default_github_actions)] = patch_collector
 
-        for future in tqdm.tqdm(as_completed(futures), total=len(futures)):
+        for future in tqdm.tqdm(as_completed(future_to_collector), total=len(future_to_collector)):
             try:
+                patch_collector = future_to_collector[future]
                 future.result()
             except Exception:
                 logging.error(
