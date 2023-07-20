@@ -66,7 +66,7 @@ def get_default_github_actions(
             subprocess.run(
                 ["git", "checkout", "-f", commit],
                 cwd=repo_clone.workdir,
-                capture_output=True
+                capture_output=True,
             )
             try:
                 actions = GitHubActions(repo_clone.workdir, language)

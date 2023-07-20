@@ -193,7 +193,7 @@ class GitHubWorkflow(ABC):
                         if "uses" in step and step["uses"].startswith("actions/cache"):
                             continue
                         if "with" in step and "cache" in step["with"]:
-                            del(step["with"]["cache"])
+                            del step["with"]["cache"]
                         filtered_steps.append(step)
                     job["steps"] = filtered_steps
 
@@ -308,7 +308,7 @@ class GitHubWorkflowFactory:
                     doc = yaml.safe_load(stream)
             else:
                 doc = yaml.safe_load(content)
-            
+
             if doc is None:
                 return None
 

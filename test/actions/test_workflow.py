@@ -68,6 +68,7 @@ def test_pytest_no_needs(yml_file):
     assert "checkout" not in workflow.doc["jobs"]
     assert "test" in workflow.doc["jobs"]
 
+
 @pytest.mark.parametrize(
     "yml_file",
     [("test/resources/test_workflows/java/maven_cache.yml")],
@@ -79,6 +80,7 @@ def test_instrument_cache_steps(yml_file):
     assert len(workflow.doc["jobs"]["build"]["steps"]) == 5
     assert workflow.doc["jobs"]["build"]["steps"][1]["name"] == "Set up JDK 8"
     assert "cache" not in workflow.doc["jobs"]["build"]["steps"][1]["with"]
+
 
 @pytest.fixture
 def teardown_instrument_steps():
