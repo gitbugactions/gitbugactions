@@ -177,6 +177,7 @@ class PatchCollector:
         self.language = repo.language.strip().lower()
         self.cloned = False
         self.clone_lock = threading.Lock()
+        self.default_github_actions = None
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -271,7 +272,9 @@ class PatchCollector:
             repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
             commit = repo_clone.revparse_single(commit_hex)
             previous_commit = repo_clone.revparse_single(previous_commit_hex)
-            all_runs_crashed = lambda x: all(map(lambda act_run: act_run.failed, x))
+            all_runs_crashed = lambda x: x is None or all(
+                map(lambda act_run: act_run.failed, x)
+            )
 
             # Previous commit
             repo_clone.checkout_tree(previous_commit)
@@ -779,12 +782,17 @@ def collect_bugs(
                 continue
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        futures = []
+        future_to_collector: Dict[Future, PatchCollector] = {}
         for patch_collector, _ in patch_collectors:
-            futures.append(executor.submit(patch_collector.set_default_github_actions))
+            future_to_collector[
+                executor.submit(patch_collector.set_default_github_actions)
+            ] = patch_collector
 
-        for future in tqdm.tqdm(as_completed(futures), total=len(futures)):
+        for future in tqdm.tqdm(
+            as_completed(future_to_collector), total=len(future_to_collector)
+        ):
             try:
+                patch_collector = future_to_collector[future]
                 future.result()
             except Exception:
                 logging.error(

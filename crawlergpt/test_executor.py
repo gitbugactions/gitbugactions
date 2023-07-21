@@ -34,7 +34,7 @@ class TestExecutor:
             runner=self.runner,
             offline=offline,
         )
-        if len(test_actions.test_workflows) == 0:
+        if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
             default_actions = True
             for workflow in self.default_actions.test_workflows:
                 new_workflow = copy.copy(workflow)
