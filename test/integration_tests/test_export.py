@@ -79,7 +79,9 @@ def test_run_bug():
     assert not runs[0].failed
 
     repo_clone.reset(initial_commit.oid, pygit2.GIT_RESET_HARD)
-    subprocess.run(["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True)
+    subprocess.run(
+        ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
+    )
     repo_clone.checkout_tree(previous_commit)
     repo_clone.set_head(previous_commit.oid)
 
@@ -97,7 +99,9 @@ def test_run_bug():
     assert not runs[0].failed
 
     repo_clone.reset(initial_commit.oid, pygit2.GIT_RESET_HARD)
-    subprocess.run(["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True)
+    subprocess.run(
+        ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
+    )
     repo_clone.checkout_tree(previous_commit)
     repo_clone.set_head(previous_commit.oid)
     repo_clone.apply(pygit2.Diff.parse_diff(bug["test_patch"]))

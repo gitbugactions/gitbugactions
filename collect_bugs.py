@@ -243,7 +243,9 @@ class PatchCollector:
         Cleanups up repository dir for any untracked or modified files
         """
         repo_clone.reset(commit.oid, pygit2.GIT_RESET_HARD)
-        subprocess.run(["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True)
+        subprocess.run(
+            ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
+        )
 
     def __test_patch(
         self,
