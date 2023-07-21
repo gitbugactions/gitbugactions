@@ -9,7 +9,7 @@ import threading
 import fire
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
-from typing import List, Tuple, Any, Dict, Set
+from typing import List, Tuple, Any, Dict, Set, Optional
 from enum import Enum
 from datetime import datetime
 from github import Github, Repository, UnknownObjectException, GithubException
@@ -139,6 +139,69 @@ class BugPatch:
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
+    
+    def __set_commit(self, repo_clone: pygit2.Repository, commit: str):
+        commit = repo_clone.revparse_single(commit)
+        repo_clone.checkout_tree(commit)
+        repo_clone.create_tag(
+            str(uuid.uuid4()),
+            commit.oid,
+            pygit2.GIT_OBJ_COMMIT,
+            commit.author,
+            commit.message,
+        )
+        repo_clone.set_head(commit.oid)
+
+    def __apply_non_code_patch(self, repo_clone: pygit2.Repository):
+        # We only apply the non code patch when the bug patch is non-empty
+        # Otherwise, we are testing the non code patch alone
+        if len(self.non_code_patch) > 0 and len(self.bug_patch) > 0:
+            try:
+                repo_clone.apply(pygit2.Diff.parse_diff(str(self.non_code_patch)))
+                return True
+            except pygit2.GitError:
+                # Invalid patches
+                return False
+        return True
+            
+    def __apply_test_patch(self, repo_clone: pygit2.Repository):
+        try:
+            repo_clone.apply(pygit2.Diff.parse_diff(str(self.test_patch)))
+            return True
+        except pygit2.GitError:
+            # Invalid patches
+            return False
+
+    def test_previous_commit(
+        self,
+        executor: TestExecutor
+    ) -> Optional[List[ActTestsRun]]:
+        executor.reset_repo()
+        self.__set_commit(executor.repo_clone, self.previous_commit)
+        if not self.__apply_non_code_patch(executor.repo_clone):
+            return None 
+        return executor.run_tests()
+    
+    def test_previous_commit_with_diff(
+        self,
+        executor: TestExecutor
+    ) -> Optional[List[ActTestsRun]]:
+        executor.reset_repo()
+        self.__set_commit(executor.repo_clone, self.previous_commit)
+        if not self.__apply_non_code_patch(executor.repo_clone):
+            return None 
+        if not self.__apply_test_patch(executor.repo_clone):
+            return None 
+        
+        return executor.run_tests()
+    
+    def test_current_commit(
+        self,
+        executor: TestExecutor
+    ) -> Optional[List[ActTestsRun]]:
+        executor.reset_repo()
+        self.__set_commit(executor.repo_clone, self.commit)
+        return executor.run_tests()
 
     def __remove_patch_index(self, patch: PatchSet) -> str:
         lines = str(patch).split("\n")
@@ -249,13 +312,9 @@ class PatchCollector:
 
     def __test_patch(
         self,
-        commit_hex,
-        previous_commit_hex,
-        bug_patch,
-        test_patch,
-        non_code_patch,
+        bug: BugPatch,
         act_cache_dir,
-    ):
+    ) -> List[List[Optional[ActTestsRun]]]:
         test_patch_runs = [None, None, None]
         self.__clone_repo()
 
@@ -270,71 +329,25 @@ class PatchCollector:
                 act_cache_dir,
                 self.default_github_actions,
             )
-            first_commit = repo_clone.revparse_single(self.first_commit.hex)
-            repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
-            commit = repo_clone.revparse_single(commit_hex)
-            previous_commit = repo_clone.revparse_single(previous_commit_hex)
             all_runs_crashed = lambda x: x is None or all(
                 map(lambda act_run: act_run.failed, x)
             )
 
             # Previous commit
-            repo_clone.checkout_tree(previous_commit)
-            # Creates ref to avoid "failed to identify reference"
-            repo_clone.create_tag(
-                str(uuid.uuid4()),
-                previous_commit.oid,
-                pygit2.GIT_OBJ_COMMIT,
-                previous_commit.author,
-                previous_commit.message,
-            )
-            repo_clone.set_head(previous_commit.oid)
-
-            # We only apply the non code patch when the bug patch is non-empty
-            # Otherwise, we are testing the non code patch alone
-            if len(non_code_patch) > 0 and len(bug_patch) > 0:
-                try:
-                    repo_clone.apply(pygit2.Diff.parse_diff(str(non_code_patch)))
-                except pygit2.GitError:
-                    # Invalid patches
-                    return test_patch_runs
-            act_runs = executor.run_tests()
+            act_runs = bug.test_previous_commit(executor)
             if all_runs_crashed(act_runs):
                 return test_patch_runs
             test_patch_runs[0] = act_runs
 
-            self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
-
-            if len(test_patch) > 0:
-                # Apply diff and run tests
-                try:
-                    repo_clone.apply(pygit2.Diff.parse_diff(str(test_patch)))
-                    if len(non_code_patch) > 0 and len(bug_patch) > 0:
-                        repo_clone.apply(pygit2.Diff.parse_diff(str(non_code_patch)))
-                except pygit2.GitError:
-                    # Invalid patches
-                    return test_patch_runs
-                act_runs = executor.run_tests()
+            # Previous commit with diff
+            if len(bug.test_patch) > 0:
+                act_runs = bug.test_previous_commit_with_diff(executor)
                 if all_runs_crashed(act_runs):
                     return test_patch_runs
                 test_patch_runs[1] = act_runs
 
-                self.__cleanup_repo(repo_clone, new_repo_path, previous_commit)
-
             # Current commit
-            repo_clone.checkout_tree(commit)
-            self.__cleanup_repo(repo_clone, new_repo_path, commit)
-
-            # Creates ref to avoid "failed to identify reference"
-            repo_clone.create_tag(
-                str(uuid.uuid4()),
-                commit.oid,
-                pygit2.GIT_OBJ_COMMIT,
-                commit.author,
-                commit.message,
-            )
-            repo_clone.set_head(commit.oid)
-            act_runs = executor.run_tests()
+            act_runs = bug.test_current_commit(executor)
             if all_runs_crashed(act_runs):
                 return test_patch_runs
             test_patch_runs[2] = act_runs
@@ -536,8 +549,9 @@ class PatchCollector:
             self.repo_clone, self.first_commit, self.language
         )
 
+    @staticmethod
     def __diff_tests(
-        self, run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
+        run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
     ):
         flat_failed_tests = sum(
             map(lambda act_run: act_run.failed_tests, run_failed), []
@@ -559,126 +573,124 @@ class PatchCollector:
 
         return fixed, not_fixed
 
+    @staticmethod
     def __check_tests_were_fixed(
-        self, run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
+        run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
     ):
-        _, not_fixed = self.__diff_tests(run_failed, run_passed)
+        _, not_fixed = PatchCollector.__diff_tests(run_failed, run_passed)
         return len(not_fixed) == 0
 
     def test_patch(self, bug_patch: BugPatch):
-        def flat_failed_tests(runs):
-            return sum(map(lambda act_run: act_run.failed_tests, runs), [])
-
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
 
         try:
             test_patch_runs = self.__test_patch(
-                bug_patch.commit,
-                bug_patch.previous_commit,
-                bug_patch.bug_patch,
-                bug_patch.test_patch,
-                bug_patch.non_code_patch,
-                act_cache_dir=act_cache_dir,
+                bug_patch,
+                act_cache_dir,
             )
             bug_patch.actions_runs = test_patch_runs
-
-            prev_commit_passed = (
-                bug_patch.actions_runs[0] is not None
-                and len(flat_failed_tests(bug_patch.actions_runs[0])) == 0
-            )
-            prev_with_diff_failed = (
-                bug_patch.actions_runs[1] is not None
-                and len(flat_failed_tests(bug_patch.actions_runs[1])) > 0
-            )
-            curr_commit_passed = (
-                bug_patch.actions_runs[2] is not None
-                and len(flat_failed_tests(bug_patch.actions_runs[2])) == 0
-            )
-
-            # PASS_PASS strategy
-            if (
-                # previous commit passed
-                prev_commit_passed
-                # previous commit with new tests failed
-                and prev_with_diff_failed
-                # current commit passed
-                and curr_commit_passed
-                # test patch is not empty
-                and len(bug_patch.test_patch) > 0
-                # test patch is not removals only
-                and not (
-                    bug_patch.test_patch.removed > 0 and bug_patch.test_patch.added == 0
-                )
-                # check if tests from previous commit w/diff were fixed
-                and self.__check_tests_were_fixed(
-                    bug_patch.actions_runs[1], bug_patch.actions_runs[2]
-                )
-            ):
-                bug_patch.strategy_used = CollectionStrategy.PASS_PASS
+            strategy = PatchCollector.check_runs(bug_patch, bug_patch.actions_runs)
+            if strategy is None:
+                return False
+            else:
+                bug_patch.strategy_used = strategy
                 bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
                 return True
-
-            prev_commit_failed = (
-                bug_patch.actions_runs[0] is not None
-                and len(flat_failed_tests(bug_patch.actions_runs[0])) > 0
-            )
-
-            # FAIL_PASS strategy
-            if (
-                # previous commit failed
-                prev_commit_failed
-                # no changes have been made in the tests
-                and len(bug_patch.test_patch) == 0
-                # current commit passed
-                and curr_commit_passed
-                # check if tests from previous commit were fixed
-                and self.__check_tests_were_fixed(
-                    bug_patch.actions_runs[0], bug_patch.actions_runs[2]
-                )
-            ):
-                bug_patch.strategy_used = CollectionStrategy.FAIL_PASS
-                bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
-                return True
-
-            curr_commit_failed = (
-                bug_patch.actions_runs[2] is not None
-                and len(flat_failed_tests(bug_patch.actions_runs[2])) > 0
-            )
-
-            # FAIL_FAIL strategy
-            if (
-                # previous commit failed
-                prev_commit_failed
-                # current commit failed
-                and curr_commit_failed
-                # at least one test was fixed
-                and len(
-                    self.__diff_tests(
-                        bug_patch.actions_runs[0], bug_patch.actions_runs[2]
-                    )[0]
-                )
-                > 0
-            ) or (
-                # previous commit with diff failed
-                prev_with_diff_failed
-                # current commit failed
-                and curr_commit_failed
-                # at least one test was fixed
-                and len(
-                    self.__diff_tests(
-                        bug_patch.actions_runs[1], bug_patch.actions_runs[2]
-                    )[0]
-                )
-                > 0
-            ):
-                bug_patch.strategy_used = CollectionStrategy.FAIL_FAIL
-                bug_patch.issues = self.__get_related_commit_info(bug_patch.commit)
-                return True
-
-            return False
-
         finally:
             ActCacheDirManager.return_act_cache_dir(act_cache_dir)
+
+    @staticmethod
+    def check_runs(bug_patch, actions_runs) -> Optional[CollectionStrategy]:
+        def flat_failed_tests(runs):
+            return sum(map(lambda act_run: act_run.failed_tests, runs), [])
+        prev_commit_passed = (
+                actions_runs[0] is not None
+                and len(flat_failed_tests(actions_runs[0])) == 0
+            )
+        prev_with_diff_failed = (
+            actions_runs[1] is not None
+            and len(flat_failed_tests(actions_runs[1])) > 0
+        )
+        curr_commit_passed = (
+            actions_runs[2] is not None
+            and len(flat_failed_tests(actions_runs[2])) == 0
+        )
+
+        # PASS_PASS strategy
+        if (
+            # previous commit passed
+            prev_commit_passed
+            # previous commit with new tests failed
+            and prev_with_diff_failed
+            # current commit passed
+            and curr_commit_passed
+            # test patch is not empty
+            and len(bug_patch.test_patch) > 0
+            # test patch is not removals only
+            and not (
+                bug_patch.test_patch.removed > 0 and bug_patch.test_patch.added == 0
+            )
+            # check if tests from previous commit w/diff were fixed
+            and PatchCollector.__check_tests_were_fixed(
+                actions_runs[1], actions_runs[2]
+            )
+        ):
+            return CollectionStrategy.PASS_PASS
+
+        prev_commit_failed = (
+            actions_runs[0] is not None
+            and len(flat_failed_tests(actions_runs[0])) > 0
+        )
+
+        # FAIL_PASS strategy
+        if (
+            # previous commit failed
+            prev_commit_failed
+            # no changes have been made in the tests
+            and len(bug_patch.test_patch) == 0
+            # current commit passed
+            and curr_commit_passed
+            # check if tests from previous commit were fixed
+            and PatchCollector.__check_tests_were_fixed(
+                actions_runs[0], actions_runs[2]
+            )
+        ):
+            return CollectionStrategy.FAIL_PASS
+
+        curr_commit_failed = (
+            actions_runs[2] is not None
+            and len(flat_failed_tests(actions_runs[2])) > 0
+        )
+
+        # FAIL_FAIL strategy
+        if (
+            # previous commit failed
+            prev_commit_failed
+            # current commit failed
+            and curr_commit_failed
+            # at least one test was fixed
+            and len(
+                PatchCollector.__diff_tests(
+                    actions_runs[0], actions_runs[2]
+                )[0]
+            )
+            > 0
+        ) or (
+            # previous commit with diff failed
+            prev_with_diff_failed
+            # current commit failed
+            and curr_commit_failed
+            # at least one test was fixed
+            and len(
+                PatchCollector.__diff_tests(
+                    actions_runs[1], actions_runs[2]
+                )[0]
+            )
+            > 0
+        ):
+            return CollectionStrategy.FAIL_FAIL
+
+        return None
 
     def delete_repo(self):
         if self.cloned:

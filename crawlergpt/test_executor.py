@@ -1,6 +1,6 @@
-import os, copy, uuid
+import subprocess
+import os, copy, uuid, pygit2
 from crawlergpt.actions.actions import GitHubActions, ActTestsRun
-from crawlergpt.actions.workflow import GitHubWorkflow
 from pygit2 import Repository
 from typing import List
 
@@ -20,6 +20,13 @@ class TestExecutor:
         self.language = language
         # Note: these default actions may have different configuration options such as paths, runners, etc.
         self.default_actions = default_actions
+        self.first_commit = repo_clone.revparse_single("HEAD")
+
+    def reset_repo(self):
+        self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
+        subprocess.run(
+            ["git", "clean", "-f", "-d", "-x"], cwd=self.repo_clone.workdir, capture_output=True
+        )
 
     def run_tests(
         self, keep_containers: bool = False, offline: bool = False
