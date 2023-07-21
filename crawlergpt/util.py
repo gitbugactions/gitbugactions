@@ -117,6 +117,7 @@ def get_file_type(language: str, file_path: str) -> FileType:
     language_extensions = {
         "java": {"java"},
         "python": {"py"},
+        "go": {"go"},
     }
     test_keywords = {"test", "tests"}
 
