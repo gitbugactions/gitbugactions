@@ -91,7 +91,7 @@ def export_bug_containers(bug: Dict, export_path: str):
 
             repo_clone.reset(main_commit.oid, pygit2.GIT_RESET_HARD)
             subprocess.run(
-                ["git", "clean", "-f", "-d"],
+                ["git", "clean", "-f", "-d", "-x"],
                 cwd=repo_clone.workdir,
                 capture_output=True,
             )
