@@ -32,9 +32,9 @@ def export_bug_containers(bug: Dict, export_path: str):
         repo_clone, first_commit, bug["language"]
     )
 
+    act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     try:
         main_commit = repo_clone.revparse_single(str(repo_clone.head.target))
-        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
         executor = TestExecutor(
             repo_clone, bug["language"], act_cache_dir, default_actions
         )
@@ -61,6 +61,7 @@ def export_bug_containers(bug: Dict, export_path: str):
                     for container in containers:
                         container.stop()
                         container.remove()
+                    exit(-1)
                     continue
 
                 for container in containers:

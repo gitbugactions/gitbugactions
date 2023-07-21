@@ -45,8 +45,8 @@ def clone_repo(clone_url: str, path: str) -> pygit2.Repository:
 def get_default_github_actions(
     repo_clone: pygit2.Repository, first_commit: pygit2.Commit, language: str
 ) -> Optional[GitHubActions]:
+    act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     try:
-        act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
         head = repo_clone.revparse_single("HEAD")
         # Get commits where workflows were changed by reverse order
         run = subprocess.run(
