@@ -592,17 +592,190 @@ class TestCollectBugs:
                 ]
             )
 
+    @pytest.mark.dependency()
+    def test_crawlergpt_go_test_repo(self):
+        """
+        Verifies that the go project bugs have been found
+
+        repo: https://github.com/andre15silva/crawlergpt-go-test-repo
+        """
+        with open(
+            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-go-test-repo.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 2
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "c169aa04ee612b23ff9b3405260851c5ffa98e88",
+                    "862faa2fe219817eab67de0a95c796f31fc595f1",
+                ]
+
+                if data["commit_hash"] == "c169aa04ee612b23ff9b3405260851c5ffa98e88":
+                    assert data["commit_timestamp"] == "2023-07-21T16:48:15Z"
+                    assert data["commit_message"] == "fix subtract\n"
+                    assert (
+                        data["previous_commit_hash"]
+                        == "5cd82572d2ecf9fdd20bea5f4602ded6b3608b54"
+                    )
+                    assert data["previous_commit_message"] == "initial commit\n"
+                    assert data["previous_commit_timestamp"] == "2023-07-21T16:47:50Z"
+                    assert data["time_to_patch"] == "0:00:25"
+                    assert data["strategy"] == "FAIL_PASS"
+                    assert len(data["bug_patch_file_extensions"]) == 1
+                    assert "go" in data["bug_patch_file_extensions"]
+                    assert len(data["test_patch_file_extensions"]) == 0
+                    assert len(data["non_code_patch_file_extensions"]) == 0
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    # assert that number of total tests before == 2 and one fails
+                    assert len(data["actions_runs"][0][0]["tests"]) == 2
+                    assert (
+                        len(
+                            [
+                                x
+                                for x in [
+                                    r
+                                    for _ in [
+                                        y["results"]
+                                        for y in data["actions_runs"][0][0]["tests"]
+                                    ]
+                                    for r in _
+                                ]
+                                if x["result"] == "Passed"
+                            ]
+                        )
+                        == 1
+                    )
+                    assert (
+                        len(
+                            [
+                                x
+                                for x in [
+                                    r
+                                    for _ in [
+                                        y["results"]
+                                        for y in data["actions_runs"][0][0]["tests"]
+                                    ]
+                                    for r in _
+                                ]
+                                if x["result"] == "Failure"
+                            ]
+                        )
+                        == 1
+                    )
+                    # assert that number of total tests after == 2 and all pass
+                    assert len(data["actions_runs"][2][0]["tests"]) == 2
+                    assert all(
+                        [
+                            x["result"] == "Passed"
+                            for x in [
+                                r
+                                for _ in [
+                                    y["results"]
+                                    for y in data["actions_runs"][2][0]["tests"]
+                                ]
+                                for r in _
+                            ]
+                        ]
+                    )
+
+                if data["commit_hash"] == "862faa2fe219817eab67de0a95c796f31fc595f1":
+                    assert data["commit_timestamp"] == "2023-07-22T10:20:51Z"
+                    assert data["commit_message"] == "fix multiply\n"
+                    assert (
+                        data["previous_commit_hash"]
+                        == "e383979ee1e98cac1681d4321f32ad6c9087b24f"
+                    )
+                    assert data["previous_commit_message"] == "implement multiply\n"
+                    assert data["previous_commit_timestamp"] == "2023-07-22T10:20:28Z"
+                    assert data["time_to_patch"] == "0:00:23"
+                    assert data["strategy"] == "PASS_PASS"
+                    assert len(data["bug_patch_file_extensions"]) == 1
+                    assert "go" in data["bug_patch_file_extensions"]
+                    assert len(data["test_patch_file_extensions"]) == 1
+                    assert "go" in data["test_patch_file_extensions"]
+                    assert len(data["non_code_patch_file_extensions"]) == 0
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    # assert that number of total tests before == 2 and all pass
+                    assert len(data["actions_runs"][0][0]["tests"]) == 2
+                    assert all(
+                        [
+                            x["result"] == "Passed"
+                            for x in [
+                                r
+                                for _ in [
+                                    y["results"]
+                                    for y in data["actions_runs"][0][0]["tests"]
+                                ]
+                                for r in _
+                            ]
+                        ]
+                    )
+                    # assert that number of total tests w/ new tests == 3 and one fails
+                    assert len(data["actions_runs"][1][0]["tests"]) == 3
+                    assert (
+                        len(
+                            [
+                                x
+                                for x in [
+                                    r
+                                    for _ in [
+                                        y["results"]
+                                        for y in data["actions_runs"][1][0]["tests"]
+                                    ]
+                                    for r in _
+                                ]
+                                if x["result"] == "Passed"
+                            ]
+                        )
+                        == 2
+                    )
+                    assert (
+                        len(
+                            [
+                                x
+                                for x in [
+                                    r
+                                    for _ in [
+                                        y["results"]
+                                        for y in data["actions_runs"][1][0]["tests"]
+                                    ]
+                                    for r in _
+                                ]
+                                if x["result"] == "Failure"
+                            ]
+                        )
+                        == 1
+                    )
+                    # assert that number of total tests after == 3 and all pass
+                    assert len(data["actions_runs"][2][0]["tests"]) == 3
+                    assert all(
+                        [
+                            x["result"] == "Passed"
+                            for x in [
+                                r
+                                for _ in [
+                                    y["results"]
+                                    for y in data["actions_runs"][2][0]["tests"]
+                                ]
+                                for r in _
+                            ]
+                        ]
+                    )
+
     def test_collected_data(self):
         with open(
             "test/resources/test_collect_bugs_out/data.json",
             "r",
         ) as f:
             data = json.loads(f.read())
-            assert len(data.keys()) == 4
+            assert len(data.keys()) == 5
             assert data["Nfsaavedra/crawlergpt-test-repo"]["commits"] == 10
             assert data["andre15silva/crawlergpt-pytest-test-repo"]["commits"] == 6
             assert data["andre15silva/crawlergpt-gradle-test-repo"]["commits"] == 2
             assert data["andre15silva/crawlergpt-unittest-test-repo"]["commits"] == 2
+            assert data["andre15silva/crawlergpt-go-test-repo"]["commits"] == 4
             assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 4
             assert (
                 data["andre15silva/crawlergpt-pytest-test-repo"]["possible_bug_patches"]
@@ -618,6 +791,10 @@ class TestCollectBugs:
                 ]
                 == 1
             )
+            assert (
+                data["andre15silva/crawlergpt-go-test-repo"]["possible_bug_patches"]
+                == 2
+            )
 
     @pytest.mark.dependency(
         depends=[
@@ -625,6 +802,7 @@ class TestCollectBugs:
             "TestCollectBugs::test_crawlergpt_pytest_test_repo",
             "TestCollectBugs::test_crawlergpt_gradle_test_repo",
             "TestCollectBugs::test_crawlergpt_unittest_test_repo",
+            "TestCollectBugs::test_crawlergpt_go_test_repo",
         ]
     )
     @pytest.mark.flaky
