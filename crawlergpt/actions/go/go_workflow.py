@@ -9,7 +9,7 @@ from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
 
 class GoWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = ["go"]
-    # Regex patterns to match pytest commands
+    # Regex patterns to match go test commands
     __TESTS_COMMAND_PATTERNS = [
         r"go\s.*test",
     ]
