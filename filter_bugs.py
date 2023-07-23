@@ -194,10 +194,14 @@ def filter_bugs(bugs_path: str, export_path: str, res_path: str, n_workers=1):
             else:
                 if non_flaky:
                     with open(os.path.join(res_path, "non-flaky.json"), "a") as f:
-                        f.write(json.dumps({repository: repository, commit: commit}))
+                        f.write(
+                            json.dumps({"repository": repository, "commit": commit})
+                        )
                 else:
                     with open(os.path.join(res_path, "flaky.json"), "a") as f:
-                        f.write(json.dumps({repository: repository, commit: commit}))
+                        f.write(
+                            json.dumps({"repository": repository, "commit": commit})
+                        )
 
 
 def main():
