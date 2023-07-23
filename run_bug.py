@@ -29,6 +29,31 @@ def get_bug_from_metadata(metadata_path, repo_name, commit):
     return res_bug
 
 
+def get_default_actions(diff_folder_path, repo_clone, language) -> GitHubActions:
+    workflow_dir_path = os.path.join(diff_folder_path, "workflow")
+    workflow_name = os.listdir(workflow_dir_path)[0]
+    workflow_path = os.path.join(workflow_dir_path, workflow_name)
+
+    github_actions_path = os.path.join(repo_clone.workdir, ".github", "workflows")
+    if not os.path.exists(github_actions_path):
+        os.makedirs(github_actions_path)
+    new_workflow_path = os.path.join(github_actions_path, str(uuid.uuid4()) + ".yml")
+    shutil.copyfile(workflow_path, new_workflow_path)
+
+    workflows = [GitHubWorkflowFactory.create_workflow(new_workflow_path, language)]
+
+    default_actions = GitHubActions(repo_clone.workdir, language)
+    default_actions.test_workflows = workflows
+
+    return default_actions
+
+
+def get_diff_path(diff_folder_path):
+    for path in os.listdir(diff_folder_path):
+        if path != "workflow":
+            return os.path.join(diff_folder_path, path)
+
+
 def run_bug(
     repo_name: str,
     commit: str,
@@ -52,53 +77,25 @@ def run_bug(
     diff_folder_path = os.path.join(exported_path, repo_name, commit)
     docker_client = docker.from_env()
 
-    for path in os.listdir(diff_folder_path):
-        if path != "workflow":
-            act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-            try:
-                image_name = f"crawlergpt-run-bug:{str(uuid.uuid4())}"
-                create_diff_image(
-                    "crawlergpt:latest", image_name, os.path.join(diff_folder_path, path)
-                )
-                workflow_dir_path = os.path.join(diff_folder_path, "workflow")
-                workflow_name = os.listdir(workflow_dir_path)[0]
-                workflow_path = os.path.join(workflow_dir_path, workflow_name)
+    act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+    try:
+        image_name = f"crawlergpt-run-bug:{str(uuid.uuid4())}"
+        create_diff_image(
+            "crawlergpt:latest", image_name, get_diff_path(diff_folder_path)
+        )
+        executor = TestExecutor(
+            repo_clone,
+            bug["language"],
+            act_cache_dir,
+            get_default_actions(diff_folder_path, repo_clone, bug["language"]),
+            runner=image_name,
+        )
+        runs = executor.run_tests(offline=offline)
+        docker_client.images.remove(image_name)
+    finally:
+        ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
-                github_actions_path = os.path.join(
-                    repo_clone.workdir, ".github", "workflows"
-                )
-                if not os.path.exists(github_actions_path):
-                    os.makedirs(github_actions_path)
-                new_workflow_path = os.path.join(github_actions_path, workflow_name)
-                shutil.copyfile(workflow_path, new_workflow_path)
-
-                workflows = [
-                    GitHubWorkflowFactory.create_workflow(
-                        new_workflow_path, bug["language"]
-                    )
-                ]
-                # FIXME check if required
-                # workflows[0].instrument_offline_execution()
-                workflows[0].save_yaml(new_workflow_path)
-                default_actions = GitHubActions(repo_clone.workdir, bug["language"])
-                default_actions.test_workflows = workflows
-                executor = TestExecutor(
-                    repo_clone,
-                    bug["language"],
-                    act_cache_dir,
-                    default_actions,
-                    runner=image_name,
-                )
-                runs = executor.run_tests(offline=offline)
-                os.remove(new_workflow_path)
-                docker_client.images.remove(image_name)
-            finally:
-                ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-
-            return runs
-
-    logging.error(f"{repo_name}@{commit} was not able to run.")
-    exit(-1)
+    return runs
 
 
 def main():

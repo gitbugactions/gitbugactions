@@ -139,7 +139,7 @@ class BugPatch:
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
-    
+
     def __set_commit(self, repo_clone: pygit2.Repository, commit: str):
         commit = repo_clone.revparse_single(commit)
         repo_clone.checkout_tree(commit)
@@ -163,7 +163,7 @@ class BugPatch:
                 # Invalid patches
                 return False
         return True
-            
+
     def __apply_test_patch(self, repo_clone: pygit2.Repository):
         try:
             repo_clone.apply(pygit2.Diff.parse_diff(str(self.test_patch)))
@@ -173,35 +173,31 @@ class BugPatch:
             return False
 
     def test_previous_commit(
-        self,
-        executor: TestExecutor
+        self, executor: TestExecutor, offline: bool = False
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.previous_commit)
         if not self.__apply_non_code_patch(executor.repo_clone):
-            return None 
-        return executor.run_tests()
-    
+            return None
+        return executor.run_tests(offline=offline)
+
     def test_previous_commit_with_diff(
-        self,
-        executor: TestExecutor
+        self, executor: TestExecutor, offline: bool = False
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.previous_commit)
         if not self.__apply_non_code_patch(executor.repo_clone):
-            return None 
+            return None
         if not self.__apply_test_patch(executor.repo_clone):
-            return None 
-        
-        return executor.run_tests()
-    
+            return None
+        return executor.run_tests(offline=offline)
+
     def test_current_commit(
-        self,
-        executor: TestExecutor
+        self, executor: TestExecutor, offline: bool = False
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.commit)
-        return executor.run_tests()
+        return executor.run_tests(offline=offline)
 
     def __remove_patch_index(self, patch: PatchSet) -> str:
         lines = str(patch).split("\n")
@@ -313,8 +309,8 @@ class PatchCollector:
     def __test_patch(
         self,
         bug: BugPatch,
-        act_cache_dir,
-    ) -> List[List[Optional[ActTestsRun]]]:
+        act_cache_dir: str,
+    ) -> List[Optional[List[ActTestsRun]]]:
         test_patch_runs = [None, None, None]
         self.__clone_repo()
 
@@ -550,9 +546,7 @@ class PatchCollector:
         )
 
     @staticmethod
-    def __diff_tests(
-        run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
-    ):
+    def __diff_tests(run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]):
         flat_failed_tests = sum(
             map(lambda act_run: act_run.failed_tests, run_failed), []
         )
@@ -603,17 +597,15 @@ class PatchCollector:
     def check_runs(bug_patch, actions_runs) -> Optional[CollectionStrategy]:
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
+
         prev_commit_passed = (
-                actions_runs[0] is not None
-                and len(flat_failed_tests(actions_runs[0])) == 0
-            )
+            actions_runs[0] is not None and len(flat_failed_tests(actions_runs[0])) == 0
+        )
         prev_with_diff_failed = (
-            actions_runs[1] is not None
-            and len(flat_failed_tests(actions_runs[1])) > 0
+            actions_runs[1] is not None and len(flat_failed_tests(actions_runs[1])) > 0
         )
         curr_commit_passed = (
-            actions_runs[2] is not None
-            and len(flat_failed_tests(actions_runs[2])) == 0
+            actions_runs[2] is not None and len(flat_failed_tests(actions_runs[2])) == 0
         )
 
         # PASS_PASS strategy
@@ -638,8 +630,7 @@ class PatchCollector:
             return CollectionStrategy.PASS_PASS
 
         prev_commit_failed = (
-            actions_runs[0] is not None
-            and len(flat_failed_tests(actions_runs[0])) > 0
+            actions_runs[0] is not None and len(flat_failed_tests(actions_runs[0])) > 0
         )
 
         # FAIL_PASS strategy
@@ -658,8 +649,7 @@ class PatchCollector:
             return CollectionStrategy.FAIL_PASS
 
         curr_commit_failed = (
-            actions_runs[2] is not None
-            and len(flat_failed_tests(actions_runs[2])) > 0
+            actions_runs[2] is not None and len(flat_failed_tests(actions_runs[2])) > 0
         )
 
         # FAIL_FAIL strategy
@@ -669,11 +659,7 @@ class PatchCollector:
             # current commit failed
             and curr_commit_failed
             # at least one test was fixed
-            and len(
-                PatchCollector.__diff_tests(
-                    actions_runs[0], actions_runs[2]
-                )[0]
-            )
+            and len(PatchCollector.__diff_tests(actions_runs[0], actions_runs[2])[0])
             > 0
         ) or (
             # previous commit with diff failed
@@ -681,11 +667,7 @@ class PatchCollector:
             # current commit failed
             and curr_commit_failed
             # at least one test was fixed
-            and len(
-                PatchCollector.__diff_tests(
-                    actions_runs[1], actions_runs[2]
-                )[0]
-            )
+            and len(PatchCollector.__diff_tests(actions_runs[1], actions_runs[2])[0])
             > 0
         ):
             return CollectionStrategy.FAIL_FAIL
@@ -830,7 +812,7 @@ def collect_bugs(
                 is_patch = future.result()
             except Exception:
                 logging.error(
-                    f"Error wile collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
+                    f"Error while collecting patches from {bug_patch.repo}: {traceback.format_exc()}"
                 )
             else:
                 if is_patch:

@@ -25,7 +25,9 @@ class TestExecutor:
     def reset_repo(self):
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
         subprocess.run(
-            ["git", "clean", "-f", "-d", "-x"], cwd=self.repo_clone.workdir, capture_output=True
+            ["git", "clean", "-f", "-d", "-x"],
+            cwd=self.repo_clone.workdir,
+            capture_output=True,
         )
 
     def run_tests(
