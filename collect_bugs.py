@@ -231,12 +231,14 @@ class BugPatch:
 class PatchCollector:
     CLONE_SEM = threading.Semaphore(16)
 
-    def __init__(self, repo: Repository):
+    def __init__(self, repo: Repository, **kwargs):
         self.repo: Repository = repo
         self.language = repo.language.strip().lower()
         self.cloned = False
         self.clone_lock = threading.Lock()
         self.default_github_actions = None
+        self.filter_on_commit_message = kwargs.get("filter_on_commit_message", True)
+        self.filter_on_commit_year = kwargs.get("filter_on_commit_year", None)
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -464,7 +466,14 @@ class PatchCollector:
         commit_to_patches: Dict[str, List[BugPatch]] = {}
         try:
             for commit in self.repo_clone.walk(self.repo_clone.head.target):
-                if not self.__is_bug_fix(commit):
+                if self.filter_on_commit_message and not self.__is_bug_fix(commit):
+                    continue
+
+                commit_time = datetime.utcfromtimestamp(int(commit.commit_time))
+                if (
+                    self.filter_on_commit_year
+                    and commit_time.year != self.filter_on_commit_year
+                ):
                     continue
 
                 try:
@@ -681,7 +690,12 @@ class PatchCollector:
 
 
 def collect_bugs(
-    data_path: str, results_path="data/out_bugs", n_workers=1, memory_limit="7g"
+    data_path: str,
+    results_path="data/out_bugs",
+    n_workers=1,
+    memory_limit="7g",
+    filter_on_commit_message: bool = True,
+    filter_on_commit_year: int = None,
 ):
     """Collects bugs from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -694,6 +708,8 @@ def collect_bugs(
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
                                       Defaults to '7g'.
+        filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
+        filter_on_commit_year (int, optional): If set, only commits from the given year will be considered.
     """
     Act.set_memory_limit(memory_limit)
     token = GithubToken.get_token()
@@ -703,6 +719,11 @@ def collect_bugs(
         pool_size=n_workers,
     )
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
+
+    kwargs = {
+        "filter_on_commit_message": filter_on_commit_message,
+        "filter_on_commit_year": filter_on_commit_year,
+    }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
@@ -722,7 +743,7 @@ def collect_bugs(
                         and len(run["actions_run"]["tests"]) > 0
                     ):
                         repo = github.get_repo(run["repository"])
-                        patch_collector = PatchCollector(repo)
+                        patch_collector = PatchCollector(repo, **kwargs)
                         future_to_collector[
                             executor.submit(patch_collector.get_possible_patches)
                         ] = patch_collector

@@ -88,6 +88,77 @@ def test_get_possible_patches():
     delete_repo_clone(collector.repo_clone)
 
 
+def test_get_possible_patches_2021():
+    collector = PatchCollector(
+        GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
+        filter_on_commit_year=2021,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+
+    assert len(commits) == 55
+
+    # The diffs are equal, at least one of the commits should be in the list, but not both
+    assert ("c5a7737cea8d078efbb3d8d3c78c6ec7e32d1861" in commits) ^ (
+        "04fdd485697ed82232b5097d22ddb46ff234bb3b" in commits
+    )
+    # The commits are from 2022
+    assert ("b12cc483dc6f2205c901d5caeb91e0658b913c6b" not in commits) and (
+        "c15bfc7cc066b85585831a8770a6d00daf8272aa" not in commits
+    )
+
+    # 8a316 is a merge commit and 38eeb is a fix before the merge
+    # The commits are from 2022
+    assert "38eeb1f660cd6b28dcce925d64dc9112c31745d6" not in commits
+    assert "8a316e3e7043f7663256b039d73696a5363cbcb8" not in commits
+
+    # Two commits with different fixes which point to the same previous commit
+    # The commits are from 2022
+    assert "23e97170add0cb770dea4f70c93c19de394525c9" not in commits
+    assert "c58e65e0ab421fba2987e2efec18f49e87a294a6" not in commits
+    # Merge commit equal to 23e97 but with different previous commit
+    # The patch is discarded because it is oldest than 23e97
+    assert "0d8347de05e969cb2fc836bb0f5e343643b2e7ad" not in commits
+
+    delete_repo_clone(collector.repo_clone)
+
+
+def test_get_possible_patches_no_keywords():
+    collector = PatchCollector(
+        GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
+        filter_on_commit_message=False,
+        filter_on_commit_year=2021,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+
+    assert len(commits) == 447
+
+    # The diffs are equal, at least one of the commits should be in the list, but not both
+    assert ("c5a7737cea8d078efbb3d8d3c78c6ec7e32d1861" in commits) ^ (
+        "04fdd485697ed82232b5097d22ddb46ff234bb3b" in commits
+    )
+    # The commits are from 2022
+    assert ("b12cc483dc6f2205c901d5caeb91e0658b913c6b" not in commits) and (
+        "c15bfc7cc066b85585831a8770a6d00daf8272aa" not in commits
+    )
+
+    # 8a316 is a merge commit and 38eeb is a fix before the merge
+    # The commits are from 2022
+    assert "38eeb1f660cd6b28dcce925d64dc9112c31745d6" not in commits
+    assert "8a316e3e7043f7663256b039d73696a5363cbcb8" not in commits
+
+    # Two commits with different fixes which point to the same previous commit
+    # The commits are from 2022
+    assert "23e97170add0cb770dea4f70c93c19de394525c9" not in commits
+    assert "c58e65e0ab421fba2987e2efec18f49e87a294a6" not in commits
+    # Merge commit equal to 23e97 but with different previous commit
+    # The patch is discarded because it is oldest than 23e97
+    assert "0d8347de05e969cb2fc836bb0f5e343643b2e7ad" not in commits
+
+    delete_repo_clone(collector.repo_clone)
+
+
 @pytest.mark.skip(
     reason="""this test doesn't add much, but it is a good sanity test. 
               skipping to avoid overloading the tests"""
