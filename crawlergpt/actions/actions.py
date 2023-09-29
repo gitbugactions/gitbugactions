@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.action import Action
+from crawlergpt.limit import LimitFolderSize
 
 
 class ActCacheDirManager:
@@ -195,7 +196,13 @@ class Act:
     __MEMORY_LIMIT = "7g"
 
     def __init__(
-        self, reuse, timeout=5, runner: str = "crawlergpt:latest", offline: bool = False
+        self,
+        reuse,
+        timeout=5,
+        runner: str = "crawlergpt:latest",
+        offline: bool = False,
+        # The limit is in bytes (3GB)
+        folder_size_limit: int = 3221225472,
     ):
         """
         Args:
@@ -214,6 +221,7 @@ class Act:
         self.flags += "'"
 
         self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
+        self.__FOLDER_SIZE_LIMIT = folder_size_limit
         self.timeout = timeout
 
     @staticmethod
@@ -261,10 +269,23 @@ class Act:
         command += f" -W {workflow.path}"
 
         start_time = time.time()
-        run = subprocess.run(command, shell=True, capture_output=True)
+        run = subprocess.Popen(
+            command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+
+        def folder_limit_exceeded():
+            run.terminate()
+
+        limitter = LimitFolderSize(
+            repo_path, self.__FOLDER_SIZE_LIMIT, folder_limit_exceeded
+        )
+        limitter.start()
+        run.wait()
         end_time = time.time()
-        stdout = run.stdout.decode("utf-8")
-        stderr = run.stderr.decode("utf-8")
+
+        stdout, stderr = run.communicate()
+        stdout = stdout.decode("utf-8")
+        stderr = stderr.decode("utf-8")
         tests = workflow.get_test_results(repo_path)
         tests_run = ActTestsRun(
             failed=False,
