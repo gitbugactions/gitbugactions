@@ -289,6 +289,7 @@ class Act:
         limitter.start()
         stdout, stderr = run.communicate()
         run.wait()
+        limitter.stop()
         end_time = time.time()
 
         stdout = stdout.decode("utf-8")

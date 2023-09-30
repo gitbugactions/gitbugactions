@@ -22,6 +22,7 @@ def test_limit_folder_size(teardown):
     limit = LimitFolderSize(
         "test/resources/test_limit_folder_size", 4132, trigger_limit_reached
     )
+    limit.start()
     os.mkdir(test_dir_path)
     limit.observer.join()
     assert limit_reached == True
