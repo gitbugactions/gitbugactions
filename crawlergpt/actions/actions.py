@@ -1,5 +1,6 @@
 import os, tempfile, shutil, traceback
 import grp
+import psutil
 import uuid
 import time
 import docker
@@ -197,7 +198,7 @@ class Act:
 
     def __init__(
         self,
-        reuse,
+        reuse: bool,
         timeout=5,
         runner: str = "crawlergpt:latest",
         offline: bool = False,
@@ -273,17 +274,23 @@ class Act:
             command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
 
+        size_limit_exceeded = False
+
         def folder_limit_exceeded():
-            run.terminate()
+            nonlocal size_limit_exceeded
+            size_limit_exceeded = True
+            p = psutil.Process(run.pid)
+            for child in p.children():
+                child.terminate()
 
         limitter = LimitFolderSize(
             repo_path, self.__FOLDER_SIZE_LIMIT, folder_limit_exceeded
         )
         limitter.start()
+        stdout, stderr = run.communicate()
         run.wait()
         end_time = time.time()
 
-        stdout, stderr = run.communicate()
         stdout = stdout.decode("utf-8")
         stderr = stderr.decode("utf-8")
         tests = workflow.get_test_results(repo_path)
@@ -300,17 +307,21 @@ class Act:
         )
 
         if (
-            # Failed run with failed tests but with memory limit exceed should not
-            # be considered. We do not check the return code because act does not
-            # pass the code from the container.
-            run.returncode == 1  # Increase performance by avoiding
-            and len(tests_run.failed_tests) != 0  # to check the output in every run
-            and ("exitcode '137'" in stderr or "exitcode '137': failure" in stdout)
-        ) or (
-            # 124 is the return code for the timeout
-            (run.returncode == 124)
-            or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
-            or len(tests_run.erroring_tests) > 0
+            (
+                # Failed run with failed tests but with memory limit exceed should not
+                # be considered. We do not check the return code because act does not
+                # pass the code from the container.
+                run.returncode == 1  # Increase performance by avoiding
+                and len(tests_run.failed_tests) != 0  # to check the output in every run
+                and ("exitcode '137'" in stderr or "exitcode '137': failure" in stdout)
+            )
+            or (
+                # 124 is the return code for the timeout
+                (run.returncode == 124)
+                or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
+                or len(tests_run.erroring_tests) > 0
+            )
+            or size_limit_exceeded
         ):
             tests_run.failed = True
 

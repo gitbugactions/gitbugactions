@@ -1,4 +1,3 @@
-
 import os
 from typing import Dict, Callable
 from watchdog.observers import Observer
@@ -7,6 +6,7 @@ from watchdog.events import (
     FileSystemEvent,
     FileSystemMovedEvent,
 )
+
 
 class LimitFolderSize(FileSystemEventHandler):
     """Allows to call an handler when a folder exceeds a certain size limit."""
@@ -50,18 +50,20 @@ class LimitFolderSize(FileSystemEventHandler):
         self.observer.stop()
 
     def on_created(self, event: FileSystemEvent):
-        if not os.path.exists(event.src_path):
+        try:
+            size = os.path.getsize(event.src_path)
+        except FileNotFoundError:
             return
-        size = os.path.getsize(event.src_path)
         self.total_size += size
         self.file_size[event.src_path] = size
         if self.total_size > self.max_size:
             self.__call_handler()
 
     def on_modified(self, event: FileSystemEvent):
-        if not os.path.exists(event.src_path):
+        try:
+            size = os.path.getsize(event.src_path)
+        except FileNotFoundError:
             return
-        size = os.path.getsize(event.src_path)
         if event.src_path in self.file_size:
             self.total_size += size - self.file_size[event.src_path]
         else:
@@ -78,7 +80,10 @@ class LimitFolderSize(FileSystemEventHandler):
     def on_moved(self, event: FileSystemMovedEvent):
         # The on_moved only includes files moved within the directory
         if event.src_path not in self.file_size:
-            size = os.path.getsize(event.dest_path)
+            try:
+                size = os.path.getsize(event.dest_path)
+            except FileNotFoundError:
+                return
             self.total_size += size
             self.file_size[event.dest_path] = size
         else:
