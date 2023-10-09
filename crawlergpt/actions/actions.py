@@ -1,4 +1,6 @@
 import os, tempfile, shutil, traceback
+import re, tarfile
+import hashlib
 import grp
 import psutil
 import uuid
@@ -192,7 +194,7 @@ class Act:
     __ACT_PATH = "act"
     __ACT_SETUP = False
     # The flag -u allows files to be created with the current user
-    __FLAGS = f"--bind --pull=false --no-cache-server"
+    __FLAGS = f"--pull=false --no-cache-server"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
 
@@ -210,11 +212,8 @@ class Act:
             timeout (int): Timeout in minutes
         """
         Act.__setup_act()
-        if reuse:
-            self.flags = "--reuse"
-        else:
-            self.flags = "--rm"
-
+        self.reuse = reuse
+        self.flags = "--reuse"
         self.flags += f" --container-options '-u {os.getuid()}:{os.getgid()}"
         if offline:
             self.flags += " --network none"
@@ -259,6 +258,26 @@ class Act:
     def set_memory_limit(limit: str):
         Act.__MEMORY_LIMIT = limit
 
+    def __get_container_name(self, workflow_name: str, job_name: str):
+        parts = ["act", workflow_name, job_name]
+        name = "-".join(parts)
+        pattern = re.compile("[^a-zA-Z0-9]")
+        name = pattern.sub("-", name)
+        name = name.replace("--", "-")
+        hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
+        trimmedName = name[:64].strip("-")
+        return f"{trimmedName}-{hash}"
+
+    def __remove_containers(self, workflow: GitHubWorkflow):
+        for job_name in workflow.get_jobs():
+            container_name = self.__get_container_name(workflow.doc["name"], job_name)
+            client = docker.from_env()
+            for container in client.containers.list(
+                all=True, filters={"name": container_name}
+            ):
+                container.stop()
+                container.remove()
+
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
     ) -> ActTestsRun:
@@ -294,7 +313,36 @@ class Act:
 
         stdout = stdout.decode("utf-8")
         stderr = stderr.decode("utf-8")
-        tests = workflow.get_test_results(repo_path)
+
+        # TODO: support more than one test job
+        test_job = workflow.get_test_jobs()[0]
+        container_name = self.__get_container_name(workflow.doc["name"], test_job)
+        client = docker.from_env()
+        for container in client.containers.list(
+            all=True, filters={"name": container_name}
+        ):
+            random_file_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+            random_folder_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+
+            with open(random_file_path, "wb") as f:
+                bits, _ = container.get_archive(repo_path)
+                for chunk in bits:
+                    f.write(chunk)
+            with tarfile.open(random_file_path, "r") as f:
+                f.extractall(path=random_folder_path)
+
+            if os.path.exists(random_file_path):
+                os.remove(random_file_path)
+            break
+
+        self.__remove_containers(workflow)
+        tests = workflow.get_test_results(
+            os.path.join(
+                random_folder_path, os.path.basename(os.path.normpath(repo_path))
+            )
+        )
+        shutil.rmtree(random_folder_path, ignore_errors=True)
+
         tests_run = ActTestsRun(
             failed=False,
             tests=tests,
