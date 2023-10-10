@@ -197,6 +197,32 @@ class GitHubWorkflow(ABC):
                         filtered_steps.append(step)
                     job["steps"] = filtered_steps
 
+    def get_jobs(self) -> List[str]:
+        """
+        Gets the jobs from the workflow.
+        """
+        jobs = []
+        if "jobs" in self.doc:
+            for job_name, _ in self.doc["jobs"].items():
+                jobs.append(job_name)
+        return jobs
+
+    def get_test_jobs(self) -> List[str]:
+        """
+        Gets the jobs containing test commands.
+        """
+        test_jobs = []
+        if "jobs" in self.doc:
+            for job_name, job in self.doc["jobs"].items():
+                has_test = False
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "run" in step and self._is_test_command(step["run"]):
+                            has_test = True
+                if has_test:
+                    test_jobs.append(job_name)
+        return test_jobs
+
     def instrument_jobs(self):
         """
         Instruments the workflow to keep only the jobs containing test commands.
@@ -221,16 +247,9 @@ class GitHubWorkflow(ABC):
 
         if "jobs" in self.doc:
             required_jobs = set()
-            for job_name, job in self.doc["jobs"].items():
-                has_test = False
-                if "steps" in job:
-                    for step in job["steps"]:
-                        if "run" in step and self._is_test_command(step["run"]):
-                            has_test = True
-
-                if has_test:
-                    required_jobs.add(job_name)
-                    required_jobs.update(get_needs(job_name))
+            for job_name in self.get_test_jobs():
+                required_jobs.add(job_name)
+                required_jobs.update(get_needs(job_name))
 
             self.doc["jobs"] = {
                 job_name: job

@@ -1,6 +1,7 @@
 import os, tempfile, shutil, traceback
+import re, tarfile
+import hashlib
 import grp
-import psutil
 import uuid
 import time
 import docker
@@ -14,7 +15,6 @@ from dataclasses import dataclass
 from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.action import Action
-from crawlergpt.limit import LimitFolderSize
 
 
 class ActCacheDirManager:
@@ -192,29 +192,20 @@ class Act:
     __ACT_PATH = "act"
     __ACT_SETUP = False
     # The flag -u allows files to be created with the current user
-    __FLAGS = f"--bind --pull=false --no-cache-server"
+    __FLAGS = f"--pull=false --no-cache-server"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
 
     def __init__(
-        self,
-        reuse: bool,
-        timeout=5,
-        runner: str = "crawlergpt:latest",
-        offline: bool = False,
-        # The limit is in bytes (3GB)
-        folder_size_limit: int = 3221225472,
+        self, reuse, timeout=5, runner: str = "crawlergpt:latest", offline: bool = False
     ):
         """
         Args:
             timeout (int): Timeout in minutes
         """
         Act.__setup_act()
-        if reuse:
-            self.flags = "--reuse"
-        else:
-            self.flags = "--rm"
-
+        self.reuse = reuse
+        self.flags = "--reuse"
         self.flags += f" --container-options '-u {os.getuid()}:{os.getgid()}"
         if offline:
             self.flags += " --network none"
@@ -222,7 +213,6 @@ class Act:
         self.flags += "'"
 
         self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
-        self.__FOLDER_SIZE_LIMIT = folder_size_limit
         self.timeout = timeout
 
     @staticmethod
@@ -259,6 +249,26 @@ class Act:
     def set_memory_limit(limit: str):
         Act.__MEMORY_LIMIT = limit
 
+    def __get_container_name(self, workflow_name: str, job_name: str):
+        parts = ["act", workflow_name, job_name]
+        name = "-".join(parts)
+        pattern = re.compile("[^a-zA-Z0-9]")
+        name = pattern.sub("-", name)
+        name = name.replace("--", "-")
+        hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
+        trimmedName = name[:64].strip("-")
+        return f"{trimmedName}-{hash}"
+
+    def __remove_containers(self, workflow: GitHubWorkflow):
+        for job_name in workflow.get_jobs():
+            container_name = self.__get_container_name(workflow.doc["name"], job_name)
+            client = docker.from_env()
+            for container in client.containers.list(
+                all=True, filters={"name": container_name}
+            ):
+                container.stop()
+                container.remove()
+
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
     ) -> ActTestsRun:
@@ -270,31 +280,42 @@ class Act:
         command += f" -W {workflow.path}"
 
         start_time = time.time()
-        run = subprocess.Popen(
-            command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
-
-        size_limit_exceeded = False
-
-        def folder_limit_exceeded():
-            nonlocal size_limit_exceeded
-            size_limit_exceeded = True
-            p = psutil.Process(run.pid)
-            for child in p.children():
-                child.terminate()
-
-        limitter = LimitFolderSize(
-            repo_path, self.__FOLDER_SIZE_LIMIT, folder_limit_exceeded
-        )
-        limitter.start()
-        stdout, stderr = run.communicate()
-        run.wait()
-        limitter.stop()
+        run = subprocess.run(command, shell=True, capture_output=True)
         end_time = time.time()
 
-        stdout = stdout.decode("utf-8")
-        stderr = stderr.decode("utf-8")
-        tests = workflow.get_test_results(repo_path)
+        stdout = run.stdout.decode("utf-8")
+        stderr = run.stderr.decode("utf-8")
+
+        # TODO: support more than one test job
+        test_job = workflow.get_test_jobs()[0]
+        container_name = self.__get_container_name(workflow.doc["name"], test_job)
+        client = docker.from_env()
+        for container in client.containers.list(
+            all=True, filters={"name": container_name}
+        ):
+            random_file_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+            random_folder_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+
+            with open(random_file_path, "wb") as f:
+                bits, _ = container.get_archive(repo_path)
+                for chunk in bits:
+                    f.write(chunk)
+            with tarfile.open(random_file_path, "r") as f:
+                f.extractall(path=random_folder_path)
+
+            if os.path.exists(random_file_path):
+                os.remove(random_file_path)
+            break
+
+        if not self.reuse:
+            self.__remove_containers(workflow)
+        tests = workflow.get_test_results(
+            os.path.join(
+                random_folder_path, os.path.basename(os.path.normpath(repo_path))
+            )
+        )
+        shutil.rmtree(random_folder_path, ignore_errors=True)
+
         tests_run = ActTestsRun(
             failed=False,
             tests=tests,
@@ -308,21 +329,17 @@ class Act:
         )
 
         if (
-            (
-                # Failed run with failed tests but with memory limit exceed should not
-                # be considered. We do not check the return code because act does not
-                # pass the code from the container.
-                run.returncode == 1  # Increase performance by avoiding
-                and len(tests_run.failed_tests) != 0  # to check the output in every run
-                and ("exitcode '137'" in stderr or "exitcode '137': failure" in stdout)
-            )
-            or (
-                # 124 is the return code for the timeout
-                (run.returncode == 124)
-                or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
-                or len(tests_run.erroring_tests) > 0
-            )
-            or size_limit_exceeded
+            # Failed run with failed tests but with memory limit exceed should not
+            # be considered. We do not check the return code because act does not
+            # pass the code from the container.
+            run.returncode == 1  # Increase performance by avoiding
+            and len(tests_run.failed_tests) != 0  # to check the output in every run
+            and ("exitcode '137'" in stderr or "exitcode '137': failure" in stdout)
+        ) or (
+            # 124 is the return code for the timeout
+            (run.returncode == 124)
+            or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
+            or len(tests_run.erroring_tests) > 0
         ):
             tests_run.failed = True
 
