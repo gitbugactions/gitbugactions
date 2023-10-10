@@ -111,13 +111,14 @@ class GitHubWorkflow(ABC):
         """
         container_names = []
         for job in self.get_jobs():
+            # For our option of restricting the jobs to look at
+            if jobs is not None and job not in jobs:
+                continue
             job_name = (
                 self.doc["jobs"][job]["name"]
                 if "name" in self.doc["jobs"][job]
                 else job
             )
-            if jobs is not None and job_name not in jobs:
-                continue
             parts = ["act", self.doc["name"], job_name]
             name = "-".join(parts)
             pattern = re.compile("[^a-zA-Z0-9]")
