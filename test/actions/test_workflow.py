@@ -127,6 +127,11 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
             "act-Java-Main-Workflow-build-1-9a2f0d1cff768c8b7229e206e79ab3f66e613ad6d00562539d8fbd3480f85826",
         ),
         (
+            "test/resources/test_workflows/java/maven_matrix.yml",
+            "java",
+            "act-99e740e7-f7be-412c-8d94-b60b1387fdb0-build-680d85fc5f39b2571eb5a0ca0e1571a5e5a45608294b2e921d181fcdc586f0f3",
+        ),
+        (
             "test/resources/test_workflows/go/go_matrix.yml",
             "go",
             "act-CI-Run-test-cases-1-4495991e7596ad16a5252e73f0124600806d257360114e99d51859726213778f",
