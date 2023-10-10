@@ -101,7 +101,8 @@ class GitHubWorkflow(ABC):
                     and "strategy" in job
                     and "matrix" in job["strategy"]
                 ):
-                    return True
+                    if len(job["strategy"]["matrix"]) > 1:
+                        return True
 
         return False
 
