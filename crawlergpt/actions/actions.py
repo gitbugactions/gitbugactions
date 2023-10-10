@@ -283,8 +283,8 @@ class Act:
         run = subprocess.run(command, shell=True, capture_output=True)
         end_time = time.time()
 
-        stdout = stdout.decode("utf-8")
-        stderr = stderr.decode("utf-8")
+        stdout = run.stdout.decode("utf-8")
+        stderr = run.stderr.decode("utf-8")
 
         # TODO: support more than one test job
         test_job = workflow.get_test_jobs()[0]
@@ -307,7 +307,8 @@ class Act:
                 os.remove(random_file_path)
             break
 
-        self.__remove_containers(workflow)
+        if not self.reuse:
+            self.__remove_containers(workflow)
         tests = workflow.get_test_results(
             os.path.join(
                 random_folder_path, os.path.basename(os.path.normpath(repo_path))
