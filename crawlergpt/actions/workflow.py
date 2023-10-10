@@ -110,7 +110,12 @@ class GitHubWorkflow(ABC):
         Computes the names of the containers that will be created for the workflow.
         """
         container_names = []
-        for job_name in self.get_jobs():
+        for job in self.get_jobs():
+            job_name = (
+                self.doc["jobs"][job]["name"]
+                if "name" in self.doc["jobs"][job]
+                else job
+            )
             if jobs is not None and job_name not in jobs:
                 continue
             parts = ["act", self.doc["name"], job_name]
@@ -118,7 +123,7 @@ class GitHubWorkflow(ABC):
             pattern = re.compile("[^a-zA-Z0-9]")
             name = pattern.sub("-", name)
             name = name.replace("--", "-")
-            if self.has_matrix(job_name):
+            if self.has_matrix(job):
                 name += "-1"
             hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
             trimmedName = name[:64].strip("-")

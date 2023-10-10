@@ -124,12 +124,12 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
         (
             "test/resources/test_workflows/java/maven_cache.yml",
             "java",
-            "",
+            "act-Java-Main-Workflow-build-1-9a2f0d1cff768c8b7229e206e79ab3f66e613ad6d00562539d8fbd3480f85826",
         ),
         (
             "test/resources/test_workflows/go/go_matrix.yml",
             "go",
-            "",
+            "act-CI-Run-test-cases-1-4495991e7596ad16a5252e73f0124600806d257360114e99d51859726213778f",
         ),
         (
             "test/resources/test_workflows/python/pytest_crawlergpt.yml",
@@ -144,5 +144,4 @@ def test_workflow_container_names(yml_file, language, container_name):
     container_names = workflow.get_container_names()
     assert len(container_names) == 1
 
-    # assert container_names[0] == container_name
-    print(container_names[0])
+    assert container_names[0] == container_name
