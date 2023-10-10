@@ -290,11 +290,13 @@ class Act:
         test_job = workflow.get_test_jobs()[0]
         container_name = self.__get_container_name(workflow.doc["name"], test_job)
         client = docker.from_env()
+        random_folder_paths = []
         for container in client.containers.list(
             all=True, filters={"name": container_name}
         ):
             random_file_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
             random_folder_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+            random_folder_paths.append(random_folder_path)
 
             with open(random_file_path, "wb") as f:
                 bits, _ = container.get_archive(repo_path)
@@ -309,12 +311,16 @@ class Act:
 
         if not self.reuse:
             self.__remove_containers(workflow)
+
+        # TODO: support more than one test job
         tests = workflow.get_test_results(
             os.path.join(
-                random_folder_path, os.path.basename(os.path.normpath(repo_path))
+                random_folder_paths[0], os.path.basename(os.path.normpath(repo_path))
             )
         )
-        shutil.rmtree(random_folder_path, ignore_errors=True)
+
+        for path in random_folder_paths:
+            shutil.rmtree(path, ignore_errors=True)
 
         tests_run = ActTestsRun(
             failed=False,
