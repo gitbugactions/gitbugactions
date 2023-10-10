@@ -249,20 +249,9 @@ class Act:
     def set_memory_limit(limit: str):
         Act.__MEMORY_LIMIT = limit
 
-    def __get_container_name(self, workflow_name: str, job_name: str):
-        parts = ["act", workflow_name, job_name]
-        name = "-".join(parts)
-        pattern = re.compile("[^a-zA-Z0-9]")
-        name = pattern.sub("-", name)
-        name = name.replace("--", "-")
-        hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
-        trimmedName = name[:64].strip("-")
-        return f"{trimmedName}-{hash}"
-
     def __remove_containers(self, workflow: GitHubWorkflow):
-        for job_name in workflow.get_jobs():
-            container_name = self.__get_container_name(workflow.doc["name"], job_name)
-            client = docker.from_env()
+        client = docker.from_env()
+        for container_name in workflow.get_container_names():
             for container in client.containers.list(
                 all=True, filters={"name": container_name}
             ):
@@ -288,15 +277,13 @@ class Act:
 
         # TODO: support more than one test job
         test_job = workflow.get_test_jobs()[0]
-        container_name = self.__get_container_name(workflow.doc["name"], test_job)
+        container_name = workflow.get_container_names(jobs={test_job})[0]
         client = docker.from_env()
-        random_folder_paths = []
         for container in client.containers.list(
             all=True, filters={"name": container_name}
         ):
             random_file_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
             random_folder_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-            random_folder_paths.append(random_folder_path)
 
             with open(random_file_path, "wb") as f:
                 bits, _ = container.get_archive(repo_path)
@@ -311,16 +298,12 @@ class Act:
 
         if not self.reuse:
             self.__remove_containers(workflow)
-
-        # TODO: support more than one test job
         tests = workflow.get_test_results(
             os.path.join(
-                random_folder_paths[0], os.path.basename(os.path.normpath(repo_path))
+                random_folder_path, os.path.basename(os.path.normpath(repo_path))
             )
         )
-
-        for path in random_folder_paths:
-            shutil.rmtree(path, ignore_errors=True)
+        shutil.rmtree(random_folder_path, ignore_errors=True)
 
         tests_run = ActTestsRun(
             failed=False,

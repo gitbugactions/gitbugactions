@@ -1,9 +1,10 @@
 import yaml
 import logging
-import traceback
+import re
+import hashlib
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from typing import List, Set
+from typing import List, Set, Optional
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.action import Action
 
@@ -88,6 +89,42 @@ class GitHubWorkflow(ABC):
                             actions.add(action)
 
         return actions
+
+    def has_matrix(self, job_name: str) -> bool:
+        """
+        Check if the workflow has a matrix.
+        """
+        if "jobs" in self.doc:
+            for _job_name, job in self.doc["jobs"].items():
+                if (
+                    job_name == _job_name
+                    and "strategy" in job
+                    and "matrix" in job["strategy"]
+                ):
+                    return True
+
+        return False
+
+    def get_container_names(self, jobs: Optional[Set[str]] = None) -> List[str]:
+        """
+        Computes the names of the containers that will be created for the workflow.
+        """
+        container_names = []
+        for job_name in self.get_jobs():
+            if jobs is not None and job_name not in jobs:
+                continue
+            parts = ["act", self.doc["name"], job_name]
+            name = "-".join(parts)
+            pattern = re.compile("[^a-zA-Z0-9]")
+            name = pattern.sub("-", name)
+            name = name.replace("--", "-")
+            if self.has_matrix(job_name):
+                name += "-1"
+            hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
+            trimmedName = name[:64].strip("-")
+            container_names.append(f"{trimmedName}-{hash}")
+
+        return container_names
 
     def instrument_os(self):
         """

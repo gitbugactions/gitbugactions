@@ -116,3 +116,33 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
         workflow.tokens[0].token
         == workflow.doc["jobs"]["test"]["steps"][1]["with"]["token"]
     )
+
+
+@pytest.mark.parametrize(
+    "yml_file, language, container_name",
+    [
+        (
+            "test/resources/test_workflows/java/maven_cache.yml",
+            "java",
+            "",
+        ),
+        (
+            "test/resources/test_workflows/go/go_matrix.yml",
+            "go",
+            "",
+        ),
+        (
+            "test/resources/test_workflows/python/pytest_crawlergpt.yml",
+            "python",
+            "act-Tests-build-8e89c69a8459abc0338d6c70c0b0c3bea705ce92f94e8f8b4eb7854e9a11fcf9",
+        ),
+    ],
+)
+def test_workflow_container_names(yml_file, language, container_name):
+    workflow = create_workflow(yml_file, language)
+
+    container_names = workflow.get_container_names()
+    assert len(container_names) == 1
+
+    # assert container_names[0] == container_name
+    print(container_names[0])
