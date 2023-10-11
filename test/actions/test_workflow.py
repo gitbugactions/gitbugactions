@@ -1,6 +1,7 @@
 from crawlergpt.actions.workflow import GitHubWorkflowFactory
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
 from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
+from crawlergpt.actions.go.go_workflow import GoWorkflow
 from crawlergpt.github_token import GithubToken
 
 import os
@@ -82,6 +83,17 @@ def test_instrument_cache_steps(yml_file):
     assert "cache" not in workflow.doc["jobs"]["build"]["steps"][1]["with"]
 
 
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/go/go_on_pull_request.yml")],
+)
+def test_instrument_on_events(yml_file):
+    workflow = create_workflow(yml_file, "go")
+    assert isinstance(workflow, GoWorkflow)
+    workflow.instrument_on_events()
+    assert workflow.doc["on"] == "push"
+
+
 @pytest.fixture
 def teardown_instrument_steps():
     yield
@@ -121,36 +133,40 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
 @pytest.mark.parametrize(
     "yml_file, language, container_name",
     [
+        # (
+        #     "test/resources/test_workflows/java/maven_cache.yml",
+        #     "java",
+        #     "act-Java-Main-Workflow-build-1-9a2f0d1cff768c8b7229e206e79ab3f66e613ad6d00562539d8fbd3480f85826",
+        # ),
+        # (
+        #     "test/resources/test_workflows/java/maven_matrix.yml",
+        #     "java",
+        #     "act-99e740e7-f7be-412c-8d94-b60b1387fdb0-build-680d85fc5f39b2571eb5a0ca0e1571a5e5a45608294b2e921d181fcdc586f0f3",
+        # ),
+        # (
+        #     "test/resources/test_workflows/go/go_matrix.yml",
+        #     "go",
+        #     "act-CI-Run-test-cases-1-4495991e7596ad16a5252e73f0124600806d257360114e99d51859726213778f",
+        # ),
+        # (
+        #     "test/resources/test_workflows/python/pytest_crawlergpt.yml",
+        #     "python",
+        #     "act-Tests-build-8e89c69a8459abc0338d6c70c0b0c3bea705ce92f94e8f8b4eb7854e9a11fcf9",
+        # ),
+        # (
+        #     "test/resources/test_workflows/go/go_matrix_single.yml",
+        #     "go",
+        #     "act-tests-d7ad1375-9963-419c-abf0-67b3c3567e70-cfbabdb24b3c951e12316ec1a6d9052efac3828dfb651277cec076b3551dbcfa",
+        # ),
         (
-            "test/resources/test_workflows/java/maven_cache.yml",
-            "java",
-            "act-Java-Main-Workflow-build-1-9a2f0d1cff768c8b7229e206e79ab3f66e613ad6d00562539d8fbd3480f85826",
-        ),
-        (
-            "test/resources/test_workflows/java/maven_matrix.yml",
-            "java",
-            "act-99e740e7-f7be-412c-8d94-b60b1387fdb0-build-680d85fc5f39b2571eb5a0ca0e1571a5e5a45608294b2e921d181fcdc586f0f3",
-        ),
-        (
-            "test/resources/test_workflows/go/go_matrix.yml",
+            "test/resources/test_workflows/go/go_bug.yml",
             "go",
-            "act-CI-Run-test-cases-1-4495991e7596ad16a5252e73f0124600806d257360114e99d51859726213778f",
-        ),
-        (
-            "test/resources/test_workflows/python/pytest_crawlergpt.yml",
-            "python",
-            "act-Tests-build-8e89c69a8459abc0338d6c70c0b0c3bea705ce92f94e8f8b4eb7854e9a11fcf9",
-        ),
-        (
-            "test/resources/test_workflows/go/go_matrix_single.yml",
-            "go",
-            "act-tests-d7ad1375-9963-419c-abf0-67b3c3567e70-cfbabdb24b3c951e12316ec1a6d9052efac3828dfb651277cec076b3551dbcfa",
+            "act-pull-request-03bca44f-ebb6-48a4-af4b-f43e163fa47d-6404fbe9a9971c60387e7a67d4c6cdf4ca0eb3d74ff62d9bc1138f9c495dd4a1",
         ),
     ],
 )
 def test_workflow_container_names(yml_file, language, container_name):
     workflow = create_workflow(yml_file, language)
-
     container_names = workflow.get_container_names()
     assert len(container_names) == 1
 

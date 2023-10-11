@@ -191,6 +191,13 @@ class GitHubWorkflow(ABC):
                     and isinstance(job["strategy"]["os"], list)
                 ):
                     job["strategy"]["os"] = ["ubuntu-latest"]
+                if (
+                    "strategy" in job
+                    and "matrix" in job["strategy"]
+                    and isinstance(job["strategy"]["matrix"], dict)
+                    and "os" in job["strategy"]["matrix"]
+                ):
+                    job["strategy"]["matrix"]["os"] = ["ubuntu-latest"]
                 if "strategy" in job:
                     walk_doc(job["strategy"])
 
@@ -320,6 +327,13 @@ class GitHubWorkflow(ABC):
                 for job_name, job in self.doc["jobs"].items()
                 if job_name in required_jobs
             }
+
+    def instrument_on_events(self):
+        """
+        Instruments the workflow to run only on push events.
+        """
+        if "on" in self.doc:
+            self.doc["on"] = "push"
 
     def instrument_job_names(self):
         """

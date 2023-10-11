@@ -387,6 +387,7 @@ class GitHubActions:
                     continue
 
                 workflow.instrument_os()
+                workflow.instrument_on_events()
                 workflow.instrument_strategy()
                 workflow.instrument_jobs()
                 workflow.instrument_job_names()
