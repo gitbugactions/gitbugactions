@@ -255,8 +255,12 @@ class Act:
             for container in client.containers.list(
                 all=True, filters={"name": container_name}
             ):
-                container.stop()
-                container.remove()
+                try:
+                    container.stop()
+                except:
+                    pass
+                finally:
+                    container.remove(force=True)
 
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str

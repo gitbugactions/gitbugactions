@@ -102,9 +102,11 @@ class GitHubWorkflow(ABC):
                     job_name == _job_name
                     and "strategy" in job
                     and "matrix" in job["strategy"]
+                    and isinstance(job["strategy"]["matrix"], dict)
                 ):
-                    if len(job["strategy"]["matrix"]) > 1:
-                        return True
+                    for _, value in job["strategy"]["matrix"].items():
+                        if isinstance(value, list) and len(value) > 1:
+                            return True
 
         return False
 
@@ -388,10 +390,11 @@ class GitHubWorkflowFactory:
             }
 
             def _update_keyword_counts(keyword_counts, phrase):
-                for name in phrase.strip().lower().split(" "):
-                    for keyword in aggregate_keywords:
-                        if keyword in name:
-                            keyword_counts[keyword] += 1
+                if isinstance(phrase, str):
+                    for name in phrase.strip().lower().split(" "):
+                        for keyword in aggregate_keywords:
+                            if keyword in name:
+                                keyword_counts[keyword] += 1
 
             # Load the workflow
             doc = None
@@ -409,7 +412,7 @@ class GitHubWorkflowFactory:
                 doc.pop(True)
 
             # Iterate over the workflow to find build tool names in the run commands
-            if "jobs" in doc:
+            if "jobs" in doc and isinstance(doc["jobs"], dict):
                 for _, job in doc["jobs"].items():
                     if "steps" in job:
                         for step in job["steps"]:

@@ -141,6 +141,11 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
             "python",
             "act-Tests-build-8e89c69a8459abc0338d6c70c0b0c3bea705ce92f94e8f8b4eb7854e9a11fcf9",
         ),
+        (
+            "test/resources/test_workflows/go/go_matrix_single.yml",
+            "go",
+            "act-tests-d7ad1375-9963-419c-abf0-67b3c3567e70-cfbabdb24b3c951e12316ec1a6d9052efac3828dfb651277cec076b3551dbcfa",
+        ),
     ],
 )
 def test_workflow_container_names(yml_file, language, container_name):
