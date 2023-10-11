@@ -146,7 +146,7 @@ class GitHubWorkflow(ABC):
             name = pattern.sub("-", name)
             name = name.replace("--", "-")
             hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
-            trimmedName = name[:64].strip("-")
+            trimmedName = name[:63].strip("-")
             container_names.append(f"{trimmedName}-{hash}")
 
         return container_names
