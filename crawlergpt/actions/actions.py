@@ -260,7 +260,7 @@ class Act:
                 except:
                     pass
                 finally:
-                    container.remove(force=True)
+                    container.remove(v=True, force=True)
 
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
