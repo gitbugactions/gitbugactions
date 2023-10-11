@@ -379,7 +379,7 @@ class GitHubActions:
                 )
 
                 self.workflows.append(workflow)
-                if not workflow.has_tests():
+                if not workflow.has_tests() or workflow.has_matrix_include_exclude():
                     continue
 
                 workflow.instrument_os()
@@ -440,4 +440,4 @@ class GitHubActions:
 
         for container in client.containers.list(filters={"ancestor": ancestors}):
             container.stop()
-            container.remove()
+            container.remove(v=True, force=True)

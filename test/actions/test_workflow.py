@@ -150,3 +150,24 @@ def test_workflow_container_names(yml_file, language, container_name):
     assert len(container_names) == 1
 
     assert container_names[0] == container_name
+
+
+@pytest.mark.parametrize(
+    "yml_file, language, expected_result",
+    [
+        (
+            "test/resources/test_workflows/java/maven_matrix.yml",
+            "java",
+            False,
+        ),
+        (
+            "test/resources/test_workflows/java/maven_matrix_include.yml",
+            "java",
+            True,
+        ),
+    ],
+)
+def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
+    workflow = create_workflow(yml_file, language)
+
+    assert workflow.has_matrix_include_exclude() == expected_result
