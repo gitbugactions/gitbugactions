@@ -385,6 +385,7 @@ class GitHubActions:
                 workflow.instrument_os()
                 workflow.instrument_strategy()
                 workflow.instrument_jobs()
+                workflow.instrument_job_names()
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()

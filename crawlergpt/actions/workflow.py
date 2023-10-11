@@ -4,6 +4,7 @@ import re
 import hashlib
 from abc import ABC, abstractmethod
 from junitparser import TestCase
+from uuid import uuid4
 from typing import List, Set, Optional
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.action import Action
@@ -317,6 +318,15 @@ class GitHubWorkflow(ABC):
                 for job_name, job in self.doc["jobs"].items()
                 if job_name in required_jobs
             }
+
+    def instrument_job_names(self):
+        """
+        Changes/adds a job name to all jobs, so that we control this value.
+        This is relevant for controlling the container names that Act will use.
+        """
+        if "jobs" in self.doc:
+            for job_name, job in self.doc["jobs"].items():
+                job["name"] = str(uuid4())
 
     @abstractmethod
     def instrument_test_steps(self):
