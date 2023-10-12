@@ -11,7 +11,7 @@ class GradleWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = ["gradle", "gradlew"]
     # Regex patterns to match gradle commands
     __TESTS_COMMAND_PATTERNS = [
-        r"(gradle|gradlew)\s.*(test|check|build|buildDependents|buildNeeded)",
+        r"(gradle|gradlew)\s+(([\w\-\/]+\s+)*)?(test|check|build|buildDependents|buildNeeded)",
     ]
 
     def _is_test_command(self, command) -> bool:

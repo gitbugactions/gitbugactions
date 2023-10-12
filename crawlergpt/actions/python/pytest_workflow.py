@@ -13,7 +13,7 @@ class PytestWorkflow(GitHubWorkflow):
     __TESTS_COMMAND_PATTERNS = [
         r"pytest",
         r"py.test",
-        r"python.*\s.*-m\spytest",  # Matches commands that call pytest through python's module option
+        r"python([23](\.\d+)?)?\s+(([\w\-\/]+\s+)*)?-m\s+pytest",  # Matches commands that call pytest through python's module option
     ]
 
     def _is_test_command(self, command) -> bool:

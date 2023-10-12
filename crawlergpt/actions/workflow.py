@@ -4,6 +4,7 @@ import re
 import hashlib
 from abc import ABC, abstractmethod
 from junitparser import TestCase
+from uuid import uuid4
 from typing import List, Set, Optional
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.action import Action
@@ -92,16 +93,34 @@ class GitHubWorkflow(ABC):
 
     def has_matrix(self, job_name: str) -> bool:
         """
-        Check if the workflow has a matrix.
+        Check if the workflow has a matrix with more than one combination
         """
+        # TODO: this only supports checking if there are no include/exclude options
         if "jobs" in self.doc:
             for _job_name, job in self.doc["jobs"].items():
                 if (
                     job_name == _job_name
                     and "strategy" in job
                     and "matrix" in job["strategy"]
+                    and isinstance(job["strategy"]["matrix"], dict)
                 ):
-                    if len(job["strategy"]["matrix"]) > 1:
+                    for _, value in job["strategy"]["matrix"].items():
+                        if isinstance(value, list) and len(value) > 1:
+                            return True
+
+        return False
+
+    def has_matrix_include_exclude(self) -> bool:
+        """
+        Check if the workflow has a job with a matrix with include/exclude options
+        """
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "strategy" in job and "matrix" in job["strategy"]:
+                    if (
+                        "include" in job["strategy"]["matrix"]
+                        or "exclude" in job["strategy"]["matrix"]
+                    ):
                         return True
 
         return False
@@ -122,13 +141,14 @@ class GitHubWorkflow(ABC):
             )
             parts = ["act", self.doc["name"], job_name]
             name = "-".join(parts)
+            # TODO: support more than one matrix combination. here we always use the first one
+            if self.has_matrix(job):
+                name += "-1"
             pattern = re.compile("[^a-zA-Z0-9]")
             name = pattern.sub("-", name)
             name = name.replace("--", "-")
-            if self.has_matrix(job):
-                name += "-1"
             hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
-            trimmedName = name[:64].strip("-")
+            trimmedName = name[:63].strip("-")
             container_names.append(f"{trimmedName}-{hash}")
 
         return container_names
@@ -171,6 +191,13 @@ class GitHubWorkflow(ABC):
                     and isinstance(job["strategy"]["os"], list)
                 ):
                     job["strategy"]["os"] = ["ubuntu-latest"]
+                if (
+                    "strategy" in job
+                    and "matrix" in job["strategy"]
+                    and isinstance(job["strategy"]["matrix"], dict)
+                    and "os" in job["strategy"]["matrix"]
+                ):
+                    job["strategy"]["matrix"]["os"] = ["ubuntu-latest"]
                 if "strategy" in job:
                     walk_doc(job["strategy"])
 
@@ -301,6 +328,22 @@ class GitHubWorkflow(ABC):
                 if job_name in required_jobs
             }
 
+    def instrument_on_events(self):
+        """
+        Instruments the workflow to run only on push events.
+        """
+        if "on" in self.doc:
+            self.doc["on"] = "push"
+
+    def instrument_job_names(self):
+        """
+        Changes/adds a job name to all jobs, so that we control this value.
+        This is relevant for controlling the container names that Act will use.
+        """
+        if "jobs" in self.doc:
+            for job_name, job in self.doc["jobs"].items():
+                job["name"] = str(uuid4())
+
     @abstractmethod
     def instrument_test_steps(self):
         """
@@ -361,10 +404,11 @@ class GitHubWorkflowFactory:
             }
 
             def _update_keyword_counts(keyword_counts, phrase):
-                for name in phrase.strip().lower().split(" "):
-                    for keyword in aggregate_keywords:
-                        if keyword in name:
-                            keyword_counts[keyword] += 1
+                if isinstance(phrase, str):
+                    for name in phrase.strip().lower().split(" "):
+                        for keyword in aggregate_keywords:
+                            if keyword in name:
+                                keyword_counts[keyword] += 1
 
             # Load the workflow
             doc = None
@@ -382,7 +426,7 @@ class GitHubWorkflowFactory:
                 doc.pop(True)
 
             # Iterate over the workflow to find build tool names in the run commands
-            if "jobs" in doc:
+            if "jobs" in doc and isinstance(doc["jobs"], dict):
                 for _, job in doc["jobs"].items():
                     if "steps" in job:
                         for step in job["steps"]:

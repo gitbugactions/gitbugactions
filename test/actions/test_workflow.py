@@ -1,6 +1,7 @@
 from crawlergpt.actions.workflow import GitHubWorkflowFactory
 from crawlergpt.actions.java.maven_workflow import MavenWorkflow
 from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
+from crawlergpt.actions.go.go_workflow import GoWorkflow
 from crawlergpt.github_token import GithubToken
 
 import os
@@ -82,6 +83,17 @@ def test_instrument_cache_steps(yml_file):
     assert "cache" not in workflow.doc["jobs"]["build"]["steps"][1]["with"]
 
 
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/go/go_on_pull_request.yml")],
+)
+def test_instrument_on_events(yml_file):
+    workflow = create_workflow(yml_file, "go")
+    assert isinstance(workflow, GoWorkflow)
+    workflow.instrument_on_events()
+    assert workflow.doc["on"] == "push"
+
+
 @pytest.fixture
 def teardown_instrument_steps():
     yield
@@ -141,12 +153,37 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
             "python",
             "act-Tests-build-8e89c69a8459abc0338d6c70c0b0c3bea705ce92f94e8f8b4eb7854e9a11fcf9",
         ),
+        (
+            "test/resources/test_workflows/go/go_matrix_single.yml",
+            "go",
+            "act-tests-d7ad1375-9963-419c-abf0-67b3c3567e70-cfbabdb24b3c951e12316ec1a6d9052efac3828dfb651277cec076b3551dbcfa",
+        ),
     ],
 )
 def test_workflow_container_names(yml_file, language, container_name):
     workflow = create_workflow(yml_file, language)
-
     container_names = workflow.get_container_names()
     assert len(container_names) == 1
 
     assert container_names[0] == container_name
+
+
+@pytest.mark.parametrize(
+    "yml_file, language, expected_result",
+    [
+        (
+            "test/resources/test_workflows/java/maven_matrix.yml",
+            "java",
+            False,
+        ),
+        (
+            "test/resources/test_workflows/java/maven_matrix_include.yml",
+            "java",
+            True,
+        ),
+    ],
+)
+def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
+    workflow = create_workflow(yml_file, language)
+
+    assert workflow.has_matrix_include_exclude() == expected_result

@@ -1,0 +1,25 @@
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: '8'
+        token: null
+    - run: mvn --batch-mode --update-snapshots package
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu
+name: 99e740e7-f7be-412c-8d94-b60b1387fdb0
+'on':
+  pull_request:
+    branches:
+    - '**'
+  push:
+    branches:
+    - main
+  workflow_dispatch: null

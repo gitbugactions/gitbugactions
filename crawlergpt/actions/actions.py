@@ -255,8 +255,12 @@ class Act:
             for container in client.containers.list(
                 all=True, filters={"name": container_name}
             ):
-                container.stop()
-                container.remove()
+                try:
+                    container.stop()
+                except:
+                    pass
+                finally:
+                    container.remove(v=True, force=True)
 
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
@@ -298,6 +302,7 @@ class Act:
 
         if not self.reuse:
             self.__remove_containers(workflow)
+
         tests = workflow.get_test_results(
             os.path.join(
                 random_folder_path, os.path.basename(os.path.normpath(repo_path))
@@ -379,12 +384,14 @@ class GitHubActions:
                 )
 
                 self.workflows.append(workflow)
-                if not workflow.has_tests():
+                if not workflow.has_tests() or workflow.has_matrix_include_exclude():
                     continue
 
                 workflow.instrument_os()
+                workflow.instrument_on_events()
                 workflow.instrument_strategy()
                 workflow.instrument_jobs()
+                workflow.instrument_job_names()
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()
@@ -440,4 +447,4 @@ class GitHubActions:
 
         for container in client.containers.list(filters={"ancestor": ancestors}):
             container.stop()
-            container.remove()
+            container.remove(v=True, force=True)
