@@ -131,44 +131,6 @@ def test_instrument_steps(teardown_instrument_steps, mocker):
 
 
 @pytest.mark.parametrize(
-    "yml_file, language, container_name",
-    [
-        (
-            "test/resources/test_workflows/java/maven_cache.yml",
-            "java",
-            "act-Java-Main-Workflow-build-1-9a2f0d1cff768c8b7229e206e79ab3f66e613ad6d00562539d8fbd3480f85826",
-        ),
-        (
-            "test/resources/test_workflows/java/maven_matrix.yml",
-            "java",
-            "act-99e740e7-f7be-412c-8d94-b60b1387fdb0-build-680d85fc5f39b2571eb5a0ca0e1571a5e5a45608294b2e921d181fcdc586f0f3",
-        ),
-        (
-            "test/resources/test_workflows/go/go_matrix.yml",
-            "go",
-            "act-CI-Run-test-cases-1-4495991e7596ad16a5252e73f0124600806d257360114e99d51859726213778f",
-        ),
-        (
-            "test/resources/test_workflows/python/pytest_crawlergpt.yml",
-            "python",
-            "act-Tests-build-8e89c69a8459abc0338d6c70c0b0c3bea705ce92f94e8f8b4eb7854e9a11fcf9",
-        ),
-        (
-            "test/resources/test_workflows/go/go_matrix_single.yml",
-            "go",
-            "act-tests-d7ad1375-9963-419c-abf0-67b3c3567e70-cfbabdb24b3c951e12316ec1a6d9052efac3828dfb651277cec076b3551dbcfa",
-        ),
-    ],
-)
-def test_workflow_container_names(yml_file, language, container_name):
-    workflow = create_workflow(yml_file, language)
-    container_names = workflow.get_container_names()
-    assert len(container_names) == 1
-
-    assert container_names[0] == container_name
-
-
-@pytest.mark.parametrize(
     "yml_file, language, expected_result",
     [
         (

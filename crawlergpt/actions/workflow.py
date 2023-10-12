@@ -91,25 +91,6 @@ class GitHubWorkflow(ABC):
 
         return actions
 
-    def has_matrix(self, job_name: str) -> bool:
-        """
-        Check if the workflow has a matrix with more than one combination
-        """
-        # TODO: this only supports checking if there are no include/exclude options
-        if "jobs" in self.doc:
-            for _job_name, job in self.doc["jobs"].items():
-                if (
-                    job_name == _job_name
-                    and "strategy" in job
-                    and "matrix" in job["strategy"]
-                    and isinstance(job["strategy"]["matrix"], dict)
-                ):
-                    for _, value in job["strategy"]["matrix"].items():
-                        if isinstance(value, list) and len(value) > 1:
-                            return True
-
-        return False
-
     def has_matrix_include_exclude(self) -> bool:
         """
         Check if the workflow has a job with a matrix with include/exclude options
@@ -124,34 +105,6 @@ class GitHubWorkflow(ABC):
                         return True
 
         return False
-
-    def get_container_names(self, jobs: Optional[Set[str]] = None) -> List[str]:
-        """
-        Computes the names of the containers that will be created for the workflow.
-        """
-        container_names = []
-        for job in self.get_jobs():
-            # For our option of restricting the jobs to look at
-            if jobs is not None and job not in jobs:
-                continue
-            job_name = (
-                self.doc["jobs"][job]["name"]
-                if "name" in self.doc["jobs"][job]
-                else job
-            )
-            parts = ["act", self.doc["name"], job_name]
-            name = "-".join(parts)
-            # TODO: support more than one matrix combination. here we always use the first one
-            if self.has_matrix(job):
-                name += "-1"
-            pattern = re.compile("[^a-zA-Z0-9]")
-            name = pattern.sub("-", name)
-            name = name.replace("--", "-")
-            hash = hashlib.sha256(name.encode("utf-8")).hexdigest()
-            trimmedName = name[:63].strip("-")
-            container_names.append(f"{trimmedName}-{hash}")
-
-        return container_names
 
     def instrument_os(self):
         """
@@ -334,15 +287,6 @@ class GitHubWorkflow(ABC):
         """
         if "on" in self.doc:
             self.doc["on"] = "push"
-
-    def instrument_job_names(self):
-        """
-        Changes/adds a job name to all jobs, so that we control this value.
-        This is relevant for controlling the container names that Act will use.
-        """
-        if "jobs" in self.doc:
-            for job_name, job in self.doc["jobs"].items():
-                job["name"] = str(uuid4())
 
     @abstractmethod
     def instrument_test_steps(self):
