@@ -130,9 +130,7 @@ class GitHubWorkflow(ABC):
         # Replace any unsupported OS with Ubuntu
         if "jobs" in self.doc:
             for _, job in self.doc["jobs"].items():
-                if (
-                    "runs-on" in job
-                ):
+                if "runs-on" in job:
                     job["runs-on"] = "ubuntu-latest"
                 if (
                     "strategy" in job
