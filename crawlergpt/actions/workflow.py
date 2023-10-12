@@ -1,11 +1,8 @@
 import yaml
 import logging
-import re
-import hashlib
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from uuid import uuid4
-from typing import List, Set, Optional
+from typing import List, Set
 from crawlergpt.github_token import GithubToken
 from crawlergpt.actions.action import Action
 
@@ -135,7 +132,6 @@ class GitHubWorkflow(ABC):
             for _, job in self.doc["jobs"].items():
                 if (
                     "runs-on" in job
-                    and str(job["runs-on"]).lower() in GitHubWorkflow.__UNSUPPORTED_OS
                 ):
                     job["runs-on"] = "ubuntu-latest"
                 if (
