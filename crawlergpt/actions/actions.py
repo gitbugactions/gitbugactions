@@ -302,6 +302,7 @@ class Act:
 
         if not self.reuse:
             self.__remove_containers(workflow)
+
         tests = workflow.get_test_results(
             os.path.join(
                 random_folder_path, os.path.basename(os.path.normpath(repo_path))

@@ -11,7 +11,7 @@ class GoWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = ["go"]
     # Regex patterns to match go test commands
     __TESTS_COMMAND_PATTERNS = [
-        r"go\s.*test",
+        r"go\s+(([\w\-\/]+\s+)*)?test",
     ]
 
     def _is_test_command(self, command) -> bool:
