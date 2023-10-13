@@ -239,7 +239,9 @@ class PatchCollector:
         self.clone_lock = threading.Lock()
         self.default_github_actions = None
         self.filter_on_commit_message = kwargs.get("filter_on_commit_message", True)
-        self.filter_on_commit_time_start = kwargs.get("filter_on_commit_time_start", None)
+        self.filter_on_commit_time_start = kwargs.get(
+            "filter_on_commit_time_start", None
+        )
         self.filter_on_commit_time_end = kwargs.get("filter_on_commit_time_end", None)
 
     def __clone_repo(self):
@@ -731,8 +733,14 @@ def collect_bugs(
 
     kwargs = {
         "filter_on_commit_message": filter_on_commit_message,
-        "filter_on_commit_time_start": dateutil.parser.parse(filter_on_commit_time_start) if filter_on_commit_time_start is not None else None,
-        "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end) if filter_on_commit_time_end is not None else None,
+        "filter_on_commit_time_start": dateutil.parser.parse(
+            filter_on_commit_time_start
+        )
+        if filter_on_commit_time_start is not None
+        else None,
+        "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
+        if filter_on_commit_time_end is not None
+        else None,
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
