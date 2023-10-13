@@ -12,6 +12,7 @@ from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set, Optional
 from enum import Enum
 from datetime import datetime
+import dateutil.parser
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
 from crawlergpt.util import delete_repo_clone
@@ -238,7 +239,10 @@ class PatchCollector:
         self.clone_lock = threading.Lock()
         self.default_github_actions = None
         self.filter_on_commit_message = kwargs.get("filter_on_commit_message", True)
-        self.filter_on_commit_year = kwargs.get("filter_on_commit_year", None)
+        self.filter_on_commit_time_start = kwargs.get(
+            "filter_on_commit_time_start", None
+        )
+        self.filter_on_commit_time_end = kwargs.get("filter_on_commit_time_end", None)
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -471,8 +475,14 @@ class PatchCollector:
 
                 commit_time = datetime.utcfromtimestamp(int(commit.commit_time))
                 if (
-                    self.filter_on_commit_year
-                    and commit_time.year != self.filter_on_commit_year
+                    self.filter_on_commit_time_start
+                    and commit_time < self.filter_on_commit_time_start
+                ):
+                    continue
+
+                if (
+                    self.filter_on_commit_time_end
+                    and commit_time > self.filter_on_commit_time_end
                 ):
                     continue
 
@@ -695,7 +705,8 @@ def collect_bugs(
     n_workers=1,
     memory_limit="7g",
     filter_on_commit_message: bool = True,
-    filter_on_commit_year: int = None,
+    filter_on_commit_time_start: str = None,
+    filter_on_commit_time_end: str = None,
 ):
     """Collects bugs from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -722,7 +733,14 @@ def collect_bugs(
 
     kwargs = {
         "filter_on_commit_message": filter_on_commit_message,
-        "filter_on_commit_year": filter_on_commit_year,
+        "filter_on_commit_time_start": dateutil.parser.parse(
+            filter_on_commit_time_start
+        )
+        if filter_on_commit_time_start is not None
+        else None,
+        "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
+        if filter_on_commit_time_end is not None
+        else None,
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
