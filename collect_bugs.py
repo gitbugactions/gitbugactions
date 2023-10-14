@@ -321,7 +321,7 @@ class PatchCollector:
         self.__clone_repo()
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-        shutil.copytree(self.repo_clone.workdir, new_repo_path)
+        shutil.copytree(self.repo_clone.workdir, new_repo_path, symlinks=True)
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
 
         try:
