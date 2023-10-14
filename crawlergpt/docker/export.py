@@ -135,7 +135,9 @@ def add_new_layer(image_name: str, layer: Layer, new_image_name: str = None):
                 f.write(json.dumps(json_file))
 
             # Copies the layer to inside the folder
-            shutil.copytree(layer.path, os.path.join(temp_extract_path, layer.name))
+            shutil.copytree(
+                layer.path, os.path.join(temp_extract_path, layer.name), symlinks=True
+            )
 
             # Creates a tar file with the modified version of the original image
             final_tar = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))

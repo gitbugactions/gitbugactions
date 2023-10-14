@@ -170,7 +170,7 @@ def filter_bugs(bugs_path: str, export_path: str, res_path: str, n_workers=1):
                     new_repo_path = os.path.join(
                         tempfile.gettempdir(), str(uuid.uuid4())
                     )
-                    shutil.copytree(repo_clone.workdir, new_repo_path)
+                    shutil.copytree(repo_clone.workdir, new_repo_path, symlinks=True)
                     repo_clone_copy = pygit2.Repository(
                         os.path.join(new_repo_path, ".git")
                     )
