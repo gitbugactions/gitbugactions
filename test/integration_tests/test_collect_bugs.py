@@ -1,4 +1,5 @@
 import json
+import dateutil
 import shutil
 import pytest
 from typing import List
@@ -91,7 +92,8 @@ def test_get_possible_patches():
 def test_get_possible_patches_2021():
     collector = PatchCollector(
         GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
-        filter_on_commit_year=2021,
+        filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
+        filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
     )
     patches: List[BugPatch] = collector.get_possible_patches()
     commits = list(map(lambda patch: patch.commit, patches))
@@ -127,7 +129,8 @@ def test_get_possible_patches_no_keywords():
     collector = PatchCollector(
         GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
         filter_on_commit_message=False,
-        filter_on_commit_year=2021,
+        filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
+        filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
     )
     patches: List[BugPatch] = collector.get_possible_patches()
     commits = list(map(lambda patch: patch.commit, patches))
