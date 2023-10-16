@@ -255,7 +255,7 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
     with tarfile.open(diff_file_path, "w:gz") as tar_gz:
         tar_gz.add(save_path, arcname="diff")
 
-    shutil.rmtree(save_path)
+    shutil.rmtree(save_path, ignore_errors=True)
 
 
 def apply_diff(container_id: str, diff_file_path: str):

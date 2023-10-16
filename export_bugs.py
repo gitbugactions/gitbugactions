@@ -107,6 +107,9 @@ def export_bugs(dataset_path, output_folder_path, n_workers=1):
     futures = []
 
     for jsonl_path in os.listdir(dataset_path):
+        if jsonl_path == "log.out" or jsonl_path == "data.json":
+            continue
+
         with open(os.path.join(dataset_path, jsonl_path), "r") as jsonl:
             lines = jsonl.readlines()
             for line in lines:
