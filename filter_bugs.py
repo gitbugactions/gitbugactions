@@ -10,7 +10,7 @@ import os, sys, shutil
 from crawlergpt.test_executor import TestExecutor
 from crawlergpt.util import delete_repo_clone
 from crawlergpt.docker.export import create_diff_image
-from crawlergpt.actions.actions import ActCacheDirManager, ActTestsRun
+from crawlergpt.actions.actions import ActCacheDirManager, ActTestsRun, Act
 from crawlergpt.github_token import GithubToken
 
 from collect_bugs import BugPatch
@@ -33,6 +33,7 @@ def run_commit(
     image_name = f"crawlergpt-run-bug:{str(uuid.uuid4())}"
 
     try:
+        Act()  # Make sure that the base image is available
         create_diff_image(
             "crawlergpt:latest", image_name, get_diff_path(diff_folder_path)
         )

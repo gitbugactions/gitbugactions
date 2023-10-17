@@ -197,7 +197,11 @@ class Act:
     __MEMORY_LIMIT = "7g"
 
     def __init__(
-        self, reuse, timeout=5, runner: str = "crawlergpt:latest", offline: bool = False
+        self,
+        reuse: bool = False,
+        timeout=5,
+        runner: str = "crawlergpt:latest",
+        offline: bool = False,
     ):
         """
         Args:
