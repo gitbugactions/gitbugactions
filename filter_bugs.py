@@ -46,7 +46,7 @@ def run_commit(
 
         return test_fn(executor)
     except Exception as e:
-        raise e
+        traceback.print_exc()
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
         docker_client.images.remove(image_name)

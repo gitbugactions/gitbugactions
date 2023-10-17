@@ -305,7 +305,7 @@ def apply_diff(container_id: str, diff_file_path: str):
 
     # Removes the files that were removed in the diff
     handle_removes(parent_node)
-    shutil.rmtree(diff_path)
+    shutil.rmtree(diff_path, ignore_errors=True)
 
 
 def create_diff_image(base_image: str, new_image_name: str, diff_file_path: str):
