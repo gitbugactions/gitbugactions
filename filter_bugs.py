@@ -44,7 +44,7 @@ def run_commit(
             runner=image_name,
         )
 
-        return test_fn(executor)
+        return test_fn(executor, offline=True)
     except Exception as e:
         traceback.print_exc()
     finally:
