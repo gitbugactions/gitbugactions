@@ -60,7 +60,7 @@ def export_bug_containers(bug: Dict, export_path: str):
 
                     for container in containers:
                         container.stop()
-                        container.remove()
+                        container.remove(v=True, force=True)
                     exit(-1)
                     continue
 
@@ -75,11 +75,11 @@ def export_bug_containers(bug: Dict, export_path: str):
                         else:
                             # Container already being saved. This may happen if bugs
                             # were collected from two consecutive commits
-                            container.remove()
+                            container.remove(v=True, force=True)
                             continue
                     diff_file_path = os.path.join(diff_folder_path, container.name)
                     extract_diff(container.id, diff_file_path, ignore_paths=["/tmp"])
-                    container.remove()
+                    container.remove(v=True, force=True)
 
                     workflows = os.path.join(diff_folder_path, "workflow")
                     os.mkdir(workflows)
