@@ -648,8 +648,8 @@ class PatchCollector:
             and PatchCollector.__check_tests_were_fixed(
                 actions_runs[1], actions_runs[2]
             )
-            # previous commit should have less tests than current commit
-            and number_of_tests(actions_runs[0]) < number_of_tests(actions_runs[2])
+            # previous commit should have at least the same number of tests than current commit
+            and number_of_tests(actions_runs[0]) <= number_of_tests(actions_runs[2])
             # current commit should have same number of tests as previous commit w/ tests
             and number_of_tests(actions_runs[2]) == number_of_tests(actions_runs[1])
         ):
