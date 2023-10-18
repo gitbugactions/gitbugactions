@@ -28,7 +28,7 @@ class GoWorkflow(GitHubWorkflow):
                     for step in job["steps"]:
                         if "run" in step and self._is_test_command(step["run"]):
                             # We need to install the go-test-report package to generate the reports
-                            new_step_run = "go install github.com/jstemmer/go-junit-report/v2@latest && "
+                            new_step_run = "go install github.com/jstemmer/go-junit-report/v2@v2.0.0 && "
                             if "-v" not in step["run"]:
                                 step["run"] = re.sub(
                                     r"test",
