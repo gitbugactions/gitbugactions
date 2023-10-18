@@ -109,8 +109,6 @@ def filter_bug(
         )
         cur_diff_folder_path = os.path.join(export_path, repo_name, bug_patch.commit)
 
-        print(f"Testing {repo_name}@{bug_patch.commit}...")
-
         for _ in range(5):
             run = run_commit(
                 bug_patch,
@@ -118,8 +116,6 @@ def filter_bug(
                 prev_diff_folder_path,
                 bug_patch.test_previous_commit,
             )
-            print(run[0].stdout)
-            print(run[0].stderr)
             if not equal_test_results(bug["actions_runs"][0][0]["tests"], run[0].tests):
                 return False
 
@@ -130,8 +126,6 @@ def filter_bug(
                     prev_diff_folder_path,
                     bug_patch.test_previous_commit_with_diff,
                 )
-                print(run[0].stdout)
-                print(run[0].stderr)
                 if not equal_test_results(
                     bug["actions_runs"][1][0]["tests"], run[0].tests
                 ):
@@ -143,8 +137,6 @@ def filter_bug(
                 cur_diff_folder_path,
                 bug_patch.test_current_commit,
             )
-            print(run[0].stdout)
-            print(run[0].stderr)
             if not equal_test_results(bug["actions_runs"][2][0]["tests"], run[0].tests):
                 return False
 
