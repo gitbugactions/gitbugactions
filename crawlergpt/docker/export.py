@@ -326,7 +326,7 @@ def create_diff_image(base_image: str, new_image_name: str, diff_file_path: str)
             should follow the format 'repository:tag'.
         diff_file_path (str): Path to diff file created by ``extract_diff``
     """
-    client = docker.from_env()
+    client = docker.from_env(timeout=300)
     container: Container = client.containers.run(base_image, detach=True)
     apply_diff(container.id, diff_file_path)
     repository, tag = new_image_name.split(":")
