@@ -91,10 +91,10 @@ def get_default_github_actions(
 
         raise RuntimeError(f"{repo_clone.workdir} has no valid default actions.")
     finally:
+        ActCacheDirManager.return_act_cache_dir(act_cache_dir)
         repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
         if os.path.exists(os.path.join(repo_clone.workdir, ".act-result")):
             shutil.rmtree(os.path.join(repo_clone.workdir, ".act-result"))
-        ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
 
 class FileType(Enum):

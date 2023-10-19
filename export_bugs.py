@@ -97,8 +97,8 @@ def export_bug_containers(bug: Dict, export_path: str):
                 capture_output=True,
             )
     finally:
-        delete_repo_clone(repo_clone)
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
+        delete_repo_clone(repo_clone)
 
 
 def export_bugs(dataset_path, output_folder_path, n_workers=1):
