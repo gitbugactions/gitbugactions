@@ -5,9 +5,9 @@ import pytest
 from typing import List
 from unidiff import PatchSet
 from collect_bugs import collect_bugs, PatchCollector, BugPatch
-from crawlergpt.github_token import GithubToken
-from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import ActCacheDirManager
+from gitbugactions.github_token import GithubToken
+from gitbugactions.util import delete_repo_clone
+from gitbugactions.actions.actions import ActCacheDirManager
 
 
 def get_token_usage():

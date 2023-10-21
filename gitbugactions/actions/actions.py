@@ -12,9 +12,9 @@ import threading
 from typing import List, Dict, Set
 from junitparser import TestCase, Error
 from dataclasses import dataclass
-from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
-from crawlergpt.github_token import GithubToken
-from crawlergpt.actions.action import Action
+from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
+from gitbugactions.github_token import GithubToken
+from gitbugactions.actions.action import Action
 
 
 class ActCacheDirManager:
@@ -197,7 +197,7 @@ class Act:
     __MEMORY_LIMIT = "7g"
 
     def __init__(
-        self, reuse, timeout=5, runner: str = "crawlergpt:latest", offline: bool = False
+        self, reuse, timeout=5, runner: str = "gitbugactions:latest", offline: bool = False
     ):
         """
         Args:
@@ -232,8 +232,8 @@ class Act:
 
             # Creates crawler image
             client = docker.from_env()
-            if len(client.images.list(name="crawlergpt")) > 0:
-                client.images.remove(image="crawlergpt")
+            if len(client.images.list(name="gitbugactions")) > 0:
+                client.images.remove(image="gitbugactions")
 
             with open("Dockerfile", "w") as f:
                 client = docker.from_env()
@@ -243,7 +243,7 @@ class Act:
                 dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
                 f.write(dockerfile)
 
-            client.images.build(path="./", tag="crawlergpt", forcerm=True)
+            client.images.build(path="./", tag="gitbugactions", forcerm=True)
             os.remove("Dockerfile")
             Act.__ACT_SETUP = True
 
@@ -323,7 +323,7 @@ class GitHubActions:
         repo_path,
         language: str,
         keep_containers: bool = False,
-        runner: str = "crawlergpt:latest",
+        runner: str = "gitbugactions:latest",
         offline: bool = False,
     ):
         self.repo_path = repo_path
@@ -406,7 +406,7 @@ class GitHubActions:
     def remove_containers(self):
         client = docker.from_env()
         ancestors = [
-            "crawlergpt:latest",
+            "gitbugactions:latest",
         ]
 
         for container in client.containers.list(filters={"ancestor": ancestors}):

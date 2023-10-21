@@ -1,5 +1,5 @@
-from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
-from crawlergpt.actions.actions import ActTestsRun
+from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
+from gitbugactions.actions.actions import ActTestsRun
 from junitparser import Error
 import pytest
 

@@ -7,11 +7,11 @@ import docker
 import logging, traceback
 import os, sys, shutil
 
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.util import delete_repo_clone
-from crawlergpt.docker.export import create_diff_image
-from crawlergpt.actions.actions import ActCacheDirManager, ActTestsRun
-from crawlergpt.github_token import GithubToken
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.util import delete_repo_clone
+from gitbugactions.docker.export import create_diff_image
+from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
+from gitbugactions.github_token import GithubToken
 
 from collect_bugs import BugPatch
 from run_bug import get_default_actions, get_diff_path
@@ -30,11 +30,11 @@ def run_commit(
 ) -> Optional[List[ActTestsRun]]:
     docker_client = docker.from_env()
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-    image_name = f"crawlergpt-run-bug:{str(uuid.uuid4())}"
+    image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
 
     try:
         create_diff_image(
-            "crawlergpt:latest", image_name, get_diff_path(diff_folder_path)
+            "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
         executor = TestExecutor(
             repo_clone,

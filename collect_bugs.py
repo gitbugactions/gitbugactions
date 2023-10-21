@@ -15,17 +15,17 @@ from datetime import datetime
 import dateutil.parser
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
-from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import (
+from gitbugactions.util import delete_repo_clone
+from gitbugactions.actions.actions import (
     ActTestsRun,
     ActCacheDirManager,
     Act,
 )
-from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
-from crawlergpt.actions.action import Action
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.github_token import GithubToken
-from crawlergpt.util import (
+from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
+from gitbugactions.actions.action import Action
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.github_token import GithubToken
+from gitbugactions.util import (
     get_default_github_actions,
     clone_repo,
     get_file_type,
@@ -538,7 +538,7 @@ class PatchCollector:
         # We remove the merges since when multiple bug patches point to the same
         # previous commit, merges tend to only add useless diffs to another commit
         # that already fixes the bug.
-        # https://github.com/Nfsaavedra/crawlergpt/issues/40
+        # https://github.com/gitbugactions/gitbugactions/issues/40
         for previous_commit, grouped_patches in commit_to_patches.items():
             if len(grouped_patches) > 1:
                 commit_to_patches[previous_commit] = list(

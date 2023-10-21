@@ -1,13 +1,13 @@
 from typing import List
 from junitparser import TestCase
 
-from crawlergpt.actions.workflow import GitHubWorkflow
+from gitbugactions.actions.workflow import GitHubWorkflow
 
 
 class UnknownWorkflow(GitHubWorkflow):
     # Represents a workflow whose build tool is either:
-    # 1. not supported by CrawlerGPT, or
-    # 2. not identified by CrawlerGPT
+    # 1. not supported by GitBug-Actions, or
+    # 2. not identified by GitBug-Actions
 
     def _is_test_command(self, command) -> bool:
         return False

@@ -12,11 +12,11 @@ import threading
 import tempfile
 from docker.models.containers import Container
 from typing import List, Dict
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.util import delete_repo_clone, get_default_github_actions, clone_repo
-from crawlergpt.docker.export import extract_diff
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.util import delete_repo_clone, get_default_github_actions, clone_repo
+from gitbugactions.docker.export import extract_diff
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from crawlergpt.actions.actions import ActCacheDirManager
+from gitbugactions.actions.actions import ActCacheDirManager
 
 diff_file_lock = threading.Lock()
 

@@ -5,9 +5,9 @@ import uuid
 import fire
 from datetime import datetime
 from github import Repository
-from crawlergpt.util import delete_repo_clone, clone_repo
-from crawlergpt.crawler import RepoStrategy, RepoCrawler
-from crawlergpt.actions.actions import GitHubActions, ActCacheDirManager
+from gitbugactions.util import delete_repo_clone, clone_repo
+from gitbugactions.crawler import RepoStrategy, RepoCrawler
+from gitbugactions.actions.actions import GitHubActions, ActCacheDirManager
 
 
 class CollectReposStrategy(RepoStrategy):

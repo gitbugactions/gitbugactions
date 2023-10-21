@@ -8,10 +8,10 @@ import uuid
 import docker
 import logging
 from typing import Dict
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.docker.export import create_diff_image
-from crawlergpt.actions.workflow import GitHubWorkflowFactory
-from crawlergpt.actions.actions import ActCacheDirManager, GitHubActions
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.docker.export import create_diff_image
+from gitbugactions.actions.workflow import GitHubWorkflowFactory
+from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
 
 
 def get_bug_from_metadata(metadata_path, repo_name, commit):
@@ -79,9 +79,9 @@ def run_bug(
 
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     try:
-        image_name = f"crawlergpt-run-bug:{str(uuid.uuid4())}"
+        image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
         create_diff_image(
-            "crawlergpt:latest", image_name, get_diff_path(diff_folder_path)
+            "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
         executor = TestExecutor(
             repo_clone,
