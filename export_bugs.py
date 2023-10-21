@@ -102,7 +102,7 @@ def export_bug_containers(bug: Dict, export_path: str):
 
 
 def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
-    """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs. 
+    """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs.
 
     Args:
         dataset_path (str): Folder where the result of collect_bugs is.

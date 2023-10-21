@@ -197,7 +197,11 @@ class Act:
     __MEMORY_LIMIT = "7g"
 
     def __init__(
-        self, reuse, timeout=5, runner: str = "gitbugactions:latest", offline: bool = False
+        self,
+        reuse,
+        timeout=5,
+        runner: str = "gitbugactions:latest",
+        offline: bool = False,
     ):
         """
         Args:

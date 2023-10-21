@@ -27,7 +27,7 @@ def run_commit(
     repo_clone: pygit2.Repository,
     diff_folder_path: str,
     test_fn: Callable[[], Optional[List[ActTestsRun]]],
-    offline: bool
+    offline: bool,
 ) -> Optional[List[ActTestsRun]]:
     docker_client = docker.from_env()
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
@@ -89,7 +89,11 @@ def equal_test_results(old_test_results: List[Dict], new_test_results: List[Test
 
 
 def filter_bug(
-    bug: Dict, repo: Repository, repo_clone: pygit2.Repository, export_path: str, offline: bool
+    bug: Dict,
+    repo: Repository,
+    repo_clone: pygit2.Repository,
+    export_path: str,
+    offline: bool,
 ) -> bool:
     try:
         repo_name = bug["repository"].replace("/", "-")
@@ -113,7 +117,7 @@ def filter_bug(
                 repo_clone,
                 prev_diff_folder_path,
                 bug_patch.test_previous_commit,
-                offline=offline
+                offline=offline,
             )
             if not equal_test_results(bug["actions_runs"][0][0]["tests"], run[0].tests):
                 return False
@@ -124,7 +128,7 @@ def filter_bug(
                     repo_clone,
                     prev_diff_folder_path,
                     bug_patch.test_previous_commit_with_diff,
-                    offline=offline
+                    offline=offline,
                 )
                 if not equal_test_results(
                     bug["actions_runs"][1][0]["tests"], run[0].tests
@@ -136,7 +140,7 @@ def filter_bug(
                 repo_clone,
                 cur_diff_folder_path,
                 bug_patch.test_current_commit,
-                offline=offline
+                offline=offline,
             )
             if not equal_test_results(bug["actions_runs"][2][0]["tests"], run[0].tests):
                 return False
@@ -146,7 +150,9 @@ def filter_bug(
         delete_repo_clone(repo_clone)
 
 
-def filter_bugs(bugs_path: str, export_path: str, res_path: str, n_workers=1, offline=True):
+def filter_bugs(
+    bugs_path: str, export_path: str, res_path: str, n_workers=1, offline=True
+):
     """Creates the list of non-flaky bug-fixes that are able to be reproduced.
 
     Args:
