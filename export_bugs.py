@@ -101,7 +101,14 @@ def export_bug_containers(bug: Dict, export_path: str):
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
 
-def export_bugs(dataset_path, output_folder_path, n_workers=1):
+def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
+    """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs. 
+
+    Args:
+        dataset_path (str): Folder where the result of collect_bugs is.
+        output_folder_path (str): Folder on which the results will be saved.
+        n_workers (int, optional): Number of parallel workers. Defaults to 1.
+    """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
     futures = []

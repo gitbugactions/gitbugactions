@@ -47,11 +47,20 @@ python filter_bugs.py --help
 ![Overview of GitBug-Actions](imgs/overview.png)
 
 The figure above provides an overview of the pipeline of GitBug-Actions.
+
 The scripts above should be executed in the same order shown on the figure. 
 `collect_bugs` will use the repositories found by `collect_repos` as input.
 `export_bugs` uses the bug-fixes found by `collect_bugs` as input.
 Finally, `filter_bugs` uses the bug-fixes found by `collect_bugs` and the containers exported by `export_bugs` as input.
 The output of `filter_bugs` is a file with a list of non-flaky bug-fixes able to be reproduced in the exported containers.
+
+## Tests
+
+To run the tests:
+
+```
+pytest test -s
+```
 
 ## Practical Challenges
 
@@ -78,6 +87,7 @@ However, users are advised to check disk usage frequently and remove dangling do
 CI builds may initiate concurrent file access operations, a situation that can escalate to the point of surpassing the user-level open-file limit set by Linux.
 This is exarcebated when running multiple builds in parallel.
 To overcome this, we recommend setting the open-file limit for your user profile to a higher threshold than the default.
+
 To check the current limit for your user run `ulimit -Sn`.
 
 

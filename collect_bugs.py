@@ -708,7 +708,7 @@ def collect_bugs(
     filter_on_commit_time_start: str = None,
     filter_on_commit_time_end: str = None,
 ):
-    """Collects bugs from the repos listed in `data_path`. The result is saved
+    """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
     the repos.
 
@@ -720,7 +720,8 @@ def collect_bugs(
         memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
                                       Defaults to '7g'.
         filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
-        filter_on_commit_year (int, optional): If set, only commits from the given year will be considered.
+        filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
+        filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
     """
     Act.set_memory_limit(memory_limit)
     token = GithubToken.get_token()

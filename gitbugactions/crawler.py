@@ -80,7 +80,7 @@ class RepoCrawler:
         Args:
             query (str): String with the Github searching format
                 https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories
-            pagination_freq (str): Useful if the number of repos to get is superior to 1000 results (Github limit).
+            pagination_freq (str): Useful if the number of repos to collect is superior to 1000 results (GitHub limit).
                 If the value is 'D', each request will be limited to the repos created in a single day, until all the days
                 are obtained.
                 The possible values are listed here:

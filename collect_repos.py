@@ -92,6 +92,16 @@ class CollectReposStrategy(RepoStrategy):
 def collect_repos(
     query: str, pagination_freq: str = "M", n_workers: int = 1, out_path: str = "./out/"
 ):
+    """Collect the repositories from GitHub that match the query and have executable
+    GitHub Actions workflows with parsable tests.
+
+    Args:
+        query (str): Query with the Github searching format (https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories).
+        pagination_freq (str, optional): Useful if the number of repos to collect is superior to 1000 results (GitHub limit). The possible values are listed here: https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases.
+                                         For instance, if the value is 'D', each request will be limited to the repos created in a single day, until all the days are obtained. 
+        n_workers (int, optional): Number of parallel workers. Defaults to 1.
+        out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
+    """
     crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
     crawler.get_repos(CollectReposStrategy(out_path))
 
