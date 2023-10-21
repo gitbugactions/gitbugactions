@@ -124,6 +124,7 @@ def filter_bug(
                     repo_clone,
                     prev_diff_folder_path,
                     bug_patch.test_previous_commit_with_diff,
+                    offline=offline
                 )
                 if not equal_test_results(
                     bug["actions_runs"][1][0]["tests"], run[0].tests
@@ -135,6 +136,7 @@ def filter_bug(
                 repo_clone,
                 cur_diff_folder_path,
                 bug_patch.test_current_commit,
+                offline=offline
             )
             if not equal_test_results(bug["actions_runs"][2][0]["tests"], run[0].tests):
                 return False
