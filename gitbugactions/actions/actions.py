@@ -245,10 +245,24 @@ class Act:
                 dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
                 dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
                 dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
+                # Temporary HACK to fix the issue with missing Node 20
+                # on act's image.
+                # https://github.com/cypress-io/github-action/issues/1030
+                # https://github.com/nektos/act/issues/2050
+                dockerfile += f'SHELL ["/bin/bash", "-c"]\n'
+                dockerfile += f"WORKDIR /tmp\n"
+
+                dirname = os.path.dirname(__file__)
+                node_script = "/" + os.path.join(dirname, '../../scripts/node.sh')
+                shutil.copy(node_script, "./node.sh")
+
+                dockerfile += f"COPY node.sh .\n"
+                dockerfile += f"RUN bash node.sh\n"
                 f.write(dockerfile)
 
             client.images.build(path="./", tag="gitbugactions", forcerm=True)
             os.remove("Dockerfile")
+            os.remove("node.sh")
             Act.__ACT_SETUP = True
 
     @staticmethod
