@@ -3,8 +3,8 @@ from junitparser import TestCase
 from pathlib import Path
 import re
 
-from crawlergpt.actions.workflow import GitHubWorkflow
-from crawlergpt.actions.multi.junitxmlparser import JUnitXMLParser
+from gitbugactions.actions.workflow import GitHubWorkflow
+from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
 class GoWorkflow(GitHubWorkflow):

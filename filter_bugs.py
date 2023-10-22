@@ -7,11 +7,11 @@ import docker
 import logging, traceback
 import os, sys, shutil
 
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.util import delete_repo_clone
-from crawlergpt.docker.export import create_diff_image
-from crawlergpt.actions.actions import ActCacheDirManager, ActTestsRun, Act
-from crawlergpt.github_token import GithubToken
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.util import delete_repo_clone
+from gitbugactions.docker.export import create_diff_image
+from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
+from gitbugactions.github_token import GithubToken
 
 from collect_bugs import BugPatch
 from run_bug import get_default_actions, get_diff_path
@@ -27,15 +27,16 @@ def run_commit(
     repo_clone: pygit2.Repository,
     diff_folder_path: str,
     test_fn: Callable[[], Optional[List[ActTestsRun]]],
+    offline: bool,
 ) -> Optional[List[ActTestsRun]]:
     docker_client = docker.from_env()
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-    image_name = f"crawlergpt-run-bug:{str(uuid.uuid4())}"
+    image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
 
     try:
         Act()  # Make sure that the base image is available
         create_diff_image(
-            "crawlergpt:latest", image_name, get_diff_path(diff_folder_path)
+            "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
         executor = TestExecutor(
             repo_clone,
@@ -45,7 +46,7 @@ def run_commit(
             runner=image_name,
         )
 
-        return test_fn(executor, offline=True)
+        return test_fn(executor, offline)
     except Exception as e:
         traceback.print_exc()
     finally:
@@ -91,7 +92,11 @@ def equal_test_results(old_test_results: List[Dict], new_test_results: List[Test
 
 
 def filter_bug(
-    bug: Dict, repo: Repository, repo_clone: pygit2.Repository, export_path: str
+    bug: Dict,
+    repo: Repository,
+    repo_clone: pygit2.Repository,
+    export_path: str,
+    offline: bool,
 ) -> bool:
     try:
         repo_name = bug["repository"].replace("/", "-")
@@ -115,6 +120,7 @@ def filter_bug(
                 repo_clone,
                 prev_diff_folder_path,
                 bug_patch.test_previous_commit,
+                offline=offline,
             )
             if not equal_test_results(bug["actions_runs"][0][0]["tests"], run[0].tests):
                 return False
@@ -125,6 +131,7 @@ def filter_bug(
                     repo_clone,
                     prev_diff_folder_path,
                     bug_patch.test_previous_commit_with_diff,
+                    offline=offline,
                 )
                 if not equal_test_results(
                     bug["actions_runs"][1][0]["tests"], run[0].tests
@@ -136,6 +143,7 @@ def filter_bug(
                 repo_clone,
                 cur_diff_folder_path,
                 bug_patch.test_current_commit,
+                offline=offline,
             )
             if not equal_test_results(bug["actions_runs"][2][0]["tests"], run[0].tests):
                 return False
@@ -145,7 +153,18 @@ def filter_bug(
         delete_repo_clone(repo_clone)
 
 
-def filter_bugs(bugs_path: str, export_path: str, res_path: str, n_workers=1):
+def filter_bugs(
+    bugs_path: str, export_path: str, res_path: str, n_workers=1, offline=True
+):
+    """Creates the list of non-flaky bug-fixes that are able to be reproduced.
+
+    Args:
+        bugs_path (str): Folder where the result of collect_bugs is.
+        export_path (str): Folder where the result of export_bugs is.
+        res_path (str): Folder on which the results will be saved.
+        n_workers (int, optional): Number of parallel workers. Defaults to 1.
+        offline (bool, optional): If the containers must be isolated from the internet. Defaults to True.
+    """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
     github = GithubToken.get_token().github
@@ -178,7 +197,7 @@ def filter_bugs(bugs_path: str, export_path: str, res_path: str, n_workers=1):
                         os.path.join(new_repo_path, ".git")
                     )
                     future = executor.submit(
-                        filter_bug, bug, repo, repo_clone_copy, export_path
+                        filter_bug, bug, repo, repo_clone_copy, export_path, offline
                     )
                     future_to_bug[future] = bug
             finally:

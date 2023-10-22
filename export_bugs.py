@@ -12,11 +12,11 @@ import threading
 import tempfile
 from docker.models.containers import Container
 from typing import List, Dict
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.util import delete_repo_clone, get_default_github_actions, clone_repo
-from crawlergpt.docker.export import extract_diff
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.util import delete_repo_clone, get_default_github_actions, clone_repo
+from gitbugactions.docker.export import extract_diff
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from crawlergpt.actions.actions import ActCacheDirManager
+from gitbugactions.actions.actions import ActCacheDirManager
 
 diff_file_lock = threading.Lock()
 
@@ -101,7 +101,14 @@ def export_bug_containers(bug: Dict, export_path: str):
         delete_repo_clone(repo_clone)
 
 
-def export_bugs(dataset_path, output_folder_path, n_workers=1):
+def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
+    """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs.
+
+    Args:
+        dataset_path (str): Folder where the result of collect_bugs is.
+        output_folder_path (str): Folder on which the results will be saved.
+        n_workers (int, optional): Number of parallel workers. Defaults to 1.
+    """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
     futures = []

@@ -1,8 +1,8 @@
-from crawlergpt.actions.workflow import GitHubWorkflowFactory
-from crawlergpt.actions.java.maven_workflow import MavenWorkflow
-from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
-from crawlergpt.actions.go.go_workflow import GoWorkflow
-from crawlergpt.github_token import GithubToken
+from gitbugactions.actions.workflow import GitHubWorkflowFactory
+from gitbugactions.actions.java.maven_workflow import MavenWorkflow
+from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
+from gitbugactions.actions.go.go_workflow import GoWorkflow
+from gitbugactions.github_token import GithubToken
 
 import os
 import pytest

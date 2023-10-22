@@ -46,10 +46,10 @@ def extract_last_layer(container_id: str, layer_path: str) -> Layer:
         container: Container = client.containers.get(container_id)
         container_name = f"test{uuid.uuid4()}"
         # Create image from container
-        container.commit("crawlergpt", container_name)
+        container.commit("gitbugactions", container_name)
 
         tar_path = os.path.join(tempfile.gettempdir(), f"{container_name}.tar")
-        image: Image = client.images.get(f"crawlergpt:{container_name}")
+        image: Image = client.images.get(f"gitbugactions:{container_name}")
         # Save image to tar file
         with open(tar_path, "wb") as f:
             for chunk in image.save():
@@ -73,7 +73,7 @@ def extract_last_layer(container_id: str, layer_path: str) -> Layer:
                 tar.extract(os.path.join(layer, "VERSION"), layer_path)
                 layer = os.path.dirname(layers[-1])
     finally:
-        client.images.remove(image=f"crawlergpt:{container_name}")
+        client.images.remove(image=f"gitbugactions:{container_name}")
         if os.path.exists(tar_path):
             os.remove(tar_path)
         if os.path.exists(manifest_path):

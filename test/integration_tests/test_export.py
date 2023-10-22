@@ -7,7 +7,7 @@ import shutil
 import tempfile
 import subprocess
 import pytest
-from crawlergpt.util import delete_repo_clone
+from gitbugactions.util import delete_repo_clone
 from export_bugs import export_bug_containers
 from run_bug import run_bug
 
