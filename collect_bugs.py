@@ -15,17 +15,17 @@ from datetime import datetime
 import dateutil.parser
 from github import Github, Repository, UnknownObjectException, GithubException
 from unidiff import PatchSet
-from crawlergpt.util import delete_repo_clone
-from crawlergpt.actions.actions import (
+from gitbugactions.util import delete_repo_clone
+from gitbugactions.actions.actions import (
     ActTestsRun,
     ActCacheDirManager,
     Act,
 )
-from crawlergpt.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
-from crawlergpt.actions.action import Action
-from crawlergpt.test_executor import TestExecutor
-from crawlergpt.github_token import GithubToken
-from crawlergpt.util import (
+from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
+from gitbugactions.actions.action import Action
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.github_token import GithubToken
+from gitbugactions.util import (
     get_default_github_actions,
     clone_repo,
     get_file_type,
@@ -538,7 +538,7 @@ class PatchCollector:
         # We remove the merges since when multiple bug patches point to the same
         # previous commit, merges tend to only add useless diffs to another commit
         # that already fixes the bug.
-        # https://github.com/Nfsaavedra/crawlergpt/issues/40
+        # https://github.com/gitbugactions/gitbugactions/issues/40
         for previous_commit, grouped_patches in commit_to_patches.items():
             if len(grouped_patches) > 1:
                 commit_to_patches[previous_commit] = list(
@@ -708,7 +708,7 @@ def collect_bugs(
     filter_on_commit_time_start: str = None,
     filter_on_commit_time_end: str = None,
 ):
-    """Collects bugs from the repos listed in `data_path`. The result is saved
+    """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
     the repos.
 
@@ -720,7 +720,8 @@ def collect_bugs(
         memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
                                       Defaults to '7g'.
         filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
-        filter_on_commit_year (int, optional): If set, only commits from the given year will be considered.
+        filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
+        filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
     """
     Act.set_memory_limit(memory_limit)
     token = GithubToken.get_token()

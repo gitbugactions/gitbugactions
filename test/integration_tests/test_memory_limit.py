@@ -1,7 +1,7 @@
 import pytest
 from collect_bugs import PatchCollector
-from crawlergpt.github_token import GithubToken
-from crawlergpt.actions.actions import Act
+from gitbugactions.github_token import GithubToken
+from gitbugactions.actions.actions import Act
 
 
 @pytest.fixture

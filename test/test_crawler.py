@@ -1,6 +1,6 @@
 import time
 from concurrent.futures import ThreadPoolExecutor
-from crawlergpt.crawler import SearchRateLimiter
+from gitbugactions.crawler import SearchRateLimiter
 
 
 def test_ratelimiter():

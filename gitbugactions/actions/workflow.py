@@ -3,8 +3,8 @@ import logging
 from abc import ABC, abstractmethod
 from junitparser import TestCase
 from typing import List, Set
-from crawlergpt.github_token import GithubToken
-from crawlergpt.actions.action import Action
+from gitbugactions.github_token import GithubToken
+from gitbugactions.actions.action import Action
 
 
 class GitHubWorkflow(ABC):
@@ -308,12 +308,12 @@ class GitHubWorkflow(ABC):
             yaml.dump(self.doc, file)
 
 
-from crawlergpt.actions.multi.unknown_workflow import UnknownWorkflow
-from crawlergpt.actions.java.maven_workflow import MavenWorkflow
-from crawlergpt.actions.java.gradle_workflow import GradleWorkflow
-from crawlergpt.actions.python.pytest_workflow import PytestWorkflow
-from crawlergpt.actions.python.unittest_workflow import UnittestWorkflow
-from crawlergpt.actions.go.go_workflow import GoWorkflow
+from gitbugactions.actions.multi.unknown_workflow import UnknownWorkflow
+from gitbugactions.actions.java.maven_workflow import MavenWorkflow
+from gitbugactions.actions.java.gradle_workflow import GradleWorkflow
+from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
+from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
+from gitbugactions.actions.go.go_workflow import GoWorkflow
 
 
 class GitHubWorkflowFactory:

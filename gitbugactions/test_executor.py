@@ -1,6 +1,6 @@
 import subprocess
 import os, copy, uuid, pygit2
-from crawlergpt.actions.actions import GitHubActions, ActTestsRun
+from gitbugactions.actions.actions import GitHubActions, ActTestsRun
 from pygit2 import Repository
 from typing import List
 
@@ -12,7 +12,7 @@ class TestExecutor:
         language: str,
         act_cache_dir: str,
         default_actions: GitHubActions,
-        runner: str = "crawlergpt:latest",
+        runner: str = "gitbugactions:latest",
     ):
         self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
