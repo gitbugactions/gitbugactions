@@ -28,6 +28,8 @@ export PATH="<REPLACE_WITH_PATH_TO_ACT>:$PATH"
 
 ### Python dependencies
 
+GitBug-Actions runs on Python3.10 and above.
+
 To install the Python dependencies run:
 ```
 pip install -r requirements.txt
