@@ -10,7 +10,7 @@ import os, sys, shutil
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.docker.export import create_diff_image
-from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
+from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
 from gitbugactions.github_token import GithubToken
 
 from collect_bugs import BugPatch
@@ -34,6 +34,7 @@ def run_commit(
     image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
 
     try:
+        Act()  # Make sure that the base image is available
         create_diff_image(
             "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
@@ -46,9 +47,11 @@ def run_commit(
         )
 
         return test_fn(executor, offline)
+    except Exception as e:
+        traceback.print_exc()
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-        docker_client.images.remove(image_name)
+        docker_client.images.remove(image_name, force=True)
 
 
 def equal_test_results(old_test_results: List[Dict], new_test_results: List[TestCase]):
@@ -215,11 +218,13 @@ def filter_bugs(
                     with open(os.path.join(res_path, "non-flaky.json"), "a") as f:
                         f.write(
                             json.dumps({"repository": repository, "commit": commit})
+                            + "\n"
                         )
                 else:
                     with open(os.path.join(res_path, "flaky.json"), "a") as f:
                         f.write(
                             json.dumps({"repository": repository, "commit": commit})
+                            + "\n"
                         )
 
 

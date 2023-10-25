@@ -255,7 +255,7 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
     with tarfile.open(diff_file_path, "w:gz") as tar_gz:
         tar_gz.add(save_path, arcname="diff")
 
-    shutil.rmtree(save_path)
+    shutil.rmtree(save_path, ignore_errors=True)
 
 
 def apply_diff(container_id: str, diff_file_path: str):
@@ -305,7 +305,7 @@ def apply_diff(container_id: str, diff_file_path: str):
 
     # Removes the files that were removed in the diff
     handle_removes(parent_node)
-    shutil.rmtree(diff_path)
+    shutil.rmtree(diff_path, ignore_errors=True)
 
 
 def create_diff_image(base_image: str, new_image_name: str, diff_file_path: str):
@@ -326,10 +326,10 @@ def create_diff_image(base_image: str, new_image_name: str, diff_file_path: str)
             should follow the format 'repository:tag'.
         diff_file_path (str): Path to diff file created by ``extract_diff``
     """
-    client = docker.from_env()
+    client = docker.from_env(timeout=300)
     container: Container = client.containers.run(base_image, detach=True)
     apply_diff(container.id, diff_file_path)
     repository, tag = new_image_name.split(":")
     container.commit(repository=repository, tag=tag)
     container.stop()
-    container.remove()
+    container.remove(v=True, force=True)

@@ -60,7 +60,7 @@ def export_bug_containers(bug: Dict, export_path: str):
 
                     for container in containers:
                         container.stop()
-                        container.remove()
+                        container.remove(v=True, force=True)
                     exit(-1)
                     continue
 
@@ -75,11 +75,11 @@ def export_bug_containers(bug: Dict, export_path: str):
                         else:
                             # Container already being saved. This may happen if bugs
                             # were collected from two consecutive commits
-                            container.remove()
+                            container.remove(v=True, force=True)
                             continue
                     diff_file_path = os.path.join(diff_folder_path, container.name)
                     extract_diff(container.id, diff_file_path, ignore_paths=["/tmp"])
-                    container.remove()
+                    container.remove(v=True, force=True)
 
                     workflows = os.path.join(diff_folder_path, "workflow")
                     os.mkdir(workflows)
@@ -97,8 +97,8 @@ def export_bug_containers(bug: Dict, export_path: str):
                 capture_output=True,
             )
     finally:
-        delete_repo_clone(repo_clone)
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
+        delete_repo_clone(repo_clone)
 
 
 def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
@@ -114,6 +114,9 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
     futures = []
 
     for jsonl_path in os.listdir(dataset_path):
+        if jsonl_path == "log.out" or jsonl_path == "data.json":
+            continue
+
         with open(os.path.join(dataset_path, jsonl_path), "r") as jsonl:
             lines = jsonl.readlines()
             for line in lines:

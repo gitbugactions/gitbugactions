@@ -617,6 +617,9 @@ class PatchCollector:
         def flat_failed_tests(runs):
             return sum(map(lambda act_run: act_run.failed_tests, runs), [])
 
+        def number_of_tests(runs):
+            return sum(map(lambda act_run: len(act_run.tests), runs))
+
         prev_commit_passed = (
             actions_runs[0] is not None and len(flat_failed_tests(actions_runs[0])) == 0
         )
@@ -645,6 +648,10 @@ class PatchCollector:
             and PatchCollector.__check_tests_were_fixed(
                 actions_runs[1], actions_runs[2]
             )
+            # previous commit should have at least the same number of tests than current commit
+            and number_of_tests(actions_runs[0]) <= number_of_tests(actions_runs[2])
+            # current commit should have same number of tests as previous commit w/ tests
+            and number_of_tests(actions_runs[2]) == number_of_tests(actions_runs[1])
         ):
             return CollectionStrategy.PASS_PASS
 
@@ -664,6 +671,8 @@ class PatchCollector:
             and PatchCollector.__check_tests_were_fixed(
                 actions_runs[0], actions_runs[2]
             )
+            # previous commit should have same number of tests as current commit
+            and number_of_tests(actions_runs[0]) == number_of_tests(actions_runs[2])
         ):
             return CollectionStrategy.FAIL_PASS
 
@@ -680,6 +689,8 @@ class PatchCollector:
             # at least one test was fixed
             and len(PatchCollector.__diff_tests(actions_runs[0], actions_runs[2])[0])
             > 0
+            # previous commit should have same number of tests as current commit
+            and number_of_tests(actions_runs[0]) == number_of_tests(actions_runs[2])
         ) or (
             # previous commit with diff failed
             prev_with_diff_failed
@@ -688,6 +699,8 @@ class PatchCollector:
             # at least one test was fixed
             and len(PatchCollector.__diff_tests(actions_runs[1], actions_runs[2])[0])
             > 0
+            # previous commit w/test diff should have same number of tests as current commit
+            and number_of_tests(actions_runs[1]) == number_of_tests(actions_runs[2])
         ):
             return CollectionStrategy.FAIL_FAIL
 

@@ -198,7 +198,7 @@ class Act:
 
     def __init__(
         self,
-        reuse,
+        reuse: bool = False,
         timeout=5,
         runner: str = "gitbugactions:latest",
         offline: bool = False,
