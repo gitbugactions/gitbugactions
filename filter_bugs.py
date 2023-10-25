@@ -51,7 +51,7 @@ def run_commit(
         traceback.print_exc()
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-        docker_client.images.remove(image_name)
+        docker_client.images.remove(image_name, force=True)
 
 
 def equal_test_results(old_test_results: List[Dict], new_test_results: List[TestCase]):
