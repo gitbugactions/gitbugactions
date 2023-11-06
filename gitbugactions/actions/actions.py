@@ -191,8 +191,7 @@ class ActTestsRun:
 class Act:
     __ACT_PATH = "act"
     __ACT_SETUP = False
-    # The flag -u allows files to be created with the current user
-    __FLAGS = f"--pull=false --no-cache-server"
+    __FLAGS = f"--pull=false --no-cache-server --max-parallel 1"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
 
@@ -212,6 +211,7 @@ class Act:
             self.flags = "--reuse"
         else:
             self.flags = "--rm"
+        # The flag -u allows files to be created with the current user
         self.flags += f" --container-options '-u {os.getuid()}:{os.getgid()}"
         if offline:
             self.flags += " --network none"
