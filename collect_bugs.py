@@ -85,18 +85,20 @@ class BugPatch:
             datetime.utcfromtimestamp(int(commit.commit_time))
             - datetime.utcfromtimestamp(int(previous_commit.commit_time))
         )
-        self.bug_patch: PatchSet = bug_patch
-        self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(bug_patch)
-        self.test_patch: PatchSet = test_patch
-        self.test_patch_file_extensions: List[str] = get_patch_file_extensions(
-            test_patch
+        self.bug_patch: PatchSet = self.__clean_patch(bug_patch)
+        self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(
+            self.bug_patch
         )
-        self.non_code_patch: PatchSet = non_code_patch
+        self.test_patch: PatchSet = self.__clean_patch(test_patch)
+        self.test_patch_file_extensions: List[str] = get_patch_file_extensions(
+            self.test_patch
+        )
+        self.non_code_patch: PatchSet = self.__clean_patch(non_code_patch)
         self.non_code_patch_file_extensions: List[str] = get_patch_file_extensions(
-            non_code_patch
+            self.non_code_patch
         )
         self.change_type: ChangeType = ChangeType.get_change_type(
-            bug_patch, non_code_patch
+            self.bug_patch, self.non_code_patch
         )
         self.actions: Set[Action] = actions
         self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
@@ -140,6 +142,17 @@ class BugPatch:
             "strategy": self.strategy_used.name,
             "issues": self.issues,
         }
+
+    def __clean_patch(self, patch: PatchSet) -> PatchSet:
+        """
+        Cleans the patch to be used by pygit2. This is related to issue XXX that causes libgit2 to segfault when one of the paths is /dev/null.
+        """
+        for file in patch:
+            if file.source_file == "/dev/null":
+                file.source_file = file.target_file.replace("b/", "a/", 1)
+            elif file.target_file == "/dev/null":
+                file.target_file = file.source_file.replace("a/", "b/", 1)
+        return patch
 
     def __set_commit(self, repo_clone: pygit2.Repository, commit: str):
         commit = repo_clone.revparse_single(commit)
