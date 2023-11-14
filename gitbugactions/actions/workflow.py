@@ -60,9 +60,9 @@ class GitHubWorkflow(ABC):
         """
         try:
             # Check if any run command is a test running command
-            if "jobs" in self.doc:
+            if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
                 for _, job in self.doc["jobs"].items():
-                    if "steps" in job:
+                    if "steps" in job and isinstance(job["steps"], list):
                         for step in job["steps"]:
                             if "run" in step and self._is_test_command(step["run"]):
                                 return True
@@ -72,9 +72,9 @@ class GitHubWorkflow(ABC):
 
     def get_actions(self) -> Set[Action]:
         actions: Set[Action] = set()
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
-                if "steps" in job:
+                if "steps" in job and isinstance(job["steps"], list):
                     for step in job["steps"]:
                         if "uses" in step:
                             try:
@@ -92,9 +92,13 @@ class GitHubWorkflow(ABC):
         """
         Check if the workflow has a job with a matrix with include/exclude options
         """
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
-                if "strategy" in job and "matrix" in job["strategy"]:
+                if (
+                    "strategy" in job
+                    and isinstance(job["strategy"], dict)
+                    and "matrix" in job["strategy"]
+                ):
                     if (
                         "include" in job["strategy"]["matrix"]
                         or "exclude" in job["strategy"]["matrix"]
@@ -128,18 +132,20 @@ class GitHubWorkflow(ABC):
                     doc.append("ubuntu-latest")
 
         # Replace any unsupported OS with Ubuntu
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
                 if "runs-on" in job:
                     job["runs-on"] = "ubuntu-latest"
                 if (
                     "strategy" in job
+                    and isinstance(job["strategy"], dict)
                     and "os" in job["strategy"]
                     and isinstance(job["strategy"]["os"], list)
                 ):
                     job["strategy"]["os"] = ["ubuntu-latest"]
                 if (
                     "strategy" in job
+                    and isinstance(job["strategy"], dict)
                     and "matrix" in job["strategy"]
                     and isinstance(job["strategy"]["matrix"], dict)
                     and "os" in job["strategy"]["matrix"]
@@ -152,9 +158,13 @@ class GitHubWorkflow(ABC):
         """
         Instruments the workflow to run only one configuration (the fisrt one) per job.
         """
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
-                if "strategy" in job and "matrix" in job["strategy"]:
+                if (
+                    "strategy" in job
+                    and isinstance(job["strategy"], dict)
+                    and "matrix" in job["strategy"]
+                ):
                     for key, value in job["strategy"]["matrix"].items():
                         if isinstance(value, list):
                             job["strategy"]["matrix"][key] = [value[0]]
@@ -164,16 +174,24 @@ class GitHubWorkflow(ABC):
             return
         self.tokens = []
 
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
-                if "steps" not in job:
+                if "steps" not in job or not isinstance(job["steps"], list):
                     continue
 
                 for step in job["steps"]:
-                    if "uses" not in step or "setup" not in step["uses"]:
+                    if (
+                        not isinstance(step, dict)
+                        or "uses" not in step
+                        or "setup" not in step["uses"]
+                    ):
                         continue
 
-                    if "with" in step and "token" not in step["with"]:
+                    if (
+                        "with" in step
+                        and isinstance(step["with"], dict)
+                        and "token" not in step["with"]
+                    ):
                         token = GithubToken.get_token()
                         step["with"]["token"] = token.token
                         self.tokens.append(token)
@@ -187,13 +205,17 @@ class GitHubWorkflow(ABC):
         Instruments the workflow for an offline execution. Only keeps steps
         related to the execution of tests.
         """
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
                 test_steps = []
 
-                if "steps" in job:
+                if "steps" in job and isinstance(job["steps"], list):
                     for step in job["steps"]:
-                        if "run" in step and self._is_test_command(step["run"]):
+                        if (
+                            isinstance(step, dict)
+                            and "run" in step
+                            and self._is_test_command(step["run"])
+                        ):
                             test_steps.append(step)
                     job["steps"] = test_steps
 
@@ -203,14 +225,20 @@ class GitHubWorkflow(ABC):
         usage of this action.
         https://github.com/nektos/act/issues/285
         """
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for _, job in self.doc["jobs"].items():
-                if "steps" in job:
+                if "steps" in job and isinstance(job["steps"], list):
                     filtered_steps = []
                     for step in job["steps"]:
-                        if "uses" in step and step["uses"].startswith("actions/cache"):
+                        if not isinstance(step, dict) or (
+                            "uses" in step and step["uses"].startswith("actions/cache")
+                        ):
                             continue
-                        if "with" in step and "cache" in step["with"]:
+                        if (
+                            "with" in step
+                            and isinstance(step["with"], dict)
+                            and "cache" in step["with"]
+                        ):
                             del step["with"]["cache"]
                         filtered_steps.append(step)
                     job["steps"] = filtered_steps
@@ -220,7 +248,7 @@ class GitHubWorkflow(ABC):
         Gets the jobs from the workflow.
         """
         jobs = []
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for job_name, _ in self.doc["jobs"].items():
                 jobs.append(job_name)
         return jobs
@@ -230,12 +258,16 @@ class GitHubWorkflow(ABC):
         Gets the jobs containing test commands.
         """
         test_jobs = []
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             for job_name, job in self.doc["jobs"].items():
                 has_test = False
-                if "steps" in job:
+                if "steps" in job and isinstance(job["steps"], list):
                     for step in job["steps"]:
-                        if "run" in step and self._is_test_command(step["run"]):
+                        if (
+                            isinstance(step, dict)
+                            and "run" in step
+                            and self._is_test_command(step["run"])
+                        ):
                             has_test = True
                 if has_test:
                     test_jobs.append(job_name)
@@ -250,6 +282,7 @@ class GitHubWorkflow(ABC):
         def get_needs(job_name: str) -> List[str]:
             if (
                 job_name not in self.doc["jobs"]
+                or not isinstance(self.doc["jobs"][job_name], dict)
                 or "needs" not in self.doc["jobs"][job_name]
             ):
                 return []
@@ -263,7 +296,7 @@ class GitHubWorkflow(ABC):
 
             return needed_jobs
 
-        if "jobs" in self.doc:
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
             required_jobs = set()
             for job_name in self.get_test_jobs():
                 required_jobs.add(job_name)
