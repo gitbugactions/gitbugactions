@@ -55,7 +55,13 @@ def export_bug_containers(bug: Dict, export_path: str):
                 )
                 if run.failed:
                     logging.error(
-                        f"Run failed. Can't export container {c.hex} from {repo_full_name} ({run.workflow})."
+                        f"""Run failed while exporting container {c.hex} from {repo_full_name}@{commit_hash} ({run.workflow_name}).
+Run stdout:
+{run.stdout}
+
+Run stderr:
+{run.stderr}
+"""
                     )
 
                     for container in containers:
