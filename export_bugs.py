@@ -45,7 +45,7 @@ def export_bug_containers(bug: Dict, export_path: str):
             repo_clone.checkout_tree(c)
             repo_clone.set_head(c.oid)
 
-            docker_client = docker.from_env()
+            docker_client = docker.from_env(timeout=300)
             runs = executor.run_tests(keep_containers=True)
 
             for run in runs:
