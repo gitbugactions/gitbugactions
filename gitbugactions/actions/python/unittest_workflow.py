@@ -11,8 +11,8 @@ class UnittestWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = ["unittest", "xmlrunner"]
     # Regex patterns to match unittest commands
     __TESTS_COMMAND_PATTERNS = [
-        r"python([23](\.\d+)?)?\s+(([\w\-\/]+\s+)*)?-m\s+unittest",  # Matches commands that call unittest through python's module option
-        r"python([23](\.\d+)?)?\s+(([\w\-\/]+\s+)*)?-m\s+xmlrunner",  # Matches commands that call xlmrunner through python's module option
+        r"python([23](\.\d+)?)?\s+(([^\s]+\s+)*)?-m\s+unittest",  # Matches commands that call unittest through python's module option
+        r"python([23](\.\d+)?)?\s+(([^\s]+\s+)*)?-m\s+xmlrunner",  # Matches commands that call xlmrunner through python's module option
     ]
 
     def _is_test_command(self, command) -> bool:

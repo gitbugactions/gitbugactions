@@ -11,7 +11,7 @@ class MavenWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = ["maven", "mvn", "mavenw", "mvnw"]
     # Regex patterns to match maven test commands
     __TESTS_COMMAND_PATTERNS = [
-        r"(maven|mvn|mavenw|mvnw)\s+(([\w\-\/]+\s+)*)?(test|package|verify|install)",
+        r"(maven|mvn|mavenw|mvnw)\s+(([^\s]+\s+)*)?(test|package|verify|install)",
     ]
 
     def _is_test_command(self, command) -> bool:
