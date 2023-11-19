@@ -59,7 +59,7 @@ class CollectReposStrategy(RepoStrategy):
             ]
             actions.save_workflows()
 
-            if len(actions.test_workflows) == 1:
+            if len(actions.test_workflows) >= 1:
                 logging.info(f"Running actions for {repo.full_name}")
 
                 # Act creates names for the containers by hashing the content of the workflows

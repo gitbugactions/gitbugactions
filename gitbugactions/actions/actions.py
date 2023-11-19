@@ -347,7 +347,7 @@ class GitHubActions:
                     filenames,
                 )
             )
-            for file in yaml_files:
+            for file in sorted(yaml_files):
                 # Create workflow object according to the language and build system
                 workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
                     os.path.join(dirpath, file), self.language

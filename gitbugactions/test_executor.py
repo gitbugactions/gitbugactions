@@ -59,8 +59,11 @@ class TestExecutor:
             workflow.doc["name"] = str(uuid.uuid4())
         test_actions.save_workflows()
 
-        for workflow in test_actions.test_workflows:
-            act_runs.append(test_actions.run_workflow(workflow, self.act_cache_dir))
+        act_runs.append(
+            test_actions.run_workflow(
+                test_actions.test_workflows[0], self.act_cache_dir
+            )
+        )
 
         test_actions.delete_workflows()
 
