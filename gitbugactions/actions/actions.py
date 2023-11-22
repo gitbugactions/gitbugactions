@@ -242,9 +242,9 @@ class Act:
             with open("Dockerfile", "w") as f:
                 client = docker.from_env()
                 dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-                dockerfile += f"RUN usermod -u {os.getuid()} runneradmin\n"
-                dockerfile += f"RUN groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
-                dockerfile += f"RUN usermod -G {os.getgid()} runneradmin\n"
+                dockerfile += f"RUN sudo usermod -u {os.getuid()} runneradmin\n"
+                dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
+                dockerfile += f"RUN sudo usermod -G {os.getgid()} runneradmin\n"
                 f.write(dockerfile)
 
             client.images.build(path="./", tag="gitbugactions", forcerm=True)
@@ -305,6 +305,7 @@ class Act:
             or len(tests_run.erroring_tests) > 0
         ):
             tests_run.failed = True
+            logging.warning(f"RETURN CODE: {run.returncode}")
 
         updated_tokens = set()
         if GithubToken.has_tokens():
