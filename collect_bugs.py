@@ -148,9 +148,9 @@ class BugPatch:
         Cleans the patch to be used by pygit2. This is related to issue XXX that causes libgit2 to segfault when one of the paths is /dev/null.
         """
         for file in patch:
-            if file.source_file == "/dev/null":
+            if file.source_file == "/dev/null" and not file.is_added_file:
                 file.source_file = file.target_file.replace("b/", "a/", 1)
-            elif file.target_file == "/dev/null":
+            elif file.target_file == "/dev/null" and not file.is_removed_file:
                 file.target_file = file.source_file.replace("a/", "b/", 1)
         return patch
 
