@@ -21,9 +21,8 @@ class GradleWorkflow(GitHubWorkflow):
                 return True
         return False
 
-    def instrument_test_steps(self):
+    def instrument_offline_execution(self):
         # Add an "--offline" option to the test command
-        # FIXME: only when offline option is given
         if "jobs" in self.doc:
             for _, job in self.doc["jobs"].items():
                 if "steps" in job:

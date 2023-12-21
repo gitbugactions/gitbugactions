@@ -202,22 +202,9 @@ class GitHubWorkflow(ABC):
 
     def instrument_offline_execution(self):
         """
-        Instruments the workflow for an offline execution. Only keeps steps
-        related to the execution of tests.
+        Instruments the workflow for an offline execution.
         """
-        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
-            for _, job in self.doc["jobs"].items():
-                test_steps = []
-
-                if "steps" in job and isinstance(job["steps"], list):
-                    for step in job["steps"]:
-                        if (
-                            isinstance(step, dict)
-                            and "run" in step
-                            and self._is_test_command(step["run"])
-                        ):
-                            test_steps.append(step)
-                    job["steps"] = test_steps
+        pass
 
     def instrument_cache_steps(self):
         """

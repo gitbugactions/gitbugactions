@@ -378,6 +378,8 @@ class GitHubActions:
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()
+                if offline:
+                    workflow.instrument_offline_execution()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
