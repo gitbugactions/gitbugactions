@@ -12,11 +12,11 @@ class TestExecutor:
         language: str,
         act_cache_dir: str,
         default_actions: GitHubActions,
-        runner: str = "gitbugactions:latest",
+        runner_image: str = "gitbugactions:latest",
     ):
         self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
-        self.runner = runner
+        self.runner_image = runner_image
         self.language = language
         # Note: these default actions may have different configuration options such as paths, runners, etc.
         self.default_actions = default_actions
@@ -40,7 +40,7 @@ class TestExecutor:
             self.repo_clone.workdir,
             self.language,
             keep_containers=keep_containers,
-            runner=self.runner,
+            runner=self.runner_image,
             offline=offline,
         )
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
