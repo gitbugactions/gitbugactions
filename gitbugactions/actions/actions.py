@@ -1,6 +1,4 @@
 import os, tempfile, shutil, traceback
-import re, tarfile
-import hashlib
 import grp
 import uuid
 import time
@@ -190,23 +188,26 @@ class ActTestsRun:
 
 class Act:
     __ACT_PATH = "act"
-    __ACT_SETUP = False
+    __ACT_CHECK = False
+    __IMAGE_SETUP = False
     __FLAGS = f"--pull=false --no-cache-server --max-parallel 1"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
+    __DEFAULT_IMAGE = "gitbugactions:latest"
 
     def __init__(
         self,
         reuse: bool = False,
         timeout=5,
-        runner: str = "gitbugactions:latest",
+        runner_image: str = __DEFAULT_IMAGE,
         offline: bool = False,
     ):
         """
         Args:
             timeout (int): Timeout in minutes
         """
-        Act.__setup_act()
+        Act.__check_act()
+        Act.__setup_image(runner_image)
         if reuse:
             self.flags = "--reuse"
         else:
@@ -218,24 +219,36 @@ class Act:
         self.flags += f" --memory={Act.__MEMORY_LIMIT}"
         self.flags += "'"
 
-        self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner}"
+        self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner_image}"
         self.timeout = timeout
 
     @staticmethod
-    def __setup_act():
+    def __check_act():
+        if Act.__ACT_CHECK:
+            return
+
+        run = subprocess.run(
+            f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
+        )
+        if run.returncode != 0:
+            logging.error("Act is not correctly installed")
+            exit(-1)
+        Act.__ACT_CHECK = True
+
+    @staticmethod
+    def __setup_image(runner_image: str):
         with Act.__SETUP_LOCK:
-            if Act.__ACT_SETUP:
+            client = docker.from_env()
+
+            if runner_image != Act.__DEFAULT_IMAGE:
+                if len(client.images.list(name=runner_image)) != 1:
+                    logging.error(f"Base image {runner_image} does not exist")
+                    exit(-1)
                 return
-            # Checks act installation
-            run = subprocess.run(
-                f"{Act.__ACT_PATH} --help", shell=True, capture_output=True
-            )
-            if run.returncode != 0:
-                logging.error("Act is not correctly installed")
-                exit(-1)
+            elif Act.__IMAGE_SETUP:
+                return
 
             # Creates crawler image
-            client = docker.from_env()
             if len(client.images.list(name="gitbugactions")) > 0:
                 client.images.remove(image="gitbugactions")
 
@@ -250,7 +263,7 @@ class Act:
 
             client.images.build(path="./", tag="gitbugactions", forcerm=True)
             os.remove("Dockerfile")
-            Act.__ACT_SETUP = True
+            Act.__IMAGE_SETUP = True
 
     @staticmethod
     def set_memory_limit(limit: str):
@@ -329,7 +342,7 @@ class GitHubActions:
         repo_path,
         language: str,
         keep_containers: bool = False,
-        runner: str = "gitbugactions:latest",
+        runner_image: str = "gitbugactions:latest",
         offline: bool = False,
     ):
         self.repo_path = repo_path
@@ -337,7 +350,7 @@ class GitHubActions:
         self.language: str = language.strip().lower()
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
-        self.runner = runner
+        self.runner_image = runner_image
         self.offline = offline
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
@@ -365,6 +378,8 @@ class GitHubActions:
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()
+                if offline:
+                    workflow.instrument_offline_execution()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
@@ -405,7 +420,10 @@ class GitHubActions:
 
     def run_workflow(self, workflow, act_cache_dir: str) -> ActTestsRun:
         act = Act(
-            self.keep_containers, timeout=10, runner=self.runner, offline=self.offline
+            self.keep_containers,
+            timeout=10,
+            runner_image=self.runner_image,
+            offline=self.offline,
         )
         return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)
 

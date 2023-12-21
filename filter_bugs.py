@@ -43,7 +43,7 @@ def run_commit(
             bug.language,
             act_cache_dir,
             get_default_actions(diff_folder_path, repo_clone, bug.language),
-            runner=image_name,
+            runner_image=image_name,
         )
 
         return test_fn(executor, offline)
