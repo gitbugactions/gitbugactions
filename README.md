@@ -30,12 +30,21 @@ export PATH="<REPLACE_WITH_PATH_TO_ACT>:$PATH"
 
 GitBug-Actions runs on Python3.10 and above.
 
-To install the Python dependencies run:
+Ensure Poetry is [installed](https://python-poetry.org/docs/#installation).
+
+Then, to install the Python dependencies run:
 ```
-pip install -r requirements.txt
+poetry shell
+poetry install
 ```
 
 ## How to run
+
+Ensure the commands are executed inside the Poetry shell:
+
+```
+poetry shell
+```
 
 Use the `--help` command to obtain the list of options required to run each script.
 
