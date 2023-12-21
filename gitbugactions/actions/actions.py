@@ -422,7 +422,7 @@ class GitHubActions:
         act = Act(
             self.keep_containers,
             timeout=10,
-            runner=self.runner_image,
+            runner_image=self.runner_image,
             offline=self.offline,
         )
         return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)

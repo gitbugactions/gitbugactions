@@ -40,7 +40,7 @@ class TestExecutor:
             self.repo_clone.workdir,
             self.language,
             keep_containers=keep_containers,
-            runner=self.runner_image,
+            runner_image=self.runner_image,
             offline=offline,
         )
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:

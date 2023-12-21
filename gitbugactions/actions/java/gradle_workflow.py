@@ -21,6 +21,9 @@ class GradleWorkflow(GitHubWorkflow):
                 return True
         return False
 
+    def instrument_test_steps(self):
+        pass
+
     def instrument_offline_execution(self):
         # Add an "--offline" option to the test command
         if "jobs" in self.doc:

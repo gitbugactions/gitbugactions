@@ -88,7 +88,7 @@ def run_bug(
             bug["language"],
             act_cache_dir,
             get_default_actions(diff_folder_path, repo_clone, bug["language"]),
-            runner=image_name,
+            runner_image=image_name,
         )
         runs = executor.run_tests(offline=offline)
         docker_client.images.remove(image_name)
