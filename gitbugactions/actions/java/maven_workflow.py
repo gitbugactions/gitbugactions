@@ -20,7 +20,7 @@ class MavenWorkflow(GitHubWorkflow):
             if re.search(pattern, command):
                 return True
         return False
-    
+
     def instrument_test_steps(self):
         pass
 
