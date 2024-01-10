@@ -2,7 +2,7 @@ import yaml
 import logging
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from typing import List, Set
+from typing import List, Set, Optional
 from gitbugactions.github_token import GithubToken
 from gitbugactions.actions.action import Action
 
@@ -203,6 +203,12 @@ class GitHubWorkflow(ABC):
     def instrument_offline_execution(self):
         """
         Instruments the workflow for an offline execution.
+        """
+        pass
+
+    def instrument_online_execution(self):
+        """
+        Instruments the workflow for an online execution.
         """
         pass
 
