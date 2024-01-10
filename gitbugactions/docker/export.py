@@ -169,25 +169,25 @@ class DiffNode:
     @property
     def is_file(self) -> bool:
         return len(self.children) == 0
-    
+
     def __dict__(self) -> dict:
         children = {}
         for key, value in self.children.items():
             children[key] = value.__dict__()
-        
+
         return {
             "children": children,
             "kind": self.kind,
             "path": self.path,
-            "full_path": self.full_path
+            "full_path": self.full_path,
         }
-    
+
     @staticmethod
     def from_dict(data: dict):
         children = {}
         for key, value in data["children"].items():
             children[key] = DiffNode.from_dict(value)
-        
+
         return DiffNode(children, data["kind"], data["path"], data["full_path"])
 
 
