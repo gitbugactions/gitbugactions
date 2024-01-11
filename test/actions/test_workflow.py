@@ -94,6 +94,45 @@ def test_instrument_on_events(yml_file):
     assert workflow.doc["on"] == "push"
 
 
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/go/go_vendor.yml")],
+)
+def test_instrument_vendor(yml_file):
+    workflow = create_workflow(yml_file, "go")
+    assert isinstance(workflow, GoWorkflow)
+    workflow.instrument_test_steps()
+    workflow.instrument_online_execution()
+
+    assert len(workflow.doc["jobs"]["run-tests"]["steps"]) == 6
+    assert (
+        workflow.doc["jobs"]["run-tests"]["steps"][0]["run"]
+        == "go install github.com/jstemmer/go-junit-report/v2@v2.0.0"
+    )
+    assert (
+        workflow.doc["jobs"]["run-tests"]["steps"][-1]["run"]
+        == f"mkdir -p {GoWorkflow.GITBUG_CACHE} && go mod vendor && cp -r vendor {GoWorkflow.GITBUG_CACHE} || : && cp go.mod {GoWorkflow.GITBUG_CACHE} || : && cp go.sum {GoWorkflow.GITBUG_CACHE} || :"
+    )
+    assert (
+        workflow.doc["jobs"]["run-tests"]["steps"][-2]["run"]
+        == "go test -v ./... -coverprofile=coverage.txt -mod=vendor -covermode=atomic 2>&1 | ~/go/bin/go-junit-report > report.xml"
+    )
+    assert (
+        workflow.doc["jobs"]["run-tests"]["steps"][-3]["run"]
+        == "go test -v ./... -coverprofile=coverage.txt -mod=vendor -covermode=atomic 2>&1 | ~/go/bin/go-junit-report > report.xml"
+    )
+
+    workflow = create_workflow(yml_file, "go")
+    assert isinstance(workflow, GoWorkflow)
+    workflow.instrument_offline_execution()
+
+    assert len(workflow.doc["jobs"]["run-tests"]["steps"]) == 5
+    assert (
+        workflow.doc["jobs"]["run-tests"]["steps"][0]["run"]
+        == f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :"
+    )
+
+
 @pytest.fixture
 def teardown_instrument_steps():
     yield

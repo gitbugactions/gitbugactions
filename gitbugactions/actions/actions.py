@@ -380,6 +380,8 @@ class GitHubActions:
                 workflow.instrument_test_steps()
                 if offline:
                     workflow.instrument_offline_execution()
+                else:
+                    workflow.instrument_online_execution()
 
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)

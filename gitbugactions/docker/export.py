@@ -4,7 +4,6 @@ import shutil
 import uuid
 import tempfile
 import json
-import pickle
 import docker
 import tarfile
 from dataclasses import dataclass
@@ -171,6 +170,26 @@ class DiffNode:
     def is_file(self) -> bool:
         return len(self.children) == 0
 
+    def __dict__(self) -> dict:
+        children = {}
+        for key, value in self.children.items():
+            children[key] = value.__dict__()
+
+        return {
+            "children": children,
+            "kind": self.kind,
+            "path": self.path,
+            "full_path": self.full_path,
+        }
+
+    @staticmethod
+    def from_dict(data: dict):
+        children = {}
+        for key, value in data["children"].items():
+            children[key] = DiffNode.from_dict(value)
+
+        return DiffNode(children, data["kind"], data["path"], data["full_path"])
+
 
 def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str] = []):
     """Extracts all the files in the diff of a Docker container.
@@ -179,7 +198,7 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
     all the files changed in the Docker container. The files will be structured
     as they were on the Docker container (i.e, if the file `/test/test.txt` was
     changed, the file `test.txt` will be on the folder `test`). The tar file
-    also contains a pickle file called `diff.pkl`. The pickle is created from
+    also contains a json file called `diff.json`. The json is created from
     the root ``DiffNode`` which contains the tree that represents the diff of
     the Docker container. We can apply the extracted diff to another Docker
     container using ``apply_diff``.
@@ -249,9 +268,9 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
 
     handle_node(parent_node)
 
-    with open(os.path.join(save_path, "diff.pkl"), "wb") as f:
-        pickle.dump(parent_node, f)
-    # Save diff files and pickle in a compressed tar file
+    with open(os.path.join(save_path, "diff.json"), "w") as f:
+        json.dump(parent_node.__dict__(), f)
+    # Save diff files and json in a compressed tar file
     with tarfile.open(diff_file_path, "w:gz") as tar_gz:
         tar_gz.add(save_path, arcname="diff")
 
@@ -280,8 +299,8 @@ def apply_diff(container_id: str, diff_file_path: str):
     with tarfile.open(diff_file_path, "r:gz") as tar_gz:
         tar_gz.extractall(diff_path)
 
-    with open(os.path.join(diff_path, "diff", "diff.pkl"), "rb") as f:
-        parent_node: DiffNode = pickle.load(f)
+    with open(os.path.join(diff_path, "diff", "diff.json"), "r") as f:
+        parent_node: DiffNode = DiffNode.from_dict(json.load(f))
 
     def handle_removes(node: DiffNode):
         for _, child in node.children.items():
