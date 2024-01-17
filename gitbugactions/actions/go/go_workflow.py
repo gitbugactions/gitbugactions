@@ -57,28 +57,10 @@ class GoWorkflow(GitHubWorkflow):
     def instrument_offline_execution(self):
         if self.has_tests():
             for _, job in self.doc["jobs"].items():
+                has_tests = False
                 if "steps" in job:
                     for step in job["steps"]:
                         if "run" in step and self._is_test_command(step["run"]):
-                            job["steps"].insert(
-                                0,
-                                {
-                                    "name": "restore vendor",
-                                    "run": f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && "
-                                    + f"cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && "
-                                    + f"cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :",
-                                },
-                            )
-                            return
-
-    def instrument_test_steps(self):
-        if "jobs" in self.doc:
-            for _, job in self.doc["jobs"].items():
-                if "steps" in job:
-                    for step in job["steps"]:
-                        if "run" in step and self._is_test_command(step["run"]):
-                            step["run"] = step["run"].strip()
-
                             if "-mod" not in step["run"]:
                                 step["run"] = re.sub(
                                     r"test",
@@ -91,6 +73,26 @@ class GoWorkflow(GitHubWorkflow):
                                     "-mod=vendor",
                                     step["run"],
                                 )
+                            has_tests = True
+
+                    if has_tests:
+                        job["steps"].insert(
+                            0,
+                            {
+                                "name": "restore vendor",
+                                "run": f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && "
+                                + f"cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && "
+                                + f"cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :",
+                            },
+                        )
+
+    def instrument_test_steps(self):
+        if "jobs" in self.doc:
+            for _, job in self.doc["jobs"].items():
+                if "steps" in job:
+                    for step in job["steps"]:
+                        if "run" in step and self._is_test_command(step["run"]):
+                            step["run"] = step["run"].strip()
 
                             if "-v" not in step["run"]:
                                 step["run"] = re.sub(
