@@ -97,7 +97,7 @@ def filter_bug(
     repo_clone: pygit2.Repository,
     export_path: str,
     offline: bool,
-) -> bool:
+) -> str:
     try:
         repo_name = bug["repository"].replace("/", "-")
         bug_patch: BugPatch = BugPatch(
@@ -114,6 +114,10 @@ def filter_bug(
         )
         cur_diff_folder_path = os.path.join(export_path, repo_name, bug_patch.commit)
 
+        previous_commit_runs = []
+        previous_commit_with_diff_runs = []
+        current_commit_runs = []
+
         for _ in range(5):
             run = run_commit(
                 bug_patch,
@@ -122,8 +126,7 @@ def filter_bug(
                 bug_patch.test_previous_commit,
                 offline=offline,
             )
-            if not equal_test_results(bug["actions_runs"][0][0]["tests"], run[0].tests):
-                return False
+            previous_commit_runs.append(run)
 
             if len(bug_patch.test_patch) > 0:
                 run = run_commit(
@@ -133,10 +136,7 @@ def filter_bug(
                     bug_patch.test_previous_commit_with_diff,
                     offline=offline,
                 )
-                if not equal_test_results(
-                    bug["actions_runs"][1][0]["tests"], run[0].tests
-                ):
-                    return False
+                previous_commit_with_diff_runs.append(run)
 
             run = run_commit(
                 bug_patch,
@@ -145,10 +145,46 @@ def filter_bug(
                 bug_patch.test_current_commit,
                 offline=offline,
             )
-            if not equal_test_results(bug["actions_runs"][2][0]["tests"], run[0].tests):
-                return False
+            current_commit_runs.append(run)
 
-        return True
+        # It is a fail if all runs are empty
+        if (
+            all(
+                run.tests is None or len(run.tests) == 0 for run in previous_commit_runs
+            )
+            and all(
+                run.tests is None or len(run.tests) == 0
+                for run in previous_commit_with_diff_runs
+            )
+            and all(
+                run.tests is None or len(run.tests) == 0 for run in current_commit_runs
+            )
+        ):
+            return "FAIL"
+        # It is flaky if at least one is different
+        elif (
+            any(
+                not equal_test_results(bug["actions_runs"][0][0]["tests"], run.tests)
+                for run in previous_commit_runs
+            )
+            or (
+                len(bug_patch.test_patch) != 0
+                and any(
+                    not equal_test_results(
+                        bug["actions_runs"][1][0]["tests"], run.tests
+                    )
+                    for run in previous_commit_with_diff_runs
+                )
+            )
+            or any(
+                not equal_test_results(bug["actions_runs"][2][0]["tests"], run.tests)
+                for run in current_commit_runs
+            )
+        ):
+            return "FLAKY"
+        # It is non-flaky if not all runs are empty and all are equal
+        else:
+            return "NON-FLAKY"
     finally:
         delete_repo_clone(repo_clone)
 
@@ -189,6 +225,11 @@ def filter_bugs(
             try:
                 for bug in bugs:
                     bug = json.loads(bug)
+                    if (
+                        bug["strategy"] == "FAIL_FAIL"
+                        or bug["change_type"] == "NON_CODE_ONLY"
+                    ):
+                        continue
                     new_repo_path = os.path.join(
                         tempfile.gettempdir(), str(uuid.uuid4())
                     )
@@ -208,19 +249,25 @@ def filter_bugs(
                 bug = future_to_bug[future]
                 repository = bug["repository"]
                 commit = bug["commit_hash"]
-                non_flaky = future.result()
+                status = future.result()
             except Exception:
                 logging.error(
                     f"Error testing flakiness on {repository}@{commit}: {traceback.format_exc()}"
                 )
             else:
-                if non_flaky:
+                if status == "NON-FLAKY":
                     with open(os.path.join(res_path, "non-flaky.json"), "a") as f:
                         f.write(
                             json.dumps({"repository": repository, "commit": commit})
                             + "\n"
                         )
-                else:
+                elif status == "FAIL":
+                    with open(os.path.join(res_path, "fail.json"), "a") as f:
+                        f.write(
+                            json.dumps({"repository": repository, "commit": commit})
+                            + "\n"
+                        )
+                elif status == "FLAKY":
                     with open(os.path.join(res_path, "flaky.json"), "a") as f:
                         f.write(
                             json.dumps({"repository": repository, "commit": commit})
