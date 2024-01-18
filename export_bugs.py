@@ -10,6 +10,7 @@ import logging
 import subprocess
 import threading
 import tempfile
+import traceback
 from docker.models.containers import Container
 from typing import List, Dict
 from gitbugactions.test_executor import TestExecutor
@@ -118,6 +119,7 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
     futures = []
+    futures_to_bug = {}
 
     for jsonl_path in os.listdir(dataset_path):
         if jsonl_path == "log.out" or jsonl_path == "data.json":
@@ -130,9 +132,16 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
                 futures.append(
                     executor.submit(export_bug_containers, bug, output_folder_path)
                 )
+                futures_to_bug[futures[-1]] = bug
 
     for future in as_completed(futures):
-        future.result()
+        try:
+            future.result()
+        except Exception as e:
+            print(
+                f"Got an exception on bug {futures_to_bug[future]['repository']}@{futures_to_bug[future]['commit_hash']}: {traceback.format_exc()}"
+            )
+            continue
 
     executor.shutdown()
 
