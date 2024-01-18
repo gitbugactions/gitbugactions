@@ -105,7 +105,6 @@ def test_instrument_vendor(yml_file):
     workflow.instrument_offline_execution()
 
     assert len(workflow.doc["jobs"]["run-tests"]["steps"]) == 5
-    print(workflow.doc)
     assert (
         workflow.doc["jobs"]["run-tests"]["steps"][0]["run"]
         == f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :"
@@ -127,6 +126,58 @@ def test_instrument_vendor(yml_file):
     assert (
         workflow.doc["jobs"]["run-tests"]["steps"][0]["run"]
         == f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :"
+    )
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/go/go_on_pull_request.yml")],
+)
+def test_instrument_vendor_repeat(yml_file):
+    workflow = create_workflow(yml_file, "go")
+    assert isinstance(workflow, GoWorkflow)
+
+    workflow.instrument_test_steps()
+    # We want to make sure that we remove the steps of the online execution
+    workflow.instrument_online_execution()
+
+    workflow.instrument_test_steps()
+    workflow.instrument_offline_execution()
+
+    assert len(workflow.doc["jobs"]["unit-test"]["steps"]) == 4
+    assert (
+        workflow.doc["jobs"]["unit-test"]["steps"][0]["run"]
+        == f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :"
+    )
+    assert (
+        workflow.doc["jobs"]["unit-test"]["steps"][-1]["run"]
+        == "go test -mod=vendor -v ./... 2>&1 | ~/go/bin/go-junit-report > report.xml"
+    )
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/go/go_vendor_with_build.yml")],
+)
+def test_instrument_vendor_build(yml_file):
+    workflow = create_workflow(yml_file, "go")
+    assert isinstance(workflow, GoWorkflow)
+
+    workflow.instrument_test_steps()
+    workflow.instrument_offline_execution()
+
+    assert len(workflow.doc["jobs"]["build"]["steps"]) == 5
+    assert (
+        workflow.doc["jobs"]["build"]["steps"][0]["run"]
+        == f"cp -r {GoWorkflow.GITBUG_CACHE}/vendor . || : && cp {GoWorkflow.GITBUG_CACHE}/go.mod . || : && cp {GoWorkflow.GITBUG_CACHE}/go.sum . || :"
+    )
+    assert (
+        workflow.doc["jobs"]["build"]["steps"][-2]["run"]
+        == "go build -mod=vendor -v ./..."
+    )
+    assert (
+        workflow.doc["jobs"]["build"]["steps"][-1]["run"]
+        == "go test -mod=vendor -v ./... 2>&1 | ~/go/bin/go-junit-report > report.xml"
     )
 
 
