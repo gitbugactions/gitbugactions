@@ -230,11 +230,6 @@ def filter_bugs(
             try:
                 for bug in bugs:
                     bug = json.loads(bug)
-                    if (
-                        bug["strategy"] == "FAIL_FAIL"
-                        or bug["change_type"] == "NON_CODE_ONLY"
-                    ):
-                        continue
                     new_repo_path = os.path.join(
                         tempfile.gettempdir(), str(uuid.uuid4())
                     )
