@@ -153,11 +153,14 @@ def filter_bug(
                 run[0].tests is None or len(run[0].tests) == 0
                 for run in previous_commit_runs
             )
-            and all(
-                run[0].tests is None or len(run[0].tests) == 0
-                for run in previous_commit_with_diff_runs
+            or (
+                len(bug_patch.test_patch) != 0
+                and any(
+                    run[0].tests is None or len(run[0].tests) == 0
+                    for run in previous_commit_with_diff_runs
+                )
             )
-            and all(
+            or all(
                 run[0].tests is None or len(run[0].tests) == 0
                 for run in current_commit_runs
             )
