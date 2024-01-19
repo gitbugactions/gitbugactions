@@ -4,6 +4,7 @@ import yaml
 import fire
 import uuid
 import json
+import tqdm
 import docker
 import logging
 import threading
@@ -125,7 +126,7 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
                 )
                 futures_to_bug[futures[-1]] = bug
 
-    for future in as_completed(futures):
+    for future in tqdm.tqdm(as_completed(futures)):
         try:
             future.result()
         except Exception as e:
