@@ -313,7 +313,7 @@ def apply_diff(container_id: str, diff_file_path: str):
 
     # Copy all changed and created files to the container
     for file in os.listdir(os.path.join(diff_path, "diff")):
-        if file != "diff.pkl":
+        if file != "diff.json":
             random_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
             # The files should be in tar format
             with tarfile.open(random_path, "w") as tar:

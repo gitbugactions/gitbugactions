@@ -44,6 +44,7 @@ def get_default_actions(diff_folder_path, repo_clone, language) -> GitHubActions
 
     default_actions = GitHubActions(repo_clone.workdir, language)
     default_actions.test_workflows = workflows
+    os.remove(new_workflow_path)
 
     return default_actions
 
@@ -61,7 +62,6 @@ def run_bug(
     metadata_path: str,
     exported_path: str,
     offline: bool = False,
-    previous_commit: bool = False,
     bug: Dict = None,
 ):
     repo_name = repo_name.replace("/", "-")
@@ -70,8 +70,6 @@ def run_bug(
     if bug is None:
         logging.error(f"{repo_name}@{commit} not found on the metadata folder.")
         exit(-1)
-    if previous_commit:
-        commit = bug["previous_commit_hash"]
 
     repo_clone = pygit2.Repository(os.path.join(repo_clone_path, ".git"))
     diff_folder_path = os.path.join(exported_path, repo_name, commit)

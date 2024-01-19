@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 from junitparser import TestCase
 from pathlib import Path
 import re
@@ -10,17 +10,21 @@ from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 class GoWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = ["go"]
     # Regex patterns to match go test commands
-    __TESTS_COMMAND_PATTERNS = [
-        r"go\s+(([^\s]+\s+)*)?test",
+    __COMMAND_PATTERNS = [
+        r"go\s+(([^\s]+\s+)*)?",
     ]
     GITBUG_CACHE = "~/gitbug-cache"
 
     def _is_test_command(self, command) -> bool:
-        # Checks if the given command matches any of the tests command patterns
-        for pattern in GoWorkflow.__TESTS_COMMAND_PATTERNS:
-            if re.search(pattern, command):
-                return True
-        return False
+        return self.__is_command(command, ["test"])[0]
+
+    def __is_command(self, command: str, keywords: list[str]) -> Tuple[bool, str]:
+        # Checks if the given command matches any of the command patterns
+        for keyword in keywords:
+            for pattern in GoWorkflow.__COMMAND_PATTERNS:
+                if re.search(pattern + keyword, command):
+                    return True, keyword
+        return False, ""
 
     def instrument_online_execution(self):
         if self.has_tests():
@@ -37,14 +41,14 @@ class GoWorkflow(GitHubWorkflow):
                     job["steps"].insert(
                         0,
                         {
-                            "name": "install go-junit-report",
+                            "name": "gitbug-actions install go-junit-report",
                             "run": "go install github.com/jstemmer/go-junit-report/v2@v2.0.0",
                         },
                     )
                     # We need to generate the vendor to keep dependencies
                     job["steps"].append(
                         {
-                            "name": "generate vendor",
+                            "name": "gitbug-actions generate vendor",
                             "run": f"mkdir -p {GoWorkflow.GITBUG_CACHE} && "
                             + "go mod vendor && "
                             + f"cp -r vendor {GoWorkflow.GITBUG_CACHE} || : && "
@@ -60,11 +64,24 @@ class GoWorkflow(GitHubWorkflow):
                 has_tests = False
                 if "steps" in job:
                     for step in job["steps"]:
-                        if "run" in step and self._is_test_command(step["run"]):
+                        # Removes the actions added in the online execution
+                        if "name" in step and step["name"] in [
+                            "gitbug-actions install go-junit-report",
+                            "gitbug-actions generate vendor",
+                        ]:
+                            job["steps"].remove(step)
+
+                        if "run" not in step:
+                            continue
+
+                        is_mod_command, keyword = self.__is_command(
+                            step["run"], ["build", "fmt", "run", "install", "test"]
+                        )
+                        if is_mod_command:
                             if "-mod" not in step["run"]:
                                 step["run"] = re.sub(
-                                    r"test",
-                                    "test -mod=vendor",
+                                    keyword,
+                                    keyword + " -mod=vendor",
                                     step["run"],
                                 )
                             else:
@@ -102,8 +119,8 @@ class GoWorkflow(GitHubWorkflow):
                                 )
                             if "go-junit-report" in step["run"] and ">" in step["run"]:
                                 step["run"] = re.sub(
-                                    r"> [^\s]+",
-                                    "report.xml",
+                                    r"> [^\s]+$",
+                                    "> report.xml",
                                     step["run"],
                                 )
                             elif (

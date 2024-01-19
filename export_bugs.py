@@ -4,10 +4,9 @@ import yaml
 import fire
 import uuid
 import json
-import pygit2
+import tqdm
 import docker
 import logging
-import subprocess
 import threading
 import tempfile
 import traceback
@@ -17,9 +16,62 @@ from gitbugactions.test_executor import TestExecutor
 from gitbugactions.util import delete_repo_clone, get_default_github_actions, clone_repo
 from gitbugactions.docker.export import extract_diff
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from gitbugactions.actions.actions import ActCacheDirManager
+from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
+from collect_bugs import BugPatch
 
 diff_file_lock = threading.Lock()
+
+
+def create_exported_containers(
+    repo_full_name: str,
+    runs: List[ActTestsRun],
+    bug_patch: BugPatch,
+    export_commit: str,
+    export_path: str,
+):
+    commit_hash = bug_patch.commit
+    docker_client = docker.from_env(timeout=300)
+
+    for run in runs:
+        filters = {"name": f"act-{run.workflow_name}"}
+        containers: List[Container] = docker_client.containers.list(filters=filters)
+        if run.failed:
+            logging.error(
+                f"Run failed while exporting container {export_commit} from {repo_full_name}@{commit_hash} ({run.workflow_name}).\n"
+                "Run stdout:\n"
+                f"{run.stdout}\n\n"
+                "Run stderr:\n"
+                f"{run.stderr}"
+            )
+
+            for container in containers:
+                container.stop()
+                container.remove(v=True, force=True)
+            exit(-1)
+
+        for container in containers:
+            container.stop()
+            diff_folder_path = os.path.join(
+                export_path, repo_full_name.replace("/", "-"), export_commit
+            )
+            with diff_file_lock:
+                if not os.path.exists(diff_folder_path):
+                    os.makedirs(diff_folder_path)
+                else:
+                    # Container already being saved. This may happen if bugs
+                    # were collected from two consecutive commits
+                    container.remove(v=True, force=True)
+                    continue
+            diff_file_path = os.path.join(diff_folder_path, container.name)
+            extract_diff(container.id, diff_file_path, ignore_paths=["/tmp"])
+            container.remove(v=True, force=True)
+
+            workflows = os.path.join(diff_folder_path, "workflow")
+            os.mkdir(workflows)
+            with open(os.path.join(workflows, f"{run.workflow_name}.yml"), "w") as f:
+                yaml.dump(run.workflow.doc, f)
+        # FIXME: we only consider a single workflow per commit
+        break
 
 
 def export_bug_containers(bug: Dict, export_path: str):
@@ -34,75 +86,15 @@ def export_bug_containers(bug: Dict, export_path: str):
     )
 
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+    bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
     try:
-        main_commit = repo_clone.revparse_single(str(repo_clone.head.target))
         executor = TestExecutor(
             repo_clone, bug["language"], act_cache_dir, default_actions
         )
-        commit: pygit2.Commit = repo_clone.revparse_single(commit_hash)
-        previous_commit: pygit2.Commit = repo_clone.revparse_single(commit_hash + "~1")
-
-        for c in [commit, previous_commit]:
-            repo_clone.checkout_tree(c)
-            repo_clone.set_head(c.oid)
-
-            docker_client = docker.from_env(timeout=300)
-            runs = executor.run_tests(keep_containers=True)
-
-            for run in runs:
-                filters = {"name": f"act-{run.workflow_name}"}
-                containers: List[Container] = docker_client.containers.list(
-                    filters=filters
-                )
-                if run.failed:
-                    logging.error(
-                        f"""Run failed while exporting container {c.hex} from {repo_full_name}@{commit_hash} ({run.workflow_name}).
-Run stdout:
-{run.stdout}
-
-Run stderr:
-{run.stderr}
-"""
-                    )
-
-                    for container in containers:
-                        container.stop()
-                        container.remove(v=True, force=True)
-                    exit(-1)
-                    continue
-
-                for container in containers:
-                    container.stop()
-                    diff_folder_path = os.path.join(
-                        export_path, repo_full_name.replace("/", "-"), c.hex
-                    )
-                    with diff_file_lock:
-                        if not os.path.exists(diff_folder_path):
-                            os.makedirs(diff_folder_path)
-                        else:
-                            # Container already being saved. This may happen if bugs
-                            # were collected from two consecutive commits
-                            container.remove(v=True, force=True)
-                            continue
-                    diff_file_path = os.path.join(diff_folder_path, container.name)
-                    extract_diff(container.id, diff_file_path, ignore_paths=["/tmp"])
-                    container.remove(v=True, force=True)
-
-                    workflows = os.path.join(diff_folder_path, "workflow")
-                    os.mkdir(workflows)
-                    with open(
-                        os.path.join(workflows, f"{run.workflow_name}.yml"), "w"
-                    ) as f:
-                        yaml.dump(run.workflow.doc, f)
-                # FIXME: we only consider a single workflow per commit
-                break
-
-            repo_clone.reset(main_commit.oid, pygit2.GIT_RESET_HARD)
-            subprocess.run(
-                ["git", "clean", "-f", "-d", "-x"],
-                cwd=repo_clone.workdir,
-                capture_output=True,
-            )
+        runs = bug_patch.test_current_commit(executor, keep_containers=True)
+        create_exported_containers(
+            repo_full_name, runs, bug_patch, bug["commit_hash"], export_path
+        )
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
         delete_repo_clone(repo_clone)
@@ -134,7 +126,7 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
                 )
                 futures_to_bug[futures[-1]] = bug
 
-    for future in as_completed(futures):
+    for future in tqdm.tqdm(as_completed(futures)):
         try:
             future.result()
         except Exception as e:

@@ -187,16 +187,22 @@ class BugPatch:
             return False
 
     def test_previous_commit(
-        self, executor: TestExecutor, offline: bool = False
+        self,
+        executor: TestExecutor,
+        offline: bool = False,
+        keep_containers: bool = False,
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.previous_commit)
         if not self.__apply_non_code_patch(executor.repo_clone):
             return None
-        return executor.run_tests(offline=offline)
+        return executor.run_tests(offline=offline, keep_containers=keep_containers)
 
     def test_previous_commit_with_diff(
-        self, executor: TestExecutor, offline: bool = False
+        self,
+        executor: TestExecutor,
+        offline: bool = False,
+        keep_containers: bool = False,
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.previous_commit)
@@ -204,14 +210,32 @@ class BugPatch:
             return None
         if not self.__apply_test_patch(executor.repo_clone):
             return None
-        return executor.run_tests(offline=offline)
+        return executor.run_tests(offline=offline, keep_containers=keep_containers)
 
     def test_current_commit(
-        self, executor: TestExecutor, offline: bool = False
+        self,
+        executor: TestExecutor,
+        offline: bool = False,
+        keep_containers: bool = False,
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.commit)
-        return executor.run_tests(offline=offline)
+        return executor.run_tests(offline=offline, keep_containers=keep_containers)
+
+    @staticmethod
+    def from_dict(bug: Dict[str, Any], repo_clone: pygit2.Repository) -> "BugPatch":
+        github = GithubToken.get_token().github
+        repo_full_name = bug["repository"]
+
+        return BugPatch(
+            github.get_repo(repo_full_name),
+            repo_clone.revparse_single(bug["commit_hash"]),
+            repo_clone.revparse_single(bug["previous_commit_hash"]),
+            PatchSet(bug["bug_patch"]),
+            PatchSet(bug["test_patch"]),
+            PatchSet(bug["non_code_patch"]),
+            set(),
+        )
 
     def __remove_patch_index(self, patch: PatchSet) -> str:
         lines = str(patch).split("\n")
