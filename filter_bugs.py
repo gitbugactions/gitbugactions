@@ -11,14 +11,11 @@ from gitbugactions.test_executor import TestExecutor
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.docker.export import create_diff_image
 from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
-from gitbugactions.github_token import GithubToken
 
 from collect_bugs import BugPatch
 from run_bug import get_default_actions, get_diff_path
-from unidiff import PatchSet
 from junitparser import TestCase
 from typing import Callable, Optional, List, Dict
-from github import Repository
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
@@ -93,22 +90,13 @@ def equal_test_results(old_test_results: List[Dict], new_test_results: List[Test
 
 def filter_bug(
     bug: Dict,
-    repo: Repository,
     repo_clone: pygit2.Repository,
     export_path: str,
     offline: bool,
 ) -> str:
     try:
         repo_name = bug["repository"].replace("/", "-")
-        bug_patch: BugPatch = BugPatch(
-            repo,
-            repo_clone.revparse_single(bug["commit_hash"]),
-            repo_clone.revparse_single(bug["previous_commit_hash"]),
-            PatchSet(bug["bug_patch"]),
-            PatchSet(bug["test_patch"]),
-            PatchSet(bug["non_code_patch"]),
-            set(),
-        )
+        bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
         prev_diff_folder_path = os.path.join(
             export_path, repo_name, bug_patch.previous_commit
         )
@@ -208,7 +196,6 @@ def filter_bugs(
     """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
-    github = GithubToken.get_token().github
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
         future_to_bug: Dict[Future, Dict] = {}
@@ -222,7 +209,6 @@ def filter_bugs(
                 if len(bugs) == 0:
                     continue
             clone_url = json.loads(bugs[0])["clone_url"]
-            repo = github.get_repo(json.loads(bugs[0])["repository"])
             repo_clone = pygit2.clone_repository(
                 clone_url, os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
             )
@@ -238,7 +224,7 @@ def filter_bugs(
                         os.path.join(new_repo_path, ".git")
                     )
                     future = executor.submit(
-                        filter_bug, bug, repo, repo_clone_copy, export_path, offline
+                        filter_bug, bug, repo_clone_copy, export_path, offline
                     )
                     future_to_bug[future] = bug
             finally:

@@ -30,7 +30,7 @@ def teardown_module():
 def test_export_bug_containers():
     global repo_clone, export_path
 
-    with open("test/resources/test_export/dkpro-dkpro-jwktl.json") as f:
+    with open("test/resources/test_export/tidwall-expr.json") as f:
         bug = json.loads(f.readlines()[0])
     repo_full_name: str = bug["repository"]
     repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
@@ -54,7 +54,7 @@ def test_export_bug_containers():
 
 @pytest.mark.dependency(depends=["test_export_bug_containers"])
 def test_run_bug():
-    with open("test/resources/test_export/dkpro-dkpro-jwktl.json") as f:
+    with open("test/resources/test_export/tidwall-expr.json") as f:
         bug = json.loads(f.readlines()[0])
     repo_path = repo_clone.workdir
     repo_full_name: str = bug["repository"]
@@ -104,6 +104,7 @@ def test_run_bug():
     )
     repo_clone.checkout_tree(previous_commit)
     repo_clone.set_head(previous_commit.oid)
+    repo_clone.apply(pygit2.Diff.parse_diff(bug["non_code_patch"]))
     repo_clone.apply(pygit2.Diff.parse_diff(bug["test_patch"]))
 
     runs = run_bug(

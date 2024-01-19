@@ -44,6 +44,7 @@ def get_default_actions(diff_folder_path, repo_clone, language) -> GitHubActions
 
     default_actions = GitHubActions(repo_clone.workdir, language)
     default_actions.test_workflows = workflows
+    os.remove(new_workflow_path)
 
     return default_actions
 
