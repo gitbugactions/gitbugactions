@@ -90,10 +90,6 @@ def export_bug_containers(bug: Dict, export_path: str):
         executor = TestExecutor(
             repo_clone, bug["language"], act_cache_dir, default_actions
         )
-        runs = bug_patch.test_previous_commit(executor, keep_containers=True)
-        create_exported_containers(
-            repo_full_name, runs, bug_patch, bug["previous_commit_hash"], export_path
-        )
         runs = bug_patch.test_current_commit(executor, keep_containers=True)
         create_exported_containers(
             repo_full_name, runs, bug_patch, bug["commit_hash"], export_path

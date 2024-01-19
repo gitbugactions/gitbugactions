@@ -23,18 +23,12 @@ def run_commit(
     bug: BugPatch,
     repo_clone: pygit2.Repository,
     diff_folder_path: str,
+    image_name: str,
     test_fn: Callable[[], Optional[List[ActTestsRun]]],
     offline: bool,
 ) -> Optional[List[ActTestsRun]]:
-    docker_client = docker.from_env()
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-    image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
-
     try:
-        Act()  # Make sure that the base image is available
-        create_diff_image(
-            "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
-        )
         executor = TestExecutor(
             repo_clone,
             bug.language,
@@ -48,7 +42,6 @@ def run_commit(
         traceback.print_exc()
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-        docker_client.images.remove(image_name, force=True)
 
 
 def equal_test_results(old_test_results: List[Dict], new_test_results: List[TestCase]):
@@ -97,10 +90,14 @@ def filter_bug(
     try:
         repo_name = bug["repository"].replace("/", "-")
         bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
-        prev_diff_folder_path = os.path.join(
-            export_path, repo_name, bug_patch.previous_commit
+        diff_folder_path = os.path.join(export_path, repo_name, bug_patch.commit)
+
+        Act()  # Make sure that the base image is available
+        image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
+        docker_client = docker.from_env()
+        create_diff_image(
+            "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
-        cur_diff_folder_path = os.path.join(export_path, repo_name, bug_patch.commit)
 
         previous_commit_runs = []
         previous_commit_with_diff_runs = []
@@ -110,7 +107,8 @@ def filter_bug(
             run = run_commit(
                 bug_patch,
                 repo_clone,
-                prev_diff_folder_path,
+                diff_folder_path,
+                image_name,
                 bug_patch.test_previous_commit,
                 offline=offline,
             )
@@ -120,7 +118,8 @@ def filter_bug(
                 run = run_commit(
                     bug_patch,
                     repo_clone,
-                    prev_diff_folder_path,
+                    diff_folder_path,
+                    image_name,
                     bug_patch.test_previous_commit_with_diff,
                     offline=offline,
                 )
@@ -129,7 +128,8 @@ def filter_bug(
             run = run_commit(
                 bug_patch,
                 repo_clone,
-                cur_diff_folder_path,
+                diff_folder_path,
+                image_name,
                 bug_patch.test_current_commit,
                 offline=offline,
             )
@@ -180,6 +180,7 @@ def filter_bug(
             return "NON-FLAKY"
     finally:
         delete_repo_clone(repo_clone)
+        docker_client.images.remove(image_name, force=True)
 
 
 def filter_bugs(
