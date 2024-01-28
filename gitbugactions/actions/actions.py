@@ -239,14 +239,14 @@ class Act:
     def __setup_image(runner_image: str):
         with Act.__SETUP_LOCK:
             client = docker.from_env()
-
-            if runner_image != Act.__DEFAULT_IMAGE:
-                if len(client.images.list(name=runner_image)) != 1:
-                    logging.error(f"Base image {runner_image} does not exist")
-                    exit(-1)
+            if Act.__IMAGE_SETUP:
                 return
-            elif Act.__IMAGE_SETUP:
+            elif len(client.images.list(name=runner_image)) == 1:
+                Act.__IMAGE_SETUP = True
                 return
+            elif runner_image != Act.__DEFAULT_IMAGE:
+                logging.error(f"Base image {runner_image} does not exist")
+                exit(-1)
 
             # Creates crawler image
             if len(client.images.list(name="gitbugactions")) > 0:
