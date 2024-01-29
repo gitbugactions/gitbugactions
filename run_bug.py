@@ -5,11 +5,11 @@ import shutil
 import fire
 import pygit2
 import uuid
-import docker
 import logging
 from typing import Dict
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.docker.export import create_diff_image
+from gitbugactions.docker.client import DockerClient
 from gitbugactions.actions.workflow import GitHubWorkflowFactory
 from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
 
@@ -73,7 +73,7 @@ def run_bug(
 
     repo_clone = pygit2.Repository(os.path.join(repo_clone_path, ".git"))
     diff_folder_path = os.path.join(exported_path, repo_name, commit)
-    docker_client = docker.from_env()
+    docker_client = DockerClient.getInstance()
 
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     try:

@@ -3,13 +3,13 @@ import tempfile
 import uuid
 import pygit2
 import tqdm
-import docker
 import logging, traceback
 import os, sys, shutil
 
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.docker.export import create_diff_image
+from gitbugactions.docker.client import DockerClient
 from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
 
 from collect_bugs import BugPatch
@@ -94,7 +94,7 @@ def filter_bug(
 
         Act()  # Make sure that the base image is available
         image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
-        docker_client = docker.from_env()
+        docker_client = DockerClient.getInstance()
         create_diff_image(
             "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
