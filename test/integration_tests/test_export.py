@@ -1,5 +1,4 @@
 import os
-import docker
 import uuid
 import json
 import pygit2
@@ -8,13 +7,14 @@ import tempfile
 import subprocess
 import pytest
 from gitbugactions.util import delete_repo_clone
+from gitbugactions.docker.client import DockerClient
 from export_bugs import export_bug_containers
 from run_bug import run_bug
 
 repo_clone = None
 export_path = None
 act_cache_dir = os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
-docker_client = docker.from_env()
+docker_client = DockerClient.getInstance()
 
 
 def teardown_module():

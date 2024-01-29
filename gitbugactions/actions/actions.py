@@ -2,7 +2,6 @@ import os, tempfile, shutil, traceback
 import grp
 import uuid
 import time
-import docker
 import logging
 import subprocess
 import threading
@@ -13,6 +12,7 @@ from dataclasses import dataclass
 from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from gitbugactions.github_token import GithubToken
 from gitbugactions.actions.action import Action
+from gitbugactions.docker.client import DockerClient
 
 
 class ActCacheDirManager:
@@ -238,7 +238,7 @@ class Act:
     @staticmethod
     def __setup_image(runner_image: str):
         with Act.__SETUP_LOCK:
-            client = docker.from_env()
+            client = DockerClient.getInstance()
             if Act.__IMAGE_SETUP:
                 return
             elif len(client.images.list(name=runner_image)) == 1:
@@ -253,7 +253,7 @@ class Act:
                 client.images.remove(image="gitbugactions")
 
             with open("Dockerfile", "w") as f:
-                client = docker.from_env()
+                client = DockerClient.getInstance()
                 dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
                 dockerfile += f"RUN sudo usermod -u 4000000 runneradmin\n"
                 dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
@@ -430,7 +430,7 @@ class GitHubActions:
         return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)
 
     def remove_containers(self):
-        client = docker.from_env()
+        client = DockerClient.getInstance()
         ancestors = [
             "gitbugactions:latest",
         ]

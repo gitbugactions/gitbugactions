@@ -4,13 +4,13 @@ import shutil
 import uuid
 import tempfile
 import json
-import docker
 import tarfile
 from dataclasses import dataclass
 from typing import Dict, List
 
 from docker.models.containers import Container
 from docker.models.images import Image
+from gitbugactions.docker.client import DockerClient
 
 
 @dataclass
@@ -41,7 +41,7 @@ def extract_last_layer(container_id: str, layer_path: str) -> Layer:
     tar_path, container_path, manifest_path = "", "", ""
 
     try:
-        client = docker.from_env(timeout=1200)
+        client = DockerClient.getInstance()
         container: Container = client.containers.get(container_id)
         container_name = f"test{uuid.uuid4()}"
         # Create image from container
@@ -93,7 +93,7 @@ def add_new_layer(image_name: str, layer: Layer, new_image_name: str = None):
             name is provided the image will not have a tag. The name should
             follow the format 'repository:tag'. Defaults to None.
     """
-    client = docker.from_env(timeout=1200)
+    client = DockerClient.getInstance()
     image: Image = client.images.get(image_name)
     temp_extract_path, tar_path, final_tar = "", "", ""
 
@@ -212,7 +212,7 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
             diff file. Defaults to [].
     """
     save_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-    client = docker.from_env(timeout=600)
+    client = DockerClient.getInstance()
     container: Container = client.containers.get(container_id)
 
     diff = container.diff()
@@ -292,7 +292,7 @@ def apply_diff(container_id: str, diff_file_path: str):
         container_id (str): Id of the Docker container.
         diff_file_path (str): Path to diff file created by ``extract_diff``
     """
-    client = docker.from_env(timeout=600)
+    client = DockerClient.getInstance()
     container: Container = client.containers.get(container_id)
     diff_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
 
@@ -345,7 +345,7 @@ def create_diff_image(base_image: str, new_image_name: str, diff_file_path: str)
             should follow the format 'repository:tag'.
         diff_file_path (str): Path to diff file created by ``extract_diff``
     """
-    client = docker.from_env(timeout=300)
+    client = DockerClient.getInstance()
     container: Container = client.containers.run(base_image, detach=True)
     apply_diff(container.id, diff_file_path)
     repository, tag = new_image_name.split(":")

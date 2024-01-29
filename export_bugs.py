@@ -5,7 +5,6 @@ import fire
 import uuid
 import json
 import tqdm
-import docker
 import logging
 import threading
 import tempfile
@@ -15,6 +14,7 @@ from typing import List, Dict
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.util import delete_repo_clone, get_default_github_actions, clone_repo
 from gitbugactions.docker.export import extract_diff
+from gitbugactions.docker.client import DockerClient
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
 from collect_bugs import BugPatch
@@ -30,7 +30,7 @@ def create_exported_containers(
     export_path: str,
 ):
     commit_hash = bug_patch.commit
-    docker_client = docker.from_env(timeout=300)
+    docker_client = DockerClient.getInstance()
 
     for run in runs:
         filters = {"name": f"act-{run.workflow_name}"}
