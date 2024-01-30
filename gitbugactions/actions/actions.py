@@ -420,10 +420,12 @@ class GitHubActions:
         for workflow in self.test_workflows:
             self.delete_workflow(workflow)
 
-    def run_workflow(self, workflow, act_cache_dir: str) -> ActTestsRun:
+    def run_workflow(
+        self, workflow, act_cache_dir: str, timeout: int = 10
+    ) -> ActTestsRun:
         act = Act(
             self.keep_containers,
-            timeout=10,
+            timeout=timeout,
             runner_image=self.runner_image,
             offline=self.offline,
         )
