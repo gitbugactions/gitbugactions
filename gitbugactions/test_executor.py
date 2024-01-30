@@ -31,7 +31,7 @@ class TestExecutor:
         )
 
     def run_tests(
-        self, keep_containers: bool = False, offline: bool = False
+        self, keep_containers: bool = False, offline: bool = False, timeout: int = 10
     ) -> List[ActTestsRun]:
         act_runs: List[ActTestsRun] = []
         default_actions = False
@@ -60,7 +60,9 @@ class TestExecutor:
         test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
-            act_runs.append(test_actions.run_workflow(workflow, self.act_cache_dir))
+            act_runs.append(
+                test_actions.run_workflow(workflow, self.act_cache_dir, timeout)
+            )
 
         test_actions.delete_workflows()
 
