@@ -8,7 +8,9 @@ from gitbugactions.actions.actions import Act
 def setup():
     global collector
     collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("Nfsaavedra/crawlergpt-test-repo")
+        GithubToken.get_token().github.get_repo(
+            "gitbugactions/gitbugactions-maven-test-repo"
+        )
     )
     collector.set_default_github_actions()
     yield

@@ -40,8 +40,8 @@ def test_maven(xml_file, nr_tests, nr_of_failing_tests):
 @pytest.mark.parametrize(
     "xml_file, nr_tests, nr_of_failing_tests",
     [
-        ("test/resources/test_reports/python/pytest_crawlergpt_passing.xml", 3, 0),
-        ("test/resources/test_reports/python/pytest_crawlergpt_failing.xml", 2, 1),
+        ("test/resources/test_reports/python/pytest_gitbugactions_passing.xml", 3, 0),
+        ("test/resources/test_reports/python/pytest_gitbugactions_failing.xml", 2, 1),
         ("test/resources/test_reports/python/", 5, 1),
     ],
 )
