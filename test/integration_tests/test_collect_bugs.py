@@ -202,8 +202,7 @@ class TestCollectBugs:
 
     @classmethod
     def teardown_class(cls):
-        # shutil.rmtree("test/resources/test_collect_bugs_out")
-        pass
+        shutil.rmtree("test/resources/test_collect_bugs_out")
 
     @pytest.mark.dependency()
     def test_gitbugactions_test_repo(self):
@@ -213,7 +212,7 @@ class TestCollectBugs:
         repo: https://github.com/gitbugactions/gitbugactions-maven-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-maven-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-maven-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -333,7 +332,7 @@ class TestCollectBugs:
         repo: https://github.com/gitbugactions/gitbugactions-pytest-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-pytest-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-pytest-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -485,7 +484,7 @@ class TestCollectBugs:
         repo: https://github.com/gitbugactions/gitbugactions-gradle-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-gradle-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-gradle-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -581,7 +580,7 @@ class TestCollectBugs:
         repo: https://github.com/gitbugactions/gitbugactions-unittest-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-unittest-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-unittest-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -677,7 +676,7 @@ class TestCollectBugs:
         repo: https://github.com/gitbugactions/gitbugactions-go-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-go-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-go-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
