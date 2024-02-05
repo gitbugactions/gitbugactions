@@ -169,7 +169,7 @@ def test_get_possible_patches_no_keywords():
 def test_get_possible_patches():
     try:
         collector = PatchCollector(
-            GithubToken.get_token().github.get_repo("Nfsaavedra/crawlergpt-test-repo")
+            GithubToken.get_token().github.get_repo("gitbugactions/gitbugactions-maven-test-repo")
         )
         bug_patch = collector.get_possible_patches()[0]
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
@@ -203,14 +203,14 @@ class TestCollectBugs:
         shutil.rmtree("test/resources/test_collect_bugs_out")
 
     @pytest.mark.dependency()
-    def test_crawlergpt_test_repo(self):
+    def test_gitbugactions_test_repo(self):
         """
         Verifies that the maven project bugs have been found
 
-        repo: https://github.com/Nfsaavedra/crawlergpt-test-repo
+        repo: https://github.com/gitbugactions/gitbugactions-maven-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/Nfsaavedra-crawlergpt-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-maven-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -323,14 +323,14 @@ class TestCollectBugs:
                     assert failure == 1
 
     @pytest.mark.dependency()
-    def test_crawlergpt_pytest_test_repo(self):
+    def test_gitbugactions_pytest_test_repo(self):
         """
         Verifies that the pytest project bugs have been found
 
-        repo: https://github.com/andre15silva/crawlergpt-pytest-test-repo
+        repo: https://github.com/gitbugactions/gitbugactions-pytest-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-pytest-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-pytest-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -475,14 +475,14 @@ class TestCollectBugs:
                     assert len(data["actions_runs"][2][0]["tests"]) == 15
 
     @pytest.mark.dependency()
-    def test_crawlergpt_gradle_test_repo(self):
+    def test_gitbugactions_gradle_test_repo(self):
         """
         Verifies that the gradle project bugs have been found
 
-        repo: https://github.com/andre15silva/crawlergpt-gradle-test-repo
+        repo: https://github.com/gitbugactions/gitbugactions-gradle-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-gradle-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-gradle-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -571,14 +571,14 @@ class TestCollectBugs:
             )
 
     @pytest.mark.dependency()
-    def test_crawlergpt_unittest_test_repo(self):
+    def test_gitbugactions_unittest_test_repo(self):
         """
         Verifies that the unittest project bugs have been found
 
-        repo: https://github.com/andre15silva/crawlergpt-unittest-test-repo
+        repo: https://github.com/gitbugactions/gitbugactions-unittest-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-unittest-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-unittest-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -667,14 +667,14 @@ class TestCollectBugs:
             )
 
     @pytest.mark.dependency()
-    def test_crawlergpt_go_test_repo(self):
+    def test_gitbugactions_go_test_repo(self):
         """
         Verifies that the go project bugs have been found
 
-        repo: https://github.com/andre15silva/crawlergpt-go-test-repo
+        repo: https://github.com/gitbugactions/gitbugactions-go-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/andre15silva-crawlergpt-go-test-repo.json",
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-go-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
@@ -845,38 +845,38 @@ class TestCollectBugs:
         ) as f:
             data = json.loads(f.read())
             assert len(data.keys()) == 5
-            assert data["Nfsaavedra/crawlergpt-test-repo"]["commits"] == 10
-            assert data["andre15silva/crawlergpt-pytest-test-repo"]["commits"] == 6
-            assert data["andre15silva/crawlergpt-gradle-test-repo"]["commits"] == 2
-            assert data["andre15silva/crawlergpt-unittest-test-repo"]["commits"] == 2
-            assert data["andre15silva/crawlergpt-go-test-repo"]["commits"] == 4
-            assert data["Nfsaavedra/crawlergpt-test-repo"]["possible_bug_patches"] == 4
+            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 10
+            assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
+            assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
+            assert data["gitbugactions/gitbugactions-unittest-test-repo"]["commits"] == 2
+            assert data["gitbugactions/gitbugactions-go-test-repo"]["commits"] == 4
+            assert data["gitbugactions/gitbugactions-maven-test-repo"]["possible_bug_patches"] == 4
             assert (
-                data["andre15silva/crawlergpt-pytest-test-repo"]["possible_bug_patches"]
+                data["gitbugactions/gitbugactions-pytest-test-repo"]["possible_bug_patches"]
                 == 3
             )
             assert (
-                data["andre15silva/crawlergpt-gradle-test-repo"]["possible_bug_patches"]
+                data["gitbugactions/gitbugactions-gradle-test-repo"]["possible_bug_patches"]
                 == 1
             )
             assert (
-                data["andre15silva/crawlergpt-unittest-test-repo"][
+                data["gitbugactions/gitbugactions-unittest-test-repo"][
                     "possible_bug_patches"
                 ]
                 == 1
             )
             assert (
-                data["andre15silva/crawlergpt-go-test-repo"]["possible_bug_patches"]
+                data["gitbugactions/gitbugactions-go-test-repo"]["possible_bug_patches"]
                 == 2
             )
 
     @pytest.mark.dependency(
         depends=[
-            "TestCollectBugs::test_crawlergpt_test_repo",
-            "TestCollectBugs::test_crawlergpt_pytest_test_repo",
-            "TestCollectBugs::test_crawlergpt_gradle_test_repo",
-            "TestCollectBugs::test_crawlergpt_unittest_test_repo",
-            "TestCollectBugs::test_crawlergpt_go_test_repo",
+            "TestCollectBugs::test_gitbugactions_test_repo",
+            "TestCollectBugs::test_gitbugactions_pytest_test_repo",
+            "TestCollectBugs::test_gitbugactions_gradle_test_repo",
+            "TestCollectBugs::test_gitbugactions_unittest_test_repo",
+            "TestCollectBugs::test_gitbugactions_go_test_repo",
         ]
     )
     @pytest.mark.flaky

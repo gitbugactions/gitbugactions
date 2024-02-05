@@ -29,9 +29,9 @@ def test_maven(yml_file):
 @pytest.mark.parametrize(
     "yml_file",
     [
-        ("test/resources/test_workflows/python/pytest_crawlergpt.yml"),
-        ("test/resources/test_workflows/python/pytest_crawlergpt_needs.yml"),
-        ("test/resources/test_workflows/python/pytest_crawlergpt_no_needs.yml"),
+        ("test/resources/test_workflows/python/pytest_gitbugactions.yml"),
+        ("test/resources/test_workflows/python/pytest_gitbugactions_needs.yml"),
+        ("test/resources/test_workflows/python/pytest_gitbugactions_no_needs.yml"),
     ],
 )
 def test_pytest(yml_file):
@@ -42,7 +42,7 @@ def test_pytest(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/python/pytest_crawlergpt_needs.yml")],
+    [("test/resources/test_workflows/python/pytest_gitbugactions_needs.yml")],
 )
 def test_pytest_needs(yml_file):
     """Test that the workflow is created and both jobs are kept."""
@@ -57,7 +57,7 @@ def test_pytest_needs(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/python/pytest_crawlergpt_no_needs.yml")],
+    [("test/resources/test_workflows/python/pytest_gitbugactions_no_needs.yml")],
 )
 def test_pytest_no_needs(yml_file):
     """Test that the workflow is created and only the tests job is kept."""

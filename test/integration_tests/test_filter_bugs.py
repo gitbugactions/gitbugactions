@@ -44,5 +44,5 @@ def test_filter_bugs(setup, teardown):
         lines = f.readlines()
         assert len(lines) == 1
         data = json.loads(lines[0])
-        assert data["repository"] == "andre15silva/crawlergpt-unittest-test-repo"
+        assert data["repository"] == "gitbugactions/gitbugactions-unittest-test-repo"
         assert data["commit"] == "d3d7a607e3a8abc330f8fd69f677284a9afaf650"
