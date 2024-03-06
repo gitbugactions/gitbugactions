@@ -286,7 +286,6 @@ class Act:
         stdout = run.stdout.decode("utf-8")
         stderr = run.stderr.decode("utf-8")
 
-        # TODO: make this work without the bind option
         tests = workflow.get_test_results(
             os.path.join(
                 repo_path, ".act-result", os.path.basename(os.path.normpath(repo_path))
