@@ -30,8 +30,8 @@ from gitbugactions.util import (
     get_file_type,
     FileType,
 )
-from gitbugactions.collect_bugs.test_config import TestConfig
 from gitbugactions.collect_bugs.collection_strategies import *
+from gitbugactions.collect_bugs.test_config import TestConfig
 from gitbugactions.collect_bugs.bug_patch import BugPatch
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
@@ -392,11 +392,7 @@ class PatchCollector:
 
     @staticmethod
     def check_runs(bug_patch) -> Optional[CollectionStrategy]:
-        for strategy in [
-            PassPassStrategy(),
-            FailPassStrategy(),
-            FailFailStrategy(),
-        ]:
+        for strategy in TestConfig.strategies:
             if strategy.check(bug_patch):
                 return strategy.name
 
@@ -408,6 +404,24 @@ class PatchCollector:
         self.cloned = False
 
 
+def set_test_config(
+    normalize_non_code_patch: bool = True,
+    strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
+):
+    TestConfig.normalize_non_code_patch = normalize_non_code_patch
+    strategy_instances = [s() for s in CollectionStrategy.__subclasses__()]
+
+    for strategy in strategies:
+        TestConfig.strategies.append(
+            next(
+                filter(
+                    lambda x: x.name == strategy,
+                    strategy_instances,
+                )
+            )
+        )
+
+
 def collect_bugs(
     data_path: str,
     results_path="data/out_bugs",
@@ -417,6 +431,7 @@ def collect_bugs(
     filter_on_commit_time_start: str = None,
     filter_on_commit_time_end: str = None,
     normalize_non_code_patch: bool = True,
+    strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -428,13 +443,15 @@ def collect_bugs(
                                       Defaults to "data/out_bugs".
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
-                                      Defaults to '7g'.
+                                      Defaults to "7g".
         filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
         filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
         filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
         normalize_non_code_patch (bool, optional): If True, the non-code patch will be applied to previous commits. Defaults to True.
+        strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
+                                           The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
     """
-    TestConfig.normalize_non_code_patch = normalize_non_code_patch
+    set_test_config(normalize_non_code_patch, strategies)
 
     Act.set_memory_limit(memory_limit)
     token = GithubToken.get_token()

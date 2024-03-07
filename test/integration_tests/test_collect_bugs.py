@@ -8,6 +8,8 @@ from collect_bugs import collect_bugs, PatchCollector, BugPatch
 from gitbugactions.github_token import GithubToken
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
+from gitbugactions.collect_bugs.test_config import TestConfig
+from gitbugactions.collect_bugs.collection_strategies import *
 
 
 def get_token_usage():
@@ -198,6 +200,11 @@ class TestCollectBugs:
             "test/resources/test_collect_bugs",
             "test/resources/test_collect_bugs_out",
             4,
+            strategies=[
+                "PASS_PASS",
+                "FAIL_PASS",
+                "FAIL_FAIL",
+            ]
         )
 
     @classmethod
