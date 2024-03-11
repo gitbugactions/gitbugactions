@@ -5,7 +5,7 @@ import pytest
 from typing import List
 from unidiff import PatchSet
 from collect_bugs import collect_bugs, PatchCollector, BugPatch
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubToken, GithubAPI
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
 
@@ -14,7 +14,7 @@ def get_token_usage():
     token_usage = 0
     if GithubToken.has_tokens():
         for token in GithubToken._GithubToken__TOKENS:
-            token_usage += 5000 - token.remaining
+            token_usage += token.core_rate_limiter.requests
         return token_usage
     return token_usage
 
@@ -30,9 +30,7 @@ def get_test_results(tests):
 
 
 def test_get_related_commit_info():
-    collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("ASSERT-KTH/flacoco")
-    )
+    collector = PatchCollector(GithubAPI().get_repo("ASSERT-KTH/flacoco"))
     issues = collector._PatchCollector__get_related_commit_info("7bc38df")
     assert len(issues) == 1
     assert issues[0]["id"] == 100
@@ -47,7 +45,7 @@ def test_get_related_commit_info():
     assert len(issues[0]["review_comments"]) == 2
     shutil.rmtree(collector.repo_clone.workdir)
 
-    collector = PatchCollector(GithubToken.get_token().github.get_repo("sr-lab/GLITCH"))
+    collector = PatchCollector(GithubAPI().get_repo("sr-lab/GLITCH"))
     issues = collector._PatchCollector__get_related_commit_info("98dd01d")
     assert len(issues) == 1
     assert issues[0]["id"] == 15
@@ -61,9 +59,7 @@ def test_get_related_commit_info():
 
 
 def test_get_possible_patches():
-    collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("HubSpot/jinjava")
-    )
+    collector = PatchCollector(GithubAPI().get_repo("HubSpot/jinjava"))
     patches: List[BugPatch] = collector.get_possible_patches()
     commits = list(map(lambda patch: patch.commit, patches))
 
@@ -91,7 +87,7 @@ def test_get_possible_patches():
 
 def test_get_possible_patches_2021():
     collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
+        GithubAPI().get_repo("HubSpot/jinjava"),
         filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
         filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
     )
@@ -127,7 +123,7 @@ def test_get_possible_patches_2021():
 
 def test_get_possible_patches_no_keywords():
     collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
+        GithubAPI().get_repo("HubSpot/jinjava"),
         filter_on_commit_message=False,
         filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
         filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
@@ -169,9 +165,7 @@ def test_get_possible_patches_no_keywords():
 def test_get_possible_patches():
     try:
         collector = PatchCollector(
-            GithubToken.get_token().github.get_repo(
-                "gitbugactions/gitbugactions-maven-test-repo"
-            )
+            GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo")
         )
         bug_patch = collector.get_possible_patches()[0]
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()

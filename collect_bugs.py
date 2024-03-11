@@ -24,7 +24,7 @@ from gitbugactions.actions.actions import (
 from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubAPI
 from gitbugactions.util import (
     get_default_github_actions,
     clone_repo,
@@ -224,7 +224,7 @@ class BugPatch:
 
     @staticmethod
     def from_dict(bug: Dict[str, Any], repo_clone: pygit2.Repository) -> "BugPatch":
-        github = GithubToken.get_token().github
+        github = GithubAPI()
         repo_full_name = bug["repository"]
 
         return BugPatch(
@@ -403,9 +403,9 @@ class PatchCollector:
         issues = []
 
         if len(matches) > 0:
-            token = GithubToken.get_token()
+            github = GithubAPI()
             # We need to get the repo again to use the current token
-            repo = token.github.get_repo(self.repo.full_name)
+            repo = github.get_repo(self.repo.full_name)
         else:
             return []
 
@@ -774,9 +774,7 @@ def collect_bugs(
         filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
     """
     Act.set_memory_limit(memory_limit)
-    token = GithubToken.get_token()
-    github: Github = Github(
-        login_or_token=token if token is None else token.token,
+    github: GithubAPI = GithubAPI(
         per_page=100,
         pool_size=n_workers,
     )
