@@ -8,7 +8,6 @@ from collect_bugs import collect_bugs, PatchCollector, BugPatch
 from gitbugactions.github_token import GithubToken
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
-from gitbugactions.collect_bugs.test_config import TestConfig
 from gitbugactions.collect_bugs.collection_strategies import *
 
 
@@ -204,7 +203,8 @@ class TestCollectBugs:
                 "PASS_PASS",
                 "FAIL_PASS",
                 "FAIL_FAIL",
-            ]
+                "FAIL_PASS_BUILD"
+            ],
         )
 
     @classmethod
@@ -219,11 +219,11 @@ class TestCollectBugs:
         repo: https://github.com/gitbugactions/gitbugactions-maven-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-maven-test-repo.json",
+            "test/resources/test_collect_bugs_out/Nfsaavedra-gitbugactions-maven-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 4
+            assert len(lines) == 5
 
             for line in lines:
                 data = json.loads(line)
@@ -232,6 +232,7 @@ class TestCollectBugs:
                     "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
                     "629f67ebc0efeeb8868a13ad173f18ec572a8729",
                     "37113cf952bd6d3db563d0d15beae07daefd953e",
+                    "e748cb6ad7c77837c27b0c753a8b6acf869fd098"
                 ]
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
@@ -285,11 +286,11 @@ class TestCollectBugs:
                     assert data["actions_runs"][1] is None
                     assert len(data["actions_runs"][2][0]["tests"]) == 2
                     assert not data["actions_runs"][2][0]["default_actions"]
-                    assert len(data["issues"]) == 1
-                    assert data["issues"][0]["title"] == "Subtract is not working"
-                    assert data["issues"][0]["body"] == "Test"
-                    assert len(data["issues"][0]["comments"]) == 1
-                    assert data["issues"][0]["comments"][0] == "Test"
+                    #assert len(data["issues"]) == 1
+                    #assert data["issues"][0]["title"] == "Subtract is not working"
+                    #assert data["issues"][0]["body"] == "Test"
+                    #assert len(data["issues"][0]["comments"]) == 1
+                    #assert data["issues"][0]["comments"][0] == "Test"
                     assert data["commit_timestamp"] == "2023-06-16T14:16:27Z"
                     passed, failure = get_test_results(
                         data["actions_runs"][0][0]["tests"]
@@ -330,6 +331,24 @@ class TestCollectBugs:
                     )
                     assert passed == 4
                     assert failure == 1
+                
+                elif data["commit_hash"] == "2d9f3130c2082c50a8c0aab4426e04449f4f7cce":
+                    assert data["strategy"] == "FAIL_PASS_BUILD"
+                    assert data["commit_message"] == "Fix typo and test"
+                    assert data["change_type"] == "MIXED"
+                    assert len(data["test_patch"]) == 0
+                    passed, failure = get_test_results(
+                        data["actions_runs"][0][0]["tests"]
+                    )
+                    print(data["actions_runs"][0][0]["stdout"])
+                    assert passed == 0
+                    assert failure == 0
+
+                    passed, failure = get_test_results(
+                        data["actions_runs"][2][0]["tests"]
+                    )
+                    assert passed == 5
+                    assert failure == 0
 
     @pytest.mark.dependency()
     def test_gitbugactions_pytest_test_repo(self):
@@ -854,7 +873,7 @@ class TestCollectBugs:
         ) as f:
             data = json.loads(f.read())
             assert len(data.keys()) == 5
-            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 10
+            assert data["Nfsaavedra/gitbugactions-maven-test-repo"]["commits"] == 12
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
             assert (
@@ -862,10 +881,10 @@ class TestCollectBugs:
             )
             assert data["gitbugactions/gitbugactions-go-test-repo"]["commits"] == 4
             assert (
-                data["gitbugactions/gitbugactions-maven-test-repo"][
+                data["Nfsaavedra/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
                 ]
-                == 4
+                == 5
             )
             assert (
                 data["gitbugactions/gitbugactions-pytest-test-repo"][

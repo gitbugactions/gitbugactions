@@ -153,7 +153,31 @@ class FailFailStrategy(CollectionStrategy):
 
 class FailPassBuildStrategy(CollectionStrategy):
     def check(self, bug_patch: BugPatch) -> bool:
-        return bug_patch.fail_pass_build
+        return (
+            (
+                # tests failed in the previous commit
+                bug_patch.prev_commit_failed
+                # or the run failed
+                or (
+                    bug_patch.actions_runs[0] is not None
+                    and any(map(lambda run: run.failed, bug_patch.actions_runs[0]))
+                )
+            )
+            # tests passed in the current commit
+            and bug_patch.curr_commit_passed
+        ) or (
+            (
+                # tests failed in the previous commit w/diff
+                bug_patch.prev_with_diff_failed
+                # or the run failed
+                or (
+                    bug_patch.actions_runs[1] is not None
+                    and any(map(lambda run: run.failed, bug_patch.actions_runs[1]))
+                )
+            )
+            # tests passed in the current commit
+            and bug_patch.curr_commit_passed
+        )
 
     @property
     def name(self) -> str:
