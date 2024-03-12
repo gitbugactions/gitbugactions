@@ -111,7 +111,7 @@ Please make sure to update tests as appropriate.
 
 ## Citation
 
-If you use GitBug-Actions in your research work, please cite []()
+If you use GitBug-Actions in your research work, please cite [GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions](https://arxiv.org/pdf/2310.15642.pdf)
 
 ```bibtex
 @inproceedings{gitbugactions,
