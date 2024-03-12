@@ -1,11 +1,17 @@
+import time
+import schedule
+import threading
 import subprocess
 import os, copy, uuid, pygit2
 from gitbugactions.actions.actions import GitHubActions, ActTestsRun
+from gitbugactions.docker.client import DockerClient
 from pygit2 import Repository
 from typing import List
 
 
 class TestExecutor:
+    __CLEANUP = []
+
     def __init__(
         self,
         repo_clone: Repository,
@@ -14,6 +20,7 @@ class TestExecutor:
         default_actions: GitHubActions,
         runner_image: str = "gitbugactions:latest",
     ):
+        TestExecutor.__schedule_cleanup(runner_image)
         self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
         self.runner_image = runner_image
@@ -21,6 +28,31 @@ class TestExecutor:
         # Note: these default actions may have different configuration options such as paths, runners, etc.
         self.default_actions = default_actions
         self.first_commit = repo_clone.revparse_single("HEAD")
+
+    @staticmethod
+    def __schedule_cleanup(runner_image):
+        if runner_image in TestExecutor.__CLEANUP:
+            return
+        
+        docker = DockerClient.getInstance()
+        def cleanup():
+            for container in docker.containers.list(
+                all=True, filters={"ancestor": runner_image, "status": "exited"}
+            ):
+                container.remove()
+
+        docker = DockerClient.getInstance()
+        schedule.every(1).minutes.do(cleanup)
+
+        class ScheduleThread(threading.Thread):
+            @classmethod
+            def run(cls):
+                while threading.main_thread().is_alive():
+                    schedule.run_pending()
+                    time.sleep(1)
+        ScheduleThread().start()
+
+        TestExecutor.__CLEANUP.append(runner_image)
 
     def reset_repo(self):
         self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
