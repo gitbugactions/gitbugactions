@@ -109,6 +109,19 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
+## Citation
+
+If you use GitBug-Actions in your research work, please cite []()
+
+```bibtex
+@inproceedings{gitbugactions,
+  title={GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions},
+  author={Saavedra, Nuno and Silva, Andr{\'e} and Monperrus, Martin},
+  booktitle={Proceedings of the ACM/IEEE 46th International Conference on Software Engineering: Companion Proceedings},
+  doi={10.1145/3639478.3640023}
+}
+```
+
 ## License
 
 [MIT](LICENSE)
