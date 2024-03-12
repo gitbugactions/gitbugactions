@@ -124,7 +124,8 @@ class GithubToken:
             for token in tokens:
                 GithubToken(token)
         else:
-            logging.warning("No GITHUB_ACCESS_TOKEN provided.")
+            logging.error("No environment variable GITHUB_ACCESS_TOKEN provided.")
+            exit(1)
 
     @staticmethod
     def __wait_for_tokens():

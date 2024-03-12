@@ -13,7 +13,13 @@ from typing import List, Tuple, Any, Dict, Set, Optional
 from enum import Enum
 from datetime import datetime
 import dateutil.parser
-from github import Github, Repository, UnknownObjectException, GithubException
+from github import (
+    Repository, 
+    UnknownObjectException, 
+    GithubException, 
+    PullRequest,
+    PaginatedList
+)
 from unidiff import PatchSet
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import (
@@ -280,6 +286,7 @@ class PatchCollector:
             "filter_on_commit_time_start", None
         )
         self.filter_on_commit_time_end = kwargs.get("filter_on_commit_time_end", None)
+        self.pull_requests = kwargs.get("pull_requests", False)
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -505,8 +512,17 @@ class PatchCollector:
             return
 
         commit_to_patches: Dict[str, List[BugPatch]] = {}
+        commits = list(self.repo_clone.walk(self.repo_clone.head.target))
+        
         try:
-            for commit in self.repo_clone.walk(self.repo_clone.head.target):
+            if self.pull_requests:
+                pulls: PaginatedList[PullRequest] = self.repo.get_pulls()
+                for pull in pulls:
+                    pull_commits = pull.get_commits()
+                    for pull_commit in pull_commits:
+                        commits.append(self.repo_clone.get(pull_commit.sha))
+                
+            for commit in commits:
                 if self.filter_on_commit_message and not self.__is_bug_fix(commit):
                     continue
 
@@ -757,6 +773,7 @@ def collect_bugs(
     filter_on_commit_message: bool = True,
     filter_on_commit_time_start: str = None,
     filter_on_commit_time_end: str = None,
+    pull_requests: bool = False
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -772,6 +789,7 @@ def collect_bugs(
         filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
         filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
         filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
+        pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
     """
     Act.set_memory_limit(memory_limit)
     github: GithubAPI = GithubAPI(
@@ -790,6 +808,7 @@ def collect_bugs(
         "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
         if filter_on_commit_time_end is not None
         else None,
+        "pull_requests": pull_requests,
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
