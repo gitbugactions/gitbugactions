@@ -14,11 +14,11 @@ from enum import Enum
 from datetime import datetime
 import dateutil.parser
 from github import (
-    Repository, 
-    UnknownObjectException, 
-    GithubException, 
+    Repository,
+    UnknownObjectException,
+    GithubException,
     PullRequest,
-    PaginatedList
+    PaginatedList,
 )
 from unidiff import PatchSet
 from gitbugactions.util import delete_repo_clone
@@ -513,7 +513,7 @@ class PatchCollector:
 
         commit_to_patches: Dict[str, List[BugPatch]] = {}
         commits = list(self.repo_clone.walk(self.repo_clone.head.target))
-        
+
         try:
             if self.pull_requests:
                 pulls: PaginatedList[PullRequest] = self.repo.get_pulls()
@@ -521,7 +521,7 @@ class PatchCollector:
                     pull_commits = pull.get_commits()
                     for pull_commit in pull_commits:
                         commits.append(self.repo_clone.get(pull_commit.sha))
-                
+
             for commit in commits:
                 if self.filter_on_commit_message and not self.__is_bug_fix(commit):
                     continue
@@ -773,7 +773,7 @@ def collect_bugs(
     filter_on_commit_message: bool = True,
     filter_on_commit_time_start: str = None,
     filter_on_commit_time_end: str = None,
-    pull_requests: bool = False
+    pull_requests: bool = False,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about

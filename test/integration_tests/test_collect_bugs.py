@@ -202,7 +202,7 @@ class TestCollectBugs:
             "test/resources/test_collect_bugs",
             "test/resources/test_collect_bugs_out",
             4,
-            pull_requests=True
+            pull_requests=True,
         )
 
     @classmethod
@@ -230,7 +230,7 @@ class TestCollectBugs:
                     "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
                     "629f67ebc0efeeb8868a13ad173f18ec572a8729",
                     "37113cf952bd6d3db563d0d15beae07daefd953e",
-                    "ff6e2662174af4024eef123b7d23b15192748b31"
+                    "ff6e2662174af4024eef123b7d23b15192748b31",
                 ]
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
