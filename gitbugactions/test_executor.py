@@ -27,7 +27,7 @@ class TestExecutor:
         self.repo_clone = repo_clone
         self.runner_image = runner_image
         self.language = language
-        # Note: these default actions may have different configuration options 
+        # Note: these default actions may have different configuration options
         # such as paths, runners, etc.
         self.default_actions = default_actions
         self.first_commit = repo_clone.revparse_single("HEAD")
