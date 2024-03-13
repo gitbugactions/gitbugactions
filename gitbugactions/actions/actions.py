@@ -10,7 +10,7 @@ from typing import List, Dict, Set
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubToken
 from gitbugactions.actions.action import Action
 from gitbugactions.docker.client import DockerClient
 

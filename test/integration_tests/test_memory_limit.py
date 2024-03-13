@@ -1,6 +1,6 @@
 import pytest
 from collect_bugs import PatchCollector
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubAPI
 from gitbugactions.actions.actions import Act
 
 
@@ -8,9 +8,7 @@ from gitbugactions.actions.actions import Act
 def setup():
     global collector
     collector = PatchCollector(
-        GithubToken.get_token().github.get_repo(
-            "gitbugactions/gitbugactions-maven-test-repo"
-        )
+        GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo")
     )
     collector.set_default_github_actions()
     yield

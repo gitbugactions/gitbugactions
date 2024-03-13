@@ -5,7 +5,7 @@ import pytest
 from typing import List
 from unidiff import PatchSet
 from collect_bugs import collect_bugs, PatchCollector, BugPatch
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubToken, GithubAPI
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
 
@@ -14,7 +14,7 @@ def get_token_usage():
     token_usage = 0
     if GithubToken.has_tokens():
         for token in GithubToken._GithubToken__TOKENS:
-            token_usage += 5000 - token.remaining
+            token_usage += token.core_rate_limiter.requests
         return token_usage
     return token_usage
 
@@ -30,9 +30,7 @@ def get_test_results(tests):
 
 
 def test_get_related_commit_info():
-    collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("ASSERT-KTH/flacoco")
-    )
+    collector = PatchCollector(GithubAPI().get_repo("ASSERT-KTH/flacoco"))
     issues = collector._PatchCollector__get_related_commit_info("7bc38df")
     assert len(issues) == 1
     assert issues[0]["id"] == 100
@@ -47,7 +45,7 @@ def test_get_related_commit_info():
     assert len(issues[0]["review_comments"]) == 2
     shutil.rmtree(collector.repo_clone.workdir)
 
-    collector = PatchCollector(GithubToken.get_token().github.get_repo("sr-lab/GLITCH"))
+    collector = PatchCollector(GithubAPI().get_repo("sr-lab/GLITCH"))
     issues = collector._PatchCollector__get_related_commit_info("98dd01d")
     assert len(issues) == 1
     assert issues[0]["id"] == 15
@@ -61,9 +59,7 @@ def test_get_related_commit_info():
 
 
 def test_get_possible_patches():
-    collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("HubSpot/jinjava")
-    )
+    collector = PatchCollector(GithubAPI().get_repo("HubSpot/jinjava"))
     patches: List[BugPatch] = collector.get_possible_patches()
     commits = list(map(lambda patch: patch.commit, patches))
 
@@ -91,7 +87,7 @@ def test_get_possible_patches():
 
 def test_get_possible_patches_2021():
     collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
+        GithubAPI().get_repo("HubSpot/jinjava"),
         filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
         filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
     )
@@ -127,7 +123,7 @@ def test_get_possible_patches_2021():
 
 def test_get_possible_patches_no_keywords():
     collector = PatchCollector(
-        GithubToken.get_token().github.get_repo("HubSpot/jinjava"),
+        GithubAPI().get_repo("HubSpot/jinjava"),
         filter_on_commit_message=False,
         filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
         filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
@@ -169,9 +165,7 @@ def test_get_possible_patches_no_keywords():
 def test_get_possible_patches():
     try:
         collector = PatchCollector(
-            GithubToken.get_token().github.get_repo(
-                "gitbugactions/gitbugactions-maven-test-repo"
-            )
+            GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo")
         )
         bug_patch = collector.get_possible_patches()[0]
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
@@ -187,6 +181,16 @@ def test_get_possible_patches():
         collector.delete_repo()
 
 
+def test_get_possible_patches_pull_requests():
+    collector = PatchCollector(
+        GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo"),
+        pull_requests=True,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+    assert "ff6e2662174af4024eef123b7d23b15192748b31" in commits
+
+
 class TestCollectBugs:
     TOKEN_USAGE: int = 0
 
@@ -198,6 +202,7 @@ class TestCollectBugs:
             "test/resources/test_collect_bugs",
             "test/resources/test_collect_bugs_out",
             4,
+            pull_requests=True,
         )
 
     @classmethod
@@ -216,7 +221,7 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 4
+            assert len(lines) == 5
 
             for line in lines:
                 data = json.loads(line)
@@ -225,6 +230,7 @@ class TestCollectBugs:
                     "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
                     "629f67ebc0efeeb8868a13ad173f18ec572a8729",
                     "37113cf952bd6d3db563d0d15beae07daefd953e",
+                    "ff6e2662174af4024eef123b7d23b15192748b31",
                 ]
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
@@ -323,6 +329,23 @@ class TestCollectBugs:
                     )
                     assert passed == 4
                     assert failure == 1
+
+                elif data["commit_hash"] == "ff6e2662174af4024eef123b7d23b15192748b31":
+                    assert data["strategy"] == "FAIL_PASS"
+                    assert data["commit_message"] == "Fix tests\n"
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    assert len(data["test_patch"]) == 0
+                    passed, failure = get_test_results(
+                        data["actions_runs"][0][0]["tests"]
+                    )
+                    assert passed == 4
+                    assert failure == 1
+
+                    passed, failure = get_test_results(
+                        data["actions_runs"][2][0]["tests"]
+                    )
+                    assert passed == 5
+                    assert failure == 0
 
     @pytest.mark.dependency()
     def test_gitbugactions_pytest_test_repo(self):
@@ -858,7 +881,7 @@ class TestCollectBugs:
                 data["gitbugactions/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
                 ]
-                == 4
+                == 5
             )
             assert (
                 data["gitbugactions/gitbugactions-pytest-test-repo"][

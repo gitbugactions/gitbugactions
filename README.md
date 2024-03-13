@@ -46,6 +46,11 @@ Ensure the commands are executed inside the Poetry shell:
 poetry shell
 ```
 
+Set the environment variable `GITHUB_ACCESS_TOKEN` with your [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). The token is used to perform calls to GitHub's API.
+```
+export GITHUB_ACCESS_TOKEN="<YOUR_ACCESS_TOKEN>"
+```
+
 Use the `--help` command to obtain the list of options required to run each script.
 
 ```
