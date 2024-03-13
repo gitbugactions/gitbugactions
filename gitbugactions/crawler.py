@@ -1,65 +1,16 @@
-import os, sys
-import time
 import math
 import logging
 import tqdm
-import threading
 import pandas as pd
 from abc import ABC, abstractmethod
-from github import Github, Repository, RateLimitExceededException
+from github import Repository
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubAPI
+
 
 # FIXME change to custom logger
 logging.basicConfig(level=logging.INFO)
-
-
-class SearchRateLimiter:
-    """
-    Rate Limiter for the Github search API. The search API has different rate limits
-    than the core API.
-    """
-
-    __GITHUB_REQUESTS_LIMIT = 29  # The real limit is 30, but we try to avoid it
-    __GITHUB_RESET_SECONDS = 60
-
-    def __init__(self):
-        self.requests = 0
-        self.first_request = datetime.now()
-        self.lock = threading.Lock()
-
-    def request(self, fn, *args, **kwargs):
-        with self.lock:
-            time_after_reset = (datetime.now() - self.first_request).total_seconds()
-            retries = 3
-            if self.requests == 0:
-                self.first_request = datetime.now()
-            elif time_after_reset > SearchRateLimiter.__GITHUB_RESET_SECONDS:
-                self.requests = 0
-                self.first_request = datetime.now()
-            if self.requests == SearchRateLimiter.__GITHUB_REQUESTS_LIMIT:
-                time.sleep(SearchRateLimiter.__GITHUB_RESET_SECONDS - time_after_reset)
-                self.requests = 0
-            self.requests += 1
-
-        while retries > 0:
-            try:
-                return fn(*args, **kwargs)
-            except RateLimitExceededException as exc:
-                with self.lock:
-                    logging.warning(f"Github Rate Limit Exceeded: {exc.headers}")
-                    reset_time = datetime.fromtimestamp(
-                        int(exc.headers["x-ratelimit-reset"])
-                    )
-                    retry_after = (reset_time - datetime.now()).total_seconds() + 1
-                    retry_after = max(
-                        retry_after, 0
-                    )  # In case we hit a negative total_seconds
-                    time.sleep(retry_after)
-                    retries -= 1
-                if retries == 0:
-                    raise exc
 
 
 class RepoStrategy(ABC):
@@ -86,15 +37,12 @@ class RepoCrawler:
                 The possible values are listed here:
                 https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases
         """
-        token = GithubToken.get_token()
-        self.github: Github = Github(
-            login_or_token=token if token is None else token.token,
+        self.github: GithubAPI = GithubAPI(
             per_page=RepoCrawler.__PAGE_SIZE,
         )
         self.query: str = query
         self.pagination_freq: str = pagination_freq
         self.requests: int = 0
-        self.rate_lim = SearchRateLimiter()
         self.n_workers = n_workers
         self.executor = ThreadPoolExecutor(max_workers=self.n_workers)
         self.futures = []
@@ -145,8 +93,10 @@ class RepoCrawler:
 
     def __search_repos(self, query: str, repo_strategy: RepoStrategy):
         logging.info(f"Searching repos with query: {query}")
-        page_list = self.rate_lim.request(self.github.search_repositories, query)
-        totalCount = self.rate_lim.request(getattr, page_list, "totalCount")
+        page_list = self.github.search_repositories(query)
+        totalCount = self.github.token.search_rate_limiter.request(
+            getattr, page_list, "totalCount"
+        )
         if totalCount is None:
             logging.error(f'Search "{query}" failed')
             return
@@ -156,7 +106,7 @@ class RepoCrawler:
             )
         n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
-            repos = self.rate_lim.request(page_list.get_page, p)
+            repos = self.github.token.search_rate_limiter.request(page_list.get_page, p)
             results = []
             for repo in repos:
                 args = (repo,)
