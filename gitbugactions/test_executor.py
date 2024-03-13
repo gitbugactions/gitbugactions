@@ -47,7 +47,7 @@ class TestExecutor:
                 for container in docker.containers.list(
                     all=True, filters={"ancestor": runner_image, "status": "exited"}
                 ):
-                    container.remove()
+                    container.remove(force=True)
 
             docker = DockerClient.getInstance()
             schedule.every(1).minutes.do(cleanup)
