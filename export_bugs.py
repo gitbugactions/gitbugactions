@@ -75,6 +75,7 @@ def create_exported_containers(
 
 
 def export_bug_containers(bug: Dict, export_path: str):
+    TestExecutor.toggle_cleanup(False)
     repo_full_name = bug["repository"]
     commit_hash = bug["commit_hash"]
     logging.info(f"Exporting {commit_hash} from {repo_full_name}...")
