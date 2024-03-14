@@ -11,12 +11,12 @@ If you use GitBug-Actions, please cite:
 [GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions](http://arxiv.org/pdf/2310.15642) ([doi:10.1145/3639478.3640023](https://doi.org/10.1145/3639478.3640023))
 
 ```
-@inproceedings{gitbug-actions,
+@inproceedings{gitbugactions,
  title = {GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions},
  year = {2024},
  doi = {10.1145/3639478.3640023},
- author = {Nuno Saavedra and André Silva and Martin Monperrus},
- booktitle = {Proceedings of ICSE},
+ author = {Saavedra, Nuno and Silva, Andr{\'e} and Monperrus, Martin},
+ booktitle = {Proceedings of the ACM/IEEE 46th International Conference on Software Engineering: Companion Proceedings},
 }
 ```
 
@@ -120,26 +120,12 @@ To overcome this, we recommend setting the open-file limit for your user profile
 
 To check the current limit for your user run `ulimit -Sn`.
 
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## Citation
-
-If you use GitBug-Actions in your research work, please cite [GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions](https://arxiv.org/pdf/2310.15642.pdf)
-
-```bibtex
-@inproceedings{gitbugactions,
-  title={GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions},
-  author={Saavedra, Nuno and Silva, Andr{\'e} and Monperrus, Martin},
-  booktitle={Proceedings of the ACM/IEEE 46th International Conference on Software Engineering: Companion Proceedings},
-  doi={10.1145/3639478.3640023}
-}
-```
 
 ## License
 
