@@ -6,6 +6,20 @@ Finally, the tool checks if a bug-fix pattern was found by looking at the test r
 If a bug-fix is found, GitBug-Actions is able to export a Docker image with the reproducible environment for the bug-fix.
 The reproducible environment will preserve all the dependencies required to run the tests for the bug-fix, avoiding the degradation of the benchmark due to dependencies that become unavailable.
 
+If you use GitBug-Actions, please cite:
+
+[GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions](http://arxiv.org/pdf/2310.15642) ([doi:10.1145/3639478.3640023](https://doi.org/10.1145/3639478.3640023))
+
+```
+@inproceedings{gitbug-actions,
+ title = {GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions},
+ year = {2024},
+ doi = {10.1145/3639478.3640023},
+ author = {Nuno Saavedra and André Silva and Martin Monperrus},
+ booktitle = {Proceedings of ICSE},
+}
+```
+
 ## Requirements
 
 ### Act
