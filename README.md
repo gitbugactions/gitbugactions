@@ -10,7 +10,7 @@ If you use GitBug-Actions, please cite:
 
 [GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions](http://arxiv.org/pdf/2310.15642) ([doi:10.1145/3639478.3640023](https://doi.org/10.1145/3639478.3640023))
 
-```
+```bibtex
 @inproceedings{gitbugactions,
  title = {GitBug-Actions: Building Reproducible Bug-Fix Benchmarks with GitHub Actions},
  year = {2024},
