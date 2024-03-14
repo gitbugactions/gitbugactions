@@ -12,7 +12,13 @@ from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set, Optional
 from datetime import datetime
 import dateutil.parser
-from github import Github, Repository, UnknownObjectException, GithubException
+from github import (
+    Repository,
+    UnknownObjectException,
+    GithubException,
+    PullRequest,
+    PaginatedList,
+)
 from unidiff import PatchSet
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import (
@@ -23,7 +29,7 @@ from gitbugactions.actions.actions import (
 from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubAPI
 from gitbugactions.util import (
     get_default_github_actions,
     clone_repo,
@@ -50,6 +56,7 @@ class PatchCollector:
             "filter_on_commit_time_start", None
         )
         self.filter_on_commit_time_end = kwargs.get("filter_on_commit_time_end", None)
+        self.pull_requests = kwargs.get("pull_requests", False)
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -173,9 +180,9 @@ class PatchCollector:
         issues = []
 
         if len(matches) > 0:
-            token = GithubToken.get_token()
+            github = GithubAPI()
             # We need to get the repo again to use the current token
-            repo = token.github.get_repo(self.repo.full_name)
+            repo = github.get_repo(self.repo.full_name)
         else:
             return []
 
@@ -275,8 +282,17 @@ class PatchCollector:
             return
 
         commit_to_patches: Dict[str, List[BugPatch]] = {}
+        commits = list(self.repo_clone.walk(self.repo_clone.head.target))
+
         try:
-            for commit in self.repo_clone.walk(self.repo_clone.head.target):
+            if self.pull_requests:
+                pulls: PaginatedList[PullRequest] = self.repo.get_pulls()
+                for pull in pulls:
+                    pull_commits = pull.get_commits()
+                    for pull_commit in pull_commits:
+                        commits.append(self.repo_clone.get(pull_commit.sha))
+
+            for commit in commits:
                 if self.filter_on_commit_message and not self.__is_bug_fix(commit):
                     continue
 
@@ -432,6 +448,7 @@ def collect_bugs(
     filter_on_commit_time_end: str = None,
     normalize_non_code_patch: bool = True,
     strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
+    pull_requests: bool = False,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -450,13 +467,12 @@ def collect_bugs(
         normalize_non_code_patch (bool, optional): If True, the non-code patch will be applied to previous commits. Defaults to True.
         strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
                                            The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
+        pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
     """
     set_test_config(normalize_non_code_patch, strategies)
 
     Act.set_memory_limit(memory_limit)
-    token = GithubToken.get_token()
-    github: Github = Github(
-        login_or_token=token if token is None else token.token,
+    github: GithubAPI = GithubAPI(
         per_page=100,
         pool_size=n_workers,
     )
@@ -472,6 +488,7 @@ def collect_bugs(
         "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
         if filter_on_commit_time_end is not None
         else None,
+        "pull_requests": pull_requests,
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []

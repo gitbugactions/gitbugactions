@@ -8,7 +8,7 @@ from unidiff import PatchSet
 from gitbugactions.actions.actions import ActTestsRun
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.github_token import GithubToken
+from gitbugactions.github_api import GithubToken
 from gitbugactions.util import get_patch_file_extensions
 from gitbugactions.collect_bugs.test_config import TestConfig
 
