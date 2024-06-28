@@ -800,14 +800,16 @@ def collect_bugs(
 
     kwargs = {
         "filter_on_commit_message": filter_on_commit_message,
-        "filter_on_commit_time_start": dateutil.parser.parse(
-            filter_on_commit_time_start
-        )
-        if filter_on_commit_time_start is not None
-        else None,
-        "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
-        if filter_on_commit_time_end is not None
-        else None,
+        "filter_on_commit_time_start": (
+            dateutil.parser.parse(filter_on_commit_time_start)
+            if filter_on_commit_time_start is not None
+            else None
+        ),
+        "filter_on_commit_time_end": (
+            dateutil.parser.parse(filter_on_commit_time_end)
+            if filter_on_commit_time_end is not None
+            else None
+        ),
         "pull_requests": pull_requests,
     }
 
