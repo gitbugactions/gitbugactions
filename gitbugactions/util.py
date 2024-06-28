@@ -59,7 +59,7 @@ def get_default_github_actions(
         commits = re.findall("^commit ([a-z0-9]*)", stdout, flags=re.MULTILINE)
         # We add the latest commit because it was the commit used to test
         # the actions in the collect_repos phase
-        commits.append(head.hex)
+        commits.append(str(head.id))
 
         # Run commits to get first valid workflow
         for commit in commits:
@@ -82,7 +82,7 @@ def get_default_github_actions(
             except (yaml.YAMLError, JUnitXmlError, xml.etree.ElementTree.ParseError):
                 continue
             finally:
-                repo_clone.reset(head.oid, pygit2.GIT_RESET_HARD)
+                repo_clone.reset(head.id, pygit2.GIT_RESET_HARD)
                 subprocess.run(
                     ["git", "clean", "-f", "-d", "-x"],
                     cwd=repo_clone.workdir,
@@ -92,7 +92,7 @@ def get_default_github_actions(
         raise RuntimeError(f"{repo_clone.workdir} has no valid default actions.")
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-        repo_clone.reset(first_commit.oid, pygit2.GIT_RESET_HARD)
+        repo_clone.reset(first_commit.id, pygit2.GIT_RESET_HARD)
         if os.path.exists(os.path.join(repo_clone.workdir, ".act-result")):
             shutil.rmtree(os.path.join(repo_clone.workdir, ".act-result"))
 

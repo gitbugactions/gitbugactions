@@ -88,8 +88,10 @@ def test_get_possible_patches():
 def test_get_possible_patches_2021():
     collector = PatchCollector(
         GithubAPI().get_repo("HubSpot/jinjava"),
-        filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
-        filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
+        filter_on_commit_time_start=dateutil.parser.parse(
+            "2021-01-01 00:00 UTC",
+        ),
+        filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00 UTC"),
     )
     patches: List[BugPatch] = collector.get_possible_patches()
     commits = list(map(lambda patch: patch.commit, patches))
@@ -125,8 +127,8 @@ def test_get_possible_patches_no_keywords():
     collector = PatchCollector(
         GithubAPI().get_repo("HubSpot/jinjava"),
         filter_on_commit_message=False,
-        filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00"),
-        filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00"),
+        filter_on_commit_time_start=dateutil.parser.parse("2021-01-01 00:00 UTC"),
+        filter_on_commit_time_end=dateutil.parser.parse("2022-01-01 00:00 UTC"),
     )
     patches: List[BugPatch] = collector.get_possible_patches()
     commits = list(map(lambda patch: patch.commit, patches))
@@ -235,13 +237,16 @@ class TestCollectBugs:
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
                     assert data["commit_message"] == "Fix sum\n"
-                    assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
+                    assert data["commit_timestamp"] == "2023-06-05T13:19:21+00:00Z"
                     assert (
                         data["previous_commit_hash"]
                         == "cad6744850817b708400736678d2601cbd1c1dd6"
                     )
                     assert data["previous_commit_message"] == "Add gitignore\n"
-                    assert data["previous_commit_timestamp"] == "2023-06-05T13:19:12Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-06-05T13:19:12+00:00Z"
+                    )
                     assert data["time_to_patch"] == "0:00:09"
                     assert data["strategy"] == "PASS_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 1
@@ -260,17 +265,20 @@ class TestCollectBugs:
                         == "Failure"
                     )
                     assert data["actions_runs"][2][0]["default_actions"]
-                    assert data["commit_timestamp"] == "2023-06-05T13:19:21Z"
+                    assert data["commit_timestamp"] == "2023-06-05T13:19:21+00:00Z"
 
                 elif data["commit_hash"] == "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80":
                     assert data["commit_message"] == "Fix subtract. Fixes #1\n"
-                    assert data["commit_timestamp"] == "2023-06-16T14:16:27Z"
+                    assert data["commit_timestamp"] == "2023-06-16T14:16:27+00:00Z"
                     assert (
                         data["previous_commit_hash"]
                         == "5871e6f8f072b4b3e07d4753c55c6c6302419b1e"
                     )
                     assert data["previous_commit_message"] == "Add subtract feature\n"
-                    assert data["previous_commit_timestamp"] == "2023-06-10T15:22:49Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-06-10T15:22:49+00:00Z"
+                    )
                     assert data["time_to_patch"] == "5 days, 22:53:38"
                     assert data["strategy"] == "FAIL_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 1
@@ -289,7 +297,7 @@ class TestCollectBugs:
                     assert data["issues"][0]["body"] == "Test"
                     assert len(data["issues"][0]["comments"]) == 1
                     assert data["issues"][0]["comments"][0] == "Test"
-                    assert data["commit_timestamp"] == "2023-06-16T14:16:27Z"
+                    assert data["commit_timestamp"] == "2023-06-16T14:16:27+00:00Z"
                     passed, failure = get_test_results(
                         data["actions_runs"][0][0]["tests"]
                     )
@@ -372,13 +380,16 @@ class TestCollectBugs:
                 if data["commit_hash"] == "0e1907f75fcd3936b6d64292bc278250f2ee9ca3":
                     assert len(PatchSet(data["non_code_patch"])) == 0
                     assert data["commit_message"] == "fix sum\n"
-                    assert data["commit_timestamp"] == "2023-06-09T20:06:31Z"
+                    assert data["commit_timestamp"] == "2023-06-09T20:06:31+00:00Z"
                     assert (
                         data["previous_commit_hash"]
                         == "fd90a022e97988819f93abdc8828dd75e5f50776"
                     )
                     assert data["previous_commit_message"] == "initial implementation\n"
-                    assert data["previous_commit_timestamp"] == "2023-06-09T20:05:56Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-06-09T20:05:56+00:00Z"
+                    )
                     assert data["time_to_patch"] == "0:00:35"
                     assert data["strategy"] == "PASS_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 1
@@ -459,13 +470,16 @@ class TestCollectBugs:
                     assert len(PatchSet(data["non_code_patch"])) > 0
                     assert len(PatchSet(data["bug_patch"])) == 0
                     assert data["commit_message"] == "fix pi\n"
-                    assert data["commit_timestamp"] == "2023-07-03T09:33:35Z"
+                    assert data["commit_timestamp"] == "2023-07-03T09:33:35+00:00Z"
                     assert (
                         data["previous_commit_hash"]
                         == "3b1fba52bb74343dfd2466446cbfd94f1f1700f9"
                     )
                     assert data["previous_commit_message"] == "implement pi\n"
-                    assert data["previous_commit_timestamp"] == "2023-07-03T09:32:44Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-07-03T09:32:44+00:00Z"
+                    )
                     assert data["time_to_patch"] == "0:00:51"
                     assert data["strategy"] == "FAIL_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 0
@@ -480,13 +494,16 @@ class TestCollectBugs:
                 elif data["commit_hash"] == "05e841e86b09a60324dd77aa6d247bfa6331ad9e":
                     assert len(PatchSet(data["non_code_patch"])) > 0
                     assert data["commit_message"] == "fix golden\n"
-                    assert data["commit_timestamp"] == "2023-07-03T09:39:47Z"
+                    assert data["commit_timestamp"] == "2023-07-03T09:39:47+00:00Z"
                     assert (
                         data["previous_commit_hash"]
                         == "cb83f8851cc1a4f30bef7e096c22caba10cb450f"
                     )
                     assert data["previous_commit_message"] == "implement golden\n"
-                    assert data["previous_commit_timestamp"] == "2023-07-03T09:39:24Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-07-03T09:39:24+00:00Z"
+                    )
                     assert data["time_to_patch"] == "0:00:23"
                     assert data["strategy"] == "FAIL_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 1
@@ -515,13 +532,13 @@ class TestCollectBugs:
             data = json.loads(lines[0])
             assert data["commit_hash"] == "2289b33a322f01b95405905c53770a63fa21b8bf"
             assert data["commit_message"] == "fix sum\n"
-            assert data["commit_timestamp"] == "2023-06-10T15:07:36Z"
+            assert data["commit_timestamp"] == "2023-06-10T15:07:36+00:00Z"
             assert (
                 data["previous_commit_hash"]
                 == "cab2445ecf7788bed39802d716ae095fc499cafa"
             )
             assert data["previous_commit_message"] == "initial implementation\n"
-            assert data["previous_commit_timestamp"] == "2023-06-10T15:07:10Z"
+            assert data["previous_commit_timestamp"] == "2023-06-10T15:07:10+00:00Z"
             assert data["time_to_patch"] == "0:00:26"
             assert data["strategy"] == "PASS_PASS"
             assert len(data["bug_patch_file_extensions"]) == 1
@@ -610,14 +627,14 @@ class TestCollectBugs:
             assert len(lines) == 1
             data = json.loads(lines[0])
             assert data["commit_hash"] == "d3d7a607e3a8abc330f8fd69f677284a9afaf650"
-            assert data["commit_timestamp"] == "2023-06-20T14:54:30Z"
+            assert data["commit_timestamp"] == "2023-06-20T14:54:30+00:00Z"
             assert data["commit_message"] == "fix sum\n"
             assert (
                 data["previous_commit_hash"]
                 == "73a8a00fc8bbbe0af1351b4e97682138a32981b2"
             )
             assert data["previous_commit_message"] == "initial implementation\n"
-            assert data["previous_commit_timestamp"] == "2023-06-20T14:54:25Z"
+            assert data["previous_commit_timestamp"] == "2023-06-20T14:54:25+00:00Z"
             assert data["time_to_patch"] == "0:00:05"
             assert data["strategy"] == "PASS_PASS"
             assert len(data["bug_patch_file_extensions"]) == 1
@@ -712,14 +729,17 @@ class TestCollectBugs:
                 ]
 
                 if data["commit_hash"] == "c169aa04ee612b23ff9b3405260851c5ffa98e88":
-                    assert data["commit_timestamp"] == "2023-07-21T16:48:15Z"
+                    assert data["commit_timestamp"] == "2023-07-21T16:48:15+00:00Z"
                     assert data["commit_message"] == "fix subtract\n"
                     assert (
                         data["previous_commit_hash"]
                         == "5cd82572d2ecf9fdd20bea5f4602ded6b3608b54"
                     )
                     assert data["previous_commit_message"] == "initial commit\n"
-                    assert data["previous_commit_timestamp"] == "2023-07-21T16:47:50Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-07-21T16:47:50+00:00Z"
+                    )
                     assert data["time_to_patch"] == "0:00:25"
                     assert data["strategy"] == "FAIL_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 1
@@ -780,14 +800,17 @@ class TestCollectBugs:
                     )
 
                 if data["commit_hash"] == "862faa2fe219817eab67de0a95c796f31fc595f1":
-                    assert data["commit_timestamp"] == "2023-07-22T10:20:51Z"
+                    assert data["commit_timestamp"] == "2023-07-22T10:20:51+00:00Z"
                     assert data["commit_message"] == "fix multiply\n"
                     assert (
                         data["previous_commit_hash"]
                         == "e383979ee1e98cac1681d4321f32ad6c9087b24f"
                     )
                     assert data["previous_commit_message"] == "implement multiply\n"
-                    assert data["previous_commit_timestamp"] == "2023-07-22T10:20:28Z"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2023-07-22T10:20:28+00:00Z"
+                    )
                     assert data["time_to_patch"] == "0:00:23"
                     assert data["strategy"] == "PASS_PASS"
                     assert len(data["bug_patch_file_extensions"]) == 1

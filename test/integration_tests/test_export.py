@@ -59,7 +59,7 @@ def test_run_bug():
     initial_commit = repo_clone.revparse_single(str(repo_clone.head.target))
 
     repo_clone.checkout_tree(commit)
-    repo_clone.set_head(commit.oid)
+    repo_clone.set_head(commit.id)
 
     runs = run_bug(
         repo_full_name,
@@ -73,12 +73,12 @@ def test_run_bug():
     assert len(runs[0].failed_tests) == 0
     assert not runs[0].failed
 
-    repo_clone.reset(initial_commit.oid, pygit2.GIT_RESET_HARD)
+    repo_clone.reset(initial_commit.id, pygit2.GIT_RESET_HARD)
     subprocess.run(
         ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
     )
     repo_clone.checkout_tree(previous_commit)
-    repo_clone.set_head(previous_commit.oid)
+    repo_clone.set_head(previous_commit.id)
     repo_clone.apply(pygit2.Diff.parse_diff(bug["non_code_patch"]))
 
     runs = run_bug(
@@ -93,12 +93,12 @@ def test_run_bug():
     assert len(runs[0].failed_tests) == 0
     assert not runs[0].failed
 
-    repo_clone.reset(initial_commit.oid, pygit2.GIT_RESET_HARD)
+    repo_clone.reset(initial_commit.id, pygit2.GIT_RESET_HARD)
     subprocess.run(
         ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
     )
     repo_clone.checkout_tree(previous_commit)
-    repo_clone.set_head(previous_commit.oid)
+    repo_clone.set_head(previous_commit.id)
     repo_clone.apply(pygit2.Diff.parse_diff(bug["non_code_patch"]))
     repo_clone.apply(pygit2.Diff.parse_diff(bug["test_patch"]))
 
