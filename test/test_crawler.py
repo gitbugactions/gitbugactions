@@ -1,4 +1,5 @@
 import time
+import pytest
 
 from unittest import mock
 from concurrent.futures import ThreadPoolExecutor
@@ -20,6 +21,7 @@ def test_rate_limiter():
         assert rate_limiter.requests == 2
 
 
+@pytest.mark.first
 def test_github_api():
     with mock.patch("github.Github.get_emojis") as get_emojis:
         github = GithubAPI()
