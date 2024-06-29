@@ -223,7 +223,7 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 5
+            assert len(lines) == 6
 
             for line in lines:
                 data = json.loads(line)
@@ -233,6 +233,7 @@ class TestCollectBugs:
                     "629f67ebc0efeeb8868a13ad173f18ec572a8729",
                     "37113cf952bd6d3db563d0d15beae07daefd953e",
                     "ff6e2662174af4024eef123b7d23b15192748b31",
+                    "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f",
                 ]
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
@@ -349,6 +350,22 @@ class TestCollectBugs:
                     assert passed == 4
                     assert failure == 1
 
+                    passed, failure = get_test_results(
+                        data["actions_runs"][2][0]["tests"]
+                    )
+                    assert passed == 5
+                    assert failure == 0
+
+                elif data["commit_hash"] == "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f":
+                    assert data["strategy"] == "FAIL_PASS"
+                    assert data["commit_message"] == "Fix typo and tests\n"
+                    assert data["change_type"] == "MIXED"
+                    assert len(data["test_patch"]) == 0
+                    passed, failure = get_test_results(
+                        data["actions_runs"][0][0]["tests"]
+                    )
+                    assert passed == 4
+                    assert failure == 1
                     passed, failure = get_test_results(
                         data["actions_runs"][2][0]["tests"]
                     )
@@ -893,7 +910,7 @@ class TestCollectBugs:
         ) as f:
             data = json.loads(f.read())
             assert len(data.keys()) == 5
-            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 10
+            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 12
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
             assert (
@@ -904,7 +921,7 @@ class TestCollectBugs:
                 data["gitbugactions/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
                 ]
-                == 5
+                == 6
             )
             assert (
                 data["gitbugactions/gitbugactions-pytest-test-repo"][
