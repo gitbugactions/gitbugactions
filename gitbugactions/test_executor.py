@@ -71,7 +71,7 @@ class TestExecutor:
             TestExecutor.__CLEANUP_ENABLED = enabled
 
     def reset_repo(self):
-        self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
+        self.repo_clone.reset(self.first_commit.id, pygit2.GIT_RESET_HARD)
         subprocess.run(
             ["git", "clean", "-f", "-d", "-x"],
             cwd=self.repo_clone.workdir,

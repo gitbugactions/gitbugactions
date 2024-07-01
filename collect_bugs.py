@@ -7,11 +7,11 @@ import logging
 import tqdm
 import threading
 import fire
+import datetime
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set, Optional
 from enum import Enum
-from datetime import datetime
 import dateutil.parser
 from github import (
     Repository,
@@ -76,20 +76,27 @@ class BugPatch:
     ):
         self.repo: Repository = repo
         self.language: str = repo.language.lower().strip()
-        self.commit: str = commit.hex
+        self.commit: str = str(commit.id)
         self.commit_message: str = commit.message
         self.commit_timestamp: str = (
-            datetime.utcfromtimestamp(int(commit.commit_time)).isoformat() + "Z"
+            datetime.datetime.fromtimestamp(
+                int(commit.commit_time), datetime.UTC
+            ).isoformat()
+            + "Z"
         )
-        self.previous_commit: str = previous_commit.hex
+        self.previous_commit: str = str(previous_commit.id)
         self.previous_commit_message: str = previous_commit.message
         self.previous_commit_timestamp: str = (
-            datetime.utcfromtimestamp(int(previous_commit.commit_time)).isoformat()
+            datetime.datetime.fromtimestamp(
+                int(previous_commit.commit_time), datetime.UTC
+            ).isoformat()
             + "Z"
         )
         self.time_to_patch: str = str(
-            datetime.utcfromtimestamp(int(commit.commit_time))
-            - datetime.utcfromtimestamp(int(previous_commit.commit_time))
+            datetime.datetime.fromtimestamp(int(commit.commit_time), datetime.UTC)
+            - datetime.datetime.fromtimestamp(
+                int(previous_commit.commit_time), datetime.UTC
+            )
         )
         self.bug_patch: PatchSet = self.__clean_patch(bug_patch)
         self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(
@@ -129,7 +136,8 @@ class BugPatch:
             "repository": self.repo.full_name,
             "language": self.language,
             "clone_url": self.repo.clone_url,
-            "collection_timestamp": datetime.utcnow().isoformat() + "Z",
+            "collection_timestamp": datetime.datetime.now(datetime.UTC).isoformat()
+            + "Z",
             "commit_hash": self.commit,
             "commit_message": self.commit_message,
             "commit_timestamp": self.commit_timestamp,
@@ -165,12 +173,12 @@ class BugPatch:
         repo_clone.checkout_tree(commit)
         repo_clone.create_tag(
             str(uuid.uuid4()),
-            commit.oid,
-            pygit2.GIT_OBJ_COMMIT,
+            commit.id,
+            pygit2.GIT_OBJECT_COMMIT,
             commit.author,
             commit.message,
         )
-        repo_clone.set_head(commit.oid)
+        repo_clone.set_head(commit.id)
 
     def __apply_non_code_patch(self, repo_clone: pygit2.Repository):
         # We only apply the non code patch when the bug patch is non-empty
@@ -322,7 +330,7 @@ class PatchCollector:
         return "fix" in tokens
 
     def __get_patches(self, repo_clone, commit, previous_commit):
-        diff = repo_clone.diff(previous_commit.hex, commit.hex)
+        diff = repo_clone.diff(str(previous_commit.id), str(commit.id))
         patch: PatchSet = PatchSet(diff.patch)
         bug_patch: PatchSet = PatchSet("")
         test_patch: PatchSet = PatchSet("")
@@ -351,7 +359,7 @@ class PatchCollector:
         """
         Cleanups up repository dir for any untracked or modified files
         """
-        repo_clone.reset(commit.oid, pygit2.GIT_RESET_HARD)
+        repo_clone.reset(commit.id, pygit2.GIT_RESET_HARD)
         subprocess.run(
             ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
         )
@@ -526,7 +534,9 @@ class PatchCollector:
                 if self.filter_on_commit_message and not self.__is_bug_fix(commit):
                     continue
 
-                commit_time = datetime.utcfromtimestamp(int(commit.commit_time))
+                commit_time = datetime.datetime.fromtimestamp(
+                    int(commit.commit_time), datetime.UTC
+                )
                 if (
                     self.filter_on_commit_time_start
                     and commit_time < self.filter_on_commit_time_start
@@ -540,7 +550,9 @@ class PatchCollector:
                     continue
 
                 try:
-                    previous_commit = self.repo_clone.revparse_single(commit.hex + "~1")
+                    previous_commit = self.repo_clone.revparse_single(
+                        str(commit.id) + "~1"
+                    )
                 except KeyError:
                     # The current commit is the first one
                     continue
@@ -550,16 +562,16 @@ class PatchCollector:
                 )
                 if len(bug_patch) == 0 and len(non_code_patch) == 0:
                     logging.info(
-                        f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
+                        f"Skipping commit {self.repo.full_name} {str(commit.id)}: no bug patch"
                     )
                     continue
 
                 actions: Set[Action] = set()
-                actions.update(self.__get_used_actions(commit.oid.hex))
-                actions.update(self.__get_used_actions(previous_commit.oid.hex))
+                actions.update(self.__get_used_actions(str(commit.id)))
+                actions.update(self.__get_used_actions(str(previous_commit.id)))
 
-                if previous_commit.hex in commit_to_patches:
-                    commit_to_patches[previous_commit.hex].append(
+                if str(previous_commit.id) in commit_to_patches:
+                    commit_to_patches[str(previous_commit.id)].append(
                         BugPatch(
                             self.repo,
                             commit,
@@ -571,7 +583,7 @@ class PatchCollector:
                         )
                     )
                 else:
-                    commit_to_patches[previous_commit.hex] = [
+                    commit_to_patches[str(previous_commit.id)] = [
                         BugPatch(
                             self.repo,
                             commit,
@@ -586,7 +598,7 @@ class PatchCollector:
                     self.repo_clone, self.repo_clone.workdir, self.first_commit
                 )
         finally:
-            self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
+            self.repo_clone.reset(self.first_commit.id, pygit2.GIT_RESET_HARD)
 
         # We remove the merges since when multiple bug patches point to the same
         # previous commit, merges tend to only add useless diffs to another commit
@@ -800,14 +812,16 @@ def collect_bugs(
 
     kwargs = {
         "filter_on_commit_message": filter_on_commit_message,
-        "filter_on_commit_time_start": dateutil.parser.parse(
-            filter_on_commit_time_start
-        )
-        if filter_on_commit_time_start is not None
-        else None,
-        "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
-        if filter_on_commit_time_end is not None
-        else None,
+        "filter_on_commit_time_start": (
+            dateutil.parser.parse(filter_on_commit_time_start)
+            if filter_on_commit_time_start is not None
+            else None
+        ),
+        "filter_on_commit_time_end": (
+            dateutil.parser.parse(filter_on_commit_time_end)
+            if filter_on_commit_time_end is not None
+            else None
+        ),
         "pull_requests": pull_requests,
     }
 

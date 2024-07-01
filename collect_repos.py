@@ -3,7 +3,7 @@ import os, logging, sys, traceback
 import json
 import uuid
 import fire
-from datetime import datetime
+import datetime
 from github import Repository
 from gitbugactions.util import delete_repo_clone, clone_repo
 from gitbugactions.crawler import RepoStrategy, RepoCrawler
@@ -36,7 +36,7 @@ class CollectReposStrategy(RepoStrategy):
             "language": repo.language.strip().lower(),
             "size": repo.size,
             "clone_url": repo.clone_url,
-            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
             "clone_success": False,
             "number_of_actions": 0,
             "number_of_test_actions": 0,
