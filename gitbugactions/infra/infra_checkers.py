@@ -7,6 +7,11 @@ from pathlib import Path
 
 
 class InfraChecker(ABC):
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(InfraChecker, cls).__new__(cls)
+        return cls.instance
+
     @abstractmethod
     def check(self, path: Path) -> bool:
         pass
@@ -84,74 +89,88 @@ class AnsibleChecker(InfraChecker):
             yaml_file = yaml.safe_load(f)
 
         # Galaxy files
-        if jsonschema.validate(yaml_file, self.galaxy_schema):
+        try:
+            jsonschema.validate(yaml_file, self.galaxy_schema)
             return True
+        except jsonschema.ValidationError:
+            pass
         
         # Inventory files
-        if (
-            path.match("*hosts.yaml")
-            or path.match("*inventory.yaml")
-            or ("hosts" in path.parts and path.match("*.yaml"))
-            or ("inventory" in path.parts and path.match("*.yaml"))
-            or path.match("*hosts.yml")
-            or path.match("*inventory.yml")
-            or ("hosts" in path.parts and path.match("*.yml"))
-            or ("inventory" in path.parts and path.match("*.yml"))
-        ) and jsonschema.validate(yaml_file, self.inventory_schema):
-            return True
+        try:
+            if (
+                path.match("*hosts.yaml")
+                or path.match("*inventory.yaml")
+                or ("hosts" in path.parts and path.match("*.yaml"))
+                or ("inventory" in path.parts and path.match("*.yaml"))
+                or path.match("*hosts.yml")
+                or path.match("*inventory.yml")
+                or ("hosts" in path.parts and path.match("*.yml"))
+                or ("inventory" in path.parts and path.match("*.yml"))
+            ):
+                jsonschema.validate(yaml_file, self.inventory_schema)
+                return True
+        except jsonschema.ValidationError:
+            pass
         
         # Meta files
-        if (
-            "meta" in path.parts
-            and jsonschema.validate(yaml_file, self.meta_schema)
-        ):
-            return True
+        try:
+            if "meta" in path.parts:
+                jsonschema.validate(yaml_file, self.meta_schema)
+                return True
+        except jsonschema.ValidationError:
+            pass
         
         # Molecule files
-        if (
-            "molecule" in path.parts
-            and jsonschema.validate(yaml_file, self.molecule_schema)
-        ):
-            return True
+        try:
+            if "molecule" in path.parts:
+                jsonschema.validate(yaml_file, self.molecule_schema)
+                return True
+        except jsonschema.ValidationError:
+            pass
         
         # Playbook files
-        if jsonschema.validate(yaml_file, self.playbook_schema):
+        try:
+            jsonschema.validate(yaml_file, self.playbook_schema)
             return True
+        except jsonschema.ValidationError:
+            pass
         
         # Rulebook files
-        if (
-            "rulebooks" in path.parts
-            and jsonschema.validate(yaml_file, self.rulebook_schema)
-        ):
-            return True
+        try:
+            if "rulebooks" in path.parts:
+                jsonschema.validate(yaml_file, self.rulebook_schema)
+                return True
+        except jsonschema.ValidationError:
+            pass
         
         # Tasks files
-        if (
-            ("tasks" in path.parts or "handlers" in path.parts)
-            and jsonschema.validate(yaml_file, self.tasks_schema)
-        ):
-            return True
+        try:
+            if "tasks" in path.parts or "handlers" in path.parts:
+                jsonschema.validate(yaml_file, self.tasks_schema)
+                return True
+        except jsonschema.ValidationError:
+            pass
         
         # Vars files
-        if (
-            (
+        try:
+            if (
                 "vars" in path.parts 
                 or "defaults" in path.parts 
-                or "host_vars" in path.parts 
+                or "host_vars" in path.parts
                 or "group_vars" in path.parts
-            )
-            and jsonschema.validate(yaml_file, self.vars_schema)
-        ):
-            return True
+            ):
+                jsonschema.validate(yaml_file, self.vars_schema)
+                return True
+        except jsonschema.ValidationError:
+            pass
         
         return False
 
 
 class KubernetesChecker(InfraChecker):
     def __init__(self) -> None:
-         # https://github.com/instrumenta/kubernetes-json-schema/tree/133f84871ccf6a7a7d422cc40e308ae1c044c2ab/v1.18.1-standalone
         schemas = Path(os.path.dirname(os.path.abspath(__file__))) / "schemas" / "kubernetes"
-        with open(schemas / "all.json") as f:
+        with open(schemas / "check.json") as f:
             self.schema = json.load(f)
 
     def check(self, path: Path) -> bool:
@@ -161,7 +180,24 @@ class KubernetesChecker(InfraChecker):
         with open(path) as f:
             yaml_file = yaml.safe_load(f)
         
-        if jsonschema.validate(yaml_file, self.schema):
+        validator = jsonschema.Draft202012Validator(self.schema)
+        try:
+            validator.validate(yaml_file)
             return True
+        except jsonschema.ValidationError:
+            pass
         
         return False
+    
+
+def is_infra_file(path: Path):
+    """
+    Check if the file is an Infrastructure as Code file
+
+    Args:
+        path (Path): Path to the file
+    """
+    for cls in InfraChecker.__subclasses__():
+        if cls().check(path):
+            return True
+    return False
