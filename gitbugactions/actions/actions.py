@@ -202,7 +202,10 @@ class ActTestsFailureStrategy(ActFailureStrategy):
             # pass the code from the container.
             run.return_code == 1  # Increase performance by avoiding
             and len(run.failed_tests) != 0  # to check the output in every run
-            and ("exitcode '137'" in run.stderr or "exitcode '137': failure" in run.stdout)
+            and (
+                "exitcode '137'" in run.stderr
+                or "exitcode '137': failure" in run.stdout
+            )
         ) or (
             # 124 is the return code for the timeout
             (run.return_code == 124)
@@ -441,8 +444,8 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(
-        self, 
-        workflow: GitHubWorkflow, 
+        self,
+        workflow: GitHubWorkflow,
         act_cache_dir: str,
         act_fail_strategy: ActFailureStrategy = ActTestsFailureStrategy(),
         timeout: int = 10,

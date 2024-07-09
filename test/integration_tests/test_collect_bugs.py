@@ -205,12 +205,7 @@ class TestCollectBugs:
             "test/resources/test_collect_bugs",
             "test/resources/test_collect_bugs_out",
             4,
-            strategies=[
-                "PASS_PASS",
-                "FAIL_PASS",
-                "FAIL_FAIL",
-                "FAIL_PASS_BUILD"
-            ],
+            strategies=["PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD"],
             pull_requests=True,
         )
 
@@ -346,7 +341,7 @@ class TestCollectBugs:
                     )
                     assert passed == 4
                     assert failure == 1
-                
+
                 elif data["commit_hash"] == "2d9f3130c2082c50a8c0aab4426e04449f4f7cce":
                     assert data["strategy"] == "FAIL_PASS_BUILD"
                     assert data["commit_message"] == "Fix typo and tests"

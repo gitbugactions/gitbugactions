@@ -9,7 +9,9 @@ from pathlib import Path
 from gitbugactions.util import delete_repo_clone, clone_repo
 from gitbugactions.crawler import RepoStrategy, RepoCrawler
 from gitbugactions.actions.actions import (
-    GitHubActions, ActCacheDirManager, ActCheckCodeFailureStrategy
+    GitHubActions,
+    ActCacheDirManager,
+    ActCheckCodeFailureStrategy,
 )
 from gitbugactions.infra.infra_checkers import is_infra_file
 
@@ -100,9 +102,7 @@ class CollectInfraReposStrategy(CollectReposStrategy):
     def test_actions(self, data: dict, repo: Repository, repo_path: str):
         actions = GitHubActions(repo_path, repo.language)
         data["number_of_actions"] = len(actions.workflows)
-        data["actions_build_tools"] = [
-            x.get_build_tool() for x in actions.workflows
-        ]
+        data["actions_build_tools"] = [x.get_build_tool() for x in actions.workflows]
         data["number_of_test_actions"] = len(actions.test_workflows)
         data["actions_test_build_tools"] = [
             x.get_build_tool() for x in actions.test_workflows
@@ -122,9 +122,9 @@ class CollectInfraReposStrategy(CollectReposStrategy):
                 act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
                 try:
                     act_run = actions.run_workflow(
-                        workflow, 
+                        workflow,
                         act_cache_dir=act_cache_dir,
-                        act_fail_strategy=ActCheckCodeFailureStrategy()
+                        act_fail_strategy=ActCheckCodeFailureStrategy(),
                     )
                 finally:
                     ActCacheDirManager.return_act_cache_dir(act_cache_dir)
@@ -145,7 +145,9 @@ class CollectInfraReposStrategy(CollectReposStrategy):
         data = {
             "repository": repo.full_name,
             "stars": repo.stargazers_count,
-            "language": repo.language.strip().lower() if repo.language is not None else "",
+            "language": (
+                repo.language.strip().lower() if repo.language is not None else ""
+            ),
             "size": repo.size,
             "clone_url": repo.clone_url,
             "timestamp": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
@@ -163,13 +165,13 @@ class CollectInfraReposStrategy(CollectReposStrategy):
             for f in files:
                 if is_infra_file(Path(os.path.join(root, f))):
                     infra_files += 1
-        
+
         data["infra_files"] = infra_files
         if infra_files == 0:
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
             return
-        
+
         try:
             self.test_actions(data, repo, repo_path)
             delete_repo_clone(repo_clone)

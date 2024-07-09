@@ -61,8 +61,12 @@ def test_infra_ansible_checker():
     assert checker.check(Path("test/resources/test_infra/ansible/tasks/tasks.yml"))
     assert checker.check(Path("test/resources/test_infra/ansible/vars/vars.yml"))
     assert checker.check(Path("test/resources/test_infra/ansible/galaxy.yml"))
-    assert checker.check(Path("test/resources/test_infra/ansible/rulebooks/rulebook.yml"))
-    assert checker.check(Path("test/resources/test_infra/ansible/molecule/molecule.yml"))
+    assert checker.check(
+        Path("test/resources/test_infra/ansible/rulebooks/rulebook.yml")
+    )
+    assert checker.check(
+        Path("test/resources/test_infra/ansible/molecule/molecule.yml")
+    )
 
 
 def test_infra_ansible_checker_false():
@@ -75,7 +79,7 @@ def test_infra_ansible_checker_false():
 def test_infra_kubernetes_checker():
     checker = KubernetesChecker()
     assert checker.check(Path("test/resources/test_infra/kubernetes/deployment.yaml"))
-    #(Path("test/resources/test_infra/kubernetes/replicate_set.yaml"))
+    # (Path("test/resources/test_infra/kubernetes/replicate_set.yaml"))
 
 
 def test_infra_kubernetes_checker_false():
