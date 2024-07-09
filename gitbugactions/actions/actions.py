@@ -360,14 +360,14 @@ class GitHubActions:
     def __init__(
         self,
         repo_path,
-        language: str,
+        language: str | None,
         keep_containers: bool = False,
         runner_image: str = "gitbugactions:latest",
         offline: bool = False,
     ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
-        self.language: str = language.strip().lower()
+        self.language: str = language.strip().lower() if language else ""
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
         self.runner_image = runner_image

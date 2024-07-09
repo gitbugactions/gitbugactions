@@ -5,11 +5,13 @@ import uuid
 import fire
 import datetime
 from github import Repository
+from pathlib import Path
 from gitbugactions.util import delete_repo_clone, clone_repo
 from gitbugactions.crawler import RepoStrategy, RepoCrawler
 from gitbugactions.actions.actions import (
     GitHubActions, ActCacheDirManager, ActCheckCodeFailureStrategy
 )
+from gitbugactions.infra.infra_checkers import is_infra_file
 
 
 class CollectReposStrategy(RepoStrategy):
@@ -108,7 +110,7 @@ class CollectInfraReposStrategy(CollectReposStrategy):
         data["actions_run"] = []
         actions.save_workflows()
 
-        if len(actions.workflows) > 1:
+        if len(actions.workflows) >= 1:
             logging.info(f"Running actions for {repo.full_name}")
 
             for workflow in actions.workflows:
@@ -143,21 +145,31 @@ class CollectInfraReposStrategy(CollectReposStrategy):
         data = {
             "repository": repo.full_name,
             "stars": repo.stargazers_count,
-            "language": repo.language.strip().lower(),
+            "language": repo.language.strip().lower() if repo.language is not None else "",
             "size": repo.size,
             "clone_url": repo.clone_url,
-            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
             "clone_success": False,
-            "number_of_actions": 0,
-            "number_of_test_actions": 0,
-            "actions_successful": False,
+            "number_of_actions": -1,
+            "number_of_test_actions": -1,
+            "actions_successful": None,
         }
 
         repo_clone = clone_repo(repo.clone_url, repo_path)
         data["clone_success"] = True
 
-        # TODO: check for IaC files
-
+        infra_files = 0
+        for root, _, files in os.walk(repo_path):
+            for f in files:
+                if is_infra_file(Path(os.path.join(root, f))):
+                    infra_files += 1
+        
+        data["infra_files"] = infra_files
+        if infra_files == 0:
+            delete_repo_clone(repo_clone)
+            self.save_data(data, repo)
+            return
+        
         try:
             self.test_actions(data, repo, repo_path)
             delete_repo_clone(repo_clone)
