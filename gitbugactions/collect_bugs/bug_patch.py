@@ -1,16 +1,15 @@
 import uuid
 import pygit2
+import datetime
 from typing import List, Any, Dict, Set, Optional
 from enum import Enum
-from datetime import datetime
 from github import Repository
+from gitbugactions.github_api import GithubAPI
 from unidiff import PatchSet
 from gitbugactions.actions.actions import ActTestsRun
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.github_api import GithubToken
 from gitbugactions.util import get_patch_file_extensions
-from gitbugactions.collect_bugs.test_config import TestConfig
 
 
 class ChangeType(Enum):
@@ -41,20 +40,27 @@ class BugPatch:
     ):
         self.repo: Repository = repo
         self.language: str = repo.language.lower().strip()
-        self.commit: str = commit.hex
+        self.commit: str = str(commit.id)
         self.commit_message: str = commit.message
         self.commit_timestamp: str = (
-            datetime.utcfromtimestamp(int(commit.commit_time)).isoformat() + "Z"
+            datetime.datetime.fromtimestamp(
+                int(commit.commit_time), datetime.UTC
+            ).isoformat()
+            + "Z"
         )
-        self.previous_commit: str = previous_commit.hex
+        self.previous_commit: str = str(previous_commit.id)
         self.previous_commit_message: str = previous_commit.message
         self.previous_commit_timestamp: str = (
-            datetime.utcfromtimestamp(int(previous_commit.commit_time)).isoformat()
+            datetime.datetime.fromtimestamp(
+                int(previous_commit.commit_time), datetime.UTC
+            ).isoformat()
             + "Z"
         )
         self.time_to_patch: str = str(
-            datetime.utcfromtimestamp(int(commit.commit_time))
-            - datetime.utcfromtimestamp(int(previous_commit.commit_time))
+            datetime.datetime.fromtimestamp(int(commit.commit_time), datetime.UTC)
+            - datetime.datetime.fromtimestamp(
+                int(previous_commit.commit_time), datetime.UTC
+            )
         )
         self.bug_patch: PatchSet = self.__clean_patch(bug_patch)
         self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(
@@ -132,7 +138,8 @@ class BugPatch:
             "repository": self.repo.full_name,
             "language": self.language,
             "clone_url": self.repo.clone_url,
-            "collection_timestamp": datetime.utcnow().isoformat() + "Z",
+            "collection_timestamp": datetime.datetime.now(datetime.UTC).isoformat()
+            + "Z",
             "commit_hash": self.commit,
             "commit_message": self.commit_message,
             "commit_timestamp": self.commit_timestamp,
@@ -168,12 +175,12 @@ class BugPatch:
         repo_clone.checkout_tree(commit)
         repo_clone.create_tag(
             str(uuid.uuid4()),
-            commit.oid,
-            pygit2.GIT_OBJ_COMMIT,
+            commit.id,
+            pygit2.GIT_OBJECT_COMMIT,
             commit.author,
             commit.message,
         )
-        repo_clone.set_head(commit.oid)
+        repo_clone.set_head(commit.id)
 
     def __apply_non_code_patch(self, repo_clone: pygit2.Repository):
         # We only apply the non code patch when the bug patch is non-empty
@@ -203,9 +210,7 @@ class BugPatch:
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.previous_commit)
-        if TestConfig.normalize_non_code_patch and not self.__apply_non_code_patch(
-            executor.repo_clone
-        ):
+        if not self.__apply_non_code_patch(executor.repo_clone):
             return None
         return executor.run_tests(offline=offline, keep_containers=keep_containers)
 
@@ -217,9 +222,7 @@ class BugPatch:
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
         self.__set_commit(executor.repo_clone, self.previous_commit)
-        if TestConfig.normalize_non_code_patch and not self.__apply_non_code_patch(
-            executor.repo_clone
-        ):
+        if not self.__apply_non_code_patch(executor.repo_clone):
             return None
         if not self.__apply_test_patch(executor.repo_clone):
             return None
@@ -237,7 +240,7 @@ class BugPatch:
 
     @staticmethod
     def from_dict(bug: Dict[str, Any], repo_clone: pygit2.Repository) -> "BugPatch":
-        github = GithubToken.get_token().github
+        github = GithubAPI()
         repo_full_name = bug["repository"]
 
         return BugPatch(

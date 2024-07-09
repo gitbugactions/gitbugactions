@@ -7,10 +7,10 @@ import logging
 import tqdm
 import threading
 import fire
+import datetime
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set, Optional
-from datetime import datetime
 import dateutil.parser
 from github import (
     Repository,
@@ -92,7 +92,7 @@ class PatchCollector:
         return "fix" in tokens
 
     def __get_patches(self, repo_clone, commit, previous_commit):
-        diff = repo_clone.diff(previous_commit.hex, commit.hex)
+        diff = repo_clone.diff(str(previous_commit.id), str(commit.id))
         patch: PatchSet = PatchSet(diff.patch)
         bug_patch: PatchSet = PatchSet("")
         test_patch: PatchSet = PatchSet("")
@@ -121,7 +121,7 @@ class PatchCollector:
         """
         Cleanups up repository dir for any untracked or modified files
         """
-        repo_clone.reset(commit.oid, pygit2.GIT_RESET_HARD)
+        repo_clone.reset(commit.id, pygit2.GIT_RESET_HARD)
         subprocess.run(
             ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
         )
@@ -296,7 +296,9 @@ class PatchCollector:
                 if self.filter_on_commit_message and not self.__is_bug_fix(commit):
                     continue
 
-                commit_time = datetime.utcfromtimestamp(int(commit.commit_time))
+                commit_time = datetime.datetime.fromtimestamp(
+                    int(commit.commit_time), datetime.UTC
+                )
                 if (
                     self.filter_on_commit_time_start
                     and commit_time < self.filter_on_commit_time_start
@@ -310,7 +312,9 @@ class PatchCollector:
                     continue
 
                 try:
-                    previous_commit = self.repo_clone.revparse_single(commit.hex + "~1")
+                    previous_commit = self.repo_clone.revparse_single(
+                        str(commit.id) + "~1"
+                    )
                 except KeyError:
                     # The current commit is the first one
                     continue
@@ -320,16 +324,16 @@ class PatchCollector:
                 )
                 if len(bug_patch) == 0 and len(non_code_patch) == 0:
                     logging.info(
-                        f"Skipping commit {self.repo.full_name} {commit.hex}: no bug patch"
+                        f"Skipping commit {self.repo.full_name} {str(commit.id)}: no bug patch"
                     )
                     continue
 
                 actions: Set[Action] = set()
-                actions.update(self.__get_used_actions(commit.oid.hex))
-                actions.update(self.__get_used_actions(previous_commit.oid.hex))
+                actions.update(self.__get_used_actions(str(commit.id)))
+                actions.update(self.__get_used_actions(str(previous_commit.id)))
 
-                if previous_commit.hex in commit_to_patches:
-                    commit_to_patches[previous_commit.hex].append(
+                if str(previous_commit.id) in commit_to_patches:
+                    commit_to_patches[str(previous_commit.id)].append(
                         BugPatch(
                             self.repo,
                             commit,
@@ -341,7 +345,7 @@ class PatchCollector:
                         )
                     )
                 else:
-                    commit_to_patches[previous_commit.hex] = [
+                    commit_to_patches[str(previous_commit.id)] = [
                         BugPatch(
                             self.repo,
                             commit,
@@ -356,7 +360,7 @@ class PatchCollector:
                     self.repo_clone, self.repo_clone.workdir, self.first_commit
                 )
         finally:
-            self.repo_clone.reset(self.first_commit.oid, pygit2.GIT_RESET_HARD)
+            self.repo_clone.reset(self.first_commit.id, pygit2.GIT_RESET_HARD)
 
         # We remove the merges since when multiple bug patches point to the same
         # previous commit, merges tend to only add useless diffs to another commit
@@ -407,7 +411,7 @@ class PatchCollector:
             ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
     @staticmethod
-    def check_runs(bug_patch) -> Optional[CollectionStrategy]:
+    def check_runs(bug_patch) -> Optional[str]:
         for strategy in TestConfig.strategies:
             if strategy.check(bug_patch):
                 return strategy.name
@@ -480,14 +484,16 @@ def collect_bugs(
 
     kwargs = {
         "filter_on_commit_message": filter_on_commit_message,
-        "filter_on_commit_time_start": dateutil.parser.parse(
-            filter_on_commit_time_start
-        )
-        if filter_on_commit_time_start is not None
-        else None,
-        "filter_on_commit_time_end": dateutil.parser.parse(filter_on_commit_time_end)
-        if filter_on_commit_time_end is not None
-        else None,
+        "filter_on_commit_time_start": (
+            dateutil.parser.parse(filter_on_commit_time_start)
+            if filter_on_commit_time_start is not None
+            else None
+        ),
+        "filter_on_commit_time_end": (
+            dateutil.parser.parse(filter_on_commit_time_end)
+            if filter_on_commit_time_end is not None
+            else None
+        ),
         "pull_requests": pull_requests,
     }
 
