@@ -8,6 +8,7 @@ from collect_bugs import collect_bugs, PatchCollector, BugPatch
 from gitbugactions.github_api import GithubToken, GithubAPI
 from gitbugactions.util import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
+from gitbugactions.collect_bugs.collection_strategies import *
 
 
 def get_token_usage():
@@ -204,6 +205,7 @@ class TestCollectBugs:
             "test/resources/test_collect_bugs",
             "test/resources/test_collect_bugs_out",
             4,
+            strategies=["PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD"],
             pull_requests=True,
         )
 
@@ -232,6 +234,7 @@ class TestCollectBugs:
                     "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
                     "629f67ebc0efeeb8868a13ad173f18ec572a8729",
                     "37113cf952bd6d3db563d0d15beae07daefd953e",
+                    "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f",
                     "ff6e2662174af4024eef123b7d23b15192748b31",
                     "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f",
                 ]
@@ -338,6 +341,24 @@ class TestCollectBugs:
                     )
                     assert passed == 4
                     assert failure == 1
+
+                elif data["commit_hash"] == "2d9f3130c2082c50a8c0aab4426e04449f4f7cce":
+                    assert data["strategy"] == "FAIL_PASS_BUILD"
+                    assert data["commit_message"] == "Fix typo and tests"
+                    assert data["change_type"] == "MIXED"
+                    assert len(data["test_patch"]) == 0
+                    passed, failure = get_test_results(
+                        data["actions_runs"][0][0]["tests"]
+                    )
+                    print(data["actions_runs"][0][0]["stdout"])
+                    assert passed == 0
+                    assert failure == 0
+
+                    passed, failure = get_test_results(
+                        data["actions_runs"][2][0]["tests"]
+                    )
+                    assert passed == 5
+                    assert failure == 0
 
                 elif data["commit_hash"] == "ff6e2662174af4024eef123b7d23b15192748b31":
                     assert data["strategy"] == "FAIL_PASS"

@@ -11,7 +11,6 @@ import datetime
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set, Optional
-from enum import Enum
 import dateutil.parser
 from github import (
     Repository,
@@ -35,249 +34,12 @@ from gitbugactions.util import (
     get_default_github_actions,
     clone_repo,
     get_file_type,
-    get_patch_file_extensions,
     FileType,
 )
+from gitbugactions.collect_bugs.collection_strategies import *
+from gitbugactions.collect_bugs.test_config import TestConfig
+from gitbugactions.collect_bugs.bug_patch import BugPatch
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
-
-
-class CollectionStrategy(Enum):
-    UNKNOWN = 0
-    PASS_PASS = 1
-    FAIL_PASS = 2
-    FAIL_FAIL = 3
-
-
-class ChangeType(Enum):
-    SOURCE_ONLY = 0
-    MIXED = 1
-    NON_CODE_ONLY = 2
-
-    @staticmethod
-    def get_change_type(bug_patch: PatchSet, non_code_patch: PatchSet) -> "ChangeType":
-        if len(bug_patch) > 0 and len(non_code_patch) > 0:
-            return ChangeType.MIXED
-        elif len(bug_patch) > 0:
-            return ChangeType.SOURCE_ONLY
-        else:
-            return ChangeType.NON_CODE_ONLY
-
-
-class BugPatch:
-    def __init__(
-        self,
-        repo: Repository,
-        commit: pygit2.Commit,
-        previous_commit: pygit2.Commit,
-        bug_patch: PatchSet,
-        test_patch: PatchSet,
-        non_code_patch: PatchSet,
-        actions: Set[Action],
-    ):
-        self.repo: Repository = repo
-        self.language: str = repo.language.lower().strip()
-        self.commit: str = str(commit.id)
-        self.commit_message: str = commit.message
-        self.commit_timestamp: str = (
-            datetime.datetime.fromtimestamp(
-                int(commit.commit_time), datetime.UTC
-            ).isoformat()
-            + "Z"
-        )
-        self.previous_commit: str = str(previous_commit.id)
-        self.previous_commit_message: str = previous_commit.message
-        self.previous_commit_timestamp: str = (
-            datetime.datetime.fromtimestamp(
-                int(previous_commit.commit_time), datetime.UTC
-            ).isoformat()
-            + "Z"
-        )
-        self.time_to_patch: str = str(
-            datetime.datetime.fromtimestamp(int(commit.commit_time), datetime.UTC)
-            - datetime.datetime.fromtimestamp(
-                int(previous_commit.commit_time), datetime.UTC
-            )
-        )
-        self.bug_patch: PatchSet = self.__clean_patch(bug_patch)
-        self.bug_patch_file_extensions: List[str] = get_patch_file_extensions(
-            self.bug_patch
-        )
-        self.test_patch: PatchSet = self.__clean_patch(test_patch)
-        self.test_patch_file_extensions: List[str] = get_patch_file_extensions(
-            self.test_patch
-        )
-        self.non_code_patch: PatchSet = self.__clean_patch(non_code_patch)
-        self.non_code_patch_file_extensions: List[str] = get_patch_file_extensions(
-            self.non_code_patch
-        )
-        self.change_type: ChangeType = ChangeType.get_change_type(
-            self.bug_patch, self.non_code_patch
-        )
-        self.actions: Set[Action] = actions
-        self.strategy_used: CollectionStrategy = CollectionStrategy.UNKNOWN
-        self.issues = None
-        # The actions are grouped by each phase of the strategy used
-        self.actions_runs: List[List[ActTestsRun]] = []
-
-    def get_data(self):
-        actions_runs = []
-
-        for runs in self.actions_runs:
-            if runs is None:
-                actions_runs.append(None)
-                continue
-            runs_data = []
-
-            for run in runs:
-                runs_data.append(run.asdict())
-            actions_runs.append(runs_data)
-
-        return {
-            "repository": self.repo.full_name,
-            "language": self.language,
-            "clone_url": self.repo.clone_url,
-            "collection_timestamp": datetime.datetime.now(datetime.UTC).isoformat()
-            + "Z",
-            "commit_hash": self.commit,
-            "commit_message": self.commit_message,
-            "commit_timestamp": self.commit_timestamp,
-            "previous_commit_hash": self.previous_commit,
-            "previous_commit_message": self.previous_commit_message,
-            "previous_commit_timestamp": self.previous_commit_timestamp,
-            "time_to_patch": self.time_to_patch,
-            "bug_patch": str(self.bug_patch),
-            "bug_patch_file_extensions": self.bug_patch_file_extensions,
-            "test_patch": str(self.test_patch),
-            "test_patch_file_extensions": self.test_patch_file_extensions,
-            "non_code_patch": str(self.non_code_patch),
-            "non_code_patch_file_extensions": self.non_code_patch_file_extensions,
-            "change_type": self.change_type.name,
-            "actions_runs": actions_runs,
-            "strategy": self.strategy_used.name,
-            "issues": self.issues,
-        }
-
-    def __clean_patch(self, patch: PatchSet) -> PatchSet:
-        """
-        Cleans the patch to be used by pygit2. This is related to issue XXX that causes libgit2 to segfault when one of the paths is /dev/null.
-        """
-        for file in patch:
-            if file.source_file == "/dev/null" and not file.is_added_file:
-                file.source_file = file.target_file.replace("b/", "a/", 1)
-            elif file.target_file == "/dev/null" and not file.is_removed_file:
-                file.target_file = file.source_file.replace("a/", "b/", 1)
-        return patch
-
-    def __set_commit(self, repo_clone: pygit2.Repository, commit: str):
-        commit = repo_clone.revparse_single(commit)
-        repo_clone.checkout_tree(commit)
-        repo_clone.create_tag(
-            str(uuid.uuid4()),
-            commit.id,
-            pygit2.GIT_OBJECT_COMMIT,
-            commit.author,
-            commit.message,
-        )
-        repo_clone.set_head(commit.id)
-
-    def __apply_non_code_patch(self, repo_clone: pygit2.Repository):
-        # We only apply the non code patch when the bug patch is non-empty
-        # Otherwise, we are testing the non code patch alone
-        if len(self.non_code_patch) > 0 and len(self.bug_patch) > 0:
-            try:
-                repo_clone.apply(pygit2.Diff.parse_diff(str(self.non_code_patch)))
-                return True
-            except pygit2.GitError:
-                # Invalid patches
-                return False
-        return True
-
-    def __apply_test_patch(self, repo_clone: pygit2.Repository):
-        try:
-            repo_clone.apply(pygit2.Diff.parse_diff(str(self.test_patch)))
-            return True
-        except pygit2.GitError:
-            # Invalid patches
-            return False
-
-    def test_previous_commit(
-        self,
-        executor: TestExecutor,
-        offline: bool = False,
-        keep_containers: bool = False,
-    ) -> Optional[List[ActTestsRun]]:
-        executor.reset_repo()
-        self.__set_commit(executor.repo_clone, self.previous_commit)
-        if not self.__apply_non_code_patch(executor.repo_clone):
-            return None
-        return executor.run_tests(offline=offline, keep_containers=keep_containers)
-
-    def test_previous_commit_with_diff(
-        self,
-        executor: TestExecutor,
-        offline: bool = False,
-        keep_containers: bool = False,
-    ) -> Optional[List[ActTestsRun]]:
-        executor.reset_repo()
-        self.__set_commit(executor.repo_clone, self.previous_commit)
-        if not self.__apply_non_code_patch(executor.repo_clone):
-            return None
-        if not self.__apply_test_patch(executor.repo_clone):
-            return None
-        return executor.run_tests(offline=offline, keep_containers=keep_containers)
-
-    def test_current_commit(
-        self,
-        executor: TestExecutor,
-        offline: bool = False,
-        keep_containers: bool = False,
-    ) -> Optional[List[ActTestsRun]]:
-        executor.reset_repo()
-        self.__set_commit(executor.repo_clone, self.commit)
-        return executor.run_tests(offline=offline, keep_containers=keep_containers)
-
-    @staticmethod
-    def from_dict(bug: Dict[str, Any], repo_clone: pygit2.Repository) -> "BugPatch":
-        github = GithubAPI()
-        repo_full_name = bug["repository"]
-
-        return BugPatch(
-            github.get_repo(repo_full_name),
-            repo_clone.revparse_single(bug["commit_hash"]),
-            repo_clone.revparse_single(bug["previous_commit_hash"]),
-            PatchSet(bug["bug_patch"]),
-            PatchSet(bug["test_patch"]),
-            PatchSet(bug["non_code_patch"]),
-            set(),
-        )
-
-    def __remove_patch_index(self, patch: PatchSet) -> str:
-        lines = str(patch).split("\n")
-        return "\n".join(list(filter(lambda line: not line.startswith("index"), lines)))
-
-    def __hash__(self):
-        return hash(
-            (
-                self.__remove_patch_index(self.bug_patch),
-                self.__remove_patch_index(self.test_patch),
-                self.__remove_patch_index(self.non_code_patch),
-            )
-        )
-
-    def __eq__(self, __value: object) -> bool:
-        if not isinstance(__value, BugPatch):
-            return False
-        return (
-            self.__remove_patch_index(self.bug_patch)
-            == self.__remove_patch_index(__value.bug_patch)
-            and self.__remove_patch_index(self.test_patch)
-            == self.__remove_patch_index(__value.test_patch)
-            and self.__remove_patch_index(self.non_code_patch)
-            == self.__remove_patch_index(__value.non_code_patch)
-        )
-
-    def __ne__(self, __value: object) -> bool:
-        return not self.__eq__(__value)
 
 
 class PatchCollector:
@@ -629,35 +391,6 @@ class PatchCollector:
             self.repo_clone, self.first_commit, self.language
         )
 
-    @staticmethod
-    def __diff_tests(run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]):
-        flat_failed_tests = sum(
-            map(lambda act_run: act_run.failed_tests, run_failed), []
-        )
-        flat_tests = sum(map(lambda act_run: act_run.tests, run_passed), [])
-        fixed, not_fixed = [], []
-
-        for failed_test in flat_failed_tests:
-            for test in flat_tests:
-                if (
-                    failed_test.classname == test.classname
-                    and failed_test.name == test.name
-                    and test.is_passed
-                ):
-                    fixed.append(failed_test)
-                    break
-            else:
-                not_fixed.append(failed_test)
-
-        return fixed, not_fixed
-
-    @staticmethod
-    def __check_tests_were_fixed(
-        run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
-    ):
-        _, not_fixed = PatchCollector.__diff_tests(run_failed, run_passed)
-        return len(not_fixed) == 0
-
     def test_patch(self, bug_patch: BugPatch):
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
 
@@ -667,7 +400,7 @@ class PatchCollector:
                 act_cache_dir,
             )
             bug_patch.actions_runs = test_patch_runs
-            strategy = PatchCollector.check_runs(bug_patch, bug_patch.actions_runs)
+            strategy = PatchCollector.check_runs(bug_patch)
             if strategy is None:
                 return False
             else:
@@ -678,96 +411,10 @@ class PatchCollector:
             ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
     @staticmethod
-    def check_runs(bug_patch, actions_runs) -> Optional[CollectionStrategy]:
-        def flat_failed_tests(runs):
-            return sum(map(lambda act_run: act_run.failed_tests, runs), [])
-
-        def number_of_tests(runs):
-            return sum(map(lambda act_run: len(act_run.tests), runs))
-
-        prev_commit_passed = (
-            actions_runs[0] is not None and len(flat_failed_tests(actions_runs[0])) == 0
-        )
-        prev_with_diff_failed = (
-            actions_runs[1] is not None and len(flat_failed_tests(actions_runs[1])) > 0
-        )
-        curr_commit_passed = (
-            actions_runs[2] is not None and len(flat_failed_tests(actions_runs[2])) == 0
-        )
-
-        # PASS_PASS strategy
-        if (
-            # previous commit passed
-            prev_commit_passed
-            # previous commit with new tests failed
-            and prev_with_diff_failed
-            # current commit passed
-            and curr_commit_passed
-            # test patch is not empty
-            and len(bug_patch.test_patch) > 0
-            # test patch is not removals only
-            and not (
-                bug_patch.test_patch.removed > 0 and bug_patch.test_patch.added == 0
-            )
-            # check if tests from previous commit w/diff were fixed
-            and PatchCollector.__check_tests_were_fixed(
-                actions_runs[1], actions_runs[2]
-            )
-            # previous commit should have at least the same number of tests than current commit
-            and number_of_tests(actions_runs[0]) <= number_of_tests(actions_runs[2])
-            # current commit should have same number of tests as previous commit w/ tests
-            and number_of_tests(actions_runs[2]) == number_of_tests(actions_runs[1])
-        ):
-            return CollectionStrategy.PASS_PASS
-
-        prev_commit_failed = (
-            actions_runs[0] is not None and len(flat_failed_tests(actions_runs[0])) > 0
-        )
-
-        # FAIL_PASS strategy
-        if (
-            # previous commit failed
-            prev_commit_failed
-            # no changes have been made in the tests
-            and len(bug_patch.test_patch) == 0
-            # current commit passed
-            and curr_commit_passed
-            # check if tests from previous commit were fixed
-            and PatchCollector.__check_tests_were_fixed(
-                actions_runs[0], actions_runs[2]
-            )
-            # previous commit should have same number of tests as current commit
-            and number_of_tests(actions_runs[0]) == number_of_tests(actions_runs[2])
-        ):
-            return CollectionStrategy.FAIL_PASS
-
-        curr_commit_failed = (
-            actions_runs[2] is not None and len(flat_failed_tests(actions_runs[2])) > 0
-        )
-
-        # FAIL_FAIL strategy
-        if (
-            # previous commit failed
-            prev_commit_failed
-            # current commit failed
-            and curr_commit_failed
-            # at least one test was fixed
-            and len(PatchCollector.__diff_tests(actions_runs[0], actions_runs[2])[0])
-            > 0
-            # previous commit should have same number of tests as current commit
-            and number_of_tests(actions_runs[0]) == number_of_tests(actions_runs[2])
-        ) or (
-            # previous commit with diff failed
-            prev_with_diff_failed
-            # current commit failed
-            and curr_commit_failed
-            # at least one test was fixed
-            and len(PatchCollector.__diff_tests(actions_runs[1], actions_runs[2])[0])
-            > 0
-            # previous commit w/test diff should have same number of tests as current commit
-            and number_of_tests(actions_runs[1]) == number_of_tests(actions_runs[2])
-        ):
-            return CollectionStrategy.FAIL_FAIL
+    def check_runs(bug_patch) -> Optional[str]:
+        for strategy in TestConfig.strategies:
+            if strategy.check(bug_patch):
+                return strategy.name
 
         return None
 
@@ -775,6 +422,24 @@ class PatchCollector:
         if self.cloned:
             delete_repo_clone(self.repo_clone)
         self.cloned = False
+
+
+def set_test_config(
+    normalize_non_code_patch: bool = True,
+    strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
+):
+    TestConfig.normalize_non_code_patch = normalize_non_code_patch
+    strategy_instances = [s() for s in CollectionStrategy.__subclasses__()]
+
+    for strategy in strategies:
+        TestConfig.strategies.append(
+            next(
+                filter(
+                    lambda x: x.name == strategy,
+                    strategy_instances,
+                )
+            )
+        )
 
 
 def collect_bugs(
@@ -785,6 +450,8 @@ def collect_bugs(
     filter_on_commit_message: bool = True,
     filter_on_commit_time_start: str = None,
     filter_on_commit_time_end: str = None,
+    normalize_non_code_patch: bool = True,
+    strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
     pull_requests: bool = False,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
@@ -797,12 +464,17 @@ def collect_bugs(
                                       Defaults to "data/out_bugs".
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
-                                      Defaults to '7g'.
+                                      Defaults to "7g".
         filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
         filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
         filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
+        normalize_non_code_patch (bool, optional): If True, the non-code patch will be applied to previous commits. Defaults to True.
+        strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
+                                           The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
     """
+    set_test_config(normalize_non_code_patch, strategies)
+
     Act.set_memory_limit(memory_limit)
     github: GithubAPI = GithubAPI(
         per_page=100,

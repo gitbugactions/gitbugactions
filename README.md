@@ -42,7 +42,7 @@ export PATH="<REPLACE_WITH_PATH_TO_ACT>:$PATH"
 
 ### Python dependencies
 
-GitBug-Actions runs on Python3.10 and above.
+GitBug-Actions runs on Python3.12 and above.
 
 Ensure Poetry is [installed](https://python-poetry.org/docs/#installation).
 

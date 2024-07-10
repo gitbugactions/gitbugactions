@@ -7,6 +7,7 @@ import subprocess
 import threading
 
 from typing import List, Dict, Set
+from abc import ABC, abstractmethod
 from junitparser import TestCase, Error
 from dataclasses import dataclass
 from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
@@ -123,6 +124,7 @@ class ActTestsRun:
     build_tool: str
     elapsed_time: int
     default_actions: bool
+    return_code: int
 
     @property
     def failed_tests(self) -> List[TestCase]:
@@ -186,6 +188,37 @@ class ActTestsRun:
         return res
 
 
+class ActFailureStrategy(ABC):
+    @abstractmethod
+    def failed(self, tests_run: ActTestsRun) -> bool:
+        pass
+
+
+class ActTestsFailureStrategy(ActFailureStrategy):
+    def failed(self, run: ActTestsRun) -> bool:
+        return (
+            # Failed run with failed tests but with memory limit exceed should not
+            # be considered. We do not check the return code because act does not
+            # pass the code from the container.
+            run.return_code == 1  # Increase performance by avoiding
+            and len(run.failed_tests) != 0  # to check the output in every run
+            and (
+                "exitcode '137'" in run.stderr
+                or "exitcode '137': failure" in run.stdout
+            )
+        ) or (
+            # 124 is the return code for the timeout
+            (run.return_code == 124)
+            or (len(run.failed_tests) == 0 and run.return_code != 0)
+            or len(run.erroring_tests) > 0
+        )
+
+
+class ActCheckCodeFailureStrategy(ActFailureStrategy):
+    def failed(self, run: ActTestsRun) -> bool:
+        return run.return_code != 0
+
+
 class Act:
     __ACT_PATH = "act"
     __ACT_CHECK = False
@@ -201,6 +234,7 @@ class Act:
         timeout=5,
         runner_image: str = __DEFAULT_IMAGE,
         offline: bool = False,
+        fail_strategy: ActFailureStrategy = ActTestsFailureStrategy(),
     ):
         """
         Args:
@@ -221,6 +255,7 @@ class Act:
 
         self.__DEFAULT_RUNNERS = f"-P ubuntu-latest={runner_image}"
         self.timeout = timeout
+        self.fail_strategy = fail_strategy
 
     @staticmethod
     def __check_act():
@@ -286,7 +321,6 @@ class Act:
         stdout = run.stdout.decode("utf-8")
         stderr = run.stderr.decode("utf-8")
 
-        # TODO: make this work without the bind option
         tests = workflow.get_test_results(
             os.path.join(
                 repo_path, ".act-result", os.path.basename(os.path.normpath(repo_path))
@@ -303,21 +337,10 @@ class Act:
             build_tool=workflow.get_build_tool(),
             elapsed_time=end_time - start_time,
             default_actions=False,
+            return_code=run.returncode,
         )
 
-        if (
-            # Failed run with failed tests but with memory limit exceed should not
-            # be considered. We do not check the return code because act does not
-            # pass the code from the container.
-            run.returncode == 1  # Increase performance by avoiding
-            and len(tests_run.failed_tests) != 0  # to check the output in every run
-            and ("exitcode '137'" in stderr or "exitcode '137': failure" in stdout)
-        ) or (
-            # 124 is the return code for the timeout
-            (run.returncode == 124)
-            or (len(tests_run.failed_tests) == 0 and run.returncode != 0)
-            or len(tests_run.erroring_tests) > 0
-        ):
+        if self.fail_strategy.failed(tests_run):
             tests_run.failed = True
             logging.warning(f"RETURN CODE: {run.returncode}")
 
@@ -340,14 +363,14 @@ class GitHubActions:
     def __init__(
         self,
         repo_path,
-        language: str,
+        language: str | None,
         keep_containers: bool = False,
         runner_image: str = "gitbugactions:latest",
         offline: bool = False,
     ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
-        self.language: str = language.strip().lower()
+        self.language: str = language.strip().lower() if language else ""
         self.workflows: List[GitHubWorkflow] = []
         self.test_workflows: List[GitHubWorkflow] = []
         self.runner_image = runner_image
@@ -421,13 +444,18 @@ class GitHubActions:
             self.delete_workflow(workflow)
 
     def run_workflow(
-        self, workflow, act_cache_dir: str, timeout: int = 10
+        self,
+        workflow: GitHubWorkflow,
+        act_cache_dir: str,
+        act_fail_strategy: ActFailureStrategy = ActTestsFailureStrategy(),
+        timeout: int = 10,
     ) -> ActTestsRun:
         act = Act(
             self.keep_containers,
             timeout=timeout,
             runner_image=self.runner_image,
             offline=self.offline,
+            fail_strategy=act_fail_strategy,
         )
         return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)
 

@@ -109,7 +109,7 @@ class TestExecutor:
 
         for workflow in test_actions.test_workflows:
             act_runs.append(
-                test_actions.run_workflow(workflow, self.act_cache_dir, timeout)
+                test_actions.run_workflow(workflow, self.act_cache_dir, timeout=timeout)
             )
 
         test_actions.delete_workflows()
