@@ -107,7 +107,6 @@ class RepoCrawler:
         n_pages = math.ceil(totalCount / RepoCrawler.__PAGE_SIZE)
         for p in range(n_pages):
             repos = self.github.token.search_rate_limiter.request(page_list.get_page, p)
-            results = []
             for repo in repos:
                 args = (repo,)
                 self.futures.append(

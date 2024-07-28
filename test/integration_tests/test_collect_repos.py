@@ -1,6 +1,5 @@
 import os
 import shutil
-import pytest
 import json
 import tempfile
 from gitbugactions.github_api import GithubAPI

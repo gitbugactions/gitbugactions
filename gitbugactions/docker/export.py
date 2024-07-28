@@ -1,6 +1,6 @@
-import os, shutil
-import hashlib
+import os
 import shutil
+import hashlib
 import uuid
 import tempfile
 import json
@@ -147,7 +147,7 @@ def add_new_layer(image_name: str, layer: Layer, new_image_name: str = None):
             # Loads new image and tags it
             with open(final_tar, "rb") as f:
                 image: Image = client.images.load(f.read())[0]
-                if new_image_name != None:
+                if new_image_name is not None:
                     repository, tag = new_image_name.split(":")
                     image.tag(repository, tag)
     finally:

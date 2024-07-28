@@ -1,5 +1,10 @@
-import os, sys, re, subprocess, traceback
-import uuid, json
+import os
+import sys
+import re
+import subprocess
+import traceback
+import uuid
+import json
 import shutil
 import pygit2
 import tempfile
@@ -36,7 +41,7 @@ from gitbugactions.util import (
     get_file_type,
     FileType,
 )
-from gitbugactions.collect_bugs.collection_strategies import *
+from gitbugactions.collect_bugs.collection_strategies import CollectionStrategy
 from gitbugactions.collect_bugs.test_config import TestConfig
 from gitbugactions.collect_bugs.bug_patch import BugPatch
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
@@ -75,7 +80,7 @@ class PatchCollector:
                 )
                 # Set gc.auto to 0 to avoid "too many open files" bug
                 subprocess.run(
-                    f"git config gc.auto 0",
+                    "git config gc.auto 0",
                     cwd=repo_path,
                     shell=True,
                     capture_output=True,
@@ -145,9 +150,9 @@ class PatchCollector:
                 act_cache_dir,
                 self.default_github_actions,
             )
-            all_runs_crashed = lambda x: x is None or all(
-                map(lambda act_run: act_run.failed, x)
-            )
+
+            def all_runs_crashed(x):
+                x is None or all(map(lambda act_run: act_run.failed, x))
 
             # Previous commit
             act_runs = bug.test_previous_commit(executor)
