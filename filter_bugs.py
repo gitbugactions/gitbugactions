@@ -1,10 +1,14 @@
-import json, fire
+import json
+import fire
 import tempfile
 import uuid
 import pygit2
 import tqdm
-import logging, traceback
-import os, sys, shutil
+import logging
+import traceback
+import os
+import sys
+import shutil
 
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.util import delete_repo_clone
@@ -38,7 +42,7 @@ def run_commit(
         )
 
         return test_fn(executor, offline)
-    except Exception as e:
+    except Exception:
         traceback.print_exc()
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)

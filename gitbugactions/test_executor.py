@@ -2,7 +2,10 @@ import time
 import schedule
 import threading
 import subprocess
-import os, copy, uuid, pygit2
+import os
+import copy
+import uuid
+import pygit2
 from gitbugactions.actions.actions import GitHubActions, ActTestsRun
 from gitbugactions.docker.client import DockerClient
 from pygit2 import Repository

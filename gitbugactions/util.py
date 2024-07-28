@@ -1,4 +1,6 @@
-import os, re, xml
+import os
+import re
+import xml
 import logging
 import traceback
 import yaml
@@ -50,7 +52,7 @@ def get_default_github_actions(
         head = repo_clone.revparse_single("HEAD")
         # Get commits where workflows were changed by reverse order
         run = subprocess.run(
-            f"git log --reverse --diff-filter=AM -- .github/workflows",
+            "git log --reverse --diff-filter=AM -- .github/workflows",
             cwd=repo_clone.workdir,
             capture_output=True,
             shell=True,

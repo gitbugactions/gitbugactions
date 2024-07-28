@@ -1,7 +1,9 @@
 import logging
 import re
 import shutil
-import os, subprocess, threading
+import os
+import subprocess
+import threading
 import traceback
 
 
@@ -13,7 +15,11 @@ class Action:
     def __init__(self, declaration: str):
         self.declaration = declaration
         match = re.match(r"^([^/@]+)/([^/@]+)(/([^@]*))?(@(.*))?$", self.declaration)
-        assert match != None and len(match.groups()) == 6 and match.group(6) is not None
+        assert (
+            match is not None
+            and len(match.groups()) == 6
+            and match.group(6) is not None
+        )
         self.org = match.group(1)
         self.repo = match.group(2)
         self.path = match.group(4)

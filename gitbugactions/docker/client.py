@@ -9,12 +9,12 @@ class DockerClient:
     @staticmethod
     def getInstance():
         with DockerClient.__get_instance_lock:
-            if DockerClient.__instance == None:
+            if DockerClient.__instance is None:
                 DockerClient()
             return DockerClient.__instance
 
     def __init__(self):
-        if DockerClient.__instance != None:
+        if DockerClient.__instance is not None:
             raise Exception("This class is a singleton!")
         else:
             DockerClient.__instance = docker.from_env(timeout=1200)

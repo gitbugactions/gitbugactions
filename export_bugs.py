@@ -130,7 +130,7 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
     for future in tqdm.tqdm(as_completed(futures)):
         try:
             future.result()
-        except Exception as e:
+        except Exception:
             print(
                 f"Got an exception on bug {futures_to_bug[future]['repository']}@{futures_to_bug[future]['commit_hash']}: {traceback.format_exc()}"
             )

@@ -1,4 +1,7 @@
-import os, tempfile, shutil, traceback
+import os
+import tempfile
+import shutil
+import traceback
 import grp
 import uuid
 import time
@@ -54,7 +57,7 @@ class ActCacheDirManager:
         try:
             if len(cls.__ACT_CACHE_DIRS) == 0:
                 logging.warning(
-                    f"Using a default act cache dir. If running multiple threads you must use different act caches for each thread."
+                    "Using a default act cache dir. If running multiple threads you must use different act caches for each thread."
                 )
                 return cls.__DEFAULT_CACHE_DIR
 
@@ -63,7 +66,7 @@ class ActCacheDirManager:
                     cls.__ACT_CACHE_DIRS[cache_dir] = False
                     return cache_dir
 
-            logging.warning(f"No act cache dir is available. Using a random one...")
+            logging.warning("No act cache dir is available. Using a random one...")
 
             return os.path.join(tempfile.gettempdir(), "act-cache", str(uuid.uuid4()))
         finally:
@@ -223,7 +226,7 @@ class Act:
     __ACT_PATH = "act"
     __ACT_CHECK = False
     __IMAGE_SETUP = False
-    __FLAGS = f"--pull=false --no-cache-server --max-parallel 1"
+    __FLAGS = "--pull=false --no-cache-server --max-parallel 1"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
     __DEFAULT_IMAGE = "gitbugactions:latest"
@@ -290,7 +293,7 @@ class Act:
             with open("Dockerfile", "w") as f:
                 client = DockerClient.getInstance()
                 dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
-                dockerfile += f"RUN sudo usermod -u 4000000 runneradmin\n"
+                dockerfile += "RUN sudo usermod -u 4000000 runneradmin\n"
                 dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
                 dockerfile += f"RUN sudo usermod -G {os.getgid()} runner\n"
                 dockerfile += f"RUN sudo usermod -o -u {os.getuid()} runner\n"

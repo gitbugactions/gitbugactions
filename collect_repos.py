@@ -1,5 +1,8 @@
 import tempfile
-import os, logging, sys, traceback
+import os
+import logging
+import sys
+import traceback
 import json
 import uuid
 import fire
@@ -86,7 +89,7 @@ class CollectReposStrategy(RepoStrategy):
 
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
-        except Exception as e:
+        except Exception:
             logging.error(
                 f"Error while processing {repo.full_name}: {traceback.format_exc()}"
             )
@@ -176,7 +179,7 @@ class CollectInfraReposStrategy(CollectReposStrategy):
             self.test_actions(data, repo, repo_path)
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
-        except Exception as e:
+        except Exception:
             logging.error(
                 f"Error while processing {repo.full_name}: {traceback.format_exc()}"
             )
