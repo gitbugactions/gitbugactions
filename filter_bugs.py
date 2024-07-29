@@ -200,7 +200,6 @@ def filter_bugs(
         offline (bool, optional): If the containers must be isolated from the internet. Defaults to True.
     """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
-    executor = ThreadPoolExecutor(max_workers=n_workers)
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
         future_to_bug: Dict[Future, Dict] = {}
