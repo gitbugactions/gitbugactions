@@ -110,7 +110,16 @@ Then, for commits not associated with GitHub Actions, GitBug-Actions uses these 
 
 Build execution has the potential to exhaust available disk space.
 To mitigate this, we restrict each build's allocation to a maximum of 3GiB. This restriction is handled by our version of [act](https://github.com/gitbugactions/act).
-However, users are advised to check disk usage frequently and remove dangling docker containers/images in case they occur.
+
+However, users are advised to check disk usage frequently and remove dangling docker containers/images in case they occur. Additionally, users should take special attention to docker volumes which are not automatically removed by act, and can accumulate over time.
+
+Example of how to remove dangling containers and volumes created by act:
+```bash
+# Remove containers
+docker rm $(docker stop $(docker ps -a -q --filter ancestor=gitbugactions:latest --format="{{.ID}}"))
+# Remove volumes
+docker volume ls -q | grep '^act-' | xargs docker rm
+```
 
 ### Concurrent File Access
 
