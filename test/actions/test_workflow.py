@@ -2,6 +2,7 @@ from gitbugactions.actions.workflow import GitHubWorkflowFactory
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
+from gitbugactions.actions.js.npm_jest_workflow import NpmJestWorkflow
 from gitbugactions.github_api import GithubToken
 
 import os
@@ -236,3 +237,15 @@ def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
     workflow = create_workflow(yml_file, language)
 
     assert workflow.has_matrix_include_exclude() == expected_result
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+        ("test/resources/test_workflows/js/npm_jest_test.yml"),
+    ],
+)
+def test_npm_jest(yml_file):
+    """Test the workflow factory for npm-jest workflows."""
+    workflow = create_workflow(yml_file, "js")
+    assert isinstance(workflow, NpmJestWorkflow)

@@ -340,6 +340,7 @@ from gitbugactions.actions.java.gradle_workflow import GradleWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
+from gitbugactions.actions.js.npm_jest_workflow import NpmJestWorkflow
 
 
 class GitHubWorkflowFactory:
@@ -360,6 +361,7 @@ class GitHubWorkflowFactory:
                 "pytest": PytestWorkflow.BUILD_TOOL_KEYWORDS,
                 "unittest": UnittestWorkflow.BUILD_TOOL_KEYWORDS,
                 "go": GoWorkflow.BUILD_TOOL_KEYWORDS,
+                "npm": NpmJestWorkflow.BUILD_TOOL_KEYWORDS,
             }
             aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
             keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
@@ -430,5 +432,7 @@ class GitHubWorkflowFactory:
                 return UnittestWorkflow(path, content)
             case ("go", "go"):
                 return GoWorkflow(path, content)
+            case ("js", "npm"):
+                return NpmJestWorkflow(path, content)
             case (_, _):
                 return UnknownWorkflow(path, content)
