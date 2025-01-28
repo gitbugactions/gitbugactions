@@ -42,6 +42,28 @@ def clone_repo(clone_url: str, path: str) -> pygit2.Repository:
                 raise e
 
 
+def git_clean(repo: pygit2.Repository, force=True):
+    # Get the status of the working directory
+    status = repo.status()
+
+    # Iterate over the status entries
+    for filepath, status_flags in status.items():
+        # Check if the file is untracked
+        if status_flags == pygit2.GIT_STATUS_WT_NEW:
+            full_path = os.path.join(repo.path, "..", filepath)
+
+            try:
+                if os.path.isdir(full_path) and not os.path.islink(full_path):
+                    if force:
+                        # Remove directory recursively
+                        shutil.rmtree(full_path)
+                else:
+                    # Remove file or symbolic link
+                    os.remove(full_path)
+            except Exception as e:
+                logging.error(f"Error removing {full_path}: {e}")
+
+
 def get_default_github_actions(
     repo_clone: pygit2.Repository, first_commit: pygit2.Commit, language: str
 ) -> Optional[GitHubActions]:
