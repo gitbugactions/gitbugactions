@@ -411,7 +411,7 @@ class PatchCollector:
             ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
     @staticmethod
-    def check_runs(bug_patch) -> Optional[str]:
+    def check_runs(bug_patch: BugPatch) -> Optional[str]:
         for strategy in TestConfig.strategies:
             if strategy.check(bug_patch):
                 return strategy.name
