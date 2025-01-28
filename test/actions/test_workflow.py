@@ -2,7 +2,7 @@ from gitbugactions.actions.workflow import GitHubWorkflowFactory
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
-from gitbugactions.actions.js.npm_jest_workflow import NpmJestWorkflow
+from gitbugactions.actions.javascript.npm_jest_workflow import NpmJestWorkflow
 from gitbugactions.github_api import GithubToken
 
 import os

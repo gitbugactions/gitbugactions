@@ -340,7 +340,7 @@ from gitbugactions.actions.java.gradle_workflow import GradleWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
-from gitbugactions.actions.js.npm_jest_workflow import NpmJestWorkflow
+from gitbugactions.actions.javascript.npm_jest_workflow import NpmJestWorkflow
 
 
 class GitHubWorkflowFactory:
