@@ -9,7 +9,7 @@ from unidiff import PatchSet
 from gitbugactions.actions.actions import ActTestsRun
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.util import get_patch_file_extensions
+from gitbugactions.util import get_patch_file_extensions, git_clean
 
 
 class ChangeType(Enum):
@@ -172,6 +172,7 @@ class BugPatch:
 
     def __set_commit(self, repo_clone: pygit2.Repository, commit: str):
         commit = repo_clone.revparse_single(commit)
+        git_clean(repo_clone)
         repo_clone.checkout_tree(commit)
         repo_clone.create_tag(
             str(uuid.uuid4()),
