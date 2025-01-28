@@ -247,5 +247,5 @@ def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
 )
 def test_npm_jest(yml_file):
     """Test the workflow factory for npm-jest workflows."""
-    workflow = create_workflow(yml_file, "js")
+    workflow = create_workflow(yml_file, "javascript")
     assert isinstance(workflow, NpmJestWorkflow)
