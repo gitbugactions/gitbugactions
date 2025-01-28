@@ -32,4 +32,4 @@ class NpmJestWorkflow(GitHubWorkflow):
         return parser.get_test_results(str(Path(repo_path, "junit.xml")))
 
     def get_build_tool(self) -> str:
-        return "npm"
+        return "npm-jest"
