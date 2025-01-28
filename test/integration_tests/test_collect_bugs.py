@@ -1,3 +1,4 @@
+import os
 import json
 import dateutil
 import shutil
@@ -212,6 +213,7 @@ class TestCollectBugs:
     @classmethod
     def teardown_class(cls):
         shutil.rmtree("test/resources/test_collect_bugs_out")
+        assert not os.path.exists("test/resources/test_collect_bugs_out")
 
     @pytest.mark.dependency()
     def test_gitbugactions_test_repo(self):
@@ -350,7 +352,6 @@ class TestCollectBugs:
                     passed, failure = get_test_results(
                         data["actions_runs"][0][0]["tests"]
                     )
-                    print(data["actions_runs"][0][0]["stdout"])
                     assert passed == 0
                     assert failure == 0
 
@@ -924,13 +925,83 @@ class TestCollectBugs:
                         ]
                     )
 
+    @pytest.mark.dependency()
+    def test_gitbugactions_npm_jest_test_repo(self):
+        """
+        Verifies that the npm-jest project bugs have been found
+
+        repo: https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo
+        """
+        with open(
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-npm-jest-test-repo.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 2
+
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "fa9d952976eff56860653f15bbc62766ff4211a5",
+                    "88399e528e6fb9a87a9f74e3bf9f6bf413577ebe",
+                ]
+
+                if data["commit_hash"] == "fa9d952976eff56860653f15bbc62766ff4211a5":
+                    assert len(PatchSet(data["non_code_patch"])) == 0
+                    assert data["commit_message"] == "fix subtract\n"
+                    assert data["commit_timestamp"] == "2025-01-27T17:25:25+00:00Z"
+                    assert (
+                        data["previous_commit_hash"]
+                        == "9b7db8411e1cfafae9b9a0720213e45d42ef394f"
+                    )
+                    assert data["previous_commit_message"] == "break subtract\n"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2025-01-27T17:25:02+00:00Z"
+                    )
+                    assert data["time_to_patch"] == "0:00:23"
+                    assert data["strategy"] == "FAIL_PASS"
+                    assert len(data["bug_patch_file_extensions"]) == 1
+                    assert len(data["test_patch_file_extensions"]) == 0
+                    assert len(data["non_code_patch_file_extensions"]) == 0
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    assert len(data["actions_runs"]) == 3
+                    assert len(data["actions_runs"][0][0]["tests"]) == 5
+                    assert len(data["actions_runs"][2][0]["tests"]) == 5
+
+                elif data["commit_hash"] == "88399e528e6fb9a87a9f74e3bf9f6bf413577ebe":
+                    assert len(PatchSet(data["non_code_patch"])) == 0
+                    assert data["commit_message"] == "fix sum\n"
+                    assert data["commit_timestamp"] == "2025-01-27T17:24:30+00:00Z"
+                    assert (
+                        data["previous_commit_hash"]
+                        == "bad1d309fdcc0ebaf367690599480c0a38df54db"
+                    )
+                    assert data["previous_commit_message"] == "initial commit\n"
+                    assert (
+                        data["previous_commit_timestamp"]
+                        == "2025-01-27T17:23:07+00:00Z"
+                    )
+                    assert data["time_to_patch"] == "0:01:23"
+                    assert data["strategy"] == "PASS_PASS"
+                    assert "js" in data["bug_patch_file_extensions"]
+                    assert len(data["bug_patch_file_extensions"]) == 1
+                    assert "js" in data["bug_patch_file_extensions"]
+                    assert len(data["test_patch_file_extensions"]) == 1
+                    assert len(data["non_code_patch_file_extensions"]) == 0
+                    assert data["change_type"] == "SOURCE_ONLY"
+                    assert len(data["actions_runs"]) == 3
+                    assert len(data["actions_runs"][0][0]["tests"]) == 5
+                    assert len(data["actions_runs"][1][0]["tests"]) == 5
+                    assert len(data["actions_runs"][2][0]["tests"]) == 5
+
     def test_collected_data(self):
         with open(
             "test/resources/test_collect_bugs_out/data.json",
             "r",
         ) as f:
             data = json.loads(f.read())
-            assert len(data.keys()) == 5
+            assert len(data.keys()) == 6
             assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 12
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
@@ -938,6 +1009,9 @@ class TestCollectBugs:
                 data["gitbugactions/gitbugactions-unittest-test-repo"]["commits"] == 2
             )
             assert data["gitbugactions/gitbugactions-go-test-repo"]["commits"] == 4
+            assert (
+                data["gitbugactions/gitbugactions-npm-jest-test-repo"]["commits"] == 4
+            )
             assert (
                 data["gitbugactions/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
@@ -966,6 +1040,12 @@ class TestCollectBugs:
                 data["gitbugactions/gitbugactions-go-test-repo"]["possible_bug_patches"]
                 == 2
             )
+            assert (
+                data["gitbugactions/gitbugactions-npm-jest-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 2
+            )
 
     @pytest.mark.dependency(
         depends=[
@@ -974,6 +1054,7 @@ class TestCollectBugs:
             "TestCollectBugs::test_gitbugactions_gradle_test_repo",
             "TestCollectBugs::test_gitbugactions_unittest_test_repo",
             "TestCollectBugs::test_gitbugactions_go_test_repo",
+            "TestCollectBugs::test_gitbugactions_npm_jest_test_repo",
         ]
     )
     @pytest.mark.flaky
