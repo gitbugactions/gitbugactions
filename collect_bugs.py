@@ -39,6 +39,7 @@ from gitbugactions.collect_bugs.collection_strategies import *
 from gitbugactions.collect_bugs.test_config import TestConfig
 from gitbugactions.collect_bugs.bug_patch import BugPatch
 from concurrent.futures import ThreadPoolExecutor, Future, as_completed
+from gitbugactions.utils.file_reader import GitShowFileReader
 
 
 class PatchCollector:
@@ -230,21 +231,15 @@ class PatchCollector:
         Use git show to avoid checking out the whole version
         """
         actions: Set[Action] = set()
+        reader = GitShowFileReader(commit, self.repo_clone.workdir)
 
-        # Search for workflows in the commit version
-        run = subprocess.run(
-            f"git show {commit}:.github/workflows",
-            cwd=self.repo_clone.workdir,
-            shell=True,
-            capture_output=True,
-        )
-
-        # If the folder does not exist, there are no workflows
-        if run.returncode != 0:
+        # Read workflows directory listing
+        workflows_listing = reader.read_file(".github/workflows")
+        if workflows_listing is None:
             return actions
 
         # Get the workflows paths
-        workflow_paths = run.stdout.decode("utf-8").split("\n")
+        workflow_paths = workflows_listing.split("\n")
 
         # Get the actions used by each workflow
         for workflow_path in workflow_paths:
@@ -254,20 +249,10 @@ class PatchCollector:
             ):
                 continue
 
-            # Read the workflow file
-            run = subprocess.run(
-                f"git show {commit}:.github/workflows/{workflow_path}",
-                cwd=self.repo_clone.workdir,
-                shell=True,
-                capture_output=True,
-            )
-            if run.returncode != 0:
-                continue
-
-            # Get the actions used by the workflow
+            workflow_path = f".github/workflows/{workflow_path}"
             try:
                 workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
-                    "", self.language, content=run.stdout.decode("utf-8")
+                    workflow_path, self.language, reader
                 )
                 actions.update(workflow.get_actions())
             except Exception:
