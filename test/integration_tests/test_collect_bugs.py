@@ -995,13 +995,34 @@ class TestCollectBugs:
                     assert len(data["actions_runs"][1][0]["tests"]) == 5
                     assert len(data["actions_runs"][2][0]["tests"]) == 5
 
+    @pytest.mark.dependency()
+    def test_gitbugactions_npm_mocha_test_repo(self):
+        """
+        Verifies that the npm-mocha project bugs have been found
+
+        repo: https://github.com/gitbugactions/gitbugactions-npm-mocha-test-repo
+        """
+        with open(
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-npm-mocha-test-repo.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 1
+
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "3e3b7e364c478bd3a9e3d22d6b296f6f8ac0dfbf",
+                ]
+                assert data["strategy"] == "FAIL_PASS"
+
     def test_collected_data(self):
         with open(
             "test/resources/test_collect_bugs_out/data.json",
             "r",
         ) as f:
             data = json.loads(f.read())
-            assert len(data.keys()) == 6
+            assert len(data.keys()) == 7
             assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 12
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
@@ -1011,6 +1032,9 @@ class TestCollectBugs:
             assert data["gitbugactions/gitbugactions-go-test-repo"]["commits"] == 4
             assert (
                 data["gitbugactions/gitbugactions-npm-jest-test-repo"]["commits"] == 4
+            )
+            assert (
+                data["gitbugactions/gitbugactions-npm-mocha-test-repo"]["commits"] == 2
             )
             assert (
                 data["gitbugactions/gitbugactions-maven-test-repo"][
@@ -1046,6 +1070,12 @@ class TestCollectBugs:
                 ]
                 == 2
             )
+            assert (
+                data["gitbugactions/gitbugactions-npm-mocha-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 1
+            )
 
     @pytest.mark.dependency(
         depends=[
@@ -1055,6 +1085,7 @@ class TestCollectBugs:
             "TestCollectBugs::test_gitbugactions_unittest_test_repo",
             "TestCollectBugs::test_gitbugactions_go_test_repo",
             "TestCollectBugs::test_gitbugactions_npm_jest_test_repo",
+            "TestCollectBugs::test_gitbugactions_npm_mocha_test_repo",
         ]
     )
     @pytest.mark.flaky
