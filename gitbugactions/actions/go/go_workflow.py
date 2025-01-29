@@ -8,7 +8,7 @@ from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
 class GoWorkflow(GitHubWorkflow):
-    BUILD_TOOL_KEYWORDS = ["go"]
+    BUILD_TOOL_KEYWORDS = {"go"}
     # Regex patterns to match go test commands
     __COMMAND_PATTERNS = [
         r"go\s+(([^\s]+\s+)*)?",

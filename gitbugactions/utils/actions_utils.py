@@ -49,7 +49,7 @@ def get_default_github_actions(
                     # to choose the repos that we will run
                     if len(runs[0].tests) > 0:
                         return actions
-            except (yaml.YAMLError, JUnitXmlError, xml.etree.ElementTree.ParseError):
+            except (yaml.YAMLError, xml.etree.ElementTree.ParseError):
                 continue
             finally:
                 repo_clone.reset(head.id, pygit2.GIT_RESET_HARD)

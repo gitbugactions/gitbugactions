@@ -8,7 +8,7 @@ from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
 class UnittestWorkflow(GitHubWorkflow):
-    BUILD_TOOL_KEYWORDS = ["unittest", "xmlrunner"]
+    BUILD_TOOL_KEYWORDS = {"unittest", "xmlrunner"}
     # Regex patterns to match unittest commands
     __TESTS_COMMAND_PATTERNS = [
         r"python([23](\.\d+)?)?\s+(([^\s]+\s+)*)?-m\s+unittest",  # Matches commands that call unittest through python's module option

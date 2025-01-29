@@ -5,6 +5,8 @@ from junitparser import TestCase
 from typing import List, Set, Optional
 from gitbugactions.github_api import GithubToken
 from gitbugactions.actions.action import Action
+import os
+import json
 
 
 class GitHubWorkflow(ABC):
@@ -342,6 +344,7 @@ from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
 from gitbugactions.actions.javascript.npm_jest_workflow import NpmJestWorkflow
 from gitbugactions.utils.file_reader import FileReader, RegularFileReader
+from gitbugactions.actions.javascript.npm_mocha_workflow import NpmMochaWorkflow
 
 
 class GitHubWorkflowFactory:
@@ -362,7 +365,8 @@ class GitHubWorkflowFactory:
                 "pytest": PytestWorkflow.BUILD_TOOL_KEYWORDS,
                 "unittest": UnittestWorkflow.BUILD_TOOL_KEYWORDS,
                 "go": GoWorkflow.BUILD_TOOL_KEYWORDS,
-                "npm-jest": NpmJestWorkflow.BUILD_TOOL_KEYWORDS,
+                "npm": NpmJestWorkflow.BUILD_TOOL_KEYWORDS
+                | NpmMochaWorkflow.BUILD_TOOL_KEYWORDS,
             }
             aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
             keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
@@ -414,6 +418,57 @@ class GitHubWorkflowFactory:
             return None
 
     @staticmethod
+    def _identify_test_framework(
+        path: str, build_tool: Optional[str], file_reader: FileReader
+    ) -> Optional[str]:
+        """
+        Identifies the test framework used by the workflow.
+        Currently only used for npm projects, checks package.json for testing framework.
+        For other build tools, returns the build tool name.
+        """
+        # TODO: move this function inside build tool classes, to separate logic and make it more modular
+        if build_tool != "npm":
+            return build_tool
+
+        try:
+            # path is the workflow file path, so we need to go up two directories to find the root of the project
+            workflow_dir = os.path.join(os.path.dirname(path), "..", "..")
+            package_json_path = os.path.join(workflow_dir, "package.json")
+
+            content = file_reader.read_file(package_json_path)
+            if content is None:
+                return build_tool
+
+            package_data = json.loads(content)
+
+            # Check both dependencies and devDependencies for Jest
+            dependencies = package_data.get("dependencies", {})
+            dev_dependencies = package_data.get("devDependencies", {})
+
+            if "jest" in dependencies or "jest" in dev_dependencies:
+                return "jest"
+
+            # Check if test script contains jest command
+            scripts = package_data.get("scripts", {})
+            test_script = scripts.get("test", "")
+            if "jest" in test_script.lower():
+                return "jest"
+
+            # Check for Mocha
+            if (
+                "mocha" in dependencies
+                or "mocha" in dev_dependencies
+                or "mocha" in test_script
+            ):
+                return "mocha"
+
+            return build_tool
+
+        except (json.JSONDecodeError, Exception):
+            logging.warning(f"Failed to parse package.json for {path}")
+            return build_tool
+
+    @staticmethod
     def create_workflow(
         path: str,
         language: str,
@@ -427,19 +482,24 @@ class GitHubWorkflowFactory:
             return UnknownWorkflow(path, "")
 
         build_tool = GitHubWorkflowFactory._identify_build_tool(path, file_reader)
+        test_framework = GitHubWorkflowFactory._identify_test_framework(
+            path, build_tool, file_reader
+        )
 
-        match (language, build_tool):
-            case ("java", "maven"):
+        match (language, build_tool, test_framework):
+            case ("java", "maven", "maven"):
                 return MavenWorkflow(path, content)
-            case ("java", "gradle"):
+            case ("java", "gradle", "gradle"):
                 return GradleWorkflow(path, content)
-            case ("python", "pytest"):
+            case ("python", "pytest", "pytest"):
                 return PytestWorkflow(path, content)
-            case ("python", "unittest"):
+            case ("python", "unittest", "unittest"):
                 return UnittestWorkflow(path, content)
-            case ("go", "go"):
+            case ("go", "go", "go"):
                 return GoWorkflow(path, content)
-            case ("javascript", "npm-jest"):
+            case ("javascript", "npm", "jest"):
                 return NpmJestWorkflow(path, content)
-            case (_, _):
+            case ("javascript", "npm", "mocha"):
+                return NpmMochaWorkflow(path, content)
+            case (_, _, _):
                 return UnknownWorkflow(path, content)

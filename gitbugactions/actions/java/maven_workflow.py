@@ -8,7 +8,7 @@ from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
 class MavenWorkflow(GitHubWorkflow):
-    BUILD_TOOL_KEYWORDS = ["maven", "mvn", "mavenw", "mvnw"]
+    BUILD_TOOL_KEYWORDS = {"maven", "mvn", "mavenw", "mvnw"}
     # Regex patterns to match maven test commands
     __TESTS_COMMAND_PATTERNS = [
         r"(maven|mvn|mavenw|mvnw)\s+(([^\s]+\s+)*)?(test|package|verify|install)",

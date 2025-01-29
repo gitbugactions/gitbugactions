@@ -8,7 +8,7 @@ from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
 class PytestWorkflow(GitHubWorkflow):
-    BUILD_TOOL_KEYWORDS = ["pytest", "py.test"]
+    BUILD_TOOL_KEYWORDS = {"pytest", "py.test"}
     # Regex patterns to match pytest commands
     __TESTS_COMMAND_PATTERNS = [
         r"pytest",
