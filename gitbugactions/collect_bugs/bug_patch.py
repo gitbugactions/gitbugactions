@@ -3,13 +3,14 @@ import pygit2
 import datetime
 from typing import List, Any, Dict, Set, Optional
 from enum import Enum
+from gitbugactions.utils.repo_utils import git_clean
 from github import Repository
 from gitbugactions.github_api import GithubAPI
 from unidiff import PatchSet
 from gitbugactions.actions.actions import ActTestsRun
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.util import get_patch_file_extensions, git_clean
+from gitbugactions.utils.file_utils import get_patch_file_extensions
 
 
 class ChangeType(Enum):

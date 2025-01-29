@@ -7,7 +7,7 @@ import logging, traceback
 import os, sys, shutil
 
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.util import delete_repo_clone
+from gitbugactions.utils.repo_utils import delete_repo_clone
 from gitbugactions.docker.export import create_diff_image
 from gitbugactions.docker.client import DockerClient
 from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun

@@ -4,9 +4,10 @@ import json
 import uuid
 import fire
 import datetime
+from gitbugactions.utils.repo_utils import delete_repo_clone
 from github import Repository
 from pathlib import Path
-from gitbugactions.util import delete_repo_clone, clone_repo
+from gitbugactions.utils.repo_utils import clone_repo
 from gitbugactions.crawler import RepoStrategy, RepoCrawler
 from gitbugactions.actions.actions import (
     GitHubActions,
