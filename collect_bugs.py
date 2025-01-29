@@ -8,6 +8,7 @@ import tqdm
 import threading
 import fire
 import datetime
+from gitbugactions.utils.actions_utils import get_default_github_actions
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
 from typing import List, Tuple, Any, Dict, Set, Optional
@@ -20,7 +21,7 @@ from github import (
     PaginatedList,
 )
 from unidiff import PatchSet
-from gitbugactions.util import delete_repo_clone
+from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 from gitbugactions.actions.actions import (
     ActTestsRun,
     ActCacheDirManager,
@@ -30,9 +31,7 @@ from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.github_api import GithubAPI
-from gitbugactions.util import (
-    get_default_github_actions,
-    clone_repo,
+from gitbugactions.utils.file_utils import (
     get_file_type,
     FileType,
 )

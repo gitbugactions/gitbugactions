@@ -12,7 +12,8 @@ import traceback
 from docker.models.containers import Container
 from typing import List, Dict
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.util import delete_repo_clone, get_default_github_actions, clone_repo
+from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
+from gitbugactions.utils.actions_utils import get_default_github_actions
 from gitbugactions.docker.export import extract_diff
 from gitbugactions.docker.client import DockerClient
 from concurrent.futures import ThreadPoolExecutor, as_completed

@@ -7,7 +7,7 @@ from typing import List
 from unidiff import PatchSet
 from collect_bugs import collect_bugs, PatchCollector, BugPatch
 from gitbugactions.github_api import GithubToken, GithubAPI
-from gitbugactions.util import delete_repo_clone
+from gitbugactions.utils.repo_utils import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
 from gitbugactions.collect_bugs.collection_strategies import *
 
