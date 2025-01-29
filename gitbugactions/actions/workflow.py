@@ -2,7 +2,7 @@ import yaml
 import logging
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from typing import List, Set
+from typing import List, Set, Optional
 from gitbugactions.github_api import GithubToken
 from gitbugactions.actions.action import Action
 
@@ -341,6 +341,7 @@ from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
 from gitbugactions.actions.javascript.npm_jest_workflow import NpmJestWorkflow
+from gitbugactions.utils.file_reader import FileReader, RegularFileReader
 
 
 class GitHubWorkflowFactory:
@@ -349,7 +350,7 @@ class GitHubWorkflowFactory:
     """
 
     @staticmethod
-    def _identify_build_tool(path: str, content: str = ""):
+    def _identify_build_tool(path: str, file_reader: FileReader) -> Optional[str]:
         """
         Identifies the build tool used by the workflow.
         """
@@ -377,13 +378,11 @@ class GitHubWorkflowFactory:
                                 keyword_counts[keyword] += 1
 
             # Load the workflow
-            doc = None
-            if content == "":
-                with open(path, "r") as stream:
-                    doc = yaml.safe_load(stream)
-            else:
-                doc = yaml.safe_load(content)
+            content = file_reader.read_file(path)
+            if content is None:
+                return None
 
+            doc = yaml.safe_load(content)
             if doc is None:
                 return None
 
@@ -415,11 +414,19 @@ class GitHubWorkflowFactory:
             return None
 
     @staticmethod
-    def create_workflow(path: str, language: str, content: str = "") -> GitHubWorkflow:
+    def create_workflow(
+        path: str,
+        language: str,
+        file_reader: FileReader = RegularFileReader(),
+    ) -> GitHubWorkflow:
         """
         Creates a workflow object according to the language and build system.
         """
-        build_tool = GitHubWorkflowFactory._identify_build_tool(path, content=content)
+        content = file_reader.read_file(path)
+        if content is None:
+            return UnknownWorkflow(path, "")
+
+        build_tool = GitHubWorkflowFactory._identify_build_tool(path, file_reader)
 
         match (language, build_tool):
             case ("java", "maven"):
