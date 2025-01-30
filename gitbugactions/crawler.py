@@ -3,6 +3,7 @@ import logging
 import tqdm
 import pandas as pd
 from abc import ABC, abstractmethod
+from gitbugactions.actions.actions import ActCacheDirManager
 from github import Repository
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -46,6 +47,8 @@ class RepoCrawler:
         self.n_workers = n_workers
         self.executor = ThreadPoolExecutor(max_workers=self.n_workers)
         self.futures = []
+        # Must init several act-cache dirs for parallel processing to work
+        ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
 
     def __get_creation_range(self):
         created = list(
