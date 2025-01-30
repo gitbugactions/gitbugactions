@@ -8,6 +8,7 @@ import tqdm
 import threading
 import fire
 import datetime
+from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.utils.actions_utils import get_default_github_actions
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
@@ -27,7 +28,7 @@ from gitbugactions.actions.actions import (
     ActCacheDirManager,
     Act,
 )
-from gitbugactions.actions.workflow import GitHubWorkflow, GitHubWorkflowFactory
+from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.actions.action import Action
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.github_api import GithubAPI

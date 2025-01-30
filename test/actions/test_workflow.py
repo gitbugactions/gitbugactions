@@ -1,4 +1,4 @@
-from gitbugactions.actions.workflow import GitHubWorkflowFactory
+from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow

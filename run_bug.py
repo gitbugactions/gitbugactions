@@ -10,7 +10,7 @@ from typing import Dict
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.docker.export import create_diff_image
 from gitbugactions.docker.client import DockerClient
-from gitbugactions.actions.workflow import GitHubWorkflowFactory
+from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
 
 
