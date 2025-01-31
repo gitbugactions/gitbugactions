@@ -8,8 +8,9 @@ from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 class NpmMochaWorkflow(NpmWorkflow):
 
-    def _is_test_script(test_script: str) -> bool:
-        return "mocha" in test_script.lower()
+    @classmethod
+    def is_npm_test_command(cls, command: str) -> bool:
+        return "mocha" in command.lower()
 
     def instrument_test_steps(self):
         if "jobs" in self.doc:

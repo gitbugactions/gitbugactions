@@ -19,7 +19,7 @@ class GitHubWorkflowFactory:
     """
 
     @staticmethod
-    def _identify_build_tool(path: str, file_reader: FileReader) -> Optional[str]:
+    def _identify_build_tool(content: str) -> Optional[str]:
         """
         Identifies the build tool used by the workflow.
         """
@@ -46,11 +46,7 @@ class GitHubWorkflowFactory:
                             if keyword in name:
                                 keyword_counts[keyword] += 1
 
-            # Load the workflow
-            content = file_reader.read_file(path)
-            if content is None:
-                return None
-
+            # Load document
             doc = yaml.safe_load(content)
             if doc is None:
                 return None
@@ -95,7 +91,7 @@ class GitHubWorkflowFactory:
         if content is None:
             return UnknownWorkflow(path, "")
 
-        build_tool = GitHubWorkflowFactory._identify_build_tool(path, file_reader)
+        build_tool = GitHubWorkflowFactory._identify_build_tool(content)
 
         match (language, build_tool):
             case ("java", "maven"):
