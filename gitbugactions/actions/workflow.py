@@ -2,7 +2,7 @@ import yaml
 import logging
 from abc import ABC, abstractmethod
 from junitparser import TestCase
-from typing import List, Set, Optional
+from typing import List, Set
 from gitbugactions.github_api import GithubToken
 from gitbugactions.actions.action import Action
 
