@@ -15,7 +15,11 @@ class NpmWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = {"npm"}
     # Regex patterns to match npm test commands
     __NPM_COMMANDS_PATTERNS = r"npm"
-    __TEST_COMMANDS_PATTERNS = [r"(test(?::\S*)*)", r"(run\s+test(?::\S*)*)"]
+    __TEST_COMMANDS_PATTERNS = [
+        r"(test(?::\S*)*)",
+        r"(run\s+test(?::\S*)*)",
+        r"(run\s+coverage(?::\S*)*)",
+    ]
 
     @classmethod
     def create_specific_workflow(
@@ -55,6 +59,12 @@ class NpmWorkflow(GitHubWorkflow):
         # Check if package.json exists
         if package_content:
             try:
+                # Process test script
+                test_script = test_script.strip()
+                # Remove "run " prefix if present
+                if test_script.startswith("run "):
+                    test_script = test_script[4:].strip()
+
                 package_data = json.loads(package_content)
                 scripts = package_data.get("scripts", {})
                 test_command = scripts.get(test_script, None)
@@ -80,7 +90,8 @@ class NpmWorkflow(GitHubWorkflow):
     @classmethod
     def __get_test_script(self, command: str) -> Tuple[bool, str]:
         for test_pattern in self.__TEST_COMMANDS_PATTERNS:
-            if re.search(self.__NPM_COMMANDS_PATTERNS + r"\s+" + test_pattern, command):
+            pattern = self.__NPM_COMMANDS_PATTERNS + r"\s+" + test_pattern
+            if re.search(pattern, command):
                 match = re.search(test_pattern, command)
                 return True, match.group(1)
         return False, ""

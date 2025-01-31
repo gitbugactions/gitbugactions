@@ -1,0 +1,104 @@
+{
+    "repository": "gitbugactions/gitbugactions-npm-vitest-test-repo",
+    "stars": 0,
+    "language": "javascript",
+    "size": 0,
+    "clone_url": "https://github.com/gitbugactions/gitbugactions-npm-vitest-test-repo.git",
+    "timestamp": "2025-01-31T16:20:54.707218+00:00Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "npm-vitest"
+    ],
+    "actions_test_build_tools": [
+        "npm-vitest"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "src/test/js/appMath.test.js",
+                "name": "AppMath > sum adds two numbers correctly",
+                "time": 0.000919521,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "src/test/js/appMath.test.js",
+                "name": "AppMath > subtract subtracts two numbers correctly",
+                "time": 0.000115063,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "src/test/js/appMath.test.js",
+                "name": "AppMath > multiply multiplies two numbers correctly",
+                "time": 7.8376e-05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "src/test/js/appMath.test.js",
+                "name": "AppMath > sumTwice adds the second number twice",
+                "time": 7.1198e-05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "src/test/js/appMath.test.js",
+                "name": "AppMath > subtractTwice subtracts the second number twice",
+                "time": 7.0264e-05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \ud83d\ude80  Start image=gitbugactions:latest\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/58851d44-dfef-11ef-beed-98597a56f496/gitbugactions-gitbugactions-npm-vitest-test-repo] user=0 workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \u2b50 Run Main actions/checkout@v3\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker cp src=/tmp/58851d44-dfef-11ef-beed-98597a56f496/gitbugactions-gitbugactions-npm-vitest-test-repo/. dst=/tmp/58851d44-dfef-11ef-beed-98597a56f496/gitbugactions-gitbugactions-npm-vitest-test-repo\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/58851d44-dfef-11ef-beed-98597a56f496/gitbugactions-gitbugactions-npm-vitest-test-repo] user=0 workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2705  Success - Main actions/checkout@v3\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \u2b50 Run Main Setup Node.js\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/default/act/actions-setup-node@v3/ dst=/var/run/act/actions/actions-setup-node@v3/\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /var/run/act/actions/actions-setup-node@v3/] user=0 workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v3/dist/setup/index.js] user= workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::isExplicit: 22.13.1\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::explicit? true\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/node/22.13.1/x64\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::not found\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | Attempting to download 22.13.1...\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::No manifest cached\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::Getting manifest from actions/node-versions@main\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::set auth\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::check 22.13.1 satisfies 22.13.1\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::arm64===x64 && darwin===linux\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::x64===x64 && darwin===linux\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::arm64===x64 && linux===linux\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::x64===x64 && linux===linux\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::matched 22.13.1\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | Acquiring 22.13.1 - x64 from https://github.com/actions/node-versions/releases/download/22.13.1-12900459766/node-22.13.1-linux-x64.tar.gz\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::Downloading https://github.com/actions/node-versions/releases/download/22.13.1-12900459766/node-22.13.1-linux-x64.tar.gz\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::Destination /tmp/06581a31-cf19-498f-8860-53df6a4b9848\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::set auth\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::download complete\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | Extracting ...\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::Checking tar --version\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword -C /tmp/bb409c25-98ef-418b-8b97-5228f38e41cb -f /tmp/06581a31-cf19-498f-8860-53df6a4b9848\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | Adding to the cache ...\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::Caching tool node 22.13.1 x64\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::source dir: /tmp/bb409c25-98ef-418b-8b97-5228f38e41cb\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::destination /opt/hostedtoolcache/node/22.13.1/x64\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::finished caching tool\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2753  ::group::Environment details\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | node: v22.13.1\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | npm: 10.9.2\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | yarn: 1.22.21\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2753  ::endgroup::\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/tsc.json\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/eslint-stylish.json\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/eslint-compact.json\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2705  Success - Main Setup Node.js\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2699  ::set-output:: node-version=v22.13.1\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2699  ::add-path:: /opt/hostedtoolcache/node/22.13.1/x64/bin\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \u2b50 Run Main Install dependencies\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | added 108 packages, and audited 109 packages in 1s\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | 27 packages are looking for funding\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   |   run `npm fund` for details\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | found 0 vulnerabilities\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2705  Success - Main Install dependencies\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \u2b50 Run Main Run tests with coverage\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | > gitbugactions-npm-vitest-test-repo@1.0.0 coverage\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | > vitest run --coverage --reporter=junit --outputFile=junit.xml\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \u001b[?25lJUNIT report written to /tmp/58851d44-dfef-11ef-beed-98597a56f496/gitbugactions-gitbugactions-npm-vitest-test-repo/junit.xml\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | \u001b[34m % \u001b[39m\u001b[2mCoverage report from \u001b[22m\u001b[33mv8\u001b[39m\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | ------------|---------|----------|---------|---------|-------------------\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | ------------|---------|----------|---------|---------|-------------------\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | All files   |   69.23 |    83.33 |   83.33 |   69.23 |                   \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   |  app.js     |       0 |        0 |       0 |       0 | 1-11              \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   |  appMath.js |     100 |      100 |     100 |     100 |                   \n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | ------------|---------|----------|---------|---------|-------------------\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2705  Success - Main Run tests with coverage\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \u2b50 Run Post Setup Node.js\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v3/dist/cache-save/index.js] user= workdir=\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | (node:514) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   | (Use `node --trace-deprecation ...` to show where the warning was created)\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \ud83d\udcac  ::debug::Caching for '' is not supported\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test]   \u2705  Success - Post Setup Node.js\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] Cleaning up container for job test\n[4cd51f96-1492-4dc1-8e6b-cdd4985892ca/test] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "time=\"2025-01-31T17:20:55+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-01-31T17:20:55+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
+        "workflow": {
+            "path": "/tmp/58851d44-dfef-11ef-beed-98597a56f496/gitbugactions-gitbugactions-npm-vitest-test-repo/.github/workflows/tests-crawler.yml",
+            "type": "npm-vitest"
+        },
+        "workflow_name": "4cd51f96-1492-4dc1-8e6b-cdd4985892ca",
+        "build_tool": "npm-vitest",
+        "elapsed_time": 9.05381464958191,
+        "default_actions": false,
+        "return_code": 0
+    }
+}

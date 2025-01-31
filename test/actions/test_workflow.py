@@ -4,6 +4,7 @@ from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
 from gitbugactions.actions.javascript.npm.npm_jest_workflow import NpmJestWorkflow
 from gitbugactions.actions.javascript.npm.npm_mocha_workflow import NpmMochaWorkflow
+from gitbugactions.actions.javascript.npm.npm_vitest_workflow import NpmVitestWorkflow
 from gitbugactions.github_api import GithubToken
 
 import os
@@ -250,6 +251,10 @@ def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
         (
             "test/resources/test_workflows/javascript/npm/mocha/.github/workflows/tests.yml",
             NpmMochaWorkflow,
+        ),
+        (
+            "test/resources/test_workflows/javascript/npm/vitest/.github/workflows/tests.yml",
+            NpmVitestWorkflow,
         ),
     ],
 )
