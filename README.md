@@ -118,7 +118,7 @@ Example of how to remove dangling containers and volumes created by act:
 # Remove containers
 docker rm $(docker stop $(docker ps -a -q --filter ancestor=gitbugactions:latest --format="{{.ID}}"))
 # Remove volumes
-docker volume ls -q | grep '^act-' | xargs docker rm
+docker volume ls -q | grep '^act-' | xargs docker volume rm
 ```
 
 ### Concurrent File Access
