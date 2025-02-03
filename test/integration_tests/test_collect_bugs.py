@@ -1037,13 +1037,34 @@ class TestCollectBugs:
                 ]
                 assert data["strategy"] == "FAIL_PASS"
 
+    @pytest.mark.dependency()
+    def test_gitbugactions_rust_test_repo(self):
+        """
+        Verifies that the rust project bugs have been found
+
+        repo: https://github.com/gitbugactions/gitbugactions-rust-test-repo
+        """
+        with open(
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-rust-test-repo.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 1
+
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "45043fc05cce16a6da87a3a536f4adc900c5e967",
+                ]
+                assert data["strategy"] == "FAIL_PASS"
+
     def test_collected_data(self):
         with open(
             "test/resources/test_collect_bugs_out/data.json",
             "r",
         ) as f:
-            data = json.loads(f.read())
-            assert len(data.keys()) == 8
+            data = json.load(f)
+            assert len(data.keys()) == 9
             assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 12
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
@@ -1060,6 +1081,7 @@ class TestCollectBugs:
             assert (
                 data["gitbugactions/gitbugactions-npm-vitest-test-repo"]["commits"] == 2
             )
+            assert data["gitbugactions/gitbugactions-rust-test-repo"]["commits"] == 2
             assert (
                 data["gitbugactions/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
@@ -1106,6 +1128,12 @@ class TestCollectBugs:
                 ]
                 == 1
             )
+            assert (
+                data["gitbugactions/gitbugactions-rust-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 1
+            )
 
     @pytest.mark.dependency(
         depends=[
@@ -1117,6 +1145,7 @@ class TestCollectBugs:
             "TestCollectBugs::test_gitbugactions_npm_jest_test_repo",
             "TestCollectBugs::test_gitbugactions_npm_mocha_test_repo",
             "TestCollectBugs::test_gitbugactions_npm_vitest_test_repo",
+            "TestCollectBugs::test_gitbugactions_rust_test_repo",
         ]
     )
     @pytest.mark.flaky

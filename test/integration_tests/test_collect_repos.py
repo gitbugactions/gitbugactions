@@ -9,9 +9,7 @@ from collect_repos import CollectReposStrategy, CollectInfraReposStrategy
 class BaseCollectReposTest:
     @classmethod
     def setup_class(cls):
-        cls.temp_folder = tempfile.gettempdir() + "/collect_repos"
-        if not os.path.exists(cls.temp_folder):
-            os.makedirs(cls.temp_folder)
+        cls.temp_folder = tempfile.mkdtemp(prefix="collect_repos_")
 
     @classmethod
     def teardown_class(cls):
@@ -105,6 +103,25 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-npm-vitest-test-repo.json",
+        )
+
+        assert os.path.exists(data_file)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+            assert "number_of_test_actions" in data
+            assert data["number_of_test_actions"] == 1
+            assert "actions_successful" in data
+            assert data["actions_successful"]
+            assert data["number_of_actions"] == 1
+
+    def test_collect_repos_rust(self):
+        api = GithubAPI()
+        repo = api.get_repo("gitbugactions/gitbugactions-rust-test-repo")
+
+        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        data_file = os.path.join(
+            self.temp_folder,
+            "gitbugactions-gitbugactions-rust-test-repo.json",
         )
 
         assert os.path.exists(data_file)

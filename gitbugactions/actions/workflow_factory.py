@@ -7,7 +7,7 @@ from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.utils.file_reader import FileReader, RegularFileReader
-
+from gitbugactions.actions.rust.cargo_workflow import CargoWorkflow
 
 from typing import Optional
 import yaml
@@ -23,7 +23,6 @@ class GitHubWorkflowFactory:
         """
         Identifies the build tool used by the workflow.
         """
-        # Build tool keywords
         try:
             build_tool_keywords = {
                 "maven": MavenWorkflow.BUILD_TOOL_KEYWORDS,
@@ -32,6 +31,7 @@ class GitHubWorkflowFactory:
                 "unittest": UnittestWorkflow.BUILD_TOOL_KEYWORDS,
                 "go": GoWorkflow.BUILD_TOOL_KEYWORDS,
                 "npm": NpmWorkflow.BUILD_TOOL_KEYWORDS,
+                "cargo": CargoWorkflow.BUILD_TOOL_KEYWORDS,
             }
             aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
             keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
@@ -40,11 +40,18 @@ class GitHubWorkflowFactory:
             }
 
             def _update_keyword_counts(keyword_counts, phrase):
-                if isinstance(phrase, str):
-                    for name in phrase.strip().lower().split(" "):
-                        for keyword in aggregate_keywords:
-                            if keyword in name:
-                                keyword_counts[keyword] += 1
+                if not isinstance(phrase, str):
+                    return
+
+                # Process each word in the phrase
+                for name in phrase.strip().lower().split(" "):
+                    # Sort keywords by length in descending order
+                    sorted_keywords = sorted(aggregate_keywords, key=len, reverse=True)
+                    # Check each keyword, starting with the longest
+                    for keyword in sorted_keywords:
+                        if keyword in name:
+                            keyword_counts[keyword] += 1
+                            break  # Skip checking shorter keywords, avoids double counting
 
             # Load document
             doc = yaml.safe_load(content)
@@ -106,5 +113,7 @@ class GitHubWorkflowFactory:
                 return GoWorkflow(path, content)
             case ("javascript", "npm"):
                 return NpmWorkflow.create_specific_workflow(path, content, file_reader)
+            case ("rust", "cargo"):
+                return CargoWorkflow(path, content)
             case (_, _):
                 return UnknownWorkflow(path, content)
