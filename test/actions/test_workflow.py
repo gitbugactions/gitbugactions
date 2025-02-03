@@ -5,6 +5,7 @@ from gitbugactions.actions.go.go_workflow import GoWorkflow
 from gitbugactions.actions.javascript.npm.npm_jest_workflow import NpmJestWorkflow
 from gitbugactions.actions.javascript.npm.npm_mocha_workflow import NpmMochaWorkflow
 from gitbugactions.actions.javascript.npm.npm_vitest_workflow import NpmVitestWorkflow
+from gitbugactions.actions.rust.cargo_workflow import CargoWorkflow
 from gitbugactions.github_api import GithubToken
 
 import os
@@ -262,3 +263,13 @@ def test_npm(yml_file, expected_class):
     """Test the workflow factory for npm workflows."""
     workflow = create_workflow(yml_file, "javascript")
     assert isinstance(workflow, expected_class)
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [("test/resources/test_workflows/rust/tests.yml")],
+)
+def test_rust(yml_file):
+    """Test the workflow factory for rust workflows."""
+    workflow = create_workflow(yml_file, "rust")
+    assert isinstance(workflow, CargoWorkflow)
