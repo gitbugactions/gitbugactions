@@ -2,6 +2,7 @@ import os
 import time
 import threading
 import logging
+import github
 
 from typing import List
 from github import Github, RateLimitExceededException
@@ -171,10 +172,10 @@ class GithubToken:
 
 class GithubAPI(Github):
     def __init__(self, *args, token: GithubToken = None, **kwargs):
-        if "login_or_token" not in kwargs:
+        if "auth" not in kwargs:
             self.token = GithubToken.get_token() if token is None else token
             if self.token is not None:
-                kwargs["login_or_token"] = self.token.token
+                kwargs["auth"] = github.Auth.Token(self.token.token)
         else:
             super().__init__(*args, **kwargs)
             return

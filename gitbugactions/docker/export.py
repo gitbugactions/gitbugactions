@@ -106,7 +106,7 @@ def add_new_layer(image_name: str, layer: Layer, new_image_name: str = None):
 
         with tarfile.open(tar_path, "r") as tar:
             temp_extract_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-            tar.extractall(temp_extract_path)
+            tar.extractall(temp_extract_path, filter="tar")
 
             # Extracts the manifest
             manifest_path = os.path.join(temp_extract_path, "manifest.json")
@@ -256,7 +256,7 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
                         f.write(chunk)
 
                 with tarfile.open(f"{path}.tar", "r") as f:
-                    f.extractall(os.path.dirname(path))
+                    f.extractall(os.path.dirname(path), filter="tar")
 
                 os.remove(f"{path}.tar")
                 continue
@@ -297,7 +297,7 @@ def apply_diff(container_id: str, diff_file_path: str):
     diff_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
 
     with tarfile.open(diff_file_path, "r:gz") as tar_gz:
-        tar_gz.extractall(diff_path)
+        tar_gz.extractall(diff_path, filter="tar")
 
     with open(os.path.join(diff_path, "diff", "diff.json"), "r") as f:
         parent_node: DiffNode = DiffNode.from_dict(json.load(f))

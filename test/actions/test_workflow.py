@@ -46,7 +46,7 @@ def test_pytest(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/python/pytest_gitbugactions_needs.yml")],
+    ["test/resources/test_workflows/python/pytest_gitbugactions_needs.yml"],
 )
 def test_pytest_needs(yml_file):
     """Test that the workflow is created and both jobs are kept."""
@@ -61,7 +61,7 @@ def test_pytest_needs(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/python/pytest_gitbugactions_no_needs.yml")],
+    ["test/resources/test_workflows/python/pytest_gitbugactions_no_needs.yml"],
 )
 def test_pytest_no_needs(yml_file):
     """Test that the workflow is created and only the tests job is kept."""
@@ -76,7 +76,7 @@ def test_pytest_no_needs(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/java/maven_cache.yml")],
+    ["test/resources/test_workflows/java/maven_cache.yml"],
 )
 def test_instrument_cache_steps(yml_file):
     workflow = create_workflow(yml_file, "java")
@@ -89,7 +89,7 @@ def test_instrument_cache_steps(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/go/go_on_pull_request.yml")],
+    ["test/resources/test_workflows/go/go_on_pull_request.yml"],
 )
 def test_instrument_on_events(yml_file):
     workflow = create_workflow(yml_file, "go")
@@ -100,7 +100,7 @@ def test_instrument_on_events(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/go/go_vendor.yml")],
+    ["test/resources/test_workflows/go/go_vendor.yml"],
 )
 def test_instrument_vendor(yml_file):
     workflow = create_workflow(yml_file, "go")
@@ -135,7 +135,7 @@ def test_instrument_vendor(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/go/go_on_pull_request.yml")],
+    ["test/resources/test_workflows/go/go_on_pull_request.yml"],
 )
 def test_instrument_vendor_repeat(yml_file):
     workflow = create_workflow(yml_file, "go")
@@ -161,7 +161,7 @@ def test_instrument_vendor_repeat(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/go/go_vendor_with_build.yml")],
+    ["test/resources/test_workflows/go/go_vendor_with_build.yml"],
 )
 def test_instrument_vendor_build(yml_file):
     workflow = create_workflow(yml_file, "go")
@@ -271,7 +271,7 @@ def test_npm(yml_file, expected_class):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/rust/tests.yml")],
+    ["test/resources/test_workflows/rust/tests.yml"],
 )
 def test_rust(yml_file):
     """Test the workflow factory for rust workflows."""
