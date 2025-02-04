@@ -8,6 +8,7 @@ from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.utils.file_reader import FileReader, RegularFileReader
 from gitbugactions.actions.rust.cargo_workflow import CargoWorkflow
+from gitbugactions.actions.csharp.dotnet_workflow import DotNetWorkflow
 
 from typing import Optional
 import yaml
@@ -32,6 +33,7 @@ class GitHubWorkflowFactory:
                 "go": GoWorkflow.BUILD_TOOL_KEYWORDS,
                 "npm": NpmWorkflow.BUILD_TOOL_KEYWORDS,
                 "cargo": CargoWorkflow.BUILD_TOOL_KEYWORDS,
+                "dotnet": DotNetWorkflow.BUILD_TOOL_KEYWORDS,
             }
             aggregate_keywords = {kw for _ in build_tool_keywords.values() for kw in _}
             keyword_counts = {keyword: 0 for keyword in aggregate_keywords}
@@ -115,5 +117,7 @@ class GitHubWorkflowFactory:
                 return NpmWorkflow.create_specific_workflow(path, content, file_reader)
             case ("rust", "cargo"):
                 return CargoWorkflow(path, content)
+            case ("c#", "dotnet"):
+                return DotNetWorkflow(path, content)
             case (_, _):
                 return UnknownWorkflow(path, content)
