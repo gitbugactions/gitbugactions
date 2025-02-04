@@ -1105,7 +1105,7 @@ class TestCollectBugs:
             assert data["gitbugactions/gitbugactions-rust-test-repo"]["commits"] == 2
             assert (
                 data["gitbugactions/gitbugactions-ts-npm-jest-test-repo"]["commits"]
-                == 1
+                == 2
             )
             assert (
                 data["gitbugactions/gitbugactions-maven-test-repo"][
