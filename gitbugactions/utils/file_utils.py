@@ -1,7 +1,8 @@
 import os
-from unidiff import PatchSet
-from typing import List
 from enum import Enum
+from typing import List
+
+from unidiff import PatchSet
 
 
 class FileType(Enum):

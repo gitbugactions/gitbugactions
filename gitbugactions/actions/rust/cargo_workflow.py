@@ -1,10 +1,11 @@
-from typing import List, Tuple
-from junitparser import TestCase
-from pathlib import Path
 import re
+from pathlib import Path
+from typing import List, Tuple
 
-from gitbugactions.actions.workflow import GitHubWorkflow
+from junitparser import TestCase
+
 from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
+from gitbugactions.actions.workflow import GitHubWorkflow
 
 
 class CargoWorkflow(GitHubWorkflow):

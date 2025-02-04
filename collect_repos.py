@@ -1,20 +1,24 @@
-import tempfile
-import os, logging, sys, traceback
-import json
-import uuid
-import fire
 import datetime
-from gitbugactions.utils.repo_utils import delete_repo_clone
-from github import Repository
+import json
+import logging
+import os
+import sys
+import tempfile
+import traceback
+import uuid
 from pathlib import Path
-from gitbugactions.utils.repo_utils import clone_repo
-from gitbugactions.crawler import RepoStrategy, RepoCrawler
+
+import fire
+from github import Repository
+
 from gitbugactions.actions.actions import (
-    GitHubActions,
     ActCacheDirManager,
     ActCheckCodeFailureStrategy,
+    GitHubActions,
 )
+from gitbugactions.crawler import RepoCrawler, RepoStrategy
 from gitbugactions.infra.infra_checkers import is_infra_file
+from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 
 
 class CollectReposStrategy(RepoStrategy):

@@ -1,7 +1,9 @@
-from .testparser import TestParser
-from junitparser import JUnitXml, TestCase, TestSuite
-from typing import List, Union
 from pathlib import Path
+from typing import List, Union
+
+from junitparser import JUnitXml, TestCase, TestSuite
+
+from .testparser import TestParser
 
 
 class JUnitXMLParser(TestParser):

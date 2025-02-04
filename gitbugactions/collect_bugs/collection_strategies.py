@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import List
-from gitbugactions.collect_bugs.bug_patch import BugPatch
+
 from gitbugactions.actions.actions import ActTestsRun
+from gitbugactions.collect_bugs.bug_patch import BugPatch
 
 
 class CollectionStrategy(ABC):

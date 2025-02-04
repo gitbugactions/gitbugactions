@@ -1,7 +1,8 @@
-from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
-from gitbugactions.actions.actions import ActTestsRun
-from junitparser import Error
 import pytest
+from junitparser import Error
+
+from gitbugactions.actions.actions import ActTestsRun
+from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
 def parse_junitxml(file):

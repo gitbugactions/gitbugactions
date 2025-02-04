@@ -1,14 +1,16 @@
-import os
-import uuid
 import json
-import pygit2
+import os
 import shutil
-import tempfile
 import subprocess
+import tempfile
+import uuid
+
+import pygit2
 import pytest
-from gitbugactions.utils.repo_utils import delete_repo_clone
-from gitbugactions.docker.client import DockerClient
+
 from export_bugs import export_bug_containers
+from gitbugactions.docker.client import DockerClient
+from gitbugactions.utils.repo_utils import delete_repo_clone
 from run_bug import run_bug
 
 repo_clone = None

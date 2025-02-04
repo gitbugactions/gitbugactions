@@ -1,7 +1,9 @@
 import time
+
 import pytest
-from gitbugactions.test_executor import TestExecutor
+
 from gitbugactions.docker.client import DockerClient
+from gitbugactions.test_executor import TestExecutor
 
 
 @pytest.mark.skip(

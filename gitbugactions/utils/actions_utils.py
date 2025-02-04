@@ -1,15 +1,15 @@
-from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
-from gitbugactions.test_executor import TestExecutor
-
-from typing import Optional
-
-import subprocess
-import pygit2
-import yaml
 import os
 import re
 import shutil
+import subprocess
 import xml
+from typing import Optional
+
+import pygit2
+import yaml
+
+from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
+from gitbugactions.test_executor import TestExecutor
 
 
 def get_default_github_actions(

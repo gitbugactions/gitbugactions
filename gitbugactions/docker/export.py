@@ -1,15 +1,16 @@
-import os, shutil
 import hashlib
-import shutil
-import uuid
-import tempfile
 import json
+import os
+import shutil
 import tarfile
+import tempfile
+import uuid
 from dataclasses import dataclass
 from typing import Dict, List
 
 from docker.models.containers import Container
 from docker.models.images import Image
+
 from gitbugactions.docker.client import DockerClient
 
 

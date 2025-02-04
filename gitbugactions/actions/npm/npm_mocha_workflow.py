@@ -1,9 +1,10 @@
-from typing import List
-from junitparser import TestCase
 from pathlib import Path
+from typing import List
 
-from gitbugactions.actions.npm.npm_workflow import NpmWorkflow
+from junitparser import TestCase
+
 from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
+from gitbugactions.actions.npm.npm_workflow import NpmWorkflow
 
 
 class NpmMochaWorkflow(NpmWorkflow):

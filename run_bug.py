@@ -1,17 +1,19 @@
-import os
-import sys
 import json
+import logging
+import os
 import shutil
+import sys
+import uuid
+from typing import Dict
+
 import fire
 import pygit2
-import uuid
-import logging
-from typing import Dict
-from gitbugactions.test_executor import TestExecutor
-from gitbugactions.docker.export import create_diff_image
-from gitbugactions.docker.client import DockerClient
-from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
+
 from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
+from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
+from gitbugactions.docker.client import DockerClient
+from gitbugactions.docker.export import create_diff_image
+from gitbugactions.test_executor import TestExecutor
 
 
 def get_bug_from_metadata(metadata_path, repo_name, commit):

@@ -1,5 +1,6 @@
-from collect_bugs import PatchCollector
 from unittest.mock import Mock
+
+from collect_bugs import PatchCollector
 
 
 def test_is_bug_fix():

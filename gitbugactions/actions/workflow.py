@@ -1,10 +1,12 @@
-import yaml
 import logging
 from abc import ABC, abstractmethod
-from junitparser import TestCase
 from typing import List, Set
-from gitbugactions.github_api import GithubToken
+
+import yaml
+from junitparser import TestCase
+
 from gitbugactions.actions.action import Action
+from gitbugactions.github_api import GithubToken
 
 
 class GitHubWorkflow(ABC):

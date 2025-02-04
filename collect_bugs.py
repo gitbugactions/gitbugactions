@@ -1,46 +1,46 @@
-import os, sys, re, subprocess, traceback
-import uuid, json
-import shutil
-import pygit2
-import tempfile
-import logging
-import tqdm
-import threading
-import fire
 import datetime
-from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
-from gitbugactions.utils.actions_utils import get_default_github_actions
-from nltk.tokenize import wordpunct_tokenize
-from nltk.stem import PorterStemmer
-from typing import List, Tuple, Any, Dict, Set, Optional
+import json
+import logging
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import threading
+import traceback
+import uuid
+from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+from typing import Any, Dict, List, Optional, Set, Tuple
+
 import dateutil.parser
+import fire
+import pygit2
+import tqdm
 from github import (
+    GithubException,
+    PaginatedList,
+    PullRequest,
     Repository,
     UnknownObjectException,
-    GithubException,
-    PullRequest,
-    PaginatedList,
 )
+from nltk.stem import PorterStemmer
+from nltk.tokenize import wordpunct_tokenize
 from unidiff import PatchSet
-from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
-from gitbugactions.actions.actions import (
-    ActTestsRun,
-    ActCacheDirManager,
-    Act,
-)
-from gitbugactions.actions.workflow import GitHubWorkflow
+
 from gitbugactions.actions.action import Action
-from gitbugactions.test_executor import TestExecutor
-from gitbugactions.github_api import GithubAPI
-from gitbugactions.utils.file_utils import (
-    get_file_type,
-    FileType,
-)
+from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
+from gitbugactions.actions.workflow import GitHubWorkflow
+from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
+from gitbugactions.collect_bugs.bug_patch import BugPatch
 from gitbugactions.collect_bugs.collection_strategies import *
 from gitbugactions.collect_bugs.test_config import TestConfig
-from gitbugactions.collect_bugs.bug_patch import BugPatch
-from concurrent.futures import ThreadPoolExecutor, Future, as_completed
+from gitbugactions.github_api import GithubAPI
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.utils.actions_utils import get_default_github_actions
 from gitbugactions.utils.file_reader import GitShowFileReader
+from gitbugactions.utils.file_utils import FileType, get_file_type
+from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 
 
 class PatchCollector:

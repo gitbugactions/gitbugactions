@@ -1,13 +1,13 @@
-import os
-import time
-import threading
 import logging
-import github
-
-from typing import List
-from github import Github, RateLimitExceededException
+import os
+import threading
+import time
 from datetime import datetime
 from functools import partial
+from typing import List
+
+import github
+from github import Github, RateLimitExceededException
 
 
 class RateLimiter:

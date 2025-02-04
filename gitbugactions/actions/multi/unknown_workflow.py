@@ -1,4 +1,5 @@
 from typing import List
+
 from junitparser import TestCase
 
 from gitbugactions.actions.workflow import GitHubWorkflow

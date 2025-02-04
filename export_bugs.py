@@ -1,24 +1,26 @@
+import json
+import logging
 import os
 import sys
-import yaml
-import fire
-import uuid
-import json
-import tqdm
-import logging
-import threading
 import tempfile
+import threading
 import traceback
-from docker.models.containers import Container
-from typing import List, Dict
-from gitbugactions.test_executor import TestExecutor
-from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
-from gitbugactions.utils.actions_utils import get_default_github_actions
-from gitbugactions.docker.export import extract_diff
-from gitbugactions.docker.client import DockerClient
+import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
+from typing import Dict, List
+
+import fire
+import tqdm
+import yaml
+from docker.models.containers import Container
+
 from collect_bugs import BugPatch
+from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
+from gitbugactions.docker.client import DockerClient
+from gitbugactions.docker.export import extract_diff
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.utils.actions_utils import get_default_github_actions
+from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 
 diff_file_lock = threading.Lock()
 

@@ -1,22 +1,26 @@
-import json, fire
+import json
+import logging
+import os
+import shutil
+import sys
 import tempfile
+import traceback
 import uuid
+from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+from typing import Callable, Dict, List, Optional
+
+import fire
 import pygit2
 import tqdm
-import logging, traceback
-import os, sys, shutil
-
-from gitbugactions.test_executor import TestExecutor
-from gitbugactions.utils.repo_utils import delete_repo_clone
-from gitbugactions.docker.export import create_diff_image
-from gitbugactions.docker.client import DockerClient
-from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
+from junitparser import TestCase
 
 from collect_bugs import BugPatch
+from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
+from gitbugactions.docker.client import DockerClient
+from gitbugactions.docker.export import create_diff_image
+from gitbugactions.test_executor import TestExecutor
+from gitbugactions.utils.repo_utils import delete_repo_clone
 from run_bug import get_default_actions, get_diff_path
-from junitparser import TestCase
-from typing import Callable, Optional, List, Dict
-from concurrent.futures import ThreadPoolExecutor, Future, as_completed
 
 
 def run_commit(

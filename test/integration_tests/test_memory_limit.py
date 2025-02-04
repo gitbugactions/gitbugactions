@@ -1,7 +1,8 @@
 import pytest
+
 from collect_bugs import PatchCollector
-from gitbugactions.github_api import GithubAPI
 from gitbugactions.actions.actions import Act
+from gitbugactions.github_api import GithubAPI
 
 
 @pytest.fixture

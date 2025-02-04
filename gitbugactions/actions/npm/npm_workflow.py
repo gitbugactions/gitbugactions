@@ -1,13 +1,14 @@
-from typing import Tuple
-from abc import abstractmethod
-import re
+import inspect
 import json
 import os
-import inspect
+import re
+from abc import abstractmethod
+from typing import Tuple
+
 import yaml
 
-from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.actions.multi.unknown_workflow import UnknownWorkflow
+from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.utils.file_reader import FileReader
 
 

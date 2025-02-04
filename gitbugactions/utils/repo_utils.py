@@ -1,11 +1,10 @@
 import logging
-import traceback
-import pygit2
-
-
 import os
 import shutil
 import time
+import traceback
+
+import pygit2
 
 
 def delete_repo_clone(repo_clone: pygit2.Repository):

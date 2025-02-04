@@ -1,9 +1,10 @@
 import time
+from concurrent.futures import ThreadPoolExecutor
+from unittest import mock
+
 import pytest
 
-from unittest import mock
-from concurrent.futures import ThreadPoolExecutor
-from gitbugactions.github_api import SearchRateLimiter, CoreRateLimiter, GithubAPI
+from gitbugactions.github_api import CoreRateLimiter, GithubAPI, SearchRateLimiter
 
 
 def test_rate_limiter():

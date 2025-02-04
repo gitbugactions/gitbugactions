@@ -1,9 +1,10 @@
+import json
 import os
 import shutil
-import json
 import tempfile
+
+from collect_repos import CollectInfraReposStrategy, CollectReposStrategy
 from gitbugactions.github_api import GithubAPI
-from collect_repos import CollectReposStrategy, CollectInfraReposStrategy
 
 
 class BaseCollectReposTest:

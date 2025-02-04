@@ -1,14 +1,15 @@
-import math
 import logging
-import tqdm
-import pandas as pd
+import math
 from abc import ABC, abstractmethod
-from gitbugactions.actions.actions import ActCacheDirManager
-from github import Repository
-from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from gitbugactions.github_api import GithubAPI
+from datetime import datetime, timedelta
 
+import pandas as pd
+import tqdm
+from github import Repository
+
+from gitbugactions.actions.actions import ActCacheDirManager
+from gitbugactions.github_api import GithubAPI
 
 # FIXME change to custom logger
 logging.basicConfig(level=logging.INFO)

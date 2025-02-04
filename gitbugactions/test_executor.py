@@ -1,12 +1,17 @@
-import time
-import schedule
-import threading
+import copy
+import os
 import subprocess
-import os, copy, uuid, pygit2
-from gitbugactions.actions.actions import GitHubActions, ActTestsRun
-from gitbugactions.docker.client import DockerClient
-from pygit2 import Repository
+import threading
+import time
+import uuid
 from typing import List
+
+import pygit2
+import schedule
+from pygit2 import Repository
+
+from gitbugactions.actions.actions import ActTestsRun, GitHubActions
+from gitbugactions.docker.client import DockerClient
 
 
 class TestExecutor:

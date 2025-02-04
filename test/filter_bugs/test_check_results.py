@@ -1,5 +1,6 @@
 from junitparser import TestCase
-from junitparser.junitparser import Failure, Error
+from junitparser.junitparser import Error, Failure
+
 from filter_bugs import equal_test_results
 
 

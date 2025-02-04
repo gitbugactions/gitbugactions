@@ -1,5 +1,6 @@
-import docker
 import threading
+
+import docker
 
 
 class DockerClient:

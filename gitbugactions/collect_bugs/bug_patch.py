@@ -1,16 +1,18 @@
-import uuid
-import pygit2
 import datetime
-from typing import List, Any, Dict, Set, Optional
+import uuid
 from enum import Enum
-from gitbugactions.utils.repo_utils import git_clean
+from typing import Any, Dict, List, Optional, Set
+
+import pygit2
 from github import Repository
-from gitbugactions.github_api import GithubAPI
 from unidiff import PatchSet
-from gitbugactions.actions.actions import ActTestsRun
+
 from gitbugactions.actions.action import Action
+from gitbugactions.actions.actions import ActTestsRun
+from gitbugactions.github_api import GithubAPI
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.utils.file_utils import get_patch_file_extensions
+from gitbugactions.utils.repo_utils import git_clean
 
 
 class ChangeType(Enum):

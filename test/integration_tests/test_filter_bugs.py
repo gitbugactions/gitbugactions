@@ -1,8 +1,11 @@
-import os, shutil
 import json
-import pytest
+import os
+import shutil
 import tempfile
 import uuid
+
+import pytest
+
 from export_bugs import export_bugs
 from filter_bugs import filter_bugs
 
