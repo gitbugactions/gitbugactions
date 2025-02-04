@@ -2,9 +2,9 @@ from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
-from gitbugactions.actions.javascript.npm.npm_jest_workflow import NpmJestWorkflow
-from gitbugactions.actions.javascript.npm.npm_mocha_workflow import NpmMochaWorkflow
-from gitbugactions.actions.javascript.npm.npm_vitest_workflow import NpmVitestWorkflow
+from gitbugactions.actions.npm.npm_jest_workflow import NpmJestWorkflow
+from gitbugactions.actions.npm.npm_mocha_workflow import NpmMochaWorkflow
+from gitbugactions.actions.npm.npm_vitest_workflow import NpmVitestWorkflow
 from gitbugactions.actions.rust.cargo_workflow import CargoWorkflow
 from gitbugactions.github_api import GithubToken
 
@@ -257,11 +257,15 @@ def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
             "test/resources/test_workflows/javascript/npm/vitest/.github/workflows/tests.yml",
             NpmVitestWorkflow,
         ),
+        (
+            "test/resources/test_workflows/typescript/npm/jest/.github/workflows/tests.yml",
+            NpmJestWorkflow,
+        ),
     ],
 )
 def test_npm(yml_file, expected_class):
     """Test the workflow factory for npm workflows."""
-    workflow = create_workflow(yml_file, "javascript")
+    workflow = create_workflow(yml_file, "typescript")
     assert isinstance(workflow, expected_class)
 
 
