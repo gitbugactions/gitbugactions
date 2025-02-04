@@ -2,15 +2,15 @@ from typing import List
 from junitparser import TestCase
 from pathlib import Path
 
-from gitbugactions.actions.javascript.npm.npm_workflow import NpmWorkflow
+from gitbugactions.actions.npm.npm_workflow import NpmWorkflow
 from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
-class NpmMochaWorkflow(NpmWorkflow):
+class NpmJestWorkflow(NpmWorkflow):
 
     @classmethod
     def is_npm_test_command(cls, command: str) -> bool:
-        return "mocha" in command.lower()
+        return "jest" in command.lower()
 
     def instrument_test_steps(self):
         if "jobs" in self.doc:
@@ -20,12 +20,13 @@ class NpmMochaWorkflow(NpmWorkflow):
                         if "run" in step and self._is_test_command(step["run"]):
                             step[
                                 "run"
-                            ] = f"""npm install --save-dev mocha-junit-reporter
-{step['run']} -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results.xml"""
+                            ] = f"""npm install --save-dev jest-junit
+{step['run']} -- --reporters=default --reporters=jest-junit"""
 
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
-        return parser.get_test_results(str(Path(repo_path, "test-results.xml")))
+        # Jest-junit outputs to junit.xml by default
+        return parser.get_test_results(str(Path(repo_path, "junit.xml")))
 
     def get_build_tool(self) -> str:
-        return "npm-mocha"
+        return "npm-jest"

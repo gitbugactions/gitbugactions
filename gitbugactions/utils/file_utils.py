@@ -29,10 +29,11 @@ def get_file_type(language: str, file_path: str) -> FileType:
         "go": {"go"},
         "javascript": {"js", "cjs", "mjs", "jsx"},
         "rust": {"rs"},
+        "typescript": {"ts", "tsx"},
     }
     test_keywords = {"test", "tests", "__tests__"}
 
-    if language in ["java", "python", "javascript", "rust"]:
+    if language in ["java", "python", "javascript", "rust", "typescript"]:
         if any([keyword in file_path.split(os.sep) for keyword in test_keywords]):
             return FileType.TESTS
     if language in ["go"]:
@@ -40,6 +41,9 @@ def get_file_type(language: str, file_path: str) -> FileType:
             return FileType.TESTS
     if language in ["javascript"]:
         if ".test.js" in file_path:
+            return FileType.TESTS
+    if language in ["typescript"]:
+        if ".test.ts" in file_path:
             return FileType.TESTS
 
     if get_file_extension(file_path) in language_extensions[language]:

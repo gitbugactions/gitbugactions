@@ -2,7 +2,7 @@ from typing import List
 from junitparser import TestCase
 from pathlib import Path
 
-from gitbugactions.actions.javascript.npm.npm_workflow import NpmWorkflow
+from gitbugactions.actions.npm.npm_workflow import NpmWorkflow
 from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
 
 
