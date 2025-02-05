@@ -203,6 +203,9 @@ def collect_repos(
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
     """
+    if not Path(out_path).exists():
+        os.makedirs(out_path, exist_ok=True)
+
     crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
     crawler.get_repos(CollectReposStrategy(out_path))
 
