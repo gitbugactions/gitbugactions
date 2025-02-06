@@ -1,4 +1,5 @@
 import datetime
+import fire
 import json
 import logging
 import os
@@ -6,9 +7,9 @@ import sys
 import tempfile
 import traceback
 import uuid
-from pathlib import Path
 
-import fire
+from pathlib import Path
+from typing import Optional
 from github import Repository
 
 from gitbugactions.actions.actions import (
@@ -196,7 +197,10 @@ class CollectInfraReposStrategy(CollectReposStrategy):
 
 
 def collect_repos(
-    query: str, pagination_freq: str = "M", n_workers: int = 1, out_path: str = "./out/"
+    query: str,
+    pagination_freq: Optional[str] = None,
+    n_workers: int = 1,
+    out_path: str = "./out/",
 ):
     """Collect the repositories from GitHub that match the query and have executable
     GitHub Actions workflows with parsable tests.
