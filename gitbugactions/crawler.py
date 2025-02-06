@@ -3,6 +3,7 @@ import math
 from abc import ABC, abstractmethod
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
+from typing import Optional
 
 import pandas as pd
 import tqdm
@@ -28,7 +29,7 @@ class RepoCrawler:
     __GITHUB_CREATION_DATE = "2008-02-08"
     __PAGE_SIZE = 100
 
-    def __init__(self, query: str, pagination_freq: str = None, n_workers: int = 1):
+    def __init__(self, query: str, pagination_freq: Optional[str], n_workers: int = 1):
         """
         Args:
             query (str): String with the Github searching format
@@ -149,4 +150,4 @@ class RepoCrawler:
             for future in tqdm.tqdm(as_completed(self.futures)):
                 future.result()
         else:
-            return self.__search_repos(query, repo_strategy)
+            return self.__search_repos(self.query, repo_strategy)

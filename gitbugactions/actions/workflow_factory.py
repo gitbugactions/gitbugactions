@@ -7,6 +7,7 @@ from gitbugactions.actions.java.gradle_workflow import GradleWorkflow
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.multi.unknown_workflow import UnknownWorkflow
 from gitbugactions.actions.npm.npm_workflow import NpmWorkflow
+from gitbugactions.actions.npm.npm_workflow_factory import NpmWorkflowFactory
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.python.unittest_workflow import UnittestWorkflow
 from gitbugactions.actions.rust.cargo_workflow import CargoWorkflow
@@ -113,7 +114,9 @@ class GitHubWorkflowFactory:
             case ("go", "go"):
                 return GoWorkflow(path, content)
             case ("javascript", "npm") | ("typescript", "npm"):
-                return NpmWorkflow.create_specific_workflow(path, content, file_reader)
+                return NpmWorkflowFactory.create_specific_workflow(
+                    path, content, file_reader
+                )
             case ("rust", "cargo"):
                 return CargoWorkflow(path, content)
             case (_, _):
