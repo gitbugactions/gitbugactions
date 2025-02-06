@@ -262,6 +262,10 @@ def test_workflow_matrix_include_exclude(yml_file, language, expected_result):
             "test/resources/test_workflows/typescript/npm/jest/.github/workflows/tests.yml",
             NpmJestWorkflow,
         ),
+        (
+            "test/resources/test_workflows/typescript/npm/uniswap-smart-order-router/.github/workflows/tests.yml",
+            NpmJestWorkflow,
+        ),
     ],
 )
 def test_npm(yml_file, expected_class):

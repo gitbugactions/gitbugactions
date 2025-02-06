@@ -1,17 +1,15 @@
-import json
 import os
-import shutil
-from typing import List
-
+import json
 import dateutil
+import shutil
 import pytest
+from typing import List
 from unidiff import PatchSet
-
-from collect_bugs import BugPatch, PatchCollector, collect_bugs
+from collect_bugs import collect_bugs, PatchCollector, BugPatch
+from gitbugactions.github_api import GithubToken, GithubAPI
+from gitbugactions.utils.repo_utils import delete_repo_clone
 from gitbugactions.actions.actions import ActCacheDirManager
 from gitbugactions.collect_bugs.collection_strategies import *
-from gitbugactions.github_api import GithubAPI, GithubToken
-from gitbugactions.utils.repo_utils import delete_repo_clone
 
 
 def get_token_usage():

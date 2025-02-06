@@ -1,0 +1,951 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm run test
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          JSON_RPC_PROVIDER_GORLI: ${{ secrets.JSON_RPC_PROVIDER_GORLI }}
+          JSON_RPC_PROVIDER_SEPOLIA: ${{ secrets.JSON_RPC_PROVIDER_SEPOLIA }}
+          JSON_RPC_PROVIDER_OPTIMISM: ${{ secrets.JSON_RPC_PROVIDER_OPTIMISM }}
+          JSON_RPC_PROVIDER_ARBITRUM_ONE: ${{ secrets.JSON_RPC_PROVIDER_ARBITRUM_ONE }}
+          JSON_RPC_PROVIDER_POLYGON: ${{ secrets.JSON_RPC_PROVIDER_POLYGON }}
+          JSON_RPC_PROVIDER_BASE: ${{ secrets.JSON_RPC_PROVIDER_BASE }}
+          SUBGRAPH_URL_SEPOLIA: ${{ secrets.SUBGRAPH_URL_SEPOLIA }}
+
+  integration-tests-alpha-router-integration-mainnet-alpha-exact_input-erc20-to-erc20:
+    name: Integration Tests - Alpha Router Integration Mainnet Alpha EXACT_INPUT ERC20 -> ERC20
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'mainnet alpha - 0 * erc20 -> erc20'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-alpha-router-integration-mainnet-alpha-exact_input-hardhat:
+    name: Integration Tests - Alpha Router Integration Mainnet Alpha EXACT_INPUT Execute On Hardhat Fork
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'mainnet alpha - 0 * \+ Execute on Hardhat fork'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-alpha-router-integration-mainnet-alpha-exact_input-tenderly-hardhat:
+    name: Integration Tests - Alpha Router Integration Mainnet Alpha EXACT_INPUT Simulate On Tenderly Execute On Hardhat Fork
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'mainnet alpha - 0 * \+ Simulate on Tenderly \+ Execute on Hardhat fork'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-alpha-router-integration-mainnet-alpha-exact_output-erc20-to-erc20:
+    name: Integration Tests - Alpha Router Integration Mainnet Alpha EXACT_OUTPUT ERC20 -> ERC20
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'mainnet alpha - 1 * erc20 -> erc20'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-alpha-router-integration-mainnet-alpha-exact_output-hardhat:
+    name: Integration Tests - Alpha Router Integration Mainnet Alpha EXACT_OUTPUT Execute On Hardhat Fork
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'mainnet alpha - 1 * \+ Execute on Hardhat fork'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-alpha-router-integration-mainnet-alpha-exact_output-tenderly-hardhat:
+    name: Integration Tests - Alpha Router Integration Mainnet Alpha EXACT_OUTPUT Simulate On Tenderly Execute On Hardhat Fork
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'mainnet alpha - 1 * \+ Simulate on Tenderly \+ Execute on Hardhat fork'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-alpha-router-integration-mixed-routes:
+    name: Integration Tests - Alpha Router Integration Mixed Routes
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'Mixed routes'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-external-class-tests:
+    name: Integration Tests - External Class Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'external class tests'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-mainnet:
+    name: Integration Tests - Quote For Other Networks Mainnet
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * mainnet'
+        env:
+          JSON_RPC_PROVIDER: ${{ secrets.JSON_RPC_PROVIDER }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-optimism:
+    name: Integration Tests - Quote For Other Networks Optimism
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * optimism'
+        env:
+          JSON_RPC_PROVIDER_OPTIMISM: ${{ secrets.JSON_RPC_PROVIDER_OPTIMISM }}
+          JSON_RPC_PROVIDER_OPTIMISM_GOERLI: ${{ secrets.JSON_RPC_PROVIDER_OPTIMISM_GOERLI }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-arbitrum:
+    name: Integration Tests - Quote For Other Networks Arbitrum
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * arbitrum'
+        env:
+          JSON_RPC_PROVIDER_ARBITRUM_ONE: ${{ secrets.JSON_RPC_PROVIDER_ARBITRUM_ONE }}
+          JSON_RPC_PROVIDER_ARBITRUM_GOERLI: ${{ secrets.JSON_RPC_PROVIDER_ARBITRUM_GOERLI }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-polygon:
+    name: Integration Tests - Quote For Other Networks Polygon
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * polygon'
+        env:
+          JSON_RPC_PROVIDER_POLYGON: ${{ secrets.JSON_RPC_PROVIDER_POLYGON }}
+          JSON_RPC_PROVIDER_POLYGON_MUMBAI: ${{ secrets.JSON_RPC_PROVIDER_POLYGON_MUMBAI }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-sepolia:
+    name: Integration Tests - Quote For Other Networks Sepolia
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * sepolia'
+        env:
+          JSON_RPC_PROVIDER_SEPOLIA: ${{ secrets.JSON_RPC_PROVIDER_SEPOLIA }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-celo:
+    name: Integration Tests - Quote For Other Networks Celo
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * celo'
+        env:
+          JSON_RPC_PROVIDER_CELO: ${{ secrets.JSON_RPC_PROVIDER_CELO }}
+          JSON_RPC_PROVIDER_CELO_ALFAJORES: ${{ secrets.JSON_RPC_PROVIDER_CELO_ALFAJORES }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-bnb:
+    name: Integration Tests - Quote For Other Networks BNB
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * bnb'
+        env:
+          JSON_RPC_PROVIDER_BNB: ${{ secrets.JSON_RPC_PROVIDER_BNB }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-avalanche:
+    name: Integration Tests - Quote For Other Networks Avalanche
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * avalanche'
+        env:
+          JSON_RPC_PROVIDER_AVALANCHE: ${{ secrets.JSON_RPC_PROVIDER_AVALANCHE }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-base:
+    name: Integration Tests - Quote For Other Networks Base
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * base'
+        env:
+          JSON_RPC_PROVIDER_BASE: ${{ secrets.JSON_RPC_PROVIDER_BASE }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-blast:
+    name: Integration Tests - Quote For Other Networks Blast
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * blast'
+        env:
+          JSON_RPC_PROVIDER_BLAST: ${{ secrets.JSON_RPC_PROVIDER_BLAST }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-zora:
+    name: Integration Tests - Quote For Other Networks Zora
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * zora'
+        env:
+          JSON_RPC_PROVIDER_ZORA: ${{ secrets.JSON_RPC_PROVIDER_ZORA }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-zksync:
+    name: Integration Tests - Quote For Other Networks ZkSync
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * zksync'
+        env:
+          JSON_RPC_PROVIDER_ZKSYNC: ${{ secrets.JSON_RPC_PROVIDER_ZKSYNC }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}
+
+  integration-tests-quote-for-other-networks-worldchain:
+    name: Integration Tests - Quote For Other Networks WorldChain
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * worldchain'
+        env:
+          JSON_RPC_PROVIDER_WORLDCHAIN: ${{ secrets.JSON_RPC_PROVIDER_WORLDCHAIN }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+
+  integration-tests-quote-for-other-networks-unichain:
+    name: Integration Tests - Quote For Other Networks Unichain
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * unichain'
+        env:
+          # TODO: add secret in github secrets
+          JSON_RPC_PROVIDER_UNICHAIN: ${{ secrets.JSON_RPC_PROVIDER_UNICHAIN }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+
+  integration-tests-quote-for-other-networks-unichain-sepolia:
+    name: Integration Tests - Quote For Other Networks Unichain Sepolia
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * unichain sepolia'
+        env:
+          JSON_RPC_PROVIDER_UNICHAIN_SEPOLIA: ${{ secrets.JSON_RPC_PROVIDER_UNICHAIN_SEPOLIA }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+
+  integration-tests-quote-for-other-networks-monad-testnet:
+    name: Integration Tests - Quote For Other Networks Monad Testnet
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * monad testnet'
+        env:
+          JSON_RPC_PROVIDER_MONAD_TESTNET: ${{ secrets.JSON_RPC_PROVIDER_MONAD_TESTNET }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+
+  integration-tests-quote-for-other-networks-base-sepolia:
+    name: Integration Tests - Quote For Other Networks Base Sepolia
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * base sepolia'
+        env:
+          JSON_RPC_PROVIDER_MONAD_TESTNET: ${{ secrets.JSON_RPC_PROVIDER_BASE_SEPOLIA }}
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+
+  integration-tests-quote-for-other-networks-remaining-networks:
+    name: Integration Tests - Quote For Other Networks Remaining Networks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # This is required separately from yarn test because it generates the typechain definitions
+      - name: Compile
+        run: npm run build
+
+      # This is to capture any new networks added into the integ-test suite
+      - name: Run Integration tests
+        run: npm run integ-test  -- -t 'quote for other networks * (?!(mainnet|optimism|arbitrum|polygon|sepolia|celo|bnb|avalanche|base|blast|zora|zksync|worldchain|UNICHAIN-sepolia|monad-testnet|base-sepolia))'
+        env:
+          # We don't know which new networks will be added, so we have no way to provider RPC URL ahead of time
+          # This will make remaining networks integ-test suite to fail, and dev is expected to manually add RPC URL for the new network
+          TENDERLY_BASE_URL: ${{ secrets.TENDERLY_BASE_URL }}
+          TENDERLY_USER: ${{ secrets.TENDERLY_USER }}
+          TENDERLY_PROJECT: ${{ secrets.TENDERLY_PROJECT }}
+          TENDERLY_ACCESS_KEY: ${{ secrets.TENDERLY_ACCESS_KEY }}
+          TENDERLY_NODE_API_KEY: ${{ secrets.TENDERLY_NODE_API_KEY }}

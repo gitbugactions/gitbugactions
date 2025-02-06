@@ -38,17 +38,21 @@ class NpmWorkflow(GitHubWorkflow):
             doc.pop(True)
 
         # Iterate over the workflow to find npm test commands
-        is_test_script, test_script = False, ""
-        if "jobs" in doc and isinstance(doc["jobs"], dict):
-            for _, job in doc["jobs"].items():
-                if "steps" in job:
-                    for step in job["steps"]:
-                        if "run" in step:
-                            is_test_script, test_script = cls.__get_test_script(
-                                step["run"]
-                            )
-                            if is_test_script:
-                                break
+        def find_npm_test_commands(doc):
+            is_test_script, test_script = False, ""
+            if "jobs" in doc and isinstance(doc["jobs"], dict):
+                for _, job in doc["jobs"].items():
+                    if "steps" in job:
+                        for step in job["steps"]:
+                            if "run" in step:
+                                is_test_script, test_script = cls.__get_test_script(
+                                    step["run"]
+                                )
+                                if is_test_script:
+                                    return is_test_script, test_script
+            return is_test_script, test_script
+
+        is_test_script, test_script = find_npm_test_commands(doc)
         if not is_test_script:
             return UnknownWorkflow(path, content)
 
@@ -93,7 +97,7 @@ class NpmWorkflow(GitHubWorkflow):
         for test_pattern in self.__TEST_COMMANDS_PATTERNS:
             pattern = self.__NPM_COMMANDS_PATTERNS + r"\s+" + test_pattern
             if re.search(pattern, command):
-                match = re.search(test_pattern, command)
+                match = re.search(pattern, command)
                 return True, match.group(1)
         return False, ""
 
