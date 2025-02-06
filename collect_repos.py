@@ -41,6 +41,11 @@ class CollectReposStrategy(RepoStrategy):
             tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-")
         )
 
+        # Handle repositories without a language detected
+        if repo.language is None:
+            logging.info(f"Skipping {repo.full_name} - no language detected")
+            return
+
         data = {
             "repository": repo.full_name,
             "stars": repo.stargazers_count,
