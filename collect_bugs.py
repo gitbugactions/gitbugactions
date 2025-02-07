@@ -492,7 +492,7 @@ def collect_bugs(
                 with open(os.path.join(data_path, file), "r") as f:
                     run = json.loads(f.read())
                     if not os.path.exists(results_path):
-                        os.mkdir(results_path)
+                        os.makedirs(results_path)
 
                     if (
                         run["number_of_test_actions"] == 1
