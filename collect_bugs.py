@@ -451,8 +451,8 @@ def collect_bugs(
         memory_limit (str, optional): Memory limit per container (https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory).
                                       Defaults to "7g".
         filter_on_commit_message (bool, optional): If True, only commits with the word "fix" in the commit message will be considered.
-        filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
-        filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM".
+        filter_on_commit_time_start (str, optional): If set, only commits after this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM UTC".
+        filter_on_commit_time_end (str, optional): If set, only commits before this date will be considered. The string must follow the format "yyyy-mm-dd HH:MM UTC".
         normalize_non_code_patch (bool, optional): If True, the non-code patch will be applied to previous commits. Defaults to True.
         strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
                                            The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".

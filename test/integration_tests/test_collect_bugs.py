@@ -207,6 +207,7 @@ class TestCollectBugs:
             "test/resources/test_collect_bugs_out",
             4,
             strategies=["PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD"],
+            filter_on_commit_time_start="2020-01-01 00:00 UTC",
             pull_requests=True,
         )
 
