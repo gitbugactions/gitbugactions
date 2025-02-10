@@ -124,9 +124,6 @@ class GithubToken:
             tokens = os.environ["GITHUB_ACCESS_TOKEN"].split(",")
             for token in tokens:
                 GithubToken(token)
-        else:
-            logging.error("No environment variable GITHUB_ACCESS_TOKEN provided.")
-            exit(1)
 
     @staticmethod
     def __wait_for_tokens():
