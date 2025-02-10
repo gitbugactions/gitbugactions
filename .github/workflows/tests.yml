@@ -35,9 +35,10 @@ jobs:
 
     - name: Install act
       run: |
+        sudo mkdir -p /usr/local/bin
         curl https://raw.githubusercontent.com/gitbugactions/act/master/install.sh | sudo bash
-        chmod +x ./bin/act
-        echo "./bin/act" >> $ACT_PATH
+        sudo chmod +x /usr/local/bin/act
+        echo "export ACT_PATH=/usr/local/bin/act" >> $GITHUB_ENV
 
     - name: Run tests
       run: |
