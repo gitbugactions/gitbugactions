@@ -36,8 +36,8 @@ jobs:
     - name: Install act
       run: |
         curl https://raw.githubusercontent.com/gitbugactions/act/master/install.sh | sudo bash
-        ACT_PATH=./bin/act
-        echo "$ACT_PATH" >> $ACT_PATH
+        chmod +x ./bin/act
+        echo "./bin/act" >> $ACT_PATH
 
     - name: Run tests
       run: |
