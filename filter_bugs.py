@@ -13,6 +13,7 @@ import fire
 import pygit2
 import tqdm
 from junitparser import TestCase
+from pathlib import Path
 
 from collect_bugs import BugPatch
 from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
@@ -90,6 +91,7 @@ def filter_bug(
     repo_clone: pygit2.Repository,
     export_path: str,
     offline: bool,
+    n_executions: int,
 ) -> str:
     try:
         repo_name = bug["repository"].replace("/", "-")
@@ -107,7 +109,7 @@ def filter_bug(
         previous_commit_with_diff_runs = []
         current_commit_runs = []
 
-        for _ in range(5):
+        for _ in range(n_executions):
             run = run_commit(
                 bug_patch,
                 repo_clone,
@@ -188,7 +190,12 @@ def filter_bug(
 
 
 def filter_bugs(
-    bugs_path: str, export_path: str, res_path: str, n_workers=1, offline=True
+    bugs_path: str,
+    export_path: str,
+    res_path: str,
+    n_workers: int = 1,
+    offline: bool = True,
+    n_executions: int = 5,
 ):
     """Creates the list of non-flaky bug-fixes that are able to be reproduced.
 
@@ -198,6 +205,7 @@ def filter_bugs(
         res_path (str): Folder on which the results will be saved.
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         offline (bool, optional): If the containers must be isolated from the internet. Defaults to True.
+        n_executions (int, optional): Number of times to execute each test. Defaults to 5.
     """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
@@ -229,7 +237,12 @@ def filter_bugs(
                         os.path.join(new_repo_path, ".git")
                     )
                     future = executor.submit(
-                        filter_bug, bug, repo_clone_copy, export_path, offline
+                        filter_bug,
+                        bug,
+                        repo_clone_copy,
+                        export_path,
+                        offline,
+                        n_executions,
                     )
                     future_to_bug[future] = bug
             finally:
@@ -246,6 +259,8 @@ def filter_bugs(
                     f"Error testing flakiness on {repository}@{commit}: {traceback.format_exc()}"
                 )
             else:
+                if not Path(res_path).exists():
+                    Path(res_path).mkdir(parents=True, exist_ok=True)
                 if status == "NON-FLAKY":
                     with open(os.path.join(res_path, "non-flaky.json"), "a") as f:
                         f.write(
