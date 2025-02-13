@@ -1,0 +1,12 @@
+jobs:
+  Mocha:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - run: npm ci
+    - run: 'npm install --save-dev mocha-junit-reporter
+
+        npm test -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results.xml'
+name: 045ece2d-5607-4db3-88dc-5b030c8ce7bf
+'on': push

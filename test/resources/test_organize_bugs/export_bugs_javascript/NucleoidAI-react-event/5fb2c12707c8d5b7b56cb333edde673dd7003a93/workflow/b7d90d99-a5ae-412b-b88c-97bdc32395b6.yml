@@ -1,0 +1,12 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - run: npm ci
+    - run: 'npm install --save-dev jest-junit
+
+        npm test -- --reporters=default --reporters=jest-junit'
+name: b7d90d99-a5ae-412b-b88c-97bdc32395b6
+'on': push
