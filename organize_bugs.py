@@ -6,10 +6,10 @@ import logging
 
 
 def organize_bugs(
-    collect_bugs_dir="collect_bugs_javascript",
-    export_bugs_dir="export_bugs_javascript",
-    filter_bugs_dir="filter_bugs_javascript",
-    output_dir="data",
+    collect_bugs_dir: str,
+    export_bugs_dir: str,
+    filter_bugs_dir: str,
+    output_dir: str,
 ):
     """
     Organize bugs from collection directories into a structured output directory.
