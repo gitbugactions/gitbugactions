@@ -104,7 +104,7 @@ def export_bug_containers(bug: Dict, export_path: str):
         delete_repo_clone(repo_clone)
 
 
-def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
+def export_bugs(dataset_path: str, output_folder_path: str):
     """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs.
 
     Args:
@@ -112,6 +112,8 @@ def export_bugs(dataset_path: str, output_folder_path: str, n_workers=1):
         output_folder_path (str): Folder on which the results will be saved.
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
     """
+    # FIXME: export_bugs is not working with multiple workers
+    n_workers = 1
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
     futures = []
