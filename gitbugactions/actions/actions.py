@@ -232,6 +232,9 @@ class Act:
     __FLAGS = f"--pull=false --no-cache-server --max-parallel 1"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
+    # Image to build the runner image from
+    __BASE_IMAGE = "nunosaavedra/gitbug-actions:setup"
+    # Image that is built locally with corret permissions set
     __DEFAULT_IMAGE = "gitbugactions:latest"
 
     def __init__(
@@ -295,7 +298,7 @@ class Act:
 
             with open("Dockerfile", "w") as f:
                 client = DockerClient.getInstance()
-                dockerfile = "FROM catthehacker/ubuntu:full-latest\n"
+                dockerfile = f"FROM {Act.__BASE_IMAGE}\n"
                 dockerfile += f"RUN sudo usermod -u 4000000 runneradmin\n"
                 dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
                 dockerfile += f"RUN sudo usermod -G {os.getgid()} runner\n"
