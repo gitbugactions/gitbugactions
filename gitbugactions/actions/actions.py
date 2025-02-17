@@ -19,7 +19,6 @@ from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.docker.client import DockerClient
 from gitbugactions.github_api import GithubToken
-from gitbugactions.utils.env_utils import load_required_env_vars
 
 
 class ActCacheDirManager:
@@ -226,7 +225,7 @@ class ActCheckCodeFailureStrategy(ActFailureStrategy):
 
 
 class Act:
-    __ACT_PATH = os.environ.get("ACT_PATH")
+    __ACT_PATH = "act"
     __ACT_CHECK = False
     __IMAGE_SETUP = False
     __FLAGS = f"--pull=false --no-cache-server --max-parallel 1"

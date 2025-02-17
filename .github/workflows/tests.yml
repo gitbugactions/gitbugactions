@@ -35,8 +35,8 @@ jobs:
 
     - name: Install act
       run: |
-        curl https://raw.githubusercontent.com/gitbugactions/act/master/install.sh | sudo bash
-        echo 'ACT_PATH="./bin/act"' >> $GITHUB_ENV
+        curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+        echo "./bin" >> $GITHUB_PATH
 
     - name: Run tests
       run: |

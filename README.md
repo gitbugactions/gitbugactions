@@ -35,9 +35,9 @@ cd act
 make build
 ```
 
-A binary file `dist/local/act` will be created. This binary file should be made available through the `ACT_PATH` environment variable:
+A binary file `dist/local/act` will be created. This binary file should be made available in the `$PATH` of the system:
 ```
-export ACT_PATH="<REPLACE_WITH_PATH_TO_ACT_BINARY>"
+export PATH="<REPLACE_WITH_PATH_TO_ACT>:$PATH"
 ```
 
 ### Python dependencies
@@ -60,17 +60,10 @@ Ensure the commands are executed inside the Poetry shell:
 poetry shell
 ```
 
-Set the required environment variables:
-- `GITHUB_ACCESS_TOKEN`: Your [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). The token is used to perform calls to GitHub's API.
-- `ACT_PATH`: The full path to your act binary.
-
-You can set these variables directly in your shell:
+Set the environment variable `GITHUB_ACCESS_TOKEN` with your [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). The token is used to perform calls to GitHub's API.
 ```
 export GITHUB_ACCESS_TOKEN="<YOUR_ACCESS_TOKEN>"
-export ACT_PATH="<PATH_TO_ACT_BINARY>"
 ```
-
-Alternatively, you can create a `.env` file in the project root with these variables.
 
 Use the `--help` command to obtain the list of options required to run each script.
 
