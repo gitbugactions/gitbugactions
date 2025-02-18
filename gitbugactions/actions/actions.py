@@ -322,6 +322,7 @@ class Act:
             command += f" -s GITHUB_TOKEN={token.token}"
         command += f" -W {workflow.path}"
 
+        logging.debug(f"Running command: {command}")
         start_time = time.time()
         run = subprocess.run(command, shell=True, capture_output=True)
         end_time = time.time()
