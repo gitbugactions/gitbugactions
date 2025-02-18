@@ -350,7 +350,9 @@ class Act:
 
         if self.fail_strategy.failed(tests_run):
             tests_run.failed = True
-            logging.warning(f"RETURN CODE: {run.returncode}")
+            logging.debug(f"RETURN CODE: {run.returncode}")
+            logging.debug(f"STDOUT: {stdout}")
+            logging.debug(f"STDERR: {stderr}")
 
         updated_tokens = set()
         if GithubToken.has_tokens():
