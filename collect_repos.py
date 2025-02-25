@@ -201,6 +201,7 @@ def collect_repos(
     pagination_freq: Optional[str] = None,
     n_workers: int = 1,
     out_path: str = "./out/",
+    base_image: str | None = None,
 ):
     """Collect the repositories from GitHub that match the query and have executable
     GitHub Actions workflows with parsable tests.
@@ -211,10 +212,12 @@ def collect_repos(
                                          For instance, if the value is 'D', each request will be limited to the repos created in a single day, until all the days are obtained.
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
+        base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
     if not Path(out_path).exists():
         os.makedirs(out_path, exist_ok=True)
 
+    Act(base_image=base_image)  # Initialize Act with base_image
     crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
     crawler.get_repos(CollectReposStrategy(out_path))
 
