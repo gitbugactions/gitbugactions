@@ -26,11 +26,13 @@ class TestExecutor:
         act_cache_dir: str,
         default_actions: GitHubActions,
         runner_image: str = "gitbugactions:latest",
+        base_image: str | None = None,
     ):
         TestExecutor.__schedule_cleanup(runner_image)
         self.act_cache_dir = act_cache_dir
         self.repo_clone = repo_clone
         self.runner_image = runner_image
+        self.base_image = base_image
         self.language = language
         # Note: these default actions may have different configuration options
         # such as paths, runners, etc.
@@ -95,6 +97,7 @@ class TestExecutor:
             keep_containers=keep_containers,
             runner_image=self.runner_image,
             offline=offline,
+            base_image=self.base_image,
         )
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
             default_actions = True

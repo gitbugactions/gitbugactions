@@ -92,13 +92,14 @@ def filter_bug(
     export_path: str,
     offline: bool,
     n_executions: int,
+    base_image: str | None = None,
 ) -> str:
     try:
         repo_name = bug["repository"].replace("/", "-")
         bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
         diff_folder_path = os.path.join(export_path, repo_name, bug_patch.commit)
 
-        Act()  # Make sure that the base image is available
+        Act(base_image=base_image)  # Pass base_image to Act initialization
         image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
         docker_client = DockerClient.getInstance()
         create_diff_image(
@@ -196,6 +197,7 @@ def filter_bugs(
     n_workers: int = 1,
     offline: bool = True,
     n_executions: int = 5,
+    base_image: str | None = None,
 ):
     """Creates the list of non-flaky bug-fixes that are able to be reproduced.
 
@@ -206,6 +208,7 @@ def filter_bugs(
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         offline (bool, optional): If the containers must be isolated from the internet. Defaults to True.
         n_executions (int, optional): Number of times to execute each test. Defaults to 5.
+        base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
@@ -243,6 +246,7 @@ def filter_bugs(
                         export_path,
                         offline,
                         n_executions,
+                        base_image,
                     )
                     future_to_bug[future] = bug
             finally:

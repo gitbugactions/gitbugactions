@@ -438,6 +438,7 @@ def collect_bugs(
     normalize_non_code_patch: bool = True,
     strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
     pull_requests: bool = False,
+    base_image: str | None = None,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -457,10 +458,12 @@ def collect_bugs(
         strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
                                            The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
+        base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
     set_test_config(normalize_non_code_patch, strategies)
 
     Act.set_memory_limit(memory_limit)
+    Act(base_image=base_image)  # Initialize Act with base_image
     github: GithubAPI = GithubAPI(
         per_page=100,
         pool_size=n_workers,

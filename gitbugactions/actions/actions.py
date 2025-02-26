@@ -231,9 +231,9 @@ class Act:
     __FLAGS = f"--pull=false --no-cache-server --max-parallel 1"
     __SETUP_LOCK = threading.Lock()
     __MEMORY_LIMIT = "7g"
-    # Image to build the runner image from
-    __BASE_IMAGE = "nunosaavedra/gitbug-actions:setup"
-    # Image that is built locally with corret permissions set
+    # Default base image to build the runner image from if none specified
+    __DEFAULT_BASE_IMAGE = "nunosaavedra/gitbug-actions:setup"
+    # Image that is built locally with correct permissions set
     __DEFAULT_IMAGE = "gitbugactions:latest"
 
     def __init__(
@@ -243,13 +243,18 @@ class Act:
         runner_image: str = __DEFAULT_IMAGE,
         offline: bool = False,
         fail_strategy: ActFailureStrategy = ActTestsFailureStrategy(),
+        base_image: str | None = None,
     ):
         """
         Args:
             timeout (int): Timeout in minutes
+            runner_image (str): Name of the runner image to use
+            offline (bool): Whether to run in offline mode
+            fail_strategy (ActFailureStrategy): Strategy to determine test failures
+            base_image (str): Base image to use for building the runner image. If None, uses default.
         """
         Act.__check_act()
-        Act.__setup_image(runner_image)
+        Act.__setup_image(runner_image, base_image)
         if reuse:
             self.flags = "--reuse"
         else:
@@ -279,7 +284,7 @@ class Act:
         Act.__ACT_CHECK = True
 
     @staticmethod
-    def __setup_image(runner_image: str):
+    def __setup_image(runner_image: str, base_image: str | None = None):
         with Act.__SETUP_LOCK:
             client = DockerClient.getInstance()
             if Act.__IMAGE_SETUP:
@@ -295,9 +300,10 @@ class Act:
             if len(client.images.list(name="gitbugactions")) > 0:
                 client.images.remove(image="gitbugactions")
 
+            base = base_image if base_image else Act.__DEFAULT_BASE_IMAGE
             with open("Dockerfile", "w") as f:
                 client = DockerClient.getInstance()
-                dockerfile = f"FROM {Act.__BASE_IMAGE}\n"
+                dockerfile = f"FROM {base}\n"
                 dockerfile += f"RUN sudo usermod -u 4000000 runneradmin\n"
                 dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
                 dockerfile += f"RUN sudo usermod -G {os.getgid()} runner\n"
@@ -378,6 +384,7 @@ class GitHubActions:
         keep_containers: bool = False,
         runner_image: str = "gitbugactions:latest",
         offline: bool = False,
+        base_image: str | None = None,
     ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
@@ -386,6 +393,7 @@ class GitHubActions:
         self.test_workflows: List[GitHubWorkflow] = []
         self.runner_image = runner_image
         self.offline = offline
+        self.base_image = base_image
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for dirpath, dirnames, filenames in os.walk(workflows_path):
@@ -467,6 +475,7 @@ class GitHubActions:
             runner_image=self.runner_image,
             offline=self.offline,
             fail_strategy=act_fail_strategy,
+            base_image=self.base_image,
         )
         return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)
 

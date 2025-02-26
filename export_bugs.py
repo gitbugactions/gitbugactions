@@ -15,7 +15,7 @@ import yaml
 from docker.models.containers import Container
 
 from collect_bugs import BugPatch
-from gitbugactions.actions.actions import ActCacheDirManager, ActTestsRun
+from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
 from gitbugactions.docker.client import DockerClient
 from gitbugactions.docker.export import extract_diff
 from gitbugactions.test_executor import TestExecutor
@@ -77,7 +77,7 @@ def create_exported_containers(
         break
 
 
-def export_bug_containers(bug: Dict, export_path: str):
+def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = None):
     TestExecutor.toggle_cleanup(False)
     repo_full_name = bug["repository"]
     commit_hash = bug["commit_hash"]
@@ -88,12 +88,17 @@ def export_bug_containers(bug: Dict, export_path: str):
     default_actions = get_default_github_actions(
         repo_clone, first_commit, bug["language"]
     )
+    default_actions = None
 
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
     try:
         executor = TestExecutor(
-            repo_clone, bug["language"], act_cache_dir, default_actions
+            repo_clone,
+            bug["language"],
+            act_cache_dir,
+            default_actions,
+            base_image=base_image,
         )
         runs = bug_patch.test_current_commit(executor, keep_containers=True)
         create_exported_containers(
@@ -104,13 +109,15 @@ def export_bug_containers(bug: Dict, export_path: str):
         delete_repo_clone(repo_clone)
 
 
-def export_bugs(dataset_path: str, output_folder_path: str):
+def export_bugs(
+    dataset_path: str, output_folder_path: str, base_image: str | None = None
+):
     """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs.
 
     Args:
         dataset_path (str): Folder where the result of collect_bugs is.
         output_folder_path (str): Folder on which the results will be saved.
-        n_workers (int, optional): Number of parallel workers. Defaults to 1.
+        base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
     # FIXME: export_bugs is not working with multiple workers
     n_workers = 1
@@ -118,6 +125,8 @@ def export_bugs(dataset_path: str, output_folder_path: str):
     executor = ThreadPoolExecutor(max_workers=n_workers)
     futures = []
     futures_to_bug = {}
+
+    Act(base_image=base_image)
 
     for jsonl_path in os.listdir(dataset_path):
         if jsonl_path == "log.out" or jsonl_path == "data.json":
@@ -128,7 +137,9 @@ def export_bugs(dataset_path: str, output_folder_path: str):
             for line in lines:
                 bug = json.loads(line)
                 futures.append(
-                    executor.submit(export_bug_containers, bug, output_folder_path)
+                    executor.submit(
+                        export_bug_containers, bug, output_folder_path, base_image
+                    )
                 )
                 futures_to_bug[futures[-1]] = bug
 
