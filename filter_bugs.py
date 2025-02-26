@@ -93,19 +93,20 @@ def filter_bug(
     offline: bool,
     n_executions: int,
     base_image: str | None = None,
+    user_mapping: bool = True,
 ) -> str:
     try:
         repo_name = bug["repository"].replace("/", "-")
         bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
         diff_folder_path = os.path.join(export_path, repo_name, bug_patch.commit)
-
-        Act(base_image=base_image)  # Pass base_image to Act initialization
+        Act(
+            base_image=base_image, user_mapping=user_mapping
+        )  # Initialize Act with user_mapping option
         image_name = f"gitbugactions-run-bug:{str(uuid.uuid4())}"
         docker_client = DockerClient.getInstance()
         create_diff_image(
             "gitbugactions:latest", image_name, get_diff_path(diff_folder_path)
         )
-
         previous_commit_runs = []
         previous_commit_with_diff_runs = []
         current_commit_runs = []
@@ -198,6 +199,7 @@ def filter_bugs(
     offline: bool = True,
     n_executions: int = 5,
     base_image: str | None = None,
+    user_mapping: bool = True,
 ):
     """Creates the list of non-flaky bug-fixes that are able to be reproduced.
 
@@ -209,6 +211,7 @@ def filter_bugs(
         offline (bool, optional): If the containers must be isolated from the internet. Defaults to True.
         n_executions (int, optional): Number of times to execute each test. Defaults to 5.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        user_mapping (bool, optional): Whether to include user/group ID mapping in the Dockerfile. Defaults to True.
     """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
@@ -247,6 +250,7 @@ def filter_bugs(
                         offline,
                         n_executions,
                         base_image,
+                        user_mapping,
                     )
                     future_to_bug[future] = bug
             finally:

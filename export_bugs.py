@@ -77,7 +77,12 @@ def create_exported_containers(
         break
 
 
-def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = None):
+def export_bug_containers(
+    bug: Dict,
+    export_path: str,
+    base_image: str | None = None,
+    user_mapping: bool = True,
+):
     TestExecutor.toggle_cleanup(False)
     repo_full_name = bug["repository"]
     commit_hash = bug["commit_hash"]
@@ -99,6 +104,7 @@ def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = 
             act_cache_dir,
             default_actions,
             base_image=base_image,
+            user_mapping=user_mapping,
         )
         runs = bug_patch.test_current_commit(executor, keep_containers=True)
         create_exported_containers(
@@ -110,7 +116,10 @@ def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = 
 
 
 def export_bugs(
-    dataset_path: str, output_folder_path: str, base_image: str | None = None
+    dataset_path: str,
+    output_folder_path: str,
+    base_image: str | None = None,
+    user_mapping: bool = True,
 ):
     """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs.
 
@@ -118,6 +127,7 @@ def export_bugs(
         dataset_path (str): Folder where the result of collect_bugs is.
         output_folder_path (str): Folder on which the results will be saved.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        user_mapping (bool, optional): Whether to include user/group ID mapping in the Dockerfile. Defaults to True.
     """
     # FIXME: export_bugs is not working with multiple workers
     n_workers = 1
@@ -126,7 +136,7 @@ def export_bugs(
     futures = []
     futures_to_bug = {}
 
-    Act(base_image=base_image)
+    Act(base_image=base_image, user_mapping=user_mapping)
 
     for jsonl_path in os.listdir(dataset_path):
         if jsonl_path == "log.out" or jsonl_path == "data.json":
@@ -138,7 +148,11 @@ def export_bugs(
                 bug = json.loads(line)
                 futures.append(
                     executor.submit(
-                        export_bug_containers, bug, output_folder_path, base_image
+                        export_bug_containers,
+                        bug,
+                        output_folder_path,
+                        base_image,
+                        user_mapping,
                     )
                 )
                 futures_to_bug[futures[-1]] = bug

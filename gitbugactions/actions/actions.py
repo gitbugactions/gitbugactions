@@ -244,6 +244,7 @@ class Act:
         offline: bool = False,
         fail_strategy: ActFailureStrategy = ActTestsFailureStrategy(),
         base_image: str | None = None,
+        user_mapping: bool = True,
     ):
         """
         Args:
@@ -252,9 +253,10 @@ class Act:
             offline (bool): Whether to run in offline mode
             fail_strategy (ActFailureStrategy): Strategy to determine test failures
             base_image (str): Base image to use for building the runner image. If None, uses default.
+            user_mapping (bool): Whether to include user/group ID mapping in the Dockerfile. Default is True.
         """
         Act.__check_act()
-        Act.__setup_image(runner_image, base_image)
+        Act.__setup_image(runner_image, base_image, user_mapping)
         if reuse:
             self.flags = "--reuse"
         else:
@@ -284,7 +286,9 @@ class Act:
         Act.__ACT_CHECK = True
 
     @staticmethod
-    def __setup_image(runner_image: str, base_image: str | None = None):
+    def __setup_image(
+        runner_image: str, base_image: str | None = None, user_mapping: bool = True
+    ):
         with Act.__SETUP_LOCK:
             client = DockerClient.getInstance()
             if Act.__IMAGE_SETUP:
@@ -304,10 +308,14 @@ class Act:
             with open("Dockerfile", "w") as f:
                 client = DockerClient.getInstance()
                 dockerfile = f"FROM {base}\n"
-                dockerfile += f"RUN sudo usermod -u 4000000 runneradmin\n"
-                dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
-                dockerfile += f"RUN sudo usermod -G {os.getgid()} runner\n"
-                dockerfile += f"RUN sudo usermod -o -u {os.getuid()} runner\n"
+
+                # Only add user mapping if requested
+                if user_mapping:
+                    dockerfile += f"RUN sudo usermod -u 4000000 runneradmin\n"
+                    dockerfile += f"RUN sudo groupadd -o -g {os.getgid()} {grp.getgrgid(os.getgid()).gr_name}\n"
+                    dockerfile += f"RUN sudo usermod -G {os.getgid()} runner\n"
+                    dockerfile += f"RUN sudo usermod -o -u {os.getuid()} runner\n"
+
                 f.write(dockerfile)
 
             client.images.build(path="./", tag="gitbugactions", forcerm=True)
@@ -385,6 +393,7 @@ class GitHubActions:
         runner_image: str = "gitbugactions:latest",
         offline: bool = False,
         base_image: str | None = None,
+        user_mapping: bool = True,
     ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
@@ -394,6 +403,7 @@ class GitHubActions:
         self.runner_image = runner_image
         self.offline = offline
         self.base_image = base_image
+        self.user_mapping = user_mapping
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for dirpath, dirnames, filenames in os.walk(workflows_path):
@@ -476,6 +486,7 @@ class GitHubActions:
             offline=self.offline,
             fail_strategy=act_fail_strategy,
             base_image=self.base_image,
+            user_mapping=self.user_mapping,
         )
         return act.run_act(self.repo_path, workflow, act_cache_dir=act_cache_dir)
 

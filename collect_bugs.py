@@ -439,6 +439,7 @@ def collect_bugs(
     strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
     pull_requests: bool = False,
     base_image: str | None = None,
+    user_mapping: bool = True,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -459,11 +460,14 @@ def collect_bugs(
                                            The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        user_mapping (bool, optional): Whether to include user/group ID mapping in the Dockerfile. Defaults to True.
     """
     set_test_config(normalize_non_code_patch, strategies)
 
     Act.set_memory_limit(memory_limit)
-    Act(base_image=base_image)  # Initialize Act with base_image
+    Act(
+        base_image=base_image, user_mapping=user_mapping
+    )  # Initialize Act with base_image and user_mapping
     github: GithubAPI = GithubAPI(
         per_page=100,
         pool_size=n_workers,

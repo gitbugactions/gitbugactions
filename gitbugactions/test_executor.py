@@ -27,6 +27,7 @@ class TestExecutor:
         default_actions: GitHubActions,
         runner_image: str = "gitbugactions:latest",
         base_image: str | None = None,
+        user_mapping: bool = True,
     ):
         TestExecutor.__schedule_cleanup(runner_image)
         self.act_cache_dir = act_cache_dir
@@ -34,6 +35,7 @@ class TestExecutor:
         self.runner_image = runner_image
         self.base_image = base_image
         self.language = language
+        self.user_mapping = user_mapping
         # Note: these default actions may have different configuration options
         # such as paths, runners, etc.
         self.default_actions = default_actions
@@ -98,6 +100,7 @@ class TestExecutor:
             runner_image=self.runner_image,
             offline=offline,
             base_image=self.base_image,
+            user_mapping=self.user_mapping,
         )
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
             default_actions = True
