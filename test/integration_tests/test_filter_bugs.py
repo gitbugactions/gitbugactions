@@ -11,7 +11,7 @@ from filter_bugs import filter_bugs
 
 export_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
 res_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
-base_image = "ghcr.io/catthehacker/ubuntu:act-latest"
+base_image = "ghcr.io/catthehacker/ubuntu:runner-latest"
 
 
 @pytest.fixture
