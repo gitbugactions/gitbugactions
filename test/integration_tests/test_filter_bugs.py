@@ -26,7 +26,9 @@ def setup_flaky():
 def setup_non_flaky():
     if not os.path.exists(res_path):
         os.mkdir(res_path)
-    export_bugs("test/resources/test_filter_bugs/non_flaky", export_path, base_image=base_image)
+    export_bugs(
+        "test/resources/test_filter_bugs/non_flaky", export_path, base_image=base_image
+    )
     yield
 
 
@@ -39,7 +41,13 @@ def teardown():
 
 @pytest.mark.skip(reason="Skipped due to unreproducible results")
 def test_filter_flaky_bugs(setup_flaky, teardown):
-    filter_bugs("test/resources/test_filter_bugs/flaky", export_path, res_path, n_workers=2, base_image=base_image)
+    filter_bugs(
+        "test/resources/test_filter_bugs/flaky",
+        export_path,
+        res_path,
+        n_workers=2,
+        base_image=base_image,
+    )
 
     flaky_path = os.path.join(res_path, "flaky.json")
     assert os.path.exists(flaky_path)
@@ -53,7 +61,14 @@ def test_filter_flaky_bugs(setup_flaky, teardown):
 
 
 def test_filter_non_flaky_bugs(setup_non_flaky, teardown):
-    filter_bugs("test/resources/test_filter_bugs/non_flaky", export_path, res_path, n_workers=2, n_executions=2, base_image=base_image)
+    filter_bugs(
+        "test/resources/test_filter_bugs/non_flaky",
+        export_path,
+        res_path,
+        n_workers=2,
+        n_executions=2,
+        base_image=base_image,
+    )
 
     non_flaky_path = os.path.join(res_path, "non-flaky.json")
     assert os.path.exists(non_flaky_path)
