@@ -50,14 +50,18 @@ def organize_bugs(
     # Process each repository
     for repo, bugs in bugs_by_repo.items():
         logging.info(f"Processing repository: {repo}")
-        # Convert repository name format (owner/repo -> owner-repo)
-        repo_file = repo.replace("/", "-")
+        # Convert repository name format (owner/repo -> owner-repo) and lowercase it
+        repo_file = repo.replace("/", "-").lower()
 
         # Read the collection file for this repository
         collect_file = Path(collect_bugs_dir) / f"{repo_file}.json"
         if not collect_file.exists():
-            logging.warning(f"Collection file not found for {repo}")
-            continue
+            # Try with original case if lowercase file doesn't exist
+            original_repo_file = repo.replace("/", "-")
+            collect_file = Path(collect_bugs_dir) / f"{original_repo_file}.json"
+            if not collect_file.exists():
+                logging.warning(f"Collection file not found for {repo}")
+                continue
 
         # Read and filter bug information
         collected_bugs = []
@@ -65,13 +69,16 @@ def organize_bugs(
             for line in f:
                 if line.strip():
                     bug_info = json.loads(line)
+                    # Skip bugs with change_type of NON_CODE
+                    if bug_info.get("change_type") == "NON_CODE":
+                        continue
                     # Check if this bug's commit is in our non-flaky list
                     if any(b["commit"] == bug_info["commit_hash"] for b in bugs):
                         collected_bugs.append(bug_info)
 
         # Save filtered bug information
         if collected_bugs:
-            # Save bug information to data/bugs/repo.json
+            # Save bug information to data/bugs/repo.json (lowercase)
             output_file = bugs_dir / f"{repo_file}.json"
             with open(output_file, "w") as f:
                 for bug in collected_bugs:
@@ -81,14 +88,23 @@ def organize_bugs(
             # Copy export directories for each commit
             for bug in collected_bugs:
                 commit = bug["commit_hash"]
-                src_dir = Path(export_bugs_dir) / repo_file / commit
-                if src_dir.exists():
-                    dst_dir = output_path / repo_file / commit
-                    dst_dir.mkdir(parents=True, exist_ok=True)
-                    shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
-                    logging.info(f"Copied export directory for commit {commit}")
-                else:
-                    logging.warning(f"Export directory not found for commit {commit}")
+                # Try to find source directory with original case first
+                original_repo_file = repo.replace("/", "-")
+                src_dir = Path(export_bugs_dir) / original_repo_file / commit
+                if not src_dir.exists():
+                    # Try with lowercased directory
+                    src_dir = Path(export_bugs_dir) / repo_file / commit
+                    if not src_dir.exists():
+                        logging.warning(
+                            f"Export directory not found for commit {commit}"
+                        )
+                        continue
+
+                # Use lowercase for destination directory
+                dst_dir = output_path / repo_file / commit.lower()
+                dst_dir.mkdir(parents=True, exist_ok=True)
+                shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
+                logging.info(f"Copied export directory for commit {commit}")
 
 
 if __name__ == "__main__":
