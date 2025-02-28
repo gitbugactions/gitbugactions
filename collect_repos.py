@@ -13,6 +13,7 @@ from typing import Optional
 from github import Repository
 
 from gitbugactions.actions.actions import (
+    Act,
     ActCacheDirManager,
     ActCheckCodeFailureStrategy,
     GitHubActions,
