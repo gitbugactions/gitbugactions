@@ -30,7 +30,7 @@ class TestResult:
     time: float = 0.0
     stdout: Optional[str] = None
     stderr: Optional[str] = None
-    
+
     @property
     def success(self) -> bool:
         """
@@ -40,7 +40,7 @@ class TestResult:
             True if the test passed, False otherwise
         """
         return self.is_passed
-        
+
     @property
     def execution_time(self) -> float:
         """

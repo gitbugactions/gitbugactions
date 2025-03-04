@@ -105,7 +105,9 @@ class CommitExecutor:
             self._checkout_commit(commit_sha)
 
             # Get workflow information
-            all_workflows, test_workflows, all_build_tools, test_build_tools = self._get_workflow_info()
+            all_workflows, test_workflows, all_build_tools, test_build_tools = (
+                self._get_workflow_info()
+            )
 
             # Execute workflows
             act_results = self._execute_workflows(workflow_paths)
@@ -149,54 +151,56 @@ class CommitExecutor:
     ) -> CommitExecutionResult:
         """
         Execute tests at a commit after applying specified patches.
-        
+
         Args:
             commit_sha: SHA of the commit to execute tests at
             patches: Optional list of patches to apply
             workflow_paths: Optional list of specific workflow paths to execute
-            
+
         Returns:
             CommitExecutionResult containing the results of the execution
-            
+
         Raises:
             PatchApplicationError: If patches cannot be applied cleanly
             ExecutionError: If there is an error during execution
             ExecutionTimeoutError: If execution times out
         """
         logger.info(f"Executing tests at commit {commit_sha} with patches")
-        
+
         try:
             # Checkout the commit
             self._checkout_commit(commit_sha)
-            
+
             # Apply patches
             patches_applied = {}
-            
+
             if patches:
                 for i, patch in enumerate(patches):
                     patch_id = f"patch_{i+1}"
                     logger.debug(f"Applying {patch_id}")
                     patches_applied[patch_id] = self._apply_patch(patch, patch_id)
-            
+
             # Get workflow information
-            all_workflows, test_workflows, all_build_tools, test_build_tools = self._get_workflow_info()
-            
+            all_workflows, test_workflows, all_build_tools, test_build_tools = (
+                self._get_workflow_info()
+            )
+
             # Execute workflows
             act_results = self._execute_workflows(workflow_paths)
-            
+
             # Convert results
             result = self._convert_act_results(act_results)
             result.commit_sha = commit_sha
             result.patches_applied = patches_applied
-            
+
             # Add workflow information
             result.all_workflows = all_workflows
             result.test_workflows = test_workflows
             result.all_build_tools = all_build_tools
             result.test_build_tools = test_build_tools
-            
+
             return result
-            
+
         except subprocess.TimeoutExpired as e:
             raise ExecutionTimeoutError(
                 message=f"Execution timed out after {self.timeout} seconds",
@@ -238,13 +242,15 @@ class CommitExecutor:
             self._checkout_commit(commit_sha)
 
             # Get workflow information
-            all_workflows, test_workflows, all_build_tools, test_build_tools = self._get_workflow_info()
+            all_workflows, test_workflows, all_build_tools, test_build_tools = (
+                self._get_workflow_info()
+            )
 
             return {
                 "all_workflows": all_workflows,
                 "test_workflows": test_workflows,
                 "all_build_tools": all_build_tools,
-                "test_build_tools": test_build_tools
+                "test_build_tools": test_build_tools,
             }
 
         except Exception as e:
@@ -625,16 +631,16 @@ class CommitExecutor:
     def _get_workflow_info(self) -> Tuple[List[str], List[str], List[str], List[str]]:
         """
         Get information about all workflows and test workflows in the repository.
-        
+
         Returns:
             Tuple containing lists of all workflows, test workflows, all build tools, and test build tools
         """
         logger.info("Getting workflow information")
-        
+
         try:
             # Detect language
             language = self._detect_language()
-            
+
             # Initialize GitHub Actions
             actions = GitHubActions(
                 self.repo_path,
@@ -643,29 +649,29 @@ class CommitExecutor:
                 runner_image=self.custom_image or "gitbugactions:latest",
                 offline=self.offline_mode,
             )
-            
+
             # Get workflow information
             all_workflows = [workflow.path for workflow in actions.workflows]
             test_workflows = [workflow.path for workflow in actions.test_workflows]
-            
+
             # Get build tools information if available
             all_build_tools = []
             test_build_tools = []
-            
+
             for workflow in actions.workflows:
-                if hasattr(workflow, 'get_build_tool'):
+                if hasattr(workflow, "get_build_tool"):
                     build_tool = workflow.get_build_tool()
                     if build_tool:
                         all_build_tools.append(build_tool)
-            
+
             for workflow in actions.test_workflows:
-                if hasattr(workflow, 'get_build_tool'):
+                if hasattr(workflow, "get_build_tool"):
                     build_tool = workflow.get_build_tool()
                     if build_tool:
                         test_build_tools.append(build_tool)
-            
+
             return all_workflows, test_workflows, all_build_tools, test_build_tools
-            
+
         except Exception as e:
             logger.error(f"Error getting workflow information: {str(e)}")
             return [], [], [], []
