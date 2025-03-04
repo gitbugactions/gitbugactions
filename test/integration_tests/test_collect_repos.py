@@ -55,7 +55,7 @@ class TestCollectReposInfra(BaseCollectReposTest):
             assert "infra_files" in data
             assert data["infra_files"] == 0
             assert "actions_successful" in data
-            assert data["actions_successful"] is None
+            assert not data["actions_successful"]
 
 
 class TestCollectReposJavaScript(BaseCollectReposTest):

@@ -7,20 +7,15 @@ import sys
 import tempfile
 import traceback
 import uuid
-
 from pathlib import Path
-from typing import Optional
+from typing import Dict, List, Optional
+
 from github import Repository
 
-from gitbugactions.actions.actions import (
-    Act,
-    ActCacheDirManager,
-    ActCheckCodeFailureStrategy,
-    GitHubActions,
-)
+from gitbugactions.commit_execution.executor import CommitExecutor
+from gitbugactions.actions.actions import ActCheckCodeFailureStrategy
 from gitbugactions.crawler import RepoCrawler, RepoStrategy
 from gitbugactions.infra.infra_checkers import is_infra_file
-from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 
 
 class CollectReposStrategy(RepoStrategy):
@@ -38,121 +33,149 @@ class CollectReposStrategy(RepoStrategy):
             json.dump(data, f, indent=4)
 
     def handle_repo(self, repo: Repository):
-        logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
-        repo_path = os.path.join(
-            tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-")
-        )
-
-        # Handle repositories without a language detected
-        if repo.language is None:
-            logging.info(f"Skipping {repo.full_name} - no language detected")
-            return
-
+        logging.info(f"Processing {repo.full_name} - {repo.clone_url}")
+        
         data = {
             "repository": repo.full_name,
             "stars": repo.stargazers_count,
-            "language": repo.language.strip().lower(),
+            "language": (
+                repo.language.strip().lower() if repo.language is not None else ""
+            ),
             "size": repo.size,
             "clone_url": repo.clone_url,
             "timestamp": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
             "clone_success": False,
+            "has_tests": False,
             "number_of_actions": 0,
             "number_of_test_actions": 0,
             "actions_successful": False,
+            "actions_build_tools": [],
+            "actions_test_build_tools": [],
+            "infra_files": 0,
+            "test_results": [],
+            "execution_time": 0,
+            "success": False,
+            "error": None,
         }
-
-        repo_clone = clone_repo(repo.clone_url, repo_path)
-
+        
+        executor = None
+        
         try:
-            data["clone_success"] = True
-
-            actions = GitHubActions(repo_path, repo.language)
-            data["number_of_actions"] = len(actions.workflows)
-            data["actions_build_tools"] = [
-                x.get_build_tool() for x in actions.workflows
-            ]
-            data["number_of_test_actions"] = len(actions.test_workflows)
-            data["actions_test_build_tools"] = [
-                x.get_build_tool() for x in actions.test_workflows
-            ]
-            actions.save_workflows()
-
-            if len(actions.test_workflows) == 1:
-                logging.info(f"Running actions for {repo.full_name}")
-
-                # Act creates names for the containers by hashing the content of the workflows
-                # To avoid conflicts between threads, we randomize the name
-                actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
-                actions.save_workflows()
-
-                act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+            # Create a temporary directory for cloning
+            with tempfile.TemporaryDirectory() as temp_dir:
+                # Create a CommitExecutor
+                executor = CommitExecutor(
+                    repo_url=repo.clone_url,
+                    work_dir=temp_dir,
+                    timeout=3600,  # 1 hour timeout
+                    custom_image=None,  # Use default image
+                    offline_mode=False,
+                )
+                
+                # Get the latest commit SHA
+                latest_commit = self._get_latest_commit(executor)
+                if not latest_commit:
+                    data["error"] = "Failed to get latest commit"
+                    return self.save_data(data, repo)
+                
+                # Get workflow information without executing tests
                 try:
-                    act_run = actions.run_workflow(
-                        actions.test_workflows[0], act_cache_dir=act_cache_dir
-                    )
-                finally:
-                    ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-
-                data["actions_successful"] = not act_run.failed
-                data["actions_run"] = act_run.asdict()
-
-            delete_repo_clone(repo_clone)
+                    workflow_info = executor.get_workflow_info_at_commit(latest_commit)
+                    all_workflows = workflow_info.get("all_workflows", [])
+                    test_workflows = workflow_info.get("test_workflows", [])
+                    all_build_tools = workflow_info.get("all_build_tools", [])
+                    test_build_tools = workflow_info.get("test_build_tools", [])
+                    
+                    data["number_of_actions"] = len(all_workflows)
+                    data["number_of_test_actions"] = len(test_workflows)
+                    data["has_tests"] = len(test_workflows) > 0
+                    data["clone_success"] = True
+                    data["actions_build_tools"] = all_build_tools
+                    data["actions_test_build_tools"] = test_build_tools
+                    
+                    # If no test workflows, we're done
+                    if not data["has_tests"]:
+                        logging.info(f"No test workflows found for {repo.full_name}")
+                        return self.save_data(data, repo)
+                    
+                    # Execute tests at the latest commit
+                    result = executor.execute_at_commit(latest_commit)
+                    
+                    # Update data with execution results
+                    data["success"] = result.success
+                    data["actions_successful"] = result.success
+                    data["execution_time"] = result.execution_time
+                    
+                    # Format test results for backward compatibility
+                    test_results = []
+                    for test in result.test_results:
+                        test_results.append({
+                            "classname": test.classname,
+                            "name": test.name,
+                            "time": test.time,
+                            "results": [
+                                {
+                                    "result": "Passed" if test.success else "Failed",
+                                    "message": test.message or "",
+                                    "type": ""
+                                }
+                            ],
+                            "stdout": test.stdout,
+                            "stderr": test.stderr
+                        })
+                    
+                    # Create actions_run structure for backward compatibility
+                    data["actions_run"] = {
+                        "failed": not result.success,
+                        "tests": test_results,
+                        "stdout": result.stdout,
+                        "stderr": result.stderr,
+                        "workflow": {
+                            "path": result.workflows_executed[0] if result.workflows_executed else "",
+                            "type": result.all_build_tools[0] if result.all_build_tools else ""
+                        },
+                        "workflow_name": "",  # We don't have this information directly
+                        "build_tool": result.all_build_tools[0] if result.all_build_tools else "",
+                        "elapsed_time": result.execution_time,
+                        "default_actions": False,
+                        "return_code": 0 if result.success else 1
+                    }
+                    
+                except Exception as e:
+                    logging.error(f"Error executing tests: {str(e)}")
+                    data["error"] = str(e)
+            
             self.save_data(data, repo)
         except Exception as e:
             logging.error(
                 f"Error while processing {repo.full_name}: {traceback.format_exc()}"
             )
-
-            delete_repo_clone(repo_clone)
             self.save_data(data, repo)
+        finally:
+            # Clean up resources
+            if executor:
+                executor.cleanup()
+
+    def _get_latest_commit(self, executor) -> str:
+        """Get the latest commit SHA from the repository."""
+        try:
+            # This is a bit of a hack, but we can access the repo_clone directly
+            # to get the latest commit SHA
+            if hasattr(executor, 'repo_clone') and executor.repo_clone:
+                head = executor.repo_clone.head
+                if head:
+                    return str(head.target)
+        except Exception as e:
+            logging.error(f"Error getting latest commit: {str(e)}")
+        return None
 
 
 class CollectInfraReposStrategy(CollectReposStrategy):
     def __init__(self, data_path: str):
         super().__init__(data_path)
 
-    def test_actions(self, data: dict, repo: Repository, repo_path: str):
-        actions = GitHubActions(repo_path, repo.language)
-        data["number_of_actions"] = len(actions.workflows)
-        data["actions_build_tools"] = [x.get_build_tool() for x in actions.workflows]
-        data["number_of_test_actions"] = len(actions.test_workflows)
-        data["actions_test_build_tools"] = [
-            x.get_build_tool() for x in actions.test_workflows
-        ]
-        data["actions_run"] = []
-        actions.save_workflows()
-
-        if len(actions.workflows) >= 1:
-            logging.info(f"Running actions for {repo.full_name}")
-
-            for workflow in actions.workflows:
-                # Act creates names for the containers by hashing the content of the workflows
-                # To avoid conflicts between threads, we randomize the name
-                workflow.doc["name"] = str(uuid.uuid4())
-                actions.save_workflows()
-
-                act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-                try:
-                    act_run = actions.run_workflow(
-                        workflow,
-                        act_cache_dir=act_cache_dir,
-                        act_fail_strategy=ActCheckCodeFailureStrategy(),
-                    )
-                finally:
-                    ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-
-                data["actions_run"].append(act_run.asdict())
-                if not act_run.failed:
-                    data["actions_successful"] = True
-                    break
-            else:
-                data["actions_successful"] = False
-
     def handle_repo(self, repo: Repository):
-        logging.info(f"Cloning {repo.full_name} - {repo.clone_url}")
-        repo_path = os.path.join(
-            tempfile.gettempdir(), self.uuid, repo.full_name.replace("/", "-")
-        )
+        logging.info(f"Processing {repo.full_name} - {repo.clone_url}")
 
         data = {
             "repository": repo.full_name,
@@ -164,37 +187,85 @@ class CollectInfraReposStrategy(CollectReposStrategy):
             "clone_url": repo.clone_url,
             "timestamp": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
             "clone_success": False,
-            "number_of_actions": -1,
-            "number_of_test_actions": -1,
-            "actions_successful": None,
+            "has_tests": False,
+            "number_of_actions": 0,
+            "number_of_test_actions": 0,
+            "actions_successful": False,
+            "actions_build_tools": [],
+            "actions_test_build_tools": [],
+            "infra_files": 0,
+            "error": None,
         }
-
-        repo_clone = clone_repo(repo.clone_url, repo_path)
-        data["clone_success"] = True
-
-        infra_files = 0
-        for root, _, files in os.walk(repo_path):
-            for f in files:
-                if is_infra_file(Path(os.path.join(root, f))):
-                    infra_files += 1
-
-        data["infra_files"] = infra_files
-        if infra_files == 0:
-            delete_repo_clone(repo_clone)
-            self.save_data(data, repo)
-            return
-
+        
+        executor = None
+        
         try:
-            self.test_actions(data, repo, repo_path)
-            delete_repo_clone(repo_clone)
+            # Create a temporary directory for cloning
+            with tempfile.TemporaryDirectory() as temp_dir:
+                # Create a CommitExecutor
+                executor = CommitExecutor(
+                    repo_url=repo.clone_url,
+                    work_dir=temp_dir,
+                    timeout=3600,  # 1 hour timeout
+                    custom_image=None,  # Use default image
+                    offline_mode=False,
+                )
+                
+                # Get the latest commit SHA
+                latest_commit = self._get_latest_commit(executor)
+                if not latest_commit:
+                    data["error"] = "Failed to get latest commit"
+                    return self.save_data(data, repo)
+                
+                # Count infrastructure files
+                infra_files = 0
+                repo_path = executor.repo_path
+                for root, _, files in os.walk(repo_path):
+                    for f in files:
+                        file_path = Path(os.path.join(root, f))
+                        if is_infra_file(file_path):
+                            infra_files += 1
+                
+                data["infra_files"] = infra_files
+                data["clone_success"] = True
+                
+                # If no infrastructure files, we're done
+                if infra_files == 0:
+                    logging.info(f"No infrastructure files found for {repo.full_name}")
+                    return self.save_data(data, repo)
+                
+                # Get workflow information without executing tests
+                try:
+                    workflow_info = executor.get_workflow_info_at_commit(latest_commit)
+                    all_workflows = workflow_info.get("all_workflows", [])
+                    test_workflows = workflow_info.get("test_workflows", [])
+                    all_build_tools = workflow_info.get("all_build_tools", [])
+                    test_build_tools = workflow_info.get("test_build_tools", [])
+                    
+                    data["number_of_actions"] = len(all_workflows)
+                    data["number_of_test_actions"] = len(test_workflows)
+                    data["has_tests"] = len(test_workflows) > 0
+                    data["clone_success"] = True
+                    data["actions_build_tools"] = all_build_tools
+                    data["actions_test_build_tools"] = test_build_tools
+                    
+                    # For infrastructure repos, we don't execute tests
+                    logging.info(f"Found {len(all_workflows)} workflows for {repo.full_name}")
+                    
+                except Exception as e:
+                    logging.error(f"Error getting workflow information: {str(e)}")
+                    data["error"] = str(e)
+            
             self.save_data(data, repo)
         except Exception as e:
             logging.error(
                 f"Error while processing {repo.full_name}: {traceback.format_exc()}"
             )
-
-            delete_repo_clone(repo_clone)
             self.save_data(data, repo)
+        finally:
+            # Clean up resources
+            if executor:
+                executor.cleanup()
 
 
 def collect_repos(
@@ -218,7 +289,7 @@ def collect_repos(
     if not Path(out_path).exists():
         os.makedirs(out_path, exist_ok=True)
 
-    Act(base_image=base_image)  # Initialize Act with base_image
+    # Initialize the crawler and start collecting repos
     crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
     crawler.get_repos(CollectReposStrategy(out_path))
 

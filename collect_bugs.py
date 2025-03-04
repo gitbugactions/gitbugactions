@@ -124,7 +124,7 @@ class PatchCollector:
         """
         repo_clone.reset(commit.id, pygit2.GIT_RESET_HARD)
         subprocess.run(
-            ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
+            ["git", "clean", "-ff", "-d", "-x"], cwd=repo_path, capture_output=True
         )
 
     def __test_patch(
