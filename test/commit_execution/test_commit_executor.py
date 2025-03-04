@@ -176,14 +176,14 @@ class TestCommitExecutor(unittest.TestCase):
         # Execute the test
         result = self.executor.execute_at_commit_with_patches(
             commit_sha=commit_sha,
-            test_patch=test_patch,
+            patches=[test_patch],
         )
         
         # Verify the result
         self.assertEqual(result.commit_sha, commit_sha)
         self.assertTrue(result.success)
         self.assertEqual(result.execution_time, 5.2)
-        self.assertTrue(result.patches_applied.get("test", False))
+        self.assertTrue(result.patches_applied.get("patch_1", False))
         
         # Verify the correct methods were called
         self.mock_repo_instance.revparse_single.assert_called_once_with(commit_sha)
@@ -220,13 +220,13 @@ class TestCommitExecutor(unittest.TestCase):
         with self.assertRaises(PatchApplicationError) as context:
             self.executor.execute_at_commit_with_patches(
                 commit_sha=commit_sha,
-                test_patch=test_patch,
+                patches=[test_patch],
             )
         
         # Verify the exception details
         self.assertEqual(context.exception.commit_sha, commit_sha)
-        self.assertEqual(context.exception.patch_type, "test")
-        self.assertIn("Failed to apply test patch", context.exception.message)
+        self.assertEqual(context.exception.patch_id, "patch_1")  # Now using patch_id
+        self.assertIn("Failed to apply patch", context.exception.message)
         
         # Verify the correct methods were called
         self.mock_repo_instance.revparse_single.assert_called_once_with(commit_sha)
@@ -393,7 +393,7 @@ def test_real_execution_with_patch():
         # This should make the previous commit behave like the latest commit
         execution_result = executor.execute_at_commit_with_patches(
             commit_sha=previous_commit,
-            non_code_patch=patch,
+            patches=[patch],
         )
 
         # Verify execution was successful
@@ -402,7 +402,8 @@ def test_real_execution_with_patch():
         assert execution_result.skipped_count == 0
         assert execution_result.failed_count == 0
         assert execution_result.error_count == 0
-        assert execution_result.patches_applied.get("non_code", False)
+        assert "patch_1" in execution_result.patches_applied
+        assert execution_result.patches_applied["patch_1"] == True
 
         # Now execute tests at the latest commit without patches
         latest_result = executor.execute_at_commit(latest_commit)

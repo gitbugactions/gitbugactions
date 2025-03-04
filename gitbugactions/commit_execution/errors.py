@@ -77,7 +77,7 @@ class PatchApplicationError(CommitExecutionError):
         message: Error message
         commit_sha: SHA of the commit where the error occurred
         failed_files: List of files that failed to apply
-        patch_type: Type of patch that failed to apply
+        patch_id: Identifier of the patch that failed to apply
         original_patch: Original patch content
     """
 
@@ -86,10 +86,11 @@ class PatchApplicationError(CommitExecutionError):
         message: str,
         commit_sha: str,
         failed_files: List[str],
-        patch_type: str,
+        patch_type: str,  # Kept for backward compatibility, renamed in docstring
         original_patch: str,
     ):
         self.failed_files = failed_files
-        self.patch_type = patch_type
+        self.patch_type = patch_type  # Kept for backward compatibility
+        self.patch_id = patch_type  # Added for clarity
         self.original_patch = original_patch
         super().__init__(message, commit_sha)

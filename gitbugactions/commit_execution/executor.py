@@ -144,65 +144,59 @@ class CommitExecutor:
     def execute_at_commit_with_patches(
         self,
         commit_sha: str,
-        test_patch: Optional[Union[PatchSet, str]] = None,
-        non_code_patch: Optional[Union[PatchSet, str]] = None,
+        patches: Optional[List[Union[PatchSet, str]]] = None,
         workflow_paths: Optional[List[str]] = None,
     ) -> CommitExecutionResult:
         """
         Execute tests at a commit after applying specified patches.
-
+        
         Args:
             commit_sha: SHA of the commit to execute tests at
-            test_patch: Optional test patch to apply
-            non_code_patch: Optional non-code patch to apply
+            patches: Optional list of patches to apply
             workflow_paths: Optional list of specific workflow paths to execute
-
+            
         Returns:
             CommitExecutionResult containing the results of the execution
-
+            
         Raises:
             PatchApplicationError: If patches cannot be applied cleanly
             ExecutionError: If there is an error during execution
             ExecutionTimeoutError: If execution times out
         """
         logger.info(f"Executing tests at commit {commit_sha} with patches")
-
+        
         try:
             # Checkout the commit
             self._checkout_commit(commit_sha)
-
+            
             # Apply patches
             patches_applied = {}
-
-            if non_code_patch:
-                logger.debug("Applying non-code patch")
-                patches_applied["non_code"] = self._apply_patch(
-                    non_code_patch, "non_code"
-                )
-
-            if test_patch:
-                logger.debug("Applying test patch")
-                patches_applied["test"] = self._apply_patch(test_patch, "test")
-
+            
+            if patches:
+                for i, patch in enumerate(patches):
+                    patch_id = f"patch_{i+1}"
+                    logger.debug(f"Applying {patch_id}")
+                    patches_applied[patch_id] = self._apply_patch(patch, patch_id)
+            
             # Get workflow information
             all_workflows, test_workflows, all_build_tools, test_build_tools = self._get_workflow_info()
-
+            
             # Execute workflows
             act_results = self._execute_workflows(workflow_paths)
-
+            
             # Convert results
             result = self._convert_act_results(act_results)
             result.commit_sha = commit_sha
             result.patches_applied = patches_applied
-
+            
             # Add workflow information
             result.all_workflows = all_workflows
             result.test_workflows = test_workflows
             result.all_build_tools = all_build_tools
             result.test_build_tools = test_build_tools
-
+            
             return result
-
+            
         except subprocess.TimeoutExpired as e:
             raise ExecutionTimeoutError(
                 message=f"Execution timed out after {self.timeout} seconds",
@@ -368,13 +362,13 @@ class CommitExecutor:
         head = self.repo_clone.head.target
         self.repo_clone.reset(head, pygit2.GIT_RESET_HARD)
 
-    def _apply_patch(self, patch: Union[PatchSet, str], patch_type: str) -> bool:
+    def _apply_patch(self, patch: Union[PatchSet, str], patch_id: str) -> bool:
         """
         Apply a patch to the current repository state.
 
         Args:
             patch: Patch to apply (either a PatchSet object or a string)
-            patch_type: Type of patch (e.g., "test", "non-code")
+            patch_id: Identifier for the patch (for logging and error reporting)
 
         Returns:
             Whether the patch was successfully applied
@@ -382,7 +376,7 @@ class CommitExecutor:
         Raises:
             PatchApplicationError: If the patch cannot be applied cleanly
         """
-        logger.info(f"Applying {patch_type} patch")
+        logger.info(f"Applying patch {patch_id}")
 
         # Convert string to PatchSet if needed
         if isinstance(patch, str):
@@ -406,10 +400,10 @@ class CommitExecutor:
                 failed_files.append(file.target_file)
 
             raise PatchApplicationError(
-                message=f"Failed to apply {patch_type} patch to commit {commit_sha}: {str(e)}",
+                message=f"Failed to apply patch {patch_id} to commit {commit_sha}: {str(e)}",
                 commit_sha=commit_sha,
                 failed_files=failed_files,
-                patch_type=patch_type,
+                patch_type=patch_id,
                 original_patch=str(patch),
             )
 
