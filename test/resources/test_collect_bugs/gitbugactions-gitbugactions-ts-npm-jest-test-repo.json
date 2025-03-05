@@ -2,10 +2,11 @@
     "repository": "gitbugactions/gitbugactions-ts-npm-jest-test-repo",
     "stars": 0,
     "language": "typescript",
-    "size": 0,
+    "size": 34,
     "clone_url": "https://github.com/gitbugactions/gitbugactions-ts-npm-jest-test-repo.git",
-    "timestamp": "2025-02-04T15:10:18.528011+00:00Z",
+    "timestamp": "2025-03-05T13:14:56.793540+00:00Z",
     "clone_success": true,
+    "has_tests": true,
     "number_of_actions": 1,
     "number_of_test_actions": 1,
     "actions_successful": true,
@@ -15,90 +16,65 @@
     "actions_test_build_tools": [
         "npm-jest"
     ],
-    "actions_run": {
-        "failed": false,
-        "tests": [
-            {
-                "classname": "AppMath sum adds two numbers correctly",
-                "name": "AppMath sum adds two numbers correctly",
-                "time": 0.001,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "AppMath subtract subtracts two numbers correctly",
-                "name": "AppMath subtract subtracts two numbers correctly",
-                "time": 0.0,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "AppMath multiply multiplies two numbers correctly",
-                "name": "AppMath multiply multiplies two numbers correctly",
-                "time": 0.0,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "AppMath sumTwice adds the second number twice",
-                "name": "AppMath sumTwice adds the second number twice",
-                "time": 0.0,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            },
-            {
-                "classname": "AppMath subtractTwice subtracts the second number twice",
-                "name": "AppMath subtractTwice subtracts the second number twice",
-                "time": 0.0,
-                "results": [
-                    {
-                        "result": "Passed",
-                        "message": "",
-                        "type": ""
-                    }
-                ],
-                "stdout": null,
-                "stderr": null
-            }
-        ],
-        "stdout": "[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \ud83d\ude80  Start image=gitbugactions:latest\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/25367636-e30a-11ef-9f2f-98597a56f496/gitbugactions-gitbugactions-ts-npm-jest-test-repo] user=0 workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \u2b50 Run Main actions/checkout@v3\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker cp src=/tmp/25367636-e30a-11ef-9f2f-98597a56f496/gitbugactions-gitbugactions-ts-npm-jest-test-repo/. dst=/tmp/25367636-e30a-11ef-9f2f-98597a56f496/gitbugactions-gitbugactions-ts-npm-jest-test-repo\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/25367636-e30a-11ef-9f2f-98597a56f496/gitbugactions-gitbugactions-ts-npm-jest-test-repo] user=0 workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2705  Success - Main actions/checkout@v3\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \u2b50 Run Main Setup Node.js\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/default/act/actions-setup-node@v3/ dst=/var/run/act/actions/actions-setup-node@v3/\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /var/run/act/actions/actions-setup-node@v3/] user=0 workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v3/dist/setup/index.js] user= workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::isExplicit: \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::explicit? false\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::isExplicit: 14.21.3\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::explicit? true\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::isExplicit: 16.20.2\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::explicit? true\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::isExplicit: 18.18.2\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::explicit? true\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::isExplicit: 20.9.0\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::explicit? true\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::evaluating 4 versions\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::matched: 16.20.2\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/node/16.20.2/x64\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::Found tool in cache node 16.20.2 x64\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | Found in cache @ /opt/hostedtoolcache/node/16.20.2/x64\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2753  ::group::Environment details\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | node: v16.20.2\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | npm: 8.19.4\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | yarn: 1.22.21\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2753  ::endgroup::\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/tsc.json\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/eslint-stylish.json\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/eslint-compact.json\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2705  Success - Main Setup Node.js\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2699  ::set-output:: node-version=v16.20.2\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2699  ::add-path:: /opt/hostedtoolcache/node/16.20.2/x64/bin\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \u2b50 Run Main Install dependencies\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | added 279 packages, and audited 280 packages in 2s\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | 32 packages are looking for funding\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |   run `npm fund` for details\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | found 0 vulnerabilities\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2705  Success - Main Install dependencies\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \u2b50 Run Main Run tests\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | added 4 packages, and audited 284 packages in 534ms\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | 32 packages are looking for funding\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |   run `npm fund` for details\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | found 0 vulnerabilities\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | > gitbugactions-npm-jest-test-repo@1.0.0 test\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | > jest --reporters=default --reporters=jest-junit\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | PASS src/test/js/appMath.test.ts\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |   AppMath\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |     \u2713 sum adds two numbers correctly (1 ms)\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |     \u2713 subtract subtracts two numbers correctly\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |     \u2713 multiply multiplies two numbers correctly\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |     \u2713 sumTwice adds the second number twice\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   |     \u2713 subtractTwice subtracts the second number twice\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | \n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | Test Suites: 1 passed, 1 total\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | Tests:       5 passed, 5 total\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | Snapshots:   0 total\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | Time:        1.345 s\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   | Ran all test suites.\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2705  Success - Main Run tests\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \u2b50 Run Post Setup Node.js\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v3/dist/cache-save/index.js] user= workdir=\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \ud83d\udcac  ::debug::Caching for '' is not supported\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test]   \u2705  Success - Post Setup Node.js\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] Cleaning up container for job test\n[c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d/test] \ud83c\udfc1  Job succeeded\n",
-        "stderr": "time=\"2025-02-04T16:10:18+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-02-04T16:10:18+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
-        "workflow": {
-            "path": "/tmp/25367636-e30a-11ef-9f2f-98597a56f496/gitbugactions-gitbugactions-ts-npm-jest-test-repo/.github/workflows/tests-crawler.yml",
-            "type": "npm-jest"
+    "infra_files": 0,
+    "test_results": [
+        {
+            "name": "AppMath sum adds two numbers correctly",
+            "classname": "AppMath sum adds two numbers correctly",
+            "result": "passed",
+            "success": true,
+            "time": 0.002,
+            "message": null,
+            "stdout": null,
+            "stderr": null
         },
-        "workflow_name": "c5f2aea2-8bbe-48ff-beb1-f90f8e6f808d",
-        "build_tool": "npm-jest",
-        "elapsed_time": 5.938040733337402,
-        "default_actions": false,
-        "return_code": 0
-    }
+        {
+            "name": "AppMath subtract subtracts two numbers correctly",
+            "classname": "AppMath subtract subtracts two numbers correctly",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "AppMath multiply multiplies two numbers correctly",
+            "classname": "AppMath multiply multiplies two numbers correctly",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "AppMath sumTwice adds the second number twice",
+            "classname": "AppMath sumTwice adds the second number twice",
+            "result": "passed",
+            "success": true,
+            "time": 0.001,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "AppMath subtractTwice subtracts the second number twice",
+            "classname": "AppMath subtractTwice subtracts the second number twice",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        }
+    ],
+    "execution_time": 7.649789094924927,
+    "success": true,
+    "error": null,
+    "stdout": "[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \ud83d\ude80  Start image=gitbugactions:latest\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/tmps5yt1sjv/repo_650936f6-31dd-442c-99d8-65814f257b73] user=0 workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \u2b50 Run Main actions/checkout@v3\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker cp src=/tmp/tmps5yt1sjv/repo_650936f6-31dd-442c-99d8-65814f257b73/. dst=/tmp/tmps5yt1sjv/repo_650936f6-31dd-442c-99d8-65814f257b73\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/tmps5yt1sjv/repo_650936f6-31dd-442c-99d8-65814f257b73] user=0 workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2705  Success - Main actions/checkout@v3\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \u2b50 Run Main Setup Node.js\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/2d795c53-9ac5-4a85-8180-d1e4621db3e3/act/actions-setup-node@v3/ dst=/var/run/act/actions/actions-setup-node@v3/\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /var/run/act/actions/actions-setup-node@v3/] user=0 workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v3/dist/setup/index.js] user= workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::isExplicit: \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::explicit? false\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::isExplicit: 14.21.3\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::explicit? true\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::isExplicit: 16.20.2\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::explicit? true\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::isExplicit: 18.18.2\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::explicit? true\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::isExplicit: 20.9.0\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::explicit? true\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::evaluating 4 versions\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::matched: 16.20.2\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/node/16.20.2/x64\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::Found tool in cache node 16.20.2 x64\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | Found in cache @ /opt/hostedtoolcache/node/16.20.2/x64\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2753  ::group::Environment details\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | node: v16.20.2\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | npm: 8.19.4\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | yarn: 1.22.21\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2753  ::endgroup::\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/tsc.json\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/eslint-stylish.json\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2753 add-matcher /run/act/actions/actions-setup-node@v3/.github/eslint-compact.json\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2705  Success - Main Setup Node.js\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2699  ::set-output:: node-version=v16.20.2\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2699  ::add-path:: /opt/hostedtoolcache/node/16.20.2/x64/bin\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \u2b50 Run Main Install dependencies\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | added 279 packages, and audited 280 packages in 2s\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | 32 packages are looking for funding\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |   run `npm fund` for details\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | found 0 vulnerabilities\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2705  Success - Main Install dependencies\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \u2b50 Run Main Run tests\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | added 4 packages, and audited 284 packages in 782ms\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | 32 packages are looking for funding\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |   run `npm fund` for details\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | found 0 vulnerabilities\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | > gitbugactions-npm-jest-test-repo@1.0.0 test\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | > jest --reporters=default --reporters=jest-junit\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | PASS src/test/js/appMath.test.ts\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |   AppMath\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |     \u2713 sum adds two numbers correctly (2 ms)\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |     \u2713 subtract subtracts two numbers correctly\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |     \u2713 multiply multiplies two numbers correctly\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |     \u2713 sumTwice adds the second number twice (1 ms)\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   |     \u2713 subtractTwice subtracts the second number twice\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | \n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | Test Suites: 1 passed, 1 total\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | Tests:       5 passed, 5 total\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | Snapshots:   0 total\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | Time:        1.832 s\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   | Ran all test suites.\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2705  Success - Main Run tests\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \u2b50 Run Post Setup Node.js\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-node@v3/dist/cache-save/index.js] user= workdir=\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \ud83d\udcac  ::debug::Caching for '' is not supported\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test]   \u2705  Success - Post Setup Node.js\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] Cleaning up container for job test\n[f55e85f0-b272-4d49-849a-7aa630a4d244/test] \ud83c\udfc1  Job succeeded\n",
+    "stderr": "time=\"2025-03-05T14:14:57+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-03-05T14:14:57+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
+    "workflows_executed": [
+        "/tmp/tmps5yt1sjv/repo_650936f6-31dd-442c-99d8-65814f257b73/.github/workflows/tests-crawler.yml"
+    ]
 }

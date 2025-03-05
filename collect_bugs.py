@@ -29,14 +29,15 @@ from nltk.tokenize import wordpunct_tokenize
 from unidiff import PatchSet
 
 from gitbugactions.actions.action import Action
-from gitbugactions.actions.actions import Act, ActCacheDirManager, ActTestsRun
+from gitbugactions.actions.actions import Act, ActCacheDirManager
 from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.collect_bugs.bug_patch import BugPatch
 from gitbugactions.collect_bugs.collection_strategies import *
 from gitbugactions.collect_bugs.test_config import TestConfig
+from gitbugactions.commit_execution.executor import CommitExecutor
+from gitbugactions.commit_execution.results import CommitExecutionResult
 from gitbugactions.github_api import GithubAPI
-from gitbugactions.test_executor import TestExecutor
 from gitbugactions.utils.actions_utils import get_default_github_actions
 from gitbugactions.utils.file_reader import GitShowFileReader
 from gitbugactions.utils.file_utils import FileType, get_file_type
@@ -131,8 +132,8 @@ class PatchCollector:
         self,
         bug: BugPatch,
         act_cache_dir: str,
-    ) -> List[Optional[List[ActTestsRun]]]:
-        test_patch_runs = [None, None, None]
+    ) -> List[Optional[CommitExecutionResult]]:
+        execution_results = [None, None, None]
         self.__clone_repo()
 
         new_repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
@@ -140,38 +141,43 @@ class PatchCollector:
         repo_clone = pygit2.Repository(os.path.join(new_repo_path, ".git"))
 
         try:
-            executor = TestExecutor(
-                repo_clone,
-                self.language,
-                act_cache_dir,
-                self.default_github_actions,
-            )
-            all_runs_crashed = lambda x: x is None or all(
-                map(lambda act_run: act_run.failed, x)
+            executor = CommitExecutor(
+                self.repo.clone_url,
+                work_dir=new_repo_path,
+                memory_limit="7g",
+                timeout=600,
+                keep_repo=True,  # We'll handle cleanup ourselves
+                offline_mode=False,
             )
 
+            # Helper function to check if execution failed completely
+            execution_failed = lambda result: result is None or not result.success
+
             # Previous commit
-            act_runs = bug.test_previous_commit(executor)
-            if all_runs_crashed(act_runs):
-                return test_patch_runs
-            test_patch_runs[0] = act_runs
+            result = bug.test_previous_commit(executor)
+            if execution_failed(result):
+                return execution_results
+            execution_results[0] = result
 
             # Previous commit with diff
             if len(bug.test_patch) > 0:
-                act_runs = bug.test_previous_commit_with_diff(executor)
-                if all_runs_crashed(act_runs):
-                    return test_patch_runs
-                test_patch_runs[1] = act_runs
+                result = bug.test_previous_commit_with_diff(executor)
+                if execution_failed(result):
+                    return execution_results
+                execution_results[1] = result
 
             # Current commit
-            act_runs = bug.test_current_commit(executor)
-            if all_runs_crashed(act_runs):
-                return test_patch_runs
-            test_patch_runs[2] = act_runs
+            result = bug.test_current_commit(executor)
+            if execution_failed(result):
+                return execution_results
+            execution_results[2] = result
         finally:
+            # Clean up resources
+            if executor:
+                executor.cleanup()
             delete_repo_clone(repo_clone)
 
-        return test_patch_runs
+        return execution_results
 
     def __get_related_commit_info(self, commit_hex: str):
         self.__clone_repo()
@@ -372,6 +378,8 @@ class PatchCollector:
     def set_default_github_actions(self):
         if not self.cloned:
             self.__clone_repo()
+        # We'll use the get_default_github_actions utility directly
+        # The CommitExecutor will handle this internally when needed
         self.default_github_actions = get_default_github_actions(
             self.repo_clone, self.first_commit, self.language
         )
@@ -380,11 +388,11 @@ class PatchCollector:
         act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
 
         try:
-            test_patch_runs = self.__test_patch(
+            execution_results = self.__test_patch(
                 bug_patch,
                 act_cache_dir,
             )
-            bug_patch.actions_runs = test_patch_runs
+            bug_patch.execution_results = execution_results
             strategy = PatchCollector.check_runs(bug_patch)
             if strategy is None:
                 return False
@@ -462,12 +470,17 @@ def collect_bugs(
     """
     set_test_config(normalize_non_code_patch, strategies)
 
+    # Initialize Act with memory limit and base image
     Act.set_memory_limit(memory_limit)
-    Act(base_image=base_image)  # Initialize Act with base_image
+    Act(base_image=base_image)
+
+    # Initialize GitHub API
     github: GithubAPI = GithubAPI(
         per_page=100,
         pool_size=n_workers,
     )
+
+    # Initialize Act cache directories
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
 
     kwargs = {
@@ -499,8 +512,7 @@ def collect_bugs(
 
                     if (
                         run["number_of_test_actions"] == 1
-                        and "actions_run" in run
-                        and len(run["actions_run"]["tests"]) > 0
+                        and len(run["test_results"]) > 0
                     ):
                         repo = github.get_repo(run["repository"])
                         patch_collector = PatchCollector(repo, **kwargs)
@@ -528,7 +540,7 @@ def collect_bugs(
             repos[patch_collector.repo.full_name] = {
                 "clone_url": patch_collector.repo.clone_url,
                 "commits": patch_collector.repo.get_commits().totalCount,
-                "possible_bug_patches": len(bug_patches),
+                "possible_bug_patches": len(bug_patches) if bug_patches else 0,
                 "stars": patch_collector.repo.stargazers_count,
                 "size": patch_collector.repo.size,
             }
@@ -539,8 +551,9 @@ def collect_bugs(
         futures_to_actions: Dict[Future, Action] = {}
         actions_to_download: Set[Action] = set()
         for patch_collector, bug_patches in patch_collectors:
-            for bug_patch in bug_patches:
-                actions_to_download.update(bug_patch.actions)
+            if bug_patches:
+                for bug_patch in bug_patches:
+                    actions_to_download.update(bug_patch.actions)
 
         for action in actions_to_download:
             futures_to_actions[
@@ -558,6 +571,7 @@ def collect_bugs(
                 )
                 continue
 
+    # Set default GitHub actions for each patch collector
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
         future_to_collector: Dict[Future, PatchCollector] = {}
         for patch_collector, _ in patch_collectors:
@@ -577,19 +591,21 @@ def collect_bugs(
                 )
                 continue
 
+    # Test each bug patch
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        future_to_patches: Dict[Future, Tuple[BugPatch]] = {}
+        future_to_patches: Dict[Future, Tuple[BugPatch, PatchCollector]] = {}
         for patch_collector, bug_patches in patch_collectors:
-            for bug_patch in bug_patches:
-                future_to_patches[
-                    executor.submit(patch_collector.test_patch, bug_patch)
-                ] = bug_patch
+            if bug_patches:
+                for bug_patch in bug_patches:
+                    future_to_patches[
+                        executor.submit(patch_collector.test_patch, bug_patch)
+                    ] = (bug_patch, patch_collector)
 
         for future in tqdm.tqdm(
             as_completed(future_to_patches), total=len(future_to_patches)
         ):
             try:
-                bug_patch = future_to_patches[future]
+                bug_patch, patch_collector = future_to_patches[future]
                 is_patch = future.result()
             except Exception:
                 logging.error(
@@ -605,6 +621,7 @@ def collect_bugs(
                         data = bug_patch.get_data()
                         fp.write((json.dumps(data) + "\n"))
 
+    # Clean up resources
     for patch_collector, _ in patch_collectors:
         patch_collector.delete_repo()
 

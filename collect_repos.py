@@ -116,18 +116,18 @@ class CollectReposStrategy(RepoStrategy):
                             "time": test.time,
                             "message": test.message,
                             "stdout": test.stdout,
-                            "stderr": test.stderr
+                            "stderr": test.stderr,
                         }
                         for test in result.test_results
                     ]
-                    
+
                     # Store execution stdout/stderr directly
                     data["stdout"] = result.stdout
                     data["stderr"] = result.stderr
-                    
+
                     # Store workflow information
                     data["workflows_executed"] = result.workflows_executed
-                    
+
                     return self.save_data(data, repo)
 
                 except Exception as e:

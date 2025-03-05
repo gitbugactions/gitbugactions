@@ -309,7 +309,11 @@ class TestCommitExecutor(unittest.TestCase):
     [
         # Format: (repo_url, commit_sha, timeout)
         # If commit_sha is None, the test will use the latest commit
-        ("https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git", None, 300),
+        (
+            "https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git",
+            None,
+            300,
+        ),
         # Add more test cases as needed
     ],
 )
@@ -366,7 +370,12 @@ def test_real_execution_with_specific_commit(repo_url, commit_sha, timeout):
     [
         # Format: (repo_url, base_commit, head_commit, timeout)
         # If base_commit or head_commit is None, the test will find appropriate commits
-        ("https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git", None, None, 300),
+        (
+            "https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git",
+            None,
+            None,
+            300,
+        ),
         # Add more test cases as needed
     ],
 )
@@ -377,7 +386,7 @@ def test_real_execution_with_patch(repo_url, base_commit, head_commit, timeout):
     This test will be skipped unless explicitly enabled.
     It gets two consecutive commits from the repository and applies
     the diff between them as a patch to the first commit.
-    
+
     Parameters:
     - repo_url: URL of the repository to test
     - base_commit: The commit to apply the patch to (if None, uses the second-to-last commit)

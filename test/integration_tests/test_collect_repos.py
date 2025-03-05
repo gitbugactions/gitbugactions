@@ -59,13 +59,16 @@ class TestCollectReposInfra(BaseCollectReposTest):
 
 
 class TestCollectReposJavaScript(BaseCollectReposTest):
-    @pytest.mark.parametrize("repo_name,repo_suffix", [
-        ("gitbugactions-npm-jest-test-repo", "npm-jest"),
-        ("gitbugactions-npm-mocha-test-repo", "npm-mocha"), 
-        ("gitbugactions-npm-vitest-test-repo", "npm-vitest"),
-        ("gitbugactions-rust-test-repo", "rust"),
-        ("gitbugactions-ts-npm-jest-test-repo", "ts-npm-jest")
-    ])
+    @pytest.mark.parametrize(
+        "repo_name,repo_suffix",
+        [
+            ("gitbugactions-npm-jest-test-repo", "npm-jest"),
+            ("gitbugactions-npm-mocha-test-repo", "npm-mocha"),
+            ("gitbugactions-npm-vitest-test-repo", "npm-vitest"),
+            ("gitbugactions-rust-test-repo", "rust"),
+            ("gitbugactions-ts-npm-jest-test-repo", "ts-npm-jest"),
+        ],
+    )
     def test_collect_repos(self, repo_name, repo_suffix):
         api = GithubAPI()
         repo = api.get_repo(f"gitbugactions/{repo_name}")
