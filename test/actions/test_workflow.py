@@ -2,6 +2,7 @@ import os
 
 import pytest
 
+from gitbugactions.actions.cpp.cmake_workflow import CMakeWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.npm.npm_jest_workflow import NpmJestWorkflow
@@ -282,3 +283,34 @@ def test_rust(yml_file):
     """Test the workflow factory for rust workflows."""
     workflow = create_workflow(yml_file, "rust")
     assert isinstance(workflow, CargoWorkflow)
+
+
+@pytest.mark.parametrize(
+    "yml_file, language",
+    [
+        ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml", "c"),
+        ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml", "c++"),
+    ],
+)
+def test_cpp(yml_file, language):
+    """Test the workflow factory for cpp workflows."""
+    workflow = create_workflow(yml_file, language)
+    assert isinstance(workflow, CMakeWorkflow)
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+     ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml"),
+     ("test/resources/test_workflows/cpp/cmake_with_output_junit.yml")
+    ],
+)
+def test_cmake_instrument_test_steps(yml_file):
+    workflow = create_workflow(yml_file, "c++")
+    assert isinstance(workflow, CMakeWorkflow)
+    workflow.instrument_test_steps()
+    if "jobs" in workflow.doc:
+        for _, job in workflow.doc["jobs"].items():
+            if "steps" in job:
+                for step in job["steps"]:
+                    if "run" in step and workflow._is_test_command(step["run"]):
+                        assert "--output-junit" in step["run"]

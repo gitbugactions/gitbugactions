@@ -175,3 +175,78 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 5
+
+    def test_collect_repos_c_cmake(self):
+        api = GithubAPI()
+        repo = api.get_repo("kuchungmsft/gitbugactions-c-cmake-test-repo")
+
+        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        data_file = os.path.join(
+            self.temp_folder,
+            "kuchungmsft-gitbugactions-c-cmake-test-repo.json",
+        )
+
+        assert os.path.exists(data_file)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+            assert data["language"] == "c"
+            assert "number_of_test_actions" in data
+            assert data["number_of_test_actions"] == 1
+            assert "actions_successful" in data
+            assert data["actions_successful"]
+            assert data["number_of_actions"] == 1
+            assert len(data["actions_build_tools"]) == 1
+            assert data["actions_build_tools"][0] == "cmake"
+            assert len(data["actions_test_build_tools"]) == 1
+            assert data["actions_test_build_tools"][0] == "cmake"
+
+    def test_collect_repos_cpp_cmake(self):
+        api = GithubAPI()
+        repo = api.get_repo("kuchungmsft/gitbugactions-cpp-cmake-test-repo")
+
+        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        data_file = os.path.join(
+            self.temp_folder,
+            "kuchungmsft-gitbugactions-cpp-cmake-test-repo.json",
+        )
+
+        assert os.path.exists(data_file)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+            assert data["language"] == "c++"
+            assert "number_of_test_actions" in data
+            assert data["number_of_test_actions"] == 1
+            assert "actions_successful" in data
+            assert data["actions_successful"]
+            assert data["number_of_actions"] == 1
+            assert len(data["actions_build_tools"]) == 1
+            assert data["actions_build_tools"][0] == "cmake"
+            assert len(data["actions_test_build_tools"]) == 1
+            assert data["actions_test_build_tools"][0] == "cmake"
+
+    @pytest.mark.skip(
+        reason="Skipped due to long runtime."
+    )
+    def test_collect_repos_cpp_andrewprock_pokerstove(self):
+        api = GithubAPI()
+        repo = api.get_repo("andrewprock/pokerstove")
+
+        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        data_file = os.path.join(
+            self.temp_folder,
+            "andrewprock-pokerstove.json",
+        )
+
+        assert os.path.exists(data_file)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+            assert data["language"] == "c++"
+            assert "number_of_test_actions" in data
+            assert data["number_of_test_actions"] == 1
+            assert "actions_successful" in data
+            assert data["actions_successful"]
+            assert data["number_of_actions"] == 1
+            assert len(data["actions_build_tools"]) == 1
+            assert data["actions_build_tools"][0] == "cmake"
+            assert len(data["actions_test_build_tools"]) == 1
+            assert data["actions_test_build_tools"][0] == "cmake"
