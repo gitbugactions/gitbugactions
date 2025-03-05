@@ -10,6 +10,7 @@ import uuid
 from typing import List, Optional, Union, Dict, Tuple
 
 import pygit2
+from junitparser import Error
 from unidiff import PatchSet
 
 from gitbugactions.actions.actions import (
@@ -602,25 +603,45 @@ class CommitExecutor:
 
             # Convert test results
             for test in act_run.tests:
-                # Determine test result
+                # Determine test result using the same logic as in ActTestsRun
                 if test.is_passed:
                     result_str = "passed"
                 elif test.is_skipped:
                     result_str = "skipped"
-                elif test.is_error:
+                # Check for errors using the same logic as in ActTestsRun.erroring_tests
+                elif any(isinstance(r, Error) for r in test.result):
                     result_str = "error"
                 else:
+                    # If not passed, not skipped, and no errors, it's failed
                     result_str = "failed"
+
+                # Get message from test
+                message = None
+                if hasattr(test, "message") and test.message:
+                    message = test.message
+                elif test.result and len(test.result) > 0:
+                    # Try to get message from the first result
+                    first_result = test.result[0]
+                    if hasattr(first_result, "message") and first_result.message:
+                        message = first_result.message
+
+                # Get stdout and stderr
+                stdout = None
+                stderr = None
+                if hasattr(test, "system_out"):
+                    stdout = test.system_out
+                if hasattr(test, "system_err"):
+                    stderr = test.system_err
 
                 # Create TestResult object
                 test_result = TestResult(
                     name=test.name,
                     classname=test.classname,
                     result=result_str,
-                    message=test.message if hasattr(test, "message") else None,
+                    message=message,
                     time=test.time,
-                    stdout=test.system_out,
-                    stderr=test.system_err,
+                    stdout=stdout,
+                    stderr=stderr,
                 )
 
                 # Add to results
