@@ -1,0 +1,60 @@
+{
+    "repository": "gitbugactions/gitbugactions-unittest-test-repo",
+    "stars": 0,
+    "language": "python",
+    "size": 1,
+    "clone_url": "https://github.com/gitbugactions/gitbugactions-unittest-test-repo.git",
+    "timestamp": "2025-03-05T13:13:57.302309+00:00Z",
+    "clone_success": true,
+    "has_tests": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "unittest"
+    ],
+    "actions_test_build_tools": [
+        "unittest"
+    ],
+    "infra_files": 0,
+    "test_results": [
+        {
+            "name": "test_sum",
+            "classname": "test.test_app.TestCalculator",
+            "result": "passed",
+            "success": true,
+            "time": 0.002,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "test_sumFloat",
+            "classname": "test.test_app.TestCalculator",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "test_sumInt",
+            "classname": "test.test_app.TestCalculator",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        }
+    ],
+    "execution_time": 26.510730266571045,
+    "success": true,
+    "error": null,
+    "stdout": "[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \ud83d\ude80  Start image=gitbugactions:latest\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/tmp93fjkbdr/repo_20d0d0c7-1807-4d42-95c0-3a98da53b8d6] user=0 workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2601  git clone 'https://github.com/actions/setup-python' # ref=v4\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \u2b50 Run Main actions/checkout@v3\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker cp src=/tmp/tmp93fjkbdr/repo_20d0d0c7-1807-4d42-95c0-3a98da53b8d6/. dst=/tmp/tmp93fjkbdr/repo_20d0d0c7-1807-4d42-95c0-3a98da53b8d6\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/tmp93fjkbdr/repo_20d0d0c7-1807-4d42-95c0-3a98da53b8d6] user=0 workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2705  Success - Main actions/checkout@v3\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \u2b50 Run Main actions/setup-python@v4\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/1e58ceb1-e780-40f6-9bb8-094a015c33a5/act/actions-setup-python@v4/ dst=/var/run/act/actions/actions-setup-python@v4/\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /var/run/act/actions/actions-setup-python@v4/] user=0 workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/setup/index.js] user= workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::Python is expected to be installed into /opt/hostedtoolcache\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2753  ::group::Installed versions\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::Semantic version spec of 3.11 is 3.11\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: \n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? false\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: 3.10.13\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? true\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: 3.11.6\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? true\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: 3.12.0\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? true\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: 3.7.17\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? true\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: 3.8.18\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? true\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::isExplicit: 3.9.18\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::explicit? true\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::evaluating 6 versions\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::matched: 3.11.6\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/Python/3.11.6/x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udcac  ::debug::Found tool in cache Python 3.11.6 x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Successfully set up CPython (3.11.6)\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2753  ::endgroup::\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2753 add-matcher /run/act/actions/actions-setup-python@v4/.github/python.json\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2705  Success - Main actions/setup-python@v4\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-env:: pythonLocation=/opt/hostedtoolcache/Python/3.11.6/x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-env:: PKG_CONFIG_PATH=/opt/hostedtoolcache/Python/3.11.6/x64/lib/pkgconfig\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-env:: Python_ROOT_DIR=/opt/hostedtoolcache/Python/3.11.6/x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-env:: Python2_ROOT_DIR=/opt/hostedtoolcache/Python/3.11.6/x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-env:: Python3_ROOT_DIR=/opt/hostedtoolcache/Python/3.11.6/x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-env:: LD_LIBRARY_PATH=/opt/hostedtoolcache/Python/3.11.6/x64/lib\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-output:: python-version=3.11.6\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::set-output:: python-path=/opt/hostedtoolcache/Python/3.11.6/x64/bin/python\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.11.6/x64\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2699  ::add-path:: /opt/hostedtoolcache/Python/3.11.6/x64/bin\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \u2b50 Run Main Install Python dependencies\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | \n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | [notice] A new release of pip is available: 23.2.1 -> 25.0.1\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | [notice] To update, run: pip install --upgrade pip\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2705  Success - Main Install Python dependencies\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \u2b50 Run Main Build and run tests\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Collecting unittest-xml-reporting\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   |   Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl.metadata (11 kB)\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Collecting lxml (from unittest-xml-reporting)\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   |   Downloading lxml-5.3.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.7 kB)\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Downloading unittest_xml_reporting-3.2.0-py2.py3-none-any.whl (20 kB)\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Downloading lxml-5.3.1-cp311-cp311-manylinux_2_28_x86_64.whl (5.0 MB)\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   |    \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 5.0/5.0 MB 32.7 MB/s eta 0:00:00\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Installing collected packages: lxml, unittest-xml-reporting\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Successfully installed lxml-5.3.1 unittest-xml-reporting-3.2.0\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | \n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | [notice] A new release of pip is available: 23.2.1 -> 25.0.1\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | [notice] To update, run: pip install --upgrade pip\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | \n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Running tests...\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | ----------------------------------------------------------------------\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | ...\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | ----------------------------------------------------------------------\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Ran 3 tests in 0.003s\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | \n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | OK\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | \n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   | Generating XML reports...\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2705  Success - Main Build and run tests\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \u2b50 Run Post actions/setup-python@v4\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v4/dist/cache-save/index.js] user= workdir=\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test]   \u2705  Success - Post actions/setup-python@v4\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] Cleaning up container for job test\n[5e4e94ad-ea96-451e-8be1-4bc866fbd935/test] \ud83c\udfc1  Job succeeded\n",
+    "stderr": "time=\"2025-03-05T14:13:57+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-03-05T14:13:57+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
+    "workflows_executed": [
+        "/tmp/tmp93fjkbdr/repo_20d0d0c7-1807-4d42-95c0-3a98da53b8d6/.github/workflows/tests-crawler.yml"
+    ]
+}

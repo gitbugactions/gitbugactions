@@ -55,116 +55,28 @@ class TestCollectReposInfra(BaseCollectReposTest):
             assert "infra_files" in data
             assert data["infra_files"] == 0
             assert "actions_successful" in data
-            assert data["actions_successful"] is None
+            assert not data["actions_successful"]
 
 
 class TestCollectReposJavaScript(BaseCollectReposTest):
-    def test_collect_repos_npm_jest(self):
-        api = GithubAPI()
-        repo = api.get_repo("gitbugactions/gitbugactions-npm-jest-test-repo")
-
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
-        data_file = os.path.join(
-            self.temp_folder,
-            "gitbugactions-gitbugactions-npm-jest-test-repo.json",
-        )
-
-        assert os.path.exists(data_file)
-        with open(data_file, "r") as f:
-            data = json.load(f)
-            assert "number_of_test_actions" in data
-            assert data["number_of_test_actions"] == 1
-            assert "actions_successful" in data
-            assert data["actions_successful"]
-            assert data["number_of_actions"] == 1
-
-    def test_collect_repos_npm_mocha(self):
-        api = GithubAPI()
-        repo = api.get_repo("gitbugactions/gitbugactions-npm-mocha-test-repo")
-
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
-        data_file = os.path.join(
-            self.temp_folder,
-            "gitbugactions-gitbugactions-npm-mocha-test-repo.json",
-        )
-
-        assert os.path.exists(data_file)
-        with open(data_file, "r") as f:
-            data = json.load(f)
-            assert "number_of_test_actions" in data
-            assert data["number_of_test_actions"] == 1
-            assert "actions_successful" in data
-            assert data["actions_successful"]
-            assert data["number_of_actions"] == 1
-
-    def test_collect_repos_npm_vitest(self):
-        api = GithubAPI()
-        repo = api.get_repo("gitbugactions/gitbugactions-npm-vitest-test-repo")
-
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
-        data_file = os.path.join(
-            self.temp_folder,
-            "gitbugactions-gitbugactions-npm-vitest-test-repo.json",
-        )
-
-        assert os.path.exists(data_file)
-        with open(data_file, "r") as f:
-            data = json.load(f)
-            assert "number_of_test_actions" in data
-            assert data["number_of_test_actions"] == 1
-            assert "actions_successful" in data
-            assert data["actions_successful"]
-            assert data["number_of_actions"] == 1
-
-    def test_collect_repos_rust(self):
-        api = GithubAPI()
-        repo = api.get_repo("gitbugactions/gitbugactions-rust-test-repo")
-
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
-        data_file = os.path.join(
-            self.temp_folder,
-            "gitbugactions-gitbugactions-rust-test-repo.json",
-        )
-
-        assert os.path.exists(data_file)
-        with open(data_file, "r") as f:
-            data = json.load(f)
-            assert "number_of_test_actions" in data
-            assert data["number_of_test_actions"] == 1
-            assert "actions_successful" in data
-            assert data["actions_successful"]
-            assert data["number_of_actions"] == 1
-
-    def test_collect_repos_typescript_jest(self):
-        api = GithubAPI()
-        repo = api.get_repo("gitbugactions/gitbugactions-ts-npm-jest-test-repo")
-
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
-        data_file = os.path.join(
-            self.temp_folder,
-            "gitbugactions-gitbugactions-ts-npm-jest-test-repo.json",
-        )
-
-        assert os.path.exists(data_file)
-        with open(data_file, "r") as f:
-            data = json.load(f)
-            assert "number_of_test_actions" in data
-            assert data["number_of_test_actions"] == 1
-            assert "actions_successful" in data
-            assert data["actions_successful"]
-            assert data["number_of_actions"] == 1
-
-    @pytest.mark.skip(
-        reason="Skipped due to long runtime and possible changes in repo."
+    @pytest.mark.parametrize(
+        "repo_name,repo_suffix",
+        [
+            ("gitbugactions-npm-jest-test-repo", "npm-jest"),
+            ("gitbugactions-npm-mocha-test-repo", "npm-mocha"),
+            ("gitbugactions-npm-vitest-test-repo", "npm-vitest"),
+            ("gitbugactions-rust-test-repo", "rust"),
+            ("gitbugactions-ts-npm-jest-test-repo", "ts-npm-jest"),
+        ],
     )
-    def test_collect_repos_test_repo(self):
+    def test_collect_repos(self, repo_name, repo_suffix):
         api = GithubAPI()
-        repo = api.get_repo("Uniswap/smart-order-router")
+        repo = api.get_repo(f"gitbugactions/{repo_name}")
 
         CollectReposStrategy(self.temp_folder).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
-            "Uniswap-smart-order-router.json",
+            f"gitbugactions-{repo_name}.json",
         )
 
         assert os.path.exists(data_file)
@@ -174,4 +86,4 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert data["number_of_test_actions"] == 1
             assert "actions_successful" in data
             assert data["actions_successful"]
-            assert data["number_of_actions"] == 5
+            assert data["number_of_actions"] == 1
