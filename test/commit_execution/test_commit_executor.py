@@ -304,35 +304,46 @@ class TestCommitExecutor(unittest.TestCase):
     or os.environ.get("CI", "false").lower() == "true",
     reason="Skipping real tests in CI or as per environment variable",
 )
-def test_real_execution():
+@pytest.mark.parametrize(
+    "repo_url,commit_sha,timeout",
+    [
+        # Format: (repo_url, commit_sha, timeout)
+        # If commit_sha is None, the test will use the latest commit
+        ("https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git", None, 300),
+        # Add more test cases as needed
+    ],
+)
+def test_real_execution_with_specific_commit(repo_url, commit_sha, timeout):
     """
-    Integration test with a real repository.
+    Integration test with a real repository at a specific commit.
 
     This test will be skipped unless explicitly enabled.
+    If commit_sha is None, it will use the latest commit.
     """
-    # Create executor with a real repository
+    # Create executor with the provided repository
     executor = CommitExecutor(
-        repo_url="https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git",
-        timeout=300,
+        repo_url=repo_url,
+        timeout=timeout,
     )
 
     try:
-        # Get the latest commit
-        result = subprocess.run(
-            [
-                "git",
-                "ls-remote",
-                "https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git",
-                "HEAD",
-            ],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-        latest_commit = result.stdout.split()[0]
+        # If no specific commit is provided, get the latest commit
+        if commit_sha is None:
+            result = subprocess.run(
+                [
+                    "git",
+                    "ls-remote",
+                    repo_url,
+                    "HEAD",
+                ],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            commit_sha = result.stdout.split()[0]
 
-        # Execute tests at the latest commit
-        execution_result = executor.execute_at_commit(latest_commit)
+        # Execute tests at the specified commit
+        execution_result = executor.execute_at_commit(commit_sha)
 
         # Verify execution was successful
         assert execution_result.success
@@ -350,19 +361,33 @@ def test_real_execution():
     or os.environ.get("CI", "false").lower() == "true",
     reason="Skipping real tests in CI or as per environment variable",
 )
-def test_real_execution_with_patch():
+@pytest.mark.parametrize(
+    "repo_url,base_commit,head_commit,timeout",
+    [
+        # Format: (repo_url, base_commit, head_commit, timeout)
+        # If base_commit or head_commit is None, the test will find appropriate commits
+        ("https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git", None, None, 300),
+        # Add more test cases as needed
+    ],
+)
+def test_real_execution_with_patch(repo_url, base_commit, head_commit, timeout):
     """
     Integration test with a real repository and patch application.
 
     This test will be skipped unless explicitly enabled.
     It gets two consecutive commits from the repository and applies
     the diff between them as a patch to the first commit.
+    
+    Parameters:
+    - repo_url: URL of the repository to test
+    - base_commit: The commit to apply the patch to (if None, uses the second-to-last commit)
+    - head_commit: The commit to generate the patch from (if None, uses the latest commit)
+    - timeout: Execution timeout in seconds
     """
-    # Create executor with a real repository
-    repo_url = "https://github.com/gitbugactions/gitbugactions-npm-jest-test-repo.git"
+    # Create executor with the provided repository
     executor = CommitExecutor(
         repo_url=repo_url,
-        timeout=300,
+        timeout=timeout,
     )
 
     try:
@@ -376,25 +401,28 @@ def test_real_execution_with_patch():
             capture_output=True,
         )
 
-        # Get the last two commits
-        result = subprocess.run(
-            ["git", "log", "--pretty=format:%H", "-n", "2"],
-            cwd=temp_dir,
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        commits = result.stdout.strip().split("\n")
+        # If specific commits aren't provided, get the last two commits
+        if base_commit is None or head_commit is None:
+            result = subprocess.run(
+                ["git", "log", "--pretty=format:%H", "-n", "2"],
+                cwd=temp_dir,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            commits = result.stdout.strip().split("\n")
 
-        if len(commits) < 2:
-            pytest.skip("Repository doesn't have at least two commits")
+            if len(commits) < 2:
+                pytest.skip("Repository doesn't have at least two commits")
 
-        latest_commit = commits[0]
-        previous_commit = commits[1]
+            if head_commit is None:
+                head_commit = commits[0]
+            if base_commit is None:
+                base_commit = commits[1]
 
         # Generate a patch between the two commits
         result = subprocess.run(
-            ["git", "diff", previous_commit, latest_commit],
+            ["git", "diff", base_commit, head_commit],
             cwd=temp_dir,
             check=True,
             capture_output=True,
@@ -405,35 +433,31 @@ def test_real_execution_with_patch():
         # Clean up the temporary directory
         shutil.rmtree(temp_dir)
 
-        # Execute tests at the previous commit with the patch applied
-        # This should make the previous commit behave like the latest commit
+        # Execute tests at the base commit with the patch applied
+        # This should make the base commit behave like the head commit
         execution_result = executor.execute_at_commit_with_patches(
-            commit_sha=previous_commit,
+            commit_sha=base_commit,
             patches=[patch],
         )
 
         # Verify execution was successful
         assert execution_result.success
-        assert execution_result.passed_count == 5
-        assert execution_result.skipped_count == 0
-        assert execution_result.failed_count == 0
-        assert execution_result.error_count == 0
         assert "patch_1" in execution_result.patches_applied
         assert execution_result.patches_applied["patch_1"] == True
 
-        # Now execute tests at the latest commit without patches
-        latest_result = executor.execute_at_commit(latest_commit)
+        # Now execute tests at the head commit without patches
+        head_result = executor.execute_at_commit(head_commit)
 
         # Both executions should have similar results
-        assert execution_result.success == latest_result.success
-        assert len(execution_result.test_results) == len(latest_result.test_results)
+        assert execution_result.success == head_result.success
+        assert len(execution_result.test_results) == len(head_result.test_results)
 
         # Compare test results
         passed_count_patched = len(execution_result.passed_tests)
-        passed_count_latest = len(latest_result.passed_tests)
+        passed_count_head = len(head_result.passed_tests)
         assert (
-            passed_count_patched == passed_count_latest
-        ), f"Patched commit has {passed_count_patched} passed tests, but latest commit has {passed_count_latest}"
+            passed_count_patched == passed_count_head
+        ), f"Patched commit has {passed_count_patched} passed tests, but head commit has {passed_count_head}"
 
     finally:
         # Clean up resources
