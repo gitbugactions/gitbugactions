@@ -106,54 +106,29 @@ class CollectReposStrategy(RepoStrategy):
                     data["actions_successful"] = result.success
                     data["execution_time"] = result.execution_time
 
-                    # Format test results for backward compatibility
-                    test_results = []
-                    for test in result.test_results:
-                        test_results.append(
-                            {
-                                "classname": test.classname,
-                                "name": test.name,
-                                "time": test.time,
-                                "results": [
-                                    {
-                                        "result": (
-                                            "Passed" if test.success else "Failed"
-                                        ),
-                                        "message": test.message or "",
-                                        "type": "",
-                                    }
-                                ],
-                                "stdout": test.stdout,
-                                "stderr": test.stderr,
-                            }
-                        )
-
-                    # Create actions_run structure for backward compatibility
-                    data["actions_run"] = {
-                        "failed": not result.success,
-                        "tests": test_results,
-                        "stdout": result.stdout,
-                        "stderr": result.stderr,
-                        "workflow": {
-                            "path": (
-                                result.workflows_executed[0]
-                                if result.workflows_executed
-                                else ""
-                            ),
-                            "type": (
-                                result.all_build_tools[0]
-                                if result.all_build_tools
-                                else ""
-                            ),
-                        },
-                        "workflow_name": "",  # We don't have this information directly
-                        "build_tool": (
-                            result.all_build_tools[0] if result.all_build_tools else ""
-                        ),
-                        "elapsed_time": result.execution_time,
-                        "default_actions": False,
-                        "return_code": 0 if result.success else 1,
-                    }
+                    # Store test results directly without backward compatibility formatting
+                    data["test_results"] = [
+                        {
+                            "name": test.name,
+                            "classname": test.classname,
+                            "result": test.result,
+                            "success": test.success,
+                            "time": test.time,
+                            "message": test.message,
+                            "stdout": test.stdout,
+                            "stderr": test.stderr
+                        }
+                        for test in result.test_results
+                    ]
+                    
+                    # Store execution stdout/stderr directly
+                    data["stdout"] = result.stdout
+                    data["stderr"] = result.stderr
+                    
+                    # Store workflow information
+                    data["workflows_executed"] = result.workflows_executed
+                    
+                    return self.save_data(data, repo)
 
                 except Exception as e:
                     logging.error(f"Error executing tests: {str(e)}")
