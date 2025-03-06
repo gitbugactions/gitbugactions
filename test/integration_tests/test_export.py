@@ -77,7 +77,7 @@ def test_run_bug():
 
     repo_clone.reset(initial_commit.id, pygit2.GIT_RESET_HARD)
     subprocess.run(
-        ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
+        ["git", "clean", "-ff", "-d", "-x"], cwd=repo_path, capture_output=True
     )
     repo_clone.checkout_tree(previous_commit)
     repo_clone.set_head(previous_commit.id)
@@ -97,7 +97,7 @@ def test_run_bug():
 
     repo_clone.reset(initial_commit.id, pygit2.GIT_RESET_HARD)
     subprocess.run(
-        ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
+        ["git", "clean", "-ff", "-d", "-x"], cwd=repo_path, capture_output=True
     )
     repo_clone.checkout_tree(previous_commit)
     repo_clone.set_head(previous_commit.id)

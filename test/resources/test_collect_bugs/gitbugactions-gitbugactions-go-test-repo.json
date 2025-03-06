@@ -1,0 +1,60 @@
+{
+    "repository": "gitbugactions/gitbugactions-go-test-repo",
+    "stars": 0,
+    "language": "go",
+    "size": 2,
+    "clone_url": "https://github.com/gitbugactions/gitbugactions-go-test-repo.git",
+    "timestamp": "2025-03-05T13:13:57.301297+00:00Z",
+    "clone_success": true,
+    "has_tests": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "go"
+    ],
+    "actions_test_build_tools": [
+        "go"
+    ],
+    "infra_files": 0,
+    "test_results": [
+        {
+            "name": "TestAdd",
+            "classname": "math/m/math",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "TestSubtract",
+            "classname": "math/m/math",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        },
+        {
+            "name": "TestMultiply",
+            "classname": "math/m/math",
+            "result": "passed",
+            "success": true,
+            "time": 0.0,
+            "message": null,
+            "stdout": null,
+            "stderr": null
+        }
+    ],
+    "execution_time": 16.66938853263855,
+    "success": true,
+    "error": null,
+    "stdout": "[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \ud83d\ude80  Start image=gitbugactions:latest\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/tmpwhfwtoo6/repo_d6138fac-dfb9-4874-8a89-533029c50109] user=0 workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2601  git clone 'https://github.com/actions/setup-go' # ref=v4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \u2b50 Run Main gitbug-actions install go-junit-report\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0] user= workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2705  Success - Main gitbug-actions install go-junit-report\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \u2b50 Run Main actions/checkout@v3\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker cp src=/tmp/tmpwhfwtoo6/repo_d6138fac-dfb9-4874-8a89-533029c50109/. dst=/tmp/tmpwhfwtoo6/repo_d6138fac-dfb9-4874-8a89-533029c50109\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/tmpwhfwtoo6/repo_d6138fac-dfb9-4874-8a89-533029c50109] user=0 workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2705  Success - Main actions/checkout@v3\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \u2b50 Run Main actions/setup-go@v4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker cp src=/tmp/act-cache/4bffb1b9-6e21-4912-ab6d-f1be2cace043/act/actions-setup-go@v4/ dst=/var/run/act/actions/actions-setup-go@v4/\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /var/run/act/actions/actions-setup-go@v4/] user=0 workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v4/dist/setup/index.js] user= workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | Setup go version spec >=1.17.0\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::isExplicit: \n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::explicit? false\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::isExplicit: 1.19.13\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::explicit? true\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::isExplicit: 1.20.11\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::explicit? true\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::isExplicit: 1.21.4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::explicit? true\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::evaluating 3 versions\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::matched: 1.21.4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::checking cache: /opt/hostedtoolcache/go/1.21.4/x64\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::Found tool in cache go 1.21.4 x64\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | Found in cache @ /opt/hostedtoolcache/go/1.21.4/x64\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | Added go to the path\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | Successfully set up Go version >=1.17.0\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::which go :/opt/hostedtoolcache/go/1.21.4/x64/bin/go:\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::go env GOPATH :/home/runner/go:\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udcac  ::debug::add bin true\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udea7  ::warning::The runner was not able to contact the cache service. Caching will be skipped\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2753 add-matcher /run/act/actions/actions-setup-go@v4/matchers.json\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | go version go1.21.4 linux/amd64\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | \n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2753  ::group::go env\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GO111MODULE=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOARCH='amd64'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOBIN=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOCACHE='/home/runner/.cache/go-build'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOENV='/home/runner/.config/go/env'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOEXE=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOEXPERIMENT=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOFLAGS=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOHOSTARCH='amd64'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOHOSTOS='linux'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOINSECURE=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOMODCACHE='/home/runner/go/pkg/mod'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GONOPROXY=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GONOSUMDB=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOOS='linux'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOPATH='/home/runner/go'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOPRIVATE=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOPROXY='https://proxy.golang.org,direct'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOROOT='/opt/hostedtoolcache/go/1.21.4/x64'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOSUMDB='sum.golang.org'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOTMPDIR=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOTOOLCHAIN='auto'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOTOOLDIR='/opt/hostedtoolcache/go/1.21.4/x64/pkg/tool/linux_amd64'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOVCS=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOVERSION='go1.21.4'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GCCGO='gccgo'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOAMD64='v1'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | AR='ar'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CC='gcc'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CXX='g++'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CGO_ENABLED='1'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOMOD='/tmp/tmpwhfwtoo6/repo_d6138fac-dfb9-4874-8a89-533029c50109/go.mod'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOWORK=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CGO_CFLAGS='-O2 -g'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CGO_CPPFLAGS=''\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CGO_CXXFLAGS='-O2 -g'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CGO_FFLAGS='-O2 -g'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | CGO_LDFLAGS='-O2 -g'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | PKG_CONFIG='pkg-config'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2701657317=/tmp/go-build -gno-record-gcc-switches'\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | \n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2753  ::endgroup::\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2705  Success - Main actions/setup-go@v4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2699  ::set-output:: go-version=1.21.4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2699  ::add-path:: /opt/hostedtoolcache/go/1.21.4/x64/bin\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2699  ::add-path:: /home/runner/go/bin\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \u2b50 Run Main Build and run tests\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2705  Success - Main Build and run tests\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \u2b50 Run Main gitbug-actions generate vendor\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | go: no dependencies to vendor\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | cp: cannot stat 'vendor': No such file or directory\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | cp: cannot stat 'go.sum': No such file or directory\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2705  Success - Main gitbug-actions generate vendor\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \u2b50 Run Post actions/setup-go@v4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v4/dist/cache-save/index.js] user= workdir=\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | [command]/opt/hostedtoolcache/go/1.21.4/x64/bin/go env GOMODCACHE\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | [command]/opt/hostedtoolcache/go/1.21.4/x64/bin/go env GOCACHE\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | /home/runner/go/pkg/mod\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | /home/runner/.cache/go-build\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   | Primary key was not generated. Please check the log messages above for more errors or information\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test]   \u2705  Success - Post actions/setup-go@v4\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] Cleaning up container for job test\n[688c196d-a8f9-4b22-996d-2d4f005fc482/test] \ud83c\udfc1  Job succeeded\n",
+    "stderr": "time=\"2025-03-05T14:13:57+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-03-05T14:13:57+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
+    "workflows_executed": [
+        "/tmp/tmpwhfwtoo6/repo_d6138fac-dfb9-4874-8a89-533029c50109/.github/workflows/tests-crawler.yml"
+    ]
+}

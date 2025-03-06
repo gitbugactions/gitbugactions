@@ -1,43 +1,78 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Optional
 
-from gitbugactions.actions.actions import ActTestsRun
 from gitbugactions.collect_bugs.bug_patch import BugPatch
+from gitbugactions.commit_execution.results import CommitExecutionResult
 
 
 class CollectionStrategy(ABC):
     @staticmethod
-    def _diff_tests(run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]):
-        flat_failed_tests = sum(
-            map(lambda act_run: act_run.failed_tests, run_failed), []
-        )
-        flat_tests = sum(map(lambda act_run: act_run.tests, run_passed), [])
+    def _diff_tests(
+        failed_result: CommitExecutionResult, passed_result: CommitExecutionResult
+    ):
+        """
+        Find tests that were fixed between two executions.
+
+        Args:
+            failed_result: The execution result with failed tests
+            passed_result: The execution result with passed tests
+
+        Returns:
+            Tuple of (fixed_tests, not_fixed_tests)
+        """
         fixed, not_fixed = [], []
 
-        for failed_test in flat_failed_tests:
-            for test in flat_tests:
-                if (
-                    failed_test.classname == test.classname
-                    and failed_test.name == test.name
-                    and test.is_passed
-                ):
-                    fixed.append(failed_test)
-                    break
-            else:
-                not_fixed.append(failed_test)
+        # Get all failed tests from the failed result
+        for failed_test in failed_result.test_results:
+            if failed_test.result == "failed":
+                # Check if this test is now passing in the passed_result
+                found_fixed = False
+                for test in passed_result.test_results:
+                    if (
+                        failed_test.classname == test.classname
+                        and failed_test.name == test.name
+                        and test.result == "passed"
+                    ):
+                        fixed.append(failed_test)
+                        found_fixed = True
+                        break
+
+                if not found_fixed:
+                    not_fixed.append(failed_test)
 
         return fixed, not_fixed
 
     @staticmethod
     def _check_tests_were_fixed(
-        run_failed: List[ActTestsRun], run_passed: List[ActTestsRun]
+        failed_result: CommitExecutionResult, passed_result: CommitExecutionResult
     ):
-        _, not_fixed = CollectionStrategy._diff_tests(run_failed, run_passed)
+        """
+        Check if all failed tests were fixed.
+
+        Args:
+            failed_result: The execution result with failed tests
+            passed_result: The execution result with passed tests
+
+        Returns:
+            True if all failed tests were fixed, False otherwise
+        """
+        _, not_fixed = CollectionStrategy._diff_tests(failed_result, passed_result)
         return len(not_fixed) == 0
 
     @staticmethod
-    def _number_of_tests(runs):
-        return sum(map(lambda act_run: len(act_run.tests), runs))
+    def _number_of_tests(result: Optional[CommitExecutionResult]):
+        """
+        Get the total number of tests in an execution result.
+
+        Args:
+            result: The execution result
+
+        Returns:
+            The total number of tests
+        """
+        if result is None:
+            return 0
+        return result.total_tests
 
     @abstractmethod
     def check(self, bug_patch: BugPatch) -> bool:
@@ -74,15 +109,17 @@ class PassPassStrategy(CollectionStrategy):
                 bug_patch.test_patch.removed > 0 and bug_patch.test_patch.added == 0
             )
             # check if tests from previous commit w/diff were fixed
+            and bug_patch.execution_results[1] is not None
+            and bug_patch.execution_results[2] is not None
             and CollectionStrategy._check_tests_were_fixed(
-                bug_patch.actions_runs[1], bug_patch.actions_runs[2]
+                bug_patch.execution_results[1], bug_patch.execution_results[2]
             )
             # previous commit should have at least the same number of tests than current commit
-            and CollectionStrategy._number_of_tests(bug_patch.actions_runs[0])
-            <= CollectionStrategy._number_of_tests(bug_patch.actions_runs[2])
+            and CollectionStrategy._number_of_tests(bug_patch.execution_results[0])
+            <= CollectionStrategy._number_of_tests(bug_patch.execution_results[2])
             # current commit should have same number of tests as previous commit w/ tests
-            and CollectionStrategy._number_of_tests(bug_patch.actions_runs[2])
-            == CollectionStrategy._number_of_tests(bug_patch.actions_runs[1])
+            and CollectionStrategy._number_of_tests(bug_patch.execution_results[2])
+            == CollectionStrategy._number_of_tests(bug_patch.execution_results[1])
         )
 
     @property
@@ -100,12 +137,14 @@ class FailPassStrategy(CollectionStrategy):
             # current commit passed
             and bug_patch.curr_commit_passed
             # check if tests from previous commit were fixed
+            and bug_patch.execution_results[0] is not None
+            and bug_patch.execution_results[2] is not None
             and CollectionStrategy._check_tests_were_fixed(
-                bug_patch.actions_runs[0], bug_patch.actions_runs[2]
+                bug_patch.execution_results[0], bug_patch.execution_results[2]
             )
             # previous commit should have same number of tests as current commit
-            and CollectionStrategy._number_of_tests(bug_patch.actions_runs[0])
-            == CollectionStrategy._number_of_tests(bug_patch.actions_runs[2])
+            and CollectionStrategy._number_of_tests(bug_patch.execution_results[0])
+            == CollectionStrategy._number_of_tests(bug_patch.execution_results[2])
         )
 
     @property
@@ -121,30 +160,34 @@ class FailFailStrategy(CollectionStrategy):
             # current commit failed
             and bug_patch.curr_commit_failed
             # at least one test was fixed
+            and bug_patch.execution_results[0] is not None
+            and bug_patch.execution_results[2] is not None
             and len(
                 CollectionStrategy._diff_tests(
-                    bug_patch.actions_runs[0], bug_patch.actions_runs[2]
+                    bug_patch.execution_results[0], bug_patch.execution_results[2]
                 )[0]
             )
             > 0
             # previous commit should have same number of tests as current commit
-            and CollectionStrategy._number_of_tests(bug_patch.actions_runs[0])
-            == CollectionStrategy._number_of_tests(bug_patch.actions_runs[2])
+            and CollectionStrategy._number_of_tests(bug_patch.execution_results[0])
+            == CollectionStrategy._number_of_tests(bug_patch.execution_results[2])
         ) or (
             # previous commit with diff failed
             bug_patch.prev_with_diff_failed
             # current commit failed
             and bug_patch.curr_commit_failed
             # at least one test was fixed
+            and bug_patch.execution_results[1] is not None
+            and bug_patch.execution_results[2] is not None
             and len(
                 CollectionStrategy._diff_tests(
-                    bug_patch.actions_runs[1], bug_patch.actions_runs[2]
+                    bug_patch.execution_results[1], bug_patch.execution_results[2]
                 )[0]
             )
             > 0
             # previous commit w/test diff should have same number of tests as current commit
-            and CollectionStrategy._number_of_tests(bug_patch.actions_runs[1])
-            == CollectionStrategy._number_of_tests(bug_patch.actions_runs[2])
+            and CollectionStrategy._number_of_tests(bug_patch.execution_results[1])
+            == CollectionStrategy._number_of_tests(bug_patch.execution_results[2])
         )
 
     @property
@@ -160,8 +203,8 @@ class FailPassBuildStrategy(CollectionStrategy):
                 bug_patch.prev_commit_failed
                 # or the run failed
                 or (
-                    bug_patch.actions_runs[0] is not None
-                    and any(map(lambda run: run.failed, bug_patch.actions_runs[0]))
+                    bug_patch.execution_results[0] is not None
+                    and not bug_patch.execution_results[0].success
                 )
             )
             # tests passed in the current commit
@@ -172,8 +215,8 @@ class FailPassBuildStrategy(CollectionStrategy):
                 bug_patch.prev_with_diff_failed
                 # or the run failed
                 or (
-                    bug_patch.actions_runs[1] is not None
-                    and any(map(lambda run: run.failed, bug_patch.actions_runs[1]))
+                    bug_patch.execution_results[1] is not None
+                    and not bug_patch.execution_results[1].success
                 )
             )
             # tests passed in the current commit
