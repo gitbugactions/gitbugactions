@@ -8,12 +8,12 @@ import tempfile
 import traceback
 import uuid
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Optional
 
 from github import Repository
 
+from gitbugactions.actions.actions import Act
 from gitbugactions.commit_execution.executor import CommitExecutor
-from gitbugactions.actions.actions import ActCheckCodeFailureStrategy
 from gitbugactions.crawler import RepoCrawler, RepoStrategy
 from gitbugactions.infra.infra_checkers import is_infra_file
 
@@ -264,6 +264,7 @@ def collect_repos(
     pagination_freq: Optional[str] = None,
     n_workers: int = 1,
     out_path: str = "./out/",
+    memory_limit="7g",
     base_image: str | None = None,
 ):
     """Collect the repositories from GitHub that match the query and have executable
@@ -277,6 +278,11 @@ def collect_repos(
         out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
+    # Initialize Act
+    Act.set_memory_limit(memory_limit)
+    Act(base_image=base_image)
+
+    # Create the output folder if it doesn't exist
     if not Path(out_path).exists():
         os.makedirs(out_path, exist_ok=True)
 
