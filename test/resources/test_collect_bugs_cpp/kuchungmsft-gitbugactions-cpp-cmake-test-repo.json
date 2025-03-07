@@ -1,0 +1,90 @@
+{
+    "repository": "kuchungmsft/gitbugactions-cpp-cmake-test-repo",
+    "stars": 0,
+    "language": "c++",
+    "size": 0,
+    "clone_url": "https://github.com/kuchungmsft/gitbugactions-cpp-cmake-test-repo.git",
+    "timestamp": "2025-03-05T01:50:14.761969+00:00Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "cmake"
+    ],
+    "actions_test_build_tools": [
+        "cmake"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "test_add",
+                "name": "test_add",
+                "time": 0.00223834,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "All tests passed!\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_divide",
+                "name": "test_divide",
+                "time": 0.00236527,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "All tests passed!\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_multiply",
+                "name": "test_multiply",
+                "time": 0.0029159,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "All tests passed!\n",
+                "stderr": null
+            },
+            {
+                "classname": "test_subtract",
+                "name": "test_subtract",
+                "time": 0.0016583,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": "All tests passed!\n",
+                "stderr": null
+            }
+        ],
+        "stdout": "[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \ud83d\ude80  Start image=gitbugactions:latest\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo] user=0 workdir=\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \u2b50 Run Main actions/checkout@v3\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker cp src=/tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/. dst=/tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo] user=0 workdir=\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \u2705  Success - Main actions/checkout@v3\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \u2b50 Run Main mkdir build\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1] user= workdir=\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \u2705  Success - Main mkdir build\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \u2b50 Run Main configure\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=./build/\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- The C compiler identification is GNU 11.4.0\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- The CXX compiler identification is GNU 11.4.0\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting C compiler ABI info\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting C compiler ABI info - done\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Check for working C compiler: /usr/bin/gcc - skipped\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting C compile features\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting C compile features - done\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting CXX compiler ABI info\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting CXX compiler ABI info - done\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Check for working CXX compiler: /usr/bin/g++ - skipped\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting CXX compile features\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Detecting CXX compile features - done\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | CMake Warning (dev) at src/CMakeLists.txt:2:\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   |   Syntax Warning in cmake code at column 47\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   |   Argument not separated from preceding token by whitespace.\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | This warning is for project developers.  Use -Wno-dev to suppress it.\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Configuring done (0.5s)\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Generating done (0.0s)\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | -- Build files have been written to: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \u2705  Success - Main configure\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \u2b50 Run Main build\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=./build/\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [  8%] Building CXX object src/CMakeFiles/math.dir/add.cpp.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 16%] Building CXX object src/CMakeFiles/math.dir/divide.cc.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 25%] Building C object src/CMakeFiles/math.dir/subtract.c.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 33%] Linking CXX static library libmath.a\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 33%] Built target math\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 41%] Building CXX object test/CMakeFiles/test_add.dir/test_add.cpp.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 50%] Linking CXX executable test_add\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 50%] Built target test_add\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 58%] Building CXX object test/CMakeFiles/test_divide.dir/test_divide.cpp.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 66%] Linking CXX executable test_divide\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 66%] Built target test_divide\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 75%] Building CXX object test/CMakeFiles/test_multiply.dir/test_multiply.cpp.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 83%] Linking CXX executable test_multiply\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 83%] Built target test_multiply\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [ 91%] Building C object test/CMakeFiles/test_subtract.dir/test_subtract.c.o\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [100%] Linking CXX executable test_subtract\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | [100%] Built target test_subtract\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \u2705  Success - Main build\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \u2b50 Run Main run test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=./build/test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | UpdateCTestConfiguration  from :/tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test/DartConfiguration.tcl\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | UpdateCTestConfiguration  from :/tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test/DartConfiguration.tcl\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Test project /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Constructing a list of tests\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Done constructing a list of tests\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Updating test list for fixtures\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Added 0 tests to meet fixture requirements\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Checking test dependency graph...\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Checking test dependency graph end\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | test 1\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   |     Start 1: test_add\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 1: Test command: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test/test_add\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 1: Working Directory: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 1: Test timeout computed to be: 10000000\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 1: All tests passed!\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 1/4 Test #1: test_add .........................   Passed    0.00 sec\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | test 2\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   |     Start 2: test_divide\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 2: Test command: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test/test_divide\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 2: Working Directory: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 2: Test timeout computed to be: 10000000\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 2: All tests passed!\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 2/4 Test #2: test_divide ......................   Passed    0.00 sec\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | test 3\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   |     Start 3: test_multiply\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 3: Test command: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test/test_multiply\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 3: Working Directory: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 3: Test timeout computed to be: 10000000\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 3: All tests passed!\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 3/4 Test #3: test_multiply ....................   Passed    0.00 sec\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | test 4\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   |     Start 4: test_subtract\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 4: Test command: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test/test_subtract\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 4: Working Directory: /tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/build/test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 4: Test timeout computed to be: 10000000\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 4: All tests passed!\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 4/4 Test #4: test_subtract ....................   Passed    0.00 sec\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | 100% tests passed, 0 tests failed out of 4\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | \n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   | Total Test time (real) =   0.01 sec\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc]   \u2705  Success - Main run test\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] Cleaning up container for job ubuntu-gcc\n[1e9818e1-bfd0-411f-863e-3892062951d1/ubuntu-gcc] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "time=\"2025-03-05T01:50:16Z\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-03-05T01:50:16Z\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
+        "workflow": {
+            "path": "/tmp/2dc81c12-f964-11ef-ba98-95c48b786d0a/kuchungmsft-gitbugactions-cpp-cmake-test-repo/.github/workflows/build_and_test-crawler.yml",
+            "type": "cmake"
+        },
+        "workflow_name": "1e9818e1-bfd0-411f-863e-3892062951d1",
+        "build_tool": "cmake",
+        "elapsed_time": 5.1580424308776855,
+        "default_actions": false,
+        "return_code": 0
+    }
+}
