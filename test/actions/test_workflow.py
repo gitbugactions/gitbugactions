@@ -9,7 +9,9 @@ from gitbugactions.actions.npm.npm_mocha_workflow import NpmMochaWorkflow
 from gitbugactions.actions.npm.npm_vitest_workflow import NpmVitestWorkflow
 from gitbugactions.actions.python.pytest_workflow import PytestWorkflow
 from gitbugactions.actions.rust.cargo_workflow import CargoWorkflow
+from gitbugactions.actions.csharp.dotnet_workflow import DotNetWorkflow
 from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
+
 from gitbugactions.github_api import GithubToken
 
 
@@ -282,3 +284,13 @@ def test_rust(yml_file):
     """Test the workflow factory for rust workflows."""
     workflow = create_workflow(yml_file, "rust")
     assert isinstance(workflow, CargoWorkflow)
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    ["test/resources/test_workflows/dotnet/tests.yml"],
+)
+def test_dotnet(yml_file):
+    """Test the workflow factory for dotnet workflows."""
+    workflow = create_workflow(yml_file, "c#")
+    assert isinstance(workflow, DotNetWorkflow)
