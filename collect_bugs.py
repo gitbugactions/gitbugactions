@@ -58,6 +58,7 @@ class PatchCollector:
         )
         self.filter_on_commit_time_end = kwargs.get("filter_on_commit_time_end", None)
         self.pull_requests = kwargs.get("pull_requests", False)
+        self.filter_linked_to_pr = kwargs.get("filter_linked_to_pr", None)
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -296,6 +297,13 @@ class PatchCollector:
                 ):
                     continue
 
+                # Filter based on whether commit is linked to a PR
+                if self.filter_linked_to_pr:
+                    issues = self.__get_related_commit_info(str(commit.id))
+                    has_pr = any(issue["is_pull_request"] for issue in issues)
+                    if not has_pr:
+                        continue
+
                 try:
                     previous_commit = self.repo_clone.revparse_single(
                         str(commit.id) + "~1"
@@ -438,6 +446,7 @@ def collect_bugs(
     normalize_non_code_patch: bool = True,
     strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
     pull_requests: bool = False,
+    filter_linked_to_pr: bool = None,
     base_image: str | None = None,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
@@ -458,6 +467,7 @@ def collect_bugs(
         strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
                                            The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
+        filter_linked_to_pr (bool, optional): If True, only include commits that are linked to pull requests. If False, only include commits that are not linked to pull requests. If None, include all commits. Defaults to None.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
     set_test_config(normalize_non_code_patch, strategies)
@@ -483,6 +493,7 @@ def collect_bugs(
             else None
         ),
         "pull_requests": pull_requests,
+        "filter_linked_to_pr": filter_linked_to_pr,
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
