@@ -288,7 +288,7 @@ def test_rust(yml_file):
 
 @pytest.mark.parametrize(
     "yml_file",
-    [("test/resources/test_workflows/dotnet/tests.yml")],
+    ["test/resources/test_workflows/dotnet/tests.yml"],
 )
 def test_dotnet(yml_file):
     """Test the workflow factory for dotnet workflows."""
