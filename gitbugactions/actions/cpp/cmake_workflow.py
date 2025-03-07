@@ -9,17 +9,15 @@ from gitbugactions.actions.workflow import GitHubWorkflow
 
 class CMakeWorkflow(GitHubWorkflow):
     BUILD_TOOL_KEYWORDS = {"cmake"}
-    __TESTS_COMMAND_PATTERNS = [
-        r"ctest",
-    ]
-    result_file = "report.xml"
+
+    def __init__(self, path: str, workflow: str = ""):
+        super().__init__(path, workflow)
+        self.prune_unsupported_workflow()
+        self.prune_unsupported_jobs()
+        self.result_file = "report.xml"
 
     def _is_test_command(self, command) -> bool:
-        # Checks if the given command matches any of the tests command patterns
-        for pattern in CMakeWorkflow.__TESTS_COMMAND_PATTERNS:
-            if re.search(pattern, command):
-                return True
-        return False
+        return "ctest" in command
 
     def instrument_test_steps(self):
         if "jobs" in self.doc:
@@ -36,16 +34,55 @@ class CMakeWorkflow(GitHubWorkflow):
                                     "ctest", "ctest --output-junit " + self.result_file
                                 )
 
+                # CMake doesn't support 'ctest --output-junit' before 3.21.4
+                if "env" not in job:
+                    job["env"] = {"CMAKE_VERSION": "3.31.5"}
+                else:
+                    job["env"]["CMAKE_VERSION"] = "3.31.5"
+
     def get_test_results(self, repo_path) -> List[TestCase]:
-        search_path = os.path.join(repo_path, '**', self.result_file)
+        search_path = os.path.join(repo_path, "**", self.result_file)
         files = glob.glob(search_path, recursive=True)
         if files:
             parser = JUnitXMLParser()
             return parser.get_test_results(files[0])
-        else:
-            test_case = TestCase(name="NoTestResult", classname="CMakeWorkflow")
-            test_case.result = Error('No test results found')
-            return [test_case]
+        return []
 
     def get_build_tool(self) -> str:
         return "cmake"
+
+    def prune_unsupported_workflow(self):
+        if "name" in self.doc and "jobs" in self.doc:
+            if self.doc["name"] in [
+                "CIFuzz",
+                "Build cxxopts",
+                "Feature CI",
+                "Alpine Linux",
+            ]:
+                del self.doc["jobs"]
+
+    def prune_unsupported_jobs(self):
+        # Prune jobs that run on non Ubuntu OS
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
+            jobs_to_delete = []
+            for name, job in self.doc["jobs"].items():
+                if "runs-on" in job:
+                    if isinstance(job["runs-on"], list):
+                        os_to_delete = []
+                        for runs_on in job["runs-on"]:
+                            if not runs_on.startswith("ubuntu"):
+                                os_to_delete.append(runs_on)
+                                break
+
+                        for os in os_to_delete:
+                            del job["runs-on"][os]
+
+                        if len(job["runs-on"]) == 0:
+                            jobs_to_delete.append(name)
+                    elif not job["runs-on"].startswith("$"):
+                        if not job["runs-on"].startswith("ubuntu"):
+                            jobs_to_delete.append(name)
+
+            for job in jobs_to_delete:
+                if job in self.doc["jobs"]:
+                    del self.doc["jobs"][job]

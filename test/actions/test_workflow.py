@@ -297,11 +297,12 @@ def test_cpp(yml_file, language):
     workflow = create_workflow(yml_file, language)
     assert isinstance(workflow, CMakeWorkflow)
 
+
 @pytest.mark.parametrize(
     "yml_file",
     [
-     ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml"),
-     ("test/resources/test_workflows/cpp/cmake_with_output_junit.yml")
+        ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml"),
+        ("test/resources/test_workflows/cpp/cmake_with_output_junit.yml"),
     ],
 )
 def test_cmake_instrument_test_steps(yml_file):

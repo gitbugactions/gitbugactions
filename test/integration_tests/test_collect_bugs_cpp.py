@@ -25,6 +25,7 @@ def get_test_results(tests):
             failure += 1
     return passed, failure
 
+
 class TestCollectBugs:
     TOKEN_USAGE: int = 0
 
@@ -64,7 +65,7 @@ class TestCollectBugs:
                 assert data["commit_hash"] in [
                     "ab267f32024cc6cb9e1b7478c67ad4937dbdda9b",
                     "5598359dd9e873ca2839ec8efc358e68516a51d9",
-                    "720e4913a4de1ac244f103309eac130c773819ba"
+                    "720e4913a4de1ac244f103309eac130c773819ba",
                 ]
                 if data["commit_hash"] == "ab267f32024cc6cb9e1b7478c67ad4937dbdda9b":
                     assert len(PatchSet(data["non_code_patch"])) == 0
@@ -101,7 +102,10 @@ class TestCollectBugs:
                         data["previous_commit_hash"]
                         == "d37e5c38214fcfe47787c5824ef028806146e8e8"
                     )
-                    assert data["previous_commit_message"] == "Add subtract and test case\n"
+                    assert (
+                        data["previous_commit_message"]
+                        == "Add subtract and test case\n"
+                    )
                     assert (
                         data["previous_commit_timestamp"]
                         == "2025-03-05T00:47:23+00:00Z"
@@ -125,7 +129,9 @@ class TestCollectBugs:
                         data["previous_commit_hash"]
                         == "59f0ba65ed73b202cae55cdb63455e0b6aa781ab"
                     )
-                    assert data["previous_commit_message"] == "Add divide and test case\n"
+                    assert (
+                        data["previous_commit_message"] == "Add divide and test case\n"
+                    )
                     assert (
                         data["previous_commit_timestamp"]
                         == "2025-03-05T00:49:06+00:00Z"
@@ -160,7 +166,7 @@ class TestCollectBugs:
                     "d7f556a4e8cabbdefe66a7bc48031a9c1c35ed18",
                     "1c27b9e954959e084bef596343c3abe0c9a55f83",
                     "a686dfb656600b5ae63a7edf09458945c9f22030",
-                    "dec4c7dd853b34c179b5c380ca4b79dd8559b195"
+                    "dec4c7dd853b34c179b5c380ca4b79dd8559b195",
                 ]
                 if data["commit_hash"] == "d7f556a4e8cabbdefe66a7bc48031a9c1c35ed18":
                     assert len(PatchSet(data["non_code_patch"])) == 0
@@ -245,7 +251,10 @@ class TestCollectBugs:
                         data["previous_commit_hash"]
                         == "cdd0a7e8804e1abde6016b7e4aaf8fc588c9265f"
                     )
-                    assert data["previous_commit_message"] == "Add subtract and test case\n"
+                    assert (
+                        data["previous_commit_message"]
+                        == "Add subtract and test case\n"
+                    )
                     assert (
                         data["previous_commit_timestamp"]
                         == "2025-03-05T01:49:22+00:00Z"
@@ -268,20 +277,14 @@ class TestCollectBugs:
         ) as f:
             data = json.load(f)
             assert len(data.keys()) == 2
-            assert (
-                data["kuchungmsft/gitbugactions-c-cmake-test-repo"]["commits"]
-                == 6
-            )
+            assert data["kuchungmsft/gitbugactions-c-cmake-test-repo"]["commits"] == 6
             assert (
                 data["kuchungmsft/gitbugactions-c-cmake-test-repo"][
                     "possible_bug_patches"
                 ]
                 == 3
             )
-            assert (
-                data["kuchungmsft/gitbugactions-cpp-cmake-test-repo"]["commits"]
-                == 8
-            )
+            assert data["kuchungmsft/gitbugactions-cpp-cmake-test-repo"]["commits"] == 8
             assert (
                 data["kuchungmsft/gitbugactions-cpp-cmake-test-repo"][
                     "possible_bug_patches"

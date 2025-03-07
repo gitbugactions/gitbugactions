@@ -224,9 +224,7 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert len(data["actions_test_build_tools"]) == 1
             assert data["actions_test_build_tools"][0] == "cmake"
 
-    @pytest.mark.skip(
-        reason="Skipped due to long runtime."
-    )
+    @pytest.mark.skip(reason="Skipped due to long runtime.")
     def test_collect_repos_cpp_andrewprock_pokerstove(self):
         api = GithubAPI()
         repo = api.get_repo("andrewprock/pokerstove")
