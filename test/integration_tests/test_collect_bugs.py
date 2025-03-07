@@ -195,6 +195,36 @@ def test_get_possible_patches_pull_requests():
     assert "ff6e2662174af4024eef123b7d23b15192748b31" in commits
 
 
+def test_get_possible_patches_filter_linked_to_pr():
+    # Test filtering for commits linked to PRs
+    collector = PatchCollector(
+        GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo"),
+        filter_on_commit_message=False,
+        filter_linked_to_pr=True,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+    # This commit is linked to a PR
+    assert "02dc8a4b03c6b6c38f130a6794d9d6dfcc7bff2f" in commits
+    # This commit is not linked to a PR
+    assert "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f" not in commits
+
+    # Test filtering for commits not linked to PRs
+    collector = PatchCollector(
+        GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo"),
+        filter_on_commit_message=False,
+        filter_linked_to_pr=False,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+    # This commit is linked to a PR
+    assert "02dc8a4b03c6b6c38f130a6794d9d6dfcc7bff2f" in commits
+    # This commit is not linked to a PR
+    assert "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f" in commits
+
+    delete_repo_clone(collector.repo_clone)
+
+
 class TestCollectBugs:
     TOKEN_USAGE: int = 0
 
