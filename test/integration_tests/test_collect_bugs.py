@@ -24,9 +24,9 @@ def get_token_usage():
 def get_test_results(tests):
     passed, failure = 0, 0
     for test in tests:
-        if test["results"][0]["result"] == "Passed":
+        if test["result"] == "passed":
             passed += 1
-        elif test["results"][0]["result"] == "Failure":
+        elif test["result"] == "failed":
             failure += 1
     return passed, failure
 
@@ -258,19 +258,22 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 6
+
+            # Define expected commit hashes
+            expected_commit_hashes = [
+                # "ef34d133079591972a5ce9442cbcc7603003d938", # FIXME: requires default github actions
+                "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
+                "629f67ebc0efeeb8868a13ad173f18ec572a8729",
+                "37113cf952bd6d3db563d0d15beae07daefd953e",
+                "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f",
+                "ff6e2662174af4024eef123b7d23b15192748b31",
+            ]
+
+            # Check if all expected commit hashes are present
+            self._check_expected_commit_hashes(lines, expected_commit_hashes)
 
             for line in lines:
                 data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "ef34d133079591972a5ce9442cbcc7603003d938",
-                    "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80",
-                    "629f67ebc0efeeb8868a13ad173f18ec572a8729",
-                    "37113cf952bd6d3db563d0d15beae07daefd953e",
-                    "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f",
-                    "ff6e2662174af4024eef123b7d23b15192748b31",
-                    "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f",
-                ]
 
                 if data["commit_hash"] == "ef34d133079591972a5ce9442cbcc7603003d938":
                     assert data["commit_message"] == "Fix sum\n"
@@ -292,16 +295,15 @@ class TestCollectBugs:
                     assert "java" in data["test_patch_file_extensions"]
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
-                    assert len(data["actions_runs"]) == 3
-                    assert data["actions_runs"][0][0]["default_actions"]
-                    assert data["actions_runs"][1][0]["default_actions"]
-                    assert len(data["actions_runs"][1][0]["tests"]) == 1
-                    assert len(data["actions_runs"][1][0]["tests"][0]["results"]) == 1
+                    assert len(data["execution_results"]) == 3
+                    assert data["execution_results"][0]["test_workflows"]
+                    assert data["execution_results"][1]["test_workflows"]
+                    assert len(data["execution_results"][1]["test_results"]) == 1
                     assert (
-                        data["actions_runs"][1][0]["tests"][0]["results"][0]["result"]
-                        == "Failure"
+                        data["execution_results"][1]["test_results"][0]["result"]
+                        == "failed"
                     )
-                    assert data["actions_runs"][2][0]["default_actions"]
+                    assert data["execution_results"][2]["test_workflows"]
                     assert data["commit_timestamp"] == "2023-06-05T13:19:21+00:00Z"
 
                 elif data["commit_hash"] == "7e11161b4983f8ff9fd056fa465c8cabaa8a7f80":
@@ -323,12 +325,10 @@ class TestCollectBugs:
                     assert len(data["test_patch_file_extensions"]) == 0
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
-                    assert len(data["actions_runs"]) == 3
-                    assert not data["actions_runs"][0][0]["default_actions"]
-                    assert len(data["actions_runs"][0][0]["tests"]) == 2
-                    assert data["actions_runs"][1] is None
-                    assert len(data["actions_runs"][2][0]["tests"]) == 2
-                    assert not data["actions_runs"][2][0]["default_actions"]
+                    assert len(data["execution_results"]) == 3
+                    assert len(data["execution_results"][0]["test_results"]) == 2
+                    assert data["execution_results"][1] is None
+                    assert len(data["execution_results"][2]["test_results"]) == 2
                     assert len(data["issues"]) == 1
                     assert data["issues"][0]["title"] == "Subtract is not working"
                     assert data["issues"][0]["body"] == "Test"
@@ -336,7 +336,7 @@ class TestCollectBugs:
                     assert data["issues"][0]["comments"][0] == "Test"
                     assert data["commit_timestamp"] == "2023-06-16T14:16:27+00:00Z"
                     passed, failure = get_test_results(
-                        data["actions_runs"][0][0]["tests"]
+                        data["execution_results"][0]["test_results"]
                     )
                     assert passed == 1
                     assert failure == 1
@@ -347,13 +347,13 @@ class TestCollectBugs:
                     assert data["change_type"] == "SOURCE_ONLY"
                     assert len(data["test_patch"]) == 0
                     passed, failure = get_test_results(
-                        data["actions_runs"][0][0]["tests"]
+                        data["execution_results"][0]["test_results"]
                     )
                     assert passed == 2
                     assert failure == 2
 
                     passed, failure = get_test_results(
-                        data["actions_runs"][2][0]["tests"]
+                        data["execution_results"][2]["test_results"]
                     )
                     assert passed == 3
                     assert failure == 1
@@ -364,13 +364,13 @@ class TestCollectBugs:
                     assert data["change_type"] == "SOURCE_ONLY"
                     assert len(data["test_patch"]) > 0
                     passed, failure = get_test_results(
-                        data["actions_runs"][1][0]["tests"]
+                        data["execution_results"][1]["test_results"]
                     )
                     assert passed == 3
                     assert failure == 2
 
                     passed, failure = get_test_results(
-                        data["actions_runs"][2][0]["tests"]
+                        data["execution_results"][2]["test_results"]
                     )
                     assert passed == 4
                     assert failure == 1
@@ -381,13 +381,13 @@ class TestCollectBugs:
                     assert data["change_type"] == "MIXED"
                     assert len(data["test_patch"]) == 0
                     passed, failure = get_test_results(
-                        data["actions_runs"][0][0]["tests"]
+                        data["execution_results"][0]["test_results"]
                     )
                     assert passed == 0
                     assert failure == 0
 
                     passed, failure = get_test_results(
-                        data["actions_runs"][2][0]["tests"]
+                        data["execution_results"][2]["test_results"]
                     )
                     assert passed == 5
                     assert failure == 0
@@ -398,13 +398,13 @@ class TestCollectBugs:
                     assert data["change_type"] == "SOURCE_ONLY"
                     assert len(data["test_patch"]) == 0
                     passed, failure = get_test_results(
-                        data["actions_runs"][0][0]["tests"]
+                        data["execution_results"][0]["test_results"]
                     )
                     assert passed == 4
                     assert failure == 1
 
                     passed, failure = get_test_results(
-                        data["actions_runs"][2][0]["tests"]
+                        data["execution_results"][2]["test_results"]
                     )
                     assert passed == 5
                     assert failure == 0
@@ -415,12 +415,12 @@ class TestCollectBugs:
                     assert data["change_type"] == "MIXED"
                     assert len(data["test_patch"]) == 0
                     passed, failure = get_test_results(
-                        data["actions_runs"][0][0]["tests"]
+                        data["execution_results"][0]["test_results"]
                     )
                     assert passed == 4
                     assert failure == 1
                     passed, failure = get_test_results(
-                        data["actions_runs"][2][0]["tests"]
+                        data["execution_results"][2]["test_results"]
                     )
                     assert passed == 5
                     assert failure == 0
@@ -437,15 +437,19 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 3
+
+            # Define expected commit hashes
+            expected_commit_hashes = [
+                "0e1907f75fcd3936b6d64292bc278250f2ee9ca3",
+                "fc7ce580d4ea1a8af029b31f14aba881a4c02368",
+                "05e841e86b09a60324dd77aa6d247bfa6331ad9e",
+            ]
+
+            # Check if all expected commit hashes are present
+            self._check_expected_commit_hashes(lines, expected_commit_hashes)
 
             for line in lines:
                 data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "0e1907f75fcd3936b6d64292bc278250f2ee9ca3",
-                    "fc7ce580d4ea1a8af029b31f14aba881a4c02368",
-                    "05e841e86b09a60324dd77aa6d247bfa6331ad9e",
-                ]
 
                 if data["commit_hash"] == "0e1907f75fcd3936b6d64292bc278250f2ee9ca3":
                     assert len(PatchSet(data["non_code_patch"])) == 0
@@ -468,37 +472,23 @@ class TestCollectBugs:
                     assert "py" in data["test_patch_file_extensions"]
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
-                    assert len(data["actions_runs"]) == 3
+                    assert len(data["execution_results"]) == 3
                     # assert that number of total tests before == 6 and all pass
-                    assert len(data["actions_runs"][0][0]["tests"]) == 6
+                    assert len(data["execution_results"][0]["test_results"]) == 6
                     assert all(
                         [
-                            x["result"] == "Passed"
-                            for x in [
-                                r
-                                for _ in [
-                                    y["results"]
-                                    for y in data["actions_runs"][0][0]["tests"]
-                                ]
-                                for r in _
-                            ]
+                            test["result"] == "passed"
+                            for test in data["execution_results"][0]["test_results"]
                         ]
                     )
                     # assert that number of tests failing before w/ new tests == 12, 6 pass and 6 fail
-                    assert len(data["actions_runs"][1][0]["tests"]) == 12
+                    assert len(data["execution_results"][1]["test_results"]) == 12
                     assert (
                         len(
                             [
-                                x
-                                for x in [
-                                    r
-                                    for _ in [
-                                        y["results"]
-                                        for y in data["actions_runs"][1][0]["tests"]
-                                    ]
-                                    for r in _
-                                ]
-                                if x["result"] == "Passed"
+                                test
+                                for test in data["execution_results"][1]["test_results"]
+                                if test["result"] == "passed"
                             ]
                         )
                         == 6
@@ -506,33 +496,19 @@ class TestCollectBugs:
                     assert (
                         len(
                             [
-                                x
-                                for x in [
-                                    r
-                                    for _ in [
-                                        y["results"]
-                                        for y in data["actions_runs"][1][0]["tests"]
-                                    ]
-                                    for r in _
-                                ]
-                                if x["result"] == "Failure"
+                                test
+                                for test in data["execution_results"][1]["test_results"]
+                                if test["result"] == "failed"
                             ]
                         )
                         == 6
                     )
                     # assert that number of total tests after == 12 and all pass
-                    assert len(data["actions_runs"][2][0]["tests"]) == 12
+                    assert len(data["execution_results"][2]["test_results"]) == 12
                     assert all(
                         [
-                            x["result"] == "Passed"
-                            for x in [
-                                r
-                                for _ in [
-                                    y["results"]
-                                    for y in data["actions_runs"][2][0]["tests"]
-                                ]
-                                for r in _
-                            ]
+                            test["result"] == "passed"
+                            for test in data["execution_results"][2]["test_results"]
                         ]
                     )
 
@@ -557,9 +533,9 @@ class TestCollectBugs:
                     assert len(data["non_code_patch_file_extensions"]) == 1
                     assert "txt" in data["non_code_patch_file_extensions"]
                     assert data["change_type"] == "NON_CODE_ONLY"
-                    assert len(data["actions_runs"]) == 3
-                    assert len(data["actions_runs"][0][0]["tests"]) == 13
-                    assert len(data["actions_runs"][2][0]["tests"]) == 13
+                    assert len(data["execution_results"]) == 3
+                    assert len(data["execution_results"][0]["test_results"]) == 13
+                    assert len(data["execution_results"][2]["test_results"]) == 13
 
                 elif data["commit_hash"] == "05e841e86b09a60324dd77aa6d247bfa6331ad9e":
                     assert len(PatchSet(data["non_code_patch"])) > 0
@@ -582,9 +558,9 @@ class TestCollectBugs:
                     assert len(data["non_code_patch_file_extensions"]) == 1
                     assert "txt" in data["non_code_patch_file_extensions"]
                     assert data["change_type"] == "MIXED"
-                    assert len(data["actions_runs"]) == 3
-                    assert len(data["actions_runs"][0][0]["tests"]) == 15
-                    assert len(data["actions_runs"][2][0]["tests"]) == 15
+                    assert len(data["execution_results"]) == 3
+                    assert len(data["execution_results"][0]["test_results"]) == 15
+                    assert len(data["execution_results"][2]["test_results"]) == 15
 
     @pytest.mark.dependency()
     def test_gitbugactions_gradle_test_repo(self):
@@ -599,8 +575,15 @@ class TestCollectBugs:
         ) as f:
             lines = f.readlines()
             assert len(lines) == 1
+
+            # Define expected commit hash
+            expected_commit_hash = "2289b33a322f01b95405905c53770a63fa21b8bf"
+
+            # Check if the expected commit hash is present
+            self._check_expected_commit_hashes(lines, expected_commit_hash)
+
             data = json.loads(lines[0])
-            assert data["commit_hash"] == "2289b33a322f01b95405905c53770a63fa21b8bf"
+            assert data["commit_hash"] == expected_commit_hash
             assert data["commit_message"] == "fix sum\n"
             assert data["commit_timestamp"] == "2023-06-10T15:07:36+00:00Z"
             assert (
@@ -618,34 +601,21 @@ class TestCollectBugs:
             assert len(data["non_code_patch_file_extensions"]) == 0
             assert data["change_type"] == "SOURCE_ONLY"
             # assert that number of total tests before == 1 and it passes
-            assert len(data["actions_runs"][0][0]["tests"]) == 1
+            assert len(data["execution_results"][0]["test_results"]) == 1
             assert all(
                 [
-                    x["result"] == "Passed"
-                    for x in [
-                        r
-                        for _ in [
-                            y["results"] for y in data["actions_runs"][0][0]["tests"]
-                        ]
-                        for r in _
-                    ]
+                    test["result"] == "passed"
+                    for test in data["execution_results"][0]["test_results"]
                 ]
             )
             # assert that number of tests failing before w/ new tests == 1 and it fails
-            assert len(data["actions_runs"][1][0]["tests"]) == 1
+            assert len(data["execution_results"][1]["test_results"]) == 1
             assert (
                 len(
                     [
-                        x
-                        for x in [
-                            r
-                            for _ in [
-                                y["results"]
-                                for y in data["actions_runs"][1][0]["tests"]
-                            ]
-                            for r in _
-                        ]
-                        if x["result"] == "Passed"
+                        test
+                        for test in data["execution_results"][1]["test_results"]
+                        if test["result"] == "passed"
                     ]
                 )
                 == 0
@@ -653,32 +623,19 @@ class TestCollectBugs:
             assert (
                 len(
                     [
-                        x
-                        for x in [
-                            r
-                            for _ in [
-                                y["results"]
-                                for y in data["actions_runs"][1][0]["tests"]
-                            ]
-                            for r in _
-                        ]
-                        if x["result"] == "Failure"
+                        test
+                        for test in data["execution_results"][1]["test_results"]
+                        if test["result"] == "failed"
                     ]
                 )
                 == 1
             )
             # assert that number of total tests after == 1 and it passes
-            assert len(data["actions_runs"][2][0]["tests"]) == 1
+            assert len(data["execution_results"][2]["test_results"]) == 1
             assert all(
                 [
-                    x["result"] == "Passed"
-                    for x in [
-                        r
-                        for _ in [
-                            y["results"] for y in data["actions_runs"][2][0]["tests"]
-                        ]
-                        for r in _
-                    ]
+                    test["result"] == "passed"
+                    for test in data["execution_results"][2]["test_results"]
                 ]
             )
 
@@ -695,8 +652,15 @@ class TestCollectBugs:
         ) as f:
             lines = f.readlines()
             assert len(lines) == 1
+
+            # Define expected commit hash
+            expected_commit_hash = "d3d7a607e3a8abc330f8fd69f677284a9afaf650"
+
+            # Check if the expected commit hash is present
+            self._check_expected_commit_hashes(lines, expected_commit_hash)
+
             data = json.loads(lines[0])
-            assert data["commit_hash"] == "d3d7a607e3a8abc330f8fd69f677284a9afaf650"
+            assert data["commit_hash"] == expected_commit_hash
             assert data["commit_timestamp"] == "2023-06-20T14:54:30+00:00Z"
             assert data["commit_message"] == "fix sum\n"
             assert (
@@ -714,34 +678,21 @@ class TestCollectBugs:
             assert len(data["non_code_patch_file_extensions"]) == 0
             assert data["change_type"] == "SOURCE_ONLY"
             # assert that number of total tests before == 2 and all pass
-            assert len(data["actions_runs"][0][0]["tests"]) == 2
+            assert len(data["execution_results"][0]["test_results"]) == 2
             assert all(
                 [
-                    x["result"] == "Passed"
-                    for x in [
-                        r
-                        for _ in [
-                            y["results"] for y in data["actions_runs"][0][0]["tests"]
-                        ]
-                        for r in _
-                    ]
+                    test["result"] == "passed"
+                    for test in data["execution_results"][0]["test_results"]
                 ]
             )
             # assert that number of tests failing before w/ new tests == 3, 2 pass and 1 fail
-            assert len(data["actions_runs"][1][0]["tests"]) == 3
+            assert len(data["execution_results"][1]["test_results"]) == 3
             assert (
                 len(
                     [
-                        x
-                        for x in [
-                            r
-                            for _ in [
-                                y["results"]
-                                for y in data["actions_runs"][1][0]["tests"]
-                            ]
-                            for r in _
-                        ]
-                        if x["result"] == "Passed"
+                        test
+                        for test in data["execution_results"][1]["test_results"]
+                        if test["result"] == "passed"
                     ]
                 )
                 == 2
@@ -749,32 +700,19 @@ class TestCollectBugs:
             assert (
                 len(
                     [
-                        x
-                        for x in [
-                            r
-                            for _ in [
-                                y["results"]
-                                for y in data["actions_runs"][1][0]["tests"]
-                            ]
-                            for r in _
-                        ]
-                        if x["result"] == "Failure"
+                        test
+                        for test in data["execution_results"][1]["test_results"]
+                        if test["result"] == "failed"
                     ]
                 )
                 == 1
             )
             # assert that number of total tests after == 3 and all pass
-            assert len(data["actions_runs"][2][0]["tests"]) == 3
+            assert len(data["execution_results"][2]["test_results"]) == 3
             assert all(
                 [
-                    x["result"] == "Passed"
-                    for x in [
-                        r
-                        for _ in [
-                            y["results"] for y in data["actions_runs"][2][0]["tests"]
-                        ]
-                        for r in _
-                    ]
+                    test["result"] == "passed"
+                    for test in data["execution_results"][2]["test_results"]
                 ]
             )
 
@@ -790,13 +728,18 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 2
+
+            # Define expected commit hashes
+            expected_commit_hashes = [
+                "c169aa04ee612b23ff9b3405260851c5ffa98e88",
+                "862faa2fe219817eab67de0a95c796f31fc595f1",
+            ]
+
+            # Check if all expected commit hashes are present
+            self._check_expected_commit_hashes(lines, expected_commit_hashes)
+
             for line in lines:
                 data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "c169aa04ee612b23ff9b3405260851c5ffa98e88",
-                    "862faa2fe219817eab67de0a95c796f31fc595f1",
-                ]
 
                 if data["commit_hash"] == "c169aa04ee612b23ff9b3405260851c5ffa98e88":
                     assert data["commit_timestamp"] == "2023-07-21T16:48:15+00:00Z"
@@ -818,20 +761,13 @@ class TestCollectBugs:
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
                     # assert that number of total tests before == 2 and one fails
-                    assert len(data["actions_runs"][0][0]["tests"]) == 2
+                    assert len(data["execution_results"][0]["test_results"]) == 2
                     assert (
                         len(
                             [
-                                x
-                                for x in [
-                                    r
-                                    for _ in [
-                                        y["results"]
-                                        for y in data["actions_runs"][0][0]["tests"]
-                                    ]
-                                    for r in _
-                                ]
-                                if x["result"] == "Passed"
+                                test
+                                for test in data["execution_results"][0]["test_results"]
+                                if test["result"] == "passed"
                             ]
                         )
                         == 1
@@ -839,33 +775,19 @@ class TestCollectBugs:
                     assert (
                         len(
                             [
-                                x
-                                for x in [
-                                    r
-                                    for _ in [
-                                        y["results"]
-                                        for y in data["actions_runs"][0][0]["tests"]
-                                    ]
-                                    for r in _
-                                ]
-                                if x["result"] == "Failure"
+                                test
+                                for test in data["execution_results"][0]["test_results"]
+                                if test["result"] == "failed"
                             ]
                         )
                         == 1
                     )
                     # assert that number of total tests after == 2 and all pass
-                    assert len(data["actions_runs"][2][0]["tests"]) == 2
+                    assert len(data["execution_results"][2]["test_results"]) == 2
                     assert all(
                         [
-                            x["result"] == "Passed"
-                            for x in [
-                                r
-                                for _ in [
-                                    y["results"]
-                                    for y in data["actions_runs"][2][0]["tests"]
-                                ]
-                                for r in _
-                            ]
+                            test["result"] == "passed"
+                            for test in data["execution_results"][2]["test_results"]
                         ]
                     )
 
@@ -890,35 +812,21 @@ class TestCollectBugs:
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
                     # assert that number of total tests before == 2 and all pass
-                    assert len(data["actions_runs"][0][0]["tests"]) == 2
+                    assert len(data["execution_results"][0]["test_results"]) == 2
                     assert all(
                         [
-                            x["result"] == "Passed"
-                            for x in [
-                                r
-                                for _ in [
-                                    y["results"]
-                                    for y in data["actions_runs"][0][0]["tests"]
-                                ]
-                                for r in _
-                            ]
+                            test["result"] == "passed"
+                            for test in data["execution_results"][0]["test_results"]
                         ]
                     )
                     # assert that number of total tests w/ new tests == 3 and one fails
-                    assert len(data["actions_runs"][1][0]["tests"]) == 3
+                    assert len(data["execution_results"][1]["test_results"]) == 3
                     assert (
                         len(
                             [
-                                x
-                                for x in [
-                                    r
-                                    for _ in [
-                                        y["results"]
-                                        for y in data["actions_runs"][1][0]["tests"]
-                                    ]
-                                    for r in _
-                                ]
-                                if x["result"] == "Passed"
+                                test
+                                for test in data["execution_results"][1]["test_results"]
+                                if test["result"] == "passed"
                             ]
                         )
                         == 2
@@ -926,33 +834,19 @@ class TestCollectBugs:
                     assert (
                         len(
                             [
-                                x
-                                for x in [
-                                    r
-                                    for _ in [
-                                        y["results"]
-                                        for y in data["actions_runs"][1][0]["tests"]
-                                    ]
-                                    for r in _
-                                ]
-                                if x["result"] == "Failure"
+                                test
+                                for test in data["execution_results"][1]["test_results"]
+                                if test["result"] == "failed"
                             ]
                         )
                         == 1
                     )
                     # assert that number of total tests after == 3 and all pass
-                    assert len(data["actions_runs"][2][0]["tests"]) == 3
+                    assert len(data["execution_results"][2]["test_results"]) == 3
                     assert all(
                         [
-                            x["result"] == "Passed"
-                            for x in [
-                                r
-                                for _ in [
-                                    y["results"]
-                                    for y in data["actions_runs"][2][0]["tests"]
-                                ]
-                                for r in _
-                            ]
+                            test["result"] == "passed"
+                            for test in data["execution_results"][2]["test_results"]
                         ]
                     )
 
@@ -968,14 +862,18 @@ class TestCollectBugs:
             "r",
         ) as f:
             lines = f.readlines()
-            assert len(lines) == 2
+
+            # Define expected commit hashes
+            expected_commit_hashes = [
+                "fa9d952976eff56860653f15bbc62766ff4211a5",
+                "88399e528e6fb9a87a9f74e3bf9f6bf413577ebe",
+            ]
+
+            # Check if all expected commit hashes are present
+            self._check_expected_commit_hashes(lines, expected_commit_hashes)
 
             for line in lines:
                 data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "fa9d952976eff56860653f15bbc62766ff4211a5",
-                    "88399e528e6fb9a87a9f74e3bf9f6bf413577ebe",
-                ]
 
                 if data["commit_hash"] == "fa9d952976eff56860653f15bbc62766ff4211a5":
                     assert len(PatchSet(data["non_code_patch"])) == 0
@@ -996,9 +894,9 @@ class TestCollectBugs:
                     assert len(data["test_patch_file_extensions"]) == 0
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
-                    assert len(data["actions_runs"]) == 3
-                    assert len(data["actions_runs"][0][0]["tests"]) == 5
-                    assert len(data["actions_runs"][2][0]["tests"]) == 5
+                    assert len(data["execution_results"]) == 3
+                    assert len(data["execution_results"][0]["test_results"]) == 5
+                    assert len(data["execution_results"][2]["test_results"]) == 5
 
                 elif data["commit_hash"] == "88399e528e6fb9a87a9f74e3bf9f6bf413577ebe":
                     assert len(PatchSet(data["non_code_patch"])) == 0
@@ -1021,10 +919,10 @@ class TestCollectBugs:
                     assert len(data["test_patch_file_extensions"]) == 1
                     assert len(data["non_code_patch_file_extensions"]) == 0
                     assert data["change_type"] == "SOURCE_ONLY"
-                    assert len(data["actions_runs"]) == 3
-                    assert len(data["actions_runs"][0][0]["tests"]) == 5
-                    assert len(data["actions_runs"][1][0]["tests"]) == 5
-                    assert len(data["actions_runs"][2][0]["tests"]) == 5
+                    assert len(data["execution_results"]) == 3
+                    assert len(data["execution_results"][0]["test_results"]) == 5
+                    assert len(data["execution_results"][1]["test_results"]) == 5
+                    assert len(data["execution_results"][2]["test_results"]) == 5
 
     @pytest.mark.dependency()
     def test_gitbugactions_npm_mocha_test_repo(self):
@@ -1040,12 +938,15 @@ class TestCollectBugs:
             lines = f.readlines()
             assert len(lines) == 1
 
-            for line in lines:
-                data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "3e3b7e364c478bd3a9e3d22d6b296f6f8ac0dfbf",
-                ]
-                assert data["strategy"] == "FAIL_PASS"
+            # Define expected commit hash
+            expected_commit_hash = "3e3b7e364c478bd3a9e3d22d6b296f6f8ac0dfbf"
+
+            # Check if the expected commit hash is present
+            self._check_expected_commit_hashes(lines, expected_commit_hash)
+
+            data = json.loads(lines[0])
+            assert data["commit_hash"] == expected_commit_hash
+            assert data["strategy"] == "FAIL_PASS"
 
     @pytest.mark.dependency()
     def test_gitbugactions_npm_vitest_test_repo(self):
@@ -1061,12 +962,15 @@ class TestCollectBugs:
             lines = f.readlines()
             assert len(lines) == 1
 
-            for line in lines:
-                data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "708eb9c4935e65d673b84e226ceb513ae446c280",
-                ]
-                assert data["strategy"] == "FAIL_PASS"
+            # Define expected commit hash
+            expected_commit_hash = "708eb9c4935e65d673b84e226ceb513ae446c280"
+
+            # Check if the expected commit hash is present
+            self._check_expected_commit_hashes(lines, expected_commit_hash)
+
+            data = json.loads(lines[0])
+            assert data["commit_hash"] == expected_commit_hash
+            assert data["strategy"] == "FAIL_PASS"
 
     @pytest.mark.dependency()
     def test_gitbugactions_rust_test_repo(self):
@@ -1082,12 +986,15 @@ class TestCollectBugs:
             lines = f.readlines()
             assert len(lines) == 1
 
-            for line in lines:
-                data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "45043fc05cce16a6da87a3a536f4adc900c5e967",
-                ]
-                assert data["strategy"] == "FAIL_PASS"
+            # Define expected commit hash
+            expected_commit_hash = "45043fc05cce16a6da87a3a536f4adc900c5e967"
+
+            # Check if the expected commit hash is present
+            self._check_expected_commit_hashes(lines, expected_commit_hash)
+
+            data = json.loads(lines[0])
+            assert data["commit_hash"] == expected_commit_hash
+            assert data["strategy"] == "FAIL_PASS"
 
     @pytest.mark.dependency()
     def test_gitbugactions_ts_npm_jest_test_repo(self):
@@ -1103,12 +1010,15 @@ class TestCollectBugs:
             lines = f.readlines()
             assert len(lines) == 1
 
-            for line in lines:
-                data = json.loads(line)
-                assert data["commit_hash"] in [
-                    "79b223e1d3ab707170eb6da68796c40d1c791236",
-                ]
-                assert data["strategy"] == "FAIL_PASS"
+            # Define expected commit hash
+            expected_commit_hash = "79b223e1d3ab707170eb6da68796c40d1c791236"
+
+            # Check if the expected commit hash is present
+            self._check_expected_commit_hashes(lines, expected_commit_hash)
+
+            data = json.loads(lines[0])
+            assert data["commit_hash"] == expected_commit_hash
+            assert data["strategy"] == "FAIL_PASS"
 
     def test_collected_data(self):
         with open(
@@ -1219,3 +1129,33 @@ class TestCollectBugs:
         # FIXME: flaky
         if GithubToken.has_tokens():
             assert TestCollectBugs.TOKEN_USAGE + 8 == get_token_usage()
+
+    def _check_expected_commit_hashes(self, lines, expected_commit_hashes):
+        """
+        Helper method to check if all expected commit hashes are present in the given lines.
+
+        Args:
+            lines: List of JSON lines from the output file
+            expected_commit_hashes: List of expected commit hashes or a single hash string
+
+        Returns:
+            found_commit_hashes: List of commit hashes found in the lines
+        """
+        # Convert single hash to list for consistent handling
+        if isinstance(expected_commit_hashes, str):
+            expected_commit_hashes = [expected_commit_hashes]
+
+        # Extract commit hashes from lines
+        found_commit_hashes = [json.loads(line)["commit_hash"] for line in lines]
+
+        # Check if all expected commit hashes are present
+        for expected_hash in expected_commit_hashes:
+            assert (
+                expected_hash in found_commit_hashes
+            ), f"Expected commit hash {expected_hash} not found"
+
+        # Check that there is no unexpected commit hash
+        for found_hash in found_commit_hashes:
+            assert (
+                found_hash in expected_commit_hashes
+            ), f"Unexpected commit hash {found_hash} found"

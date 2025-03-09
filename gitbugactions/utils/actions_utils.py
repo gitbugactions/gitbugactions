@@ -54,7 +54,7 @@ def get_default_github_actions(
             finally:
                 repo_clone.reset(head.id, pygit2.GIT_RESET_HARD)
                 subprocess.run(
-                    ["git", "clean", "-f", "-d", "-x"],
+                    ["git", "clean", "-ff", "-d", "-x"],
                     cwd=repo_clone.workdir,
                     capture_output=True,
                 )
