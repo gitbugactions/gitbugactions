@@ -436,6 +436,7 @@ def collect_bugs(
     pull_requests: bool = False,
     filter_linked_to_pr: bool = None,
     base_image: str | None = None,
+    use_default_actions: bool = False,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -457,6 +458,7 @@ def collect_bugs(
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
         filter_linked_to_pr (bool, optional): If True, only include commits that are linked to pull requests. If False, only include commits that are not linked to pull requests. If None, include all commits. Defaults to None.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        use_default_actions (bool, optional): Whether to use and collect default GitHub actions from repositories. Setting to False can speed up collection if default actions are not needed. Defaults to True.
     """
     set_test_config(normalize_non_code_patch, strategies)
 
@@ -557,24 +559,28 @@ def collect_bugs(
                 )
                 continue
 
-    with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        future_to_collector: Dict[Future, PatchCollector] = {}
-        for patch_collector, _ in patch_collectors:
-            future_to_collector[
-                executor.submit(patch_collector.set_default_github_actions)
-            ] = patch_collector
+    # Only collect default GitHub actions if specified
+    if use_default_actions:
+        with ThreadPoolExecutor(max_workers=n_workers) as executor:
+            future_to_collector: Dict[Future, PatchCollector] = {}
+            for patch_collector, _ in patch_collectors:
+                future_to_collector[
+                    executor.submit(patch_collector.set_default_github_actions)
+                ] = patch_collector
 
-        for future in tqdm.tqdm(
-            as_completed(future_to_collector), total=len(future_to_collector)
-        ):
-            try:
-                patch_collector = future_to_collector[future]
-                future.result()
-            except Exception:
-                logging.error(
-                    f"Error while setting default github actions from {patch_collector.repo}: {traceback.format_exc()}"
-                )
-                continue
+            for future in tqdm.tqdm(
+                as_completed(future_to_collector), total=len(future_to_collector)
+            ):
+                try:
+                    patch_collector = future_to_collector[future]
+                    future.result()
+                except Exception:
+                    logging.error(
+                        f"Error while setting default github actions from {patch_collector.repo}: {traceback.format_exc()}"
+                    )
+                    continue
+    else:
+        logging.info("Skipping collection of default GitHub actions as requested")
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
         future_to_patches: Dict[Future, Tuple[BugPatch]] = {}
