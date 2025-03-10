@@ -86,7 +86,11 @@ class TestExecutor:
         )
 
     def run_tests(
-        self, keep_containers: bool = False, offline: bool = False, timeout: int = 10
+        self,
+        keep_containers: bool = False,
+        offline: bool = False,
+        timeout: int = 10,
+        github_api=None,
     ) -> List[ActTestsRun]:
         act_runs: List[ActTestsRun] = []
         default_actions = False
@@ -98,6 +102,7 @@ class TestExecutor:
             runner_image=self.runner_image,
             offline=offline,
             base_image=self.base_image,
+            github_api=github_api,
         )
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
             default_actions = True

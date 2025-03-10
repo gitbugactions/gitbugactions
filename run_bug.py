@@ -14,6 +14,7 @@ from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.docker.client import DockerClient
 from gitbugactions.docker.export import create_diff_image
 from gitbugactions.test_executor import TestExecutor
+from gitbugactions.github_api import GithubAPI
 
 
 def get_bug_from_metadata(metadata_path, repo_name, commit):
@@ -44,7 +45,7 @@ def get_default_actions(diff_folder_path, repo_clone, language) -> GitHubActions
 
     workflows = [GitHubWorkflowFactory.create_workflow(new_workflow_path, language)]
 
-    default_actions = GitHubActions(repo_clone.workdir, language)
+    default_actions = GitHubActions(repo_clone.workdir, language, github_api=None)
     default_actions.test_workflows = workflows
     os.remove(new_workflow_path)
 

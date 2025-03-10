@@ -15,9 +15,8 @@ class BaseCollectReposTest:
 
     @classmethod
     def teardown_class(cls):
-        # if os.path.exists(cls.temp_folder):
-        #     shutil.rmtree(cls.temp_folder)
-        assert not os.path.exists(cls.temp_folder)
+        if os.path.exists(cls.temp_folder):
+            shutil.rmtree(cls.temp_folder)
 
 
 class TestCollectReposInfra(BaseCollectReposTest):
@@ -143,27 +142,6 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-ts-npm-jest-test-repo.json",
-            "gitbugactions-gitbugactions-dotnet-test-repo.json",
-        )
-
-        assert os.path.exists(data_file)
-        with open(data_file, "r") as f:
-            data = json.load(f)
-            assert "number_of_test_actions" in data
-            assert data["number_of_test_actions"] == 1
-            assert "actions_successful" in data
-            assert data["actions_successful"]
-            assert data["number_of_actions"] == 1
-
-    def test_collect_repos_dotnet(self):
-        api = GithubAPI()
-        repo = api.get_repo("gitbugactions/gitbugactions-dotnet-test-repo")
-
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
-        data_file = os.path.join(
-            self.temp_folder,
-            "gitbugactions-gitbugactions-ts-npm-jest-test-repo.json",
-            "gitbugactions-gitbugactions-dotnet-test-repo.json",
         )
 
         assert os.path.exists(data_file)
@@ -196,3 +174,25 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 5
+
+
+class TestCollectReposCSharp(BaseCollectReposTest):
+
+    def test_collect_repos_dotnet(self):
+        api = GithubAPI()
+        repo = api.get_repo("gitbugactions/gitbugactions-dotnet-test-repo")
+
+        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        data_file = os.path.join(
+            self.temp_folder,
+            "gitbugactions-gitbugactions-dotnet-test-repo.json",
+        )
+
+        assert os.path.exists(data_file)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+            assert "number_of_test_actions" in data
+            assert data["number_of_test_actions"] == 1
+            assert "actions_successful" in data
+            assert data["actions_successful"]
+            assert data["number_of_actions"] == 1

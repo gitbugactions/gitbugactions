@@ -21,6 +21,7 @@ from gitbugactions.actions.actions import (
 from gitbugactions.crawler import RepoCrawler, RepoStrategy
 from gitbugactions.infra.infra_checkers import is_infra_file
 from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
+from gitbugactions.github_api import GithubAPI
 
 
 class CollectReposStrategy(RepoStrategy):
@@ -66,7 +67,7 @@ class CollectReposStrategy(RepoStrategy):
         try:
             data["clone_success"] = True
 
-            actions = GitHubActions(repo_path, repo.language)
+            actions = GitHubActions(repo_path, repo.language, github_api=None)
             data["number_of_actions"] = len(actions.workflows)
             data["actions_build_tools"] = [
                 x.get_build_tool() for x in actions.workflows
@@ -112,7 +113,7 @@ class CollectInfraReposStrategy(CollectReposStrategy):
         super().__init__(data_path)
 
     def test_actions(self, data: dict, repo: Repository, repo_path: str):
-        actions = GitHubActions(repo_path, repo.language)
+        actions = GitHubActions(repo_path, repo.language, github_api=None)
         data["number_of_actions"] = len(actions.workflows)
         data["actions_build_tools"] = [x.get_build_tool() for x in actions.workflows]
         data["number_of_test_actions"] = len(actions.test_workflows)

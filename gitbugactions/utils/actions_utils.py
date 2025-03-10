@@ -10,6 +10,7 @@ import yaml
 
 from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
 from gitbugactions.test_executor import TestExecutor
+from gitbugactions.github_api import GithubAPI
 
 
 def get_default_github_actions(
@@ -39,7 +40,7 @@ def get_default_github_actions(
                 capture_output=True,
             )
             try:
-                actions = GitHubActions(repo_clone.workdir, language)
+                actions = GitHubActions(repo_clone.workdir, language, github_api=None)
                 if len(actions.test_workflows) == 1:
                     executor = TestExecutor(
                         repo_clone, language, act_cache_dir, actions
