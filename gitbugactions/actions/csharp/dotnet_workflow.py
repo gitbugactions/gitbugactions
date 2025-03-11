@@ -73,9 +73,19 @@ class DotNetWorkflow(GitHubWorkflow):
                                         len(self.source_dirs) == 1
                                         and len(self.test_dirs) == 1
                                     ):
-                                        source_dir = list(self.source_dirs)[0]
+                                        test_dir = list(self.test_dirs)[0]
+                                        # Modify the original command to include the logger option
+                                        # but don't change directory
+                                        original_command = step["run"]
+
+                                        # Create a multi-step command that:
+                                        # 1. Adds the JUnitXml.TestLogger package to the test project
+                                        # 2. Builds the project to ensure the package is properly integrated
+                                        # 3. Runs the original test command with the logger option
                                         step["run"] = (
-                                            f'cd {source_dir} && dotnet add package JUnitXml.TestLogger --version 5.0.0 && {step["run"]} --logger:"junit;LogFilePath=./TestResults/test-results.xml"'
+                                            f"cd {test_dir} && dotnet add package JUnitXml.TestLogger --version 5.0.0 && "
+                                            f"dotnet build && cd .. && {original_command} "
+                                            f'--logger:"junit;LogFilePath=TestResults/test-results.xml"'
                                         )
                                     elif (
                                         len(self.source_dirs) == 0
@@ -103,6 +113,14 @@ class DotNetWorkflow(GitHubWorkflow):
 
     def get_test_results(self, repo_path) -> List[TestCase]:
         parser = JUnitXMLParser()
+
+        # If we have identified test directories, look for test results there
+        if self.test_dirs and len(self.test_dirs) == 1:
+            test_dir = list(self.test_dirs)[0]
+            results_path = str(Path(repo_path, test_dir, "TestResults"))
+            return parser.get_test_results(results_path)
+
+        # Fallback to the original behavior if test directories are not identified
         return parser.get_test_results(str(Path(repo_path, "TestResults")))
 
     def get_build_tool(self) -> str:

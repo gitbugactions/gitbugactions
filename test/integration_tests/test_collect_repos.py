@@ -16,7 +16,8 @@ class BaseCollectReposTest:
     @classmethod
     def teardown_class(cls):
         if os.path.exists(cls.temp_folder):
-            shutil.rmtree(cls.temp_folder)
+            # shutil.rmtree(cls.temp_folder)
+            pass
 
 
 class TestCollectReposInfra(BaseCollectReposTest):
@@ -76,6 +77,8 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 1
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
 
     def test_collect_repos_npm_mocha(self):
         api = GithubAPI()
@@ -95,6 +98,8 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 1
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
 
     def test_collect_repos_npm_vitest(self):
         api = GithubAPI()
@@ -114,6 +119,8 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 1
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
 
     def test_collect_repos_rust(self):
         api = GithubAPI()
@@ -133,6 +140,8 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 1
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
 
     def test_collect_repos_typescript_jest(self):
         api = GithubAPI()
@@ -152,6 +161,8 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 1
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
 
     @pytest.mark.skip(
         reason="Skipped due to long runtime and possible changes in repo."
@@ -174,6 +185,8 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 5
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
 
 
 class TestCollectReposCSharp(BaseCollectReposTest):
@@ -196,3 +209,5 @@ class TestCollectReposCSharp(BaseCollectReposTest):
             assert "actions_successful" in data
             assert data["actions_successful"]
             assert data["number_of_actions"] == 1
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
