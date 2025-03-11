@@ -385,7 +385,6 @@ class GitHubActions:
         runner_image: str = "gitbugactions:latest",
         offline: bool = False,
         base_image: str | None = None,
-        github_api=None,
     ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
@@ -395,7 +394,6 @@ class GitHubActions:
         self.runner_image = runner_image
         self.offline = offline
         self.base_image = base_image
-        self.github_api = github_api
 
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for dirpath, dirnames, filenames in os.walk(workflows_path):
@@ -422,11 +420,12 @@ class GitHubActions:
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
 
-                # Pass GitHub API to instrument_test_steps if method accepts it
+                # Instrument test steps if the workflow has a get_project_structure method
+                # HACK: This is used to instrument .NET test steps
                 if hasattr(workflow, "instrument_test_steps"):
-                    if self.github_api and hasattr(workflow, "get_project_structure"):
+                    if hasattr(workflow, "get_project_structure"):
                         try:
-                            workflow.instrument_test_steps(self.github_api)
+                            workflow.instrument_test_steps(self.repo_path)
                         except TypeError:
                             # Fallback if method doesn't accept github_api parameter
                             workflow.instrument_test_steps()

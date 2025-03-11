@@ -1,24 +1,26 @@
 import os
 import re
 import xml.etree.ElementTree as ET
-import base64
-from typing import List, Optional, Set, Tuple
+from typing import List, Set, Tuple
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class DotNetProjectAnalyzer:
     """
-    Helper class for analyzing .NET project structures without cloning the repository.
-    Uses GitHub API to examine .csproj files and determine project structure.
+    Helper class for analyzing .NET project structures using the local file system.
+    Examines .csproj files and determines project structure.
     """
 
-    def __init__(self, github_api):
+    def __init__(self, repo_path: str):
         """
-        Initialize with a GitHub API instance.
+        Initialize with a repository path.
 
         Args:
-            github_api: Instance of GithubAPI class
+            repo_path: Path to the repository root
         """
-        self.github_api = github_api
+        self.repo_path = repo_path
         self.test_framework_patterns = [
             "xunit",
             "nunit",
@@ -35,348 +37,294 @@ class DotNetProjectAnalyzer:
             content: The XML content of a .csproj file
 
         Returns:
-            bool: True if it's a test project, False otherwise
+            bool: True if the project is a test project, False otherwise
         """
         try:
-            # Parse XML content
-            root = ET.fromstring(content)
+            # Check for test framework references
+            for pattern in self.test_framework_patterns:
+                if pattern.lower() in content.lower():
+                    return True
 
-            # Look for test framework references
-            for elem in root.iter():
-                # Check for PackageReference with test frameworks
-                if elem.tag.endswith("PackageReference"):
-                    include_attr = elem.get("Include", "").lower()
-                    if any(
-                        framework in include_attr
-                        for framework in self.test_framework_patterns
-                    ):
-                        return True
+            # Check for IsTestProject property
+            if "<IsTestProject>true</IsTestProject>" in content:
+                return True
 
-                # Check for explicit IsTestProject property
-                if elem.tag.endswith("IsTestProject"):
-                    if elem.text and elem.text.strip().lower() == "true":
-                        return True
+            # Try to parse XML for more detailed analysis
+            try:
+                root = ET.fromstring(content)
+                # Check for test SDK PackageReference
+                for item_group in root.findall(".//ItemGroup"):
+                    for ref in item_group.findall(".//PackageReference"):
+                        include = ref.get("Include", "")
+                        if any(
+                            pattern.lower() in include.lower()
+                            for pattern in self.test_framework_patterns
+                        ):
+                            return True
+            except ET.ParseError:
+                # If XML parsing fails, rely on the string checks above
+                pass
 
             return False
         except Exception as e:
-            print(f"Error parsing project file: {e}")
+            logger.warning(f"Error analyzing project file: {e}")
             return False
 
     def has_test_file_naming_pattern(self, files: List[str]) -> bool:
         """
-        Checks if any files in the directory follow test naming conventions.
+        Check if any files in the directory follow test naming patterns.
 
         Args:
-            files: List of file names in a directory
+            files: List of file names
 
         Returns:
-            bool: True if test files are found, False otherwise
+            bool: True if any file matches test naming patterns
         """
-        test_patterns = [r"test\.cs$", r"tests\.cs$", r"test_", r"tests_"]
+        test_patterns = [
+            r".*test.*\.cs$",
+            r".*spec.*\.cs$",
+            r".*fixture.*\.cs$",
+        ]
+
         for file in files:
-            if any(re.search(pattern, file.lower()) for pattern in test_patterns):
+            file_lower = file.lower()
+            if any(re.match(pattern, file_lower) for pattern in test_patterns):
                 return True
         return False
 
-    def analyze_repository(
-        self, repo_name: str, max_files: int = 100
-    ) -> Tuple[Set[str], Set[str]]:
+    def analyze_repository(self, max_files: int = 1000) -> Tuple[Set[str], Set[str]]:
         """
-        Analyzes a GitHub repository to identify source and test directories.
-        Uses multiple strategies to efficiently identify project structure.
+        Analyze the repository structure to identify source and test directories.
 
         Args:
-            repo_name: The repository name in format "owner/repo"
-            max_files: Maximum number of files to analyze to prevent rate limiting
+            max_files: Maximum number of files to analyze
 
         Returns:
             Tuple[Set[str], Set[str]]: Sets of source and test directory paths
         """
-        repo = self.github_api.get_repo(repo_name)
         source_dirs = set()
         test_dirs = set()
 
-        # Strategy 1: Check for solution files first as they're usually at the root
-        sln_files = self._find_solution_files(repo)
-        if sln_files:
-            # If we have solution files, analyze them first to get project references
-            sln_projects = self._analyze_solution_files(repo, sln_files)
-            if sln_projects:
-                for project_path in sln_projects[
-                    :max_files
-                ]:  # Limit to avoid rate limiting
-                    try:
-                        content = self._get_file_content(repo, project_path)
-                        if not content:
-                            continue
+        try:
+            # First, look for solution files
+            sln_files = self._find_solution_files()
+            if sln_files:
+                # If solution files exist, analyze them to find project references
+                project_files = self._analyze_solution_files(sln_files)
+                if project_files:
+                    # Process the project files found in solutions
+                    for proj_file in project_files:
+                        self._process_project_file(proj_file, source_dirs, test_dirs)
 
-                        directory = os.path.dirname(project_path)
+            # If no projects were found through solutions, search for .csproj files directly
+            if not source_dirs and not test_dirs:
+                csproj_files = self._find_csproj_files()
+                for proj_file in csproj_files[:max_files]:
+                    self._process_project_file(proj_file, source_dirs, test_dirs)
 
+            # If still no directories found, use reasonable defaults
+            if not source_dirs and not test_dirs:
+                # Look for directories with common naming patterns
+                for root, dirs, _ in os.walk(self.repo_path):
+                    for dir_name in dirs:
+                        rel_path = os.path.relpath(
+                            os.path.join(root, dir_name), self.repo_path
+                        )
+                        if any(
+                            test_indicator in rel_path.lower()
+                            for test_indicator in ["test", "tests"]
+                        ):
+                            test_dirs.add(rel_path)
+                        elif any(
+                            src_indicator in rel_path.lower()
+                            for src_indicator in ["src", "source"]
+                        ):
+                            source_dirs.add(rel_path)
+
+            # If still nothing found, use the repository root
+            if not source_dirs:
+                source_dirs.add(".")
+            if not test_dirs:
+                test_dirs.add(
+                    "tests"
+                    if os.path.exists(os.path.join(self.repo_path, "tests"))
+                    else "."
+                )
+
+            return source_dirs, test_dirs
+
+        except Exception as e:
+            logger.error(f"Error analyzing repository structure: {e}")
+            # Return reasonable defaults on error
+            return {"src", "."}, {"test", "tests"}
+
+    def _process_project_file(
+        self, proj_file: str, source_dirs: Set[str], test_dirs: Set[str]
+    ):
+        """
+        Process a project file to determine if it's a source or test project.
+
+        Args:
+            proj_file: Path to the project file
+            source_dirs: Set to add source directories to
+            test_dirs: Set to add test directories to
+        """
+        try:
+            # Get the directory containing the project file
+            proj_dir = os.path.dirname(proj_file)
+            rel_path = os.path.relpath(proj_dir, self.repo_path)
+            rel_path = "." if rel_path == "" else rel_path
+
+            # Check if it's a test project
+            is_test = False
+
+            # Check file name for test indicators
+            if any(
+                test_indicator in os.path.basename(proj_file).lower()
+                for test_indicator in ["test", "tests"]
+            ):
+                is_test = True
+            # Check directory name for test indicators
+            elif any(
+                test_indicator in rel_path.lower()
+                for test_indicator in ["test", "tests"]
+            ):
+                is_test = True
+            else:
+                # Read the project file content
+                try:
+                    with open(proj_file, "r", encoding="utf-8") as f:
+                        content = f.read()
                         if self.is_test_project_file(content):
-                            test_dirs.add(directory)
-                        else:
-                            # Check directory files for test naming patterns
-                            dir_files = self._list_directory_files(repo, directory)
-                            if self.has_test_file_naming_pattern(dir_files):
-                                test_dirs.add(directory)
-                            else:
-                                source_dirs.add(directory)
-                    except Exception as e:
-                        print(f"Error analyzing project file {project_path}: {e}")
+                            is_test = True
+                except Exception as e:
+                    logger.debug(f"Could not read {proj_file}: {e}")
 
-                # If we found both source and test dirs from solution analysis, return results
-                if source_dirs and test_dirs:
-                    return source_dirs, test_dirs
+                    # If we can't read the file, check if there are test files in the directory
+                    if not is_test:
+                        try:
+                            files = os.listdir(proj_dir)
+                            if self.has_test_file_naming_pattern(files):
+                                is_test = True
+                        except Exception as e:
+                            logger.debug(f"Could not list files in {proj_dir}: {e}")
 
-        # Strategy 2: Find all .csproj files if solutions didn't provide enough information
-        csproj_files = self._find_csproj_files(repo)
+            # Add to appropriate set
+            if is_test:
+                test_dirs.add(rel_path)
+            else:
+                source_dirs.add(rel_path)
 
-        # Prioritize csproj files with likely test references first to minimize API calls
-        prioritized_files = []
-        for file_path in csproj_files:
-            priority = 0
-            if "test" in file_path.lower():
-                priority += 2
-            if "src" in file_path.lower():
-                priority -= 1
-            prioritized_files.append((priority, file_path))
+        except Exception as e:
+            logger.debug(f"Error processing project file {proj_file}: {e}")
 
-        # Sort by priority (higher first)
-        prioritized_files.sort(reverse=True)
-
-        # Process prioritized files up to the max_files limit
-        for _, file_path in prioritized_files[:max_files]:
-            if file_path in sln_projects:  # Skip if already analyzed via solution
-                continue
-
-            try:
-                # Get the content of the .csproj file
-                content = self._get_file_content(repo, file_path)
-                if not content:
-                    continue
-
-                directory = os.path.dirname(file_path)
-
-                # Check if it's a test project
-                if self.is_test_project_file(content):
-                    test_dirs.add(directory)
-                else:
-                    # Check directory files for test naming patterns
-                    dir_files = self._list_directory_files(repo, directory)
-                    if self.has_test_file_naming_pattern(dir_files):
-                        test_dirs.add(directory)
-                    else:
-                        source_dirs.add(directory)
-            except Exception as e:
-                print(f"Error analyzing file {file_path}: {e}")
-
-        # Strategy 3: If we still don't have enough information, analyze workflow files
-        if not test_dirs:
-            workflow_test_dirs = self.analyze_workflow_files(repo_name)
-            test_dirs.update(workflow_test_dirs)
-
-        # Strategy 4: Use conventional directory names as fallback
-        if not source_dirs and not test_dirs:
-            conventional_src_dirs = {"src", "source", "lib", "common", "main"}
-            conventional_test_dirs = {"test", "tests", "unittest", "unittests"}
-
-            try:
-                root_contents = repo.get_contents("")
-                for content in root_contents:
-                    if content.type == "dir":
-                        if content.name.lower() in conventional_src_dirs:
-                            source_dirs.add(content.path)
-                        elif content.name.lower() in conventional_test_dirs:
-                            test_dirs.add(content.path)
-            except Exception as e:
-                print(f"Error analyzing root directories: {e}")
-
-        # Remove test directories from source directories (in case of overlap)
-        source_dirs = source_dirs - test_dirs
-
-        return source_dirs, test_dirs
-
-    def _analyze_solution_files(self, repo, sln_files: List[str]) -> List[str]:
+    def _analyze_solution_files(self, sln_files: List[str]) -> List[str]:
         """
-        Analyzes .sln files to extract project references.
+        Analyze solution files to find project references.
 
         Args:
-            repo: The GitHub repository object
-            sln_files: List of .sln file paths
+            sln_files: List of solution file paths
 
         Returns:
-            List[str]: List of project file paths referenced in the solution
+            List[str]: List of project file paths
         """
-        project_paths = []
+        project_files = []
 
-        for sln_path in sln_files:
+        for sln_file in sln_files:
             try:
-                content = self._get_file_content(repo, sln_path)
-                if not content:
-                    continue
+                with open(sln_file, "r", encoding="utf-8", errors="ignore") as f:
+                    content = f.read()
 
-                # Extract project references using regex (simplified)
-                # Pattern matches: Project("{GUID}") = "ProjectName", "Path\To\Project.csproj", "{GUID}"
-                pattern = r'Project\([^)]+\)\s*=\s*"[^"]+",\s*"([^"]+)",\s*"[^"]+"'
-                matches = re.findall(pattern, content)
+                    # Extract project references using regex
+                    # Format: Project("{GUID}") = "ProjectName", "ProjectPath", "{ProjectGUID}"
+                    project_matches = re.findall(
+                        r'Project\("\{[^}]+\}"\)\s*=\s*"[^"]+",\s*"([^"]+)"', content
+                    )
 
-                for match in matches:
-                    if match.endswith(".csproj"):
-                        # Convert Windows paths to Unix paths
-                        match = match.replace("\\", "/")
-                        # Make path absolute relative to solution directory
-                        sln_dir = os.path.dirname(sln_path)
-                        if sln_dir:
-                            project_path = os.path.normpath(
-                                os.path.join(sln_dir, match)
+                    for proj_path in project_matches:
+                        if proj_path.endswith(".csproj"):
+                            # Convert relative path to absolute
+                            sln_dir = os.path.dirname(sln_file)
+                            abs_proj_path = os.path.normpath(
+                                os.path.join(sln_dir, proj_path)
                             )
-                        else:
-                            project_path = match
 
-                        project_paths.append(project_path)
+                            if os.path.exists(abs_proj_path):
+                                project_files.append(abs_proj_path)
             except Exception as e:
-                print(f"Error parsing solution file {sln_path}: {e}")
+                logger.debug(f"Error analyzing solution file {sln_file}: {e}")
 
-        return project_paths
+        return project_files
 
-    def _find_csproj_files(self, repo) -> List[str]:
+    def _find_csproj_files(self) -> List[str]:
         """
-        Finds all .csproj files in a repository using the GitHub API.
-
-        Args:
-            repo: The GitHub repository object
+        Find all .csproj files in the repository.
 
         Returns:
-            List[str]: List of file paths to .csproj files
+            List[str]: List of .csproj file paths
         """
-        result = []
-        try:
-            contents = repo.get_contents("")
-            while contents:
-                file_content = contents.pop(0)
-                if file_content.type == "dir":
-                    contents.extend(repo.get_contents(file_content.path))
-                elif file_content.name.endswith(".csproj"):
-                    result.append(file_content.path)
-        except Exception as e:
-            print(f"Error finding .csproj files: {e}")
+        csproj_files = []
 
-        return result
+        for root, _, files in os.walk(self.repo_path):
+            for file in files:
+                if file.endswith(".csproj"):
+                    csproj_files.append(os.path.join(root, file))
 
-    def _find_solution_files(self, repo) -> List[str]:
+        return csproj_files
+
+    def _find_solution_files(self) -> List[str]:
         """
-        Finds all .sln (solution) files in a repository using the GitHub API.
-
-        Args:
-            repo: The GitHub repository object
+        Find all .sln files in the repository.
 
         Returns:
-            List[str]: List of file paths to .sln files
+            List[str]: List of .sln file paths
         """
-        result = []
-        try:
-            contents = repo.get_contents("")
-            while contents:
-                file_content = contents.pop(0)
-                if file_content.type == "dir":
-                    contents.extend(repo.get_contents(file_content.path))
-                elif file_content.name.endswith(".sln"):
-                    result.append(file_content.path)
-        except Exception as e:
-            print(f"Error finding .sln files: {e}")
+        sln_files = []
 
-        return result
+        for root, _, files in os.walk(self.repo_path):
+            for file in files:
+                if file.endswith(".sln"):
+                    sln_files.append(os.path.join(root, file))
 
-    def _get_file_content(self, repo, file_path: str) -> Optional[str]:
+        return sln_files
+
+    def analyze_workflow_files(self) -> Set[str]:
         """
-        Gets the content of a file from GitHub.
-
-        Args:
-            repo: The GitHub repository object
-            file_path: Path to the file
+        Analyze workflow files to identify build commands.
 
         Returns:
-            Optional[str]: The file content as string, or None if not found
+            Set[str]: Set of build commands
         """
-        try:
-            file_content = repo.get_contents(file_path)
-            if hasattr(file_content, "content"):
-                return base64.b64decode(file_content.content).decode("utf-8")
-            return None
-        except Exception as e:
-            print(f"Error getting file content for {file_path}: {e}")
-            return None
+        build_commands = set()
+        workflow_dir = os.path.join(self.repo_path, ".github", "workflows")
 
-    def _list_directory_files(self, repo, directory: str) -> List[str]:
-        """
-        Lists all files in a directory.
-
-        Args:
-            repo: The GitHub repository object
-            directory: Path to the directory
-
-        Returns:
-            List[str]: List of file names in the directory
-        """
-        try:
-            contents = repo.get_contents(directory)
-            return [content.name for content in contents if content.type == "file"]
-        except Exception as e:
-            print(f"Error listing directory {directory}: {e}")
-            return []
-
-    def analyze_workflow_files(self, repo_name: str) -> Set[str]:
-        """
-        Analyzes GitHub workflow files to identify dotnet test commands.
-
-        Args:
-            repo_name: The repository name in format "owner/repo"
-
-        Returns:
-            Set[str]: Set of directories referenced in dotnet test commands
-        """
-        import yaml
-
-        repo = self.github_api.get_repo(repo_name)
-        test_dirs = set()
+        if not os.path.exists(workflow_dir):
+            return build_commands
 
         try:
-            # Get workflow files from .github/workflows directory
-            workflow_dir = ".github/workflows"
-            workflow_contents = repo.get_contents(workflow_dir)
-
-            for content in workflow_contents:
-                if content.name.endswith((".yml", ".yaml")):
+            for file in os.listdir(workflow_dir):
+                if file.endswith((".yml", ".yaml")):
+                    file_path = os.path.join(workflow_dir, file)
                     try:
-                        yaml_content = self._get_file_content(repo, content.path)
-                        if not yaml_content:
-                            continue
+                        with open(file_path, "r", encoding="utf-8") as f:
+                            content = f.read()
 
-                        workflow = yaml.safe_load(yaml_content)
-                        if "jobs" not in workflow:
-                            continue
+                            # Look for dotnet build commands
+                            build_patterns = [
+                                r"dotnet\s+build",
+                                r"dotnet\s+test",
+                                r"dotnet\s+run",
+                                r"dotnet\s+publish",
+                                r"msbuild",
+                                r"vstest",
+                            ]
 
-                        # Extract test directories from dotnet test commands
-                        for _, job in workflow["jobs"].items():
-                            if "steps" not in job:
-                                continue
-
-                            for step in job["steps"]:
-                                if "run" not in step:
-                                    continue
-
-                                command = step["run"]
-                                if "dotnet test" in command:
-                                    # Try to extract directory from command
-                                    matches = re.findall(
-                                        r"dotnet test\s+([^\s]+)", command
-                                    )
-                                    for match in matches:
-                                        if match and not match.startswith("-"):
-                                            test_dirs.add(match)
+                            for pattern in build_patterns:
+                                if re.search(pattern, content, re.IGNORECASE):
+                                    build_commands.add(pattern.split("\\s+")[0])
                     except Exception as e:
-                        print(f"Error parsing workflow file {content.path}: {e}")
+                        logger.debug(f"Error reading workflow file {file_path}: {e}")
         except Exception as e:
-            print(f"Error accessing workflow files: {e}")
+            logger.debug(f"Error analyzing workflow files: {e}")
 
-        return test_dirs
+        return build_commands

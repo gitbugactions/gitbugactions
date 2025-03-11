@@ -3,10 +3,13 @@ from junitparser import TestCase
 from pathlib import Path
 import re
 import logging
+import os
 
 from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
-from gitbugactions.actions.csharp.helpers import DotNetProjectAnalyzer
+from gitbugactions.actions.csharp.helpers.dotnet_project_analyzer import (
+    DotNetProjectAnalyzer,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -38,12 +41,12 @@ class DotNetWorkflow(GitHubWorkflow):
                 return True
         return False
 
-    def instrument_test_steps(self, github_api=None):
+    def instrument_test_steps(self, repo_clone: Optional[str] = None):
         """
         Instrument the test steps to capture test results.
 
         Args:
-            github_api: Optional GitHub API instance, used for determining project structure
+            repo_clone: Optional path to the repository clone, used for determining project structure
         """
         # Add reporting options to the test command
         if "jobs" in self.doc:
@@ -53,12 +56,12 @@ class DotNetWorkflow(GitHubWorkflow):
                         if "run" in step and self._is_test_command(step["run"]):
                             # If we have access to GitHub API, try to analyze project structure first
                             if (
-                                github_api
+                                repo_clone
                                 and not self.source_dirs
                                 and not self.test_dirs
                             ):
                                 try:
-                                    self.get_project_structure(github_api)
+                                    self.get_project_structure(repo_clone)
                                     logger.info(
                                         f"Detected source directories: {self.source_dirs}"
                                     )
@@ -66,14 +69,13 @@ class DotNetWorkflow(GitHubWorkflow):
                                         f"Detected test directories: {self.test_dirs}"
                                     )
 
-                                    print(self.source_dirs)
-                                    print(self.test_dirs)
                                     if (
                                         len(self.source_dirs) == 1
                                         and len(self.test_dirs) == 1
                                     ):
+                                        source_dir = list(self.source_dirs)[0]
                                         step["run"] = (
-                                            f'cd {self.source_dirs} && dotnet add package JUnitXml.TestLogger --version 5.0.0 && {step["run"]} --logger:"junit;LogFilePath=./TestResults/test-results.xml"'
+                                            f'cd {source_dir} && dotnet add package JUnitXml.TestLogger --version 5.0.0 && {step["run"]} --logger:"junit;LogFilePath=./TestResults/test-results.xml"'
                                         )
                                     elif (
                                         len(self.source_dirs) == 0
@@ -93,7 +95,7 @@ class DotNetWorkflow(GitHubWorkflow):
                                     )
                             else:
                                 logger.warning(
-                                    "No GitHub API available, cannot instrument test steps"
+                                    "No repo clone provided, cannot instrument .NET test steps"
                                 )
 
     def instrument_offline_execution(self):
@@ -106,12 +108,12 @@ class DotNetWorkflow(GitHubWorkflow):
     def get_build_tool(self) -> str:
         return "dotnet"
 
-    def get_project_structure(self, github_api) -> Tuple[Set[str], Set[str]]:
+    def get_project_structure(self, repo_path) -> Tuple[Set[str], Set[str]]:
         """
-        Analyze repository structure to identify source and test directories without cloning.
+        Analyze repository structure to identify source and test directories.
 
         Args:
-            github_api: Instance of GithubAPI
+            repo_path: Path to the repository root
 
         Returns:
             Tuple[Set[str], Set[str]]: Sets of source and test directory paths
@@ -122,52 +124,44 @@ class DotNetWorkflow(GitHubWorkflow):
         try:
             # Create analyzer if not exists
             if self.analyzer is None:
-                self.analyzer = DotNetProjectAnalyzer(github_api)
+                self.analyzer = DotNetProjectAnalyzer(repo_path)
 
             # Analyze repository structure
-            repo_name = self.path  # path should already be in format "owner/repo"
-            self.source_dirs, self.test_dirs = self.analyzer.analyze_repository(
-                repo_name
-            )
+            self.source_dirs, self.test_dirs = self.analyzer.analyze_repository()
 
             logger.info(f"Identified source directories: {self.source_dirs}")
             logger.info(f"Identified test directories: {self.test_dirs}")
-
-            # Handle edge cases where analysis didn't yield results
-            if not self.source_dirs and not self.test_dirs:
-                # If we couldn't find any directories, use reasonable defaults
-                self.source_dirs = {"src", "."}
-                self.test_dirs = {"test", "tests"}
-                logger.warning("Using default source and test directories")
 
             return self.source_dirs, self.test_dirs
         except Exception as e:
             logger.error(f"Error analyzing .NET project structure: {e}")
             # Return reasonable defaults on error
-            return {"src", "."}, {"test", "tests"}
+            self.source_dirs = {"src", "."}
+            self.test_dirs = {"test", "tests"}
+            return self.source_dirs, self.test_dirs
 
-    def get_source_directories(self, github_api) -> Set[str]:
+    def get_source_directories(self, repo_path) -> Set[str]:
         """
         Get source code directories from the repository.
 
         Args:
-            github_api: Instance of GithubAPI
+            repo_path: Path to the repository root
 
         Returns:
             Set[str]: Set of source directory paths
         """
-        source_dirs, _ = self.get_project_structure(github_api)
+        source_dirs, _ = self.get_project_structure(repo_path)
         return source_dirs
 
-    def get_test_directories(self, github_api) -> Set[str]:
+    def get_test_directories(self, repo_path) -> Set[str]:
         """
         Get test directories from the repository.
 
         Args:
-            github_api: Instance of GithubAPI
+            repo_path: Path to the repository root
 
         Returns:
             Set[str]: Set of test directory paths
         """
-        _, test_dirs = self.get_project_structure(github_api)
+        _, test_dirs = self.get_project_structure(repo_path)
         return test_dirs

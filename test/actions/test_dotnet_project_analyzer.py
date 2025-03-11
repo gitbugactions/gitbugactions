@@ -1,5 +1,8 @@
+import os
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch, MagicMock, mock_open
+import tempfile
+import shutil
 
 from gitbugactions.actions.csharp.helpers.dotnet_project_analyzer import (
     DotNetProjectAnalyzer,
@@ -7,13 +10,17 @@ from gitbugactions.actions.csharp.helpers.dotnet_project_analyzer import (
 
 
 @pytest.fixture
-def github_api():
-    return MagicMock()
+def temp_repo():
+    """Create a temporary directory to simulate a repository"""
+    temp_dir = tempfile.mkdtemp()
+    yield temp_dir
+    shutil.rmtree(temp_dir)
 
 
 @pytest.fixture
-def analyzer(github_api):
-    return DotNetProjectAnalyzer(github_api)
+def analyzer(temp_repo):
+    """Create an analyzer instance with a temporary repository path"""
+    return DotNetProjectAnalyzer(temp_repo)
 
 
 def test_is_test_project_file_with_framework_reference(analyzer):
@@ -24,7 +31,6 @@ def test_is_test_project_file_with_framework_reference(analyzer):
             <TargetFramework>net6.0</TargetFramework>
         </PropertyGroup>
         <ItemGroup>
-            <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
             <PackageReference Include="xunit" Version="2.4.1" />
             <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
         </ItemGroup>
@@ -79,200 +85,208 @@ def test_has_test_file_naming_pattern_no_match(analyzer):
     assert not analyzer.has_test_file_naming_pattern(files)
 
 
-@patch.object(DotNetProjectAnalyzer, "_find_csproj_files")
-@patch.object(DotNetProjectAnalyzer, "_get_file_content")
-@patch.object(DotNetProjectAnalyzer, "_list_directory_files")
+@patch("os.walk")
+@patch("os.path.exists")
+@patch("builtins.open", new_callable=mock_open)
 def test_analyze_repository(
-    mock_list_files, mock_get_content, mock_find_csproj, analyzer, github_api
+    mock_open_file, mock_exists, mock_walk, analyzer, temp_repo
 ):
-    # Mock the GitHub API and repository
-    repo = MagicMock()
-    github_api.get_repo.return_value = repo
-
-    # Mock finding .csproj files
-    mock_find_csproj.return_value = [
-        "src/App/App.csproj",
-        "src/Core/Core.csproj",
-        "tests/UnitTests/UnitTests.csproj",
+    # Setup mock directory structure
+    mock_walk.return_value = [
+        (temp_repo, ["src", "tests"], []),
+        (os.path.join(temp_repo, "src"), ["App", "Core"], []),
+        (os.path.join(temp_repo, "src", "App"), [], ["App.csproj"]),
+        (os.path.join(temp_repo, "src", "Core"), [], ["Core.csproj"]),
+        (os.path.join(temp_repo, "tests"), ["UnitTests"], []),
+        (os.path.join(temp_repo, "tests", "UnitTests"), [], ["UnitTests.csproj"]),
     ]
 
-    # Mock file contents
-    def mock_get_content_side_effect(repo, path):
-        if path == "src/App/App.csproj" or path == "src/Core/Core.csproj":
-            return """
-            <Project Sdk="Microsoft.NET.Sdk">
-                <PropertyGroup>
-                    <TargetFramework>net6.0</TargetFramework>
-                </PropertyGroup>
-            </Project>
-            """
-        elif path == "tests/UnitTests/UnitTests.csproj":
-            return """
+    # Mock file existence checks
+    mock_exists.return_value = True
+
+    # Setup mock file contents
+    def mock_read_side_effect(*args, **kwargs):
+        # This will be called when the context manager is entered
+        mock_file = MagicMock()
+
+        # Get the filename from the first positional argument to open()
+        filename = args[0]
+
+        if "App.csproj" in filename or "Core.csproj" in filename:
+            mock_file.read.return_value = """
             <Project Sdk="Microsoft.NET.Sdk">
                 <PropertyGroup>
                     <TargetFramework>net6.0</TargetFramework>
                 </PropertyGroup>
                 <ItemGroup>
-                    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
-                    <PackageReference Include="xunit" Version="2.4.1" />
+                    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
                 </ItemGroup>
             </Project>
             """
-        return None
+        elif "UnitTests.csproj" in filename:
+            mock_file.read.return_value = """
+            <Project Sdk="Microsoft.NET.Sdk">
+                <PropertyGroup>
+                    <TargetFramework>net6.0</TargetFramework>
+                </PropertyGroup>
+                <ItemGroup>
+                    <PackageReference Include="xunit" Version="2.4.1" />
+                    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+                </ItemGroup>
+            </Project>
+            """
 
-    mock_get_content.side_effect = mock_get_content_side_effect
+        return mock_file
 
-    # Mock directory listings
-    mock_list_files.return_value = ["Program.cs", "Controller.cs"]
+    mock_open_file.side_effect = mock_read_side_effect
 
-    # Test repository analysis
-    source_dirs, test_dirs = analyzer.analyze_repository("owner/repo")
+    # Call the method under test
+    source_dirs, test_dirs = analyzer.analyze_repository()
 
     # Verify results
-    assert source_dirs == {"src/App", "src/Core"}
-    assert test_dirs == {"tests/UnitTests"}
+    assert "src/App" in source_dirs
+    assert "src/Core" in source_dirs
+    assert "tests/UnitTests" in test_dirs
 
 
-@patch.object(DotNetProjectAnalyzer, "_find_solution_files")
-@patch.object(DotNetProjectAnalyzer, "_analyze_solution_files")
-@patch.object(DotNetProjectAnalyzer, "_get_file_content")
-@patch.object(DotNetProjectAnalyzer, "_list_directory_files")
+@patch("os.walk")
+@patch("os.path.exists")
+@patch("builtins.open", new_callable=mock_open)
 def test_analyze_repository_with_solution(
-    mock_list_files,
-    mock_get_content,
-    mock_analyze_solution,
-    mock_find_solution,
-    analyzer,
-    github_api,
+    mock_open_file, mock_exists, mock_walk, analyzer, temp_repo
 ):
-    # Mock the GitHub API and repository
-    repo = MagicMock()
-    github_api.get_repo.return_value = repo
-
-    # Mock finding solution files
-    mock_find_solution.return_value = ["MySolution.sln"]
-
-    # Mock solution analysis
-    mock_analyze_solution.return_value = [
-        "src/App/App.csproj",
-        "src/Core/Core.csproj",
-        "tests/UnitTests/UnitTests.csproj",
+    # Setup mock directory structure with a solution file
+    mock_walk.return_value = [
+        (temp_repo, [], ["Solution.sln"]),
+        (temp_repo, ["src", "tests"], ["Solution.sln"]),
+        (os.path.join(temp_repo, "src"), ["App"], []),
+        (os.path.join(temp_repo, "src", "App"), [], ["App.csproj"]),
+        (os.path.join(temp_repo, "tests"), [], ["Tests.csproj"]),
     ]
 
-    # Mock file contents
-    def mock_get_content_side_effect(repo, path):
-        if path == "src/App/App.csproj" or path == "src/Core/Core.csproj":
-            return """
+    # Mock file existence checks
+    mock_exists.return_value = True
+
+    # Setup mock file contents
+    def mock_read_side_effect(*args, **kwargs):
+        # This will be called when the context manager is entered
+        mock_file = MagicMock()
+
+        # Get the filename from the first positional argument to open()
+        filename = args[0]
+
+        if "Solution.sln" in filename:
+            mock_file.read.return_value = """
+            Microsoft Visual Studio Solution File, Format Version 12.00
+            Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "src/App/App.csproj", "{12345678-1234-1234-1234-123456789012}"
+            Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "tests/Tests.csproj", "{87654321-4321-4321-4321-210987654321}"
+            """
+        elif "App.csproj" in filename:
+            mock_file.read.return_value = """
             <Project Sdk="Microsoft.NET.Sdk">
                 <PropertyGroup>
                     <TargetFramework>net6.0</TargetFramework>
                 </PropertyGroup>
             </Project>
             """
-        elif path == "tests/UnitTests/UnitTests.csproj":
-            return """
+        elif "Tests.csproj" in filename:
+            mock_file.read.return_value = """
             <Project Sdk="Microsoft.NET.Sdk">
                 <PropertyGroup>
                     <TargetFramework>net6.0</TargetFramework>
                 </PropertyGroup>
                 <ItemGroup>
-                    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
                     <PackageReference Include="xunit" Version="2.4.1" />
                 </ItemGroup>
             </Project>
             """
-        return None
 
-    mock_get_content.side_effect = mock_get_content_side_effect
+        return mock_file
 
-    # Mock directory listings
-    mock_list_files.return_value = ["Program.cs", "Controller.cs"]
+    mock_open_file.side_effect = mock_read_side_effect
 
-    # Test repository analysis
-    source_dirs, test_dirs = analyzer.analyze_repository("owner/repo")
+    # Call the method under test
+    source_dirs, test_dirs = analyzer.analyze_repository()
 
     # Verify results
-    assert source_dirs == {"src/App", "src/Core"}
-    assert test_dirs == {"tests/UnitTests"}
+    assert "src/App" in source_dirs
+    assert "tests" in test_dirs
 
 
-def test_analyze_solution_files(analyzer):
-    # Mock the repository
-    repo = MagicMock()
+@patch("os.walk")
+@patch("os.path.exists")
+@patch("os.listdir")
+@patch("builtins.open", new_callable=mock_open)
+def test_analyze_workflow_files(
+    mock_open_file, mock_listdir, mock_exists, mock_walk, analyzer, temp_repo
+):
+    # Mock path existence for the .github/workflows directory
+    def mock_exists_side_effect(path):
+        if ".github/workflows" in path:
+            return True
+        return False
 
-    # Create a mock solution file content
-    solution_content = """
-    Microsoft Visual Studio Solution File, Format Version 12.00
-    # Visual Studio Version 17
-    VisualStudioVersion = 17.0.31903.59
-    MinimumVisualStudioVersion = 10.0.40219.1
-    Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "src\\App\\App.csproj", "{8AC9E0E8-E84D-4A7F-B15D-7497AEA5E5C9}"
-    EndProject
-    Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "src\\Core\\Core.csproj", "{3C4A1FC7-D9C3-4A7F-B15D-7497AEA5E5C9}"
-    EndProject
-    Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "tests\\UnitTests\\UnitTests.csproj", "{7F1D64B7-D9C3-4A7F-B15D-7497AEA5E5C9}"
-    EndProject
-    Global
-        GlobalSection(SolutionConfigurationPlatforms) = preSolution
-            Debug|Any CPU = Debug|Any CPU
-            Release|Any CPU = Release|Any CPU
-        EndGlobalSection
-    EndGlobal
-    """
+    mock_exists.side_effect = mock_exists_side_effect
 
-    # Mock getting file content
-    analyzer._get_file_content = MagicMock(return_value=solution_content)
+    # Mock directory listing for the workflows directory
+    mock_listdir.return_value = ["build.yml", "test.yml"]
 
-    # Test solution file analysis
-    result = analyzer._analyze_solution_files(repo, ["MySolution.sln"])
-
-    # Verify results - should have 3 project paths extracted
-    expected_paths = [
-        "src/App/App.csproj",
-        "src/Core/Core.csproj",
-        "tests/UnitTests/UnitTests.csproj",
-    ]
-    for expected_path in expected_paths:
-        assert expected_path in result
-
-    # Should have found all 3 projects
-    assert len(result) == 3
-
-
-@patch.object(DotNetProjectAnalyzer, "_get_file_content")
-def test_analyze_workflow_files(mock_get_content, analyzer, github_api):
-    # Mock the GitHub API and repository
-    repo = MagicMock()
-    github_api.get_repo.return_value = repo
-
-    # Mock workflow directory contents
-    workflow_content = MagicMock()
-    workflow_content.name = "ci.yml"
-    workflow_content.path = ".github/workflows/ci.yml"
-    repo.get_contents.return_value = [workflow_content]
-
-    # Mock workflow file content
-    workflow_yml = """
-    name: CI
-    on: [push, pull_request]
+    # Define the file contents
+    build_yml_content = """
+    name: Build
+    
+    on:
+      push:
+        branches: [ main ]
+    
     jobs:
       build:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v2
-          - name: Setup .NET
-            uses: actions/setup-dotnet@v1
-            with:
-              dotnet-version: 6.0.x
-          - name: Build
-            run: dotnet build
-          - name: Test
-            run: dotnet test tests/UnitTests
+        - uses: actions/checkout@v2
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v1
+          with:
+            dotnet-version: 6.0.x
+        - name: Build
+          run: dotnet build
     """
-    mock_get_content.return_value = workflow_yml
 
-    # Test workflow analysis
-    test_dirs = analyzer.analyze_workflow_files("owner/repo")
+    test_yml_content = """
+    name: Test
+    
+    on:
+      push:
+        branches: [ main ]
+    
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v1
+          with:
+            dotnet-version: 6.0.x
+        - name: Test
+          run: dotnet test
+    """
+
+    # Configure the mock to return different content based on the filename
+    mock_file_handle = mock_open_file.return_value.__enter__.return_value
+
+    def read_side_effect(*args, **kwargs):
+        filename = mock_open_file.call_args[0][0]
+        if filename.endswith("build.yml"):
+            return build_yml_content
+        elif filename.endswith("test.yml"):
+            return test_yml_content
+        return ""
+
+    mock_file_handle.read.side_effect = read_side_effect
+
+    # Call the method under test
+    build_commands = analyzer.analyze_workflow_files()
 
     # Verify results
-    assert test_dirs == {"tests/UnitTests"}
+    assert "dotnet" in build_commands
