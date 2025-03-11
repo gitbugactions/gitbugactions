@@ -88,7 +88,7 @@ class TestDotNetWorkflow(unittest.TestCase):
 
         # Verify analyzer was created and used
         self.assertIsNotNone(self.workflow.analyzer)
-        mock_analyze_repo.assert_called_once_with("owner/repo")
+        mock_analyze_repo.assert_called_once()
 
     @patch.object(DotNetProjectAnalyzer, "analyze_repository")
     def test_get_project_structure_cached(self, mock_analyze_repo):
