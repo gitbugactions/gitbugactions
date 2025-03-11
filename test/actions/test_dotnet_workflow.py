@@ -67,7 +67,7 @@ class TestDotNetWorkflow(unittest.TestCase):
         test_step = self.workflow.doc["jobs"]["build"]["steps"][4]
         self.assertIn("JUnitXml.TestLogger", test_step["run"])
         self.assertIn(
-            '--logger:"junit;LogFilePath=./TestResults/test-results.xml"',
+            '--logger:"junit;LogFilePath=TestResults/test-results.xml"',
             test_step["run"],
         )
 

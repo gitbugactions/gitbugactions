@@ -90,8 +90,6 @@ class CollectReposStrategy(RepoStrategy):
                     act_run = actions.run_workflow(
                         actions.test_workflows[0], act_cache_dir=act_cache_dir
                     )
-                    print(actions.test_workflows[0].doc)
-                    print(act_run.asdict()["stdout"])
                 finally:
                     ActCacheDirManager.return_act_cache_dir(act_cache_dir)
 
