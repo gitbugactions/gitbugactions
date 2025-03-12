@@ -1,0 +1,17 @@
+name: Test
+
+jobs:
+  mixed:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-11, windows-2019]
+    steps:
+    - uses: actions/checkout@v3
+    - name: build and test
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+        cmake --build .
+        ctest -C Debug -VV

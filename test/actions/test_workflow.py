@@ -315,3 +315,37 @@ def test_cmake_instrument_test_steps(yml_file):
                 for step in job["steps"]:
                     if "run" in step and workflow._is_test_command(step["run"]):
                         assert "--output-junit" in step["run"]
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+        (
+            "test/resources/test_workflows/cpp/instrument_jobs_filters_out_non_ubuntu_jobs.yml"
+        ),
+        ("test/resources/test_workflows/cpp/instrument_jobs_runs-on_array.yml"),
+    ],
+)
+def test_instrument_jobs(yml_file):
+    workflow = create_workflow(yml_file, "c++")
+    assert "jobs" in workflow.doc
+    assert isinstance(workflow, CMakeWorkflow)
+    workflow.instrument_jobs()
+    assert len(workflow.doc["jobs"]) >= 1
+    for _, job in workflow.doc["jobs"].items():
+        assert "runs-on" in job
+        assert "ubuntu" in job["runs-on"]
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+        ("test/resources/test_workflows/cpp/instrument_jobs_runs-on_expression.yml"),
+    ],
+)
+def test_instrument_jobs_keeps_jobs_using_expressions_for_now(yml_file):
+    workflow = create_workflow(yml_file, "c++")
+    assert isinstance(workflow, CMakeWorkflow)
+    job_len_before = len(workflow.doc["jobs"])
+    workflow.instrument_jobs()
+    assert len(workflow.doc["jobs"]) == job_len_before

@@ -410,13 +410,16 @@ class GitHubActions:
                 )
 
                 self.workflows.append(workflow)
-                if not workflow.has_tests() or workflow.has_matrix_include_exclude():
+                if not workflow.has_tests():
+                    continue
+
+                workflow.instrument_jobs()
+                if workflow.has_matrix_include_exclude():
                     continue
 
                 workflow.instrument_os()
                 workflow.instrument_on_events()
                 workflow.instrument_strategy()
-                workflow.instrument_jobs()
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
                 workflow.instrument_test_steps()

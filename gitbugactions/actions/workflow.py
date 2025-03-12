@@ -270,9 +270,39 @@ class GitHubWorkflow(ABC):
 
     def instrument_jobs(self):
         """
-        Instruments the workflow to keep only the jobs containing test commands.
-        If the job has dependencies (needs), then keep those jobs too.
+        Instruments the workflow to keep only the jobs running on Ubuntu and
+        containing test commands. If the job has dependencies (needs), then
+        keep those jobs too.
         """
+
+        if "jobs" in self.doc and isinstance(self.doc["jobs"], dict):
+            jobs_to_delete = []
+            for name, job in self.doc["jobs"].items():
+                if "runs-on" in job:
+                    if isinstance(job["runs-on"], list):
+                        os_to_delete = []
+                        for index, runs_on in enumerate(job["runs-on"]):
+                            if not runs_on.startswith("ubuntu"):
+                                os_to_delete.append(index)
+
+                        job["runs-on"] = [
+                            runs_on
+                            for index, runs_on in enumerate(job["runs-on"])
+                            if index not in os_to_delete
+                        ]
+
+                        if len(job["runs-on"]) == 0:
+                            jobs_to_delete.append(name)
+                        elif len(job["runs-on"]) == 1:
+                            job["runs-on"] = job["runs-on"][0]
+
+                    elif not job["runs-on"].startswith("${{"):
+                        if not job["runs-on"].startswith("ubuntu"):
+                            jobs_to_delete.append(name)
+
+            for job in jobs_to_delete:
+                if job in self.doc["jobs"]:
+                    del self.doc["jobs"][job]
 
         def get_needs(job_name: str) -> List[str]:
             if (
