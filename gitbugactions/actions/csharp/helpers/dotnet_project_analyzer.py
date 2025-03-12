@@ -29,6 +29,23 @@ class DotNetProjectAnalyzer:
             "test.sdk",
         ]
 
+    def _should_ignore_path(self, path: str) -> bool:
+        """
+        Check if a path should be ignored during analysis.
+
+        Args:
+            path: The path to check
+
+        Returns:
+            bool: True if the path should be ignored, False otherwise
+        """
+        # Normalize path separators for consistent checking
+        normalized_path = os.path.normpath(path)
+        path_parts = normalized_path.split(os.sep)
+
+        # Check if any part of the path contains .act-result
+        return any(".act-result" in part for part in path_parts)
+
     def is_test_project_file(self, content: str) -> bool:
         """
         Determines if a .csproj file content represents a test project.
@@ -126,6 +143,13 @@ class DotNetProjectAnalyzer:
             if not source_dirs and not test_dirs:
                 # Look for directories with common naming patterns
                 for root, dirs, _ in os.walk(self.repo_path):
+                    # Skip directories that should be ignored
+                    dirs[:] = [
+                        d
+                        for d in dirs
+                        if not self._should_ignore_path(os.path.join(root, d))
+                    ]
+
                     for dir_name in dirs:
                         rel_path = os.path.relpath(
                             os.path.join(root, dir_name), self.repo_path
@@ -170,6 +194,10 @@ class DotNetProjectAnalyzer:
             test_dirs: Set to add test directories to
         """
         try:
+            # Skip files in .act-result directories
+            if self._should_ignore_path(proj_file):
+                return
+
             # Get the directory containing the project file
             proj_dir = os.path.dirname(proj_file)
             rel_path = os.path.relpath(proj_dir, self.repo_path)
@@ -231,6 +259,10 @@ class DotNetProjectAnalyzer:
         project_files = []
 
         for sln_file in sln_files:
+            # Skip files in .act-result directories
+            if self._should_ignore_path(sln_file):
+                continue
+
             try:
                 with open(sln_file, "r", encoding="utf-8", errors="ignore") as f:
                     content = f.read()
@@ -249,7 +281,9 @@ class DotNetProjectAnalyzer:
                                 os.path.join(sln_dir, proj_path)
                             )
 
-                            if os.path.exists(abs_proj_path):
+                            if os.path.exists(
+                                abs_proj_path
+                            ) and not self._should_ignore_path(abs_proj_path):
                                 project_files.append(abs_proj_path)
             except Exception as e:
                 logger.debug(f"Error analyzing solution file {sln_file}: {e}")
@@ -265,10 +299,21 @@ class DotNetProjectAnalyzer:
         """
         csproj_files = []
 
-        for root, _, files in os.walk(self.repo_path):
+        for root, dirs, files in os.walk(self.repo_path):
+            # Skip directories that should be ignored
+            dirs[:] = [
+                d for d in dirs if not self._should_ignore_path(os.path.join(root, d))
+            ]
+
+            # Skip if current directory should be ignored
+            if self._should_ignore_path(root):
+                continue
+
             for file in files:
                 if file.endswith(".csproj"):
-                    csproj_files.append(os.path.join(root, file))
+                    file_path = os.path.join(root, file)
+                    if not self._should_ignore_path(file_path):
+                        csproj_files.append(file_path)
 
         return csproj_files
 
@@ -281,10 +326,21 @@ class DotNetProjectAnalyzer:
         """
         sln_files = []
 
-        for root, _, files in os.walk(self.repo_path):
+        for root, dirs, files in os.walk(self.repo_path):
+            # Skip directories that should be ignored
+            dirs[:] = [
+                d for d in dirs if not self._should_ignore_path(os.path.join(root, d))
+            ]
+
+            # Skip if current directory should be ignored
+            if self._should_ignore_path(root):
+                continue
+
             for file in files:
                 if file.endswith(".sln"):
-                    sln_files.append(os.path.join(root, file))
+                    file_path = os.path.join(root, file)
+                    if not self._should_ignore_path(file_path):
+                        sln_files.append(file_path)
 
         return sln_files
 
@@ -298,13 +354,17 @@ class DotNetProjectAnalyzer:
         build_commands = set()
         workflow_dir = os.path.join(self.repo_path, ".github", "workflows")
 
-        if not os.path.exists(workflow_dir):
+        if not os.path.exists(workflow_dir) or self._should_ignore_path(workflow_dir):
             return build_commands
 
         try:
             for file in os.listdir(workflow_dir):
                 if file.endswith((".yml", ".yaml")):
                     file_path = os.path.join(workflow_dir, file)
+                    # Skip files in .act-result directories
+                    if self._should_ignore_path(file_path):
+                        continue
+
                     try:
                         with open(file_path, "r", encoding="utf-8") as f:
                             content = f.read()

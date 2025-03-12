@@ -224,7 +224,6 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
     for change in diff:
         # Check if the path matches any of the ignore patterns
         if any(fnmatch.fnmatch(change["Path"], pattern) for pattern in ignore_paths):
-            print(f"Ignoring {change['Path']} because it matches {ignore_paths}")
             continue
 
         # The index removes the empty string from the beggining (/path...)
