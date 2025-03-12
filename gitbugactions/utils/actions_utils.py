@@ -10,7 +10,7 @@ import yaml
 
 from gitbugactions.actions.actions import ActCacheDirManager, GitHubActions
 from gitbugactions.test_executor import TestExecutor
-from gitbugactions.github_api import GithubAPI
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 
 
 def get_default_github_actions(
@@ -40,6 +40,9 @@ def get_default_github_actions(
                 capture_output=True,
             )
             try:
+                # Clean up before testing each commit
+                RepoStateManager.clean_act_result_dir(repo_clone.workdir)
+
                 actions = GitHubActions(repo_clone.workdir, language)
                 if len(actions.test_workflows) == 1:
                     executor = TestExecutor(
@@ -53,16 +56,9 @@ def get_default_github_actions(
             except (yaml.YAMLError, xml.etree.ElementTree.ParseError):
                 continue
             finally:
-                repo_clone.reset(head.id, pygit2.GIT_RESET_HARD)
-                subprocess.run(
-                    ["git", "clean", "-f", "-d", "-x"],
-                    cwd=repo_clone.workdir,
-                    capture_output=True,
-                )
+                RepoStateManager.reset_to_commit(repo_clone, head.id)
 
         raise RuntimeError(f"{repo_clone.workdir} has no valid default actions.")
     finally:
         ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-        repo_clone.reset(first_commit.id, pygit2.GIT_RESET_HARD)
-        if os.path.exists(os.path.join(repo_clone.workdir, ".act-result")):
-            shutil.rmtree(os.path.join(repo_clone.workdir, ".act-result"))
+        RepoStateManager.reset_to_commit(repo_clone, first_commit.id)

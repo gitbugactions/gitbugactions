@@ -12,7 +12,7 @@ from gitbugactions.actions.actions import ActTestsRun
 from gitbugactions.github_api import GithubAPI
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.utils.file_utils import get_patch_file_extensions
-from gitbugactions.utils.repo_utils import git_clean
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 
 
 class ChangeType(Enum):
@@ -175,7 +175,8 @@ class BugPatch:
 
     def __set_commit(self, repo_clone: pygit2.Repository, commit: str):
         commit = repo_clone.revparse_single(commit)
-        git_clean(repo_clone)
+        RepoStateManager.clean_untracked_files(repo_clone)
+
         repo_clone.checkout_tree(commit)
         repo_clone.create_tag(
             str(uuid.uuid4()),
@@ -213,6 +214,9 @@ class BugPatch:
         keep_containers: bool = False,
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
+        # Clean .act-result before testing
+        RepoStateManager.clean_act_result_dir(executor.repo_clone.workdir)
+
         self.__set_commit(executor.repo_clone, self.previous_commit)
         if not self.__apply_non_code_patch(executor.repo_clone):
             return None
@@ -225,6 +229,9 @@ class BugPatch:
         keep_containers: bool = False,
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
+        # Clean .act-result before testing
+        RepoStateManager.clean_act_result_dir(executor.repo_clone.workdir)
+
         self.__set_commit(executor.repo_clone, self.previous_commit)
         if not self.__apply_non_code_patch(executor.repo_clone):
             return None
@@ -239,6 +246,9 @@ class BugPatch:
         keep_containers: bool = False,
     ) -> Optional[List[ActTestsRun]]:
         executor.reset_repo()
+        # Clean .act-result before testing
+        RepoStateManager.clean_act_result_dir(executor.repo_clone.workdir)
+
         self.__set_commit(executor.repo_clone, self.commit)
         return executor.run_tests(offline=offline, keep_containers=keep_containers)
 

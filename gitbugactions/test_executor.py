@@ -12,6 +12,7 @@ from pygit2 import Repository
 
 from gitbugactions.actions.actions import ActTestsRun, GitHubActions
 from gitbugactions.docker.client import DockerClient
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 
 
 class TestExecutor:
@@ -78,12 +79,7 @@ class TestExecutor:
             TestExecutor.__CLEANUP_ENABLED = enabled
 
     def reset_repo(self):
-        self.repo_clone.reset(self.first_commit.id, pygit2.GIT_RESET_HARD)
-        subprocess.run(
-            ["git", "clean", "-f", "-d", "-x"],
-            cwd=self.repo_clone.workdir,
-            capture_output=True,
-        )
+        RepoStateManager.reset_to_commit(self.repo_clone, self.first_commit.id)
 
     def run_tests(
         self,
@@ -93,6 +89,9 @@ class TestExecutor:
     ) -> List[ActTestsRun]:
         act_runs: List[ActTestsRun] = []
         default_actions = False
+
+        # Cleanup act result dir
+        RepoStateManager.clean_act_result_dir(self.repo_clone.workdir)
 
         test_actions = GitHubActions(
             self.repo_clone.workdir,

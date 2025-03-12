@@ -95,6 +95,7 @@ class DotNetWorkflow(GitHubWorkflow):
                                             "Cannot instrument test steps, no source or test directories detected"
                                         )
                                     else:
+                                        print(self.source_dirs, self.test_dirs)
                                         logger.warning(
                                             "Cannot instrument test steps, multiple source or test directories detected"
                                         )
