@@ -41,6 +41,7 @@ from gitbugactions.utils.actions_utils import get_default_github_actions
 from gitbugactions.utils.file_reader import GitShowFileReader
 from gitbugactions.utils.file_utils import FileType, get_file_type
 from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 
 
 class PatchCollector:
@@ -117,17 +118,6 @@ class PatchCollector:
 
         return bug_patch, test_patch, non_code_patch
 
-    def __cleanup_repo(
-        self, repo_clone: pygit2.Repository, repo_path: str, commit: pygit2.Commit
-    ):
-        """
-        Cleanups up repository dir for any untracked or modified files
-        """
-        repo_clone.reset(commit.id, pygit2.GIT_RESET_HARD)
-        subprocess.run(
-            ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
-        )
-
     def __test_patch(
         self,
         bug: BugPatch,
@@ -147,9 +137,9 @@ class PatchCollector:
                 act_cache_dir,
                 self.default_github_actions,
             )
-            all_runs_crashed = lambda x: x is None or all(
-                map(lambda act_run: act_run.failed, x)
-            )
+
+            def all_runs_crashed(x):
+                return x is None or all(map(lambda act_run: act_run.failed, x))
 
             # Previous commit
             act_runs = bug.test_previous_commit(executor)
@@ -349,11 +339,9 @@ class PatchCollector:
                             actions,
                         )
                     ]
-                self.__cleanup_repo(
-                    self.repo_clone, self.repo_clone.workdir, self.first_commit
-                )
+                RepoStateManager.reset_to_commit(self.repo_clone, commit.id)
         finally:
-            self.repo_clone.reset(self.first_commit.id, pygit2.GIT_RESET_HARD)
+            RepoStateManager.reset_to_commit(self.repo_clone, self.first_commit.id)
 
         # We remove the merges since when multiple bug patches point to the same
         # previous commit, merges tend to only add useless diffs to another commit

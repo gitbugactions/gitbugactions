@@ -66,7 +66,9 @@ def create_exported_containers(
                     container.remove(v=True, force=True)
                     continue
             diff_file_path = os.path.join(diff_folder_path, container.name)
-            extract_diff(container.id, diff_file_path, ignore_paths=["/tmp"])
+            extract_diff(
+                container.id, diff_file_path, ignore_paths=["/tmp/*", "*.act-result*"]
+            )
             container.remove(v=True, force=True)
 
             workflows = os.path.join(diff_folder_path, "workflow")

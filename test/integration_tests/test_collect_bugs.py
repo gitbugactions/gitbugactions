@@ -1110,6 +1110,27 @@ class TestCollectBugs:
                 ]
                 assert data["strategy"] == "FAIL_PASS"
 
+    @pytest.mark.dependency()
+    def test_gitbugactions_dotnet_test_repo(self):
+        """
+        Verifies that the dotnet project bugs have been found
+
+        repo: https://github.com/gitbugactions/gitbugactions-dotnet-test-repo
+        """
+        with open(
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-dotnet-test-repo.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 1
+
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "65b86c6855427d96067519b75a7bd41b093a2b2f",
+                ]
+                assert data["strategy"] == "FAIL_PASS"
+
     def test_collected_data(self):
         with open(
             "test/resources/test_collect_bugs_out/data.json",
@@ -1117,7 +1138,7 @@ class TestCollectBugs:
         ) as f:
             data = json.load(f)
             assert len(data.keys()) == 10
-            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 12
+            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 13
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
             assert (
@@ -1138,6 +1159,7 @@ class TestCollectBugs:
                 data["gitbugactions/gitbugactions-ts-npm-jest-test-repo"]["commits"]
                 == 2
             )
+            assert data["gitbugactions/gitbugactions-dotnet-test-repo"]["commits"] == 2
             assert (
                 data["gitbugactions/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
@@ -1192,6 +1214,12 @@ class TestCollectBugs:
             )
             assert (
                 data["gitbugactions/gitbugactions-ts-npm-jest-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 1
+            )
+            assert (
+                data["gitbugactions/gitbugactions-dotnet-test-repo"][
                     "possible_bug_patches"
                 ]
                 == 1

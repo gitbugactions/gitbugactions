@@ -19,6 +19,7 @@ from gitbugactions.actions.workflow import GitHubWorkflow
 from gitbugactions.actions.workflow_factory import GitHubWorkflowFactory
 from gitbugactions.docker.client import DockerClient
 from gitbugactions.github_api import GithubToken
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 
 
 class ActCacheDirManager:
@@ -321,6 +322,9 @@ class Act:
     def run_act(
         self, repo_path, workflow: GitHubWorkflow, act_cache_dir: str
     ) -> ActTestsRun:
+        # Clean up before running
+        RepoStateManager.clean_act_result_dir(repo_path)
+
         command = f"cd {repo_path}; "
         command += f"ACT_DISABLE_VERSION_CHECK=1 XDG_CACHE_HOME='{act_cache_dir}' timeout {self.timeout * 60} {Act.__ACT_PATH} {self.__DEFAULT_RUNNERS} {Act.__FLAGS} {self.flags}"
         if GithubToken.has_tokens():
@@ -419,7 +423,19 @@ class GitHubActions:
                 workflow.instrument_jobs()
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
-                workflow.instrument_test_steps()
+
+                # Instrument test steps if the workflow has a get_project_structure method
+                # HACK: This is used to instrument .NET test steps
+                if hasattr(workflow, "instrument_test_steps"):
+                    if hasattr(workflow, "get_project_structure"):
+                        try:
+                            workflow.instrument_test_steps(self.repo_path)
+                        except TypeError:
+                            # Fallback if method doesn't accept github_api parameter
+                            workflow.instrument_test_steps()
+                    else:
+                        workflow.instrument_test_steps()
+
                 if offline:
                     workflow.instrument_offline_execution()
                 else:
@@ -469,6 +485,9 @@ class GitHubActions:
         act_fail_strategy: ActFailureStrategy = ActTestsFailureStrategy(),
         timeout: int = 10,
     ) -> ActTestsRun:
+        # Clean up before running
+        RepoStateManager.clean_act_result_dir(self.repo_path)
+
         act = Act(
             self.keep_containers,
             timeout=timeout,
