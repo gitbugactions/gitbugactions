@@ -1,0 +1,24 @@
+name: build and test
+
+on: [push]
+
+jobs:
+  build:
+    name: ubuntu-gcc
+    runs-on: ubuntu-latest
+    env:
+      CC: gcc
+      CXX: g++
+    steps:
+    - uses: actions/checkout@v3
+    - name: mkdir build
+      run: mkdir -p build/
+    - name: configure
+      run: cmake ..
+      working-directory: ./build/
+    - name: build
+      run: cmake --build .
+      working-directory: ./build/
+    - name: run test
+      run: ctest -C Debug -VV --output-junit result.xml
+      working-directory: ./build/test

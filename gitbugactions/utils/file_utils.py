@@ -32,8 +32,19 @@ def get_file_type(language: str, file_path: str) -> FileType:
         "rust": {"rs"},
         "typescript": {"ts", "tsx"},
         "c#": {"cs"},
+        "c++": {"cpp", "cc", "cxx", "hpp", "hh", "hxx", "c", "h"},
+        "c": {"cpp", "cc", "cxx", "hpp", "hh", "hxx", "c", "h"},
     }
     test_keywords = {"test", "tests", "__tests__", "Test", "Tests"}
+    cpp_test_prefix = {
+        "test",
+        "tests",
+        str(os.path.join("extra", "tests")),
+        "unittest",
+        "unittests",
+        str(os.path.join("src", "test_lib_json")),
+    }
+    cpp_test_postfix = {".test.cpp", "_test.cpp", ".test.c", "_test.c"}
 
     if language in ["java", "python", "javascript", "rust", "typescript", "c#"]:
         if any([keyword in file_path.split(os.sep) for keyword in test_keywords]):
@@ -46,6 +57,16 @@ def get_file_type(language: str, file_path: str) -> FileType:
             return FileType.TESTS
     if language in ["typescript"]:
         if ".test.ts" in file_path:
+            return FileType.TESTS
+    if language in ["c", "c++"] and file_path != "/dev/null":
+        file_path = (
+            file_path[2:]
+            if file_path.startswith("a/") or file_path.startswith("b/")
+            else file_path
+        )
+        if any(file_path.startswith(prefix) for prefix in cpp_test_prefix) or any(
+            file_path.endswith(postfix) for postfix in cpp_test_postfix
+        ):
             return FileType.TESTS
 
     if get_file_extension(file_path) in language_extensions[language]:

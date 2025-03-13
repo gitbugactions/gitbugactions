@@ -2,6 +2,7 @@ import os
 
 import pytest
 
+from gitbugactions.actions.cpp.cmake_workflow import CMakeWorkflow
 from gitbugactions.actions.go.go_workflow import GoWorkflow
 from gitbugactions.actions.java.maven_workflow import MavenWorkflow
 from gitbugactions.actions.npm.npm_jest_workflow import NpmJestWorkflow
@@ -294,3 +295,69 @@ def test_dotnet(yml_file):
     """Test the workflow factory for dotnet workflows."""
     workflow = create_workflow(yml_file, "c#")
     assert isinstance(workflow, DotNetWorkflow)
+
+
+@pytest.mark.parametrize(
+    "yml_file, language",
+    [
+        ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml", "c"),
+        ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml", "c++"),
+    ],
+)
+def test_cpp(yml_file, language):
+    """Test the workflow factory for cpp workflows."""
+    workflow = create_workflow(yml_file, language)
+    assert isinstance(workflow, CMakeWorkflow)
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+        ("test/resources/test_workflows/cpp/cmake_without_output_junit.yml"),
+        ("test/resources/test_workflows/cpp/cmake_with_output_junit.yml"),
+    ],
+)
+def test_cmake_instrument_test_steps(yml_file):
+    workflow = create_workflow(yml_file, "c++")
+    assert isinstance(workflow, CMakeWorkflow)
+    workflow.instrument_test_steps()
+    if "jobs" in workflow.doc:
+        for _, job in workflow.doc["jobs"].items():
+            if "steps" in job:
+                for step in job["steps"]:
+                    if "run" in step and workflow._is_test_command(step["run"]):
+                        assert "--output-junit" in step["run"]
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+        (
+            "test/resources/test_workflows/cpp/instrument_jobs_filters_out_non_ubuntu_jobs.yml"
+        ),
+        ("test/resources/test_workflows/cpp/instrument_jobs_runs-on_array.yml"),
+    ],
+)
+def test_instrument_jobs(yml_file):
+    workflow = create_workflow(yml_file, "c++")
+    assert "jobs" in workflow.doc
+    assert isinstance(workflow, CMakeWorkflow)
+    workflow.instrument_jobs()
+    assert len(workflow.doc["jobs"]) >= 1
+    for _, job in workflow.doc["jobs"].items():
+        assert "runs-on" in job
+        assert "ubuntu" in job["runs-on"]
+
+
+@pytest.mark.parametrize(
+    "yml_file",
+    [
+        ("test/resources/test_workflows/cpp/instrument_jobs_runs-on_expression.yml"),
+    ],
+)
+def test_instrument_jobs_keeps_jobs_using_expressions_for_now(yml_file):
+    workflow = create_workflow(yml_file, "c++")
+    assert isinstance(workflow, CMakeWorkflow)
+    job_len_before = len(workflow.doc["jobs"])
+    workflow.instrument_jobs()
+    assert len(workflow.doc["jobs"]) == job_len_before

@@ -1,0 +1,38 @@
+name: Test
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: build and test
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+        cmake --build .
+        ctest -C Debug -VV
+
+  macos:
+    runs-on: macos-11
+    steps:
+    - uses: actions/checkout@v3
+    - name: build and test
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+        cmake --build .
+        ctest -C Debug -VV
+
+  windows:
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v3
+    - name: build and test
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+        cmake --build .
+        ctest -C Debug -VV
