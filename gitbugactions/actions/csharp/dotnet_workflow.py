@@ -69,10 +69,8 @@ class DotNetWorkflow(GitHubWorkflow):
                                         f"Detected test directories: {self.test_dirs}"
                                     )
 
-                                    if (
-                                        len(self.source_dirs) == 1
-                                        and len(self.test_dirs) == 1
-                                    ):
+                                    # TODO: Handle multiple test directories
+                                    if len(self.test_dirs) == 1:
                                         test_dir = list(self.test_dirs)[0]
                                         # Modify the original command to include the logger option
                                         # but don't change directory
@@ -95,9 +93,8 @@ class DotNetWorkflow(GitHubWorkflow):
                                             "Cannot instrument test steps, no source or test directories detected"
                                         )
                                     else:
-                                        print(self.source_dirs, self.test_dirs)
                                         logger.warning(
-                                            "Cannot instrument test steps, multiple source or test directories detected"
+                                            "Cannot instrument test steps, multiple test directories detected"
                                         )
 
                                 except Exception as e:
