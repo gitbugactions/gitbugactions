@@ -5,6 +5,7 @@ import shutil
 import tarfile
 import tempfile
 import uuid
+import fnmatch
 from dataclasses import dataclass
 from typing import Dict, List
 
@@ -208,9 +209,9 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
         container_id (str): Id of the Docker container.
         diff_file_path (str): Path on which the diff file will be saved.
         ignore_paths (List[str], optional): Paths that will not be extracted.
-            For instance, if the '/tmp' folder is on the list, any files
-            changed on this folder or its child folders will not be on the
-            diff file. Defaults to [].
+            Supports glob patterns (e.g., "**/.act-result/"). For instance,
+            if the '/tmp' folder is on the list, any files changed on this
+            folder or its child folders will not be on the diff file. Defaults to [].
     """
     save_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
     client = DockerClient.getInstance()
@@ -221,7 +222,8 @@ def extract_diff(container_id: str, diff_file_path: str, ignore_paths: List[str]
 
     # Create diff tree
     for change in diff:
-        if any(map(lambda path: change["Path"].startswith(path), ignore_paths)):
+        # Check if the path matches any of the ignore patterns
+        if any(fnmatch.fnmatch(change["Path"], pattern) for pattern in ignore_paths):
             continue
 
         # The index removes the empty string from the beggining (/path...)

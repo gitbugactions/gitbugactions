@@ -195,6 +195,36 @@ def test_get_possible_patches_pull_requests():
     assert "ff6e2662174af4024eef123b7d23b15192748b31" in commits
 
 
+def test_get_possible_patches_filter_linked_to_pr():
+    # Test filtering for commits linked to PRs
+    collector = PatchCollector(
+        GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo"),
+        filter_on_commit_message=False,
+        filter_linked_to_pr=True,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+    # This commit is linked to a PR
+    assert "02dc8a4b03c6b6c38f130a6794d9d6dfcc7bff2f" in commits
+    # This commit is not linked to a PR
+    assert "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f" not in commits
+
+    # Test filtering for commits not linked to PRs
+    collector = PatchCollector(
+        GithubAPI().get_repo("gitbugactions/gitbugactions-maven-test-repo"),
+        filter_on_commit_message=False,
+        filter_linked_to_pr=False,
+    )
+    patches: List[BugPatch] = collector.get_possible_patches()
+    commits = list(map(lambda patch: patch.commit, patches))
+    # This commit is linked to a PR
+    assert "02dc8a4b03c6b6c38f130a6794d9d6dfcc7bff2f" in commits
+    # This commit is not linked to a PR
+    assert "dc71f8ddba909f2c0c58324dd6e2c37a48c35f7f" in commits
+
+    delete_repo_clone(collector.repo_clone)
+
+
 class TestCollectBugs:
     TOKEN_USAGE: int = 0
 
@@ -1080,6 +1110,27 @@ class TestCollectBugs:
                 ]
                 assert data["strategy"] == "FAIL_PASS"
 
+    @pytest.mark.dependency()
+    def test_gitbugactions_dotnet_test_repo(self):
+        """
+        Verifies that the dotnet project bugs have been found
+
+        repo: https://github.com/gitbugactions/gitbugactions-dotnet-test-repo
+        """
+        with open(
+            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-dotnet-test-repo.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 1
+
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "65b86c6855427d96067519b75a7bd41b093a2b2f",
+                ]
+                assert data["strategy"] == "FAIL_PASS"
+
     def test_collected_data(self):
         with open(
             "test/resources/test_collect_bugs_out/data.json",
@@ -1087,7 +1138,7 @@ class TestCollectBugs:
         ) as f:
             data = json.load(f)
             assert len(data.keys()) == 10
-            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 12
+            assert data["gitbugactions/gitbugactions-maven-test-repo"]["commits"] == 13
             assert data["gitbugactions/gitbugactions-pytest-test-repo"]["commits"] == 6
             assert data["gitbugactions/gitbugactions-gradle-test-repo"]["commits"] == 2
             assert (
@@ -1108,6 +1159,7 @@ class TestCollectBugs:
                 data["gitbugactions/gitbugactions-ts-npm-jest-test-repo"]["commits"]
                 == 2
             )
+            assert data["gitbugactions/gitbugactions-dotnet-test-repo"]["commits"] == 2
             assert (
                 data["gitbugactions/gitbugactions-maven-test-repo"][
                     "possible_bug_patches"
@@ -1162,6 +1214,12 @@ class TestCollectBugs:
             )
             assert (
                 data["gitbugactions/gitbugactions-ts-npm-jest-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 1
+            )
+            assert (
+                data["gitbugactions/gitbugactions-dotnet-test-repo"][
                     "possible_bug_patches"
                 ]
                 == 1

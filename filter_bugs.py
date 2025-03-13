@@ -21,6 +21,7 @@ from gitbugactions.docker.client import DockerClient
 from gitbugactions.docker.export import create_diff_image
 from gitbugactions.test_executor import TestExecutor
 from gitbugactions.utils.repo_utils import delete_repo_clone
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 from run_bug import get_default_actions, get_diff_path
 
 
@@ -34,6 +35,9 @@ def run_commit(
 ) -> Optional[List[ActTestsRun]]:
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     try:
+        # FIXME: we shouldn't need to call this here, but we have to do it because the get_default_actions script will inspect the repo state
+        RepoStateManager.reset_to_commit(repo_clone, bug.commit)
+
         executor = TestExecutor(
             repo_clone,
             bug.language,
@@ -186,7 +190,7 @@ def filter_bug(
         else:
             return "NON-FLAKY"
     finally:
-        delete_repo_clone(repo_clone)
+        # delete_repo_clone(repo_clone)
         docker_client.images.remove(image_name, force=True)
 
 
@@ -250,7 +254,8 @@ def filter_bugs(
                     )
                     future_to_bug[future] = bug
             finally:
-                delete_repo_clone(repo_clone)
+                # delete_repo_clone(repo_clone)
+                pass
 
         for future in tqdm.tqdm(as_completed(future_to_bug), total=len(future_to_bug)):
             try:

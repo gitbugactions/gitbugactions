@@ -41,6 +41,7 @@ from gitbugactions.utils.actions_utils import get_default_github_actions
 from gitbugactions.utils.file_reader import GitShowFileReader
 from gitbugactions.utils.file_utils import FileType, get_file_type
 from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
+from gitbugactions.utils.repo_state_manager import RepoStateManager
 
 
 class PatchCollector:
@@ -58,6 +59,7 @@ class PatchCollector:
         )
         self.filter_on_commit_time_end = kwargs.get("filter_on_commit_time_end", None)
         self.pull_requests = kwargs.get("pull_requests", False)
+        self.filter_linked_to_pr = kwargs.get("filter_linked_to_pr", None)
 
     def __clone_repo(self):
         # Too many repos cloning at the same time lead to errors
@@ -116,17 +118,6 @@ class PatchCollector:
 
         return bug_patch, test_patch, non_code_patch
 
-    def __cleanup_repo(
-        self, repo_clone: pygit2.Repository, repo_path: str, commit: pygit2.Commit
-    ):
-        """
-        Cleanups up repository dir for any untracked or modified files
-        """
-        repo_clone.reset(commit.id, pygit2.GIT_RESET_HARD)
-        subprocess.run(
-            ["git", "clean", "-f", "-d", "-x"], cwd=repo_path, capture_output=True
-        )
-
     def __test_patch(
         self,
         bug: BugPatch,
@@ -146,9 +137,9 @@ class PatchCollector:
                 act_cache_dir,
                 self.default_github_actions,
             )
-            all_runs_crashed = lambda x: x is None or all(
-                map(lambda act_run: act_run.failed, x)
-            )
+
+            def all_runs_crashed(x):
+                return x is None or all(map(lambda act_run: act_run.failed, x))
 
             # Previous commit
             act_runs = bug.test_previous_commit(executor)
@@ -296,6 +287,13 @@ class PatchCollector:
                 ):
                     continue
 
+                # Filter based on whether commit is linked to a PR
+                if self.filter_linked_to_pr:
+                    issues = self.__get_related_commit_info(str(commit.id))
+                    has_pr = any(issue["is_pull_request"] for issue in issues)
+                    if not has_pr:
+                        continue
+
                 try:
                     previous_commit = self.repo_clone.revparse_single(
                         str(commit.id) + "~1"
@@ -341,11 +339,9 @@ class PatchCollector:
                             actions,
                         )
                     ]
-                self.__cleanup_repo(
-                    self.repo_clone, self.repo_clone.workdir, self.first_commit
-                )
+                RepoStateManager.reset_to_commit(self.repo_clone, commit.id)
         finally:
-            self.repo_clone.reset(self.first_commit.id, pygit2.GIT_RESET_HARD)
+            RepoStateManager.reset_to_commit(self.repo_clone, self.first_commit.id)
 
         # We remove the merges since when multiple bug patches point to the same
         # previous commit, merges tend to only add useless diffs to another commit
@@ -438,6 +434,7 @@ def collect_bugs(
     normalize_non_code_patch: bool = True,
     strategies: Tuple[str] = ("PASS_PASS", "FAIL_PASS"),
     pull_requests: bool = False,
+    filter_linked_to_pr: bool = None,
     base_image: str | None = None,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
@@ -458,6 +455,7 @@ def collect_bugs(
         strategies (Tuple[str], optional): List of strategies to be used. Defaults to ("PASS_PASS", "FAIL_PASS").
                                            The available strategies are: "PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD".
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
+        filter_linked_to_pr (bool, optional): If True, only include commits that are linked to pull requests. If False, only include commits that are not linked to pull requests. If None, include all commits. Defaults to None.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
     """
     set_test_config(normalize_non_code_patch, strategies)
@@ -483,6 +481,7 @@ def collect_bugs(
             else None
         ),
         "pull_requests": pull_requests,
+        "filter_linked_to_pr": filter_linked_to_pr,
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []

@@ -1,0 +1,104 @@
+{
+    "repository": "gitbugactions/gitbugactions-dotnet-test-repo",
+    "stars": 0,
+    "language": "c#",
+    "size": 2,
+    "clone_url": "https://github.com/gitbugactions/gitbugactions-dotnet-test-repo.git",
+    "timestamp": "2025-03-11T14:10:21.163268+00:00Z",
+    "clone_success": true,
+    "number_of_actions": 1,
+    "number_of_test_actions": 1,
+    "actions_successful": true,
+    "actions_build_tools": [
+        "dotnet"
+    ],
+    "actions_test_build_tools": [
+        "dotnet"
+    ],
+    "actions_run": {
+        "failed": false,
+        "tests": [
+            {
+                "classname": "GitBugActions.Tests.AppMathTests",
+                "name": "TestSumTwice",
+                "time": 0.0033318,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "GitBugActions.Tests.AppMathTests",
+                "name": "TestSum",
+                "time": 0.0001171,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "GitBugActions.Tests.AppMathTests",
+                "name": "TestMultiply",
+                "time": 5.98e-05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "GitBugActions.Tests.AppMathTests",
+                "name": "TestSubtract",
+                "time": 5.53e-05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            },
+            {
+                "classname": "GitBugActions.Tests.AppMathTests",
+                "name": "TestSubtractTwice",
+                "time": 7.77e-05,
+                "results": [
+                    {
+                        "result": "Passed",
+                        "message": "",
+                        "type": ""
+                    }
+                ],
+                "stdout": null,
+                "stderr": null
+            }
+        ],
+        "stdout": "[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \ud83d\ude80  Start image=gitbugactions:latest\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker pull image=gitbugactions:latest platform= username= forcePull=false\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker create image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker run image=gitbugactions:latest platform= entrypoint=[\"tail\" \"-f\" \"/dev/null\"] cmd=[] network=\"host\"\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo] user=0 workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \u2b50 Run Main actions/checkout@v3\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker cp src=/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/. dst=/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo] user=0 workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2705  Success - Main actions/checkout@v3\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \u2b50 Run Main Setup .NET\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker cp src=/tmp/act-cache/default/act/actions-setup-dotnet@v3/ dst=/var/run/act/actions/actions-setup-dotnet@v3/\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[chown -R 1000:1000 /var/run/act/actions/actions-setup-dotnet@v3/] user=0 workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-dotnet@v3/dist/setup/index.js] user= workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | [command]/run/act/actions/actions-setup-dotnet@v3/externals/install-dotnet.sh --channel 9.0\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.200/dotnet-sdk-9.0.200-linux-x64.tar.gz\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.200/dotnet-sdk-9.0.200-linux-x64.tar.gz size is 216232002 bytes.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.200/dotnet-sdk-9.0.200-linux-x64.tar.gz\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Downloaded file size is 216232002 bytes.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: The remote and local file sizes are equal.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Installed version is 9.0.200\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Note that the script does not resolve dependencies during installation.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the \"Dependencies\" section.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | dotnet-install: Installation finished successfully.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2753 add-matcher /run/act/actions/actions-setup-dotnet@v3/.github/csc.json\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2705  Success - Main Setup .NET\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2699  ::set-env:: DOTNET_ROOT=/usr/share/dotnet\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2699  ::set-output:: dotnet-version=9.0.200\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2699  ::add-path:: /usr/share/dotnet\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \u2b50 Run Main Restore dependencies\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Determining projects to restore...\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Restored /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions/GitBugActions.csproj (in 115 ms).\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Restored /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/GitBugActions.Tests.csproj (in 14.95 sec).\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2705  Success - Main Restore dependencies\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \u2b50 Run Main Build\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   GitBugActions -> /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions/bin/Debug/net9.0/GitBugActions.dll\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   GitBugActions.Tests -> /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/bin/Debug/net9.0/GitBugActions.Tests.dll\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Build succeeded.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |     0 Warning(s)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |     0 Error(s)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Time Elapsed 00:00:04.01\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2705  Success - Main Build\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \u2b50 Run Main Test\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Determining projects to restore...\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Writing /tmp/tmpR92zkC.tmp\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/9.0.200/trustedroots/codesignctl.pem'.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/9.0.200/trustedroots/timestampctl.pem'.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : Adding PackageReference for package 'JUnitXml.TestLogger' into project '/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/GitBugActions.Tests.csproj'.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : Restoring packages for /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/GitBugActions.Tests.csproj...\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   GET https://api.nuget.org/v3-flatcontainer/junitxml.testlogger/index.json\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   OK https://api.nuget.org/v3-flatcontainer/junitxml.testlogger/index.json 445ms\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   GET https://api.nuget.org/v3-flatcontainer/junitxml.testlogger/5.0.0/junitxml.testlogger.5.0.0.nupkg\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   OK https://api.nuget.org/v3-flatcontainer/junitxml.testlogger/5.0.0/junitxml.testlogger.5.0.0.nupkg 418ms\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : Installed JunitXml.TestLogger 5.0.0 from https://api.nuget.org/v3/index.json to /home/runner/.nuget/packages/junitxml.testlogger/5.0.0 with content hash wpmmxsaAmvOylBPMngyjwWdUiG3tu9eouBB9VN/5gbiWvaE6TInbKH8F0IGFIH0zTUaqbx4t4FV1avvC5htpdA==.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   CACHE https://api.nuget.org/v3/vulnerabilities/index.json\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   CACHE https://api.nuget.org/v3-vulnerabilities/2025.03.07.17.36.10/vulnerability.base.json\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info :   CACHE https://api.nuget.org/v3-vulnerabilities/2025.03.07.17.36.10/2025.03.10.23.36.18/vulnerability.update.json\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : Package 'JUnitXml.TestLogger' is compatible with all the specified frameworks in project '/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/GitBugActions.Tests.csproj'.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : PackageReference for package 'JUnitXml.TestLogger' version '5.0.0' added to file '/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/GitBugActions.Tests.csproj'.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : Generating MSBuild file /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/obj/GitBugActions.Tests.csproj.nuget.g.props.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | info : Writing assets file to disk. Path: /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/obj/project.assets.json\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | log  : Restored /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/GitBugActions.Tests.csproj (in 1.62 sec).\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Determining projects to restore...\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   All projects are up-to-date for restore.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   GitBugActions -> /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions/bin/Debug/net9.0/GitBugActions.dll\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   GitBugActions.Tests -> /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/bin/Debug/net9.0/GitBugActions.Tests.dll\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Build succeeded.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |     0 Warning(s)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |     0 Error(s)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Time Elapsed 00:00:02.02\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Build started 03/11/2025 14:11:13.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |      1>Project \"/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.sln\" on node 1 (VSTest target(s)).\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |      1>ValidateSolutionConfiguration:\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |          Building solution configuration \"Debug|Any CPU\".\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Test run for /tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.Tests/bin/Debug/net9.0/GitBugActions.Tests.dll (.NETCoreApp,Version=v9.0)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | VSTest version 17.12.0 (x64)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Starting test execution, please wait...\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | A total of 1 test files matched the specified pattern.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 9.0.2)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | [xUnit.net 00:00:00.35]   Discovering: GitBugActions.Tests\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | [xUnit.net 00:00:00.38]   Discovered:  GitBugActions.Tests\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | [xUnit.net 00:00:00.39]   Starting:    GitBugActions.Tests\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | [xUnit.net 00:00:00.44]   Finished:    GitBugActions.Tests\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Passed GitBugActions.Tests.AppMathTests.TestSumTwice [3 ms]\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Passed GitBugActions.Tests.AppMathTests.TestSum [< 1 ms]\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Passed GitBugActions.Tests.AppMathTests.TestMultiply [< 1 ms]\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Passed GitBugActions.Tests.AppMathTests.TestSubtract [< 1 ms]\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |   Passed GitBugActions.Tests.AppMathTests.TestSubtractTwice [< 1 ms]\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Results File: TestResults/test-results.xml\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Test Run Successful.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Total tests: 5\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |      Passed: 5\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |  Total time: 0.9581 Seconds\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |      1>Done Building Project \"/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/GitBugActions.sln\" (VSTest target(s)).\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Build succeeded.\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |     0 Warning(s)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   |     0 Error(s)\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | \n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   | Time Elapsed 00:00:01.95\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2705  Success - Main Test\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \u2b50 Run Post Setup .NET\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \ud83d\udc33  docker exec cmd=[node /var/run/act/actions/actions-setup-dotnet@v3/dist/cache-save/index.js] user= workdir=\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build]   \u2705  Success - Post Setup .NET\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] Cleaning up container for job build\n[8cd6e1f4-d5fc-4c56-972a-ca4a847e5870/build] \ud83c\udfc1  Job succeeded\n",
+        "stderr": "time=\"2025-03-11T15:10:21+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\ntime=\"2025-03-11T15:10:21+01:00\" level=info msg=\"Parallel tasks (0) below minimum, setting to 1\"\n",
+        "workflow": {
+            "path": "/tmp/91796680-fe82-11ef-b2b0-98597a56f496/gitbugactions-gitbugactions-dotnet-test-repo/.github/workflows/tests-crawler.yml",
+            "type": "dotnet"
+        },
+        "workflow_name": "8cd6e1f4-d5fc-4c56-972a-ca4a847e5870",
+        "build_tool": "dotnet",
+        "elapsed_time": 54.941309452056885,
+        "default_actions": false,
+        "return_code": 0
+    }
+}
