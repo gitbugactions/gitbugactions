@@ -458,7 +458,7 @@ def collect_bugs(
         pull_requests (bool, optional): If True, the commits in pull requests will be considered. Defaults to False.
         filter_linked_to_pr (bool, optional): If True, only include commits that are linked to pull requests. If False, only include commits that are not linked to pull requests. If None, include all commits. Defaults to None.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
-        use_default_actions (bool, optional): Whether to use and collect default GitHub actions from repositories. Setting to False can speed up collection if default actions are not needed. Defaults to True.
+        use_default_actions (bool, optional): Whether to use and collect default GitHub actions from repositories. Defaults to False.
     """
     set_test_config(normalize_non_code_patch, strategies)
 
@@ -580,7 +580,9 @@ def collect_bugs(
                     )
                     continue
     else:
-        logging.info("Skipping collection of default GitHub actions as requested")
+        logging.info(
+            "Skipping collection of default GitHub actions as requested by use_default_actions=False"
+        )
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
         future_to_patches: Dict[Future, Tuple[BugPatch]] = {}
