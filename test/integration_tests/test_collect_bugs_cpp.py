@@ -3,43 +3,21 @@ import json
 import shutil
 from unidiff import PatchSet
 from collect_bugs import collect_bugs
-from gitbugactions.github_api import GithubToken
-from gitbugactions.collect_bugs.collection_strategies import *
+from test.integration_tests.test_collect_bugs import TestCollectBugs
 
 
-def get_token_usage():
-    token_usage = 0
-    if GithubToken.has_tokens():
-        for token in GithubToken._GithubToken__TOKENS:
-            token_usage += token.core_rate_limiter.requests
-        return token_usage
-    return token_usage
-
-
-def get_test_results(tests):
-    passed, failure = 0, 0
-    for test in tests:
-        if test["results"][0]["result"] == "Passed":
-            passed += 1
-        elif test["results"][0]["result"] == "Failure":
-            failure += 1
-    return passed, failure
-
-
-class TestCollectBugs:
-    TOKEN_USAGE: int = 0
+class TestCollectBugsCpp(TestCollectBugs):
+    LANGUAGE = "cpp"
 
     @classmethod
     def setup_class(cls):
-        GithubToken.init_tokens()
-        TestCollectBugs.TOKEN_USAGE = get_token_usage()
+        super().setup_class()
         collect_bugs(
             "test/resources/test_collect_bugs_cpp",
             "test/resources/test_collect_bugs_cpp_out",
             4,
             strategies=["PASS_PASS", "FAIL_PASS", "FAIL_FAIL", "FAIL_PASS_BUILD"],
             filter_on_commit_time_start="2020-01-01 00:00 UTC",
-            pull_requests=True,
         )
 
     @classmethod

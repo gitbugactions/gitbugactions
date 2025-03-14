@@ -79,7 +79,12 @@ def create_exported_containers(
         break
 
 
-def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = None):
+def export_bug_containers(
+    bug: Dict,
+    export_path: str,
+    base_image: str | None = None,
+    use_default_actions: bool = False,
+):
     TestExecutor.toggle_cleanup(False)
     repo_full_name = bug["repository"]
     commit_hash = bug["commit_hash"]
@@ -87,10 +92,11 @@ def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = 
     temp_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
     repo_clone = clone_repo(f"https://github.com/{repo_full_name}", temp_path)
     first_commit = repo_clone.revparse_single(str(repo_clone.head.target))
-    default_actions = get_default_github_actions(
-        repo_clone, first_commit, bug["language"]
-    )
     default_actions = None
+    if use_default_actions:
+        default_actions = get_default_github_actions(
+            repo_clone, first_commit, bug["language"]
+        )
 
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     bug_patch: BugPatch = BugPatch.from_dict(bug, repo_clone)
@@ -112,7 +118,10 @@ def export_bug_containers(bug: Dict, export_path: str, base_image: str | None = 
 
 
 def export_bugs(
-    dataset_path: str, output_folder_path: str, base_image: str | None = None
+    dataset_path: str,
+    output_folder_path: str,
+    base_image: str | None = None,
+    use_default_actions: bool = False,
 ):
     """Export the containers (reproducible environment) for the bug-fixes collected by collect_bugs.
 
@@ -120,6 +129,7 @@ def export_bugs(
         dataset_path (str): Folder where the result of collect_bugs is.
         output_folder_path (str): Folder on which the results will be saved.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        use_default_actions (bool, optional): Whether to use and collect default GitHub actions from repositories. Defaults to False.
     """
     # FIXME: export_bugs is not working with multiple workers
     n_workers = 1
@@ -140,7 +150,11 @@ def export_bugs(
                 bug = json.loads(line)
                 futures.append(
                     executor.submit(
-                        export_bug_containers, bug, output_folder_path, base_image
+                        export_bug_containers,
+                        bug,
+                        output_folder_path,
+                        base_image,
+                        use_default_actions,
                     )
                 )
                 futures_to_bug[futures[-1]] = bug
