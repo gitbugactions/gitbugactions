@@ -60,6 +60,7 @@ class UnknownStrategy(CollectionStrategy):
 
 class PassPassStrategy(CollectionStrategy):
     def check(self, bug_patch: BugPatch) -> bool:
+        # print result for each bollean operation
         return (
             # previous commit passed
             bug_patch.prev_commit_passed

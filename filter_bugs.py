@@ -32,17 +32,24 @@ def run_commit(
     image_name: str,
     test_fn: Callable[[], Optional[List[ActTestsRun]]],
     offline: bool,
+    use_default_actions: bool = False,
 ) -> Optional[List[ActTestsRun]]:
     act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
     try:
         # FIXME: we shouldn't need to call this here, but we have to do it because the get_default_actions script will inspect the repo state
         RepoStateManager.reset_to_commit(repo_clone, bug.commit)
 
+        default_actions = None
+        if use_default_actions:
+            default_actions = get_default_actions(
+                diff_folder_path, repo_clone, bug.language
+            )
+
         executor = TestExecutor(
             repo_clone,
             bug.language,
             act_cache_dir,
-            get_default_actions(diff_folder_path, repo_clone, bug.language),
+            default_actions,
             runner_image=image_name,
         )
 
@@ -97,6 +104,7 @@ def filter_bug(
     offline: bool,
     n_executions: int,
     base_image: str | None = None,
+    use_default_actions: bool = False,
 ) -> str:
     try:
         repo_name = bug["repository"].replace("/", "-")
@@ -122,6 +130,7 @@ def filter_bug(
                 image_name,
                 bug_patch.test_previous_commit,
                 offline=offline,
+                use_default_actions=use_default_actions,
             )
             previous_commit_runs.append(run)
 
@@ -133,6 +142,7 @@ def filter_bug(
                     image_name,
                     bug_patch.test_previous_commit_with_diff,
                     offline=offline,
+                    use_default_actions=use_default_actions,
                 )
                 previous_commit_with_diff_runs.append(run)
 
@@ -143,6 +153,7 @@ def filter_bug(
                 image_name,
                 bug_patch.test_current_commit,
                 offline=offline,
+                use_default_actions=use_default_actions,
             )
             current_commit_runs.append(run)
 
@@ -202,6 +213,7 @@ def filter_bugs(
     offline: bool = True,
     n_executions: int = 5,
     base_image: str | None = None,
+    use_default_actions: bool = False,
 ):
     """Creates the list of non-flaky bug-fixes that are able to be reproduced.
 
@@ -213,6 +225,7 @@ def filter_bugs(
         offline (bool, optional): If the containers must be isolated from the internet. Defaults to True.
         n_executions (int, optional): Number of times to execute each test. Defaults to 5.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        use_default_actions (bool, optional): Whether to use and collect default GitHub actions from repositories. Defaults to False.
     """
     ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
     executor = ThreadPoolExecutor(max_workers=n_workers)
@@ -251,6 +264,7 @@ def filter_bugs(
                         offline,
                         n_executions,
                         base_image,
+                        use_default_actions,
                     )
                     future_to_bug[future] = bug
             finally:
