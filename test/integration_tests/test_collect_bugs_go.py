@@ -3,10 +3,8 @@ import json
 import shutil
 from collect_bugs import collect_bugs
 from test.integration_tests.test_collect_bugs import TestCollectBugs
-import pytest
 
 
-@pytest.mark.skip
 class TestCollectBugsGo(TestCollectBugs):
     LANGUAGE = "go"
 
@@ -33,7 +31,7 @@ class TestCollectBugsGo(TestCollectBugs):
         repo: https://github.com/gitbugactions/gitbugactions-go-test-repo
         """
         with open(
-            "test/resources/test_collect_bugs_out/gitbugactions-gitbugactions-go-test-repo.json",
+            "test/resources/test_collect_bugs_go_out/gitbugactions-gitbugactions-go-test-repo.json",
             "r",
         ) as f:
             lines = f.readlines()
