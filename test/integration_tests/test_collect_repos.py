@@ -25,7 +25,9 @@ class TestCollectReposInfra(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-infra-test-repo")
 
-        CollectInfraReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectInfraReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-infra-test-repo.json",
@@ -44,7 +46,9 @@ class TestCollectReposInfra(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-maven-test-repo")
 
-        CollectInfraReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectInfraReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-maven-test-repo.json",
@@ -63,7 +67,9 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-npm-jest-test-repo")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-npm-jest-test-repo.json",
@@ -84,7 +90,9 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-npm-mocha-test-repo")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-npm-mocha-test-repo.json",
@@ -105,7 +113,9 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-npm-vitest-test-repo")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-npm-vitest-test-repo.json",
@@ -126,7 +136,9 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-rust-test-repo")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-rust-test-repo.json",
@@ -147,7 +159,9 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-ts-npm-jest-test-repo")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-ts-npm-jest-test-repo.json",
@@ -171,7 +185,9 @@ class TestCollectReposJavaScript(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("Uniswap/smart-order-router")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "Uniswap-smart-order-router.json",
@@ -195,7 +211,9 @@ class TestCollectReposCSharp(BaseCollectReposTest):
         api = GithubAPI()
         repo = api.get_repo("gitbugactions/gitbugactions-dotnet-test-repo")
 
-        CollectReposStrategy(self.temp_folder).handle_repo(repo)
+        CollectReposStrategy(
+            self.temp_folder, use_template_workflows=False
+        ).handle_repo(repo)
         data_file = os.path.join(
             self.temp_folder,
             "gitbugactions-gitbugactions-dotnet-test-repo.json",
@@ -211,3 +229,25 @@ class TestCollectReposCSharp(BaseCollectReposTest):
             assert data["number_of_actions"] == 1
             assert data["actions_run"]["tests"] is not None
             assert len(data["actions_run"]["tests"]) > 0
+
+    def test_collect_repos_dotnet_with_template_workflows(self):
+        api = GithubAPI()
+        repo = api.get_repo("gitbugactions/gitbugactions-dotnet-test-repo-no-actions")
+
+        CollectReposStrategy(self.temp_folder, use_template_workflows=True).handle_repo(
+            repo
+        )
+        data_file = os.path.join(
+            self.temp_folder,
+            "gitbugactions-gitbugactions-dotnet-test-repo-no-actions.json",
+        )
+
+        assert os.path.exists(data_file)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+            assert "number_of_test_actions" in data
+            assert "actions_successful" in data
+            assert data["actions_successful"]
+            assert data["actions_run"]["tests"] is not None
+            assert len(data["actions_run"]["tests"]) > 0
+            assert data["using_template_workflow"]
