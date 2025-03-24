@@ -18,15 +18,47 @@ from gitbugactions.actions.actions import (
     ActCheckCodeFailureStrategy,
     GitHubActions,
 )
+from gitbugactions.actions.templates.template_workflows import (
+    TemplateWorkflowManager,
+)
 from gitbugactions.crawler import RepoCrawler, RepoStrategy
 from gitbugactions.infra.infra_checkers import is_infra_file
 from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 
 
+def run_workflow(repo_path, workflow, act_cache_dir, language, base_image=None):
+    """
+    Common utility to run a GitHub Actions workflow
+
+    Args:
+        repo_path: Path to the repository
+        workflow: Workflow to run
+        act_cache_dir: Act cache directory
+        language: Repository language
+        base_image: Base image to use for building the runner
+
+    Returns:
+        ActTestsRun: Result of running the workflow
+    """
+    # Act creates names for the containers by hashing the content of the workflows
+    # To avoid conflicts between threads, we randomize the name
+    workflow.doc["name"] = str(uuid.uuid4())
+
+    # Create the GitHub Actions runner
+    actions = GitHubActions(repo_path, language, base_image=base_image)
+    actions.save_workflows()
+
+    # Run the workflow
+    return actions.run_workflow(workflow, act_cache_dir=act_cache_dir)
+
+
 class CollectReposStrategy(RepoStrategy):
-    def __init__(self, data_path: str):
+    def __init__(self, data_path: str, use_template_workflows: bool = True):
         self.data_path = data_path
         self.uuid = str(uuid.uuid1())
+        self.use_template_workflows = (
+            use_template_workflows  # Flag to control template workflow usage
+        )
 
     def save_data(self, data: dict, repo):
         """
@@ -59,6 +91,7 @@ class CollectReposStrategy(RepoStrategy):
             "number_of_actions": 0,
             "number_of_test_actions": 0,
             "actions_successful": False,
+            "using_template_workflow": False,  # Track if we used a template workflow
         }
 
         repo_clone = clone_repo(repo.clone_url, repo_path)
@@ -77,24 +110,57 @@ class CollectReposStrategy(RepoStrategy):
             ]
             actions.save_workflows()
 
-            if len(actions.test_workflows) == 1:
-                logging.info(f"Running actions for {repo.full_name}")
+            # Check if we have test workflows, otherwise use a template if enabled
+            if len(actions.test_workflows) == 0 and self.use_template_workflows:
+                logging.info(
+                    f"No test workflows found, creating template for {repo.full_name}"
+                )
 
-                # Act creates names for the containers by hashing the content of the workflows
-                # To avoid conflicts between threads, we randomize the name
-                actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
-                actions.save_workflows()
+                # Use the context manager to automatically handle cleanup
+                with TemplateWorkflowManager.create_temp_workflow(
+                    repo_path, repo.language
+                ) as template_path:
+                    if template_path:
+                        # Create a new actions instance to include our template
+                        actions = GitHubActions(repo_path, repo.language)
+                        data["using_template_workflow"] = True
+                        actions.save_workflows()
+
+                        # Now run the template workflow
+                        if len(actions.test_workflows) == 1:
+                            logging.info(
+                                f"Running template workflow for {repo.full_name}"
+                            )
+
+                            act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+                            try:
+                                act_run = run_workflow(
+                                    repo_path,
+                                    actions.test_workflows[0],
+                                    act_cache_dir,
+                                    repo.language,
+                                )
+                                data["actions_successful"] = not act_run.failed
+                                data["actions_run"] = act_run.asdict()
+                            finally:
+                                ActCacheDirManager.return_act_cache_dir(act_cache_dir)
+
+            # If no template was used but we have a test workflow, run it
+            elif len(actions.test_workflows) == 1:
+                logging.info(f"Running actions for {repo.full_name}")
 
                 act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
                 try:
-                    act_run = actions.run_workflow(
-                        actions.test_workflows[0], act_cache_dir=act_cache_dir
+                    act_run = run_workflow(
+                        repo_path,
+                        actions.test_workflows[0],
+                        act_cache_dir,
+                        repo.language,
                     )
+                    data["actions_successful"] = not act_run.failed
+                    data["actions_run"] = act_run.asdict()
                 finally:
                     ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-
-                data["actions_successful"] = not act_run.failed
-                data["actions_run"] = act_run.asdict()
 
             delete_repo_clone(repo_clone)
             self.save_data(data, repo)
@@ -108,8 +174,10 @@ class CollectReposStrategy(RepoStrategy):
 
 
 class CollectInfraReposStrategy(CollectReposStrategy):
-    def __init__(self, data_path: str):
-        super().__init__(data_path)
+    def __init__(self, data_path: str, use_template_workflows: bool = False):
+        super().__init__(data_path, use_template_workflows)
+        if use_template_workflows:
+            logging.warning("use_template_workflows is not supported for infra repos")
 
     def test_actions(self, data: dict, repo: Repository, repo_path: str):
         actions = GitHubActions(repo_path, repo.language)
@@ -203,6 +271,7 @@ def collect_repos(
     n_workers: int = 1,
     out_path: str = "./out/",
     base_image: str | None = None,
+    use_template_workflows: bool = True,
 ):
     """Collect the repositories from GitHub that match the query and have executable
     GitHub Actions workflows with parsable tests.
@@ -214,13 +283,14 @@ def collect_repos(
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        use_template_workflows (bool, optional): Whether to use template workflows for repos without test workflows. Defaults to True.
     """
     if not Path(out_path).exists():
         os.makedirs(out_path, exist_ok=True)
 
     Act(base_image=base_image)  # Initialize Act with base_image
     crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
-    crawler.get_repos(CollectReposStrategy(out_path))
+    crawler.get_repos(CollectReposStrategy(out_path, use_template_workflows))
 
 
 def main():
