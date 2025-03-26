@@ -1,0 +1,273 @@
+name: Fallback CMake Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: ubuntu-gcc
+    runs-on: ubuntu-latest
+    env:
+      CC: gcc
+      CXX: g++
+      CMAKE_VERSION: latest
+      PYTHON_VERSION: latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Update submodules if any
+      run: |
+        if [ -f ".gitmodules" ]; then
+          echo "Update submodules..."
+          git submodule update --init --recursive
+        fi
+    - name: Install package dependencies
+      run: |
+        if grep -r -q -i -E "find_package[[:space:]]*\([[:space:]]*(Lib_?)?Catch2(_?Lib)?" --include="CMakeLists.txt" --include="*.cmake*" .; then
+          if grep -r -q -i "Catch2::Catch2WithMain" --include="CMakeLists.txt" --include="*.cmake*" .; then
+            echo "Installing Catch2 from repository..."
+            git clone https://github.com/catchorg/Catch2.git
+            cd Catch2
+            cmake -Bbuild -H. -DBUILD_TESTING=OFF
+            sudo cmake --build build/ --target install
+            cd ..
+          else
+            echo "Installing Catch2 from package..."
+            sudo apt-get update && sudo apt-get install -y catch2
+          fi
+        fi
+        dependencies_and_packages='{
+          "Abseil": "abseil-cpp",
+          "Alsa": "libasound2-dev",
+          "Archive": "libarchive-dev",
+          "Asn1c": "asn1c",
+          "Assimp": "libassimp-dev",
+          "Atlas": "libatlas-base-dev",
+          "Bfd": "binutils-dev",
+          "Boost": "libboost-all-dev",
+          "Cares": "libc-ares-dev",
+          "Ceres": "libceres-dev libcxsparse3 libcxsparse-dev",
+          "Clang": "libclang-dev",
+          "cmark-gfm": "cmark-gfm",
+          "CMocka": "libcmocka-dev",
+          "CppTest": "cpputest",
+          "CUDA": "nvidia-cuda-toolkit",
+          "CUnit": "libcunit1-dev",
+          "Curl": "libcurl4-openssl-dev",
+          "Debuginfod": "libdebuginfod-dev",
+          "Doxygen": "doxygen",
+          "dw": "libdw-dev",
+          "Dwarf": "libdwarf-dev",
+          "ECM": "extra-cmake-modules",
+          "EGL": "libegl1-mesa-dev",
+          "Eigen3": "libeigen3-dev",
+          "elf": "libelf-dev",
+          "Event": "libevent-dev",
+          "FFmpeg": "ffmpeg",
+          "FFTW3F": "libfftw3-dev",
+          "FLAC": "libflac-dev",
+          "FLTK": "libfltk1.3-dev",
+          "FMT": "libfmt-dev",
+          "FontConfig": "libfontconfig1-dev",
+          "Freetype": "libfreetype6-dev",
+          "FriBidi": "libfribidi-dev",
+          "GFLAGS": "libgflags-dev",
+          "GIF": "libgif-dev",
+          "GLEW": "libglew-dev",
+          "GLFW": "libglfw3-dev",
+          "Glog": "libgoogle-glog-dev",
+          "GLUT": "freeglut3-dev",
+          "GMock": "libgmock-dev",
+          "Gperftools": "libgoogle-perftools-dev",
+          "GTest": "libgtest-dev",
+          "GTK3": "libgtk-3-dev",
+          "HarfBuzz": "libharfbuzz-dev",
+          "HDF5": "libhdf5-dev",
+          "Hiredis": "libhiredis-dev",
+          "ImageMagick": "libmagick++-dev",
+          "Imath": "libimath-dev",
+          "inih": "libinih-dev",
+          "INOTIFY": "libinotifytools-dev",
+          "Jemalloc": "libjemalloc-dev",
+          "JPEG": "libjpeg-dev",
+          "JsonCpp": "libjsoncpp-dev",
+          "leveldb": "libleveldb-dev",
+          "lmdb": "liblmdb-dev",
+          "LpSolve": "lp-solve",
+          "Lua51": "liblua5.1-0-dev",
+          "LuaJit": "libluajit-5.1-dev",
+          "mad": "libmad0-dev",
+          "MariaDB": "libmariadb-dev",
+          "mbedTLS": "libmbedtls-dev",
+          "MiniUPnPc": "libminiupnpc-dev",
+          "MKL": "intel-mkl",
+          "MP3Lame": "lame libmp3lame-dev",
+          "MPG123": "libmpg123-dev",
+          "MPI": "mpich libmpich-dev",
+          "MySQL": "libmysqlclient-dev",
+          "nlohmann_json": "nlohmann-json3-dev",
+          "OCaml": "ocaml ocaml-findlib",
+          "OpenAL": "libopenal-dev",
+          "OpenCL": "ocl-icd-opencl-dev",
+          "OpenColorIO": "libopencolorio-dev",
+          "OpenCV": "libopencv-dev",
+          "OpenEXR": "libopenexr-dev",
+          "OpenGL": "libgl1-mesa-dev",
+          "OpenMP": "libomp-dev",
+          "OpenShotAudio": "libopenshot-audio-dev",
+          "OpenSSL": "libssl-dev",
+          "Opus": "libopus-dev",
+          "PCL": "libpcl-dev",
+          "PerlLibs": "libperl-dev",
+          "PkgConfig": "pkg-config",
+          "PNG": "libpng-dev",
+          "Protobuf": "protobuf-compiler libprotobuf-dev",
+          "Protoc": "libprotoc-dev",
+          "PugiXML": "libpugixml-dev",
+          "PyBind11": "pybind11-dev",
+          "Python": "python3-dev python3-pip",
+          "PyTorch": "libtorch-dev",
+          "QScintilla": "libqscintilla2-qt5-dev",
+          "Qt5": "qt5-qmake qtbase5-dev qtbase5-dev-tools qttools5-dev-tools qttools5-dev libqt5dbus5 libqt5network5 libqt5core5a libqt5widgets5 libqt5gui5 libqt5svg5-dev",
+          "Qt5Core": "qtbase5-dev",
+          "Qt5LinguistTools": "qttools5-dev-tools",
+          "Qt5Widgets": "qtbase5-dev",
+          "RapidJSON": "rapidjson-dev",
+          "SDL": "libsdl2-2.0-0 libsdl2-dev libsdl2-mixer-dev libsdl2-net-dev libsdl1.2-dev",
+          "SDL2_image": "libsdl2-image-dev",
+          "snappy": "libsnappy-dev",
+          "Sndio": "libsndio-dev",
+          "SODIUM": "libsodium-dev",
+          "Speex": "libspeex-dev",
+          "SQLite3": "libsqlite3-dev",
+          "TBB": "libtbb-dev",
+          "TensorFlow": "tensorflow-dev",
+          "UDev": "libudev-dev",
+          "UHD": "libuhd-dev uhd-host",
+          "Uncrustify": "uncrustify",
+          "unibreak": "libunibreak-dev",
+          "utf8proc": "libutf8proc-dev",
+          "Valgrind": "valgrind",
+          "Verilator": "verilator",
+          "virt": "libvirt-dev",
+          "Vorbis": "libvorbis-dev",
+          "Vulkan": "vulkan-sdk",
+          "WrapOpenGL": "libgl1-mesa-dev",
+          "X11": "libx11-dev libxrandr-dev libxcursor-dev libxi-dev",
+          "Xml2": "libxml2-dev",
+          "xxHash": "libxxhash-dev",
+          "Yang": "libyang-dev",
+          "ZLIB": "zlib1g-dev",
+          "ZSTD": "libzstd-dev"
+        }'
+        if ! command -v jq &> /dev/null; then
+          echo "jq is not installed. Installing jq..."
+          sudo apt-get update && sudo apt-get install -y jq
+        fi
+        echo "$dependencies_and_packages" | jq -r 'to_entries[] | "\(.key):\(.value)"' | while IFS=":" read -r dependency packages; do
+          if grep -r -q -i -E "find_package[[:space:]]*\([[:space:]]*(Lib)?$dependency" --include="CMakeLists.txt" --include="*.cmake*" .; then
+            echo "Installing $dependency..."
+            sudo apt-get update && sudo apt-get install -y $packages
+          fi
+        done
+
+    - name: Install vcpkg dependencies
+      run: |
+        if [ -f "vcpkg.json" ]; then
+          echo "vcpkg.json found. Installing vcpkg dependencies..."
+          sudo apt-get update && sudo apt-get install -y curl zip unzip tar
+          git clone https://github.com/microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh
+          ./vcpkg/vcpkg install --triplet x64-linux
+        fi
+
+    - name: Enable build flags
+      run: |
+        BUILD_FLAGS="$BUILD_FLAGS -DCMAKE_BUILD_TYPE=Debug"
+        # https://github.com/google/benchmark
+        if grep -r -q "BENCHMARK_DOWNLOAD_DEPENDENCIES" --include="CMakeLists.txt" --include="*.cmake*" .; then
+          echo "Enable BENCHMARK_DOWNLOAD_DEPENDENCIES..."
+          BUILD_FLAGS="$BUILD_FLAGS -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON"
+        fi
+        # https://github.com/endless-sky/endless-sky
+        if grep -r -q "if[[:space:]]*([[:space:]]*BUILD_TESTING[[:space:]]*)" --include="CMakeLists.txt" --include="*.cmake*" .; then
+          echo "Enable BUILD_TESTING..."
+          BUILD_FLAGS="$BUILD_FLAGS -DBUILD_TESTING=ON"
+        fi
+        # https://github.com/apache/arrow
+        if grep -r -q "if[[:space:]]*([[:space:]]*ARROW_BUILD_TESTS[[:space:]]*)" --include="CMakeLists.txt" --include="*.cmake*" .; then
+          echo "Enable ARROW_BUILD_TESTS..."
+          BUILD_FLAGS="$BUILD_FLAGS -DARROW_BUILD_TESTS=ON"
+        fi
+        # https://github.com/llvm-mirror/libcxx
+        if grep -r -q "option[[:space:]]*([[:space:]]*LIBCXX_INCLUDE_TESTS .* [[:space:]]*)" --include="CMakeLists.txt" --include="*.cmake*" .; then
+          echo "Enable LIBCXX_INCLUDE_TESTS..."
+          BUILD_FLAGS="$BUILD_FLAGS -DLIBCXX_INCLUDE_TESTS=ON"
+        fi
+        # https://github.com/SFML/SFML
+        if grep -r -q "sfml_set_option[[:space:]]*([[:space:]]*SFML_BUILD_TEST_SUITE OFF" --include="CMakeLists.txt" --include="*.cmake*" .; then
+          echo "Enable SFML_BUILD_TEST_SUITE..."
+          BUILD_FLAGS="$BUILD_FLAGS -DSFML_BUILD_TEST_SUITE=ON"
+        fi
+
+        # Array of test-related flags to enable specific build options for testing
+        test_flags=(
+          "BUILD_BYTETRACK_TEST"
+          "build_tests"
+          "BUILD_TESTS"
+          "BUILD_UNIT_TEST"
+          "BUILD_UNIT_TESTS"
+          "CATCH_DEVELOPMENT_BUILD"
+          "DAW_ENABLE_TESTING"
+          "ENABLE_TEST_COVERAGE"
+          "ENABLE_TESTING"
+          "ENABLE_TESTS"
+          "EQEMU_BUILD_TESTS"
+          "GOOGLE_TEST"
+          "MINISCRIPT_BUILD_TESTING"
+          "MINISELECT_TESTING"
+          "NANOARROW_TESTING"
+          "QUANTUM_ENABLE_TESTS"
+          "RAPIDCSV_BUILD_TESTS"
+          "SFML_BUILD_TEST_SUITE"
+          "SIMDJSON_DEVELOPER_MODE"
+          "SPACYCPP_BUILD_TESTS"
+          "SPDLOG_BUILD_TESTS"
+          "TEST_BIN"
+          "TEST_SWITCH"
+          "TI_BUILD_TESTS"
+          "WITH_TESTS"
+        )
+        for flag in "${test_flags[@]}"; do
+          if grep -r -q "\(option\|OPTION\)[[:space:]]*([[:space:]]*$flag .* \(FALSE\|false\|OFF\|off\)[[:space:]]*)" --include="CMakeLists.txt" --include="*.cmake*" .; then
+            echo "Enable $flag..."
+            BUILD_FLAGS="$BUILD_FLAGS -D$flag=ON"
+          fi
+        done
+
+        echo "BUILD_FLAGS=$BUILD_FLAGS" >> $GITHUB_ENV
+    - name: Configure Build and Test
+      continue-on-error: true
+      run: |
+        ORIGINAL_DIR=$(pwd)
+        find . -name "CMakeLists.txt" -exec grep -l -E -i "project[[:space:]]*\([[:space:]]*[[:alnum:]_]*" {} + | awk -F/ '{print NF, $0}' | sort -n | cut -d' ' -f2- | while read -r CMAKE_FILE; do
+            cd $ORIGINAL_DIR
+            CMAKE_FILE=$(realpath $CMAKE_FILE)
+            ROOT_DIR=$(dirname "$(realpath "$CMAKE_FILE")")
+            echo "Found root CMakeLists.txt in '$ROOT_DIR'"
+            mkdir -p "$ROOT_DIR/build/"
+            cd "$ROOT_DIR/build/"
+            cmake .. ${{ env.BUILD_FLAGS }} || true
+            cmake --build . -j=4 || true
+            BUILD_DIR=$(pwd)
+            if find . -name "CTestTestfile.cmake" | grep -q .; then
+                find . -name "CTestTestfile.cmake" | awk -F/ '{print NF, $0}' | sort -n | cut -d' ' -f2- | while read -r CTEST_FILE; do
+                  cd $BUILD_DIR
+                  CTEST_DIR=$(dirname "$CTEST_FILE")
+                  echo "Running tests in $CTEST_DIR"
+                  cd "$CTEST_DIR"
+                  ctest -C Debug --output-junit "report.xml" || true
+                  cd - > /dev/null
+                done
+            else
+              echo "No ctest tests found in $ROOT_DIR/build or subfolders. Skipping..."
+            fi
+        done
