@@ -18,7 +18,7 @@ class CMakeWorkflow(GitHubWorkflow):
     def _is_test_command(self, command) -> bool:
         return "ctest" in command
 
-    def instrument_test_steps(self):
+    def instrument_test_steps(self, **kwargs):
         if self.path.endswith("template-test-crawler.yml"):
             return
         if "jobs" in self.doc:

@@ -13,7 +13,7 @@ class NpmVitestWorkflow(NpmWorkflow):
     def is_npm_test_command(cls, command: str) -> bool:
         return "vitest" in command.lower()
 
-    def instrument_test_steps(self):
+    def instrument_test_steps(self, **kwargs):
         if "jobs" in self.doc:
             for _, job in self.doc["jobs"].items():
                 if "steps" in job:

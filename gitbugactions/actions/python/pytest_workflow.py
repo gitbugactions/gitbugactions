@@ -24,7 +24,7 @@ class PytestWorkflow(GitHubWorkflow):
                 return True
         return False
 
-    def instrument_test_steps(self):
+    def instrument_test_steps(self, **kwargs):
         if "jobs" in self.doc:
             for _, job in self.doc["jobs"].items():
                 if "steps" in job:
