@@ -165,22 +165,11 @@ class DotNetProjectAnalyzer:
                         ):
                             source_dirs.add(rel_path)
 
-            # If still nothing found, use the repository root
-            if not source_dirs:
-                source_dirs.add(".")
-            if not test_dirs:
-                test_dirs.add(
-                    "tests"
-                    if os.path.exists(os.path.join(self.repo_path, "tests"))
-                    else "."
-                )
-
             return source_dirs, test_dirs
 
         except Exception as e:
             logger.error(f"Error analyzing repository structure: {e}")
-            # Return reasonable defaults on error
-            return {"src", "."}, {"test", "tests"}
+            return set(), set()
 
     def _process_project_file(
         self, proj_file: str, source_dirs: Set[str], test_dirs: Set[str]

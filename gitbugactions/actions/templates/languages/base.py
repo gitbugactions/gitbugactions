@@ -10,7 +10,7 @@ class LanguageTemplate:
         raise NotImplementedError("Subclasses must implement get_name")
 
     @classmethod
-    def get_workflow(cls) -> Dict[str, Any]:
+    def get_workflow(cls, **kwargs) -> Dict[str, Any]:
         """Get the workflow template for this language"""
         raise NotImplementedError("Subclasses must implement get_workflow")
 

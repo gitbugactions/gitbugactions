@@ -1,4 +1,4 @@
-from gitbugactions.actions.templates.languages.cmake import CMakeTemplate
+from gitbugactions.actions.templates.languages.cmake.cmake import CMakeTemplate
 
 
 class CppTemplate(CMakeTemplate):

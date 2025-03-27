@@ -41,70 +41,67 @@ class DotNetWorkflow(GitHubWorkflow):
                 return True
         return False
 
-    def instrument_test_steps(self, repo_clone: Optional[str] = None):
+    def instrument_test_steps(self, **kwargs):
         """
         Instrument the test steps to capture test results.
 
         Args:
             repo_clone: Optional path to the repository clone, used for determining project structure
         """
+        if "repo_clone" not in kwargs:
+            logger.warning("No repo clone provided, skipping test instrumentation")
+            return
+        repo_clone = kwargs["repo_clone"]
+
         # Add reporting options to the test command
+        test_step_indices = []
         if "jobs" in self.doc:
-            for _, job in self.doc["jobs"].items():
+            for job_name, job in self.doc["jobs"].items():
                 if "steps" in job:
                     for step in job["steps"]:
                         if "run" in step and self._is_test_command(step["run"]):
-                            # If we have access to GitHub API, try to analyze project structure first
-                            if (
-                                repo_clone
-                                and not self.source_dirs
-                                and not self.test_dirs
-                            ):
-                                try:
-                                    self.get_project_structure(repo_clone)
-                                    logger.info(
-                                        f"Detected source directories: {self.source_dirs}"
-                                    )
-                                    logger.info(
-                                        f"Detected test directories: {self.test_dirs}"
-                                    )
+                            test_step_indices.append(
+                                (job_name, job["steps"].index(step))
+                            )
 
-                                    # TODO: Handle multiple test directories
-                                    if len(self.test_dirs) == 1:
-                                        test_dir = list(self.test_dirs)[0]
-                                        # Modify the original command to include the logger option
-                                        # but don't change directory
-                                        original_command = step["run"]
+        if len(test_step_indices) == 0:
+            logger.warning("No test steps detected, skipping test instrumentation")
+            return
 
-                                        # Create a multi-step command that:
-                                        # 1. Adds the JUnitXml.TestLogger package to the test project
-                                        # 2. Builds the project to ensure the package is properly integrated
-                                        # 3. Runs the original test command with the logger option
-                                        step["run"] = (
-                                            f"cd {test_dir} && dotnet add package JUnitXml.TestLogger --version 5.0.0 && "
-                                            f"dotnet build && cd .. && {original_command} "
-                                            f'--logger:"junit;LogFilePath=TestResults/test-results.xml"'
-                                        )
-                                    elif (
-                                        len(self.source_dirs) == 0
-                                        or len(self.test_dirs) == 0
-                                    ):
-                                        logger.warning(
-                                            "Cannot instrument test steps, no source or test directories detected"
-                                        )
-                                    else:
-                                        logger.warning(
-                                            "Cannot instrument test steps, multiple test directories detected"
-                                        )
+        self.get_project_structure(repo_clone)
+        logger.info(f"Detected source directories: {self.source_dirs}")
+        logger.info(f"Detected test directories: {self.test_dirs}")
 
-                                except Exception as e:
-                                    logger.warning(
-                                        f"Error analyzing .NET project structure: {e}"
-                                    )
-                            else:
-                                logger.warning(
-                                    "No repo clone provided, cannot instrument .NET test steps"
-                                )
+        # Instrument the test directories
+        for test_dir in self.test_dirs:
+            # Add the test logger to the test directory
+            self.doc["jobs"][test_step_indices[0][0]]["steps"].insert(
+                test_step_indices[0][1],
+                {
+                    "name": f"Add test logger to {test_dir}",
+                    "run": (
+                        f"cd {test_dir} && "
+                        f"dotnet add package JUnitXml.TestLogger --version 5.0.0 && "
+                        f"dotnet build && cd .."
+                    ),
+                },
+            )
+
+            # Update the indices to account for the new step
+            test_step_indices = [
+                (job_name, step_index + 1) for job_name, step_index in test_step_indices
+            ]
+
+        # Instrument the test steps
+        for test_step_index in test_step_indices:
+            # Modify the original test command to use the logger
+            original_command = self.doc["jobs"][test_step_index[0]]["steps"][
+                test_step_index[1]
+            ]["run"]
+            self.doc["jobs"][test_step_index[0]]["steps"][test_step_index[1]]["run"] = (
+                f"{original_command} "
+                f'--logger:"junit;LogFilePath=TestResults/test-results.xml"'
+            )
 
     def instrument_offline_execution(self):
         pass
@@ -113,13 +110,12 @@ class DotNetWorkflow(GitHubWorkflow):
         parser = JUnitXMLParser()
 
         # If we have identified test directories, look for test results there
-        if self.test_dirs and len(self.test_dirs) == 1:
-            test_dir = list(self.test_dirs)[0]
+        test_results = []
+        for test_dir in self.test_dirs:
             results_path = str(Path(repo_path, test_dir, "TestResults"))
-            return parser.get_test_results(results_path)
+            test_results.extend(parser.get_test_results(results_path))
 
-        # Fallback to the original behavior if test directories are not identified
-        return parser.get_test_results(str(Path(repo_path, "TestResults")))
+        return test_results
 
     def get_build_tool(self) -> str:
         return "dotnet"
