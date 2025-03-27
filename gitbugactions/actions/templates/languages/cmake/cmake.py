@@ -13,7 +13,7 @@ class CMakeTemplate(LanguageTemplate):
         return "cmake"
 
     @classmethod
-    def get_workflow(cls) -> Dict[str, Any]:
+    def get_workflow(cls, **kwargs) -> Dict[str, Any]:
         path = os.path.join(os.path.dirname(__file__), "cmake.yml")
         with open(path, "r") as file:
             workflow_content = file.read()

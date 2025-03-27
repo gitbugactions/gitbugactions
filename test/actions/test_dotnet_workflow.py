@@ -57,15 +57,13 @@ class TestDotNetWorkflow(unittest.TestCase):
         # Mock the project analysis
         mock_analyze_repo.return_value = ({"src"}, {"test"})
 
-        # Mock GitHub API
-        github_api = MagicMock()
-
-        # Instrument the test steps with GitHub API
-        self.workflow.instrument_test_steps(github_api)
+        # Instrument the test steps
+        self.workflow.instrument_test_steps(repo_clone="mock_repo_path")
 
         # Check if test command was properly instrumented
-        test_step = self.workflow.doc["jobs"]["build"]["steps"][4]
-        self.assertIn("JUnitXml.TestLogger", test_step["run"])
+        build_step = self.workflow.doc["jobs"]["build"]["steps"][4]
+        self.assertIn("JUnitXml.TestLogger", build_step["run"])
+        test_step = self.workflow.doc["jobs"]["build"]["steps"][5]
         self.assertIn(
             '--logger:"junit;LogFilePath=TestResults/test-results.xml"',
             test_step["run"],

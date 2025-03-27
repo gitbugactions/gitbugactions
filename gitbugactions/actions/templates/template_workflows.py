@@ -8,10 +8,10 @@ from contextlib import contextmanager
 from gitbugactions.actions.templates.languages import (
     LanguageTemplate,
     CSharpTemplate,
+    CMakeTemplate,
+    CTemplate,
+    CppTemplate,
 )
-from gitbugactions.actions.templates.languages.c import CTemplate
-from gitbugactions.actions.templates.languages.cmake import CMakeTemplate
-from gitbugactions.actions.templates.languages.cpp import CppTemplate
 
 
 class TemplateWorkflowManager:
@@ -89,7 +89,7 @@ class TemplateWorkflowManager:
             )
 
             # Get the template for the language
-            workflow_content = template_class.get_workflow()
+            workflow_content = template_class.get_workflow(repo_path=repo_path)
 
             # Write the workflow to file
             with open(temp_workflow_path, "w") as f:
