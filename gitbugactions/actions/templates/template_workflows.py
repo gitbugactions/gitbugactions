@@ -9,6 +9,9 @@ from gitbugactions.actions.templates.languages import (
     LanguageTemplate,
     CSharpTemplate,
 )
+from gitbugactions.actions.templates.languages.c import CTemplate
+from gitbugactions.actions.templates.languages.cmake import CMakeTemplate
+from gitbugactions.actions.templates.languages.cpp import CppTemplate
 
 
 class TemplateWorkflowManager:
@@ -17,6 +20,9 @@ class TemplateWorkflowManager:
     # Register template classes here
     _templates: List[Type[LanguageTemplate]] = [
         CSharpTemplate,
+        CMakeTemplate,
+        CTemplate,
+        CppTemplate,
     ]
 
     # Dictionary for fast language lookup
