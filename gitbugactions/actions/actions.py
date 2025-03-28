@@ -408,6 +408,10 @@ class GitHubActions:
                 )
             )
             for file in yaml_files:
+                # Skip the workflow if it is already instrumented
+                if "gitbugactions-crawler" in file:
+                    continue
+
                 # Create workflow object according to the language and build system
                 workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
                     os.path.join(dirpath, file), self.language
@@ -426,19 +430,7 @@ class GitHubActions:
                 workflow.instrument_strategy()
                 workflow.instrument_cache_steps()
                 workflow.instrument_setup_steps()
-
-                # Instrument test steps if the workflow has a get_project_structure method
-                # HACK: This is used to instrument .NET test steps
-                if hasattr(workflow, "instrument_test_steps"):
-                    if hasattr(workflow, "get_project_structure"):
-                        try:
-                            workflow.instrument_test_steps(self.repo_path)
-                        except TypeError:
-                            # Fallback if method doesn't accept github_api parameter
-                            workflow.instrument_test_steps()
-                    else:
-                        workflow.instrument_test_steps()
-
+                workflow.instrument_test_steps(repo_clone=self.repo_path)
                 if offline:
                     workflow.instrument_offline_execution()
                 else:
@@ -447,7 +439,9 @@ class GitHubActions:
                 filename = os.path.basename(workflow.path)
                 dirpath = os.path.dirname(workflow.path)
                 new_filename = (
-                    filename.split(".")[0] + "-crawler." + filename.split(".")[1]
+                    filename.split(".")[0]
+                    + "-gitbugactions-crawler."
+                    + filename.split(".")[1]
                 )
                 new_path = os.path.join(dirpath, new_filename)
                 workflow.path = new_path

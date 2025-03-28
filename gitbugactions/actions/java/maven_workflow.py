@@ -22,7 +22,7 @@ class MavenWorkflow(GitHubWorkflow):
                 return True
         return False
 
-    def instrument_test_steps(self):
+    def instrument_test_steps(self, **kwargs):
         pass
 
     def instrument_offline_execution(self):
