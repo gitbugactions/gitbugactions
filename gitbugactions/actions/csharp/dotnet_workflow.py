@@ -99,7 +99,7 @@ class DotNetWorkflow(GitHubWorkflow):
                 test_step_index[1]
             ]["run"]
             self.doc["jobs"][test_step_index[0]]["steps"][test_step_index[1]]["run"] = (
-                f"{original_command} "
+                f"{original_command.strip()} "
                 f'--logger:"junit;LogFilePath=TestResults/test-results.xml"'
             )
 
