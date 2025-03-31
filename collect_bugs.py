@@ -404,6 +404,74 @@ class PatchCollector:
             delete_repo_clone(self.repo_clone)
         self.cloned = False
 
+    def analyze_specific_commits(self, commit_shas: List[str]) -> List[BugPatch]:
+        """Analyze specific commits instead of scanning through all repository commits.
+
+        Args:
+            commit_shas (List[str]): List of commit SHAs to analyze
+
+        Returns:
+            List[BugPatch]: List of bug patches found in the specified commits
+        """
+        self.__clone_repo()
+        if len(list(self.repo_clone.references.iterator())) == 0:
+            return []
+
+        bug_patches: List[BugPatch] = []
+
+        try:
+            for commit_sha in commit_shas:
+                try:
+                    # Get the commit and its parent
+                    commit = self.repo_clone.revparse_single(commit_sha)
+
+                    # Make sure the commit has a parent
+                    if len(commit.parents) == 0:
+                        logging.warning(f"Commit {commit_sha} has no parent, skipping")
+                        continue
+
+                    previous_commit = commit.parents[0]
+
+                    # Get patches and actions
+                    bug_patch, test_patch, non_code_patch = self.__get_patches(
+                        self.repo_clone, commit, previous_commit
+                    )
+
+                    # Skip if there's no bug patch or non-code patch
+                    if len(bug_patch) == 0 and len(non_code_patch) == 0:
+                        logging.info(
+                            f"Skipping commit {self.repo.full_name} {str(commit.id)}: no bug patch"
+                        )
+                        continue
+
+                    # Get actions used in the commit and its parent
+                    actions: Set[Action] = set()
+                    actions.update(self.__get_used_actions(str(commit.id)))
+                    actions.update(self.__get_used_actions(str(previous_commit.id)))
+
+                    # Create a BugPatch object
+                    patch = BugPatch(
+                        self.repo,
+                        commit,
+                        previous_commit,
+                        bug_patch,
+                        test_patch,
+                        non_code_patch,
+                        actions,
+                    )
+
+                    bug_patches.append(patch)
+                    RepoStateManager.reset_to_commit(self.repo_clone, commit.id)
+
+                except Exception as e:
+                    logging.error(f"Error analyzing commit {commit_sha}: {e}")
+                    continue
+        finally:
+            # Reset to the original state
+            RepoStateManager.reset_to_commit(self.repo_clone, self.first_commit.id)
+
+        return bug_patches
+
 
 def set_test_config(
     normalize_non_code_patch: bool = True,
@@ -423,6 +491,23 @@ def set_test_config(
         )
 
 
+def parse_commit_url(commit_url: str) -> Tuple[str, str]:
+    """Extract repository name and commit SHA from a GitHub commit URL.
+
+    Args:
+        commit_url (str): GitHub commit URL in the format "https://github.com/owner/repo/commit/sha"
+
+    Returns:
+        Tuple[str, str]: A tuple containing (repository_name, commit_sha)
+    """
+    parts = commit_url.strip().split("/")
+    if len(parts) >= 5 and parts[2] == "github.com" and parts[5] == "commit":
+        repo_name = f"{parts[3]}/{parts[4]}"
+        commit_sha = parts[6]
+        return repo_name, commit_sha
+    raise ValueError(f"Invalid GitHub commit URL format: {commit_url}")
+
+
 def collect_bugs(
     data_path: str,
     results_path="data/out_bugs",
@@ -437,6 +522,7 @@ def collect_bugs(
     filter_linked_to_pr: bool = None,
     base_image: str | None = None,
     use_default_actions: bool = False,
+    commit_list_file: str = None,
 ):
     """Collects bug-fixes from the repos listed in `data_path`. The result is saved
     on `results_path`. A file `data.json` is also created with information about
@@ -459,6 +545,7 @@ def collect_bugs(
         filter_linked_to_pr (bool, optional): If True, only include commits that are linked to pull requests. If False, only include commits that are not linked to pull requests. If None, include all commits. Defaults to None.
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
         use_default_actions (bool, optional): Whether to use and collect default GitHub actions from repositories. Defaults to False.
+        commit_list_file (str, optional): Path to a JSON file containing a list of commit URLs to analyze. If provided, data_path is ignored. Defaults to None.
     """
     set_test_config(normalize_non_code_patch, strategies)
 
@@ -487,43 +574,101 @@ def collect_bugs(
     }
 
     patch_collectors: List[Tuple[PatchCollector, Any]] = []
-    with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        future_to_collector: Dict[Future, PatchCollector] = {}
 
-        dir_list = os.listdir(data_path)
-        for file in dir_list:
-            if file.endswith(".json"):
-                with open(os.path.join(data_path, file), "r") as f:
-                    run = json.loads(f.read())
-                    if not os.path.exists(results_path):
-                        os.makedirs(results_path)
+    # Create the results directory if it doesn't exist
+    if not os.path.exists(results_path):
+        os.makedirs(results_path)
 
-                    if (
-                        (
-                            run["number_of_test_actions"] == 1
-                            or run["using_template_workflow"]
-                        )
-                        and "actions_run" in run
-                        and len(run["actions_run"]["tests"]) > 0
-                    ):
-                        repo = github.get_repo(run["repository"])
-                        patch_collector = PatchCollector(repo, **kwargs)
-                        future_to_collector[
-                            executor.submit(patch_collector.get_possible_patches)
-                        ] = patch_collector
+    # Mode: analyze specific commits from a file
+    if commit_list_file is not None and os.path.exists(commit_list_file):
+        # Read and parse the commit list file
+        with open(commit_list_file, "r") as f:
+            commit_urls = json.load(f)
 
-        for future in tqdm.tqdm(
-            as_completed(future_to_collector), total=len(future_to_collector)
-        ):
+        # Group commits by repository to minimize cloning operations
+        commits_by_repo = {}
+        for commit_url in commit_urls:
             try:
-                patch_collector = future_to_collector[future]
-                result = future.result()
-            except Exception:
-                logging.error(
-                    f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}"
-                )
-            else:
-                patch_collectors.append((patch_collector, result))
+                repo_name, commit_sha = parse_commit_url(commit_url)
+                if repo_name not in commits_by_repo:
+                    commits_by_repo[repo_name] = []
+                commits_by_repo[repo_name].append(commit_sha)
+            except ValueError as e:
+                logging.error(f"Error parsing commit URL: {e}")
+                continue
+
+        logging.info(
+            f"Found {len(commits_by_repo)} repositories with {len(commit_urls)} commits to analyze"
+        )
+        print(commits_by_repo)
+
+        # Process each repository and its commits
+        with ThreadPoolExecutor(max_workers=n_workers) as executor:
+            future_to_collector: Dict[Future, Tuple[PatchCollector, List[str]]] = {}
+
+            for repo_name, commit_shas in commits_by_repo.items():
+                try:
+                    repo = github.get_repo(repo_name)
+                    patch_collector = PatchCollector(repo, **kwargs)
+                    future_to_collector[
+                        executor.submit(
+                            patch_collector.analyze_specific_commits, commit_shas
+                        )
+                    ] = (patch_collector, commit_shas)
+                except Exception as e:
+                    logging.error(f"Error getting repository {repo_name}: {e}")
+                    continue
+
+            for future in tqdm.tqdm(
+                as_completed(future_to_collector), total=len(future_to_collector)
+            ):
+                try:
+                    patch_collector, _ = future_to_collector[future]
+                    result = future.result()
+                except Exception:
+                    logging.error(
+                        f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}"
+                    )
+                else:
+                    patch_collectors.append((patch_collector, result))
+
+    # Default mode: analyze repositories based on data_path
+    else:
+        with ThreadPoolExecutor(max_workers=n_workers) as executor:
+            future_to_collector: Dict[Future, PatchCollector] = {}
+
+            dir_list = os.listdir(data_path)
+            for file in dir_list:
+                if file.endswith(".json"):
+                    with open(os.path.join(data_path, file), "r") as f:
+                        run = json.loads(f.read())
+
+                        if (
+                            (
+                                run["number_of_test_actions"] == 1
+                                or run["using_template_workflow"]
+                            )
+                            and "actions_run" in run
+                            and len(run["actions_run"]["tests"]) > 0
+                        ):
+                            repo = github.get_repo(run["repository"])
+                            patch_collector = PatchCollector(repo, **kwargs)
+                            future_to_collector[
+                                executor.submit(patch_collector.get_possible_patches)
+                            ] = patch_collector
+
+            for future in tqdm.tqdm(
+                as_completed(future_to_collector), total=len(future_to_collector)
+            ):
+                try:
+                    patch_collector = future_to_collector[future]
+                    result = future.result()
+                except Exception:
+                    logging.error(
+                        f"Error while collecting commits from {patch_collector.repo}: {traceback.format_exc()}"
+                    )
+                else:
+                    patch_collectors.append((patch_collector, result))
 
     data_path = os.path.join(results_path, "data.json")
     repos = {}
