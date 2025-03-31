@@ -42,6 +42,7 @@ from gitbugactions.utils.file_reader import GitShowFileReader
 from gitbugactions.utils.file_utils import FileType, get_file_type
 from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 from gitbugactions.utils.repo_state_manager import RepoStateManager
+from gitbugactions.actions.templates.template_workflows import TemplateWorkflowManager
 
 
 class PatchCollector:
@@ -252,6 +253,23 @@ class PatchCollector:
 
         return actions
 
+    def __get_template_actions(self) -> Set[Action]:
+        """
+        Get the actions used by the template workflow.
+        """
+        workflow_path = TemplateWorkflowManager.create_temp_workflow(
+            self.repo_clone.workdir, self.language
+        )
+        if workflow_path is None:
+            return set()
+        try:
+            workflow: GitHubWorkflow = GitHubWorkflowFactory.create_workflow(
+                workflow_path, self.language
+            )
+            return workflow.get_actions()
+        finally:
+            TemplateWorkflowManager.remove_temp_workflow(workflow_path)
+
     def get_possible_patches(self):
         self.__clone_repo()
         if len(list(self.repo_clone.references.iterator())) == 0:
@@ -314,6 +332,7 @@ class PatchCollector:
                 actions: Set[Action] = set()
                 actions.update(self.__get_used_actions(str(commit.id)))
                 actions.update(self.__get_used_actions(str(previous_commit.id)))
+                actions.update(self.__get_template_actions())
 
                 if str(previous_commit.id) in commit_to_patches:
                     commit_to_patches[str(previous_commit.id)].append(
@@ -448,6 +467,7 @@ class PatchCollector:
                     actions: Set[Action] = set()
                     actions.update(self.__get_used_actions(str(commit.id)))
                     actions.update(self.__get_used_actions(str(previous_commit.id)))
+                    actions.update(self.__get_template_actions())
 
                     # Create a BugPatch object
                     patch = BugPatch(
