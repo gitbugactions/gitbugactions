@@ -499,7 +499,10 @@ def collect_bugs(
                         os.makedirs(results_path)
 
                     if (
-                        run["number_of_test_actions"] == 1
+                        (
+                            run["number_of_test_actions"] == 1
+                            or run["using_template_workflow"]
+                        )
                         and "actions_run" in run
                         and len(run["actions_run"]["tests"]) > 0
                     ):

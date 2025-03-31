@@ -44,6 +44,26 @@ class TestCollectBugsCSharp(TestCollectBugs):
                 ]
                 assert data["strategy"] == "FAIL_PASS"
 
+    def test_gitbugactions_dotnet_test_repo_no_actions(self):
+        """
+        Verifies that the dotnet project bugs have been found
+
+        repo: https://github.com/gitbugactions/gitbugactions-dotnet-test-repo-no-actions
+        """
+        with open(
+            "test/resources/test_collect_bugs_csharp_out/gitbugactions-gitbugactions-dotnet-test-repo-no-actions.json",
+            "r",
+        ) as f:
+            lines = f.readlines()
+            assert len(lines) == 1
+
+            for line in lines:
+                data = json.loads(line)
+                assert data["commit_hash"] in [
+                    "1dcfcaa1fd3c977d3af24f3f33d599c7d4c062c9",
+                ]
+                assert data["strategy"] == "FAIL_PASS"
+
     def test_collected_data(self):
         """Test the data.json file for C#-related repositories"""
         with open(
@@ -55,6 +75,18 @@ class TestCollectBugsCSharp(TestCollectBugs):
             assert data["gitbugactions/gitbugactions-dotnet-test-repo"]["commits"] == 2
             assert (
                 data["gitbugactions/gitbugactions-dotnet-test-repo"][
+                    "possible_bug_patches"
+                ]
+                == 1
+            )
+            assert (
+                data["gitbugactions/gitbugactions-dotnet-test-repo-no-actions"][
+                    "commits"
+                ]
+                == 1
+            )
+            assert (
+                data["gitbugactions/gitbugactions-dotnet-test-repo-no-actions"][
                     "possible_bug_patches"
                 ]
                 == 1

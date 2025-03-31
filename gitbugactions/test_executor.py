@@ -13,6 +13,7 @@ from pygit2 import Repository
 from gitbugactions.actions.actions import ActTestsRun, GitHubActions
 from gitbugactions.docker.client import DockerClient
 from gitbugactions.utils.repo_state_manager import RepoStateManager
+from gitbugactions.actions.templates.template_workflows import TemplateWorkflowManager
 
 
 class TestExecutor:
@@ -101,6 +102,7 @@ class TestExecutor:
             offline=offline,
             base_image=self.base_image,
         )
+
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
             default_actions = True
             for workflow in self.default_actions.test_workflows:
@@ -111,10 +113,28 @@ class TestExecutor:
                     os.path.basename(workflow.path),
                 )
                 test_actions.test_workflows.append(new_workflow)
+
+        temp_workflow_path = None
+        if len(test_actions.test_workflows) == 0:
+            temp_workflow_path = TemplateWorkflowManager.create_temp_workflow(
+                self.repo_clone.workdir, self.language
+            )
+            # Re-create the actions instance to include the template workflow
+            test_actions = GitHubActions(
+                self.repo_clone.workdir,
+                self.language,
+                keep_containers=keep_containers,
+                runner_image=self.runner_image,
+                offline=offline,
+                base_image=self.base_image,
+            )
+
+        act_runs: List[ActTestsRun] = []
+
         # Act creates names for the containers by hashing the content of the workflows
         # To avoid conflicts between threads, we randomize the name
         for workflow in test_actions.test_workflows:
-            workflow.doc["name"] = str(uuid.uuid4())
+            workflow.doc["name"] = f"{workflow.doc['name']}-{str(uuid.uuid4())}"
         test_actions.save_workflows()
 
         for workflow in test_actions.test_workflows:
@@ -123,6 +143,9 @@ class TestExecutor:
             )
 
         test_actions.delete_workflows()
+
+        if temp_workflow_path:
+            TemplateWorkflowManager.remove_temp_workflow(temp_workflow_path)
 
         for act_run in act_runs:
             act_run.default_actions = default_actions

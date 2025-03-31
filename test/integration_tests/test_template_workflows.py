@@ -33,38 +33,62 @@ class TestTemplateWorkflows:
             repo_path = os.path.join(self.temp_folder, language)
             os.makedirs(repo_path, exist_ok=True)
 
-            # Test with context manager
-            with TemplateWorkflowManager.create_temp_workflow(
+            # Create the workflow using direct call
+            workflow_path = TemplateWorkflowManager.create_temp_workflow(
                 repo_path, language
-            ) as workflow_path:
-                assert workflow_path is not None
-                assert os.path.exists(workflow_path)
-                assert is_using_template_workflow(workflow_path)
+            )
 
-                # Check file content
-                with open(workflow_path, "r") as f:
-                    content = f.read()
-                    assert (
-                        language.lower() in content.lower()
-                        or language.replace("#", "sharp").lower() in content.lower()
-                    )
+            assert workflow_path is not None
+            assert os.path.exists(workflow_path)
+            assert is_using_template_workflow(workflow_path)
+
+            # Check file content
+            with open(workflow_path, "r") as f:
+                content = f.read()
+                assert (
+                    language.lower() in content.lower()
+                    or language.replace("#", "sharp").lower() in content.lower()
+                )
+
+            # Manually clean up
+            cleanup_result = TemplateWorkflowManager.remove_temp_workflow(workflow_path)
+            assert cleanup_result is True
 
             # Verify cleanup happened
-            assert not os.path.exists(
-                os.path.join(
-                    repo_path, ".github", "workflows", "template-test-crawler.yml"
-                )
-            )
+            assert not os.path.exists(workflow_path)
+
+    def test_remove_temp_workflow(self):
+        # Test the remove_temp_workflow method
+        repo_path = os.path.join(self.temp_folder, "removal_test")
+        os.makedirs(repo_path, exist_ok=True)
+
+        # Create the workflow
+        workflow_path = TemplateWorkflowManager.create_temp_workflow(repo_path, "c#")
+        assert workflow_path is not None
+        assert os.path.exists(workflow_path)
+
+        # Test successful removal
+        result = TemplateWorkflowManager.remove_temp_workflow(workflow_path)
+        assert result is True
+        assert not os.path.exists(workflow_path)
+
+        # Test removing a non-existent file
+        result = TemplateWorkflowManager.remove_temp_workflow(workflow_path)
+        assert result is False
+
+        # Test removing None
+        result = TemplateWorkflowManager.remove_temp_workflow(None)
+        assert result is False
 
     def test_unsupported_language(self):
         repo_path = os.path.join(self.temp_folder, "unsupported")
         os.makedirs(repo_path, exist_ok=True)
 
-        # Test with unsupported language using context manager
-        with TemplateWorkflowManager.create_temp_workflow(
+        # Test with unsupported language
+        workflow_path = TemplateWorkflowManager.create_temp_workflow(
             repo_path, "unsupported_language"
-        ) as workflow_path:
-            assert workflow_path is None
+        )
+        assert workflow_path is None
 
     def test_template_registration(self):
         # Test registering a new template
