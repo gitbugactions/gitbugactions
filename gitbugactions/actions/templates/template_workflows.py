@@ -1,6 +1,8 @@
 import os
 import yaml
 import logging
+import uuid
+
 from typing import Optional, Dict, List, Type
 from contextlib import contextmanager
 
@@ -143,6 +145,9 @@ def create_template_workflow(repo_path: str, language: str) -> Optional[str]:
 
         # Get the template for the language
         workflow_content = template_class.get_workflow()
+
+        # Add a random UUID to the workflow name
+        workflow_content["name"] = f"{workflow_content['name']}-{str(uuid.uuid4())}"
 
         # Write the workflow to file
         with open(template_workflow_path, "w") as f:
