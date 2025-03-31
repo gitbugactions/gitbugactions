@@ -4,7 +4,6 @@ import logging
 import uuid
 
 from typing import Optional, Dict, List, Type
-from contextlib import contextmanager
 
 # Import language templates from the languages module
 from gitbugactions.actions.templates.languages import (
@@ -48,20 +47,17 @@ class TemplateWorkflowManager:
         return cls._language_map.get(language)
 
     @classmethod
-    @contextmanager
     def create_temp_workflow(cls, repo_path: str, language: str) -> Optional[str]:
         """
-        Context manager for creating a temporary workflow file
+        Creates a temporary workflow file
 
         Args:
             repo_path: Path to the repository
             language: Repository language
 
-        Yields:
+        Returns:
             Optional[str]: Path to the created workflow file or None if not supported
         """
-        temp_workflow_path = None
-
         try:
             # Try to find template for language
             template_class = cls.get_template_for_language(language)
@@ -70,16 +66,14 @@ class TemplateWorkflowManager:
                 logging.warning(
                     f"No template workflow available for language: {language}"
                 )
-                yield None
-                return
+                return None
 
             # Check if the template can handle this repo
             if not template_class.can_handle_repo(repo_path):
                 logging.warning(
                     f"Template for {language} cannot handle this repository"
                 )
-                yield None
-                return
+                return None
 
             # Create GitHub workflows directory if it doesn't exist
             workflow_dir = os.path.join(repo_path, ".github", "workflows")
@@ -93,6 +87,9 @@ class TemplateWorkflowManager:
             # Get the template for the language
             workflow_content = template_class.get_workflow(repo_path=repo_path)
 
+            # Add a random UUID to the workflow name
+            workflow_content["name"] = f"{workflow_content['name']}-{str(uuid.uuid4())}"
+
             # Write the workflow to file
             with open(temp_workflow_path, "w") as f:
                 yaml.dump(workflow_content, f)
@@ -100,67 +97,32 @@ class TemplateWorkflowManager:
             logging.info(
                 f"Created template workflow for {language} at {temp_workflow_path}"
             )
-            yield temp_workflow_path
+            return temp_workflow_path
 
         except Exception as e:
             logging.error(f"Error creating template workflow: {str(e)}")
-            yield None
+            return None
 
-        finally:
-            # Clean up the template workflow file
-            if temp_workflow_path and os.path.exists(temp_workflow_path):
-                try:
-                    os.remove(temp_workflow_path)
-                    logging.info(f"Removed template workflow: {temp_workflow_path}")
-                except Exception as e:
-                    logging.warning(f"Failed to remove template workflow: {e}")
+    @classmethod
+    def remove_temp_workflow(cls, workflow_path: Optional[str]) -> bool:
+        """
+        Removes a temporary workflow file
 
+        Args:
+            workflow_path: Path to the workflow file to remove
 
-def create_template_workflow(repo_path: str, language: str) -> Optional[str]:
-    """
-    Legacy function for backward compatibility.
-    Creates a template workflow file for a repository.
-
-    Args:
-        repo_path: Path to the repository
-        language: Repository language
-
-    Returns:
-        Optional[str]: Path to the created workflow file or None if not supported
-    """
-    template_class = TemplateWorkflowManager.get_template_for_language(language)
-    if not template_class:
-        logging.warning(f"No template workflow available for language: {language}")
-        return None
-
-    try:
-        # Create GitHub workflows directory if it doesn't exist
-        workflow_dir = os.path.join(repo_path, ".github", "workflows")
-        os.makedirs(workflow_dir, exist_ok=True)
-
-        # Create the template workflow file
-        template_workflow_path = os.path.join(
-            workflow_dir, f"template-test-crawler.yml"
-        )
-
-        # Get the template for the language
-        workflow_content = template_class.get_workflow()
-
-        # Add a random UUID to the workflow name
-        workflow_content["name"] = f"{workflow_content['name']}-{str(uuid.uuid4())}"
-
-        # Write the workflow to file
-        with open(template_workflow_path, "w") as f:
-            yaml.dump(workflow_content, f)
-
-        logging.info(
-            f"Created template workflow for {language} at {template_workflow_path}"
-        )
-        return template_workflow_path
-
-    except Exception as e:
-        logging.error(f"Error creating template workflow: {str(e)}")
-        return None
+        Returns:
+            bool: True if removal was successful, False otherwise
+        """
+        if workflow_path and os.path.exists(workflow_path):
+            try:
+                os.remove(workflow_path)
+                logging.info(f"Removed template workflow: {workflow_path}")
+                return True
+            except Exception as e:
+                logging.warning(f"Failed to remove template workflow: {e}")
+                return False
+        return False
 
 
 def is_using_template_workflow(workflow_path: str) -> bool:

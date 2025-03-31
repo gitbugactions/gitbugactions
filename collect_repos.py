@@ -119,32 +119,15 @@ class CollectReposStrategy(RepoStrategy):
                     f"No test workflows found, creating template for {repo.full_name}"
                 )
 
-                # Use the context manager to automatically handle cleanup
-                with TemplateWorkflowManager.create_temp_workflow(
-                    repo_path, repo.language
-                ) as template_path:
-                    if template_path:
-                        # Create a new actions instance to include our template
-                        actions = GitHubActions(repo_path, repo.language)
-                        data["using_template_workflow"] = True
-                        actions.save_workflows()
+                # Create a template workflow
+                TemplateWorkflowManager.create_temp_workflow(repo_path, repo.language)
+                # Create a new actions instance to include our template
+                actions = GitHubActions(repo_path, repo.language)
+                data["using_template_workflow"] = True
+                actions.save_workflows()
 
-                        # Now run the template workflow
-                        if len(actions.test_workflows) == 1:
-                            logging.info(
-                                f"Running template workflow for {repo.full_name}"
-                            )
-
-                            act_run = run_workflow(
-                                repo_path,
-                                actions.test_workflows[0],
-                                repo.language,
-                            )
-                            data["actions_successful"] = not act_run.failed
-                            data["actions_run"] = act_run.asdict()
-
-            # If no template was used but we have a test workflow, run it
-            elif len(actions.test_workflows) == 1:
+            # If we have a test workflow, run it
+            if len(actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
 
                 act_run = run_workflow(

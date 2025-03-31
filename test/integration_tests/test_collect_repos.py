@@ -16,7 +16,7 @@ class BaseCollectReposTest:
     @classmethod
     def teardown_class(cls):
         if os.path.exists(cls.temp_folder):
-            # shutil.rmtree(cls.temp_folder)
+            shutil.rmtree(cls.temp_folder)
             pass
 
 
