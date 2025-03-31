@@ -83,7 +83,7 @@ class TestCollectBugsCSharp(TestCollectBugs):
                 data["gitbugactions/gitbugactions-dotnet-test-repo-no-actions"][
                     "commits"
                 ]
-                == 1
+                == 2
             )
             assert (
                 data["gitbugactions/gitbugactions-dotnet-test-repo-no-actions"][
