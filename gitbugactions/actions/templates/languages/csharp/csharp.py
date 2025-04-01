@@ -1,4 +1,4 @@
-from typing import Dict, Any, List
+from typing import Dict, Any
 from gitbugactions.actions.templates.languages.base import LanguageTemplate
 from gitbugactions.actions.csharp.helpers.dotnet_project_analyzer import (
     DotNetProjectAnalyzer,
@@ -30,22 +30,7 @@ class CSharpTemplate(LanguageTemplate):
                 "test": {
                     "runs-on": "ubuntu-latest",
                     "steps": [
-                        {"uses": "actions/checkout@v3"},
-                        {
-                            "name": "Setup .NET 9",
-                            "uses": "actions/setup-dotnet@v3",
-                            "with": {"dotnet-version": "9.0.x"},
-                        },
-                        {
-                            "name": "Setup .NET 8",
-                            "uses": "actions/setup-dotnet@v3",
-                            "with": {"dotnet-version": "8.0.x"},
-                        },
-                        {
-                            "name": "Setup .NET 6",
-                            "uses": "actions/setup-dotnet@v3",
-                            "with": {"dotnet-version": "6.0.x"},
-                        },
+                        {"uses": "actions/checkout@v4"},
                     ],
                 }
             },
