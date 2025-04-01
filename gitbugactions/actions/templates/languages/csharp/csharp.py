@@ -31,6 +31,11 @@ class CSharpTemplate(LanguageTemplate):
                     "runs-on": "ubuntu-latest",
                     "steps": [
                         {"uses": "actions/checkout@v4"},
+                        {
+                            "name": "Setup .NET",
+                            "uses": "actions/setup-dotnet@v4",
+                            "with": {"dotnet-version": "6.0.428\n8.0.407\n9.0.202"},
+                        },
                     ],
                 }
             },
