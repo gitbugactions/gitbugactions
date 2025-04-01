@@ -93,7 +93,8 @@ class PatchCollector:
         tokens = wordpunct_tokenize(commit.message)
         stemmer = PorterStemmer()
         tokens = [stemmer.stem(token) for token in tokens]
-        return "fix" in tokens
+        bug_fix_keywords = {"fix", "resolv", "patch", "repair", "correct", "workaround"}
+        return any(keyword in tokens for keyword in bug_fix_keywords)
 
     def __get_patches(self, repo_clone, commit, previous_commit):
         diff = repo_clone.diff(str(previous_commit.id), str(commit.id))
