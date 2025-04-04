@@ -249,6 +249,7 @@ def cleanup_containers():
     ]
 
     for container in client.containers.list(filters={"ancestor": ancestors}):
+        logging.info(f"Stopping and removing container {container.name}")
         container.stop()
         container.remove(v=True, force=True)
 
