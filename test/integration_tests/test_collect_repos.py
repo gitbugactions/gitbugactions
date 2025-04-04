@@ -3,8 +3,12 @@ import os
 import shutil
 import pytest
 import tempfile
+import subprocess
+import time
+from unittest.mock import patch
+import logging
 
-from collect_repos import CollectInfraReposStrategy, CollectReposStrategy
+from collect_repos import CollectInfraReposStrategy, CollectReposStrategy, collect_repos
 from gitbugactions.github_api import GithubAPI
 
 
@@ -251,3 +255,35 @@ class TestCollectReposCSharp(BaseCollectReposTest):
             assert data["actions_run"]["tests"] is not None
             assert len(data["actions_run"]["tests"]) > 0
             assert data["using_template_workflow"]
+
+
+class TestCollectReposCLI(BaseCollectReposTest):
+    """Test the repository collection script from the CLI endpoint"""
+
+    def test_collect_repos_cli(self):
+        """Test basic repository collection from CLI with a simple query"""
+        # Use a small query to limit the number of repositories
+        query = "user:gitbugactions language:c# fork:false"
+
+        # Run the collect_repos function directly
+        collect_repos(
+            query=query,
+            out_path=self.temp_folder,
+            n_workers=1,
+            use_template_workflows=True,
+            cleanup_interval=1,  # there are two repos, so we should run cleanup once
+            enable_cleanup=True,
+        )
+
+        # Check that at least one repository was collected
+        files = os.listdir(self.temp_folder)
+        assert len(files) == 2, "Expected 2 repository data files, but got {}".format(
+            len(files)
+        )
+
+        # Check the content of the first file
+        with open(os.path.join(self.temp_folder, files[0]), "r") as f:
+            data = json.load(f)
+            assert "repository" in data
+            assert "actions_successful" in data
+            assert "number_of_actions" in data

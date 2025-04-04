@@ -9,7 +9,8 @@ import traceback
 import uuid
 
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Callable
+from gitbugactions.docker.client import DockerClient
 from github import Repository
 
 from gitbugactions.actions.actions import (
@@ -241,6 +242,17 @@ class CollectInfraReposStrategy(CollectReposStrategy):
             self.save_data(data, repo)
 
 
+def cleanup_containers():
+    client = DockerClient.getInstance()
+    ancestors = [
+        "gitbugactions:latest",
+    ]
+
+    for container in client.containers.list(filters={"ancestor": ancestors}):
+        container.stop()
+        container.remove(v=True, force=True)
+
+
 def collect_repos(
     query: str,
     pagination_freq: Optional[str] = None,
@@ -248,6 +260,8 @@ def collect_repos(
     out_path: str = "./out/",
     base_image: str | None = None,
     use_template_workflows: bool = True,
+    cleanup_interval: int = 100,
+    enable_cleanup: bool = False,
 ):
     """Collect the repositories from GitHub that match the query and have executable
     GitHub Actions workflows with parsable tests.
@@ -260,12 +274,24 @@ def collect_repos(
         out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
         use_template_workflows (bool, optional): Whether to use template workflows for repos without test workflows. Defaults to True.
+        cleanup_interval (int, optional): Number of jobs after which to run the cleanup function. Defaults to 100.
+        enable_cleanup (bool, optional): Whether to enable the periodic cleanup function. Defaults to False.
     """
     if not Path(out_path).exists():
         os.makedirs(out_path, exist_ok=True)
 
     Act(base_image=base_image)  # Initialize Act with base_image
-    crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
+
+    # Set up cleanup function if enabled
+    cleanup_function = cleanup_containers if enable_cleanup else None
+
+    crawler = RepoCrawler(
+        query,
+        pagination_freq=pagination_freq,
+        n_workers=n_workers,
+        cleanup_interval=cleanup_interval,
+        cleanup_function=cleanup_function,
+    )
     crawler.get_repos(CollectReposStrategy(out_path, use_template_workflows))
 
 
