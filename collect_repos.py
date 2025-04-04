@@ -242,16 +242,23 @@ class CollectInfraReposStrategy(CollectReposStrategy):
             self.save_data(data, repo)
 
 
-def cleanup_containers():
+def cleanup_act():
     client = DockerClient.getInstance()
     ancestors = [
         "gitbugactions:latest",
     ]
 
+    # Cleanup containers
     for container in client.containers.list(filters={"ancestor": ancestors}):
         logging.info(f"Stopping and removing container {container.name}")
         container.stop()
         container.remove(v=True, force=True)
+
+    # Cleanup volumes
+    for volume in client.volumes.list():
+        if volume.name.startswith("act-") and not volume.name == "act-toolcache":
+            logging.info(f"Removing volume {volume.name}")
+            volume.remove(force=True)
 
 
 def collect_repos(
@@ -284,7 +291,7 @@ def collect_repos(
     Act(base_image=base_image)  # Initialize Act with base_image
 
     # Set up cleanup function if enabled
-    cleanup_function = cleanup_containers if enable_cleanup else None
+    cleanup_function = cleanup_act if enable_cleanup else None
 
     crawler = RepoCrawler(
         query,
