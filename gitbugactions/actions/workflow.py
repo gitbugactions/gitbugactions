@@ -341,7 +341,7 @@ class GitHubWorkflow(ABC):
             self.doc["on"] = "push"
 
     @abstractmethod
-    def instrument_test_steps(self):
+    def instrument_test_steps(self, **kwargs):
         """
         Instruments the test steps to generate reports.
         """
