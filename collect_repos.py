@@ -250,15 +250,25 @@ def cleanup_act():
 
     # Cleanup containers
     for container in client.containers.list(filters={"ancestor": ancestors}):
-        logging.info(f"Stopping and removing container {container.name}")
-        container.stop()
-        container.remove(v=True, force=True)
+        try:
+            logging.info(f"Stopping and removing container {container.name}")
+            container.stop()
+            container.remove(v=True, force=True)
+        except Exception as e:
+            logging.error(
+                f"Error while stopping and removing container {container.name}: {traceback.format_exc()}"
+            )
 
     # Cleanup volumes
     for volume in client.volumes.list():
         if volume.name.startswith("act-") and not volume.name == "act-toolcache":
-            logging.info(f"Removing volume {volume.name}")
-            volume.remove(force=True)
+            try:
+                logging.info(f"Removing volume {volume.name}")
+                volume.remove(force=True)
+            except Exception as e:
+                logging.error(
+                    f"Error while removing volume {volume.name}: {traceback.format_exc()}"
+                )
 
 
 def collect_repos(
