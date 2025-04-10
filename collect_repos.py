@@ -9,7 +9,8 @@ import traceback
 import uuid
 
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Callable
+from gitbugactions.docker.client import DockerClient
 from github import Repository
 
 from gitbugactions.actions.actions import (
@@ -18,15 +19,50 @@ from gitbugactions.actions.actions import (
     ActCheckCodeFailureStrategy,
     GitHubActions,
 )
+from gitbugactions.actions.templates.template_workflows import (
+    TemplateWorkflowManager,
+)
 from gitbugactions.crawler import RepoCrawler, RepoStrategy
 from gitbugactions.infra.infra_checkers import is_infra_file
 from gitbugactions.utils.repo_utils import clone_repo, delete_repo_clone
 
 
+def run_workflow(repo_path, workflow, language, base_image=None):
+    """
+    Common utility to run a GitHub Actions workflow
+
+    Args:
+        repo_path: Path to the repository
+        workflow: Workflow to run
+        language: Repository language
+        base_image: Base image to use for building the runner
+
+    Returns:
+        ActTestsRun: Result of running the workflow
+    """
+    act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
+    try:
+        # Create the GitHub Actions runner
+        actions = GitHubActions(repo_path, language, base_image=base_image)
+
+        # Act creates names for the containers by hashing the content of the workflows
+        # To avoid conflicts between threads, we randomize the name
+        actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
+        actions.save_workflows()
+
+        # Run the workflow
+        return actions.run_workflow(workflow, act_cache_dir=act_cache_dir)
+    finally:
+        ActCacheDirManager.return_act_cache_dir(act_cache_dir)
+
+
 class CollectReposStrategy(RepoStrategy):
-    def __init__(self, data_path: str):
+    def __init__(self, data_path: str, use_template_workflows: bool = True):
         self.data_path = data_path
         self.uuid = str(uuid.uuid1())
+        self.use_template_workflows = (
+            use_template_workflows  # Flag to control template workflow usage
+        )
 
     def save_data(self, data: dict, repo):
         """
@@ -59,6 +95,7 @@ class CollectReposStrategy(RepoStrategy):
             "number_of_actions": 0,
             "number_of_test_actions": 0,
             "actions_successful": False,
+            "using_template_workflow": False,  # Track if we used a template workflow
         }
 
         repo_clone = clone_repo(repo.clone_url, repo_path)
@@ -77,22 +114,28 @@ class CollectReposStrategy(RepoStrategy):
             ]
             actions.save_workflows()
 
+            # Check if we have test workflows, otherwise use a template if enabled
+            if len(actions.test_workflows) == 0 and self.use_template_workflows:
+                logging.info(
+                    f"No test workflows found, creating template for {repo.full_name}"
+                )
+
+                # Create a template workflow
+                TemplateWorkflowManager.create_temp_workflow(repo_path, repo.language)
+                # Create a new actions instance to include our template
+                actions = GitHubActions(repo_path, repo.language)
+                data["using_template_workflow"] = True
+                actions.save_workflows()
+
+            # If we have a test workflow, run it
             if len(actions.test_workflows) == 1:
                 logging.info(f"Running actions for {repo.full_name}")
 
-                # Act creates names for the containers by hashing the content of the workflows
-                # To avoid conflicts between threads, we randomize the name
-                actions.test_workflows[0].doc["name"] = str(uuid.uuid4())
-                actions.save_workflows()
-
-                act_cache_dir = ActCacheDirManager.acquire_act_cache_dir()
-                try:
-                    act_run = actions.run_workflow(
-                        actions.test_workflows[0], act_cache_dir=act_cache_dir
-                    )
-                finally:
-                    ActCacheDirManager.return_act_cache_dir(act_cache_dir)
-
+                act_run = run_workflow(
+                    repo_path,
+                    actions.test_workflows[0],
+                    repo.language,
+                )
                 data["actions_successful"] = not act_run.failed
                 data["actions_run"] = act_run.asdict()
 
@@ -108,8 +151,10 @@ class CollectReposStrategy(RepoStrategy):
 
 
 class CollectInfraReposStrategy(CollectReposStrategy):
-    def __init__(self, data_path: str):
-        super().__init__(data_path)
+    def __init__(self, data_path: str, use_template_workflows: bool = False):
+        super().__init__(data_path, use_template_workflows)
+        if use_template_workflows:
+            logging.warning("use_template_workflows is not supported for infra repos")
 
     def test_actions(self, data: dict, repo: Repository, repo_path: str):
         actions = GitHubActions(repo_path, repo.language)
@@ -197,12 +242,44 @@ class CollectInfraReposStrategy(CollectReposStrategy):
             self.save_data(data, repo)
 
 
+def cleanup_act():
+    client = DockerClient.getInstance()
+    ancestors = [
+        "gitbugactions:latest",
+    ]
+
+    # Cleanup containers
+    for container in client.containers.list(filters={"ancestor": ancestors}):
+        try:
+            logging.info(f"Stopping and removing container {container.name}")
+            container.stop()
+            container.remove(v=True, force=True)
+        except Exception as e:
+            logging.error(
+                f"Error while stopping and removing container {container.name}: {traceback.format_exc()}"
+            )
+
+    # Cleanup volumes
+    for volume in client.volumes.list():
+        if volume.name.startswith("act-") and not volume.name == "act-toolcache":
+            try:
+                logging.info(f"Removing volume {volume.name}")
+                volume.remove(force=True)
+            except Exception as e:
+                logging.error(
+                    f"Error while removing volume {volume.name}: {traceback.format_exc()}"
+                )
+
+
 def collect_repos(
     query: str,
     pagination_freq: Optional[str] = None,
     n_workers: int = 1,
     out_path: str = "./out/",
     base_image: str | None = None,
+    use_template_workflows: bool = True,
+    cleanup_interval: int = 100,
+    enable_cleanup: bool = False,
 ):
     """Collect the repositories from GitHub that match the query and have executable
     GitHub Actions workflows with parsable tests.
@@ -214,13 +291,26 @@ def collect_repos(
         n_workers (int, optional): Number of parallel workers. Defaults to 1.
         out_path (str, optional): Folder on which the results will be saved. Defaults to "./out/".
         base_image (str, optional): Base image to use for building the runner image. If None, uses default.
+        use_template_workflows (bool, optional): Whether to use template workflows for repos without test workflows. Defaults to True.
+        cleanup_interval (int, optional): Number of jobs after which to run the cleanup function. Defaults to 100.
+        enable_cleanup (bool, optional): Whether to enable the periodic cleanup function. Defaults to False.
     """
     if not Path(out_path).exists():
         os.makedirs(out_path, exist_ok=True)
 
     Act(base_image=base_image)  # Initialize Act with base_image
-    crawler = RepoCrawler(query, pagination_freq=pagination_freq, n_workers=n_workers)
-    crawler.get_repos(CollectReposStrategy(out_path))
+
+    # Set up cleanup function if enabled
+    cleanup_function = cleanup_act if enable_cleanup else None
+
+    crawler = RepoCrawler(
+        query,
+        pagination_freq=pagination_freq,
+        n_workers=n_workers,
+        cleanup_interval=cleanup_interval,
+        cleanup_function=cleanup_function,
+    )
+    crawler.get_repos(CollectReposStrategy(out_path, use_template_workflows))
 
 
 def main():

@@ -3,7 +3,7 @@ import math
 from abc import ABC, abstractmethod
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, Callable
 
 import pandas as pd
 import tqdm
@@ -29,7 +29,14 @@ class RepoCrawler:
     __GITHUB_CREATION_DATE = "2008-02-08"
     __PAGE_SIZE = 100
 
-    def __init__(self, query: str, pagination_freq: Optional[str], n_workers: int = 1):
+    def __init__(
+        self,
+        query: str,
+        pagination_freq: Optional[str],
+        n_workers: int = 1,
+        cleanup_interval: int = 100,
+        cleanup_function: Optional[Callable] = None,
+    ):
         """
         Args:
             query (str): String with the Github searching format
@@ -39,6 +46,9 @@ class RepoCrawler:
                 are obtained.
                 The possible values are listed here:
                 https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases
+            n_workers (int): Number of worker threads for parallel processing
+            cleanup_interval (int): Number of jobs after which to run the cleanup function
+            cleanup_function (Callable): Function to run periodically for cleanup
         """
         self.github: GithubAPI = GithubAPI(
             per_page=RepoCrawler.__PAGE_SIZE,
@@ -49,6 +59,9 @@ class RepoCrawler:
         self.n_workers = n_workers
         self.executor = ThreadPoolExecutor(max_workers=self.n_workers)
         self.futures = []
+        self.completed_jobs = 0
+        self.cleanup_interval = cleanup_interval
+        self.cleanup_function = cleanup_function
         # Must init several act-cache dirs for parallel processing to work
         ActCacheDirManager.init_act_cache_dirs(n_dirs=n_workers)
 
@@ -96,6 +109,29 @@ class RepoCrawler:
 
         return (start_date.isoformat(), end_date.isoformat())
 
+    def __wait_for_completion(self):
+        """Wait for all current futures to complete"""
+        for future in tqdm.tqdm(as_completed(self.futures)):
+            future.result()
+            self.completed_jobs += 1
+        self.futures = []
+
+    def __run_cleanup_if_needed(self):
+        """Check if cleanup is needed and run it if necessary"""
+        if (
+            self.cleanup_function is not None
+            and len(self.futures) > 0
+            and len(self.futures) % self.cleanup_interval == 0
+        ):
+            logging.info(
+                f"Running cleanup function after {self.completed_jobs} submitted jobs"
+            )
+            # Wait for all current jobs to complete before running cleanup
+            self.__wait_for_completion()
+            # Run the cleanup function
+            self.cleanup_function()
+            logging.info("Cleanup completed, resuming repository collection")
+
     def __search_repos(self, query: str, repo_strategy: RepoStrategy):
         logging.info(f"Searching repos with query: {query}")
         page_list = self.github.search_repositories(query)
@@ -118,6 +154,8 @@ class RepoCrawler:
                 self.futures.append(
                     self.executor.submit(repo_strategy.handle_repo, *args)
                 )
+                # Check if we need to run cleanup after adding this job
+                self.__run_cleanup_if_needed()
 
     def get_repos(self, repo_strategy: RepoStrategy):
         if self.pagination_freq is not None:
@@ -147,7 +185,9 @@ class RepoCrawler:
             created_filter = f" created:{start_date}..{end_date}"
             self.__search_repos(query + created_filter, repo_strategy)
 
-            for future in tqdm.tqdm(as_completed(self.futures)):
-                future.result()
+            # Wait for all remaining futures to complete
+            self.__wait_for_completion()
         else:
-            return self.__search_repos(self.query, repo_strategy)
+            self.__search_repos(self.query, repo_strategy)
+            # Wait for all remaining futures to complete
+            self.__wait_for_completion()

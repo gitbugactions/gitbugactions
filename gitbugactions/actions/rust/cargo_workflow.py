@@ -59,7 +59,7 @@ class CargoWorkflow(GitHubWorkflow):
                     job["steps"].insert(1, {"uses": "dtolnay/rust-toolchain@stable"})
                     return
 
-    def instrument_test_steps(self):
+    def instrument_test_steps(self, **kwargs):
         if "jobs" in self.doc:
             for _, job in self.doc["jobs"].items():
                 if "steps" in job:

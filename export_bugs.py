@@ -36,7 +36,10 @@ def create_exported_containers(
     docker_client = DockerClient.getInstance()
 
     for run in runs:
-        filters = {"name": f"act-{run.workflow_name}"}
+        # FIXME: some workflows have chars that are not allowed in docker container names
+        # and act splits the name at 64 characters
+        filter_name = f"act-{run.workflow_name.replace(' ', '-')}"
+        filters = {"name": filter_name[:63]}
         containers: List[Container] = docker_client.containers.list(filters=filters)
         if run.failed:
             logging.error(

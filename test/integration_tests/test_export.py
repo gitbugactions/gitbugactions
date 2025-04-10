@@ -29,6 +29,29 @@ def teardown_module():
 
 
 @pytest.mark.dependency()
+def test_export_bug_containers_with_template_workflow():
+    global repo_clone, export_path
+
+    with open(
+        "test/resources/test_export/gitbugactions-gitbugactions-dotnet-test-repo-no-actions.json"
+    ) as f:
+        bug = json.loads(f.readlines()[0])
+    repo_full_name: str = bug["repository"]
+    repo_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+    repo_clone = pygit2.clone_repository(
+        f"https://github.com/{repo_full_name}", repo_path
+    )
+
+    commit_hash = bug["commit_hash"]
+    export_path = os.path.join(tempfile.gettempdir(), str(uuid.uuid4()))
+    export_bug_containers(bug, export_path)
+    repo_export_path = os.path.join(export_path, repo_full_name.replace("/", "-"))
+    assert os.path.exists(repo_export_path)
+    assert os.path.exists(os.path.join(repo_export_path, commit_hash))
+    assert len(os.listdir(os.path.join(repo_export_path, commit_hash))) == 2
+
+
+@pytest.mark.dependency()
 def test_export_bug_containers():
     global repo_clone, export_path
 
