@@ -29,6 +29,7 @@ class TestExecutor:
         default_actions: GitHubActions,
         runner_image: str = "gitbugactions:latest",
         base_image: str | None = None,
+        instrument_workflows: bool = True,
     ):
         TestExecutor.__schedule_cleanup(runner_image)
         self.act_cache_dir = act_cache_dir
@@ -40,6 +41,7 @@ class TestExecutor:
         # such as paths, runners, etc.
         self.default_actions = default_actions
         self.first_commit = repo_clone.revparse_single("HEAD")
+        self.instrument_workflows = instrument_workflows
 
     @staticmethod
     def __schedule_cleanup(runner_image):
@@ -101,6 +103,7 @@ class TestExecutor:
             runner_image=self.runner_image,
             offline=offline,
             base_image=self.base_image,
+            instrument_workflows=self.instrument_workflows,
         )
 
         if len(test_actions.test_workflows) == 0 and self.default_actions is not None:
@@ -127,6 +130,7 @@ class TestExecutor:
                 runner_image=self.runner_image,
                 offline=offline,
                 base_image=self.base_image,
+                instrument_workflows=self.instrument_workflows,
             )
 
         act_runs: List[ActTestsRun] = []

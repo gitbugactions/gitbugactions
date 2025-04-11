@@ -389,6 +389,7 @@ class GitHubActions:
         runner_image: str = "gitbugactions:latest",
         offline: bool = False,
         base_image: str | None = None,
+        instrument_workflows: bool = True,
     ):
         self.repo_path = repo_path
         self.keep_containers = keep_containers
@@ -398,7 +399,7 @@ class GitHubActions:
         self.runner_image = runner_image
         self.offline = offline
         self.base_image = base_image
-
+        self.instrument_workflows = instrument_workflows
         workflows_path = os.path.join(repo_path, ".github", "workflows")
         for dirpath, dirnames, filenames in os.walk(workflows_path):
             yaml_files = list(
@@ -419,6 +420,10 @@ class GitHubActions:
 
                 self.workflows.append(workflow)
                 if not workflow.has_tests():
+                    continue
+
+                if not self.instrument_workflows:
+                    self.test_workflows.append(workflow)
                     continue
 
                 workflow.instrument_jobs()
