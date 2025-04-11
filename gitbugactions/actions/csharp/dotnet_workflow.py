@@ -68,7 +68,7 @@ class DotNetWorkflow(GitHubWorkflow):
             logger.warning("No test steps detected, skipping test instrumentation")
             return
 
-        self.get_project_structure(repo_clone)
+        self.set_project_structure(repo_clone)
         logger.info(f"Detected source directories: {self.source_dirs}")
         logger.info(f"Detected test directories: {self.test_dirs}")
 
@@ -107,6 +107,10 @@ class DotNetWorkflow(GitHubWorkflow):
         pass
 
     def get_test_results(self, repo_path) -> List[TestCase]:
+        self.set_project_structure(repo_path)
+        if self.test_dirs is None:
+            raise ValueError(f"Test directories not found in {self.path}")
+
         parser = JUnitXMLParser()
 
         # If we have identified test directories, look for test results there
@@ -120,9 +124,10 @@ class DotNetWorkflow(GitHubWorkflow):
     def get_build_tool(self) -> str:
         return "dotnet"
 
-    def get_project_structure(self, repo_path) -> Tuple[Set[str], Set[str]]:
+    def set_project_structure(self, repo_path) -> None:
         """
         Analyze repository structure to identify source and test directories.
+        Sets the source_dirs and test_dirs attributes.
 
         Args:
             repo_path: Path to the repository root
@@ -143,14 +148,11 @@ class DotNetWorkflow(GitHubWorkflow):
 
             logger.info(f"Identified source directories: {self.source_dirs}")
             logger.info(f"Identified test directories: {self.test_dirs}")
-
-            return self.source_dirs, self.test_dirs
         except Exception as e:
             logger.error(f"Error analyzing .NET project structure: {e}")
             # Return reasonable defaults on error
             self.source_dirs = {"src", "."}
             self.test_dirs = {"test", "tests"}
-            return self.source_dirs, self.test_dirs
 
     def get_source_directories(self, repo_path) -> Set[str]:
         """
@@ -162,8 +164,8 @@ class DotNetWorkflow(GitHubWorkflow):
         Returns:
             Set[str]: Set of source directory paths
         """
-        source_dirs, _ = self.get_project_structure(repo_path)
-        return source_dirs
+        self.set_project_structure(repo_path)
+        return self.source_dirs
 
     def get_test_directories(self, repo_path) -> Set[str]:
         """
@@ -175,5 +177,5 @@ class DotNetWorkflow(GitHubWorkflow):
         Returns:
             Set[str]: Set of test directory paths
         """
-        _, test_dirs = self.get_project_structure(repo_path)
-        return test_dirs
+        self.set_project_structure(repo_path)
+        return self.test_dirs

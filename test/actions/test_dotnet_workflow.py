@@ -70,7 +70,7 @@ class TestDotNetWorkflow(unittest.TestCase):
         )
 
     @patch.object(DotNetProjectAnalyzer, "analyze_repository")
-    def test_get_project_structure(self, mock_analyze_repo):
+    def test_set_project_structure(self, mock_analyze_repo):
         # Mock the project analysis
         mock_analyze_repo.return_value = ({"src/App", "src/Core"}, {"tests/UnitTests"})
 
@@ -78,18 +78,18 @@ class TestDotNetWorkflow(unittest.TestCase):
         github_api = MagicMock()
 
         # Get project structure
-        source_dirs, test_dirs = self.workflow.get_project_structure(github_api)
+        self.workflow.set_project_structure(github_api)
 
         # Verify results
-        self.assertEqual(source_dirs, {"src/App", "src/Core"})
-        self.assertEqual(test_dirs, {"tests/UnitTests"})
+        self.assertEqual(self.workflow.source_dirs, {"src/App", "src/Core"})
+        self.assertEqual(self.workflow.test_dirs, {"tests/UnitTests"})
 
         # Verify analyzer was created and used
         self.assertIsNotNone(self.workflow.analyzer)
         mock_analyze_repo.assert_called_once()
 
     @patch.object(DotNetProjectAnalyzer, "analyze_repository")
-    def test_get_project_structure_cached(self, mock_analyze_repo):
+    def test_set_project_structure_cached(self, mock_analyze_repo):
         # Set cached values
         self.workflow.source_dirs = {"src/App"}
         self.workflow.test_dirs = {"tests/UnitTests"}
@@ -98,17 +98,17 @@ class TestDotNetWorkflow(unittest.TestCase):
         github_api = MagicMock()
 
         # Get project structure
-        source_dirs, test_dirs = self.workflow.get_project_structure(github_api)
+        self.workflow.set_project_structure(github_api)
 
         # Verify cached results are returned
-        self.assertEqual(source_dirs, {"src/App"})
-        self.assertEqual(test_dirs, {"tests/UnitTests"})
+        self.assertEqual(self.workflow.source_dirs, {"src/App"})
+        self.assertEqual(self.workflow.test_dirs, {"tests/UnitTests"})
 
         # Verify analyzer was not called
         mock_analyze_repo.assert_not_called()
 
     @patch.object(DotNetProjectAnalyzer, "analyze_repository")
-    def test_get_project_structure_error(self, mock_analyze_repo):
+    def test_set_project_structure_error(self, mock_analyze_repo):
         # Mock the project analysis to raise an exception
         mock_analyze_repo.side_effect = Exception("API error")
 
@@ -116,39 +116,11 @@ class TestDotNetWorkflow(unittest.TestCase):
         github_api = MagicMock()
 
         # Get project structure
-        source_dirs, test_dirs = self.workflow.get_project_structure(github_api)
+        self.workflow.set_project_structure(github_api)
 
         # Verify default values are returned on error
-        self.assertEqual(source_dirs, {"src", "."})
-        self.assertEqual(test_dirs, {"test", "tests"})
-
-    @patch.object(DotNetWorkflow, "get_project_structure")
-    def test_get_source_directories(self, mock_get_structure):
-        # Mock the project structure
-        mock_get_structure.return_value = ({"src/App", "src/Core"}, {"tests/UnitTests"})
-
-        # Mock GitHub API
-        github_api = MagicMock()
-
-        # Get source directories
-        source_dirs = self.workflow.get_source_directories(github_api)
-
-        # Verify results
-        self.assertEqual(source_dirs, {"src/App", "src/Core"})
-
-    @patch.object(DotNetWorkflow, "get_project_structure")
-    def test_get_test_directories(self, mock_get_structure):
-        # Mock the project structure
-        mock_get_structure.return_value = ({"src/App", "src/Core"}, {"tests/UnitTests"})
-
-        # Mock GitHub API
-        github_api = MagicMock()
-
-        # Get test directories
-        test_dirs = self.workflow.get_test_directories(github_api)
-
-        # Verify results
-        self.assertEqual(test_dirs, {"tests/UnitTests"})
+        self.assertEqual(self.workflow.source_dirs, {"src", "."})
+        self.assertEqual(self.workflow.test_dirs, {"test", "tests"})
 
 
 if __name__ == "__main__":
