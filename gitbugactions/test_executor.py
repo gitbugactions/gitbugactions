@@ -1,12 +1,10 @@
 import copy
 import os
-import subprocess
 import threading
 import time
 import uuid
 from typing import List
 
-import pygit2
 import schedule
 from pygit2 import Repository
 
@@ -146,10 +144,12 @@ class TestExecutor:
                 test_actions.run_workflow(workflow, self.act_cache_dir, timeout=timeout)
             )
 
-        test_actions.delete_workflows()
+        # Only delete the ones we have created
+        if self.instrument_workflows:
+            test_actions.delete_workflows()
 
-        if temp_workflow_path:
-            TemplateWorkflowManager.remove_temp_workflow(temp_workflow_path)
+            if temp_workflow_path:
+                TemplateWorkflowManager.remove_temp_workflow(temp_workflow_path)
 
         for act_run in act_runs:
             act_run.default_actions = default_actions

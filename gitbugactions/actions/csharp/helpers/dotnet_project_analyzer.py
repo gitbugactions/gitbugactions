@@ -13,7 +13,7 @@ class DotNetProjectAnalyzer:
     Examines .csproj files and determines project structure.
     """
 
-    def __init__(self, repo_path: str):
+    def __init__(self, repo_path: str, no_ignore: bool = False):
         """
         Initialize with a repository path.
 
@@ -28,6 +28,7 @@ class DotNetProjectAnalyzer:
             "testingframework",
             "test.sdk",
         ]
+        self.no_ignore = no_ignore
 
     def _should_ignore_path(self, path: str) -> bool:
         """
@@ -39,6 +40,8 @@ class DotNetProjectAnalyzer:
         Returns:
             bool: True if the path should be ignored, False otherwise
         """
+        if self.no_ignore:
+            return False
         # Normalize path separators for consistent checking
         normalized_path = os.path.normpath(path)
         path_parts = normalized_path.split(os.sep)
@@ -212,6 +215,9 @@ class DotNetProjectAnalyzer:
                 try:
                     with open(proj_file, "r", encoding="utf-8") as f:
                         content = f.read()
+                        print(
+                            f"Checking project file content for test indicators: {content}"
+                        )
                         if self.is_test_project_file(content):
                             is_test = True
                 except Exception as e:
@@ -263,6 +269,8 @@ class DotNetProjectAnalyzer:
                     )
 
                     for proj_path in project_matches:
+                        # Normalize Windows paths to Unix paths
+                        proj_path = proj_path.replace("\\", "/")
                         if proj_path.endswith(".csproj"):
                             # Convert relative path to absolute
                             sln_dir = os.path.dirname(sln_file)

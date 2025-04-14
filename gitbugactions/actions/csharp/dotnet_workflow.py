@@ -107,7 +107,7 @@ class DotNetWorkflow(GitHubWorkflow):
         pass
 
     def get_test_results(self, repo_path) -> List[TestCase]:
-        self.set_project_structure(repo_path)
+        self.set_project_structure(repo_path, no_ignore=True)
         if self.test_dirs is None:
             raise ValueError(f"Test directories not found in {self.path}")
 
@@ -124,7 +124,7 @@ class DotNetWorkflow(GitHubWorkflow):
     def get_build_tool(self) -> str:
         return "dotnet"
 
-    def set_project_structure(self, repo_path) -> None:
+    def set_project_structure(self, repo_path, no_ignore=False) -> None:
         """
         Analyze repository structure to identify source and test directories.
         Sets the source_dirs and test_dirs attributes.
@@ -141,7 +141,7 @@ class DotNetWorkflow(GitHubWorkflow):
         try:
             # Create analyzer if not exists
             if self.analyzer is None:
-                self.analyzer = DotNetProjectAnalyzer(repo_path)
+                self.analyzer = DotNetProjectAnalyzer(repo_path, no_ignore)
 
             # Analyze repository structure
             self.source_dirs, self.test_dirs = self.analyzer.analyze_repository()

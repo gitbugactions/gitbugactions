@@ -621,7 +621,6 @@ def collect_bugs(
         logging.info(
             f"Found {len(commits_by_repo)} repositories with {len(commit_urls)} commits to analyze"
         )
-        print(commits_by_repo)
 
         # Process each repository and its commits
         with ThreadPoolExecutor(max_workers=n_workers) as executor:
