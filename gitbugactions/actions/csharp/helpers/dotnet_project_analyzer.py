@@ -186,14 +186,20 @@ class DotNetProjectAnalyzer:
             test_dirs: Set to add test directories to
         """
         try:
+            logger.info(f"Processing project file: {proj_file}")
+
             # Skip files in .act-result directories
             if self._should_ignore_path(proj_file):
+                logger.info(
+                    f"Skipping project file {proj_file} as it's in an ignored directory"
+                )
                 return
 
             # Get the directory containing the project file
             proj_dir = os.path.dirname(proj_file)
             rel_path = os.path.relpath(proj_dir, self.repo_path)
             rel_path = "." if rel_path == "" else rel_path
+            logger.info(f"Project directory: {proj_dir}, relative path: {rel_path}")
 
             # Check if it's a test project
             is_test = False
@@ -203,43 +209,65 @@ class DotNetProjectAnalyzer:
                 test_indicator in os.path.basename(proj_file).lower()
                 for test_indicator in ["test", "tests"]
             ):
+                logger.info(
+                    f"Project file {proj_file} identified as test project based on filename"
+                )
                 is_test = True
             # Check directory name for test indicators
             elif any(
                 test_indicator in rel_path.lower()
                 for test_indicator in ["test", "tests"]
             ):
+                logger.info(
+                    f"Project file {proj_file} identified as test project based on directory name"
+                )
                 is_test = True
             else:
                 # Read the project file content
                 try:
                     with open(proj_file, "r", encoding="utf-8") as f:
                         content = f.read()
-                        print(
-                            f"Checking project file content for test indicators: {content}"
+                        logger.info(
+                            f"Checking project file content for test indicators: {proj_file}"
                         )
                         if self.is_test_project_file(content):
+                            logger.info(
+                                f"Project file {proj_file} identified as test project based on content analysis"
+                            )
                             is_test = True
+                        else:
+                            logger.info(
+                                f"Project file {proj_file} content analysis did not indicate test project"
+                            )
                 except Exception as e:
-                    logger.debug(f"Could not read {proj_file}: {e}")
+                    logger.warning(f"Could not read {proj_file}: {e}")
 
                     # If we can't read the file, check if there are test files in the directory
                     if not is_test:
                         try:
                             files = os.listdir(proj_dir)
                             if self.has_test_file_naming_pattern(files):
+                                logger.info(
+                                    f"Project directory {proj_dir} identified as test project based on file naming patterns"
+                                )
                                 is_test = True
+                            else:
+                                logger.info(
+                                    f"Project directory {proj_dir} does not contain test files based on naming patterns"
+                                )
                         except Exception as e:
-                            logger.debug(f"Could not list files in {proj_dir}: {e}")
+                            logger.warning(f"Could not list files in {proj_dir}: {e}")
 
             # Add to appropriate set
             if is_test:
+                logger.info(f"Adding {rel_path} to test directories")
                 test_dirs.add(rel_path)
             else:
+                logger.info(f"Adding {rel_path} to source directories")
                 source_dirs.add(rel_path)
 
         except Exception as e:
-            logger.debug(f"Error processing project file {proj_file}: {e}")
+            logger.error(f"Error processing project file {proj_file}: {e}")
 
     def _analyze_solution_files(self, sln_files: List[str]) -> List[str]:
         """
@@ -283,7 +311,7 @@ class DotNetProjectAnalyzer:
                             ) and not self._should_ignore_path(abs_proj_path):
                                 project_files.append(abs_proj_path)
             except Exception as e:
-                logger.debug(f"Error analyzing solution file {sln_file}: {e}")
+                logger.error(f"Error analyzing solution file {sln_file}: {e}")
 
         return project_files
 
@@ -380,8 +408,8 @@ class DotNetProjectAnalyzer:
                                 if re.search(pattern, content, re.IGNORECASE):
                                     build_commands.add(pattern.split("\\s+")[0])
                     except Exception as e:
-                        logger.debug(f"Error reading workflow file {file_path}: {e}")
+                        logger.error(f"Error reading workflow file {file_path}: {e}")
         except Exception as e:
-            logger.debug(f"Error analyzing workflow files: {e}")
+            logger.error(f"Error analyzing workflow files: {e}")
 
         return build_commands
