@@ -12,7 +12,6 @@ class JUnitXMLParser(TestParser):
     ) -> List[TestCase]:
         """Recursive function to iterate over the JUnit XML file and return a list of tests"""
         tests: List[TestCase] = []
-
         # Check if the element is a TestCase (leaf node)
         if not isinstance(xml, TestCase):
             # If it is a TestSuite, iterate over all elements

@@ -1,6 +1,7 @@
-import re, os, glob
-from typing import List
+import re, glob
 
+from typing import List
+from pathlib import Path
 from junitparser import TestCase
 
 from gitbugactions.actions.multi.junitxmlparser import JUnitXMLParser
@@ -29,7 +30,7 @@ class CMakeWorkflow(GitHubWorkflow):
                             if "--output-junit" in step["run"]:
                                 m = re.search(r"--output-junit\s+(\S+)", step["run"])
                                 if m:
-                                    self.result_file = m.group(1)
+                                    self.result_file = m.group(1).replace('"', "")
                             else:
                                 step["run"] = step["run"].replace(
                                     "ctest", "ctest --output-junit " + self.result_file
@@ -42,7 +43,7 @@ class CMakeWorkflow(GitHubWorkflow):
                     job["env"]["CMAKE_VERSION"] = "latest"
 
     def get_test_results(self, repo_path) -> List[TestCase]:
-        search_path = os.path.join(repo_path, "**", "*" + self.result_file)
+        search_path = str(Path(repo_path, "**", "*", self.result_file))
         files = glob.glob(search_path, recursive=True)
         all_results = []
         parser = JUnitXMLParser()
