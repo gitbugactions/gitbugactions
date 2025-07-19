@@ -209,7 +209,7 @@ class TestCollectBugsGo(TestCollectBugs):
         ) as f:
             data = json.load(f)
             # Check Go repositories
-            assert data["gitbugactions/gitbugactions-go-test-repo"]["commits"] == 2
+            assert data["gitbugactions/gitbugactions-go-test-repo"]["commits"] == 4
             assert (
                 data["gitbugactions/gitbugactions-go-test-repo"]["possible_bug_patches"]
                 == 2
