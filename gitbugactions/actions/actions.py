@@ -310,7 +310,7 @@ class Act:
                 dockerfile += f"RUN sudo usermod -G {os.getgid()} runner\n"
                 dockerfile += f"RUN sudo usermod -o -u {os.getuid()} runner\n"
                 # Avoids problems with Rust projects in certain hosts
-                dockerfile += f"ENV RUSTUP_HOME=\"/usr/share/rust/.rustup\"\n"
+                dockerfile += f'ENV RUSTUP_HOME="/usr/share/rust/.rustup"\n'
                 f.write(dockerfile)
 
             client.images.build(path="./", tag="gitbugactions", forcerm=True)
