@@ -24,7 +24,7 @@ class CSharpTemplate(LanguageTemplate):
         _, test_dirs = analyzer.analyze_repository()
 
         workflow = {
-            "name": "dotnet template test workflow",
+            "name": "csharp dotnet template test workflow",
             "on": "push",
             "jobs": {
                 "test": {
