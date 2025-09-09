@@ -359,17 +359,21 @@ websockets = ["websocket-client (>=1.3.0)"]
 
 [[package]]
 name = "fire"
-version = "0.7.0"
+version = "0.7.1"
 description = "A library for automatically generating command line interfaces."
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 groups = ["main"]
 files = [
-    {file = "fire-0.7.0.tar.gz", hash = "sha256:961550f07936eaf65ad1dc8360f2b2bf8408fad46abbfa4d2a3794f8d2a95cdf"},
+    {file = "fire-0.7.1-py3-none-any.whl", hash = "sha256:e43fd8a5033a9001e7e2973bab96070694b9f12f2e0ecf96d4683971b5ab1882"},
+    {file = "fire-0.7.1.tar.gz", hash = "sha256:3b208f05c736de98fb343310d090dcc4d8c78b2a89ea4f32b837c586270a9cbf"},
 ]
 
 [package.dependencies]
 termcolor = "*"
+
+[package.extras]
+test = ["hypothesis (<6.136.0)", "levenshtein (<=0.27.1)", "pip", "pylint (<3.3.8)", "pytest (<=8.4.1)", "pytest-pylint (<=1.1.2)", "pytest-runner (<7.0.0)", "setuptools (<=80.9.0)", "termcolor (<3.2.0)"]
 
 [[package]]
 name = "flaky"
@@ -606,6 +610,7 @@ files = [
     {file = "numpy-2.3.3-pp311-pypy311_pp73-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:8596ba2f8af5f93b01d97563832686d20206d303024777f6dfc2e7c7c3f1850e"},
     {file = "numpy-2.3.3-pp311-pypy311_pp73-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:e1ec5615b05369925bd1125f27df33f3b6c8bc10d788d5999ecd8769a1fa04db"},
     {file = "numpy-2.3.3-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:2e267c7da5bf7309670523896df97f93f6e469fb931161f483cd6882b3b1a5dc"},
+    {file = "numpy-2.3.3.tar.gz", hash = "sha256:ddc7c39727ba62b80dfdbedf400d1c10ddfa8eefbd7ec8dcb118be8b56d31029"},
 ]
 
 [[package]]
@@ -1546,4 +1551,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "652533db08d330c253b57c8c8741c9733d2907d00c8b6356c4bfcde0a16e9d0f"
+content-hash = "e207c4c54dae9f445741bbd39460cb582e5837d59edcbad0304acf07161e10f6"
