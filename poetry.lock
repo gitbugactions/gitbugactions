@@ -1662,25 +1662,24 @@ tests = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "tqdm"
-version = "4.67.3"
+version = "4.68.3"
 description = "Fast, Extensible Progress Meter"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "tqdm-4.67.3-py3-none-any.whl", hash = "sha256:ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf"},
-    {file = "tqdm-4.67.3.tar.gz", hash = "sha256:7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"},
+    {file = "tqdm-4.68.3-py3-none-any.whl", hash = "sha256:39832cc2def2789a6f29df83f172db7416cea70052c0907a57801c5f2fdccb03"},
+    {file = "tqdm-4.68.3.tar.gz", hash = "sha256:00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"},
 ]
 
 [package.dependencies]
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [package.extras]
-dev = ["nbval", "pytest (>=6)", "pytest-asyncio (>=0.24)", "pytest-cov", "pytest-timeout"]
-discord = ["requests"]
+discord = ["envwrap", "requests"]
 notebook = ["ipywidgets (>=6)"]
-slack = ["slack-sdk"]
-telegram = ["requests"]
+slack = ["envwrap", "slack-sdk"]
+telegram = ["envwrap", "requests"]
 
 [[package]]
 name = "typing-extensions"
@@ -1739,4 +1738,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "01bff8122d9b61bb2a752099addf48728959fc831d3cbb726bd7252f628a26be"
+content-hash = "9fa4de5c6c7b854a0757403c3cdaa0b984d734062edafa17f5ac6af2cabd396f"
